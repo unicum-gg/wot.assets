@@ -564,9 +564,13 @@
                         if (a.mediumWidth && E) return (0, n.H)(t, a, D);
                         if (a.smallWidth && b) return (0, n.H)(t, a, D);
                         if (a.extraSmallWidth && g) return (0, n.H)(t, a, D);
-                        if (
-                            !(a.extraLargeWidth || a.largeWidth || a.mediumWidth || a.smallWidth || a.extraSmallWidth)
-                        ) {
+                        if (!(
+                            a.extraLargeWidth ||
+                            a.largeWidth ||
+                            a.mediumWidth ||
+                            a.smallWidth ||
+                            a.extraSmallWidth
+                        )) {
                             if (a.extraLargeHeight && h) return t;
                             if (a.largeHeight && f) return t;
                             if (a.mediumHeight && A) return t;
@@ -1074,7 +1078,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, a = n(o.keys()); !(e = a()).done; ) {
+                            for (var e, a = n(o.keys()); !(e = a()).done;) {
                                 i(e.value, t);
                             }
                         },
@@ -1811,7 +1815,7 @@
                     n = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function r(e) {
                     let t = '';
-                    for (let a = n.length - 1; a >= 0; a--) for (; e >= n[a]; ) ((t += u[a]), (e -= n[a]));
+                    for (let a = n.length - 1; a >= 0; a--) for (; e >= n[a];) ((t += u[a]), (e -= n[a]));
                     return t;
                 }
                 const s = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -2301,7 +2305,7 @@
                         let _ = o.exec(e),
                             m = e,
                             p = 0;
-                        for (; _; ) {
+                        for (; _;) {
                             const a = _[0],
                                 u = i.exec(a),
                                 E = l.exec(a),
@@ -5313,7 +5317,7 @@
                                             t(e).delete(a);
                                         },
                                         n = (e, ...a) => {
-                                            for (var u, n = mu(t(e).values()); !(u = n()).done; ) (0, u.value)(...a);
+                                            for (var u, n = mu(t(e).values()); !(u = n()).done;) (0, u.value)(...a);
                                         };
                                     return (0, o.useMemo)(() => ({ on: a, off: u, trigger: n }), []);
                                 })(),
@@ -6638,7 +6642,7 @@
                     Zn = (e, t, a, u) => {
                         let n = t.exec(e),
                             r = 0;
-                        for (; n; ) (r !== n.index && a(e.slice(r, n.index)), u(n), (r = t.lastIndex), (n = t.exec(e)));
+                        for (; n;) (r !== n.index && a(e.slice(r, n.index)), u(n), (r = t.lastIndex), (n = t.exec(e)));
                         r !== e.length && a(e.slice(r));
                     },
                     qn = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -6684,7 +6688,7 @@
                               if (!u) return [e];
                               const n = [];
                               let r = 0;
-                              for (; u; ) {
+                              for (; u;) {
                                   const s = t.justifyContent === Ln.FlexEnd ? u.index : a.lastIndex;
                                   (n.push(e.slice(r, s)), (r = s), (u = a.exec(e)));
                               }
@@ -6729,7 +6733,9 @@
                     },
                     Jn = (e, t, a = '', u) => {
                         const n = [],
-                            r = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            r = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             Zn(
                                 r,
@@ -6859,7 +6865,7 @@
                             c = ((e, t) => {
                                 let a = 0,
                                     u = e.length - 1;
-                                for (; u - a >= 0; ) {
+                                for (; u - a >= 0;) {
                                     const n = a + Math.ceil(0.5 * (u - a));
                                     tr(e[n], t) ? (u = n - 1) : (a = n + 1);
                                 }
@@ -9263,7 +9269,7 @@
                                     let u = 0,
                                         r = a - 1,
                                         s = !1;
-                                    for (; r - u > 1; ) {
+                                    for (; r - u > 1;) {
                                         const a = u + Math.floor(0.5 * (r - u + 1));
                                         ((s = n(e[a], t)), s ? (r = a) : (u = a));
                                     }

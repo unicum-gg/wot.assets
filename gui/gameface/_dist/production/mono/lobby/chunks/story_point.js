@@ -1,5 +1,5 @@
 import { j as s, f as e } from './vendor.js';
-import { dp as _ } from './lib.js';
+import { du as _ } from './lib.js';
 const i = {
         root: 'StoryPoint_root_fb5c04d4',
         base: 'StoryPoint_c7387a68',
@@ -21,7 +21,7 @@ const i = {
         s186x186: '186x186',
         s256x256: '256x256',
     };
-function o({ size: a, classNames: o, modifier: t = 0, withTimesSymbol: b = !1 }) {
+function o({ size: a, classNames: o, modifier: t = 0, withTimesSymbol: n = !1 }) {
     return s.jsx('div', {
         className: e(i.base, i[`base__size${a}`], o?.base),
         style: { backgroundImage: `url('R.images.last_stand.gui.maps.icons.story_points.sp_${a}')` },
@@ -29,8 +29,9 @@ function o({ size: a, classNames: o, modifier: t = 0, withTimesSymbol: b = !1 })
             t > 0 &&
             s.jsx('div', {
                 className: e(i.label, o?.modifier),
+                lang: R.strings.settings.LANGUAGE_CODE(),
                 children: _(
-                    b
+                    n
                         ? R.strings.last_stand_lobby.common.modifierInlineTimes()
                         : R.strings.last_stand_lobby.common.modifierInline(),
                     { value: t },

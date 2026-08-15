@@ -1,5 +1,5 @@
-import { j as a, a3 as s, R as i, V as e } from '../../../../chunks/vendor.js';
-import { m as t, i as n, n as o, cv as l, r as m } from '../../../../chunks/lib.js';
+import { j as a, a3 as s, R as i, a1 as e } from '../../../../chunks/vendor.js';
+import { m as t, i as n, n as o, cu as l, d2 as m } from '../../../../chunks/lib.js';
 import { T as r } from '../../../../chunks/tooltip_decorator.js';
 import { b as c } from '../../../../chunks/get_rank_name.js';
 import { R as d } from '../../../../chunks/enums.js';
@@ -12,8 +12,8 @@ const h = 'RankCompatibilityTable_d1e1f461',
     x = 'RankCompatibilityTable_heading_fc477f38',
     g = 'RankCompatibilityTable_teammates_e198b34',
     N = 'RankCompatibilityTable_teammates__heading_18846859',
-    v = 'RankCompatibilityTable_rank_c960c039',
-    u = 'RankCompatibilityTable_emptySlot_7884dfc9',
+    u = 'RankCompatibilityTable_rank_c960c039',
+    v = 'RankCompatibilityTable_emptySlot_7884dfc9',
     y = 'RankCompatibilityTable_divider_e6a19cf8',
     T = [d.First, d.Second, d.Third, d.Fourth, d.Fifth, d.Sixth],
     f = ({ seasonName: e, rankRangeRestriction: n, className: o, classNames: l }) =>
@@ -47,7 +47,7 @@ const h = 'RankCompatibilityTable_d1e1f461',
                                         a.jsxs('div', {
                                             className: k,
                                             children: [
-                                                a.jsx(p, { rank: o, size: b.x22, seasonName: e, className: v }),
+                                                a.jsx(p, { rank: o, size: b.x22, seasonName: e, className: u }),
                                                 c(o),
                                             ],
                                         }),
@@ -56,7 +56,7 @@ const h = 'RankCompatibilityTable_d1e1f461',
                                             children: t(T.length, (s) =>
                                                 Math.abs(s - l) <= n
                                                     ? a.jsx(p, { rank: T[s], size: b.x22, seasonName: e }, s)
-                                                    : a.jsx('div', { className: u }, s),
+                                                    : a.jsx('div', { className: v }, s),
                                             ),
                                         }),
                                     ],

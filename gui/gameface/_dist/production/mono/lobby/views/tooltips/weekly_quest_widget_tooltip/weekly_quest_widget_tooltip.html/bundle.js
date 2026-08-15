@@ -1,20 +1,20 @@
-import { i as e, j as s, f as t, V as i, a3 as r } from '../../../../chunks/vendor.js';
+import { i as e, j as s, f as t, a1 as i, a3 as r } from '../../../../chunks/vendor.js';
 import {
     i as a,
-    aJ as n,
-    ag as c,
-    cq as o,
-    cr as d,
-    er as u,
-    cv as l,
-    ck as _,
-    cy as x,
+    aG as n,
+    ad as c,
+    cp as o,
+    cq as d,
+    es as u,
+    cu as l,
+    cj as x,
+    cx as _,
     m,
-    cA as p,
-    cD as w,
-    cc as b,
-    es as j,
-    r as g,
+    cz as p,
+    cC as w,
+    ca as j,
+    et as b,
+    d2 as g,
 } from '../../../../chunks/lib.js';
 import { Q as v } from '../../../../chunks/weekly_quests_model.js';
 /* empty css                        */ const [h, N] = a()(({ observableModel: s }) => {
@@ -38,7 +38,7 @@ function Q({ bonuses: e, size: t, ...i }) {
     const r = c(e, (e) => ({ size: t, name: e.name, image: d(e, t), value: e.value, valueType: o(e.name) }));
     return s.jsx(u, { ...i, data: r, size: t });
 }
-const k = {
+const q = {
         header: 'ActiveQuestCard_header_e228dbe8',
         description: 'ActiveQuestCard_description_bad0b037',
         description__dark: 'ActiveQuestCard_description__dark_e8f90930',
@@ -47,38 +47,38 @@ const k = {
         counter: 'ActiveQuestCard_counter_e00c67cc',
         counter__current: 'ActiveQuestCard_counter__current_5abd8ace',
     },
-    q = R.strings.comp7_ext.weeklyQuestWidgetTooltip,
+    k = R.strings.comp7_ext.weeklyQuestWidgetTooltip,
     C = i(() => {
         const { model: e } = N(),
             { description: t, questsPassed: i, totalQuests: a } = e.root.get(),
             n = e.bonuses.get(),
             c = e.questNumbersToRewards.get().length - 1;
         return s.jsxs('div', {
-            className: k.base,
+            className: q.base,
             children: [
-                s.jsx(l, { text: q.header(), classMix: k.header }),
-                s.jsx(l, { text: t, classMix: k.description }),
-                s.jsx(W, { className: k.divider }),
-                s.jsx('div', { className: k.rewardsText, children: q.rewards(n.length) }),
-                s.jsx(Q, { bonuses: n, size: _.Small, count: 3 }),
-                s.jsx(W, { className: k.divider }),
+                s.jsx(l, { text: k.header(), classMix: q.header }),
+                s.jsx(l, { text: t, classMix: q.description }),
+                s.jsx(W, { className: q.divider }),
+                s.jsx('div', { className: q.rewardsText, children: k.rewards(n.length) }),
+                s.jsx(Q, { bonuses: n, size: x.Small, count: 3 }),
+                s.jsx(W, { className: q.divider }),
                 s.jsx(l, {
-                    text: q.missionsCounter(),
-                    classMix: r(k.counter, k.counter__current),
+                    text: k.missionsCounter(),
+                    classMix: r(q.counter, q.counter__current),
                     binding: {
                         counter: s.jsx(l, {
-                            text: q.counter(),
-                            classMix: k.counter,
+                            text: k.counter(),
+                            classMix: q.counter,
                             binding: {
-                                current: s.jsx('span', { className: k.counter__current, children: i }),
+                                current: s.jsx('span', { className: q.counter__current, children: i }),
                                 total: a,
                             },
                         }),
                     },
                 }),
-                s.jsx(x, {
-                    text: q.description(),
-                    classMix: r(k.description, k.description__dark),
+                s.jsx(_, {
+                    text: k.description(),
+                    classMix: r(q.description, q.description__dark),
                     binding: {
                         questsList: m(c, (s) => e.computes.questRewardsNumber(s)).join(
                             R.strings.comp7_ext.listSeparator(),
@@ -132,7 +132,7 @@ const k = {
                         }),
                     },
                 }),
-                s.jsx(x, {
+                s.jsx(_, {
                     text: z.description(),
                     classMix: A.description,
                     binding: {
@@ -153,7 +153,7 @@ const k = {
                                     classMix: A.newMissionsDescription,
                                     content: w(z.newMissions(v), { value: v }),
                                 }),
-                                s.jsx(b, { start: t, className: A.newMissionsTimer }),
+                                s.jsx(j, { start: t, className: A.newMissionsTimer }),
                             ],
                         }),
                     ],
@@ -181,8 +181,8 @@ const k = {
         const { model: e } = N(),
             t = L[e.root.get().state];
         return t
-            ? s.jsx(j, {
-                  children: s.jsx(j.Decorator, { children: s.jsx('div', { className: S, children: s.jsx(t, {}) }) }),
+            ? s.jsx(b, {
+                  children: s.jsx(b.Decorator, { children: s.jsx('div', { className: S, children: s.jsx(t, {}) }) }),
               })
             : (console.error('Unreachable code: WeeklyQuestTooltip'), null);
     });

@@ -1,18 +1,18 @@
 import { D as s, j as t } from '../../../../chunks/vendor.js';
 import {
     i as a,
-    a7 as e,
-    de as l,
+    ac as e,
+    dj as l,
     m as i,
-    k as o,
+    l as o,
     I as r,
     E as n,
     A as d,
-    b2 as p,
+    b5 as p,
     r as c,
 } from '../../../../chunks/lib.js';
 import { a as m, b as _, c as u } from '../../../../chunks/utils.js';
-const [y, j] = a()(({ observableModel: s }) => ({ root: s.object(), rewards: s.array('rewards') }), e),
+const [j, y] = a()(({ observableModel: s }) => ({ root: s.object(), rewards: s.array('rewards') }), e),
     x = 'DailyQuestsTooltipApp_b5a82c23',
     g = 'DailyQuestsTooltipApp_name_3f7f3230',
     b = 'DailyQuestsTooltipApp_description_1702ec9b',
@@ -30,8 +30,8 @@ function h(s, t, a) {
           : a;
 }
 const N = s(function () {
-    const { model: s } = j(),
-        { description: a, resetTime: e, completed: c, allDailyCompleted: y } = s.root.get(),
+    const { model: s } = y(),
+        { description: a, resetTime: e, completed: c, allDailyCompleted: j } = s.root.get(),
         N = s.rewards.get();
     return t.jsx(l, {
         'data-name': 'BoosterTooltip',
@@ -44,7 +44,7 @@ const N = s(function () {
                         ? R.strings.last_stand_tooltips.dailyQuests.completed()
                         : R.strings.last_stand_lobby.missionWidget.tooltipHeader(),
                 }),
-                t.jsx('div', { className: b, lang: R.strings.settings.LANGUAGE_CODE(), children: h(c, y, a) }),
+                t.jsx('div', { className: b, lang: R.strings.settings.LANGUAGE_CODE(), children: h(c, j, a) }),
                 t.jsxs('div', {
                     className: f,
                     children: [
@@ -78,7 +78,7 @@ const N = s(function () {
                             }),
                         t.jsx('div', { className: D }),
                         t.jsx(n, {
-                            text: y
+                            text: j
                                 ? R.strings.last_stand_tooltips.dailyQuests.statusEventEnd()
                                 : R.strings.last_stand_tooltips.dailyQuests.status(),
                             classMix: T,
@@ -92,4 +92,4 @@ const N = s(function () {
         }),
     });
 });
-c(t.jsx(y, { children: t.jsx(N, {}) }));
+c(t.jsx(j, { children: t.jsx(N, {}) }));

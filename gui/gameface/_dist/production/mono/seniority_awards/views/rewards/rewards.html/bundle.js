@@ -1,41 +1,41 @@
-import { m as e, n as a, k as s, j as n, l as o, h as t, r, p as i, q as d, s as l } from '../../../chunks/vendor.js';
+import { m as e, q as a, k as s, j as n, l as o, h as t, r, n as i, t as d, s as c } from '../../../chunks/vendor.js';
 import {
-    i as c,
-    m as p,
-    u as _,
+    i as l,
+    O as p,
+    d as _,
     r as m,
-    g as b,
+    P as b,
     R as u,
-    a as w,
-    I as h,
-    b as A,
-    V as x,
-    c as g,
-    d as v,
+    Q as w,
+    S as h,
+    T as A,
+    W as x,
+    X as g,
+    E as v,
     F as f,
-    e as C,
-    f as j,
-    h as y,
-    j as R,
-    k as S,
-    l as N,
-    n as E,
-    C as k,
-    o as I,
-    s as V,
-    p as W,
-    q as B,
-    J as L,
+    u as C,
+    Y as j,
+    Z as y,
+    c as S,
+    l as R,
+    z as N,
+    D as E,
+    H as k,
+    C as I,
+    J as W,
+    K as B,
+    L,
+    M as V,
     U as O,
-    t as T,
+    N as T,
 } from '../../../chunks/lib.js';
-import { t as F } from '../../../chunks/sounds.js';
-import { e as M, u as z, l as D, S as U, a as $, P as H, I as P, F as Y } from '../../../chunks/easings.js';
-import { A as q, a as K } from '../../../chunks/category.js';
+import { t as M } from '../../../chunks/sounds.js';
+import { f as F, a as z, c as D, l as U, S as H, d as P, P as Y, I as $ } from '../../../chunks/easings.js';
+import { A as K, a as q } from '../../../chunks/category.js';
 var G = ((e) => ((e.AVAILABLE = 'available'), (e.NOT_AVAILABLE = 'notAvailable'), (e.DISABLED = 'disabled'), e))(
     G || {},
 );
-const [J, Q] = c()(
+const [J, Q] = l()(
         ({ observableModel: a }) => {
             const s = { root: a.object(), bonuses: a.array('bonuses', []) },
                 n = e(() => p(s.bonuses.get(), (e) => ({ ...e })));
@@ -60,17 +60,17 @@ const [J, Q] = c()(
     ee = 'AnimatedReward_base__withCoins_802dd312',
     ae = a(({ delay: e, duration: a, onRest: r, children: i }) => {
         const { model: d } = Q(),
-            l = d.computes.hasCoins(),
-            c = _(),
+            c = d.computes.hasCoins(),
+            l = _(),
             p = s({
-                from: { opacity: 0, transform: l ? 'translateY(30rem)' : 'scale(0.5)' },
-                to: { opacity: 1, transform: l ? 'translateY(0)' : 'scale(1)' },
+                from: { opacity: 0, transform: c ? 'translateY(30rem)' : 'scale(0.5)' },
+                to: { opacity: 1, transform: c ? 'translateY(0)' : 'scale(1)' },
                 delay: e,
-                config: { duration: a, easing: M },
-                onStart: () => c.play('rewardAppear', { target: 'reward' }),
+                config: { duration: a, easing: F },
+                onStart: () => l.play('rewardAppear', { target: 'reward' }),
                 onRest: r,
             });
-        return n.jsx(o.div, { style: p, className: t(Z, l && ee), children: i });
+        return n.jsx(o.div, { style: p, className: t(Z, c && ee), children: i });
     }),
     se = r.createContext({ rewards: [] }),
     ne = 'AdditionalRewards_3cf62007',
@@ -82,17 +82,17 @@ const [J, Q] = c()(
         const { rewards: a } = r.useContext(se),
             i = m.resolve('strings'),
             d = m.resolve('views'),
-            l = s({
+            c = s({
                 from: { opacity: 0, transform: 'translateY(30rem)' },
                 to: { opacity: 1, transform: 'translateY(0)' },
-                config: { ANIMATION_DURATION: 150, easing: M },
+                config: { ANIMATION_DURATION: 150, easing: F },
             });
         return n.jsxs('div', {
             className: ne,
             children: [
                 n.jsx(o.div, {
                     className: te,
-                    style: l,
+                    style: c,
                     children: i.readOrEmpty('seniority_awards.rewardsView.subTitle.otherRewards'),
                 }),
                 n.jsx('div', {
@@ -108,7 +108,7 @@ const [J, Q] = c()(
                                 children: n.jsx(u, {
                                     ...s,
                                     name: s.name,
-                                    image: A({ ...s, icon: X(s.icon) }, h.Big),
+                                    image: A({ ...s, icon: 'icon' in s && X(s.icon) }, h.Big),
                                     size: h.Big,
                                     valueType: r,
                                     tooltipArgs: w(
@@ -129,7 +129,7 @@ const [J, Q] = c()(
             ],
         });
     },
-    le = {
+    ce = {
         root: 'SeniorityAwardCoin_root_ddcbbe5c',
         base: 'SeniorityAwardCoin_8f919fe5',
         base__large: 'SeniorityAwardCoin_base__large_9e92e14',
@@ -137,16 +137,16 @@ const [J, Q] = c()(
         base__small: 'SeniorityAwardCoin_base__small_b8402787',
         base__extraSmall: 'SeniorityAwardCoin_base__extraSmall_61f28269',
     },
-    ce = 'seniority_awards.specialItem',
+    le = 'seniority_awards.specialItem',
     pe = 'large',
     _e = 'medium',
     me = ({ size: e, count: a, isTooltipEnabled: s = !0 }) => {
         const o = m.resolve('strings'),
             r = g({
-                header: o.readOrEmpty(`${ce}.header`).replace('{count}', a.toString()),
-                body: o.readOrEmpty(`${ce}.body`),
+                header: o.readOrEmpty(`${le}.header`).replace('{count}', a.toString()),
+                body: o.readOrEmpty(`${le}.body`),
             });
-        return n.jsx('div', { className: t(le.base, le[`base__${e}`]), ...(s && r) });
+        return n.jsx('div', { className: t(ce.base, ce[`base__${e}`]), ...(s && r) });
     },
     be = 'AnimatedCount_289e911e',
     ue = 'AnimatedCount_value_a13566f1',
@@ -154,7 +154,7 @@ const [J, Q] = c()(
         const [s, o] = r.useState(1),
             [t, i] = r.useState(!1),
             d = _(),
-            l = m.resolve('strings');
+            c = m.resolve('strings');
         return (
             r.useEffect(() => {
                 if (t && s < e)
@@ -169,7 +169,7 @@ const [J, Q] = c()(
                 className: be,
                 onAnimationEnd: () => i(!0),
                 children: n.jsx(f, {
-                    text: l.readOrEmpty('seniority_awards.rewardsView.wdrcoin.counter'),
+                    text: c.readOrEmpty('seniority_awards.rewardsView.wdrcoin.counter'),
                     params: { count: s },
                     className: ue,
                     upgradeLegacy: !0,
@@ -211,7 +211,7 @@ const [J, Q] = c()(
         });
     },
     ye = { base: 'SeniorityReward_5dcf93eb' },
-    Re = ({ reward: e }) => {
+    Se = ({ reward: e }) => {
         const { name: a, tooltipId: s, label: o, value: t, icon: r } = e,
             i = m.resolve('views'),
             d = C({ size: h.S296x222 }, { medium: { size: h.S400x300 } });
@@ -232,12 +232,12 @@ const [J, Q] = c()(
             ],
         });
     },
-    Se = 'Rewards_54691a8d',
+    Re = 'Rewards_54691a8d',
     Ne = 'Rewards_fbd70a88',
     Ee = ({ onAnimationEnd: e }) => {
         const { rewards: a } = r.useContext(se);
         return n.jsx('div', {
-            className: Se,
+            className: Re,
             children: n.jsx('div', {
                 className: Ne,
                 children: a.map((s, o) =>
@@ -247,7 +247,7 @@ const [J, Q] = c()(
                             delay: 300 * o,
                             duration: 300,
                             onRest: o === a.length - 1 ? e : void 0,
-                            children: n.jsx(Re, { reward: s }),
+                            children: n.jsx(Se, { reward: s }),
                         },
                         s.index,
                     ),
@@ -257,44 +257,44 @@ const [J, Q] = c()(
     },
     ke = 'Ribbon_3cc0ec72',
     Ie = 'Ribbon_5d49f5db',
-    Ve = 'Ribbon_base__withCoins_18efb3f8',
-    We = 'Ribbon_rewards_223be208',
-    Be = 'Ribbon_awardCoin_85654b42',
-    Le = 'Ribbon_radialLines_4d4b0e35',
+    We = 'Ribbon_base__withCoins_18efb3f8',
+    Be = 'Ribbon_rewards_223be208',
+    Le = 'Ribbon_awardCoin_85654b42',
+    Ve = 'Ribbon_radialLines_4d4b0e35',
     Oe = 'Ribbon_linesWrapper_20d691ec',
     Te = 'Ribbon_glow_bbf8d966',
-    Fe = a(({ onAnimationEnd: e }) => {
+    Me = a(({ onAnimationEnd: e }) => {
         const { model: a } = Q(),
             s = a.computes.coinsCount(),
             o = a.computes.hasCoins(),
             [i, d] = r.useState(!1),
-            [l, c] = r.useState(!1);
+            [c, l] = r.useState(!1);
         return n.jsx('div', {
-            className: t(ke, o && Ve),
+            className: t(ke, o && We),
             onAnimationEnd: () => {
-                o ? d(!0) : c(!0);
+                o ? d(!0) : l(!0);
             },
             children: n.jsxs('div', {
                 className: Ie,
                 children: [
-                    n.jsx('div', { className: Oe, children: n.jsx('div', { className: Le }) }),
+                    n.jsx('div', { className: Oe, children: n.jsx('div', { className: Ve }) }),
                     i &&
                         n.jsxs('div', {
-                            className: Be,
+                            className: Le,
                             children: [
                                 n.jsx('div', { className: Te }),
-                                n.jsx(ge, { count: s, onAnimationEnd: () => c(!0) }),
+                                n.jsx(ge, { count: s, onAnimationEnd: () => l(!0) }),
                             ],
                         }),
                     n.jsx('div', {
-                        className: We,
-                        children: l && (o ? n.jsx(de, { onAnimationEnd: e }) : n.jsx(Ee, { onAnimationEnd: e })),
+                        className: Be,
+                        children: c && (o ? n.jsx(de, { onAnimationEnd: e }) : n.jsx(Ee, { onAnimationEnd: e })),
                     }),
                 ],
             }),
         });
     }),
-    Me = 'Content_5701de48',
+    Fe = 'Content_5701de48',
     ze = 'Content_ribbon_f0a1a721',
     De = 'Content_ribbon__hidden_8a08fe48',
     Ue = ({ machineState: e, isFirstEnter: a, onAnimationEnd: s }) => {
@@ -312,14 +312,14 @@ const [J, Q] = c()(
                 a || s();
             }, [a, s]),
             n.jsx('div', {
-                className: Me,
-                children: n.jsx('div', { className: t(ze, !a && De), children: n.jsx(Fe, { onAnimationEnd: s }) }),
+                className: Fe,
+                children: n.jsx('div', { className: t(ze, !a && De), children: n.jsx(Me, { onAnimationEnd: s }) }),
             })
         );
     };
-var $e = ((e) => ((e.Ribbon = 'ribbon'), e))($e || {}),
-    He = ((e) => ((e.ShowMoreRewards = 'showMoreRewards'), e))(He || {});
-const Pe = {
+var He = ((e) => ((e.Ribbon = 'ribbon'), e))(He || {}),
+    Pe = ((e) => ((e.ShowMoreRewards = 'showMoreRewards'), e))(Pe || {});
+const Ye = {
         root: 'App_root_0',
         base: 'App_154e87fb',
         bgWrapper: 'App_bgWrapper_21766699',
@@ -340,20 +340,20 @@ const Pe = {
         slideRibbonUp: 'App_slideRibbonUp_0',
         scale: 'App_scale_0',
     },
-    Ye = !0,
-    qe = a(() => {
+    $e = !0,
+    Ke = a(() => {
         const { model: e, controls: a } = Q(),
             { computes: s } = e,
-            { category: o, maxCategory: c } = e.root.get(),
+            { category: o, maxCategory: l } = e.root.get(),
             p = _(),
             m = () => p.play('rewardsViewAppear', { target: 'exit' }),
-            b = R(Y),
-            [u, w] = S(Y),
+            b = S(z),
+            [u, w] = R(z),
             [h, A] = r.useState('showHeader'),
             x = s.bonuses(),
             g = s.hasCoins(),
             f = s.isShopAvailable(),
-            [C, j] = l(() =>
+            [C, j] = c(() =>
                 ((e, a, s) => {
                     const n = s ? 9 : 3;
                     return i({
@@ -385,38 +385,38 @@ const Pe = {
                             },
                         },
                     });
-                })($e.Ribbon, x, g),
+                })(He.Ribbon, x, g),
             ),
             y = s.bonusesLength(),
-            B = C.context.rewardWatchedCount < y,
-            L = y - C.context.rewardWatchedCount,
-            O = z(K, q) === D.success,
+            L = C.context.rewardWatchedCount < y,
+            V = y - C.context.rewardWatchedCount,
+            O = D(q, K) === U.success,
             T = r.useMemo(() => ({ rewards: C.context.visibleRewards }), [C.context.visibleRewards]),
-            F = (e = !1) => {
-                (b({ action: e ? I.KeyDown : I.Click, item: P.CloseButton, parentScreen: H.RewardsScreen }),
+            M = (e = !1) => {
+                (b({ action: e ? I.KeyDown : I.Click, item: $.CloseButton, parentScreen: Y.RewardsScreen }),
                     m(),
-                    V.close());
+                    W.close());
             },
-            M = () => {
-                'showContent' !== h && (A('showContent'), j(He.ShowMoreRewards));
+            F = () => {
+                'showContent' !== h && (A('showContent'), j(Pe.ShowMoreRewards));
             },
             G = (e = !1) => {
                 (b({
                     action: e ? I.KeyDown : I.Click,
-                    item: s.isShopAvailable() ? P.GoToShopButton : P.ConfirmButton,
-                    parentScreen: H.RewardsScreen,
+                    item: s.isShopAvailable() ? $.GoToShopButton : $.ConfirmButton,
+                    parentScreen: Y.RewardsScreen,
                 }),
                     m(),
-                    f && !B && a.openShop(),
+                    f && !L && a.openShop(),
                     a.onOpenBtnClick());
             };
         N(() => {
-            B ? M() : F(Ye);
+            L ? F() : M($e);
         });
         const J = () => {
-            B ? M() : G(Ye);
+            L ? F() : G($e);
         };
-        (E(W.ENTER, J), E(W.SPACE, J));
+        (E(B.ENTER, J), E(B.SPACE, J));
         const X = r.useCallback(() => {
             A('showFooter');
         }, []);
@@ -425,19 +425,19 @@ const Pe = {
                 if ('showHeader' === h) return v(() => A('showContent'), 700);
             }, [h]),
             n.jsxs('div', {
-                className: t(Pe.base, Pe[`base__${C.value}`]),
+                className: t(Ye.base, Ye[`base__${C.value}`]),
                 children: [
                     n.jsx('div', {
-                        className: t(Pe.bgWrapper, O && Pe.bgWrapper__imageLoaded),
-                        children: n.jsx('div', { className: Pe.background }),
+                        className: t(Ye.bgWrapper, O && Ye.bgWrapper__imageLoaded),
+                        children: n.jsx('div', { className: Ye.background }),
                     }),
-                    n.jsx('div', { className: Pe.shadow }),
-                    n.jsx('div', { className: Pe.gradient }),
-                    n.jsx('div', { className: Pe.closeButton, children: n.jsx(k, { onClose: () => F() }) }),
+                    n.jsx('div', { className: Ye.shadow }),
+                    n.jsx('div', { className: Ye.gradient }),
+                    n.jsx('div', { className: Ye.closeButton, children: n.jsx(k, { onClose: () => M() }) }),
                     n.jsx('div', {
-                        className: Pe.header,
-                        children: n.jsx(U, {
-                            maxCategory: c,
+                        className: Ye.header,
+                        children: n.jsx(H, {
+                            maxCategory: l,
                             category: o,
                             onShowTooltip: () => {
                                 u(I.Viewed);
@@ -445,8 +445,8 @@ const Pe = {
                             onHideTooltip: () => {
                                 w({
                                     action: I.Viewed,
-                                    item: P.SeniorityAwardsTooltip,
-                                    parentScreen: H.RewardsScreen,
+                                    item: $.SeniorityAwardsTooltip,
+                                    parentScreen: Y.RewardsScreen,
                                     timeLimit: 0.5,
                                 });
                             },
@@ -463,13 +463,13 @@ const Pe = {
                         }),
                     ('showFooter' === h || 'finished' === h) &&
                         n.jsx('div', {
-                            className: Pe.footer,
-                            children: n.jsx($, {
-                                moreReardsCount: L,
-                                hasMoreRewards: B,
+                            className: Ye.footer,
+                            children: n.jsx(P, {
+                                moreReardsCount: V,
+                                hasMoreRewards: L,
                                 isShopAvailable: f,
                                 onShowMoreClick: () => {
-                                    M();
+                                    F();
                                 },
                                 onAcceptClick: () => G(),
                             }),
@@ -478,5 +478,5 @@ const Pe = {
             })
         );
     }),
-    Ke = B(F);
-T(new L().add(J).addWithProps(O, { soundsOverrides: Ke }).render(n.jsx(qe, {})));
+    qe = L(M);
+T(new V().add(J).addWithProps(O, { soundsOverrides: qe }).render(n.jsx(Ke, {})));

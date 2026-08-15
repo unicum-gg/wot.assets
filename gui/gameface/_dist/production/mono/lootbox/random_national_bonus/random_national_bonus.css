@@ -23,27 +23,27 @@
     background: no-repeat center/contain;
 }
 
-.App_title_7de7d87e {
+.App_title_b26a330b {
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.3em;
     width: 100%;
     margin-top: 8rem;
-    color: #e9e2bf;
+    color: var(--color-general-primary);
 }
 
-.App_highlighted_33d456ed {
+.App_highlighted_ec09ce71 {
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.2em;
-    color: #e9e2bf;
+    color: var(--color-general-primary);
 }
 
-.App_description_843bb261 {
+.App_description_ef18359b {
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.2em;
     width: 100%;
     margin-top: 12rem;
-    color: #8c8c7e;
+    color: var(--color-general-secondary);
 }

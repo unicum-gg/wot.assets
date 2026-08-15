@@ -1,0 +1,94 @@
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Decorator_9599ed83 {
+    width: 288rem;
+}
+.Decorator_base__popup_f4d4252a {
+    padding: 1rem;
+    border-radius: 6rem;
+    box-shadow: 0 0 32rem 0 rgba(15, 15, 15, 0.8);
+    background: linear-gradient(to bottom, #76736b, #373325);
+}
+
+.Decorator_close_b5f02827 {
+    position: absolute;
+    top: 8rem;
+    right: 7rem;
+}
+
+.Decorator_lip_6d0ff487 {
+    width: 280rem;
+    height: 40rem;
+    background: no-repeat center/contain;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+.Decorator_lip__top_87d1ef9 {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.notifications.lip_top);
+    top: 0;
+}
+.Decorator_lip__bottom_52680372 {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.notifications.lip_bottom);
+    bottom: 0;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.App_9215abe8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10rem 0 25rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.notifications.daily_reward.background_nc)
+        no-repeat center/contain;
+    font-size: 18rem;
+    line-height: 1.15;
+    position: relative;
+}
+.App_base__popup_b27e4cc5 {
+    padding-top: 25rem;
+    border-radius: 5rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.notifications.daily_reward.background)
+        no-repeat center/cover;
+    background-color: #1d1c18;
+}
+
+.App_header_4071501f {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 260rem;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.App_reward_921e6b38 {
+    width: 232rem;
+    height: 174rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.notifications.daily_reward.reward)
+        no-repeat center/contain;
+    position: relative;
+}
+
+.App_rewardAmount_474cbb7 {
+    padding: 2rem 10rem;
+    border: 1rem solid rgba(255, 255, 255, 0.4);
+    border-radius: 2rem;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #2c302b;
+    font-weight: 600;
+    line-height: 1;
+    position: absolute;
+    right: 60rem;
+    bottom: 40rem;
+    transform: translate(50%, 50%);
+}
+
+.App_description_7a0a1fa0 {
+    max-width: 230rem;
+    color: rgba(var(--color-general-primary-rgb), 0.5);
+    text-align: center;
+}

@@ -911,15 +911,13 @@
                             if (n.mediumWidth && _) return o(t, n, y);
                             if (n.smallWidth && g) return o(t, n, y);
                             if (n.extraSmallWidth && f) return o(t, n, y);
-                            if (
-                                !(
-                                    n.extraLargeWidth ||
-                                    n.largeWidth ||
-                                    n.mediumWidth ||
-                                    n.smallWidth ||
-                                    n.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                n.extraLargeWidth ||
+                                n.largeWidth ||
+                                n.mediumWidth ||
+                                n.smallWidth ||
+                                n.extraSmallWidth
+                            )) {
                                 if (n.extraLargeHeight && E) return t;
                                 if (n.largeHeight && v) return t;
                                 if (n.mediumHeight && b) return t;

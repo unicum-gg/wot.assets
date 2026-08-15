@@ -1713,7 +1713,7 @@ function it(e, t) {
     for (let n = 0; n < e.length; n++) {
         if ('$' === e[n]) {
             let r = n + 1;
-            for (; r < e.length && !ot(e[r]); ) r++;
+            for (; r < e.length && !ot(e[r]);) r++;
             const s = e.slice(n + 1, r),
                 o = t[s];
             if (o) return it(e.replace(`$${s}`, String(o)), t);

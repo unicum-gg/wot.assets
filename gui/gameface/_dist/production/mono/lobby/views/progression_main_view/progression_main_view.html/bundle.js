@@ -1,50 +1,51 @@
-import { j as e, C as s, D as a, r as t, o as r, h as o, R as n, q as i, t as d } from '../../../chunks/vendor.js';
+import { j as e, T as s, U as a, r as t, o as r, h as o, R as n, q as i, t as d } from '../../../chunks/vendor.js';
 import {
-    d7 as l,
-    aT as _,
-    d8 as c,
-    d9 as p,
-    cE as f,
+    dF as l,
+    aX as _,
+    dG as c,
+    dH as p,
+    cH as f,
     F as m,
     I as g,
     b as u,
     M as h,
     m as b,
-    da as v,
+    dI as v,
     i as k,
-    b3 as T,
-    db as C,
-    av as x,
-    Q as I,
-    cv as B,
-    dc as j,
-    dd as w,
-    cw as P,
-    cd as L,
-    de as A,
+    b7 as T,
+    dJ as C,
+    az as x,
+    Y as I,
+    cy as B,
+    dK as j,
+    dL as w,
+    cz as P,
+    ch as L,
+    dM as A,
     p as N,
-    a7 as S,
+    ab as S,
     R as y,
-    df as V,
-    dg as U,
-    cD as W,
-    d3 as Q,
-    dh as E,
-    di as H,
+    dN as V,
+    dO as U,
+    cG as Q,
+    d5 as W,
+    dP as H,
+    dQ as E,
     n as O,
-    bu as F,
-    a_ as z,
-    dj as $,
-    b6 as M,
-    bq as G,
-    dk as D,
-    aG as q,
-    as as K,
-    bL as J,
+    by as F,
+    b2 as z,
+    dR as $,
+    ba as M,
+    bu as G,
+    dS as D,
+    aK as q,
+    aw as K,
+    bQ as J,
     r as X,
     U as Y,
 } from '../../../chunks/lib.js';
-import { S as Z, a as ee } from '../../../chunks/schedule_subheading.js';
+import { S as Z } from '../../../chunks/schedule_model.js';
+import { S as ee } from '../../../chunks/schedule_subheading.js';
 import { P as se, a as ae } from '../../../chunks/consts.js';
 import { u as te } from '../../../chunks/useParseRewards.js';
 /* empty css                     */ import '../../../chunks/use_server_time_polling.js';
@@ -598,10 +599,10 @@ const ke = 'done',
     Ve = 'BattleQuests_42d8b049',
     Re = 'BattleQuests_subTitle_c2942cfe',
     Ue = 'BattleQuests_textWrapper_e8bacd26',
-    We = 'BattleQuests_info_1cd10120',
-    Qe = 'BattleQuests_icon_4f5433ba',
-    Ee = R.strings.comp7_light.progressionView,
-    He = a(function () {
+    Qe = 'BattleQuests_info_1cd10120',
+    We = 'BattleQuests_icon_4f5433ba',
+    He = R.strings.comp7_light.progressionView,
+    Ee = a(function () {
         const { model: s } = Ce(),
             a = s.computes.isProgressionCompleted();
         return e.jsxs('div', {
@@ -610,12 +611,12 @@ const ke = 'done',
                 e.jsx('div', {
                     className: Ue,
                     children: e.jsx(m, {
-                        text: a ? Ee.subTitle.completed() : Ee.subTitle.inProgress(),
+                        text: a ? He.subTitle.completed() : He.subTitle.inProgress(),
                         classMix: Re,
                         binding: {
                             infotip: e.jsx(A, {
                                 contentId: R.views.comp7_light.mono.lobby.leaderboard_reward_tooltip_view('resId'),
-                                children: e.jsx('div', { className: We, children: e.jsx('div', { className: Qe }) }),
+                                children: e.jsx('div', { className: Qe, children: e.jsx('div', { className: We }) }),
                             }),
                         },
                     }),
@@ -834,7 +835,7 @@ const ke = 'done',
         blink: 'Container_blink_a197fc5',
         slideUpIn: 'Container_slideUpIn_a197fc5',
     },
-    Bs = a(function ({ api: s, theme: a = H }) {
+    Bs = a(function ({ api: s, theme: a = E }) {
         const { model: r, controls: o } = Ce(),
             n = r.progressAnimationState.get(),
             { computes: i } = r,
@@ -859,7 +860,7 @@ const ke = 'done',
         }, [d, _, l, i]);
         const u = t.useMemo(
             () => ({
-                ...W,
+                ...Q,
                 withStack: !0,
                 type: U.Growing,
                 delta: { duration: 400, delay: 300 },
@@ -870,7 +871,7 @@ const ke = 'done',
         return (
             t.useEffect(() => {
                 if (n === ve.ProgressChange)
-                    return Q(() => {
+                    return W(() => {
                         o.finishProgressionChange();
                     }, 700);
             }, [o, n]),
@@ -880,7 +881,7 @@ const ke = 'done',
                     e.jsx('div', { className: Is.bg }),
                     e.jsx('div', {
                         className: xs(Is, n, 'progressWrapper'),
-                        children: e.jsx(E, {
+                        children: e.jsx(H, {
                             animationSettings: u,
                             deltaFrom: p,
                             value: m,
@@ -1022,16 +1023,16 @@ const ke = 'done',
                     p
                         ? o.completeProgression(!0)
                         : n === ve.ChangeCompleted && c
-                          ? Q(() => {
+                          ? W(() => {
                                 o.completeProgression(!1);
                             }, 1600)
                           : n !== ve.Scrolling || p
                             ? n === ve.HighlightCard
-                                ? Q(() => {
+                                ? W(() => {
                                       o.finishHighlightCard();
                                   }, 500)
                                 : void 0
-                            : Q(() => {
+                            : W(() => {
                                   o.finishScrolling();
                               }, 1200),
                 [n, p, c, o],
@@ -1049,10 +1050,10 @@ const ke = 'done',
     Vs = 'App_1e8bf7cf',
     Rs = 'App_bgContainer_bb0bfe54',
     Us = 'App_bg_844df5e9',
-    Ws = 'App_shade_9bfebdfa',
-    Qs = 'App_bottomShadow_5ac9bad8',
-    Es = 'App_content_70e4a93b',
-    Hs = 'App_schedule_e2d8d9fb',
+    Qs = 'App_shade_9bfebdfa',
+    Ws = 'App_bottomShadow_5ac9bad8',
+    Hs = 'App_content_70e4a93b',
+    Es = 'App_schedule_e2d8d9fb',
     Os = 'App_calendarIcon_f2f7cb5f',
     Fs = 'App_progression_23dc5ff6',
     zs = a(function () {
@@ -1067,19 +1068,19 @@ const ke = 'done',
                         className: Rs,
                         children: [
                             e.jsx('div', { className: Us }),
-                            e.jsx('div', { className: Ws }),
                             e.jsx('div', { className: Qs }),
+                            e.jsx('div', { className: Ws }),
                         ],
                     }),
-                    e.jsx(Z, {
+                    e.jsx(ee, {
                         hasSeasonName: !1,
-                        className: Hs,
+                        className: Es,
                         classNames: { scheduleClassNames: { calendarIcon: Os } },
                     }),
                     e.jsxs(d.div, {
-                        className: Es,
+                        className: Hs,
                         style: a,
-                        children: [e.jsx(He, {}), e.jsx(J, { children: e.jsx(ys, { className: Fs }) })],
+                        children: [e.jsx(Ee, {}), e.jsx(J, { children: e.jsx(ys, { className: Fs }) })],
                     }),
                 ],
             })
@@ -1089,7 +1090,7 @@ X(
     e.jsx(Y, {
         children: e.jsx(Te, {
             options: { context: 'model.progressionModel' },
-            children: e.jsx(ee, {
+            children: e.jsx(Z, {
                 options: { context: 'model.progressionModel.scheduleInfo' },
                 children: e.jsx(zs, {}),
             }),

@@ -1038,9 +1038,13 @@
                         if (t.mediumWidth && m) return r(u, t, w);
                         if (t.smallWidth && F) return r(u, t, w);
                         if (t.extraSmallWidth && D) return r(u, t, w);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && g) return u;
                             if (t.mediumHeight && p) return u;
@@ -2587,7 +2591,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = zu(a.keys()); !(e = t()).done; ) r(e.value, u);
+                                                        for (var e, t = zu(a.keys()); !(e = t()).done;) r(e.value, u);
                                                     },
                                                     unsubscribe: r,
                                                 };
@@ -4970,7 +4974,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = Ar.length - 1; t >= 0; t--)
-                                      for (; e >= Ar[t]; ) ((u += _r[t]), (e -= Ar[t]));
+                                      for (; e >= Ar[t];) ((u += _r[t]), (e -= Ar[t]));
                                   return u;
                               })(e),
                     Cr = {
@@ -5666,7 +5670,7 @@
                             let l = t.exec(e),
                                 c = e,
                                 d = 0;
-                            for (; l; ) {
+                            for (; l;) {
                                 const m = l[0],
                                     _ = a.exec(m),
                                     A = s.exec(m),

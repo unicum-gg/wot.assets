@@ -1,17 +1,17 @@
-import { q as e, j as r } from '../../../../chunks/vendor.js';
-import { i as s, n as i, b as t, f as o, e as l, r as a } from '../../../../chunks/lib.js';
+import { s as r, j as s } from '../../../../chunks/vendor.js';
+import { i as e, n as i, r as t, f as o, s as l, c as a } from '../../../../chunks/lib.js';
 import { E as n } from '../../../../chunks/extended_tooltip_decorator.js';
 /* empty css                       */ import '../../../../chunks/divider.js';
-const [m, d] = s()(({ observableModel: e }) => ({ ...e.primitives(['timeLeft', 'rerollInterval']) }), i),
-    p = e(function () {
-        const { model: e } = d(),
-            s = t.resolve('strings'),
-            [i] = o(l(e.rerollInterval.get()), ['h']);
-        return r.jsx(n, {
-            header: s.readOrEmpty('user_missions.tooltip.daily_reroll.header'),
-            description: s.readOrEmpty('user_missions.tooltip.daily_reroll.description'),
+const [m, d] = e()(({ observableModel: r }) => ({ ...r.primitives(['timeLeft', 'rerollInterval']) }), i),
+    c = r(function () {
+        const { model: r } = d(),
+            e = t.resolve('strings'),
+            [i] = o(l(r.rerollInterval.get()), ['h']);
+        return s.jsx(n, {
+            header: e.readOrEmpty('user_missions.tooltip.daily_reroll.header'),
+            description: e.readOrEmpty('user_missions.tooltip.daily_reroll.description'),
             descriptionParams: { time: i },
-            timerTimeLeft: e.timeLeft.get(),
+            timerTimeLeft: r.timeLeft.get(),
         });
     });
-a(r.jsx(m, { children: r.jsx(p, {}) }));
+a(s.jsx(m, { children: s.jsx(c, {}) }));

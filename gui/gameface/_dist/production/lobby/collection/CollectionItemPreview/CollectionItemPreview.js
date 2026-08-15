@@ -461,7 +461,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function r(e) {
                     let t = '';
-                    for (let u = a.length - 1; u >= 0; u--) for (; e >= a[u]; ) ((t += i[u]), (e -= a[u]));
+                    for (let u = a.length - 1; u >= 0; u--) for (; e >= a[u];) ((t += i[u]), (e -= a[u]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -953,9 +953,13 @@
                         if (u.mediumWidth && A) return o(t, u, w);
                         if (u.smallWidth && F) return o(t, u, w);
                         if (u.extraSmallWidth && m) return o(t, u, w);
-                        if (
-                            !(u.extraLargeWidth || u.largeWidth || u.mediumWidth || u.smallWidth || u.extraSmallWidth)
-                        ) {
+                        if (!(
+                            u.extraLargeWidth ||
+                            u.largeWidth ||
+                            u.mediumWidth ||
+                            u.smallWidth ||
+                            u.extraSmallWidth
+                        )) {
                             if (u.extraLargeHeight && f) return t;
                             if (u.largeHeight && D) return t;
                             if (u.mediumHeight && p) return t;
@@ -1401,7 +1405,7 @@
                                                     };
                                                 },
                                                 dispose: function () {
-                                                    for (var e, u = j(a.keys()); !(e = u()).done; ) r(e.value, t);
+                                                    for (var e, u = j(a.keys()); !(e = u()).done;) r(e.value, t);
                                                 },
                                                 unsubscribe: r,
                                             };
@@ -1761,6 +1765,7 @@
                         Ae.BattleBoosterGift,
                         Ae.OptionalDevice,
                         Ae.Attachment,
+                        Ae.TmanToken,
                     ],
                     De = [Ae.Gold, Ae.Credits, Ae.Crystal, Ae.FreeXp],
                     pe = [Ae.BattlePassPoints, Ae.EquipCoin],
@@ -3322,7 +3327,7 @@
                                             t(e).delete(u);
                                         },
                                         a = (e, ...u) => {
-                                            for (var i, a = qe(t(e).values()); !(i = a()).done; ) (0, i.value)(...u);
+                                            for (var i, a = qe(t(e).values()); !(i = a()).done;) (0, i.value)(...u);
                                         };
                                     return (0, r.useMemo)(() => ({ on: u, off: i, trigger: a }), []);
                                 })(),

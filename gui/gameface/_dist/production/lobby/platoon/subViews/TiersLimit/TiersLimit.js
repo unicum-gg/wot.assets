@@ -387,7 +387,7 @@
                     o = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function i(e) {
                     let t = '';
-                    for (let n = o.length - 1; n >= 0; n--) for (; e >= o[n]; ) ((t += r[n]), (e -= o[n]));
+                    for (let n = o.length - 1; n >= 0; n--) for (; e >= o[n];) ((t += r[n]), (e -= o[n]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1308,7 +1308,7 @@
                             n = $(t);
                         let r,
                             o = e;
-                        for (; null !== (r = j.exec(e)); ) {
+                        for (; null !== (r = j.exec(e));) {
                             const e = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
                                 const t = n + e[2].replace(/\.\.\//g, '');
@@ -1416,7 +1416,7 @@
                                                 let t;
                                                 const n = z(),
                                                     r = $(n);
-                                                for (; null !== (t = F.exec(e)); ) {
+                                                for (; null !== (t = F.exec(e));) {
                                                     const e = t[0].match(/href="(.*?)"/);
                                                     if (e && !e[1].includes(H) && r) {
                                                         const t = r + e[1].replace(/\.\.\//g, ''),
@@ -1431,7 +1431,7 @@
                                                 ((e) => {
                                                     const t = $(z());
                                                     let n;
-                                                    for (; null !== (n = F.exec(e)); ) {
+                                                    for (; null !== (n = F.exec(e));) {
                                                         const e = n[0].match(/href="(.*?)"/);
                                                         if (e) {
                                                             const n = t + e[1].replace(/\.\.\//g, ''),

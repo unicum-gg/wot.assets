@@ -156,7 +156,7 @@
                             let C = F.exec(u),
                                 r = u,
                                 o = 0;
-                            for (; C; ) {
+                            for (; C;) {
                                 const a = C[0],
                                     l = E.exec(a),
                                     s = t.exec(a),
@@ -697,7 +697,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, F = gu(E.keys()); !(u = F()).done; ) D(u.value, e);
+                                                        for (var u, F = gu(E.keys()); !(u = F()).done;) D(u.value, e);
                                                     },
                                                     unsubscribe: D,
                                                 };
@@ -837,7 +837,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let F = _u.length - 1; F >= 0; F--)
-                                      for (; u >= _u[F]; ) ((e += yu[F]), (u -= _u[F]));
+                                      for (; u >= _u[F];) ((e += yu[F]), (u -= _u[F]));
                                   return e;
                               })(u);
                 var Pu = F(406);

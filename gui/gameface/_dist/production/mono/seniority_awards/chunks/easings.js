@@ -1,5 +1,5 @@
 import { j as e, r, h as s } from './vendor.js';
-import { r as a, e as t, z as o, B as i, A as n, F as d, x as c, _ as l, $ as w } from './lib.js';
+import { r as a, u as t, b as o, B as i, t as n, F as d, a as c, _ as l, $ as w } from './lib.js';
 import { g as u } from './category.js';
 const m = 'SeniorityAwardsViewFooter_ee5e4688',
     _ = 'SeniorityAwardsViewFooter_description_ad1f38e5',
@@ -7,17 +7,17 @@ const m = 'SeniorityAwardsViewFooter_ee5e4688',
     y = 'SeniorityAwardsViewFooter_button_925ad150',
     h = 'SeniorityAwardsViewFooter_buttonWrapper_3ea3a32b',
     v = 'SeniorityAwardsViewFooter_glow_40376564',
-    x = 'seniority_awards.rewardsView',
-    b = ({
+    b = 'seniority_awards.rewardsView',
+    g = ({
         moreReardsCount: r = 0,
         isGotoHangarAvailable: s = !1,
         hasMoreRewards: c,
         isShopAvailable: l,
         onShowMoreClick: w,
         onAcceptClick: u,
-        onGotoHangarBtnClick: b,
+        onGotoHangarBtnClick: g,
     }) => {
-        const g = a.resolve('strings'),
+        const x = a.resolve('strings'),
             j = t({ value: o.medium }, { large: { value: o.large } });
         return e.jsx('div', {
             className: m,
@@ -33,16 +33,16 @@ const m = 'SeniorityAwardsViewFooter_ee5e4688',
                           children:
                               r > 0
                                   ? e.jsx(d, {
-                                        text: g.readOrEmpty(`${x}.moreRewardsWithCountBtn`),
+                                        text: x.readOrEmpty(`${b}.moreRewardsWithCountBtn`),
                                         params: { count: r },
                                         upgradeLegacy: !0,
                                     })
-                                  : g.readOrEmpty(`${x}.moreRewardsBtn`),
+                                  : x.readOrEmpty(`${b}.moreRewardsBtn`),
                       }),
                   })
                 : e.jsxs(e.Fragment, {
                       children: [
-                          l && e.jsx('div', { className: _, children: g.readOrEmpty(`${x}.exchangeCoins`) }),
+                          l && e.jsx('div', { className: _, children: x.readOrEmpty(`${b}.exchangeCoins`) }),
                           e.jsxs('div', {
                               className: p,
                               children: [
@@ -57,8 +57,8 @@ const m = 'SeniorityAwardsViewFooter_ee5e4688',
                                               theme: n.primary,
                                               soundTarget: 'rewards-view:button',
                                               children: l
-                                                  ? g.readOrEmpty(`${x}.gotoRewardsBtn`)
-                                                  : g.readOrEmpty(`${x}.applyBtn`),
+                                                  ? x.readOrEmpty(`${b}.gotoRewardsBtn`)
+                                                  : x.readOrEmpty(`${b}.applyBtn`),
                                           }),
                                       ],
                                   }),
@@ -67,10 +67,10 @@ const m = 'SeniorityAwardsViewFooter_ee5e4688',
                                           className: h,
                                           children: e.jsx(i, {
                                               size: j.value,
-                                              onClick: b,
+                                              onClick: g,
                                               theme: n.secondary,
                                               soundTarget: 'rewards-view:button',
-                                              children: g.readOrEmpty(`${x}.gotoHangarBtn`),
+                                              children: x.readOrEmpty(`${b}.gotoHangarBtn`),
                                           }),
                                       }),
                               ],
@@ -79,9 +79,9 @@ const m = 'SeniorityAwardsViewFooter_ee5e4688',
                   }),
         });
     };
-function g({ resId: e, contentId: s, decoratorId: a, disabled: t, args: o, onShowTooltip: i, onHideTooltip: n }) {
+function x({ resId: e, contentId: s, decoratorId: a, disabled: t, args: o, onShowTooltip: i, onHideTooltip: n }) {
     const d = c({ resId: e, contentId: s, decoratorId: a, disabled: t, args: o, showDelay: 400 }),
-        w = r.useRef(),
+        w = r.useRef(0),
         [u, m] = r.useState(!1);
     return (
         l(() => clearTimeout(w.current)),
@@ -90,18 +90,18 @@ function g({ resId: e, contentId: s, decoratorId: a, disabled: t, args: o, onSho
             onMouseEnter: (e) => {
                 (d.onMouseEnter?.(e),
                     w.current && clearTimeout(w.current),
-                    (w.current = setTimeout(() => {
+                    (w.current = window.setTimeout(() => {
                         (m(!0), i?.());
                     }, 400)));
             },
             onMouseLeave: () => {
-                (d.onMouseLeave?.(), w.current && (clearTimeout(w.current), (w.current = void 0)), u && n?.(), m(!1));
+                (d.onMouseLeave?.(), w.current && (clearTimeout(w.current), (w.current = 0)), u && n?.(), m(!1));
             },
         }
     );
 }
 function j(e) {
-    return g({
+    return x({
         ...e,
         contentId: a
             .resolve('views')
@@ -113,7 +113,7 @@ const S = 'HeaderButton_a376d13c',
     V = 'HeaderButton_icon_b123e86b',
     N = ({ onShowTooltip: r, onHideTooltip: s }) => {
         const t = a.resolve('strings'),
-            o = g({
+            o = x({
                 contentId: a.resolve('views').read((e) => e.mono.seniority_awards.tooltips.seniority_tooltip('resId')),
                 onShowTooltip: r,
                 onHideTooltip: s,
@@ -189,7 +189,7 @@ const S = 'HeaderButton_a376d13c',
 var R = ((e) => ((e.RewardsScreen = 'sa_rewards_screen'), (e.VehicleSelectionView = 'sa_vehicle_selection_view'), e))(
         R || {},
     ),
-    z = ((e) => (
+    G = ((e) => (
         (e.GoToShopButton = 'goto_shop_button'),
         (e.ShowMoreButton = 'show_more_button'),
         (e.ConfirmButton = 'confirm_button'),
@@ -200,16 +200,16 @@ var R = ((e) => ((e.RewardsScreen = 'sa_rewards_screen'), (e.VehicleSelectionVie
         (e.VehicleTooltip = 'vehicle_tooltip'),
         (e.SeniorityAwardsTooltip = 'seniority_awards_tooltip'),
         e
-    ))(z || {});
-const G = { pending: 'pending', success: 'success', error: 'error' },
+    ))(G || {});
+const z = { pending: 'pending', success: 'success', error: 'error' },
     q = (e, s = 0) => {
-        const [a, t] = r.useState(G.pending),
+        const [a, t] = r.useState(z.pending),
             o = w((e) => t(e), [], s),
             i = r.useCallback(() => {
-                o(G.success);
+                o(z.success);
             }, [o]),
             n = r.useCallback(() => {
-                o(G.error);
+                o(z.error);
             }, [o]);
         return (
             r.useLayoutEffect(() => {
@@ -234,4 +234,4 @@ const G = { pending: 'pending', success: 'success', error: 'error' },
             ? (Math.pow(2 * e, 2) * (7.189819 * e - r)) / 2
             : (Math.pow(2 * e - 2, 2) * ((r + 1) * (2 * e - 2) + r) + 2) / 2;
     };
-export { L as F, z as I, R as P, F as S, b as a, $ as b, D as c, P as d, W as e, j as f, O as h, G as l, q as u };
+export { $ as F, G as I, R as P, F as S, L as a, P as b, q as c, g as d, D as e, W as f, O as h, z as l, j as u };

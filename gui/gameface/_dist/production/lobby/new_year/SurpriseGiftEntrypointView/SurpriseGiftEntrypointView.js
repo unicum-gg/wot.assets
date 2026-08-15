@@ -854,7 +854,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = c(r.keys()); !(u = t()).done; ) i(u.value, e);
+                                                        for (var u, t = c(r.keys()); !(u = t()).done;) i(u.value, e);
                                                     },
                                                     unsubscribe: i,
                                                 };
@@ -1481,9 +1481,13 @@
                         if (t.mediumWidth && l) return X(e, t, h);
                         if (t.smallWidth && c) return X(e, t, h);
                         if (t.extraSmallWidth && d) return X(e, t, h);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && D) return e;
                             if (t.largeHeight && B) return e;
                             if (t.mediumHeight && C) return e;

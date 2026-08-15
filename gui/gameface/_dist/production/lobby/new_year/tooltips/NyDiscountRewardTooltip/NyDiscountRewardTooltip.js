@@ -902,7 +902,7 @@
                             let B = A.exec(u),
                                 o = u,
                                 C = 0;
-                            for (; B; ) {
+                            for (; B;) {
                                 const a = B[0],
                                     s = E.exec(a),
                                     c = n.exec(a),
@@ -1152,8 +1152,7 @@
                             ? `${u}`
                             : (function (u) {
                                   let e = '';
-                                  for (let A = T.length - 1; A >= 0; A--)
-                                      for (; u >= T[A]; ) ((e += y[A]), (u -= T[A]));
+                                  for (let A = T.length - 1; A >= 0; A--) for (; u >= T[A];) ((e += y[A]), (u -= T[A]));
                                   return e;
                               })(u);
                 var k = A(406);

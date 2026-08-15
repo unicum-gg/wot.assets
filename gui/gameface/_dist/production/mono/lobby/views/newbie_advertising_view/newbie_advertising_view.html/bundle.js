@@ -1,5 +1,5 @@
 import { j as e } from '../../../chunks/vendor.js';
-import { i as s, q as i, J as n, U as a, r as o } from '../../../chunks/lib.js';
+import { i as s, t as i, J as n, U as a, r as o } from '../../../chunks/lib.js';
 import { W as r } from '../../../chunks/welcome_view_layout.js';
 import '../../../chunks/sound_constants.js';
 import '../../../chunks/utils.js';

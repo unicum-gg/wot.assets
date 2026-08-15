@@ -1066,9 +1066,13 @@
                         if (t.mediumWidth && F) return y(e, t, g);
                         if (t.smallWidth && c) return y(e, t, g);
                         if (t.extraSmallWidth && D) return y(e, t, g);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && d) return e;
                             if (t.largeHeight && B) return e;
                             if (t.mediumHeight && C) return e;
@@ -1218,7 +1222,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = U(n.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = U(n.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -1855,7 +1859,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = Vu.length - 1; t >= 0; t--)
-                                      for (; u >= Vu[t]; ) ((e += Wu[t]), (u -= Vu[t]));
+                                      for (; u >= Vu[t];) ((e += Wu[t]), (u -= Vu[t]));
                                   return e;
                               })(u),
                     zu = (Symbol('romanLevel'), 10),

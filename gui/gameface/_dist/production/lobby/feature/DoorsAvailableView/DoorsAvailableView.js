@@ -1400,7 +1400,7 @@
                             let o = t.exec(u),
                                 a = u,
                                 D = 0;
-                            for (; o; ) {
+                            for (; o;) {
                                 const i = o[0],
                                     B = E.exec(i),
                                     s = F.exec(i),

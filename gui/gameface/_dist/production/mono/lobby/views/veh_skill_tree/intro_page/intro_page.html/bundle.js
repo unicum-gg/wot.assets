@@ -1,9 +1,9 @@
-import { j as s, t as e, r as a, G as i, f as c, n as l } from '../../../../chunks/vendor.js';
+import { j as s, t as e, r as a, E as i, f as c, n as l } from '../../../../chunks/vendor.js';
 import {
     c as n,
     i as o,
     J as t,
-    aF as d,
+    aG as d,
     Q as r,
     h as p,
     k as m,
@@ -41,8 +41,8 @@ const u = 'Description_9a429ac6',
     k = 'App_content_3c8fdc2c',
     B = 'App_slidesWrapper_2389a8ac',
     w = 'App_slide_24421c1a',
-    D = 'App_counter_1ccae048',
-    E = 'App_arrowButton_4108196b',
+    E = 'App_counter_1ccae048',
+    D = 'App_arrowButton_4108196b',
     S = 'App_arrowButton__left_1ff87043',
     $ = 'App_arrowButton__disabled_6db15a44',
     I = e(function () {
@@ -64,7 +64,7 @@ const u = 'Description_9a429ac6',
                     className: k,
                     children: [
                         s.jsx(_, {
-                            classNames: { base: c(E, S, 0 === o && $) },
+                            classNames: { base: c(D, S, 0 === o && $) },
                             disabled: 0 === o,
                             theme: b.secondary,
                             onClick: () => {
@@ -78,14 +78,14 @@ const u = 'Description_9a429ac6',
                                     className: w,
                                     style: a,
                                     children: [
-                                        s.jsx('div', { className: D, children: `${i + 1} / ${d}` }),
+                                        s.jsx('div', { className: E, children: `${i + 1} / ${d}` }),
                                         s.jsx(y, { ...e.computed.getSlideByIndex(i) }),
                                     ],
                                 }),
                             ),
                         }),
                         s.jsx(_, {
-                            classNames: { base: c(E, o === d - 1 && $) },
+                            classNames: { base: c(D, o === d - 1 && $) },
                             disabled: o === d - 1,
                             theme: b.secondary,
                             onClick: () => {

@@ -935,7 +935,7 @@
                             let l = t.exec(u),
                                 E = u,
                                 c = 0;
-                            for (; l; ) {
+                            for (; l;) {
                                 const F = l[0],
                                     D = r.exec(F),
                                     d = o.exec(F),
@@ -1101,9 +1101,13 @@
                         if (t.mediumWidth && F) return a(e, t, f);
                         if (t.smallWidth && _) return a(e, t, f);
                         if (t.extraSmallWidth && B) return a(e, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -2206,7 +2210,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = zu(r.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = zu(r.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };

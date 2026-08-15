@@ -906,7 +906,7 @@
                             let o = t.exec(u),
                                 i = u,
                                 s = 0;
-                            for (; o; ) {
+                            for (; o;) {
                                 const c = o[0],
                                     l = r.exec(c),
                                     B = A.exec(c),
@@ -1155,7 +1155,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = b(r.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = b(r.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -1745,7 +1745,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = Nu.length - 1; t >= 0; t--)
-                                      for (; u >= Nu[t]; ) ((e += xu[t]), (u -= Nu[t]));
+                                      for (; u >= Nu[t];) ((e += xu[t]), (u -= Nu[t]));
                                   return e;
                               })(u),
                     Su = {

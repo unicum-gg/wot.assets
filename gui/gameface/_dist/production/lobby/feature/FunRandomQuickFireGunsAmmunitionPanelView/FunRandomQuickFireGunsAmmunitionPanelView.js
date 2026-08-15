@@ -398,7 +398,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function i(e) {
                     let u = '';
-                    for (let t = a.length - 1; t >= 0; t--) for (; e >= a[t]; ) ((u += n[t]), (e -= a[t]));
+                    for (let t = a.length - 1; t >= 0; t--) for (; e >= a[t];) ((u += n[t]), (e -= a[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1227,15 +1227,13 @@
                             if (t.mediumWidth && d) return q(u, t, p);
                             if (t.smallWidth && E) return q(u, t, p);
                             if (t.extraSmallWidth && m) return q(u, t, p);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && A) return u;
                                 if (t.largeHeight && F) return u;
                                 if (t.mediumHeight && b) return u;
@@ -1311,7 +1309,7 @@
                 const ie = (e, u = []) => {
                         const t = document.getElementById('root');
                         t && (t.style.cursor = e ? 'grabbing' : 'default');
-                        for (var n, a = ne(u); !(n = a()).done; ) {
+                        for (var n, a = ne(u); !(n = a()).done;) {
                             const u = n.value,
                                 t = document.getElementById(u);
                             t && (t.style.pointerEvents = e ? 'none' : 'auto');
@@ -1320,7 +1318,7 @@
                     se = (e, u, t) => {
                         let n = '',
                             a = 8e3;
-                        for (var i, s = ne(t); !(i = s()).done; ) {
+                        for (var i, s = ne(t); !(i = s()).done;) {
                             const e = i.value,
                                 t = Math.abs(e.centerX - u);
                             t < a && ((n = e.id), (a = t));

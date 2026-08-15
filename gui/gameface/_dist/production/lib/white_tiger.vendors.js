@@ -413,7 +413,7 @@
                     let n = y;
                     e.default && !0 !== e.default && ((e = e.default), (n = Object.keys(e)));
                     const r = {};
-                    for (var i, s = o(n); !(i = s()).done; ) {
+                    for (var i, s = o(n); !(i = s()).done;) {
                         const n = i.value,
                             o = t(e[n], n);
                         a.is.und(o) || (r[n] = o);
@@ -636,7 +636,7 @@
                               let t;
                               ((t = a.is.arr(e)
                                   ? ((y = i(function* (e) {
-                                        for (var t, n = o(e); !(t = n()).done; ) {
+                                        for (var t, n = o(e); !(t = n()).done;) {
                                             const e = t.value;
                                             yield b(e);
                                         }
@@ -5379,7 +5379,7 @@
                             void 0 !== t.threshold && (this.threshold = t.threshold)));
                 }
                 applyToElement(e) {
-                    for (var t, n = r(this.getBlocks(e)); !(t = n()).done; ) {
+                    for (var t, n = r(this.getBlocks(e)); !(t = n()).done;) {
                         const e = t.value;
                         (s(e.hasText()), this.applyToParagraph(e));
                     }
@@ -5408,11 +5408,11 @@
                     const i = !t || 1 === n,
                         o = i ? new c(e) : t;
                     s(o);
-                    for (var l, f = r(e.childNodes); !(l = f()).done; ) {
+                    for (var l, f = r(e.childNodes); !(l = f()).done;) {
                         const e = l.value;
                         switch (e.nodeType) {
                             case 1:
-                                for (var h, d = r(this.getBlocks(e, o)); !(h = d()).done; ) {
+                                for (var h, d = r(this.getBlocks(e, o)); !(h = d()).done;) {
                                     const e = h.value;
                                     yield e;
                                 }
@@ -5432,7 +5432,7 @@
                     if ((s(i.length > 0), s(i.reduce((e, t) => e + t.length, 0) === n.length), i.length <= 1)) return;
                     const o = [];
                     let a = 0;
-                    for (var u, c = r(i); !(u = c()).done; ) {
+                    for (var u, c = r(i); !(u = c()).done;) {
                         const e = u.value;
                         (s(e.length > 0), (a += e.length), o.push(a));
                     }
@@ -5451,7 +5451,7 @@
                         o = t[0];
                     s(o > 0);
                     let a = 0;
-                    for (var u, c = r(e); !(u = c()).done; ) {
+                    for (var u, c = r(e); !(u = c()).done;) {
                         const e = u.value,
                             n = e.nodeValue;
                         if (!n) continue;
@@ -5462,7 +5462,7 @@
                         }
                         const c = [];
                         let l = 0;
-                        for (; o < r; ) {
+                        for (; o < r;) {
                             const e = o - a;
                             (s(e >= l), c.push(n.substring(l, e)), (l = e), ++i, s(t[i] > o), (o = t[i]));
                         }
@@ -5476,7 +5476,7 @@
                     if ('string' == typeof n) return void (e.nodeValue = t.join(n));
                     const i = e.ownerDocument;
                     let o = [];
-                    for (var a, u = r(t); !(a = u()).done; ) {
+                    for (var a, u = r(t); !(a = u()).done;) {
                         const e = a.value;
                         (e && o.push(i.createTextNode(e)), o.push(null));
                     }
@@ -6360,7 +6360,7 @@
                     _ = 0;
                 function A(e) {
                     if (!e) return 'ROOT';
-                    for (var t = []; e.parent; ) (t.push(e.path), (e = e.parent));
+                    for (var t = []; e.parent;) (t.push(e.path), (e = e.parent));
                     return t.reverse().join('/');
                 }
                 function j(e) {
@@ -7554,11 +7554,11 @@
                             var a = n[s];
                             (0 === a.B && ((a.B = 1), i !== s && (n[i] = a), i++), a.R > r && (r = a.R));
                         }
-                        for (n.length = i, e.I = null, o = t.length; o--; ) {
+                        for (n.length = i, e.I = null, o = t.length; o--;) {
                             var u = t[o];
                             (0 === u.B && We(u, e), (u.B = 0));
                         }
-                        for (; i--; ) {
+                        for (; i--;) {
                             var c = n[i];
                             1 === c.B && ((c.B = 0), pe(c, e));
                         }
@@ -7571,7 +7571,7 @@
             function ae(e) {
                 var t = e.L;
                 e.L = [];
-                for (var n = t.length; n--; ) We(t[n], e);
+                for (var n = t.length; n--;) We(t[n], e);
                 e.R = ln.T;
             }
             function ue(e) {
@@ -7599,7 +7599,7 @@
             function de(e) {
                 if (e.R !== ln.k) {
                     e.R = ln.k;
-                    for (var t = e.L, n = t.length; n--; ) t[n].G = ln.k;
+                    for (var t = e.L, n = t.length; n--;) t[n].G = ln.k;
                 }
             }
             function pe(e, t) {
@@ -7644,7 +7644,7 @@
             }
             function Be() {
                 mn.isRunningReactions = !0;
-                for (var e = mn.pendingReactions, t = 0; e.length > 0; ) {
+                for (var e = mn.pendingReactions, t = 0; e.length > 0;) {
                     100 == ++t && (console.error('[mobx] cycle in reaction: ' + e[0]), e.splice(0));
                     for (var n = e.splice(0), r = 0, i = n.length; r < i; r++) n[r].$();
                 }
@@ -8113,15 +8113,15 @@
                         }
                         if (0 === r) return !1;
                         (r < 0 && (r = -1), (o = o || []));
-                        for (var h = (i = i || []).length; h--; ) if (i[h] === t) return o[h] === n;
+                        for (var h = (i = i || []).length; h--;) if (i[h] === t) return o[h] === n;
                         if ((i.push(t), o.push(n), c)) {
                             if ((h = t.length) !== n.length) return !1;
-                            for (; h--; ) if (!e(t[h], n[h], r - 1, i, o)) return !1;
+                            for (; h--;) if (!e(t[h], n[h], r - 1, i, o)) return !1;
                         } else {
                             var d,
                                 p = Object.keys(t);
                             if (((h = p.length), Object.keys(n).length !== h)) return !1;
-                            for (; h--; ) if (!b(n, (d = p[h])) || !e(t[d], n[d], r - 1, i, o)) return !1;
+                            for (; h--;) if (!b(n, (d = p[h])) || !e(t[d], n[d], r - 1, i, o)) return !1;
                         }
                         return (i.pop(), o.pop(), !0);
                     })(e, t, n)
@@ -9258,7 +9258,7 @@
                             return this.entries();
                         }),
                         (t.forEach = function (e, t) {
-                            for (var n, r = _(this); !(n = r()).done; ) {
+                            for (var n, r = _(this); !(n = r()).done;) {
                                 var i = n.value;
                                 e.call(t, i[1], i[0], this);
                             }
@@ -9302,7 +9302,7 @@
                             var e = this;
                             He(function () {
                                 ue(function () {
-                                    for (var t, n = _(e.keys()); !(t = n()).done; ) e.delete(t.value);
+                                    for (var t, n = _(e.keys()); !(t = n()).done;) e.delete(t.value);
                                 });
                             });
                         }),
@@ -9335,7 +9335,7 @@
                                                 o.set(u, c);
                                             }
                                     }
-                                    for (var f, h = _(i.entries()); !(f = h()).done; ) {
+                                    for (var f, h = _(i.entries()); !(f = h()).done;) {
                                         var d = f.value,
                                             p = d[0],
                                             v = d[1],
@@ -9426,12 +9426,12 @@
                             var e = this;
                             He(function () {
                                 ue(function () {
-                                    for (var t, n = _(e.pt.values()); !(t = n()).done; ) e.delete(t.value);
+                                    for (var t, n = _(e.pt.values()); !(t = n()).done;) e.delete(t.value);
                                 });
                             });
                         }),
                         (t.forEach = function (e, t) {
-                            for (var n, r = _(this); !(n = r()).done; ) {
+                            for (var n, r = _(this); !(n = r()).done;) {
                                 var i = n.value;
                                 e.call(t, i, i, this);
                             }
@@ -9649,7 +9649,7 @@
                                     if (null == (n = this.s[It]) ? void 0 : n[e]) return;
                                     r(1, t.t, this.tt + '.' + e.toString());
                                 }
-                                for (var i = this.s; i && i !== jt; ) {
+                                for (var i = this.s; i && i !== jt;) {
                                     var o = _t(i, e);
                                     if (o) {
                                         var s = t.o(this, e, o, i);

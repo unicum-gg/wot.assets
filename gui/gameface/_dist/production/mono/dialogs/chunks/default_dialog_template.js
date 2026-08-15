@@ -1,5 +1,5 @@
 import { i as s, j as e, e as o } from './vendor.js';
-import { R as a, u as t, c as r } from './lib.js';
+import { R as a, u as t, k as r } from './lib.js';
 import {
     u as n,
     s as c,

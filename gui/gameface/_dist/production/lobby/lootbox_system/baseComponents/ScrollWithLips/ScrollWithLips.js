@@ -650,7 +650,7 @@
                             t(e).delete(n);
                         },
                         i = (e, ...n) => {
-                            for (var r, s = o(t(e).values()); !(r = s()).done; ) {
+                            for (var r, s = o(t(e).values()); !(r = s()).done;) {
                                 (0, r.value)(...n);
                             }
                         };
@@ -686,7 +686,7 @@
                     o = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function s(e) {
                     let t = '';
-                    for (let n = o.length - 1; n >= 0; n--) for (; e >= o[n]; ) ((t += r[n]), (e -= o[n]));
+                    for (let n = o.length - 1; n >= 0; n--) for (; e >= o[n];) ((t += r[n]), (e -= o[n]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

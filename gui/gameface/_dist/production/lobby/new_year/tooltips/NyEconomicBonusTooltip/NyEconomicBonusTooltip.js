@@ -162,7 +162,7 @@
                             let B = A.exec(u),
                                 C = u,
                                 a = 0;
-                            for (; B; ) {
+                            for (; B;) {
                                 const o = B[0],
                                     l = E.exec(o),
                                     s = r.exec(o),
@@ -731,9 +731,13 @@
                         if (A.mediumWidth && i) return mu(e, A, h);
                         if (A.smallWidth && o) return mu(e, A, h);
                         if (A.extraSmallWidth && l) return mu(e, A, h);
-                        if (
-                            !(A.extraLargeWidth || A.largeWidth || A.mediumWidth || A.smallWidth || A.extraSmallWidth)
-                        ) {
+                        if (!(
+                            A.extraLargeWidth ||
+                            A.largeWidth ||
+                            A.mediumWidth ||
+                            A.smallWidth ||
+                            A.extraSmallWidth
+                        )) {
                             if (A.extraLargeHeight && s) return e;
                             if (A.largeHeight && c) return e;
                             if (A.mediumHeight && d) return e;
@@ -883,7 +887,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, A = Lu(E.keys()); !(u = A()).done; ) t(u.value, e);
+                                                        for (var u, A = Lu(E.keys()); !(u = A()).done;) t(u.value, e);
                                                     },
                                                     unsubscribe: t,
                                                 };

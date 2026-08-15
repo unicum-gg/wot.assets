@@ -1491,9 +1491,13 @@
                         if (t.mediumWidth && A) return Eu(e, t, g);
                         if (t.smallWidth && c) return Eu(e, t, g);
                         if (t.extraSmallWidth && d) return Eu(e, t, g);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && D) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && _) return e;

@@ -913,9 +913,13 @@
                         if (t.mediumWidth && D) return a(e, t, w);
                         if (t.smallWidth && C) return a(e, t, w);
                         if (t.extraSmallWidth && d) return a(e, t, w);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && m) return e;
                             if (t.largeHeight && _) return e;
                             if (t.mediumHeight && h) return e;
@@ -1451,7 +1455,7 @@
                         let o = Bu.exec(u),
                             E = u,
                             A = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const t = o[0],
                                 r = Cu.exec(t),
                                 F = du.exec(t),
@@ -1596,7 +1600,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = fu(n.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = fu(n.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -2078,7 +2082,7 @@
                     ie = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function oe(u) {
                     let e = '';
-                    for (let t = ie.length - 1; t >= 0; t--) for (; u >= ie[t]; ) ((e += ae[t]), (u -= ie[t]));
+                    for (let t = ie.length - 1; t >= 0; t--) for (; u >= ie[t];) ((e += ae[t]), (u -= ie[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

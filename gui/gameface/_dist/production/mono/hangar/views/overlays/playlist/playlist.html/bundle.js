@@ -4,20 +4,20 @@ import {
     B as r,
     l as c,
     Y as d,
-    a_ as u,
+    a$ as u,
     i as m,
     c as p,
-    bn as h,
-    aZ as y,
+    bo as h,
+    a_ as y,
     Z as b,
-    bJ as g,
-    bO as v,
+    bK as g,
+    bP as v,
     ae as _,
     J as f,
     E as x,
     F as z,
-    d3 as j,
-    d4 as N,
+    d9 as j,
+    da as N,
 } from '../../../../chunks/lib.js';
 import {
     i as C,
@@ -54,7 +54,7 @@ const B = {
             }),
         });
     },
-    J = {
+    $ = {
         default: { size: r.sizes.extraSmall },
         breakpoints: {
             medium: { size: r.sizes.small },
@@ -62,8 +62,8 @@ const B = {
             extraLarge: { size: r.sizes.large },
         },
     };
-function $({ buttons: t, onAction: s }) {
-    const a = u(J.default, J.breakpoints);
+function J({ buttons: t, onAction: s }) {
+    const a = u($.default, $.breakpoints);
     return e.jsx('div', {
         className: B.buttonsBase,
         children: t.map((t, l) =>
@@ -121,17 +121,17 @@ const [M, D] = m()(
     ),
     F = 'AlertOverlay_6a914e50',
     V = 'AlertOverlay_close_c8fc8fba',
-    Z = 'AlertOverlay_content_be3b87d6',
+    K = 'AlertOverlay_content_be3b87d6',
     R = 'AlertOverlay_glow_2370fdef',
     U = 'AlertOverlay_icon_ec1d1576',
     W = 'AlertOverlay_divider_ffb30a39',
     Y = 'AlertOverlay_title_f9ee7b93',
-    q = { iconSize: 157, glowSize: [998, 639] },
-    G = { medium: { iconSize: 188, glowSize: [1200, 768] }, extraLarge: { iconSize: 256, glowSize: [1632, 1044] } },
-    H = function ({ titlePath: t, titleParams: s }) {
-        const a = u(q, G);
+    Z = { iconSize: 157, glowSize: [998, 639] },
+    q = { medium: { iconSize: 188, glowSize: [1200, 768] }, extraLarge: { iconSize: 256, glowSize: [1632, 1044] } },
+    G = function ({ titlePath: t, titleParams: s }) {
+        const a = u(Z, q);
         return e.jsxs('div', {
-            className: Z,
+            className: K,
             children: [
                 e.jsx(d, {
                     path: 'hangar.playlists.overlay_glow',
@@ -145,7 +145,7 @@ const [M, D] = m()(
             ],
         });
     };
-function K(e) {
+function H(e) {
     const t = `playlists.dialogs.${e}.button.submit`,
         s = `playlists.dialogs.${e}.button.cancel`;
     switch (e) {
@@ -184,9 +184,9 @@ const Q = o(function () {
                 className: F,
                 children: [
                     e.jsx(L, { onClick: t.controls.close, className: V }),
-                    e.jsx(H, { titlePath: `playlists.dialogs.${s}.title`, titleParams: a }),
-                    e.jsx($, {
-                        buttons: K(s),
+                    e.jsx(G, { titlePath: `playlists.dialogs.${s}.title`, titleParams: a }),
+                    e.jsx(J, {
+                        buttons: H(s),
                         onAction: function (e) {
                             t.controls.doAction(e);
                         },

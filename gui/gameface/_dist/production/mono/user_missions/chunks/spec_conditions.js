@@ -1,10 +1,10 @@
 import { j as s } from './vendor.js';
-import { b as i, m as t, d as e, I as o } from './lib.js';
+import { r as i, m as t, a as e, I as o } from './lib.js';
 const a = 'SpecConditions_title_af03f2f',
     n = 'SpecConditions_specCondition_b0565ee6',
     c = 'SpecConditions_specConditionText_5455dba',
-    d = i.resolve('strings');
-function r(i) {
+    r = i.resolve('strings');
+function d(i) {
     return s.jsxs('div', {
         className: i.className,
         children: [
@@ -18,7 +18,7 @@ function r(i) {
                             s.jsx(o, { width: 24, height: 24, path: i.iconPath }),
                             s.jsx(e, {
                                 path: 'weekly_quests.specialCondition.tooltip',
-                                params: { condition: d.read(i.textPath) },
+                                params: { condition: r.read(i.textPath) },
                                 className: c,
                             }),
                         ],
@@ -29,4 +29,4 @@ function r(i) {
         ],
     });
 }
-export { r as S };
+export { d as S };

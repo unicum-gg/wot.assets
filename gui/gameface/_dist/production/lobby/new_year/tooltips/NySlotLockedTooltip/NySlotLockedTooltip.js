@@ -155,7 +155,7 @@
                             let n = F.exec(u),
                                 r = u,
                                 o = 0;
-                            for (; n; ) {
+                            for (; n;) {
                                 const a = n[0],
                                     s = e.exec(a),
                                     l = C.exec(a),
@@ -600,7 +600,7 @@
                             : (function (u) {
                                   let A = '';
                                   for (let F = du.length - 1; F >= 0; F--)
-                                      for (; u >= du[F]; ) ((A += cu[F]), (u -= du[F]));
+                                      for (; u >= du[F];) ((A += cu[F]), (u -= du[F]));
                                   return A;
                               })(u);
                 var gu = F(3403),
@@ -705,7 +705,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, F = wu(e.keys()); !(u = F()).done; ) D(u.value, A);
+                                                        for (var u, F = wu(e.keys()); !(u = F()).done;) D(u.value, A);
                                                     },
                                                     unsubscribe: D,
                                                 };

@@ -1,14 +1,13 @@
 import { r as e, a as t } from './getRewardImage.js';
-var a = ((e) => ((e.Common = 'common'), (e.Rare = 'rare'), (e.Epic = 'epic'), e))(a || {});
-const s = ['gold', 'credits', 'premium_plus', 'freeXP', 'crystal', 'equipCoin'];
-var n = ((e) => (
+var a = ((e) => ((e.Common = 'common'), (e.Rare = 'rare'), (e.Epic = 'epic'), e))(a || {}),
+    n = ((e) => (
         (e.EntryPoint = 'ENTRY_POINT'),
         (e.InfoPage = 'INFO_PAGE'),
         (e.Rewards = 'REWARDS'),
-        (e.HasBoxesView = 'HAS_BOXES_VIEW'),
+        (e.HomeView = 'HOME_VIEW'),
         e
     ))(n || {}),
-    r = ((e) => (
+    s = ((e) => (
         (e.Videos = 'videos'),
         (e.Images = 'images'),
         (e.Texts = 'texts'),
@@ -17,39 +16,40 @@ var n = ((e) => (
         (e.DynamicImages = 'dynamicImages'),
         (e.DynamicTexts = 'dynamicTexts'),
         e
-    ))(r || {});
+    ))(s || {});
 const o = 'customizable/default',
-    c = 2560 / 1440,
-    u = [e.attachment],
-    d = [a.Rare, a.Epic],
-    l = (e, t) => {
+    r = 2560 / 1440,
+    c = [e.attachment],
+    u = [a.Rare, a.Epic],
+    d = (e, t) => {
         let a = e;
-        const s = t.split('.');
-        for (let n = 0; n < s.length && a; n++) {
-            const e = a.$dyn(s[n]);
+        const n = t.split('.');
+        for (const s of n) {
+            if (!a) break;
+            const e = a.$dyn(s);
             (e && 'object' != typeof e) || (a = e);
         }
         return a;
     },
-    i = ({ type: e, filePath: a, eventName: s }, n = !1) => {
+    l = ({ type: e, filePath: a, eventName: n }, o = !1) => {
         const {
-            parent: o,
+            parent: r,
             path: c,
             defaultPath: u,
         } = ((e, t, a) => {
-            const s = 'gui.maps.icons.lootBoxSystem.customizable',
-                n = 'lootbox.customizable';
+            const n = 'gui.maps.icons.lootBoxSystem.customizable',
+                o = 'lootbox.customizable';
             switch (e) {
-                case r.Images:
-                case r.DynamicImages:
-                    return { parent: R.images, path: `${s}.${a}.${t}`, defaultPath: `${s}.default.${t}` };
-                case r.Videos:
-                case r.DynamicVideos:
-                    return { parent: R.videos, path: `${n}.${a}.${t}`, defaultPath: `${n}.default.${t}` };
-                case r.Texts:
-                case r.DynamicTexts:
+                case s.Images:
+                case s.DynamicImages:
+                    return { parent: R.images, path: `${n}.${a}.${t}`, defaultPath: `${n}.default.${t}` };
+                case s.Videos:
+                case s.DynamicVideos:
+                    return { parent: R.videos, path: `${o}.${a}.${t}`, defaultPath: `${o}.default.${t}` };
+                case s.Texts:
+                case s.DynamicTexts:
                     return { parent: R.strings, path: `lootbox_${a}.${t}`, defaultPath: `lootbox_system.${t}` };
-                case r.Sounds:
+                case s.Sounds:
                     return { parent: R.sounds, path: `${t}_${a}`, defaultPath: `${t}` };
                 default:
                     return (
@@ -57,62 +57,63 @@ const o = 'customizable/default',
                         { parent: '', path: '', defaultPath: '' }
                     );
             }
-        })(e, a, s);
-        return o ? { eventResource: n ? l(o, c) : t(o, c), defaultResource: n ? l(o, u) : t(o, u) } : null;
+        })(e, a, n);
+        return r ? { eventResource: o ? d(r, c) : t(r, c), defaultResource: o ? d(r, u) : t(r, u) } : null;
     },
-    m = (e, t, a) =>
-        Object.keys(e).reduce(
-            (s, n) => (
-                (s[n] = (({ type: e, filePath: t, eventName: a }) => {
-                    const s = i({ type: e, filePath: t, eventName: a });
-                    if (!s || (!s.eventResource && !s.defaultResource))
-                        return (console.info(`Unreachable code: unknown resource (${e} ${a} ${t})`), '');
-                    const { eventResource: n, defaultResource: r } = s;
-                    return n || r;
-                })({ type: t, filePath: e[n], eventName: a })),
-                s
-            ),
-            {},
-        ),
-    p = (e, t) =>
-        Object.keys(e).reduce((a, s) => {
-            const n = e[s];
-            return n ? ((a[s] = m(n, s, t)), a) : a;
-        }, {}),
-    y = (e, t, a) => (e || t ? e || t : (console.warn(`Not found ${a}`), '')),
-    $ = (e, t, a) =>
-        Object.keys(e).reduce((s, n) => {
-            const r = e[n];
+    i = (e, t, a) =>
+        Object.keys(e).reduce((n, s) => {
+            const o = e[s];
             return (
-                (s[n] = ((e, t, a) => {
-                    const s = `resource type: ${e}, path: ${t}`,
-                        n = i({ type: e, filePath: t, eventName: a }, !0),
-                        r = n?.defaultResource,
-                        o = n?.eventResource;
-                    return ((e, t, a) => ({
-                        dynOpt: (s, n = 'default') => {
-                            const r = t?.$dyn(s) || t?.$dyn(n),
-                                o = e?.$dyn(n);
-                            return y(r, o, a);
-                        },
-                        dyn: (s) => {
-                            const n = t?.$dyn(s),
-                                r = e?.$dyn(s);
-                            return y(n, r, a);
-                        },
-                        plural: (s, n) => {
-                            const r = t?.$plural(s, n),
-                                o = e?.$plural(s, n);
-                            return y(r, o, a);
-                        },
-                    }))(r, o, s);
-                })(t, r, a)),
-                s
+                void 0 !== o &&
+                    (n[s] = (({ type: e, filePath: t, eventName: a }) => {
+                        const n = l({ type: e, filePath: t, eventName: a });
+                        if (!n || (!n.eventResource && !n.defaultResource))
+                            return (console.info(`Unreachable code: unknown resource (${e} ${a} ${t})`), '');
+                        const { eventResource: s, defaultResource: o } = n;
+                        return s || o;
+                    })({ type: t, filePath: o, eventName: a })),
+                n
             );
         }, {}),
-    f = (e, t) =>
-        Object.keys(e).reduce((a, s) => {
-            const n = e[s];
-            return n ? ((a[s] = $(n, s, t)), a) : a;
+    m = (e, t) =>
+        Object.keys(e).reduce((a, n) => {
+            const s = e[n];
+            return s ? ((a[n] = i(s, n, t)), a) : a;
+        }, {}),
+    p = (e, t, a) => (e || t ? e || t : (console.warn(`Not found ${a}`), '')),
+    y = (e, t, a) =>
+        Object.keys(e).reduce((n, s) => {
+            const o = e[s];
+            return (
+                (n[s] = ((e, t, a) => {
+                    const n = `resource type: ${e}, path: ${t}`,
+                        s = l({ type: e, filePath: t, eventName: a }, !0),
+                        o = s?.defaultResource,
+                        r = s?.eventResource;
+                    return ((e, t, a) => ({
+                        dynOpt: (n, s = 'default') => {
+                            const o = t?.$dyn(n) || t?.$dyn(s),
+                                r = e?.$dyn(s);
+                            return p(o, r, a);
+                        },
+                        dyn: (n) => {
+                            const s = t?.$dyn(n),
+                                o = e?.$dyn(n);
+                            return p(s, o, a);
+                        },
+                        plural: (n, s) => {
+                            const o = t?.$plural(n, s),
+                                r = e?.$plural(n, s);
+                            return p(o, r, a);
+                        },
+                    }))(o, r, n);
+                })(t, o, a)),
+                n
+            );
+        }, {}),
+    $ = (e, t) =>
+        Object.keys(e).reduce((a, n) => {
+            const s = e[n];
+            return s ? ((a[n] = y(s, n, t)), a) : a;
         }, {});
-export { a as B, n as C, o as D, c as R, p as a, u as b, s as c, y as d, d as e, f as g };
+export { a as B, n as C, o as D, r as R, m as a, c as b, p as c, u as d, $ as g };

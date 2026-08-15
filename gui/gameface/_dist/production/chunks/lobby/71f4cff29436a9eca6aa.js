@@ -165,7 +165,7 @@
                                         t(e).delete(a);
                                     },
                                     s = (e, ...a) => {
-                                        for (var n, s = f(t(e).values()); !(n = s()).done; ) (0, n.value)(...a);
+                                        for (var n, s = f(t(e).values()); !(n = s()).done;) (0, n.value)(...a);
                                     };
                                 return (0, r.useMemo)(() => ({ on: a, off: n, trigger: s }), []);
                             })(),

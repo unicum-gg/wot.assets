@@ -1,5 +1,5 @@
 import { j as s } from '../../../../chunks/vendor.js';
-import { r as i, cE as n } from '../../../../chunks/lib.js';
+import { d2 as i, cD as n } from '../../../../chunks/lib.js';
 import { T as m, A as o, a, b as e, W as t } from '../../../../chunks/winner_glow.js';
 /* empty css                        */ import '../../../../chunks/consts.js';
 import '../../../../chunks/use_server_time_polling.js';

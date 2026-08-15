@@ -1,5 +1,5 @@
-import { V as a, j as e, a3 as s } from '../../../../chunks/vendor.js';
-import { i, n as o, cv as c, cw as t, r as d, cE as n } from '../../../../chunks/lib.js';
+import { a1 as a, j as e, a3 as s } from '../../../../chunks/vendor.js';
+import { i, n as o, cu as c, cv as d, d2 as t, cD as n } from '../../../../chunks/lib.js';
 import { T as r } from '../../../../chunks/tooltip_decorator.js';
 import { S as m } from '../../../../chunks/enums.js';
 /* empty css                        */ const [l, g] = i()(({ observableModel: a }) => ({ root: a.object() }), o),
@@ -15,7 +15,7 @@ import { S as m } from '../../../../chunks/enums.js';
             {
                 statisticsMode: i,
                 averageDamageDealt: o,
-                recordDamageDealt: d,
+                recordDamageDealt: t,
                 recordDamageDealtVehicleName: n,
             } = a.root.get();
         return e.jsxs('div', {
@@ -30,7 +30,7 @@ import { S as m } from '../../../../chunks/enums.js';
                                     ? R.strings.comp7_ext.damageIndicatorTooltip.damage.season.heading()
                                     : R.strings.comp7_ext.damageIndicatorTooltip.damage.day.heading(),
                             binding: {
-                                averageDamageDealt: e.jsx('div', { className: _, children: e.jsx(t, { value: o }) }),
+                                averageDamageDealt: e.jsx('div', { className: _, children: e.jsx(d, { value: o }) }),
                             },
                             classMix: h,
                         }),
@@ -49,7 +49,7 @@ import { S as m } from '../../../../chunks/enums.js';
                                     ? R.strings.comp7_ext.damageIndicatorTooltip.damageRecord.season.heading()
                                     : R.strings.comp7_ext.damageIndicatorTooltip.damageRecord.day.heading(),
                             binding: {
-                                recordDamageDealt: e.jsx('div', { className: _, children: e.jsx(t, { value: d }) }),
+                                recordDamageDealt: e.jsx('div', { className: _, children: e.jsx(d, { value: t }) }),
                             },
                             classMix: h,
                         }),
@@ -63,4 +63,4 @@ import { S as m } from '../../../../chunks/enums.js';
             ],
         });
     });
-d(e.jsx(l, { children: e.jsx(n, { children: e.jsx(r, { children: e.jsx(u, {}) }) }) }));
+t(e.jsx(l, { children: e.jsx(n, { children: e.jsx(r, { children: e.jsx(u, {}) }) }) }));

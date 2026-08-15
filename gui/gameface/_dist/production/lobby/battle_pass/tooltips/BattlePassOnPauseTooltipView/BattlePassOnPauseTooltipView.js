@@ -196,7 +196,7 @@
                     F = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function G(e) {
                     let n = '';
-                    for (let t = F.length - 1; t >= 0; t--) for (; e >= F[t]; ) ((n += k[t]), (e -= F[t]));
+                    for (let t = F.length - 1; t >= 0; t--) for (; e >= F[t];) ((n += k[t]), (e -= F[t]));
                     return n;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

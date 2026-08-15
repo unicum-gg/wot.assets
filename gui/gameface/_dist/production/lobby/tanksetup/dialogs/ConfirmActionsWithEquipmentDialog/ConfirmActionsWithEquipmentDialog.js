@@ -509,7 +509,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function i(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1173,9 +1173,13 @@
                         if (t.mediumWidth && E) return g(u, t, B);
                         if (t.smallWidth && d) return g(u, t, B);
                         if (t.extraSmallWidth && A) return g(u, t, B);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && D) return u;
                             if (t.largeHeight && F) return u;
                             if (t.mediumHeight && m) return u;
@@ -1705,7 +1709,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = ae(r.keys()); !(e = t()).done; ) i(e.value, u);
+                                                        for (var e, t = ae(r.keys()); !(e = t()).done;) i(e.value, u);
                                                     },
                                                     unsubscribe: i,
                                                 };
@@ -2411,6 +2415,7 @@
                         Z.BattleBoosterGift,
                         Z.OptionalDevice,
                         Z.Attachment,
+                        Z.TmanToken,
                         Z.Gold,
                         Z.Credits,
                         Z.Crystal,
@@ -3064,7 +3069,7 @@
                                     const u = a[e] || '',
                                         t = d[F] || '';
                                     if (u.match(D) || u === t) {
-                                        for (; u !== d[F] && F < d.length; ) F++;
+                                        for (; u !== d[F] && F < d.length;) F++;
                                         F++;
                                     }
                                 }
@@ -3093,8 +3098,8 @@
                                 if (s) return;
                                 let _ = l;
                                 const E = o.test(a[l]);
-                                if (t && E) for (; o.test(a[_]) && _ < a.length; ) _++;
-                                if (u && E) for (; o.test(a[_]) && _ > 0; ) _--;
+                                if (t && E) for (; o.test(a[_]) && _ < a.length;) _++;
+                                if (u && E) for (; o.test(a[_]) && _ > 0;) _--;
                                 if (_ !== l || (u && E))
                                     return (e.preventDefault(), (_ = _ < 0 ? 0 : _), void this.setCursorPosition(_, _));
                                 ((u && 1 === r && 1 === a.length) || t) &&

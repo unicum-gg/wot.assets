@@ -1679,7 +1679,7 @@
                     tu = (u, e, n, t) => {
                         let r = e.exec(u),
                             a = 0;
-                        for (; r; ) (a !== r.index && n(u.slice(a, r.index)), t(r), (a = e.lastIndex), (r = e.exec(u)));
+                        for (; r;) (a !== r.index && n(u.slice(a, r.index)), t(r), (a = e.lastIndex), (r = e.exec(u)));
                         a !== u.length && n(u.slice(a));
                     },
                     ru = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
@@ -1726,7 +1726,7 @@
                               if (!t) return [u];
                               const r = [];
                               let a = 0;
-                              for (; t; ) {
+                              for (; t;) {
                                   const o = e.justifyContent === G.FlexEnd ? t.index : n.lastIndex;
                                   (r.push(u.slice(a, o)), (a = o), (t = n.exec(u)));
                               }
@@ -1960,7 +1960,7 @@
                                                     l = ((u, e) => {
                                                         let n = 0,
                                                             t = u.length - 1;
-                                                        for (; t - n >= 0; ) {
+                                                        for (; t - n >= 0;) {
                                                             const r = n + Math.ceil(0.5 * (t - n));
                                                             lu(u[r], e) ? (t = r - 1) : (n = r + 1);
                                                         }

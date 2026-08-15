@@ -1178,7 +1178,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = W(o.keys()); !(u = t()).done; ) r(u.value, e);
+                                                        for (var u, t = W(o.keys()); !(u = t()).done;) r(u.value, e);
                                                     },
                                                     unsubscribe: r,
                                                 };

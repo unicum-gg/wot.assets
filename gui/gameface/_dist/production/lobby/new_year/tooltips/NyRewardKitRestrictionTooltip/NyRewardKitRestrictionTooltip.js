@@ -906,7 +906,7 @@
                             let o = E.exec(u),
                                 B = u,
                                 a = 0;
-                            for (; o; ) {
+                            for (; o;) {
                                 const C = o[0],
                                     s = F.exec(C),
                                     c = D.exec(C),
@@ -1150,7 +1150,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, E = f(F.keys()); !(u = E()).done; ) t(u.value, e);
+                                                        for (var u, E = f(F.keys()); !(u = E()).done;) t(u.value, e);
                                                     },
                                                     unsubscribe: t,
                                                 };

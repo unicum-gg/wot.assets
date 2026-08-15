@@ -346,7 +346,7 @@
                     let n = W;
                     t.default && !0 !== t.default && ((t = t.default), (n = Object.keys(t)));
                     const r = {};
-                    for (var i, o = u(n); !(i = o()).done; ) {
+                    for (var i, o = u(n); !(i = o()).done;) {
                         const n = i.value,
                             o = e(t[n], n);
                         s.is.und(o) || (r[n] = o);
@@ -563,7 +563,7 @@
                               let e;
                               ((e = s.is.arr(t)
                                   ? ((B = a(function* (t) {
-                                        for (var e, n = u(t); !(e = n()).done; ) {
+                                        for (var e, n = u(t); !(e = n()).done;) {
                                             const t = e.value;
                                             yield y(t);
                                         }
@@ -3243,7 +3243,7 @@
                             void 0 !== e.threshold && (this.threshold = e.threshold)));
                 }
                 applyToElement(t) {
-                    for (var e, n = o(this.getBlocks(t)); !(e = n()).done; ) {
+                    for (var e, n = o(this.getBlocks(t)); !(e = n()).done;) {
                         const t = e.value;
                         (u(t.hasText()), this.applyToParagraph(t));
                     }
@@ -3272,11 +3272,11 @@
                     const s = !e || n === h,
                         r = s ? new W(t) : e;
                     u(r);
-                    for (var i, a = o(t.childNodes); !(i = a()).done; ) {
+                    for (var i, a = o(t.childNodes); !(i = a()).done;) {
                         const t = i.value;
                         switch (t.nodeType) {
                             case l:
-                                for (var U, y = o(this.getBlocks(t, r)); !(U = y()).done; ) {
+                                for (var U, y = o(this.getBlocks(t, r)); !(U = y()).done;) {
                                     const t = U.value;
                                     yield t;
                                 }
@@ -3296,7 +3296,7 @@
                     if ((u(s.length > 0), u(s.reduce((t, e) => t + e.length, 0) === n.length), s.length <= 1)) return;
                     const r = [];
                     let i = 0;
-                    for (var a, l = o(s); !(a = l()).done; ) {
+                    for (var a, l = o(s); !(a = l()).done;) {
                         const t = a.value;
                         (u(t.length > 0), (i += t.length), r.push(i));
                     }
@@ -3315,7 +3315,7 @@
                         r = e[0];
                     u(r > 0);
                     let i = 0;
-                    for (var a, l = o(t); !(a = l()).done; ) {
+                    for (var a, l = o(t); !(a = l()).done;) {
                         const t = a.value,
                             n = t.nodeValue;
                         if (!n) continue;
@@ -3326,7 +3326,7 @@
                         }
                         const l = [];
                         let c = 0;
-                        for (; r < o; ) {
+                        for (; r < o;) {
                             const t = r - i;
                             (u(t >= c), l.push(n.substring(c, t)), (c = t), ++s, u(e[s] > r), (r = e[s]));
                         }
@@ -3340,7 +3340,7 @@
                     if ('string' == typeof n) return void (t.nodeValue = e.join(n));
                     const s = t.ownerDocument;
                     let r = [];
-                    for (var i, a = o(e); !(i = a()).done; ) {
+                    for (var i, a = o(e); !(i = a()).done;) {
                         const t = i.value;
                         (t && r.push(s.createTextNode(t)), r.push(null));
                     }
@@ -3462,7 +3462,7 @@
                         .map(([t, e]) => `${t}:${e}`);
                 }
                 static hasChildTextNode(t) {
-                    for (var e, n = v(t.childNodes); !(e = n()).done; ) {
+                    for (var e, n = v(t.childNodes); !(e = n()).done;) {
                         if (e.value.nodeType === T) return !0;
                     }
                     return !1;

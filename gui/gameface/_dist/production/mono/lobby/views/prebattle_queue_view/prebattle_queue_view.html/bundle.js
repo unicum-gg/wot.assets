@@ -1,115 +1,58 @@
-import { r as e, j as t, f as s, D as a } from '../../../chunks/vendor.js';
+import { D as e, j as s, r as t } from '../../../chunks/vendor.js';
 import {
-    bu as l,
-    bv as n,
-    c0 as c,
-    z as i,
-    a4 as r,
+    bx as a,
+    by as l,
+    c3 as i,
+    G as c,
+    a9 as r,
     i as o,
-    d2 as u,
-    b as d,
-    B as m,
-    h as p,
-    a7 as v,
+    X as n,
+    b as m,
+    B as d,
+    j as u,
+    dc as p,
+    ac as v,
     r as b,
-    U as f,
-    c$ as x,
-    d0 as h,
+    U as x,
+    d2 as h,
+    d3 as _,
 } from '../../../chunks/lib.js';
-import { u as _, D as j } from '../../../chunks/common.js';
-import { M as y, g as S } from '../../../chunks/date-time-utils.js';
+import { u as j, D as f } from '../../../chunks/common.js';
+import { M as N, g as y } from '../../../chunks/date-time-utils.js';
 import '../../../chunks/story_point.js';
 import '../../../chunks/sound.js';
-const N = 'SceneWrapper_52fcfc1e',
-    g = 'SceneWrapper_base__down_4ece5089',
-    M = 'SceneWrapper_base__moveSpaceDisabled_1b1cd939';
-function A({
-    children: a,
-    moveSpace: l,
-    onMouseOver3dScene: n,
-    onDragStateChange: c,
-    moveSpaceEnabled: i = !0,
-    className: r,
-    ...o
-}) {
-    const [u, d] = e.useState(!1),
-        [m, p] = e.useState({ x: 0, y: 0 }),
-        v = e.useRef(null);
-    e.useEffect(() => {
-        function e() {
-            (d(!1), c?.(!1));
-        }
-        return (window.addEventListener('mouseup', e), () => window.removeEventListener('mouseup', e));
-    }, []);
-    const b = (e) => {
-        if (!v.current) return;
-        const { width: t, height: s } = v.current.getBoundingClientRect();
-        return !(0 === e.clientX || 0 === e.clientY || e.clientX >= t - 1 || e.clientY >= s - 1);
-    };
-    return t.jsx('div', {
-        ...o,
-        ref: v,
-        className: s(N, u && g, !i && M, r),
-        onMouseDown: function (e) {
-            (e.preventDefault(), 0 === e.button && b(e) && i && (d(!0), c?.(!0), p({ x: e.clientX, y: e.clientY })));
-        },
-        onMouseMove: function (e) {
-            if ((e.preventDefault(), u)) {
-                if (!b(e)) return;
-                const t = e.clientX !== m.x ? e.clientX - m.x : 0,
-                    s = e.clientY !== m.y ? e.clientY - m.y : 0;
-                (p({ x: e.clientX, y: e.clientY }), l({ dx: t, dy: s, dz: 0 }));
-            }
-        },
-        onMouseUp: function () {
-            (d(!1), c?.(!1));
-        },
-        onWheel: function (e) {
-            if ((e.preventDefault(), !i || !b(e))) return;
-            const t = e.deltaY < 0;
-            l({ dx: 0, dy: 0, dz: t ? -600 : 600 });
-        },
-        onMouseOver: function () {
-            n({ isOver3dScene: !0 });
-        },
-        onMouseOut: function () {
-            n({ isOver3dScene: !1 });
-        },
-        children: a,
-    });
-}
-const P = a(function ({
+const g = e(function ({
         className: e,
-        classNames: s,
-        iconSize: a = i.x48x48,
-        vehicleId: o,
-        vehicleType: u,
+        classNames: t,
+        iconSize: o = c.x48x48,
+        vehicleId: n,
+        vehicleType: m,
         isPremium: d,
-        isElite: m,
+        isElite: u,
         vehicleName: p,
         vehicleLvl: v,
         roleKey: b,
-        emblem: f,
+        emblem: x,
     }) {
-        const x = _(o);
-        return t.jsxs(l, {
+        const h = j(n);
+        return s.jsxs(a, {
             className: e,
             children: [
-                Boolean(f.level) &&
-                    t.jsx(l.Prestige, {
-                        level: f.level,
-                        grade: f.grade,
-                        type: f.type,
-                        direction: l.Prestige.direction.left,
+                Boolean(x.level) &&
+                    s.jsx(a.Prestige, {
+                        level: x.level,
+                        grade: x.grade,
+                        type: x.type,
+                        direction: a.Prestige.direction.left,
                     }),
-                t.jsx(l.Level, { className: s?.level, value: v, numberType: c.numberTypes.roman }),
-                n(u) && t.jsx(l.Type, { className: s?.type, type: u, premium: d || m, size: a }),
-                t.jsx(l.Name, { className: s?.name, children: p }),
-                b && t.jsx(l.Role, { ...x, classNames: { base: s?.role }, roleKey: r(b), size: l.Role.sizes.x16x16 }),
+                s.jsx(a.Level, { className: t?.level, value: v, numberType: i.numberTypes.roman }),
+                l(m) && s.jsx(a.Type, { className: t?.type, type: m, premium: d || u, size: o }),
+                s.jsx(a.Name, { className: t?.name, children: p }),
+                b && s.jsx(a.Role, { ...h, classNames: { base: t?.role }, roleKey: r(b), size: a.Role.sizes.x16x16 }),
             ],
         });
     }),
-    [z, D] = o()(
+    [A, P] = o()(
         ({ observableModel: e }) => ({
             ...e.primitives(['isExitButtonAvailable', 'timerStartTime']),
             selectedVehicle: e.object('selectedVehicle'),
@@ -122,80 +65,80 @@ const P = a(function ({
             openMenu: e.createCallbackNoArgs('onEscape'),
         }),
     );
-function Q({ className: s, timerStartTime: a }) {
+function S({ className: e, timerStartTime: a }) {
     const l = a ?? Date.now(),
-        [n, c] = e.useState(Math.max(0, Math.floor((Date.now() - l) / y)));
-    e.useEffect(() => {
+        [i, c] = t.useState(Math.max(0, Math.floor((Date.now() - l) / N)));
+    t.useEffect(() => {
         const e = setInterval(() => {
-            const e = Math.max(Math.floor((Date.now() - l) / y));
+            const e = Math.max(Math.floor((Date.now() - l) / N));
             c(e);
-        }, y);
+        }, N);
         return () => clearInterval(e);
     }, [l]);
-    const { minutes: i, seconds: r } = S(n);
-    return t.jsx('div', { className: s, children: `${i}:${String(r).padStart(2, '0')}` });
+    const { minutes: r, seconds: o } = y(i);
+    return s.jsx('div', { className: e, children: `${r}:${String(o).padStart(2, '0')}` });
 }
-const k = 'PrebattleQueueApp_dad90a27',
-    E = 'PrebattleQueueApp_sceneWrapper_e240a18f',
-    w = 'PrebattleQueueApp_vignette_df4e667c',
+const Q = 'PrebattleQueueApp_sceneWrapper_de517c82',
+    k = 'PrebattleQueueApp_vignette_7c7f8ce2',
+    M = 'PrebattleQueueApp_container_26435402',
+    z = 'PrebattleQueueApp_dad90a27',
     B = 'PrebattleQueueApp_topShadow_6589c225',
-    O = 'PrebattleQueueApp_container_653beeb8',
-    T = 'PrebattleQueueApp_difficulty_caaef6b0',
-    C = 'PrebattleQueueApp_timer_744d2724',
-    L = 'PrebattleQueueApp_vehicle_aa053dfb',
+    D = 'PrebattleQueueApp_difficulty_caaef6b0',
+    E = 'PrebattleQueueApp_timer_744d2724',
+    T = 'PrebattleQueueApp_vehicle_aa053dfb',
     I = 'PrebattleQueueApp_vehicleInfo_16038df5',
-    Y = 'PrebattleQueueApp_vehicleName_dee87a9c',
-    X = 'PrebattleQueueApp_vehicleLevel_dee87a9c',
-    W = 'PrebattleQueueApp_vehicleType_1c7b81b3',
-    V = 'PrebattleQueueApp_vehicleRole_24a367fe',
-    $ = 'PrebattleQueueApp_leaveBtn_701eb3a6',
+    C = 'PrebattleQueueApp_vehicleName_dee87a9c',
+    L = 'PrebattleQueueApp_vehicleLevel_dee87a9c',
+    w = 'PrebattleQueueApp_vehicleType_1c7b81b3',
+    O = 'PrebattleQueueApp_vehicleRole_24a367fe',
+    V = 'PrebattleQueueApp_leaveBtn_701eb3a6',
     K = 'PrebattleQueueApp_tip_34008381',
-    U = a(function () {
-        const { model: e, controls: s } = D();
-        u(s.openMenu);
-        const a = d({ value: m.sizes.small }, { medium: { value: m.sizes.large } }),
-            l = d({ size: i.x24x24 }, { medium: { size: i.x48x48 }, extraLarge: { size: i.x64x64 } }),
-            n = e.selectedDifficulty.get(),
-            c = e.selectedVehicle.get(),
-            r = p({
+    $ = e(function () {
+        const { model: e, controls: t } = P();
+        n(t.openMenu);
+        const a = m({ value: d.sizes.small }, { medium: { value: d.sizes.large } }),
+            l = m({ size: c.x24x24 }, { medium: { size: c.x48x48 }, extraLarge: { size: c.x64x64 } }),
+            i = e.selectedDifficulty.get(),
+            r = e.selectedVehicle.get(),
+            o = u({
                 contentId: R.views.last_stand.mono.lobby.tooltips.difficulty_tooltip('resId'),
-                args: { level: n.level, state: n.state, isLocked: n.isLocked },
+                args: { level: i.level, state: i.state, isLocked: i.isLocked },
                 disabled: !1,
             });
-        return t.jsxs('div', {
-            className: k,
+        return s.jsxs('div', {
+            className: z,
             children: [
-                t.jsx('div', { className: w }),
-                t.jsx('div', { className: B }),
-                t.jsx('div', { className: E, children: t.jsx(A, { moveSpace: s.moveSpace, onMouseOver3dScene: v }) }),
-                t.jsxs('div', {
-                    className: O,
+                s.jsx('div', { className: k }),
+                s.jsx('div', { className: B }),
+                s.jsx('div', { className: Q, children: s.jsx(p, { moveSpace: t.moveSpace, onMouseOver3dScene: v }) }),
+                s.jsxs('div', {
+                    className: M,
                     children: [
-                        t.jsx('div', {
-                            ...r,
+                        s.jsx('div', {
+                            ...o,
                             onMouseEnter: (e) => {
-                                (e.stopPropagation(), r.onMouseEnter(e));
+                                (e.stopPropagation(), o.onMouseEnter(e));
                             },
-                            children: t.jsx(j, { className: T, ...n, isDisabled: !1, onClick: v }),
+                            children: s.jsx(f, { className: D, ...i, isDisabled: !1, onClick: v }),
                         }),
-                        t.jsx(Q, { className: C, timerStartTime: e.timerStartTime.get() }),
-                        t.jsx('div', {
-                            className: L,
-                            children: t.jsx(P, {
+                        s.jsx(S, { className: E, timerStartTime: e.timerStartTime.get() }),
+                        s.jsx('div', {
+                            className: T,
+                            children: s.jsx(g, {
                                 className: I,
-                                classNames: { name: Y, level: X, type: W, role: V },
+                                classNames: { name: C, level: L, type: w, role: O },
                                 iconSize: l.size,
-                                ...c,
+                                ...r,
                             }),
                         }),
-                        t.jsx('div', { className: K, children: R.strings.last_stand_lobby.preBattle.tip() }),
+                        s.jsx('div', { className: K, children: R.strings.last_stand_lobby.preBattle.tip() }),
                         e.isExitButtonAvailable.get() &&
-                            t.jsx('div', {
-                                className: $,
-                                children: t.jsx(m, {
-                                    theme: m.themes.secondary,
+                            s.jsx('div', {
+                                className: V,
+                                children: s.jsx(d, {
+                                    theme: d.themes.secondary,
                                     size: a.value,
-                                    onClick: s.exitBattle,
+                                    onClick: t.exitBattle,
                                     children: R.strings.last_stand_lobby.preBattle.leave(),
                                 }),
                             }),
@@ -204,6 +147,6 @@ const k = 'PrebattleQueueApp_dad90a27',
             ],
         });
     });
-b(t.jsx(z, { children: t.jsx(f, { children: t.jsx(U, {}) }) }))
-    .then(() => x(document.getElementById('root')))
-    .then(() => h());
+b(s.jsx(A, { children: s.jsx(x, { children: s.jsx($, {}) }) }))
+    .then(() => h(document.getElementById('root')))
+    .then(() => _());

@@ -99,9 +99,13 @@
                         if (r.mediumWidth && g) return (0, a.H)(t, r, x);
                         if (r.smallWidth && v) return (0, a.H)(t, r, x);
                         if (r.extraSmallWidth && E) return (0, a.H)(t, r, x);
-                        if (
-                            !(r.extraLargeWidth || r.largeWidth || r.mediumWidth || r.smallWidth || r.extraSmallWidth)
-                        ) {
+                        if (!(
+                            r.extraLargeWidth ||
+                            r.largeWidth ||
+                            r.mediumWidth ||
+                            r.smallWidth ||
+                            r.extraSmallWidth
+                        )) {
                             if (r.extraLargeHeight && w) return t;
                             if (r.largeHeight && f) return t;
                             if (r.mediumHeight && p) return t;
@@ -298,7 +302,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, r = a(s.keys()); !(e = r()).done; ) {
+                            for (var e, r = a(s.keys()); !(e = r()).done;) {
                                 l(e.value, t);
                             }
                         },
@@ -1062,7 +1066,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function i(e) {
                     let t = '';
-                    for (let r = a.length - 1; r >= 0; r--) for (; e >= a[r]; ) ((t += n[r]), (e -= a[r]));
+                    for (let r = a.length - 1; r >= 0; r--) for (; e >= a[r];) ((t += n[r]), (e -= a[r]));
                     return t;
                 }
                 const o = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -1631,17 +1635,17 @@
             Promise.all(Object.keys(__webpack_require__.f).reduce((t, r) => (__webpack_require__.f[r](e, t), t), []))),
         (__webpack_require__.u = (e) =>
             568 === e
-                ? 'chunks/lobby/7cab26df694cf0364b2f.js'
+                ? 'chunks/lobby/c8a2e831fc9759ab4ac5.js'
                 : 935 === e
-                  ? 'chunks/lobby/71f4cff29436a9eca6aa.js'
+                  ? 'chunks/lobby/1969e3068dccbf3777a6.js'
                   : 113 === e
-                    ? 'chunks/lobby/0b1165a8c57b633ba787.js'
+                    ? 'chunks/lobby/ae5b9476965056bf2751.js'
                     : void 0),
         (__webpack_require__.miniCssF = (e) =>
             935 === e
-                ? 'chunks/lobby/71f4cff29436a9eca6aa.css'
+                ? 'chunks/lobby/1969e3068dccbf3777a6.css'
                 : 113 === e
-                  ? 'chunks/lobby/0b1165a8c57b633ba787.css'
+                  ? 'chunks/lobby/ae5b9476965056bf2751.css'
                   : void 0),
         (__webpack_require__.g = (function () {
             if ('object' == typeof globalThis) return globalThis;

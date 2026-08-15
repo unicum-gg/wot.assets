@@ -1,20 +1,20 @@
-import { n as e, j as s, h as t } from '../../../../chunks/vendor.js';
+import { q as e, j as s, h as t } from '../../../../chunks/vendor.js';
 import {
     i as a,
     r as o,
-    u as n,
+    d as n,
     a0 as i,
     F as r,
     a2 as c,
-    E as l,
+    I as l,
     B as m,
-    z as d,
-    A as p,
+    b as d,
+    t as p,
     a1 as _,
-    q as u,
-    J as j,
-    U as b,
-    t as g,
+    L as u,
+    M as b,
+    U as j,
+    N as g,
 } from '../../../../chunks/lib.js';
 import { t as x } from '../../../../chunks/sounds.js';
 import { D as h, c as f } from '../../../../chunks/common.module.js';
@@ -40,16 +40,16 @@ const [C, y] = a()(
     w = e(function () {
         const { model: e, controls: a } = y(),
             { timeLeft: o, count: _, isPopUp: u } = e.root.get(),
-            j = o > 0,
-            b = n();
+            b = o > 0,
+            j = n();
         return (
             i(() => {
-                u && b.play('notificationAppear', { target: 'enter' });
+                u && j.play('notificationAppear', { target: 'enter' });
             }),
             s.jsxs(h, {
                 isPopUp: u,
                 onClose: a.close,
-                className: t(N.base, u && N.base__popUp, j && N.base__withTimer),
+                className: t(N.base, u && N.base__popUp, b && N.base__withTimer),
                 children: [
                     u &&
                         s.jsxs(s.Fragment, {
@@ -59,7 +59,7 @@ const [C, y] = a()(
                                     text: k.readOrEmpty('seniority_awards.notifications.tokens.title'),
                                     upgradeLegacy: !0,
                                 }),
-                                j && s.jsx('div', { className: t(f.timer, N.timer), children: s.jsx(c, { start: o }) }),
+                                b && s.jsx('div', { className: t(f.timer, N.timer), children: s.jsx(c, { start: o }) }),
                             ],
                         }),
                     s.jsxs('div', {
@@ -83,7 +83,7 @@ const [C, y] = a()(
                                     text: k.readOrEmpty('seniority_awards.notifications.tokens.title'),
                                     upgradeLegacy: !0,
                                 }),
-                                j && s.jsx('div', { className: t(f.timer, N.timer), children: s.jsx(c, { start: o }) }),
+                                b && s.jsx('div', { className: t(f.timer, N.timer), children: s.jsx(c, { start: o }) }),
                             ],
                         }),
                     s.jsx(m, {
@@ -101,4 +101,4 @@ function v() {
     return s.jsx(_, { children: s.jsx(w, {}) });
 }
 const U = u(x);
-g(new j().add(C).addWithProps(b, { soundsOverrides: U }).render(s.jsx(v, {})));
+g(new b().add(C).addWithProps(j, { soundsOverrides: U }).render(s.jsx(v, {})));

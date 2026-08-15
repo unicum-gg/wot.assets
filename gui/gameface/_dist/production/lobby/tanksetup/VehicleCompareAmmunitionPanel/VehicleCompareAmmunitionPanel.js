@@ -194,9 +194,13 @@
                         if (u.mediumWidth && E) return (0, a.H)(t, u, v);
                         if (u.smallWidth && g) return (0, a.H)(t, u, v);
                         if (u.extraSmallWidth && p) return (0, a.H)(t, u, v);
-                        if (
-                            !(u.extraLargeWidth || u.largeWidth || u.mediumWidth || u.smallWidth || u.extraSmallWidth)
-                        ) {
+                        if (!(
+                            u.extraLargeWidth ||
+                            u.largeWidth ||
+                            u.mediumWidth ||
+                            u.smallWidth ||
+                            u.extraSmallWidth
+                        )) {
                             if (u.extraLargeHeight && A) return t;
                             if (u.largeHeight && F) return t;
                             if (u.mediumHeight && h) return t;
@@ -601,7 +605,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, u = a(s.keys()); !(e = u()).done; ) {
+                            for (var e, u = a(s.keys()); !(e = u()).done;) {
                                 o(e.value, t);
                             }
                         },
@@ -1358,7 +1362,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function i(e) {
                     let t = '';
-                    for (let u = a.length - 1; u >= 0; u--) for (; e >= a[u]; ) ((t += n[u]), (e -= a[u]));
+                    for (let u = a.length - 1; u >= 0; u--) for (; e >= a[u];) ((t += n[u]), (e -= a[u]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1772,7 +1776,7 @@
                 const i = (e, t = []) => {
                         const u = document.getElementById('root');
                         u && (u.style.cursor = e ? 'grabbing' : 'default');
-                        for (var a, i = n(t); !(a = i()).done; ) {
+                        for (var a, i = n(t); !(a = i()).done;) {
                             const t = a.value,
                                 u = document.getElementById(t);
                             u && (u.style.pointerEvents = e ? 'none' : 'auto');
@@ -1786,7 +1790,7 @@
                     s = (e, t, u) => {
                         let a = '',
                             i = 8e3;
-                        for (var r, s = n(u); !(r = s()).done; ) {
+                        for (var r, s = n(u); !(r = s()).done;) {
                             const e = r.value,
                                 u = Math.abs(e.centerX - t);
                             u < i && ((a = e.id), (i = u));

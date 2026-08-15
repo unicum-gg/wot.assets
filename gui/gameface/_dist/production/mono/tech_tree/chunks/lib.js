@@ -869,7 +869,7 @@ function pe(e) {
                 let t = '';
                 for (let n = he.length - 1; n >= 0; n--) {
                     let r = he[n];
-                    for (; void 0 !== r && e >= r; ) ((t += de[n]), (e -= r));
+                    for (; void 0 !== r && e >= r;) ((t += de[n]), (e -= r));
                 }
                 return t;
             })(e);
@@ -956,15 +956,15 @@ function ye(e, t, n, r, o) {
     if (0 === n) return !1;
     (n < 0 && (n = -1), (o = o || []));
     let l = (r = r || []).length;
-    for (; l--; ) if (r[l] === a) return o[l] === u;
+    for (; l--;) if (r[l] === a) return o[l] === u;
     if ((r.push(e), o.push(t), c)) {
         if (((l = a.length), l !== u.length)) return !1;
-        for (; l--; ) if (!ye(a[l], u[l], n - 1, r, o)) return !1;
+        for (; l--;) if (!ye(a[l], u[l], n - 1, r, o)) return !1;
     } else {
         const e = Object.keys(a);
         let t;
         if (((l = e.length), Object.keys(u).length !== l)) return !1;
-        for (; l--; ) {
+        for (; l--;) {
             if (((t = e[l]), void 0 === t))
                 return (console.error('Error: met undefined in object during deepEqual comparison'), !1);
             if (!Object.prototype.hasOwnProperty.call(u, t) || !ye(a[t], u[t], n - 1, r, o)) return !1;
@@ -1256,7 +1256,8 @@ function Qe({ resId: e = 0, contentId: t, decoratorId: n, disabled: r, args: s, 
             let o = null;
             function u() {
                 r ||
-                    ((a.current.status = Ke),
+                    ('display' === a.current.status && (G.tooltip.hide(e, t, n), (a.current.status = Je)),
+                    (a.current.status = Ke),
                     window.clearTimeout(a.current.timeoutId),
                     (a.current.timeoutId = window.setTimeout(c, i)));
             }
@@ -1272,7 +1273,7 @@ function Qe({ resId: e = 0, contentId: t, decoratorId: n, disabled: r, args: s, 
                 ) {
                     Ze.delete(o);
                     let e = o.parentElement;
-                    for (; e && !Ze.has(e); ) e = e.parentElement;
+                    for (; e && !Ze.has(e);) e = e.parentElement;
                     if (e) {
                         Ze.get(e).show();
                     }
@@ -2139,7 +2140,7 @@ function Jt(e, t) {
     for (let n = 0; n < e.length; n++) {
         if ('$' === e[n]) {
             let r = n + 1;
-            for (; r < e.length && !Kt(e[r]); ) r++;
+            for (; r < e.length && !Kt(e[r]);) r++;
             const o = e.slice(n + 1, r),
                 s = t[o];
             if (s) return Jt(e.replace(`$${o}`, String(s)), t);

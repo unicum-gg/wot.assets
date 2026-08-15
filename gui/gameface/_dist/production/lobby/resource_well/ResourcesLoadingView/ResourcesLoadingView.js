@@ -1405,9 +1405,13 @@
                         if (t.mediumWidth && m) return i(u, t, f);
                         if (t.smallWidth && E) return i(u, t, f);
                         if (t.extraSmallWidth && A) return i(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && p) return u;
                             if (t.largeHeight && g) return u;
                             if (t.mediumHeight && C) return u;
@@ -1915,7 +1919,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = se(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = se(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
@@ -3053,7 +3057,7 @@
                                     const u = s[e] || '',
                                         t = d[m] || '';
                                     if (u.match(_) || u === t) {
-                                        for (; u !== d[m] && m < d.length; ) m++;
+                                        for (; u !== d[m] && m < d.length;) m++;
                                         m++;
                                     }
                                 }
@@ -3085,8 +3089,8 @@
                                 if (i) return;
                                 let c = l;
                                 const d = o.test(s[l]);
-                                if (t && d) for (; o.test(s[c]) && c < s.length; ) c++;
-                                if (u && d) for (; o.test(s[c]) && c > 0; ) c--;
+                                if (t && d) for (; o.test(s[c]) && c < s.length;) c++;
+                                if (u && d) for (; o.test(s[c]) && c > 0;) c--;
                                 if (c !== l || (u && d))
                                     return (e.preventDefault(), (c = c < 0 ? 0 : c), void this.setCursorPosition(c, c));
                                 ((u && 1 === r && 1 === s.length) || t) &&

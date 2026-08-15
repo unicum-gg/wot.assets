@@ -900,7 +900,7 @@
                             let o = E.exec(u),
                                 a = u,
                                 B = 0;
-                            for (; o; ) {
+                            for (; o;) {
                                 const C = o[0],
                                     s = F.exec(C),
                                     c = D.exec(C),

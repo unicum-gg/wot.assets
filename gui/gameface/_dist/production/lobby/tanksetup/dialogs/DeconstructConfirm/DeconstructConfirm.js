@@ -461,7 +461,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -976,9 +976,13 @@
                         if (t.mediumWidth && D) return o(u, t, v);
                         if (t.smallWidth && F) return o(u, t, v);
                         if (t.extraSmallWidth && m) return o(u, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && g) return u;
@@ -2536,7 +2540,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = du(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = du(r.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -2854,7 +2858,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = Ru(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = Ru(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
@@ -3766,6 +3770,7 @@
                         Bt.BattleBoosterGift,
                         Bt.OptionalDevice,
                         Bt.Attachment,
+                        Bt.TmanToken,
                         Bt.Gold,
                         Bt.Credits,
                         Bt.Crystal,

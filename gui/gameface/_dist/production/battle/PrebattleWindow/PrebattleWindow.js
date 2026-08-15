@@ -459,7 +459,7 @@
                     n = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(u) {
                     let e = '';
-                    for (let t = n.length - 1; t >= 0; t--) for (; u >= n[t]; ) ((e += r[t]), (u -= n[t]));
+                    for (let t = n.length - 1; t >= 0; t--) for (; u >= n[t];) ((e += r[t]), (u -= n[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -951,9 +951,13 @@
                         if (t.mediumWidth && d) return a(e, t, b);
                         if (t.smallWidth && B) return a(e, t, b);
                         if (t.extraSmallWidth && C) return a(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -1607,7 +1611,7 @@
                     Du = (u, e, t, r) => {
                         let n = e.exec(u),
                             a = 0;
-                        for (; n; ) (a !== n.index && t(u.slice(a, n.index)), r(n), (a = e.lastIndex), (n = e.exec(u)));
+                        for (; n;) (a !== n.index && t(u.slice(a, n.index)), r(n), (a = e.lastIndex), (n = e.exec(u)));
                         a !== u.length && t(u.slice(a));
                     },
                     du = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -1654,7 +1658,7 @@
                               if (!r) return [u];
                               const n = [];
                               let a = 0;
-                              for (; r; ) {
+                              for (; r;) {
                                   const i = e.justifyContent === nu.FlexEnd ? r.index : t.lastIndex;
                                   (n.push(u.slice(a, i)), (a = i), (r = t.exec(u)));
                               }
@@ -1887,7 +1891,7 @@
                                                     l = ((u, e) => {
                                                         let t = 0,
                                                             r = u.length - 1;
-                                                        for (; r - t >= 0; ) {
+                                                        for (; r - t >= 0;) {
                                                             const n = t + Math.ceil(0.5 * (r - t));
                                                             gu(u[n], e) ? (r = n - 1) : (t = n + 1);
                                                         }

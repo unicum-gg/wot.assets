@@ -1,7 +1,7 @@
 import { j as s } from '../../../../chunks/vendor.js';
-import { bY as e, J as t, U as a, d as n } from '../../../../chunks/lib.js';
+import { cd as e, J as t, U as a, d as n } from '../../../../chunks/lib.js';
 import { S as c } from '../../../../chunks/separator.js';
-const r = 'Content_b5324543',
+/* empty css                       */ const r = 'Content_b5324543',
     i = 'Content_image_f3e02a04',
     o = 'Content_section_cf0c3481',
     d = 'Content_title_73d62fc4',

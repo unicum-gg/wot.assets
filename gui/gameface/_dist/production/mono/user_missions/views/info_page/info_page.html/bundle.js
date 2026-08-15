@@ -1,25 +1,25 @@
-import { j as e, e as s, q as a } from '../../../chunks/vendor.js';
+import { j as e, e as s, s as a } from '../../../chunks/vendor.js';
 import {
-    b as n,
+    r as n,
     f as r,
-    F as i,
-    d as o,
-    I as t,
-    e as l,
+    s as i,
+    F as o,
+    a as t,
+    I as l,
     i as c,
-    g as d,
+    u as d,
     C as m,
     B as _,
     A as p,
-    h as f,
-    r as x,
+    b as f,
+    c as x,
     U as I,
 } from '../../../chunks/lib.js';
 const b = 'weekly',
     j = 'main',
-    v = 'additional',
-    h = ['standard', 'premium', b],
-    u = ['conditions', 'bonus', 'reward', 'reroll'],
+    u = 'additional',
+    v = ['standard', 'premium', b],
+    h = ['conditions', 'bonus', 'reward', 'reroll'],
     g = (e, s) => (s > 0 ? (e > 0 ? 'hrs_mins' : 'mins') : 'hrs'),
     N = {
         base: 'InfoItem_a5beac91',
@@ -33,20 +33,20 @@ const b = 'weekly',
     },
     k = n.resolve('strings');
 function y({ index: a, item: n, type: c, rerollInterval: d = 0 }) {
-    const m = c === v || a % 2 != 0,
-        [_, p] = r(l(d), ['h', 'm']);
+    const m = c === u || a % 2 != 0,
+        [_, p] = r(i(d), ['h', 'm']);
     return e.jsxs('div', {
         className: s(N.base, N[`base__${c}`], m && N.base__reversed),
         children: [
             e.jsxs('div', {
                 className: N.textBlock,
                 children: [
-                    e.jsx(i, { text: k.readOrEmpty(`user_missions.info_page.${c}.${n}.title`), className: N.title }),
-                    e.jsx(i, {
+                    e.jsx(o, { text: k.readOrEmpty(`user_missions.info_page.${c}.${n}.title`), className: N.title }),
+                    e.jsx(o, {
                         text: k.readOrEmpty(`user_missions.info_page.${c}.${n}.description`),
                         split: !0,
                         params: {
-                            time: e.jsx(o, {
+                            time: e.jsx(t, {
                                 path: `user_missions.common.duration.${g(Number(_), Number(p))}`,
                                 params: { hours: _, minutes: p },
                             }),
@@ -57,7 +57,7 @@ function y({ index: a, item: n, type: c, rerollInterval: d = 0 }) {
             }),
             e.jsx('div', {
                 className: N.iconWrapper,
-                children: e.jsx(t, { path: `userMissions.info_page.${n}`, className: N.icon }),
+                children: e.jsx(l, { path: `userMissions.info_page.${n}`, className: N.icon }),
             }),
         ],
     });
@@ -93,12 +93,12 @@ const [$, P] = c()(
                                         className: E,
                                         children: O.readOrEmpty('user_missions.info_page.header'),
                                     }),
-                                    h.map((s, a) =>
+                                    v.map((s, a) =>
                                         r || s !== b ? e.jsx(y, { index: a, item: s, type: j }, `index_${a}`) : null,
                                     ),
                                     e.jsx('div', { className: M }),
-                                    u.map((s, a) =>
-                                        e.jsx(y, { index: a, item: s, type: v, rerollInterval: n }, `index_${a}`),
+                                    h.map((s, a) =>
+                                        e.jsx(y, { index: a, item: s, type: u, rerollInterval: n }, `index_${a}`),
                                     ),
                                 ],
                             }),

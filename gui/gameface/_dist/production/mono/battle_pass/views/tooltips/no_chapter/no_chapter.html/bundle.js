@@ -1,13 +1,13 @@
-import { j as s, f as e, v as a } from '../../../../chunks/vendor.js';
-import { i as t, N as i, a as n, n as c, bY as r, J as d, U as o, d as l } from '../../../../chunks/lib.js';
-const [_, j] = t()(({ observableModel: s }) => ({ ...{ root: s.object() } }), i),
+import { j as s, f as e, w as a } from '../../../../chunks/vendor.js';
+import { i as t, O as i, a as n, D as c, cd as r, J as d, U as o, d as l } from '../../../../chunks/lib.js';
+/* empty css                       */ const [_, j] = t()(({ observableModel: s }) => ({ ...{ root: s.object() } }), i),
     p = 'Message_2be04282',
     x = 'Message_separator_8e93a926',
     h = 'Message_content_892e4ad6',
     m = 'Message_text_4b17d86',
-    v = 'Message_lightWrapper_3117043c',
-    b = 'Message_lightWrapper__x2_2e75acbc',
-    g = 'Message_light_b62af34c',
+    b = 'Message_lightWrapper_3117043c',
+    g = 'Message_lightWrapper__x2_2e75acbc',
+    v = 'Message_light_b62af34c',
     N = 'Message_points_65c3ecdb',
     f = 'Message_check_3a018192',
     M = R.strings.battle_pass.tooltips.notChosen,
@@ -28,8 +28,8 @@ const [_, j] = t()(({ observableModel: s }) => ({ ...{ root: s.object() } }), i)
                                     className: N,
                                     children: [
                                         s.jsx('div', {
-                                            className: e(v, 2 === t && b),
-                                            children: s.jsx('div', { className: g }),
+                                            className: e(b, 2 === t && g),
+                                            children: s.jsx('div', { className: v }),
                                         }),
                                         s.jsx('div', { className: f, children: a }),
                                     ],
@@ -48,22 +48,22 @@ const [_, j] = t()(({ observableModel: s }) => ({ ...{ root: s.object() } }), i)
     w = 'Content_subtitle_9986b7c5',
     D = 'Content_messageWrapper_563c2e09',
     J = 'Content_description_bf1180f1',
-    P = 'Content_separatorWrapper_162c2d2f',
-    T = R.strings.battle_pass.tooltips.notChosen,
-    U = a(() => {
+    O = 'Content_separatorWrapper_162c2d2f',
+    P = R.strings.battle_pass.tooltips.notChosen,
+    T = a(() => {
         const { model: e } = j(),
             { points: a } = e.root.get();
         return s.jsxs('div', {
             className: u,
             children: [
-                s.jsx('div', { className: k, children: T.title() }),
-                s.jsx('div', { className: w, children: T.subTitle() }),
+                s.jsx('div', { className: k, children: P.title() }),
+                s.jsx('div', { className: w, children: P.subTitle() }),
                 a > 0
                     ? s.jsx('div', { className: D, children: s.jsx(C, { points: a }) })
-                    : s.jsx('div', { className: P, children: s.jsx('div', { className: W }) }),
-                s.jsx('div', { className: J, children: T.description() }),
+                    : s.jsx('div', { className: O, children: s.jsx('div', { className: W }) }),
+                s.jsx('div', { className: J, children: P.description() }),
             ],
         });
     }),
-    Y = () => s.jsx(r, { children: s.jsx(r.Decorator, { children: s.jsx(U, {}) }) });
-l(new d().add(o).addWithProps(_, {}).render(s.jsx(Y, {})));
+    U = () => s.jsx(r, { children: s.jsx(r.Decorator, { children: s.jsx(T, {}) }) });
+l(new d().add(o).addWithProps(_, {}).render(s.jsx(U, {})));

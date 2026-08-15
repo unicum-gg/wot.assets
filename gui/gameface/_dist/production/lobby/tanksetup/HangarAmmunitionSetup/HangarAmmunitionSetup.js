@@ -564,9 +564,13 @@
                         if (a.mediumWidth && b) return (0, s.H)(t, a, D);
                         if (a.smallWidth && g) return (0, s.H)(t, a, D);
                         if (a.extraSmallWidth && E) return (0, s.H)(t, a, D);
-                        if (
-                            !(a.extraLargeWidth || a.largeWidth || a.mediumWidth || a.smallWidth || a.extraSmallWidth)
-                        ) {
+                        if (!(
+                            a.extraLargeWidth ||
+                            a.largeWidth ||
+                            a.mediumWidth ||
+                            a.smallWidth ||
+                            a.extraSmallWidth
+                        )) {
                             if (a.extraLargeHeight && f) return t;
                             if (a.largeHeight && h) return t;
                             if (a.mediumHeight && v) return t;
@@ -1074,7 +1078,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, a = s(i.keys()); !(e = a()).done; ) {
+                            for (var e, a = s(i.keys()); !(e = a()).done;) {
                                 o(e.value, t);
                             }
                         },
@@ -1883,7 +1887,7 @@
                     s = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function u(e) {
                     let t = '';
-                    for (let a = s.length - 1; a >= 0; a--) for (; e >= s[a]; ) ((t += n[a]), (e -= s[a]));
+                    for (let a = s.length - 1; a >= 0; a--) for (; e >= s[a];) ((t += n[a]), (e -= s[a]));
                     return t;
                 }
                 const r = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -2373,7 +2377,7 @@
                         let d = i.exec(e),
                             m = e,
                             p = 0;
-                        for (; d; ) {
+                        for (; d;) {
                             const a = d[0],
                                 n = o.exec(a),
                                 b = l.exec(a),
@@ -2441,7 +2445,7 @@
                 const u = (e, t = []) => {
                         const a = document.getElementById('root');
                         a && (a.style.cursor = e ? 'grabbing' : 'default');
-                        for (var s, u = n(t); !(s = u()).done; ) {
+                        for (var s, u = n(t); !(s = u()).done;) {
                             const t = s.value,
                                 a = document.getElementById(t);
                             a && (a.style.pointerEvents = e ? 'none' : 'auto');
@@ -2455,7 +2459,7 @@
                     i = (e, t, a) => {
                         let s = '',
                             u = 8e3;
-                        for (var r, i = n(a); !(r = i()).done; ) {
+                        for (var r, i = n(a); !(r = i()).done;) {
                             const e = r.value,
                                 a = Math.abs(e.centerX - t);
                             a < u && ((s = e.id), (u = a));
@@ -7355,7 +7359,7 @@
                                             t(e).delete(a);
                                         },
                                         s = (e, ...a) => {
-                                            for (var n, s = Ou(t(e).values()); !(n = s()).done; ) (0, n.value)(...a);
+                                            for (var n, s = Ou(t(e).values()); !(n = s()).done;) (0, n.value)(...a);
                                         };
                                     return (0, i.useMemo)(() => ({ on: a, off: n, trigger: s }), []);
                                 })(),
@@ -8617,7 +8621,7 @@
                     _i = (e, t, a, n) => {
                         let s = t.exec(e),
                             u = 0;
-                        for (; s; ) (u !== s.index && a(e.slice(u, s.index)), n(s), (u = t.lastIndex), (s = t.exec(e)));
+                        for (; s;) (u !== s.index && a(e.slice(u, s.index)), n(s), (u = t.lastIndex), (s = t.exec(e)));
                         u !== e.length && a(e.slice(u));
                     },
                     di = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -8663,7 +8667,7 @@
                               if (!n) return [e];
                               const s = [];
                               let u = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const r = t.justifyContent === Yr.FlexEnd ? n.index : a.lastIndex;
                                   (s.push(e.slice(u, r)), (u = r), (n = a.exec(e)));
                               }
@@ -8708,7 +8712,9 @@
                     },
                     gi = (e, t, a = '', n) => {
                         const s = [],
-                            u = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            u = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             _i(
                                 u,
@@ -8838,7 +8844,7 @@
                             c = ((e, t) => {
                                 let a = 0,
                                     n = e.length - 1;
-                                for (; n - a >= 0; ) {
+                                for (; n - a >= 0;) {
                                     const s = a + Math.ceil(0.5 * (n - a));
                                     hi(e[s], t) ? (n = s - 1) : (a = s + 1);
                                 }
@@ -11727,7 +11733,7 @@
                                     let n = 0,
                                         u = a - 1,
                                         r = !1;
-                                    for (; u - n > 1; ) {
+                                    for (; u - n > 1;) {
                                         const a = n + Math.floor(0.5 * (u - n + 1));
                                         ((r = s(e[a], t)), r ? (u = a) : (n = a));
                                     }

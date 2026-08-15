@@ -899,15 +899,13 @@
                             if (t.mediumWidth && _) return r(u, t, f);
                             if (t.smallWidth && m) return r(u, t, f);
                             if (t.extraSmallWidth && h) return r(u, t, f);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && D) return u;
                                 if (t.largeHeight && B) return u;
                                 if (t.mediumHeight && g) return u;
@@ -1650,7 +1648,7 @@
                     De = (e, u, t, n) => {
                         let a = u.exec(e),
                             r = 0;
-                        for (; a; ) (r !== a.index && t(e.slice(r, a.index)), n(a), (r = u.lastIndex), (a = u.exec(e)));
+                        for (; a;) (r !== a.index && t(e.slice(r, a.index)), n(a), (r = u.lastIndex), (a = u.exec(e)));
                         r !== e.length && t(e.slice(r));
                     },
                     Be = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
@@ -1697,7 +1695,7 @@
                               if (!n) return [e];
                               const a = [];
                               let r = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const i = u.justifyContent === se.FlexEnd ? n.index : t.lastIndex;
                                   (a.push(e.slice(r, i)), (r = i), (n = t.exec(e)));
                               }
@@ -1931,7 +1929,7 @@
                                                     c = ((e, u) => {
                                                         let t = 0,
                                                             n = e.length - 1;
-                                                        for (; n - t >= 0; ) {
+                                                        for (; n - t >= 0;) {
                                                             const a = t + Math.ceil(0.5 * (n - t));
                                                             we(e[a], u) ? (n = a - 1) : (t = a + 1);
                                                         }
@@ -2506,9 +2504,9 @@
                     au = ((e, u) => {
                         const t = [];
                         let n = [];
-                        for (var a, r = uu(e); !(a = r()).done; ) {
+                        for (var a, r = uu(e); !(a = r()).done;) {
                             const e = a.value;
-                            for (var i, o = uu(u); !(i = o()).done; ) {
+                            for (var i, o = uu(u); !(i = o()).done;) {
                                 const u = i.value;
                                 n.push(u[e]);
                             }

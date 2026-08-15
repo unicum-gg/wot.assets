@@ -1,5 +1,5 @@
 import { t, M as e, F as s, v as n, x as a, N as i, w as l, O as r, y as o, P as c, z as u, Q as d } from './vendor.js';
-import { r as f, dr as g, ds as h, bu as p, ar as v, dt as m, du as y } from './lib.js';
+import { r as f, dx as g, dy as h, bv as p, ar as v, dz as y, dA as m } from './lib.js';
 const b = f.resolve('strings');
 function _(t, e, s = '...') {
     if (
@@ -12,7 +12,7 @@ function _(t, e, s = '...') {
         return [t, !1];
     return [`${t.slice(0, e - s.length)}${s}`, !0];
 }
-const I = g(m + y),
+const I = g(y + m),
     N = () => `${Date.now().toString(16)}_${I(3)}`;
 function w(t, e, s = 1) {
     const n = h(e, { count: s });
@@ -75,7 +75,7 @@ function L(t) {
     for (let s = 0; s < t.length; s++) e = (e + t[s]) & 65535;
     return e;
 }
-function F(t) {
+function z(t) {
     if (0 === t.length) return E('EMPTY_INPUT');
     const e = L(t),
         s = new Uint8Array(5 + 5 * t.length);
@@ -98,7 +98,7 @@ function F(t) {
         l = 0;
     const r = s.slice(0, n);
     for (const o of r)
-        for (i = (i << 8n) | BigInt(o), l += 8; l >= 6; ) {
+        for (i = (i << 8n) | BigInt(o), l += 8; l >= 6;) {
             l -= 6;
             const t = Number((i >> BigInt(l)) & 0x3fn);
             ((a += C[t]), (i &= (1n << BigInt(l)) - 1n));
@@ -109,7 +109,7 @@ function F(t) {
     }
     return B(a);
 }
-function M(t) {
+function F(t) {
     if (0 === t.length) return E('INVALID_INPUT');
     let e = 0n,
         s = 0;
@@ -117,7 +117,7 @@ function M(t) {
     for (const o of t) {
         const t = C.indexOf(o);
         if (-1 === t) return E('INVALID_CHAR');
-        for (e = (e << 6n) | BigInt(t), s += 6; s >= 8; )
+        for (e = (e << 6n) | BigInt(t), s += 6; s >= 8;)
             ((s -= 8), n.push(Number((e >> BigInt(s)) & 0xffn)), (e &= (1n << BigInt(s)) - 1n));
     }
     if (n.length < 6) return E('INCORRECT_LEN');
@@ -125,7 +125,7 @@ function M(t) {
         i = n[2] << 8,
         l = 5 + ((n[3] << 8) | n[4]),
         r = [];
-    for (let o = 5; o < l; ) {
+    for (let o = 5; o < l;) {
         let t,
             e = 0,
             s = 0;
@@ -142,7 +142,7 @@ export {
     U as I,
     D as P,
     P as S,
-    F as a,
+    z as a,
     _ as b,
     x as c,
     R as d,
@@ -152,7 +152,7 @@ export {
     j as h,
     S as i,
     O as j,
-    M as k,
+    F as k,
     L as l,
     B as o,
     A as p,

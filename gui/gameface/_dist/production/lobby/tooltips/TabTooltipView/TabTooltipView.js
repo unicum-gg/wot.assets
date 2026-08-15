@@ -384,7 +384,7 @@
                     })(),
                     su = function (u) {
                         let A = '';
-                        for (let F = N.length - 1; F >= 0; F--) for (; u >= N[F]; ) ((A += $[F]), (u -= N[F]));
+                        for (let F = N.length - 1; F >= 0; F--) for (; u >= N[F];) ((A += $[F]), (u -= N[F]));
                         return A;
                     };
                 function lu() {

@@ -1,6 +1,6 @@
-import { t as e, j as s, l as a } from '../../../chunks/vendor.js';
+import { t as e, j as s, l as i } from '../../../chunks/vendor.js';
 import {
-    i,
+    i as a,
     r as l,
     d as o,
     n as t,
@@ -10,19 +10,20 @@ import {
     t as d,
     s as _,
     o as m,
-    h as g,
-    k as v,
-    T as N,
+    p as g,
+    h as v,
+    k as N,
+    T as p,
     l as x,
-    U as p,
+    U as j,
 } from '../../../chunks/lib.js';
-var j = ((e) => (
+var h = ((e) => (
     (e.STANDARD = 'standard'),
     (e.POST_PROGRESSION = 'postProgression'),
     (e.VEH_SKILL_TREE = 'vehSkillTree'),
     e
-))(j || {});
-const [h, b] = i()(
+))(h || {});
+const [b, P] = a()(
         ({ observableModel: e }) => ({
             ...e.primitives(['type', 'isPrestigeAvailable']),
             vehicleInfo: e.object('vehicleInfo'),
@@ -33,213 +34,214 @@ const [h, b] = i()(
             close: e.createCallbackNoArgs('onClose'),
         }),
     ),
-    P = 'Icon_glow_b6f80802',
-    f = 'Icon_glow__light_3f310309',
-    k = 'Icon_glow__strong_cd5dd8a1',
-    u = 'Icon_7f7c6297',
-    w = 'Icon_tankIcon_34bc69b9',
+    f = 'Icon_glow_b6f80802',
+    k = 'Icon_glow__light_3f310309',
+    u = 'Icon_glow__strong_cd5dd8a1',
+    w = 'Icon_7f7c6297',
+    y = 'Icon_tankIcon_34bc69b9',
     C = l.resolve('images'),
     S = e(({ vehicleType: e }) => {
-        const { model: i } = b(),
+        const { model: a } = P(),
             l = o({ value: 'c_440x330' }, { small: { value: 'c_600x450' } }),
             c = C.readOrEmpty(`elitewindow.tank_icons.${l.value}.${t(e)}`);
         return s.jsxs('div', {
-            className: u,
+            className: w,
             children: [
-                s.jsx('div', { className: a(P, k) }),
-                !i.isPrestigeAvailable.get() && s.jsx('div', { className: a(P, f) }),
-                s.jsx('div', { className: w, style: { backgroundImage: `url(${c})` } }),
+                s.jsx('div', { className: i(f, u) }),
+                !a.isPrestigeAvailable.get() && s.jsx('div', { className: i(f, k) }),
+                s.jsx('div', { className: y, style: { backgroundImage: `url(${c})` } }),
             ],
         });
     }),
-    y = 'ProgressionBlock_textBackground_52823f45',
-    T = 'ProgressionBlock_29163b1a',
-    A = 'ProgressionBlock_lockWrapper_721c0560',
-    I = 'ProgressionBlock_lock_4669aa21',
-    E = 'ProgressionBlock_lockCloud_c5cf7fca',
-    O = 'ProgressionBlock_content_8ce0e880',
-    B = 'ProgressionBlock_title_a1a7cf79',
-    D = 'ProgressionBlock_description_340e09db',
-    G = 'ProgressionBlock_icon_230ee763',
-    H = R.strings.elite_window.elite_window,
-    z = e(({ className: e }) => {
-        const { model: i } = b(),
-            l = i.type.get(),
-            o = l === j.POST_PROGRESSION ? H.post_progression.description() : H.vanity_progression.title(),
-            t = l !== j.POST_PROGRESSION && H.vanity_progression.description();
+    T = 'ProgressionBlock_textBackground_52823f45',
+    A = 'ProgressionBlock_29163b1a',
+    I = 'ProgressionBlock_lockWrapper_721c0560',
+    E = 'ProgressionBlock_lock_4669aa21',
+    O = 'ProgressionBlock_lockCloud_c5cf7fca',
+    B = 'ProgressionBlock_content_8ce0e880',
+    D = 'ProgressionBlock_title_a1a7cf79',
+    G = 'ProgressionBlock_description_340e09db',
+    H = 'ProgressionBlock_icon_230ee763',
+    z = R.strings.elite_window.elite_window,
+    L = e(({ className: e }) => {
+        const { model: a } = P(),
+            l = a.type.get(),
+            o = l === h.POST_PROGRESSION ? z.post_progression.description() : z.vanity_progression.title(),
+            t = l !== h.POST_PROGRESSION && z.vanity_progression.description();
         return s.jsxs('div', {
-            className: a(T, e),
+            className: i(A, e),
             children: [
                 s.jsxs('div', {
-                    className: A,
-                    children: [s.jsx('div', { className: E }), s.jsx('div', { className: I })],
+                    className: I,
+                    children: [s.jsx('div', { className: O }), s.jsx('div', { className: E })],
                 }),
                 s.jsxs('div', {
-                    className: O,
+                    className: B,
                     children: [
-                        s.jsx('div', { className: y }),
+                        s.jsx('div', { className: T }),
                         o &&
                             s.jsxs('div', {
-                                className: B,
-                                children: [l === j.POST_PROGRESSION && s.jsx('div', { className: G }), o],
+                                className: D,
+                                children: [l === h.POST_PROGRESSION && s.jsx('div', { className: H }), o],
                             }),
-                        t && s.jsx(c, { text: t, split: !0, className: D }),
+                        t && s.jsx(c, { text: t, split: !0, className: G }),
                     ],
                 }),
             ],
         });
     }),
-    L = 'Content_glow_7d6ef440',
-    F = 'Content_glow__strong_4a868d52',
-    $ = 'Content_9af045a3',
-    M = 'Content_base__hasPostProgression_a9391767',
-    K = 'Content_main_f562db1d',
-    U = 'Content_section_57c57489',
-    V = 'Content_section__image_7f1ebf74',
-    W = 'Content_section__body_8837b3f5',
-    q = 'Content_section__title_806db271',
-    J = 'Content_section__description_e93395a4',
-    Q = 'Content_prestigeBadge_a19642a7',
-    X = 'Content_prestigeEmblem_5e4cfab0',
-    Y = 'Content_postProgression_9f8673d',
-    Z = 'Content_arrow_82982ba8',
-    ee = R.strings.elite_window.elite_window,
-    se = e(({ className: e }) => {
-        const { model: i, controls: l } = b(),
-            o = i.vehicleInfo.get(),
-            t = i.type.get(),
-            r = i.isPrestigeAvailable.get(),
-            d = i.prestigeEmblem.get();
+    F = 'Content_glow_7d6ef440',
+    $ = 'Content_glow__strong_4a868d52',
+    M = 'Content_9af045a3',
+    K = 'Content_base__hasPostProgression_a9391767',
+    U = 'Content_main_f562db1d',
+    V = 'Content_section_57c57489',
+    W = 'Content_section__image_7f1ebf74',
+    q = 'Content_section__body_8837b3f5',
+    J = 'Content_section__title_806db271',
+    Q = 'Content_section__description_e93395a4',
+    X = 'Content_prestigeBadge_a19642a7',
+    Y = 'Content_prestigeEmblem_5e4cfab0',
+    Z = 'Content_postProgression_9f8673d',
+    ee = 'Content_arrow_82982ba8',
+    se = R.strings.elite_window.elite_window,
+    ie = e(({ className: e }) => {
+        const { model: a, controls: l } = P(),
+            o = a.vehicleInfo.get(),
+            t = a.type.get(),
+            r = a.isPrestigeAvailable.get(),
+            d = a.prestigeEmblem.get();
         return s.jsxs('div', {
-            className: a($, t !== j.STANDARD && M),
+            className: i(M, t !== h.STANDARD && K),
             children: [
                 s.jsxs('div', {
-                    className: K,
+                    className: U,
                     children: [
-                        s.jsx('div', { className: Z }),
+                        s.jsx('div', { className: ee }),
                         s.jsxs('div', {
-                            className: U,
+                            className: V,
                             children: [
-                                s.jsx('div', { className: V, children: s.jsx(S, { vehicleType: o.vehicleType }) }),
+                                s.jsx('div', { className: W, children: s.jsx(S, { vehicleType: o.vehicleType }) }),
                                 s.jsxs('div', {
-                                    className: W,
+                                    className: q,
                                     children: [
-                                        s.jsx('div', { className: q, children: ee.elite.title() }),
-                                        s.jsx(c, { className: J, text: ee.elite.description(), split: !0 }),
+                                        s.jsx('div', { className: J, children: se.elite.title() }),
+                                        s.jsx(c, { className: Q, text: se.elite.description(), split: !0 }),
                                     ],
                                 }),
                             ],
                         }),
                         r &&
                             s.jsxs('div', {
-                                className: U,
+                                className: V,
                                 children: [
                                     s.jsxs('div', {
-                                        className: a(V, Q),
+                                        className: i(W, X),
                                         children: [
-                                            s.jsx('div', { className: a(L, F) }),
+                                            s.jsx('div', { className: i(F, $) }),
                                             s.jsx(n, {
                                                 level: d.level,
                                                 grade: d.grade ?? 1,
                                                 type: d.type,
                                                 size: n.sizes.xl,
-                                                classNames: { base: X },
+                                                classNames: { base: Y },
                                             }),
                                         ],
                                     }),
                                     s.jsxs('div', {
-                                        className: W,
+                                        className: q,
                                         children: [
-                                            s.jsx('div', { className: q, children: ee.prestige.title() }),
-                                            s.jsx(c, { className: J, text: ee.prestige.description(), split: !0 }),
+                                            s.jsx('div', { className: J, children: se.prestige.title() }),
+                                            s.jsx(c, { className: Q, text: se.prestige.description(), split: !0 }),
                                         ],
                                     }),
                                 ],
                             }),
                     ],
                 }),
-                t !== j.STANDARD && s.jsx(z, { className: Y }),
+                t !== h.STANDARD && s.jsx(L, { className: Z }),
             ],
         });
     }),
     ae = 'Footer_e604d473',
-    ie = 'Footer_button_cc34b9a4',
-    le = R.strings.elite_window.elite_window,
-    oe = e(({ className: e }) => {
-        const { model: i, controls: l } = b(),
-            o = i.type.get();
+    le = 'Footer_button_cc34b9a4',
+    oe = R.strings.elite_window.elite_window,
+    te = e(({ className: e }) => {
+        const { model: a, controls: l } = P(),
+            o = a.type.get();
         return s.jsxs('div', {
-            className: a(ae, e),
+            className: i(ae, e),
             children: [
                 s.jsx(r, {
                     onClick: l.close,
                     size: _.medium,
                     theme: d.primary,
-                    className: ie,
-                    children: le.buttons.ok(),
+                    className: le,
+                    children: oe.buttons.ok(),
                 }),
-                o !== j.STANDARD &&
+                o !== h.STANDARD &&
                     s.jsx(r, {
                         onClick: l.goToProgression,
                         size: _.medium,
                         theme: d.secondary,
-                        classNames: { base: ie },
+                        classNames: { base: le },
                         children:
-                            o === j.POST_PROGRESSION ? le.buttons.post_progression() : le.buttons.vanity_progression(),
+                            o === h.POST_PROGRESSION ? oe.buttons.post_progression() : oe.buttons.vanity_progression(),
                     }),
             ],
         });
     }),
-    te = 'Header_ee5a2d07',
-    ce = 'Header_tankName_8c840ed3',
-    ne = 'Header_vehicleText_b549f08a',
-    re = 'Header_title_b0ea43f0',
-    de = R.strings.elite_window.elite_window,
-    _e = e(({ className: e }) => {
-        const { model: i, controls: l } = b(),
-            o = i.vehicleInfo.get();
-        return s.jsxs('div', {
-            className: a(te, e),
-            children: [
-                s.jsxs(m, {
-                    className: ce,
-                    children: [
-                        s.jsx(m.Level, { className: ne, value: o.vehicleLvl }),
-                        s.jsx(m.Type, { type: o.vehicleType, premium: o.isElite }),
-                        s.jsx(m.Name, { className: ne, children: o.vehicleName }),
-                    ],
-                }),
-                s.jsx('div', { className: re, children: de.title() }),
-            ],
-        });
-    }),
-    me = 'App_f208273f',
-    ge = 'App_backgroundGlare_3ba092e8',
-    ve = 'App_header_494088d4',
-    Ne = 'App_footer_ac8fd39',
-    xe = 'App_closeButton_c796cf51',
-    pe = e(function () {
-        const { controls: e } = b();
-        return (
-            g(v.ESCAPE, e.close),
-            s.jsxs('div', {
-                className: me,
+    ce = 'Header_ee5a2d07',
+    ne = 'Header_tankName_8c840ed3',
+    re = 'Header_vehicleText_b549f08a',
+    de = 'Header_title_b0ea43f0',
+    _e = R.strings.elite_window.elite_window,
+    me = e(({ className: e }) => {
+        const { model: a } = P(),
+            l = a.vehicleInfo.get();
+        if (l.vehicleType in g)
+            return s.jsxs('div', {
+                className: i(ce, e),
                 children: [
-                    s.jsx('div', { className: ge }),
+                    s.jsxs(m, {
+                        className: ne,
+                        children: [
+                            s.jsx(m.Level, { className: re, value: l.vehicleLvl }),
+                            s.jsx(m.Type, { type: l.vehicleType, premium: l.isElite }),
+                            s.jsx(m.Name, { className: re, children: l.vehicleName }),
+                        ],
+                    }),
+                    s.jsx('div', { className: de, children: _e.title() }),
+                ],
+            });
+    }),
+    ge = 'App_f208273f',
+    ve = 'App_backgroundGlare_3ba092e8',
+    Ne = 'App_header_494088d4',
+    pe = 'App_footer_ac8fd39',
+    xe = 'App_closeButton_c796cf51',
+    je = e(function () {
+        const { controls: e } = P();
+        return (
+            v(N.ESCAPE, e.close),
+            s.jsxs('div', {
+                className: ge,
+                children: [
+                    s.jsx('div', { className: ve }),
                     s.jsx('div', {
                         className: xe,
-                        children: s.jsx(N, {
+                        children: s.jsx(p, {
                             caption: R.strings.menu.viewHeader.closeBtn.label(),
                             type: 'close',
                             side: 'right',
                             onClick: e.close,
                         }),
                     }),
-                    s.jsx(_e, { className: ve }),
-                    s.jsx(se, {}),
-                    s.jsx(oe, { className: Ne }),
+                    s.jsx(me, { className: Ne }),
+                    s.jsx(ie, {}),
+                    s.jsx(te, { className: pe }),
                 ],
             })
         );
     });
-x(s.jsx(h, { children: s.jsx(p, { children: s.jsx(pe, {}) }) }));
+x(s.jsx(b, { children: s.jsx(j, { children: s.jsx(je, {}) }) }));

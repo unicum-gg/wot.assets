@@ -379,7 +379,7 @@
                                             t(e).delete(n);
                                         },
                                         o = (e, ...n) => {
-                                            for (var r, o = s(t(e).values()); !(r = o()).done; ) (0, r.value)(...n);
+                                            for (var r, o = s(t(e).values()); !(r = o()).done;) (0, r.value)(...n);
                                         };
                                     return (0, i.useMemo)(() => ({ on: n, off: r, trigger: o }), []);
                                 })(),
@@ -969,7 +969,7 @@
                     o = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function i(e) {
                     let t = '';
-                    for (let n = o.length - 1; n >= 0; n--) for (; e >= o[n]; ) ((t += r[n]), (e -= o[n]));
+                    for (let n = o.length - 1; n >= 0; n--) for (; e >= o[n];) ((t += r[n]), (e -= o[n]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

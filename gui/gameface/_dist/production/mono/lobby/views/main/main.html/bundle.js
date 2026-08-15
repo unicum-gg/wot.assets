@@ -3,65 +3,66 @@ import {
     n as a,
     f as t,
     p as s,
-    j as l,
-    e as n,
-    r,
+    j as r,
+    e as l,
+    r as n,
     u as o,
     i,
     m as c,
     q as d,
 } from '../../../chunks/vendor.js';
 import {
-    G as m,
-    H as u,
-    I as p,
-    i as _,
+    G as _,
+    H as m,
+    I as u,
+    i as p,
     J as b,
     K as f,
-    L as g,
-    p as h,
+    L as h,
+    p as g,
     M as x,
-    N as y,
-    O as w,
+    N as w,
+    O as y,
     P as v,
     F as N,
     Q as j,
-    R as k,
-    m as C,
-    D as S,
+    R as C,
+    m as k,
+    y as S,
     S as I,
     n as T,
-    y as A,
-    U as $,
-    d as E,
-    h as P,
-    f as L,
-    E as W,
+    w as O,
+    U as A,
+    d as $,
+    h as E,
+    f as P,
+    z as L,
     r as H,
-    W as z,
-    X as B,
-    Y as M,
-    Z as D,
-    V as X,
-    _ as F,
-    $ as V,
-    a0 as Y,
-    a1 as O,
-    j as Q,
+    W,
+    X as z,
+    Y as B,
+    Z as M,
+    _ as D,
+    V as Y,
+    $ as X,
+    a0 as F,
+    a1 as V,
+    a2 as Q,
+    j as U,
 } from '../../../chunks/lib.js';
-import { s as G, g as U } from '../../../chunks/resources.js';
-import { u as q } from '../../../chunks/usePreloadImages.js';
-import { C as J, u as K, P as Z, R as ee, g as ae, i as te } from '../../../chunks/reward.js';
-import { A as se, a as le } from '../../../chunks/arrow.js';
-import { B as ne } from '../../../chunks/background.js';
-const re = 'check',
-    oe = 'select',
-    ie = 'shine',
-    ce = { default: 100, shine_in: 1e3, shine_out: 650, pulse: 600, check: 500 },
-    de = { default: 100, shine: 200, select_long: 200 },
-    me = 3,
-    ue = { check: { from: 1.5, to: 1 }, shine: { from: 0.8, to: 1.5 } };
-function pe(e) {
+import { s as G, g as q } from '../../../chunks/resources.js';
+import { u as J } from '../../../chunks/usePreloadImages.js';
+import { C as K, u as Z, P as ee, a as ae, R as te, g as se, i as re } from '../../../chunks/reward.js';
+import { A as le, a as ne } from '../../../chunks/arrow.js';
+import { B as oe } from '../../../chunks/background.js';
+const ie = 'check',
+    ce = 'select',
+    de = 'shine',
+    _e = { default: 100, shine_in: 1e3, shine_out: 650, pulse: 600, check: 500 },
+    me = { default: 100, shine: 200, select_long: 200 },
+    ue = 3,
+    pe = { check: { from: 1.5, to: 1 }, shine: { from: 0.8, to: 1.5 } };
+function be(e) {
     return {
         fade_in: async function (a, t = 0) {
             return new Promise((s) => {
@@ -74,38 +75,38 @@ function pe(e) {
             });
         },
         scale_in: async function (a, t, s = 0) {
-            return new Promise((l) => {
+            return new Promise((r) => {
                 e.start({
                     from: { opacity: 0, scale: t[0] },
                     to: { opacity: 1, scale: t[1] },
                     config: { duration: a },
                     delay: s,
-                    onResolve: l,
+                    onResolve: r,
                 });
             });
         },
         pulse: async function (e, a, t, s) {
-            const l = a / (2 * e - 1),
-                n = (e) => 0 === e,
-                r = (a) => a === e - 1;
+            const r = a / (2 * e - 1),
+                l = (e) => 0 === e,
+                n = (a) => a === e - 1;
             for (let o = 0; o < e; o++) {
-                const e = n(o) ? t : 0;
-                (s(), await this.fade_in(l, e), r(o) || (await this.fade_out(l, l)));
+                const e = l(o) ? t : 0;
+                (s(), await this.fade_in(r, e), n(o) || (await this.fade_out(r, r)));
             }
         },
     };
 }
-const { default: _e, pulse: be, shine_in: fe, shine_out: ge, check: he } = ce,
-    { default: xe, select_long: ye } = de,
-    we = {
+const { default: fe, pulse: he, shine_in: ge, shine_out: xe, check: we } = _e,
+    { default: ye, select_long: ve } = me,
+    Ne = {
         steps: { min: 6, max: 10 },
         accentLastIndex: 4,
-        durations: { default: 2 * _e + xe, long: 2 * _e + ye, final: be + fe + ge + he + 4 * xe },
+        durations: { default: 2 * fe + ye, long: 2 * fe + ve, final: he + ge + xe + we + 4 * ye },
     },
-    ve = 'select',
-    Ne = 'long_select',
-    je = 'final';
-class ke {
+    je = 'select',
+    Ce = 'long_select',
+    ke = 'final';
+class Re {
     last;
     availableList;
     order;
@@ -117,14 +118,14 @@ class ke {
         return this.i >= this.order.length;
     }
     isLongTime() {
-        return this.i >= this.order.length - we.accentLastIndex;
+        return this.i >= this.order.length - Ne.accentLastIndex;
     }
     randomOrder() {
         if (1 === this.availableList.length) return this.availableList;
         let e = [this.last];
-        const a = u(we.steps.min, we.steps.max);
-        for (; e.length < a; ) {
-            const a = m(this.availableList);
+        const a = m(Ne.steps.min, Ne.steps.max);
+        for (; e.length < a;) {
+            const a = _(this.availableList);
             e[e.length - 1].name !== a.name && e.push(a);
         }
         return e.reverse();
@@ -133,16 +134,16 @@ class ke {
         const e = this.order[this.i];
         return e
             ? this.i < this.order.length - 1
-                ? `${e.name}_${this.isLongTime() ? Ne : ve}`
-                : `${e.name}_${je}`
+                ? `${e.name}_${this.isLongTime() ? Ce : je}`
+                : `${e.name}_${ke}`
             : '';
     }
     duration() {
         return this.i === this.order.length - 1
-            ? we.durations.final
+            ? Ne.durations.final
             : this.isLongTime()
-              ? we.durations.long
-              : we.durations.default;
+              ? Ne.durations.long
+              : Ne.durations.default;
     }
     next() {
         return (
@@ -151,22 +152,22 @@ class ke {
         );
     }
 }
-function Ce(e, a) {
+function Se(e, a) {
     const { start: t, end: s } = e.coordinates,
-        { start: l, end: n } = a.coordinates;
-    return !(l.x >= s.x || l.y >= s.y) && !(t.x >= n.x || t.y >= n.y);
+        { start: r, end: l } = a.coordinates;
+    return !(r.x >= s.x || r.y >= s.y) && !(t.x >= l.x || t.y >= l.y);
 }
-const Se = { maxX: 12, maxY: 5 },
-    Ie = 'initial',
-    Te = 'appearance',
+const Ie = { maxX: 12, maxY: 5 },
+    Te = 'initial',
+    Oe = 'appearance',
     Ae = 'available',
-    Re = 'pending',
-    $e = 'selecting',
-    Ee = 'completed',
-    Pe = 'available',
-    Le = 'received',
+    $e = 'pending',
+    Ee = 'selecting',
+    Pe = 'completed',
+    Le = 'available',
+    He = 'received',
     We = 'newlyReceived',
-    [He, ze] = _()(
+    [ze, Be] = p()(
         ({ observableModel: t }) => {
             const s = {
                     root: t.object(),
@@ -174,39 +175,39 @@ const Se = { maxX: 12, maxY: 5 },
                     fixedRewards: t.array('fixedReward'),
                     stepPrice: t.object('stepPrice'),
                     ...t.primitives(['isInterrupted']),
-                    viewState: e.box(Ie),
+                    viewState: e.box(Te),
                     probabilityHidden: e.box(!1),
                     cellSelectAnimationState: e.box(''),
                 },
-                l = a((e) => {
-                    const a = g(s.cells.get(), (a) => a.name === e);
+                r = a((e) => {
+                    const a = h(s.cells.get(), (a) => a.name === e);
                     return (a || console.warn(`Cell "${e}" not found!`), a);
                 }),
-                n = a(() => {
+                l = a(() => {
                     const e = s.cells.get();
                     !(function (e, a) {
                         let t = a.maxX,
                             s = a.maxY;
-                        for (let l = 0; l < e.length; l++) {
-                            const n = p(e, l);
-                            n.bonuses.length !== Number(n.template.slice(1)) &&
-                                console.warn(`The length of ${n.name} is not corrected.`);
-                            const { start: r, end: o } = n.coordinates;
-                            ((t = Math.min(t, r.x)),
-                                (s = Math.min(s, r.y)),
-                                (r.x < 0 || r.y < 0 || o.x > a.maxX || o.y > a.maxY) &&
-                                    console.warn(`Cell ${n.name} is out of bounds`),
-                                (r.x >= o.x || r.y >= o.y) && console.warn(`Cell ${n.name} has incorrect coordinates`));
-                            for (let a = l + 1; a < e.length; a++) {
-                                const t = p(e, a);
-                                Ce(n, t) && console.warn(`Cell ${n.name} intersects with cell ${t.name}!`);
+                        for (let r = 0; r < e.length; r++) {
+                            const l = u(e, r);
+                            l.bonuses.length !== Number(l.template.slice(1)) &&
+                                console.warn(`The length of ${l.name} is not corrected.`);
+                            const { start: n, end: o } = l.coordinates;
+                            ((t = Math.min(t, n.x)),
+                                (s = Math.min(s, n.y)),
+                                (n.x < 0 || n.y < 0 || o.x > a.maxX || o.y > a.maxY) &&
+                                    console.warn(`Cell ${l.name} is out of bounds`),
+                                (n.x >= o.x || n.y >= o.y) && console.warn(`Cell ${l.name} has incorrect coordinates`));
+                            for (let a = r + 1; a < e.length; a++) {
+                                const t = u(e, a);
+                                Se(l, t) && console.warn(`Cell ${l.name} intersects with cell ${t.name}!`);
                             }
                         }
                         (0 === t && 0 === s) ||
                             console.warn(
                                 `Coordinates looks incorrect! Coordinates should be from (0,0), now: (${t}, ${s})`,
                             );
-                    })(e, Se);
+                    })(e, Ie);
                     let a = { x: 0, y: 0 };
                     return (
                         f(e, (e) => {
@@ -216,12 +217,12 @@ const Se = { maxX: 12, maxY: 5 },
                         a
                     );
                 }),
-                r = a(() => b(s.cells.get(), (e) => e.state !== Le));
-            return { ...s, computes: { cell: l, gridSize: n, availableCells: r } };
+                n = a(() => b(s.cells.get(), (e) => e.state !== He));
+            return { ...s, computes: { cell: r, gridSize: l, availableCells: n } };
         },
-        ({ externalModel: e, model: a, cleanup: l }) => {
-            const n = e.createCallback((e) => ({ cellName: e }), 'onItemShown'),
-                r = e.createCallbackNoArgs('resetInterruption'),
+        ({ externalModel: e, model: a, cleanup: r }) => {
+            const l = e.createCallback((e) => ({ cellName: e }), 'onItemShown'),
+                n = e.createCallbackNoArgs('resetInterruption'),
                 o = t((e) => {
                     a.viewState.set(e);
                 }),
@@ -232,34 +233,34 @@ const Se = { maxX: 12, maxY: 5 },
                     a.cellSelectAnimationState.set(e);
                 }),
                 d = s(() => {
-                    a.isInterrupted.get() && (o(Ae), r());
+                    a.isInterrupted.get() && (o(Ae), n());
                 }),
-                m = s(() => {
+                _ = s(() => {
                     const e = a.computes.availableCells();
-                    a.viewState.get() !== Ae || e.length || (h.sound(G.completed), o(Ee));
+                    a.viewState.get() !== Ae || e.length || (g.sound(G.completed), o(Pe));
                 });
-            let u;
-            const p = s(() => {
-                if (a.viewState.get() !== Re) return;
-                const e = g(a.cells.get(), (e) => e.state === We);
+            let m;
+            const u = s(() => {
+                if (a.viewState.get() !== $e) return;
+                const e = h(a.cells.get(), (e) => e.state === We);
                 if (e) {
-                    o($e);
+                    o(Ee);
                     const t = a.computes.availableCells(),
-                        s = new ke(t, e),
-                        l = () => {
-                            const { name: a, duration: r } = s.next();
-                            if (!a) return (o(t.length ? Ae : Ee), c(''), void n(e.name));
+                        s = new Re(t, e),
+                        r = () => {
+                            const { name: a, duration: n } = s.next();
+                            if (!a) return (o(t.length ? Ae : Pe), c(''), void l(e.name));
                             (c(a),
-                                (u = setTimeout(() => {
-                                    l();
-                                }, r)));
+                                (m = setTimeout(() => {
+                                    r();
+                                }, n)));
                         };
-                    l();
+                    r();
                 }
             });
             return (
-                l(() => {
-                    (p(), m(), d(), clearTimeout(u));
+                r(() => {
+                    (u(), _(), d(), clearTimeout(m));
                 }),
                 {
                     goPreview: e.createCallback((e) => e, 'showPreview'),
@@ -270,66 +271,66 @@ const Se = { maxX: 12, maxY: 5 },
             );
         },
     ),
-    Be = 'AltInfo_ebdfc674',
-    Me = 'AltInfo_icon_d580c4b3',
-    De = 'AltInfo_description_a11db082';
+    Me = 'AltInfo_ebdfc674',
+    De = 'AltInfo_icon_d580c4b3',
+    Ye = 'AltInfo_description_a11db082';
 function Xe({ bundleType: e, className: a = '' }) {
-    const { getText: t, getExtImage: s } = U(e),
-        r = x({ header: t('main.alt.tooltip.header'), body: t('main.alt.tooltip.body') });
-    return l.jsxs('div', {
-        ...r,
-        className: n(Be, a),
+    const { getText: t, getExtImage: s } = q(e),
+        n = x({ header: t('main.alt.tooltip.header'), body: t('main.alt.tooltip.body') });
+    return r.jsxs('div', {
+        ...n,
+        className: l(Me, a),
         children: [
-            l.jsx('div', { className: Me, style: { backgroundImage: `url(${s('main.alt')})` } }),
-            l.jsx('div', { className: De, children: t('main.alt.description') }),
+            r.jsx('div', { className: De, style: { backgroundImage: `url(${s('main.alt')})` } }),
+            r.jsx('div', { className: Ye, children: t('main.alt.description') }),
         ],
     });
 }
 const Fe = 'Loader_86bc8253',
     Ve = 'Loader_image_36fd996';
-function Ye({ bundleType: e, className: a = '' }) {
-    const { getExtImage: t } = U(e);
-    return l.jsx('div', {
-        className: n(Fe, a),
-        children: l.jsx('div', { className: Ve, style: { backgroundImage: `url(${t('main.footer.loading')})` } }),
+function Qe({ bundleType: e, className: a = '' }) {
+    const { getExtImage: t } = q(e);
+    return r.jsx('div', {
+        className: l(Fe, a),
+        children: r.jsx('div', { className: Ve, style: { backgroundImage: `url(${t('main.footer.loading')})` } }),
     });
 }
-const Oe = 'Parallax_642396e4',
-    Qe = 'Parallax_layer_cdf6ae01',
-    Ge = [
+const Ue = 'Parallax_642396e4',
+    Ge = 'Parallax_layer_cdf6ae01',
+    qe = [
         R.images.open_bundle.gui.maps.icons.bundles.default.parallax.l_2(),
         R.images.open_bundle.gui.maps.icons.bundles.default.parallax.l_3(),
     ],
-    Ue = ({ parallaxConfig: e, className: a }) => {
-        const { screenWidthRem: t } = y(),
+    Je = ({ parallaxConfig: e, className: a }) => {
+        const { screenWidthRem: t } = w(),
             s = e.reduce((e, a) => {
                 const t = Math.abs(a.speedX);
                 return t > e ? t : e;
             }, 0),
-            c = r.createRef(),
+            c = n.createRef(),
             d = s * t,
-            [m] = w(c),
-            u = o({
+            [_] = y(c),
+            m = o({
                 from: { transform: 'scale(1)' },
                 to: [{ transform: 'scale(1.1)' }, { transform: 'scale(1)' }],
                 config: { duration: 3e4 },
                 loop: !0,
             });
-        return l.jsx('div', {
+        return r.jsx('div', {
             ref: c,
-            className: n(Oe, a),
+            className: l(Ue, a),
             children: e.map((e, a) =>
-                l.jsx(
+                r.jsx(
                     i.div,
                     {
-                        className: Qe,
+                        className: Ge,
                         style: {
                             width: `${t + 2 * d}rem`,
                             left: -d + 'rem',
-                            x: m.x.to((a) => a * e.speedX),
-                            y: m.y.to((a) => a * e.speedY),
+                            x: _.x.to((a) => a * e.speedX),
+                            y: _.y.to((a) => a * e.speedY),
                             backgroundImage: `url(${e.path})`,
-                            ...(Ge.includes(e.path) && u),
+                            ...(qe.includes(e.path) && m),
                         },
                     },
                     a,
@@ -337,146 +338,146 @@ const Oe = 'Parallax_642396e4',
             ),
         });
     },
-    qe = [
+    Ke = [
         { path: 'parallax.l_1', speedX: -0.012, speedY: -0.0032 },
         { path: 'parallax.l_2', speedX: -0.025, speedY: -0.0064 },
         { path: 'parallax.l_3', speedX: -0.037, speedY: -0.023 },
         { path: 'parallax.l_4', speedX: -0.053, speedY: -0.04 },
     ],
-    Je = { default_config: qe },
-    Ke = 'Background_3b6d25c7',
-    Ze = 'Background_parallax_6e34f438',
-    ea = 'Background_lowQualityAsset_b8b64d56',
-    aa = c(function ({ className: e = '' }) {
-        const { model: a } = ze(),
+    Ze = { default_config: Ke },
+    ea = 'Background_3b6d25c7',
+    aa = 'Background_parallax_6e34f438',
+    ta = 'Background_lowQualityAsset_b8b64d56',
+    sa = c(function ({ className: e = '' }) {
+        const { model: a } = Be(),
             { bundleType: t } = a.root.get(),
-            { getExtImage: s } = U(t),
-            r = ((e) => {
-                const a = Je[e] || qe,
-                    { getExtImage: t } = U(e);
+            { getExtImage: s } = q(t),
+            n = ((e) => {
+                const a = Ze[e] || Ke,
+                    { getExtImage: t } = q(e);
                 return a.map((e) => ({ ...e, path: t(e.path) }));
             })(t),
-            c = r.map((e) => e.path),
-            d = q(c),
-            m = o({ to: { opacity: d ? 1 : 0 }, config: { duration: 300 } });
-        return l.jsx('div', {
-            className: n(Ke, e),
+            c = n.map((e) => e.path),
+            d = J(c),
+            _ = o({ to: { opacity: d ? 1 : 0 }, config: { duration: 300 } });
+        return r.jsx('div', {
+            className: l(ea, e),
             children: v.isLow()
-                ? l.jsx('div', { className: ea, style: { backgroundImage: `url(${s('parallax.lowQualityImage')})` } })
-                : l.jsx(i.div, { className: n(Ze, e), style: m, children: l.jsx(Ue, { parallaxConfig: r }) }),
+                ? r.jsx('div', { className: ta, style: { backgroundImage: `url(${s('parallax.lowQualityImage')})` } })
+                : r.jsx(i.div, { className: l(aa, e), style: _, children: r.jsx(Je, { parallaxConfig: n }) }),
         });
     }),
-    ta = 'CompletionInfo_f2ab1b8c',
-    sa = 'CompletionInfo_iconWrapper_b302caee',
-    la = 'CompletionInfo_icon_b3acdd8c',
-    na = 'CompletionInfo_text_b5f1a286',
-    ra = c(function ({ className: e = '' }) {
-        const { model: a } = ze(),
+    ra = 'CompletionInfo_f2ab1b8c',
+    la = 'CompletionInfo_iconWrapper_b302caee',
+    na = 'CompletionInfo_icon_b3acdd8c',
+    oa = 'CompletionInfo_text_b5f1a286',
+    ia = c(function ({ className: e = '' }) {
+        const { model: a } = Be(),
             { bundleType: t } = a.root.get(),
-            { getText: s, getExtImage: r } = U(t);
-        return l.jsxs('div', {
-            className: n(ta, e),
+            { getText: s, getExtImage: n } = q(t);
+        return r.jsxs('div', {
+            className: l(ra, e),
             children: [
-                l.jsx('div', {
-                    className: sa,
-                    children: l.jsx('div', { className: la, style: { backgroundImage: `url(${r('main.done')})` } }),
+                r.jsx('div', {
+                    className: la,
+                    children: r.jsx('div', { className: na, style: { backgroundImage: `url(${n('main.done')})` } }),
                 }),
-                l.jsx(N, { text: s('main.completed'), className: na }),
+                r.jsx(N, { text: s('main.completed'), className: oa }),
             ],
         });
     });
-const oa = {
-    [k.extraSmall]: { width: 93, height: 93, margin: 8 },
-    [k.small]: { width: 93, height: 93, margin: 8 },
-    [k.medium]: { width: 93, height: 93, margin: 8 },
-    [k.large]: { width: 110, height: 110, margin: 10 },
-    [k.extraLarge]: { width: 145, height: 145, margin: 15 },
+const ca = {
+    [C.extraSmall]: { width: 93, height: 93, margin: 8 },
+    [C.small]: { width: 93, height: 93, margin: 8 },
+    [C.medium]: { width: 93, height: 93, margin: 8 },
+    [C.large]: { width: 110, height: 110, margin: 10 },
+    [C.extraLarge]: { width: 145, height: 145, margin: 15 },
 };
-function ia() {
-    const { breakpoint: e } = y();
-    return oa[e.name];
+function da() {
+    const { breakpoint: e } = w();
+    return ca[e.name];
 }
-const ca = 'RewardBlock_45a3b5d0',
-    da = 'RewardBlock_info_1b4df6a4',
-    ma = 'RewardBlock_fixed_33228e1a',
-    ua = 'RewardBlock_random_f29eb048',
-    pa = 'RewardBlock_randomIcon_abf9c098',
-    _a = 'RewardBlock_currency_759a6c1b';
-function ba({ bundleType: e, bonuses: a, tooltipDisabled: t = !1 }) {
-    const { getText: s, getExtImage: n } = U(e),
-        r = C(a, (e, a) =>
-            J.includes(e.name)
-                ? l.jsx(
+const _a = 'RewardBlock_45a3b5d0',
+    ma = 'RewardBlock_info_1b4df6a4',
+    ua = 'RewardBlock_fixed_33228e1a',
+    pa = 'RewardBlock_random_f29eb048',
+    ba = 'RewardBlock_randomIcon_abf9c098',
+    fa = 'RewardBlock_currency_759a6c1b';
+function ha({ bundleType: e, bonuses: a, tooltipDisabled: t = !1 }) {
+    const { getText: s, getExtImage: l } = q(e),
+        n = k(a, (e, a) =>
+            K.includes(e.name)
+                ? r.jsx(
                       S,
-                      { type: e.name, reverse: !0, children: l.jsx('div', { className: _a, children: e.label }) },
+                      { type: e.name, reverse: !0, children: r.jsx('div', { className: fa, children: e.label }) },
                       `${e.name}_${a}`,
                   )
                 : null,
         ),
         o = I({ contentId: R.views.open_bundle.mono.lobby.tooltips.fixed_rewards('resId'), disabled: t });
-    return l.jsxs('div', {
-        className: ca,
+    return r.jsxs('div', {
+        className: _a,
         children: [
-            l.jsx(N, { className: ma, text: s('main.footer.receive'), params: { item: r } }),
-            l.jsx('div', { ...o, className: da, style: { backgroundImage: `url(${n('main.footer.info')})` } }),
-            l.jsx(N, {
-                className: ua,
+            r.jsx(N, { className: ua, text: s('main.footer.receive'), params: { item: n } }),
+            r.jsx('div', { ...o, className: ma, style: { backgroundImage: `url(${l('main.footer.info')})` } }),
+            r.jsx(N, {
+                className: pa,
                 text: s('main.footer.random'),
                 params: {
-                    icon: l.jsx('div', {
-                        className: pa,
-                        style: { backgroundImage: `url(${n('main.footer.random')})` },
+                    icon: r.jsx('div', {
+                        className: ba,
+                        style: { backgroundImage: `url(${l('main.footer.random')})` },
                     }),
                 },
             }),
         ],
     });
 }
-const [fa, ga] = _()(({ observableModel: e }) => ({ ...e.primitives(['name', 'value', 'isEnough']) }), T),
-    ha = 'Price_156340df';
-const xa = c(function () {
-    const { model: e } = ga();
-    return l.jsx(S, { className: ha, type: e.name.get(), reverse: !0, size: A.medium, children: e.value.get() });
+const [ga, xa] = p()(({ observableModel: e }) => ({ ...e.primitives(['name', 'value', 'isEnough']) }), T),
+    wa = 'Price_156340df';
+const ya = c(function () {
+    const { model: e } = xa();
+    return r.jsx(S, { className: wa, type: e.name.get(), reverse: !0, size: O.medium, children: e.value.get() });
 });
-function ya({ context: e = 'model.stepPrice' }) {
-    const a = r.useMemo(() => ({ context: e }), [e]);
-    return l.jsx($, { children: l.jsx(fa, { options: a, children: l.jsx(xa, {}) }) });
+function va({ context: e = 'model.stepPrice' }) {
+    const a = n.useMemo(() => ({ context: e }), [e]);
+    return r.jsx(A, { children: r.jsx(ga, { options: a, children: r.jsx(ya, {}) }) });
 }
-const wa = 'Footer_efb5a1ea',
-    va = 'Footer_purchase_9a12df3',
-    Na = 'Footer_button_3c789754',
-    ja = 'Footer_glow_3d092842',
-    ka = c(function ({ className: e = '' }) {
-        const { model: a, controls: t } = ze(),
+const Na = 'Footer_efb5a1ea',
+    ja = 'Footer_purchase_9a12df3',
+    Ca = 'Footer_button_3c789754',
+    ka = 'Footer_glow_3d092842',
+    Ra = c(function ({ className: e = '' }) {
+        const { model: a, controls: t } = Be(),
             { bundleType: s } = a.root.get(),
-            { isEnough: r } = a.stepPrice.get(),
+            { isEnough: n } = a.stepPrice.get(),
             o = a.fixedRewards.get(),
             i = a.cellSelectAnimationState.get(),
-            { getText: c } = U(s),
-            d = ia().margin / 2,
-            m = (function (e) {
-                const { breakpoint: a } = y();
+            { getText: c } = q(s),
+            d = da().margin / 2,
+            _ = (function (e) {
+                const { breakpoint: a } = w();
                 return a.weight >= j[e].weight;
-            })(k.large),
-            u = () => {
-                (r && t.setViewState(Re), t.play());
+            })(C.large),
+            m = () => {
+                (n && t.setViewState($e), t.play());
             };
         return (
-            E(W.SPACE, u),
-            l.jsxs('div', {
+            $(L.SPACE, m),
+            r.jsxs('div', {
                 style: { marginLeft: `${d}rem`, marginRight: `${d}rem` },
-                className: n(wa, e),
+                className: l(Na, e),
                 children: [
-                    l.jsx(ba, { bundleType: s, bonuses: o, tooltipDisabled: Boolean(i) }),
-                    l.jsxs('div', {
-                        className: va,
+                    r.jsx(ha, { bundleType: s, bonuses: o, tooltipDisabled: Boolean(i) }),
+                    r.jsxs('div', {
+                        className: ja,
                         children: [
-                            l.jsx(ya, {}),
-                            l.jsxs(P, {
-                                className: Na,
-                                size: m ? L.large : L.medium,
-                                onClick: u,
-                                children: [c('main.footer.button'), l.jsx('div', { className: ja })],
+                            r.jsx(va, {}),
+                            r.jsxs(E, {
+                                className: Ca,
+                                size: _ ? P.large : P.medium,
+                                onClick: m,
+                                children: [c('main.footer.button'), r.jsx('div', { className: ka })],
                             }),
                         ],
                     }),
@@ -484,33 +485,33 @@ const wa = 'Footer_efb5a1ea',
             })
         );
     }),
-    Ca = 'Header_bbfb94eb',
-    Sa = 'Header_a98c2191',
-    Ia = 'Header_title_7baaac5a',
-    Ta = 'Header_description_1988f442',
+    Sa = 'Header_bbfb94eb',
+    Ia = 'Header_a98c2191',
+    Ta = 'Header_title_7baaac5a',
+    Oa = 'Header_description_1988f442',
     Aa = c(function ({ className: e = '' }) {
-        const { model: a } = ze(),
-            { startTime: t, finishTime: s, bundleType: r } = a.root.get(),
-            { getText: o, getExtImage: i } = U(r),
+        const { model: a } = Be(),
+            { startTime: t, finishTime: s, bundleType: n } = a.root.get(),
+            { getText: o, getExtImage: i } = q(n),
             c = H.resolve('intl');
-        return l.jsxs('div', {
-            className: n(Ca, e),
+        return r.jsxs('div', {
+            className: l(Sa, e),
             children: [
-                l.jsxs('div', {
-                    className: Sa,
+                r.jsxs('div', {
+                    className: Ia,
                     children: [
-                        l.jsx(se, { image: i('main.header.arrow') }),
-                        l.jsx('div', { className: Ia, children: o('bundle.name_uppercased') }),
-                        l.jsx(se, { image: i('main.header.arrow'), side: le.right }),
+                        r.jsx(le, { image: i('main.header.arrow') }),
+                        r.jsx('div', { className: Ta, children: o('bundle.name_uppercased') }),
+                        r.jsx(le, { image: i('main.header.arrow'), side: ne.right }),
                     ],
                 }),
-                l.jsx('div', {
-                    className: Ta,
-                    children: l.jsx(N, {
+                r.jsx('div', {
+                    className: Oa,
+                    children: r.jsx(N, {
                         text: o('main.header.description'),
                         params: {
-                            startDate: c.formatDateTime(z.DayMonthFull, t),
-                            endDate: c.formatDateTime(z.DayMonthFull, s),
+                            startDate: c.formatDateTime(W.DayMonthFull, t),
+                            endDate: c.formatDateTime(W.DayMonthFull, s),
                             bundleName: o('bundle.name'),
                         },
                     }),
@@ -518,83 +519,106 @@ const wa = 'Footer_efb5a1ea',
             ],
         });
     });
-const Ra = 'Check_b4dac75a';
-function $a({ bundleType: e, className: a = '' }) {
-    const { getExtImage: t } = U(e);
-    return l.jsx('div', { className: n(Ra, a), style: { backgroundImage: `url(${t('main.cell.check')})` } });
+const $a = 'Check_b4dac75a';
+function Ea({ bundleType: e, className: a = '' }) {
+    const { getExtImage: t } = q(e);
+    return r.jsx('div', { className: l($a, a), style: { backgroundImage: `url(${t('main.cell.check')})` } });
 }
-const Ea = 'AnimatedWrapper_b296db6e',
-    Pa = i('div');
-function La({ springApi: e, style: a = {}, className: t = '', children: s = null }) {
-    const r = o({ ref: e, from: { opacity: 0, scale: 1 }, to: { opacity: 1, scale: 1 }, config: { duration: 200 } });
-    return l.jsx(Pa, {
-        className: n(Ea, t),
+const Pa = 'AnimatedWrapper_b296db6e',
+    La = i('div');
+function Ha({ springApi: e, style: a = {}, className: t = '', children: s = null }) {
+    const n = o({ ref: e, from: { opacity: 0, scale: 1 }, to: { opacity: 1, scale: 1 }, config: { duration: 200 } });
+    return r.jsx(La, {
+        className: l(Pa, t),
         style: {
             ...a,
-            ...r,
-            transform: r.scale.to((e) => (a?.transform ? `${a?.transform} scale(${e})` : `scale(${e})`)),
+            ...n,
+            transform: n.scale.to((e) => (a?.transform ? `${a?.transform} scale(${e})` : `scale(${e})`)),
         },
         children: s,
     });
 }
 const Wa = 'SelectLayer_background_c822d679',
-    Ha = 'SelectLayer_border_561ccf64',
-    za = 'SelectLayer_sparkles_27f2b41',
-    Ba = 'SelectLayer_3e1e8fc0';
-function Ma({ bundleType: e, className: a = '' }) {
-    const { getExtImage: t } = U(e);
-    return l.jsxs('div', {
-        className: n(Ba, a),
+    za = 'SelectLayer_border_561ccf64',
+    Ba = 'SelectLayer_sparkles_27f2b41',
+    Ma = 'SelectLayer_3e1e8fc0';
+function Da({ bundleType: e, className: a = '' }) {
+    const { getExtImage: t } = q(e);
+    return r.jsxs('div', {
+        className: l(Ma, a),
         children: [
-            l.jsx(ne, { className: Wa, image: t('main.cell.select_background') }),
-            l.jsx('div', { className: za, style: { borderImageSource: `url(${t('main.cell.sparkles')})` } }),
-            l.jsx('div', { className: Ha }),
+            r.jsx(oe, { className: Wa, image: t('main.cell.select_background') }),
+            r.jsx('div', { className: Ba, style: { borderImageSource: `url(${t('main.cell.sparkles')})` } }),
+            r.jsx('div', { className: za }),
         ],
     });
 }
-const Da = 'AnimationState_baf2b851',
+const Ya = 'AnimationState_baf2b851',
     Xa = 'AnimationState_layer_86e6059d',
     Fa = 'AnimationState_shine_b8faf88d',
     Va = 'AnimationState_checkWrapper_64e1a229',
-    Ya = 'AnimationState_check_318875f3',
-    Oa = D(G.cell_select),
-    Qa = D(G.cell_glow_appears);
-const Ga = 'Border_c9da0750';
-const Ua = {
-    root: 'CellReward_root_8b97a0ba',
-    base: 'CellReward_6831b000',
-    glowVideo: 'CellReward_glowVideo_f5640de9',
-    base__l: 'CellReward_base__l_8b97a0ba',
-    reward: 'CellReward_reward_43f9914',
-    reward__received: 'CellReward_reward__received_fe08e5d7',
-    reward__centred: 'CellReward_reward__centred_7770ec15',
-    base__m: 'CellReward_base__m_8b97a0ba',
-    label: 'CellReward_label_f3612f78',
-    count: 'CellReward_count_540a0f00',
-    rewardImage: 'CellReward_rewardImage_c6a107c0',
-    rewardHighlight: 'CellReward_rewardHighlight_9f5219a',
-    rewardOverlay: 'CellReward_rewardOverlay_38f05890',
-    loupe: 'CellReward_loupe_a4b63feb',
-    loupeHover: 'CellReward_loupeHover_3d74aca3',
-    check: 'CellReward_check_a29f1710',
-};
-const qa = 'ProbabilityState_8609ca4f',
-    Ja = 'ProbabilityState_text_8fe0e1c8',
-    Ka = 'ProbabilityState_value_d81d7252';
-function Za(e) {
+    Qa = 'AnimationState_check_318875f3',
+    Ua = M(G.cell_select),
+    Ga = M(G.cell_glow_appears);
+const qa = 'Border_c9da0750';
+const Ja = {
+        root: 'CellReward_root_8b97a0ba',
+        base: 'CellReward_6831b000',
+        glowVideo: 'CellReward_glowVideo_f5640de9',
+        base__l: 'CellReward_base__l_8b97a0ba',
+        reward: 'CellReward_reward_43f9914',
+        reward__received: 'CellReward_reward__received_fe08e5d7',
+        reward__centred: 'CellReward_reward__centred_7770ec15',
+        base__m: 'CellReward_base__m_8b97a0ba',
+        label: 'CellReward_label_f3612f78',
+        count: 'CellReward_count_540a0f00',
+        rewardImage: 'CellReward_rewardImage_c6a107c0',
+        rewardHighlight: 'CellReward_rewardHighlight_9f5219a',
+        rewardOverlay: 'CellReward_rewardOverlay_38f05890',
+        rewardOverlay__s24x24: 'CellReward_rewardOverlay__s24x24_6dd06c1b',
+        rewardOverlay__s48x48: 'CellReward_rewardOverlay__s48x48_8b97a0ba',
+        rewardOverlay__small: 'CellReward_rewardOverlay__small_d535335f',
+        rewardOverlay__s80x80: 'CellReward_rewardOverlay__s80x80_8b97a0ba',
+        rewardOverlay__big: 'CellReward_rewardOverlay__big_5e751c00',
+        rewardOverlay__s180x135: 'CellReward_rewardOverlay__s180x135_1d72ec04',
+        rewardOverlay__s232x174: 'CellReward_rewardOverlay__s232x174_d323f021',
+        rewardOverlay__s296x222: 'CellReward_rewardOverlay__s296x222_3cdd5611',
+        rewardOverlay__s360x270: 'CellReward_rewardOverlay__s360x270_78762b0e',
+        rewardOverlay__s400x300: 'CellReward_rewardOverlay__s400x300_115859dc',
+        rewardOverlay__s600x450: 'CellReward_rewardOverlay__s600x450_8db6fbbd',
+        'rewardOverlay__trophy-s180x135': 'CellReward_rewardOverlay__trophy-s180x135_8c39cd46',
+        'rewardOverlay__trophy-s232x174': 'CellReward_rewardOverlay__trophy-s232x174_a285122e',
+        'rewardOverlay__trophy-s296x222': 'CellReward_rewardOverlay__trophy-s296x222_5e1d7b3',
+        'rewardOverlay__trophy-s360x270': 'CellReward_rewardOverlay__trophy-s360x270_f0db1faf',
+        'rewardOverlay__attachment-small': 'CellReward_rewardOverlay__attachment-small_6dd06c1b',
+        'rewardOverlay__attachment-big': 'CellReward_rewardOverlay__attachment-big_ab5b57ea',
+        'rewardOverlay__attachment-s180x135': 'CellReward_rewardOverlay__attachment-s180x135_52ecfddc',
+        'rewardOverlay__attachment-s232x174': 'CellReward_rewardOverlay__attachment-s232x174_a285122e',
+        'rewardOverlay__attachment-s296x222': 'CellReward_rewardOverlay__attachment-s296x222_5e1d7b3',
+        'rewardOverlay__attachment-s360x270': 'CellReward_rewardOverlay__attachment-s360x270_f0db1faf',
+        loupe: 'CellReward_loupe_a4b63feb',
+        loupeHover: 'CellReward_loupeHover_3d74aca3',
+        check: 'CellReward_check_2d5c6d11',
+        check__shifted: 'CellReward_check__shifted_618a4e81',
+    },
+    Ka = [D.EQUIPMENT_TROPHY_BASIC, D.EQUIPMENT_TROPHY_UPGRADED];
+const Za = 'ProbabilityState_8609ca4f',
+    et = 'ProbabilityState_text_8fe0e1c8',
+    at = 'ProbabilityState_value_d81d7252';
+function tt(e) {
     if (Number.isInteger(e)) return String(e);
     return H.resolve('intl').formatReal('fractional', e);
 }
-const et = 'ReceivedState_gradient_7bc7efa5',
-    at = 'ReceivedState_a76e8db6',
-    tt = 'ReceivedState_icon_6ab8eabf';
-const st = 'Cell_4eaa0f36',
-    lt = r.forwardRef(function ({ cell: e, showProbabilities: a, style: t = {}, className: s = '', ...r }, o) {
+const st = 'ReceivedState_gradient_7bc7efa5',
+    rt = 'ReceivedState_a76e8db6',
+    lt = 'ReceivedState_icon_6ab8eabf';
+const nt = 'Cell_4eaa0f36',
+    ot = n.forwardRef(function ({ cell: e, showProbabilities: a, style: t = {}, className: s = '', ...n }, o) {
         const { start: i, end: c } = e.coordinates,
-            d = ia();
-        return l.jsx('div', {
+            d = da();
+        return r.jsx('div', {
             ref: o,
-            className: n(st, s),
+            className: l(nt, s),
             style: {
                 left: d.width * i.x + 'rem',
                 top: d.height * i.y + 'rem',
@@ -603,53 +627,53 @@ const st = 'Cell_4eaa0f36',
                 margin: d.margin / 2 + 'rem',
                 ...t,
             },
-            children: r.children,
+            children: n.children,
         });
     });
-((lt.Border = function ({ bundleType: e, style: a = {}, className: t = '' }) {
-    const { getExtImage: s } = U(e);
-    return l.jsx('div', { className: n(Ga, t), style: { borderImageSource: `url(${s('main.cell.border')})`, ...a } });
+((ot.Border = function ({ bundleType: e, style: a = {}, className: t = '' }) {
+    const { getExtImage: s } = q(e);
+    return r.jsx('div', { className: l(qa, t), style: { borderImageSource: `url(${s('main.cell.border')})`, ...a } });
 }),
-    (lt.AnimationState = function ({ template: e, bundleType: a, animationType: t, className: s = '' }) {
-        const { shineSize: o } = K(e),
+    (ot.AnimationState = function ({ template: e, bundleType: a, animationType: t, className: s = '' }) {
+        const { shineSize: o } = Z(e),
             i = d(),
             c = d(),
-            m = d(),
-            u = pe(i),
-            p = pe(c),
-            _ = pe(m),
-            { getExtImage: b } = U(a);
+            _ = d(),
+            m = be(i),
+            u = be(c),
+            p = be(_),
+            { getExtImage: b } = q(a);
         return (
-            r.useEffect(() => {
+            n.useEffect(() => {
                 switch (t) {
-                    case ve:
-                        !(async function () {
-                            (Oa(), await u.fade_in(ce.default), await u.fade_out(ce.default, de.default));
-                        })();
-                        break;
-                    case Ne:
-                        !(async function () {
-                            (Oa(), await u.fade_in(ce.default), await u.fade_out(ce.default, de.select_long));
-                        })();
-                        break;
                     case je:
                         !(async function () {
-                            (await u.pulse(me, ce.pulse, de.default, Oa),
-                                Qa(),
-                                await p.scale_in(ce.shine_in, [ue.shine.from, ue.shine.to], de.shine),
+                            (Ua(), await m.fade_in(_e.default), await m.fade_out(_e.default, me.default));
+                        })();
+                        break;
+                    case Ce:
+                        !(async function () {
+                            (Ua(), await m.fade_in(_e.default), await m.fade_out(_e.default, me.select_long));
+                        })();
+                        break;
+                    case ke:
+                        !(async function () {
+                            (await m.pulse(ue, _e.pulse, me.default, Ua),
+                                Ga(),
+                                await u.scale_in(_e.shine_in, [pe.shine.from, pe.shine.to], me.shine),
                                 await Promise.all([
-                                    u.fade_out(ce.shine_out, de.shine),
-                                    p.fade_out(ce.shine_out, de.shine),
+                                    m.fade_out(_e.shine_out, me.shine),
+                                    u.fade_out(_e.shine_out, me.shine),
                                 ]),
-                                await _.scale_in(ce.check, [ue.check.from, ue.check.to]));
+                                await p.scale_in(_e.check, [pe.check.from, pe.check.to]));
                         })();
                 }
             }, [t]),
-            l.jsxs('div', {
-                className: n(Da, s),
+            r.jsxs('div', {
+                className: l(Ya, s),
                 children: [
-                    l.jsx(
-                        La,
+                    r.jsx(
+                        Ha,
                         {
                             springApi: c,
                             className: Fa,
@@ -660,98 +684,116 @@ const st = 'Cell_4eaa0f36',
                                 height: `${o}`,
                             },
                         },
-                        ie,
+                        de,
                     ),
-                    l.jsx(La, { springApi: i, className: Xa, children: l.jsx(Ma, { bundleType: a }) }, oe),
-                    l.jsx(
-                        La,
+                    r.jsx(Ha, { springApi: i, className: Xa, children: r.jsx(Da, { bundleType: a }) }, ce),
+                    r.jsx(
+                        Ha,
                         {
                             style: { transform: 'translate(-50%, 50%)' },
-                            springApi: m,
+                            springApi: _,
                             className: Va,
-                            children: l.jsx($a, { bundleType: a, className: Ya }),
+                            children: r.jsx(Ea, { bundleType: a, className: Qa }),
                         },
-                        re,
+                        ie,
                     ),
                 ],
             })
         );
     }),
-    (lt.ProbabilityState = function ({ bundleType: e, value: a, className: t = '' }) {
-        const { getText: s } = U(e);
-        return l.jsx('div', {
-            className: n(qa, t),
-            children: l.jsx(N, {
+    (ot.ProbabilityState = function ({ bundleType: e, value: a, className: t = '' }) {
+        const { getText: s } = q(e);
+        return r.jsx('div', {
+            className: l(Za, t),
+            children: r.jsx(N, {
                 text: s('main.cell.probability'),
-                className: Ja,
-                params: { num: l.jsx('div', { className: Ka, children: Za(a) }) },
+                className: et,
+                params: { num: r.jsx('div', { className: at, children: tt(a) }) },
             }),
         });
     }),
-    (lt.ReceivedState = function ({ bundleType: e, className: a = '' }) {
-        return l.jsxs('div', {
-            className: n(at, a),
-            children: [l.jsx('div', { className: et }), l.jsx($a, { bundleType: e, className: tt })],
+    (ot.ReceivedState = function ({ bundleType: e, className: a = '' }) {
+        return r.jsxs('div', {
+            className: l(rt, a),
+            children: [r.jsx('div', { className: st }), r.jsx(Ea, { bundleType: e, className: lt })],
         });
     }),
-    (lt.Reward = function ({ bundleType: e, reward: a, cell: t, preview: s, animated: r = !1, className: o = '' }) {
-        const { getExtImage: i, getExtVideo: c } = U(e),
-            { assetSize: d, multiTextSize: m, multiCurrencySize: u, textSize: p, overlaySize: _ } = K(t.template),
-            { count: b } = a,
-            f = t.template.charAt(0).toLowerCase(),
-            g = a.isInHangar && t.state === Pe,
-            x = J.includes(a.name),
-            y = f == Z.S,
-            w = !y || x,
-            v = t.isRare && (t.state === We || (!a.isInHangar && t.state !== Le)),
-            N = b > 1 && !x,
-            j = a.overlayType,
-            k = c(`${a.name}Glow`, 'silent'),
-            C = c('glow');
-        return l.jsxs('div', {
-            className: n(Ua.base, Ua[`base__${f}`], o),
+    (ot.Reward = function ({ bundleType: e, reward: a, cell: t, preview: s, animated: o = !1, className: i = '' }) {
+        const { getExtImage: c, getExtVideo: d } = q(e),
+            { assetSize: _, multiTextSize: m, multiCurrencySize: u, textSize: p, overlaySize: b } = Z(t.template),
+            { count: f } = a,
+            h = n.useRef(a.isInHangar),
+            x = h.current && t.state === Le,
+            w = t.template.charAt(0).toLowerCase(),
+            y = w == ee.S,
+            v = K.includes(a.name),
+            N = !y || v,
+            j = t.isRare && (t.state === We || (!a.isInHangar && t.state !== He)),
+            C = f > 1 && !v,
+            k = a.overlayType,
+            S = d(`${a.name}Glow`, 'silent'),
+            I = d('glow');
+        n.useEffect(() => {
+            o || (h.current = a.isInHangar);
+        }, [o, a.isInHangar]);
+        const T = a.name === ae.vehicles,
+            O = a.name === ae.attachment,
+            A = Ka.includes(k);
+        return r.jsxs('div', {
+            className: l(Ja.base, Ja[`base__${w}`], i),
             children: [
-                v && l.jsx(X, { className: Ua.glowVideo, src: k || C, loop: !0, autoplay: !0 }),
-                l.jsxs(ee, {
+                j && r.jsx(Y, { className: Ja.glowVideo, src: S || I, loop: !0, autoplay: !0 }),
+                r.jsxs(te, {
                     reward: a,
                     template: t.template,
-                    tooltipDisabled: r,
-                    className: n(Ua.reward, g && Ua.reward__received, (!w || (x && y)) && Ua.reward__centred),
+                    tooltipDisabled: o,
+                    className: l(Ja.reward, x && Ja.reward__received, (!N || (v && y)) && Ja.reward__centred),
                     children: [
-                        j && l.jsx(ee.Highlight, { special: j, size: _, className: Ua.rewardHighlight }),
-                        l.jsx(ee.Image, {
+                        k && r.jsx(te.Highlight, { special: k, size: b, className: Ja.rewardHighlight }),
+                        r.jsx(te.Image, {
                             template: t.template,
-                            showCounter: N,
-                            count: b,
-                            image: ae(a, d),
+                            showCounter: C,
+                            count: f,
+                            image: se(a, _),
                             currencySize: p,
-                            className: n(N && y && Ua.rewardImage),
+                            className: l(C && y && Ja.rewardImage),
                         }),
-                        j && l.jsx(ee.Overlay, { name: a.name, special: j, size: _, className: Ua.rewardOverlay }),
-                        w &&
-                            l.jsxs(l.Fragment, {
+                        k &&
+                            r.jsx(te.Overlay, {
+                                name: a.name,
+                                special: k,
+                                size: b,
+                                className: l(
+                                    Ja.rewardOverlay,
+                                    Ja[`rewardOverlay__${b}`],
+                                    O && Ja[`rewardOverlay__attachment-${b}`],
+                                    A && Ja[`rewardOverlay__trophy-${b}`],
+                                ),
+                            }),
+                        N &&
+                            r.jsxs(r.Fragment, {
                                 children: [
-                                    l.jsx(ee.Name, {
+                                    r.jsx(te.Name, {
                                         reward: a,
                                         fontSize: p,
                                         nameHeight: p,
-                                        multiTextSize: x ? u : m,
-                                        template: f,
-                                        className: Ua.label,
+                                        multiTextSize: v ? u : m,
+                                        template: w,
+                                        className: Ja.label,
                                     }),
                                     s.enabled &&
-                                        l.jsx('div', {
-                                            className: Ua.loupe,
-                                            children: l.jsx(ee.LoupeButton, {
-                                                className: Ua.loupeHover,
+                                        r.jsx('div', {
+                                            className: Ja.loupe,
+                                            children: r.jsx(te.LoupeButton, {
+                                                className: Ja.loupeHover,
                                                 icon: {
                                                     img: R.images.open_bundle.gui.maps.icons.bundles.default.main.previewIcon(),
                                                 },
                                                 onMouseEnter: () => {
-                                                    h.sound(G.highlight);
+                                                    g.sound(G.highlight);
                                                 },
                                                 onClick: () => {
-                                                    (h.sound(G.play),
+                                                    (g.sound(G.play),
                                                         s.open({
                                                             bonusType: a.name,
                                                             bonusId: a.id,
@@ -765,15 +807,15 @@ const st = 'Cell_4eaa0f36',
                             }),
                     ],
                 }),
-                g &&
-                    l.jsx('div', {
-                        className: Ua.check,
-                        style: { backgroundImage: `url(${i('main.cell.in_hangar')})` },
+                x &&
+                    r.jsx('div', {
+                        className: l(Ja.check, T && Ja.check__shifted),
+                        style: { backgroundImage: `url(${c('main.cell.in_hangar')})` },
                     }),
             ],
         });
     }));
-const nt = {
+const it = {
         root: 'CellWrapper_root_4524beef',
         received: 'CellWrapper_received_4524beef',
         probability: 'CellWrapper_probability_62845a51',
@@ -794,138 +836,138 @@ const nt = {
         'fade-out': 'CellWrapper_fade-out_4524beef',
         rotate: 'CellWrapper_rotate_4524beef',
     },
-    rt = [Re, $e],
-    ot = c(function ({ showProbabilities: e, name: a, className: t = '' }) {
-        const [s, o] = r.useState(''),
-            { model: i, controls: c } = ze(),
+    ct = [$e, Ee],
+    dt = c(function ({ showProbabilities: e, name: a, className: t = '' }) {
+        const [s, o] = n.useState(''),
+            { model: i, controls: c } = Be(),
             { bundleType: d } = i.root.get(),
-            { getExtImage: m } = U(d),
-            u = i.cellSelectAnimationState.get(),
-            p = i.viewState.get(),
-            _ = i.computes.cell(a),
-            b = _.state === Le,
-            f = _.bonuses,
-            g = _.template.charAt(0).toLowerCase();
-        r.useEffect(() => {
-            switch (u) {
-                case `${a}_${ve}`:
-                    o(ve);
-                    break;
-                case `${a}_${Ne}`:
-                    o(Ne);
-                    break;
+            { getExtImage: _ } = q(d),
+            m = i.cellSelectAnimationState.get(),
+            u = i.viewState.get(),
+            p = i.computes.cell(a),
+            b = p.state === He,
+            f = p.bonuses,
+            h = p.template.charAt(0).toLowerCase();
+        n.useEffect(() => {
+            switch (m) {
                 case `${a}_${je}`:
                     o(je);
+                    break;
+                case `${a}_${Ce}`:
+                    o(Ce);
+                    break;
+                case `${a}_${ke}`:
+                    o(ke);
                     break;
                 default:
                     o('');
             }
-        }, [u, a]);
-        const h = b
-                ? l.jsx(lt.ReceivedState, { bundleType: d, className: nt.received })
+        }, [m, a]);
+        const g = b
+                ? r.jsx(ot.ReceivedState, { bundleType: d, className: it.received })
                 : s
-                  ? l.jsx(
-                        lt.AnimationState,
-                        { template: _.template, bundleType: d, className: nt.cellSelection, animationType: s },
+                  ? r.jsx(
+                        ot.AnimationState,
+                        { template: p.template, bundleType: d, className: it.cellSelection, animationType: s },
                         a,
                     )
                   : e
-                    ? l.jsx(lt.ProbabilityState, { bundleType: d, value: _.probability, className: nt.probability })
+                    ? r.jsx(ot.ProbabilityState, { bundleType: d, value: p.probability, className: it.probability })
                     : void 0,
-            { pulse: x, shine_in: y, shine_out: w } = ce,
-            { default: v } = de,
-            N = { '--final-animation-delay': `${x + y + w + 3 * v}ms` };
-        return l.jsxs(lt, {
-            cell: _,
+            { pulse: x, shine_in: w, shine_out: y } = _e,
+            { default: v } = me,
+            N = { '--final-animation-delay': `${x + w + y + 3 * v}ms` };
+        return r.jsxs(ot, {
+            cell: p,
             showProbabilities: e,
-            className: n(nt.base, nt[`base__${s}`], b && nt.base__disabled, t),
+            className: l(it.base, it[`base__${s}`], b && it.base__disabled, t),
             children: [
-                l.jsx(ne, { image: m('main.cell.background'), className: nt.background, style: N }),
-                l.jsx(lt.Border, { bundleType: d, className: nt.border, style: N }),
-                l.jsx('div', {
-                    className: n(nt.content, g === Z.S && nt.content__small),
+                r.jsx(oe, { image: _('main.cell.background'), className: it.background, style: N }),
+                r.jsx(ot.Border, { bundleType: d, className: it.border, style: N }),
+                r.jsx('div', {
+                    className: l(it.content, h === ee.S && it.content__small),
                     style: N,
-                    children: C(f, (e, a) =>
-                        l.jsx(
-                            lt.Reward,
+                    children: k(f, (e, a) =>
+                        r.jsx(
+                            ot.Reward,
                             {
                                 bundleType: d,
                                 reward: e,
-                                preview: { open: c.goPreview, enabled: !u && te(e) },
-                                animated: rt.includes(p),
-                                cell: _,
+                                preview: { open: c.goPreview, enabled: !m && re(e) },
+                                animated: ct.includes(u),
+                                cell: p,
                             },
                             e.name + a,
                         ),
                     ),
                 }),
-                h,
+                g,
             ],
         });
     }),
-    it = 'Layout_d6de9028',
-    ct = 'Layout_background_9acf7b39',
-    dt = 'Layout_cell_e049b8ff',
-    mt = c(function ({ className: e = '' }) {
-        const { model: a } = ze(),
-            t = ia(),
+    _t = 'Layout_d6de9028',
+    mt = 'Layout_background_9acf7b39',
+    ut = 'Layout_cell_e049b8ff',
+    pt = c(function ({ className: e = '' }) {
+        const { model: a } = Be(),
+            t = da(),
             { bundleType: s } = a.root.get(),
-            { getExtImage: o } = U(s),
+            { getExtImage: o } = q(s),
             { x: i, y: c } = a.computes.gridSize(),
             d = a.viewState.get(),
-            m = a.probabilityHidden.get(),
-            u = (function (e = W.ESCAPE, a = !1, t = !1, s = !1) {
-                const [l, n] = r.useState(a);
+            _ = a.probabilityHidden.get(),
+            m = (function (e = L.ESCAPE, a = !1, t = !1, s = !1) {
+                const [r, l] = n.useState(a);
                 return (
-                    r.useEffect(() => {
-                        if (e !== W.NONE && !s)
+                    n.useEffect(() => {
+                        if (e !== L.NONE && !s)
                             return (
                                 window.addEventListener('keydown', a, t),
-                                window.addEventListener('keyup', l, t),
+                                window.addEventListener('keyup', r, t),
                                 () => {
                                     (window.removeEventListener('keydown', a, t),
-                                        window.removeEventListener('keyup', l, t));
+                                        window.removeEventListener('keyup', r, t));
                                 }
                             );
                         function a(a) {
                             if (a.keyCode === e) {
                                 if (a.repeat) return;
-                                if (B()) return;
-                                (n(!0), M(), t && a.stopPropagation());
+                                if (z()) return;
+                                (l(!0), B(), t && a.stopPropagation());
                             }
                         }
-                        function l(a) {
+                        function r(a) {
                             if (a.keyCode === e) {
-                                if (B()) return;
-                                (n(!1), M(), t && a.stopPropagation());
+                                if (z()) return;
+                                (l(!1), B(), t && a.stopPropagation());
                             }
                         }
                     }, [e, t, s]),
-                    r.useEffect(() => {
-                        s && l && n(!1);
-                    }, [l, s]),
-                    l
+                    n.useEffect(() => {
+                        s && r && l(!1);
+                    }, [r, s]),
+                    r
                 );
-            })(W.ALT, !1, !0, m),
-            p = d === Ae && u;
+            })(L.ALT, !1, !0, _),
+            u = d === Ae && m;
         return (
-            r.useEffect(() => {
-                p && h.sound(G.alt_pressed);
-            }, [p]),
-            l.jsxs('div', {
+            n.useEffect(() => {
+                u && g.sound(G.alt_pressed);
+            }, [u]),
+            r.jsxs('div', {
                 style: { width: i * t.width + 'rem', height: c * t.height + 'rem' },
-                className: n(it, e),
+                className: l(_t, e),
                 children: [
-                    l.jsx(ne, { image: o('main.layout_background'), className: ct }),
-                    C(a.cells.get(), (e) => l.jsx(ot, { name: e.name, showProbabilities: p, className: dt }, e.name)),
+                    r.jsx(oe, { image: o('main.layout_background'), className: mt }),
+                    k(a.cells.get(), (e) => r.jsx(dt, { name: e.name, showProbabilities: u, className: ut }, e.name)),
                 ],
             })
         );
     }),
-    ut = {
+    bt = {
         root: 'App_root_0',
         background: 'App_background_c4cf9ab7',
-        base: 'App_e312cfaa',
+        base: 'App_6fa429f4',
         header: 'App_header_92568c86',
         base__initial: 'App_base__initial_0',
         base__appearance: 'App_base__appearance_0',
@@ -946,49 +988,49 @@ const nt = {
         rotate: 'App_rotate_0',
         glow: 'App_glow_0',
     },
-    pt = [Re, $e],
-    _t = [Ae, Te],
-    bt = c(function () {
-        const { model: e, controls: a } = ze(),
+    ft = [$e, Ee],
+    ht = [Ae, Oe],
+    gt = c(function () {
+        const { model: e, controls: a } = Be(),
             { bundleType: t } = e.root.get(),
             s = e.computes.availableCells(),
             o = e.viewState.get();
-        (F(),
-            r.useEffect(
+        (X(),
+            n.useEffect(
                 () => (
-                    V(() => {
-                        a.setViewState(Te);
+                    F(() => {
+                        a.setViewState(Oe);
                     }, 300),
-                    V(() => {
+                    F(() => {
                         a.setViewState(Ae);
                     }, 600)
                 ),
                 [a],
             ));
-        const i = Y(a.setProbabilityHidden, [], 500);
-        r.useEffect(() => {
-            O.onFocusUpdated((e) => {
+        const i = V(a.setProbabilityHidden, [], 500);
+        n.useEffect(() => {
+            Q.onFocusUpdated((e) => {
                 i(!e);
             });
         }, [i]);
-        const c = pt.includes(o)
-            ? l.jsx(Ye, { bundleType: t, className: ut.loader })
-            : s.length && o !== Ee
-              ? l.jsx(ka, { className: ut.footer })
-              : l.jsx(ra, { className: ut.completed });
-        return l.jsxs('div', {
-            className: n(ut.base, ut[`base__${o}`]),
+        const c = ft.includes(o)
+            ? r.jsx(Qe, { bundleType: t, className: bt.loader })
+            : s.length && o !== Pe
+              ? r.jsx(Ra, { className: bt.footer })
+              : r.jsx(ia, { className: bt.completed });
+        return r.jsxs('div', {
+            className: l(bt.base, bt[`base__${o}`]),
             children: [
-                l.jsx(aa, { className: ut.background }),
-                l.jsxs('div', {
-                    className: ut.content,
+                r.jsx(sa, { className: bt.background }),
+                r.jsxs('div', {
+                    className: bt.content,
                     children: [
-                        l.jsx(Aa, { className: ut.header }),
-                        l.jsxs('div', { className: ut.wrapper, children: [l.jsx(mt, { className: ut.layout }), c] }),
+                        r.jsx(Aa, { className: bt.header }),
+                        r.jsxs('div', { className: bt.wrapper, children: [r.jsx(pt, { className: bt.layout }), c] }),
                     ],
                 }),
-                _t.includes(o) && s.length && l.jsx(Xe, { bundleType: t, className: ut.alt }),
+                ht.includes(o) && s.length && r.jsx(Xe, { bundleType: t, className: bt.alt }),
             ],
         });
     });
-Q(l.jsx(He, { children: l.jsx($, { children: l.jsx(bt, {}) }) }), { fullScreen: !0 }).then(T);
+U(r.jsx(ze, { children: r.jsx(A, { children: r.jsx(gt, {}) }) }), { fullScreen: !0 }).then(T);

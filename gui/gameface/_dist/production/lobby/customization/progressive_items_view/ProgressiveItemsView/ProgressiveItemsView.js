@@ -172,7 +172,7 @@
                     w = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function y(e) {
                     let u = '';
-                    for (let t = w.length - 1; t >= 0; t--) for (; e >= w[t]; ) ((u += b[t]), (e -= w[t]));
+                    for (let t = w.length - 1; t >= 0; t--) for (; e >= w[t];) ((u += b[t]), (e -= w[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -875,9 +875,13 @@
                         if (t.mediumWidth && d) return c(u, t, v);
                         if (t.smallWidth && D) return c(u, t, v);
                         if (t.extraSmallWidth && _) return c(u, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return u;
                             if (t.largeHeight && g) return u;
                             if (t.mediumHeight && C) return u;
@@ -1093,7 +1097,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = S(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = S(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, o.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),

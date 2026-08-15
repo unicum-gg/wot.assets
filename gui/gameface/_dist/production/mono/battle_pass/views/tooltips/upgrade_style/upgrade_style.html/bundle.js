@@ -1,15 +1,15 @@
-import { v as s, j as e, f as t } from '../../../../chunks/vendor.js';
-import { i as a, N as n, n as l, bY as o, J as i, U as d, d as c } from '../../../../chunks/lib.js';
-import { b as r } from '../../../../chunks/utils.js';
-const [h, m] = a()(({ observableModel: s }) => ({ ...{ root: s.object() } }), n),
+import { w as s, j as e, f as t } from '../../../../chunks/vendor.js';
+import { i as a, O as n, D as l, cd as o, J as i, U as d, d as c } from '../../../../chunks/lib.js';
+import { a as r } from '../../../../chunks/utils.js';
+/* empty css                       */ const [h, m] = a()(({ observableModel: s }) => ({ ...{ root: s.object() } }), n),
     _ = 'Content_7bb15980',
-    x = 'Content_separator_9582cf97',
-    j = 'Content_base__bottom_9729d42d',
+    j = 'Content_separator_9582cf97',
+    x = 'Content_base__bottom_9729d42d',
     v = 'Content_image_6cee7abf',
     b = 'Content_section_cf0c3481',
     p = 'Content_sectionBottom_d2c91d7c',
-    N = 'Content_title_73d62fc4',
-    g = 'Content_warning_7f58f56d',
+    g = 'Content_title_73d62fc4',
+    N = 'Content_warning_7f58f56d',
     f = 'Content_text_8f35597f',
     C = 'Content_highlightedText_7fbf2a7e',
     u = 'Content_subtitle_e9a5cfa4',
@@ -24,7 +24,7 @@ const [h, m] = a()(({ observableModel: s }) => ({ ...{ root: s.object() } }), n)
                 levelWord: e.jsx('div', { className: C, children: w.chosen.levelWord() }),
             };
         return e.jsxs('div', {
-            className: t(_, n && j),
+            className: t(_, n && x),
             children: [
                 e.jsx('div', {
                     className: v,
@@ -38,19 +38,19 @@ const [h, m] = a()(({ observableModel: s }) => ({ ...{ root: s.object() } }), n)
                 e.jsxs('div', {
                     className: b,
                     children: [
-                        e.jsx('div', { className: x }),
+                        e.jsx('div', { className: j }),
                         e.jsx('div', {
-                            className: N,
+                            className: g,
                             children: n
                                 ? e.jsx(l, { text: w.chosen.title(), binding: { styleName: o } })
                                 : w.notChosen.title(),
                         }),
-                        !n && e.jsx('div', { className: g, children: w.notChosen.warning() }),
+                        !n && e.jsx('div', { className: N, children: w.notChosen.warning() }),
                         e.jsx('div', {
                             className: f,
                             children: n ? e.jsx(l, { text: w.chosen.text(), binding: d }) : w.notChosen.text(),
                         }),
-                        e.jsx('div', { className: x }),
+                        e.jsx('div', { className: j }),
                     ],
                 }),
                 e.jsxs('div', {
@@ -61,7 +61,7 @@ const [h, m] = a()(({ observableModel: s }) => ({ ...{ root: s.object() } }), n)
                     e.jsxs('div', {
                         className: p,
                         children: [
-                            e.jsx('div', { className: x }),
+                            e.jsx('div', { className: j }),
                             e.jsx('div', { className: u, children: w.chosen.subtitle() }),
                             e.jsx('div', { className: f, children: i }),
                         ],

@@ -178,7 +178,7 @@
                     L = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function V(e) {
                     let n = '';
-                    for (let t = L.length - 1; t >= 0; t--) for (; e >= L[t]; ) ((n += j[t]), (e -= L[t]));
+                    for (let t = L.length - 1; t >= 0; t--) for (; e >= L[t];) ((n += j[t]), (e -= L[t]));
                     return n;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

@@ -1,46 +1,33 @@
-import { j as e, e as s, m as a, n } from '../../../chunks/vendor.js';
+import { j as e, e as s, n as a, p as l } from '../../../chunks/vendor.js';
 import {
-    F as t,
-    i as l,
-    g as o,
-    c as r,
-    a as c,
-    I as i,
-    R as m,
+    i as c,
+    g as r,
+    c as n,
+    F as o,
+    I as t,
+    R as i,
+    a as m,
     b as d,
-    d as u,
-    u as _,
-    m as b,
-    e as p,
-    T as x,
+    u,
+    m as _,
+    d as b,
+    s as p,
+    e as w,
     C as h,
-    B as w,
-    f as j,
-    r as f,
-    S as g,
+    B as x,
+    r as j,
+    S as f,
 } from '../../../chunks/lib.js';
-import { T as v } from '../../../chunks/title.js';
-import { g as N, a as C, b as I } from '../../../chunks/resources.js';
+import { i as g, T as N } from '../../../chunks/utils.js';
+import { g as v, a as I, b as R } from '../../../chunks/resources.js';
 import { S as y } from '../../../chunks/scroll_with_lips.js';
-import { g as T, o as k } from '../../../chunks/getRewardImage.js';
-import { i as L } from '../../../chunks/utils.js';
-import { L as P } from '../../../chunks/loupe_button.js';
-const B = 'Footer_877c593c';
-function D({ children: a, className: n = '' }) {
-    return e.jsx('div', { className: s(B, n), children: a });
+import { g as C, o as k } from '../../../chunks/getRewardImage.js';
+import { L } from '../../../chunks/loupe_button.js';
+/* empty css                    */ const T = 'Footer_877c593c';
+function P({ children: a, className: l = '' }) {
+    return e.jsx('div', { className: s(T, l), children: a });
 }
-const A = 'SubTitle_a83825c5';
-const V = 'Header_ee5a2d07';
-function $({ children: a, className: n = '' }) {
-    return e.jsx('div', { className: s(V, n), children: a });
-}
-$.SubTitle = function ({ text: s, boxesCount: a, boxesCountText: n }) {
-    return e.jsx('div', {
-        className: A,
-        children: e.jsx(t, { text: s, binding: { boxCount: e.jsx(t, { text: n, binding: { count: a } }) } }),
-    });
-};
-const z = {
+const B = {
         images: {
             background: 'autoOpenView.background',
             scrollLipTop: 'autoOpenView.scrollLipTop',
@@ -52,33 +39,24 @@ const z = {
             title: 'autoOpenView.title',
             rewardsMultiplier: 'common.rewards.multiplier',
             submitButtonText: 'autoOpenView.submitButtonText',
-            subTitle: 'autoOpenView.subTitle',
         },
     },
-    H = { dynamicTexts: { rewardsPremiumDay: 'common.rewards.premiumDay', boxCount: 'autoOpenView.boxCount' } },
-    [O, S] = l()(
+    z = { dynamicTexts: { rewardsPremiumDay: 'common.rewards.premiumDay' } },
+    [A, D] = c()(
         ({ observableModel: e }) => {
             const s = e.object().get().eventName,
-                n = { ...e.primitives(['boxesQuantity']), rewardRows: e.arrayClone('rewardRows') },
-                t = a((e) => o(n.rewardRows.get(), e)),
-                l = a((e) => {
-                    const s = t(e);
+                l = { ...e.primitives(['boxesQuantity']), rewardRows: e.arrayClone('rewardRows') },
+                c = a((e) => r(l.rewardRows.get(), e)),
+                o = a((e) => {
+                    const s = c(e);
                     return s?.rewards.items;
                 }),
-                c = a(() => C(z, s), { equals: r }),
-                i = a(() => N(H, s), { equals: r }),
-                m = Boolean(R.strings.$dyn(`lootbox_${s}`)),
-                d = a(() => {
-                    const { texts: e } = c(),
-                        { dynamicTexts: s } = i(),
-                        a = n.boxesQuantity.get();
-                    return { boxesCount: a, text: e.subTitle, boxesCountText: s.boxCount.plural('boxCount', a) };
-                });
+                t = a(() => I(B, s), { equals: n }),
+                i = a(() => v(z, s), { equals: n });
             return {
-                ...n,
+                ...l,
                 eventName: s,
-                hasResources: m,
-                computes: { resources: c, dynamicResources: i, getRewards: t, getRewardsList: l, subTitleData: d },
+                computes: { resources: t, dynamicResources: i, getRewards: c, getRewardsList: o },
             };
         },
         ({ externalModel: e }) => ({
@@ -86,190 +64,188 @@ const z = {
             showPreview: e.createCallback((e) => e, 'onPreview'),
         }),
     ),
-    M = 'Content_2f5bdb28';
-const F = 'Header_7ffd36d',
-    G = 'Header_label_d1d657ae',
-    q = 'Header_count_98f5c325';
-const Q = 'Item_35ab220c';
-const X = 'RewardRow_ca050985';
-function E({ children: s }) {
-    return e.jsx('div', { className: X, children: s });
+    S = 'Content_3cc327d5';
+const V = 'Header_bb6ea0e2',
+    $ = 'Header_label_301e7bba';
+const H = 'Item_c5163bf';
+const M = 'RewardRow_ca050985';
+function O({ className: a = '', children: l }) {
+    return e.jsx('div', { className: s(M, a), children: l });
 }
-((E.Header = function ({ label: a, rewardsCount: n, className: t = '' }) {
-    return e.jsxs('div', {
-        className: s(F, t),
-        children: [e.jsx('div', { className: G, children: a }), e.jsx('div', { className: q, children: n })],
-    });
+((O.Header = function ({ label: a, className: l = '' }) {
+    return e.jsx('div', { className: s(V, l), children: e.jsx('div', { className: $, children: a }) });
 }),
-    (E.Content = function ({ children: a, classNames: n }) {
-        return e.jsx('div', { className: s(M, n), children: a });
+    (O.Content = function ({ children: a, className: l }) {
+        return e.jsx('div', { className: s(S, l), children: a });
     }),
-    (E.Item = function ({ children: a, classNames: n }) {
-        return e.jsx('div', { className: s(Q, n), children: a });
+    (O.Item = function ({ children: a, className: l = '' }) {
+        return e.jsx('div', { className: s(H, l), children: a });
     }));
-const J = 'Count_b8c644a4';
-function K({ path: s, children: a, className: n = '' }) {
-    return e.jsx('div', { className: n, style: { backgroundImage: `url(${s})` }, children: a });
+const F = 'Count_36ff5cb1';
+function G({ path: s, children: a, className: l = '' }) {
+    return e.jsx('div', { className: l, style: { backgroundImage: `url(${s})` }, children: a });
 }
-const U = 'Image_e025628e',
-    W = 'Image_overlay_ed672d5e',
-    Y = 'Image_overlay__normalize_2bfd2959',
-    Z = 'Image_iconCompensation_9f702d91',
-    ee = i.Big;
-const se = {
-    label: 'Label_4119cdba',
-    label__credits: 'Label_label__credits_de46e2c4',
+const q = 'Image_e025628e',
+    X = 'Image_overlay_ed672d5e',
+    Q = 'Image_overlay__normalize_2bfd2959',
+    E = 'Image_iconCompensation_9f702d91',
+    J = t.Big;
+const K = {
+    label: 'Label_25cbbcaf',
+    label__credits: 'Label_label__credits_c318c9f1',
     label__vehicles: 'Label_label__vehicles_e3f8b3ce',
     label__gold: 'Label_label__gold_e3f8b3ce',
-    label__premium: 'Label_label__premium_177d9045',
+    label__premium: 'Label_label__premium_e3f8b3ce',
+    label__premiumTank: 'Label_label__premiumTank_5d5126e1',
     label__crystal: 'Label_label__crystal_e3f8b3ce',
     label__bptaler: 'Label_label__bptaler_e3f8b3ce',
-    label__freeXP: 'Label_label__freeXP_7048c917',
-    label__premiumTank: 'Label_label__premiumTank_6ce89a8b',
-    label__customizations: 'Label_label__customizations_46f7314f',
-    accentGold: 'Label_accentGold_177d9045',
+    label__freeXP: 'Label_label__freeXP_34a7d691',
+    label__customizations: 'Label_label__customizations_b90b17f2',
+    accentGold: 'Label_accentGold_5d5126e1',
     fadeIn: 'Label_fadeIn_e3f8b3ce',
 };
-const ae = 'Reward_76393f28',
-    ne = 'Reward_wrapper_b54b4dc5';
-function te({ reward: s, children: a }) {
-    const { tooltipId: n, tooltipContentId: t } = s,
-        l = _({ contentId: Number(t), args: { tooltipId: n }, showDelay: 100 });
-    return e.jsx('div', { ...l, className: ae, children: e.jsx('div', { className: ne, children: a }) });
+const U = 'Reward_e23f2c77',
+    W = 'Reward_wrapper_b54b4dc5';
+function Y({ reward: s, children: a }) {
+    const { tooltipId: l, tooltipContentId: c } = s,
+        r = u({ contentId: Number(c), args: { tooltipId: l }, showDelay: 100 });
+    return e.jsx('div', { ...r, className: U, children: e.jsx('div', { className: W, children: a }) });
 }
-((te.Image = function ({ reward: a, images: n, showPreview: t }) {
-    const { name: l, id: o, isCompensation: r, styleID: c, overlayType: i } = a,
+((Y.Image = function ({ reward: a, images: l, showPreview: c }) {
+    const { name: r, id: n, isCompensation: o, styleID: t, overlayType: m } = a,
         d = (() => {
-            switch (l) {
-                case m.Vehicles:
-                    return T({ ...a, id: 0, icon: '' }, ee, r);
-                case m.PremiumPlus:
-                    return T({ ...a, id: 0, icon: 'premium_plus_universal' }, ee);
+            switch (r) {
+                case i.Vehicles:
+                    return C({ ...a, id: 0, icon: '' }, J, o);
+                case i.PremiumPlus:
+                    return C({ ...a, id: 0, icon: 'premium_plus_universal' }, J);
                 default:
-                    return T({ ...a, id: 0 }, ee);
+                    return C({ ...a, id: 0 }, J);
             }
         })();
-    return e.jsxs(K, {
+    return e.jsxs(G, {
         path: d,
-        className: U,
+        className: q,
         children: [
-            r && e.jsx(K, { path: n.compensationIcon, className: Z }),
-            i && e.jsx(K, { path: k(ee, l, i), className: s(W, I.includes(l) && Y) }),
-            L(a) &&
-                e.jsx(P, {
-                    icon: { img: n.previewIcon },
-                    onClick: () => t({ bonusType: l, bonusId: o || '', styleID: c }),
+            o && e.jsx(G, { path: l.compensationIcon, className: E }),
+            m && e.jsx(G, { path: k(J, r, m), className: s(X, R.includes(r) && Q) }),
+            g(a) &&
+                e.jsx(L, {
+                    icon: { img: l.previewIcon },
+                    onClick: () => c({ bonusType: r, bonusId: n || '', styleID: t }),
                 }),
         ],
     });
 }),
-    (te.Label = function ({ reward: a, premiumText: n }) {
-        const { name: t, compensation: l, isCompensation: o, value: r } = a,
-            c = d(t),
-            i = o ? l.label : a.label,
-            _ = a.name === m.Customizations,
-            b = a.name === m.PremiumPlus,
-            p = a.name === m.TmanToken,
-            x = _ || b || p ? null : u(r || i, c);
+    (Y.Label = function ({ reward: a, premiumText: l }) {
+        const { name: c, compensation: r, isCompensation: n, value: o } = a,
+            t = m(c),
+            u = n ? r.label : a.label,
+            _ = a.name === i.Customizations,
+            b = a.name === i.PremiumPlus,
+            p = a.name === i.TmanToken,
+            w = _ || b || p ? null : d(o || u, t);
         return e.jsxs(e.Fragment, {
             children: [
-                x && e.jsx('div', { className: s(se.label, se[`label__${a.name}`]), children: x }),
-                _ && e.jsx('div', { className: s(se.label, se.label__customizations), children: a.label }),
+                w && e.jsx('div', { className: s(K.label, K[`label__${a.name}`]), children: w }),
+                _ && e.jsx('div', { className: s(K.label, K.label__customizations), children: a.label }),
                 b &&
                     e.jsxs('div', {
-                        className: s(se.label, se.label__premium),
-                        children: [e.jsx('span', { className: se.accentGold, children: a.value }), ' ', n],
+                        className: s(K.label, K.label__premium),
+                        children: [e.jsx('span', { className: K.accentGold, children: a.value }), ' ', l],
                     }),
             ],
         });
     }),
-    (te.Count = function ({ text: a, count: n, classNames: t }) {
+    (Y.Count = function ({ text: a, count: l, classNames: c }) {
         return e.jsx('div', {
-            className: s(J, t),
-            children: e.jsx(c, { text: a, params: { count: n }, upgradeLegacy: !0 }),
+            className: s(F, c),
+            children: e.jsx(o, { text: a, params: { count: l }, upgradeLegacy: !0 }),
         });
     }));
-const le = n(function ({ reward: s }) {
-        const { model: a, controls: n } = S(),
-            { texts: t, images: l } = a.computes.resources(),
-            { dynamicTexts: o } = a.computes.dynamicResources(),
-            { count: r, value: c } = s;
-        return e.jsxs(te, {
+const Z = l(function ({ reward: s }) {
+        const { model: a, controls: l } = D(),
+            { texts: c, images: r } = a.computes.resources(),
+            { dynamicTexts: n } = a.computes.dynamicResources(),
+            { count: o, value: t } = s;
+        return e.jsxs(Y, {
             reward: s,
             children: [
-                e.jsx(te.Image, {
+                e.jsx(Y.Image, {
                     reward: s,
-                    images: { compensationIcon: l.compensationIcon, previewIcon: l.previewIcon },
-                    showPreview: n.showPreview,
+                    images: { compensationIcon: r.compensationIcon, previewIcon: r.previewIcon },
+                    showPreview: l.showPreview,
                 }),
-                r > 1
-                    ? e.jsx(te.Count, { text: t.rewardsMultiplier, count: r })
-                    : e.jsx(te.Label, { reward: s, premiumText: o.rewardsPremiumDay.plural('premiumDay', Number(c)) }),
+                o > 1
+                    ? e.jsx(Y.Count, { text: c.rewardsMultiplier, count: o })
+                    : e.jsx(Y.Label, { reward: s, premiumText: n.rewardsPremiumDay.plural('premiumDay', Number(t)) }),
             ],
         });
     }),
-    oe = 'RewardRow_header_101fdc8c';
-function re({ row: s }) {
-    const { label: a, rewardsCount: n, rewards: t } = s;
-    return e.jsxs(E, {
+    ee = 'RewardRow_f98d6058',
+    se = 'RewardRow_header_e3184570',
+    ae = 'RewardRow_content_9bd36497',
+    le = 'RewardRow_base__small_eeac5b76',
+    ce = 'RewardRow_item_a2938aed';
+function re({ row: a, isSmall: l }) {
+    const { label: c, rewards: r } = a;
+    return e.jsxs(O, {
+        className: s(ee, l && le),
         children: [
-            e.jsx(E.Header, { label: a, rewardsCount: n, className: oe }),
-            e.jsx(E.Content, {
-                children: t && b(t.items, (s, a) => e.jsx(E.Item, { children: e.jsx(le, { reward: s }) }, a)),
+            e.jsx(O.Header, { label: c, className: se }),
+            e.jsx(O.Content, {
+                className: ae,
+                children:
+                    r && _(r.items, (s, a) => e.jsx(O.Item, { className: ce, children: e.jsx(Z, { reward: s }) }, a)),
             }),
         ],
     });
 }
-const ce = 'Content_a7c73ed5',
-    ie = 'Content_63e92260';
-const me = n(function ({ className: a }) {
-        const { model: n } = S(),
-            { images: t } = n.computes.resources(),
-            l = n.rewardRows.get();
+const ne = 'Content_a7c73ed5',
+    oe = 'Content_scroll_9fcfd0ba',
+    te = 'Content_scrollBar_32fb5c63',
+    ie = 'Content_c61849db';
+const me = l(function ({ className: a }) {
+        const { model: l } = D(),
+            { images: c } = l.computes.resources(),
+            r = l.rewardRows.get();
         return e.jsx('div', {
-            className: s(ce, a),
+            className: s(ne, a),
             children: e.jsx(y, {
-                lipImage: t.scrollLipTop,
+                classNames: { base: oe, scrollBar: te },
+                lipImage: c.scrollLipTop,
                 children: e.jsx('div', {
                     className: ie,
-                    children: b(l, (s, a) => e.jsx(re, { row: s }, `${s.label}_${a}`)),
+                    children: _(r, (s, a) => e.jsx(re, { row: s, isSmall: a === r.length - 1 }, `${s.label}_${a}`)),
                 }),
             }),
         });
     }),
-    de = 'App_6a538000',
-    ue = 'App_closeButton_d9ee7ae6',
-    _e = 'App_header_d674f46d',
-    be = 'App_base__top_0',
-    pe = 'App_scrollArea_1edf1cbf',
-    xe = 'App_footer_77faf485';
-const he = n(function () {
-    const { model: a, controls: n } = S(),
-        { images: t, texts: l } = a.computes.resources(),
-        o = a.computes.subTitleData();
+    de = 'App_b494b37e',
+    ue = 'App_closeButton_24dcdb0b',
+    _e = 'App_header_fcbfe4a9',
+    be = 'App_title_903814c5',
+    pe = 'App_scrollArea_4a3767fe',
+    we = 'App_footer_36d816be';
+const he = l(function () {
+    const { model: s, controls: a } = D(),
+        { images: l, texts: c } = s.computes.resources(),
+        r = b({ buttonSize: p.medium }, { large: { buttonSize: p.large } });
     return (
-        p(n.close),
+        w(a.close),
         e.jsxs('div', {
-            className: s(de, a.hasResources && be),
-            style: { backgroundImage: `url(${t.background})` },
+            className: de,
+            style: { backgroundImage: `url(${l.background})` },
             children: [
-                e.jsx('div', {
-                    className: ue,
-                    children: e.jsx(x, { caption: l.closeButton, type: 'close', side: 'right', onClick: n.close }),
-                }),
-                e.jsxs($, { className: _e, children: [o && e.jsx($.SubTitle, { ...o }), e.jsx(v, { text: l.title })] }),
+                e.jsx(h, { className: ue, onClose: a.close }),
+                e.jsx('div', { className: _e, children: e.jsx(N, { text: c.title, className: be }) }),
                 e.jsx(me, { className: pe }),
-                e.jsx(D, {
-                    className: xe,
-                    children: e.jsx(h, {
-                        type: j.primary,
-                        size: w.medium,
-                        onClick: n.close,
-                        children: l.submitButtonText,
-                    }),
+                e.jsx(P, {
+                    className: we,
+                    children: e.jsx(x, { size: r.buttonSize, onClick: a.close, children: c.submitButtonText }),
                 }),
             ],
         })
     );
 });
-f(e.jsx(O, { children: e.jsx(g, { children: e.jsx(he, {}) }) }));
+j(e.jsx(A, { children: e.jsx(f, { children: e.jsx(he, {}) }) }));

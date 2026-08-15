@@ -2511,9 +2511,12 @@
                     );
 
                     const updateDisabledStates = (thumbOffsetTop) => {
-                        if (
-                            !(leftButtonRef.current && rightButtonRef.current && trackRef.current && thumbRef.current)
-                        ) {
+                        if (!(
+                            leftButtonRef.current &&
+                            rightButtonRef.current &&
+                            trackRef.current &&
+                            thumbRef.current
+                        )) {
                             return;
                         }
 
@@ -3279,9 +3282,12 @@
                     );
 
                     const updateDisabledStates = (thumbOffsetTop) => {
-                        if (
-                            !(topButtonRef.current && bottomButtonRef.current && trackRef.current && thumbRef.current)
-                        ) {
+                        if (!(
+                            topButtonRef.current &&
+                            bottomButtonRef.current &&
+                            trackRef.current &&
+                            thumbRef.current
+                        )) {
                             return;
                         }
 

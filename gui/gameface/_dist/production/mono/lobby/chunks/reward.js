@@ -1,6 +1,6 @@
-import { j as e, e as s, r as a } from './vendor.js';
-import { c as t, e as i } from './resources.js';
-import { a8 as r, a4 as m, R as n, N as o, a9 as c, r as l, a5 as u, F as g, aa as _, ab as d, S as h } from './lib.js';
+import { j as e, e as s, r as t } from './vendor.js';
+import { c as a, e as i } from './resources.js';
+import { a8 as r, _ as m, R as n, N as o, a9 as c, r as u, a4 as l, F as g, aa as d, ab as h, S } from './lib.js';
 var x = ((e) => (
     (e.Big = 'big'),
     (e.Small = 'small'),
@@ -17,7 +17,7 @@ var x = ((e) => (
     (e.S48x48 = 's48x48'),
     e
 ))(x || {});
-const b = {
+const p = {
         vehicles: 'vehicles',
         customizations: 'customizations',
         attachmentsSet: 'attachmentsSet',
@@ -56,7 +56,7 @@ const b = {
         lootBox: 'lootBox',
         collectionItem: 'collectionItem',
     },
-    S = (e) => {
+    b = (e) => {
         switch (e) {
             case 's180x135':
             case 'small':
@@ -71,94 +71,94 @@ const b = {
                 return e;
         }
     },
-    p = (e, s = 's180x135') => {
-        const { name: a, isRent: r, icon: m, id: n } = e;
-        switch (a) {
-            case b.vehicles:
+    z = (e, s = 's180x135') => {
+        const { name: t, isRent: r, icon: m, id: n } = e;
+        switch (t) {
+            case p.vehicles:
                 return r
                     ? `R.images.gui.maps.icons.quests.bonuses.${s}.vehicles_rent`
                     : m
-                      ? `R.images.gui.maps.shop.vehicles.${S(s)}.${m}`
+                      ? `R.images.gui.maps.shop.vehicles.${b(s)}.${m}`
                       : `R.images.gui.maps.icons.quests.bonuses.${s}.vehicles`;
-            case b.customizations:
-                return t.has(`quests.bonuses.${s}.${m}_${n}`)
+            case p.customizations:
+                return a.has(`quests.bonuses.${s}.${m}_${n}`)
                     ? `R.images.gui.maps.icons.quests.bonuses.${s}.${m}_${n}`
                     : `R.images.gui.maps.icons.quests.bonuses.${s}.${m}`;
-            case b.attachment:
-                return t.has(`R.images.gui.maps.vehicles.attachments.${s}.${m}`)
+            case p.attachment:
+                return a.has(`R.images.gui.maps.vehicles.attachments.${s}.${m}`)
                     ? `R.images.gui.maps.vehicles.attachments.${s}.${m}`
-                    : `R.images.gui.maps.icons.quests.bonuses.${s}.${a}`;
-            case b.attachmentsSet:
+                    : `R.images.gui.maps.icons.quests.bonuses.${s}.${t}`;
+            case p.attachmentsSet:
                 return i.has(`bonuses.${s}.attachmentsSet${m}`)
                     ? `R.images.open_bundle.gui.maps.icons.bonuses.${s}.attachmentsSet${m}`
                     : `R.images.open_bundle.gui.maps.icons.bonuses.${s}.attachmentsSet`;
-            case b.basic:
-            case b.plus:
-            case b.premium:
-            case b.premiumPlus:
-            case b.items:
+            case p.basic:
+            case p.plus:
+            case p.premium:
+            case p.premiumPlus:
+            case p.items:
                 return `R.images.gui.maps.icons.quests.bonuses.${s}.${m}`;
-            case b.blueprints:
-            case b.blueprintsAny:
-            case b.finalBlueprints:
-            case b.randomNationalBlueprint:
+            case p.blueprints:
+            case p.blueprintsAny:
+            case p.finalBlueprints:
+            case p.randomNationalBlueprint:
                 return `R.images.gui.maps.icons.blueprints.fragment.${s}.${m}`;
-            case b.tokens:
-            case b.styleProgress:
+            case p.tokens:
+            case p.styleProgress:
                 return `R.images.gui.maps.icons.quests.bonuses.${s}.${m}`;
-            case b.crewBooks:
-            case b.randomNationalBrochure:
-            case b.randomNationalGuide:
-            case b.randomNationalCrewBook:
+            case p.crewBooks:
+            case p.randomNationalBrochure:
+            case p.randomNationalGuide:
+            case p.randomNationalCrewBook:
                 return `R.images.gui.maps.icons.crewBooks.books.${s}.${m}`;
-            case b.crewSkins:
-            case b.goodies:
-            case b.groups:
+            case p.crewSkins:
+            case p.goodies:
+            case p.groups:
                 return `R.images.gui.maps.icons.quests.bonuses.${s}.${m}`;
-            case b.dossierBadge:
-                return `R.images.gui.maps.icons.quests.bonuses.badges.${S(s)}.${m}`;
-            case b.dossierAchievement:
-                return `R.images.gui.maps.icons.achievement.${S(s)}.${m}`;
-            case b.xp:
-            case b.xpFactor:
+            case p.dossierBadge:
+                return `R.images.gui.maps.icons.quests.bonuses.badges.${b(s)}.${m}`;
+            case p.dossierAchievement:
+                return `R.images.gui.maps.icons.achievement.${b(s)}.${m}`;
+            case p.xp:
+            case p.xpFactor:
                 return `R.images.gui.maps.icons.quests.bonuses.${s}.exp`;
-            case b.creditsFactor:
+            case p.creditsFactor:
                 return `R.images.gui.maps.icons.quests.bonuses.${s}.credits`;
-            case b.crystal:
+            case p.crystal:
                 return `R.images.gui.maps.icons.quests.bonuses.${s}.crystal`;
-            case b.tankmenXPFactor:
+            case p.tankmenXPFactor:
                 return `R.images.gui.maps.icons.quests.bonuses.${s}.tankmenXP`;
-            case b.dailyXPFactor:
-            case b.freeXPFactor:
+            case p.dailyXPFactor:
+            case p.freeXPFactor:
                 return `R.images.gui.maps.icons.quests.bonuses.${s}.freeXP`;
-            case b.tmanToken:
-            case b.battlePassSelectToken:
+            case p.tmanToken:
+            case p.battlePassSelectToken:
                 return `R.images.gui.maps.icons.quests.bonuses.${s}.${m}`;
-            case b.premiumTank:
+            case p.premiumTank:
                 return `R.images.gui.maps.icons.quests.bonuses.${s}.vehicles`;
-            case b.styleProgressToken:
+            case p.styleProgressToken:
                 return `R.images.gui.maps.icons.quests.bonuses.${s}.style_3d`;
-            case b.lootBox:
+            case p.lootBox:
                 return `R.images.gui.maps.icons.quests.bonuses.${s}.${m}`;
-            case b.collectionItem:
-                return `R.images.gui.maps.icons.collectionItems.${S(s)}.${m}`;
+            case p.collectionItem:
+                return `R.images.gui.maps.icons.collectionItems.${b(s)}.${m}`;
             default:
                 return `R.images.gui.maps.icons.quests.bonuses.${s}.${m}`;
         }
     };
-function z({ size: e, name: s, special: a }) {
+function _({ size: e, name: s, special: t }) {
     let i = e;
     return (
         's360x270' === e && (i = 's400x300'),
-        s === b.attachment
-            ? t.readOrEmpty(`customization.rarity.glowWithSign.${e}.${a}`)
-            : t.readOrEmpty(`quests.bonuses.${i}.${r(a)}_overlay`)
+        s === p.attachment
+            ? a.readOrEmpty(`customization.rarity.glowWithSign.${e}.${t}`)
+            : a.readOrEmpty(`quests.bonuses.${i}.${r(t)}_overlay`)
     );
 }
-function y(e) {
+function $(e) {
     return e === m.ATTACHMENT_EPIC || e === m.ATTACHMENT_LEGENDARY;
 }
-const $ = ['gold', 'credits', 'freeXP', 'crystal', 'equipCoin', 'bptaler'];
+const y = ['gold', 'credits', 'freeXP', 'crystal', 'equipCoin', 'bptaler'];
 var v = ((e) => ((e.S = 's'), (e.M = 'm'), (e.L = 'l'), (e.AttachmentPreview = 'a'), e))(v || {});
 const N = {
     s: {
@@ -328,13 +328,13 @@ const N = {
 };
 function f(e) {
     const { breakpoint: s } = o(),
-        a = s.width > c.Medium ? s.name : n.medium,
-        t = e.charAt(0).toLowerCase();
-    return N[`${t}`][`${a}`];
+        t = s.width > c.Medium ? s.name : n.medium,
+        a = e.charAt(0).toLowerCase();
+    return N[`${a}`][`${t}`];
 }
-const T = 'Highlight_e258b804',
-    k = l.resolve('images');
-const w = {
+const k = 'Highlight_e258b804',
+    w = u.resolve('images');
+const T = {
     root: 'Image_root_f239db79',
     base: 'Image_f3f63595',
     count: 'Image_count_ab384088',
@@ -343,28 +343,28 @@ const w = {
     base__l: 'Image_base__l_f239db79',
 };
 const B = 'LoupeButton_5495857f',
-    P = 'LoupeButton_icon_e65c88cd',
-    C = (e) => e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '),
-    I = { base: 'TankName_b9b19397', type: 'TankName_type_564fa82d' },
-    q = (e, s, a) => ({
-        backgroundImage: `url(${`R.images.gui.maps.icons.vehicleTypes.${a ? 'c_48x48' : 'c_24x24'}.${`${e.replace('-', '_')}${s ? '_elite' : ''}`}`})`,
+    C = 'LoupeButton_icon_e65c88cd',
+    P = (e) => e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '),
+    q = { base: 'TankName_b9b19397', type: 'TankName_type_564fa82d' },
+    I = (e, s, t) => ({
+        backgroundImage: `url(${`R.images.gui.maps.icons.vehicleTypes.${t ? 'c_48x48' : 'c_24x24'}.${`${e.replace('-', '_')}${s ? '_elite' : ''}`}`})`,
     }),
-    H = ({ reward: a, style: t, className: i = '' }) => {
+    H = ({ reward: t, style: a, className: i = '' }) => {
         const { breakpoint: r } = o(),
-            { level: m, type: n, isElite: l, vehicleShortName: u } = a;
+            { level: m, type: n, isElite: u, vehicleShortName: l } = t;
         return e.jsxs('div', {
-            className: s(I.base, i),
-            style: { fontSize: t.nameHeight },
+            className: s(q.base, i),
+            style: { fontSize: a.nameHeight },
             children: [
-                void 0 !== m && e.jsx('div', { className: I.level, children: _(m) }),
+                void 0 !== m && e.jsx('div', { className: q.level, children: d(m) }),
                 void 0 !== n &&
-                    void 0 !== l &&
-                    e.jsx('div', { className: I.type, style: q(n, l, r.width >= c.Medium) }),
-                e.jsx('div', { children: u }),
+                    void 0 !== u &&
+                    e.jsx('div', { className: q.type, style: I(n, u, r.width >= c.Medium) }),
+                e.jsx('div', { children: l }),
             ],
         });
     },
-    O = {
+    j = {
         root: 'Name_root_e2f8f44',
         text: 'Name_text_bcc9ac85',
         text__s: 'Name_text__s_9a0d0c9',
@@ -372,112 +372,91 @@ const B = 'LoupeButton_5495857f',
         text__l: 'Name_text__l_13ed7afc',
         innerText: 'Name_innerText_993b364d',
     };
-const j = {
-        root: 'Overlay_root_3c7155a',
-        base: 'Overlay_5823bbf',
-        base__s24x24: 'Overlay_base__s24x24_4e2b74ec',
-        base__s48x48: 'Overlay_base__s48x48_3c7155a',
-        base__small: 'Overlay_base__small_2862b81b',
-        base__s80x80: 'Overlay_base__s80x80_3c7155a',
-        base__big: 'Overlay_base__big_83274ce6',
-        base__s180x135: 'Overlay_base__s180x135_508d8721',
-        base__s232x174: 'Overlay_base__s232x174_f7e25f10',
-        base__s296x222: 'Overlay_base__s296x222_88d0c030',
-        base__s360x270: 'Overlay_base__s360x270_ac8e531b',
-        base__s400x300: 'Overlay_base__s400x300_e1cde049',
-        base__s600x450: 'Overlay_base__s600x450_bfd47780',
-        base__trophy: 'Overlay_base__trophy_3c7155a',
-        base__normalize: 'Overlay_base__normalize_428f4b67',
-    },
-    F = [m.EQUIPMENT_TROPHY_BASIC, m.EQUIPMENT_TROPHY_UPGRADED];
-const E = 'Reward_bfa36689',
+const F = 'Overlay_5823bbf';
+const W = 'Reward_bfa36689',
     A = ['style', 'style_3d'],
-    W = (e) => {
-        const { name: s, icon: a } = e;
+    X = (e) => {
+        const { name: s, icon: t } = e;
         switch (s) {
-            case b.attachmentsSet:
-            case b.vehicles:
+            case p.attachmentsSet:
+            case p.vehicles:
                 return !0;
-            case b.customizations:
-                return A.includes(a);
+            case p.customizations:
+                return A.includes(t);
             default:
                 return !1;
         }
     },
-    X = a.forwardRef(function ({ reward: t, template: i, tooltipDisabled: r = !1, className: m = '', ...n }, o) {
-        const { width: c, height: l, padding: u } = f(i),
-            { tooltipContentId: g, tooltipId: _ } = t,
-            d = a.useMemo(() => ({ contentId: Number(g), args: { tooltipId: _ }, disabled: r }), [r, g, _]),
-            x = h(d);
+    E = t.forwardRef(function ({ reward: a, template: i, tooltipDisabled: r = !1, className: m = '', ...n }, o) {
+        const { width: c, height: u, padding: l } = f(i),
+            { tooltipContentId: g, tooltipId: d } = a,
+            h = t.useMemo(() => ({ contentId: Number(g), args: { tooltipId: d }, disabled: r }), [r, g, d]),
+            x = S(h);
         return e.jsx('div', {
             ref: o,
             ...x,
-            className: s(E, m),
-            style: { width: c, height: l, padding: u },
+            className: s(W, m),
+            style: { width: c, height: u, padding: l },
             children: n.children,
         });
     });
-((X.Highlight = function ({ size: a, special: t, className: i }) {
-    const r = u(a, t);
+((E.Highlight = function ({ size: t, special: a, className: i }) {
+    const r = l(t, a);
     return e.jsx('div', {
-        className: s(T, i),
-        style: { backgroundImage: `url(${k.readOrEmpty(`quests.bonuses.${a}.${r}_highlight`, 'silent')})` },
+        className: s(k, i),
+        style: { backgroundImage: `url(${w.readOrEmpty(`quests.bonuses.${t}.${r}_highlight`, 'silent')})` },
     });
 }),
-    (X.Image = function ({
-        template: a,
-        showCounter: t,
+    (E.Image = function ({
+        template: t,
+        showCounter: a,
         count: i,
         image: r,
         currencySize: m,
         className: n = '',
         ...o
     }) {
-        const { assetWidth: c, assetHeight: l } = f(a),
-            u = a.charAt(0).toLowerCase();
+        const { assetWidth: c, assetHeight: u } = f(t),
+            l = t.charAt(0).toLowerCase();
         return e.jsx('div', {
-            className: s(w.base, w[`base__${u}`], n),
-            style: { backgroundImage: `url(${r})`, width: c, height: l },
+            className: s(T.base, T[`base__${l}`], n),
+            style: { backgroundImage: `url(${r})`, width: c, height: u },
             ...o,
             children:
-                t &&
+                a &&
                 e.jsx(g, {
                     style: { fontSize: m },
                     text: R.strings.open_bundle_lobby_default.main.multi(),
-                    className: w.count,
+                    className: T.count,
                     params: { count: i },
                 }),
         });
     }),
-    (X.Name = function ({ reward: a, multiTextSize: t, nameHeight: i, fontSize: r, template: m, className: n = '' }) {
-        const { name: o, label: c } = a,
-            l = s(O.text, O[`text__${m}`], n);
+    (E.Name = function ({ reward: t, multiTextSize: a, nameHeight: i, fontSize: r, template: m, className: n = '' }) {
+        const { name: o, label: c } = t,
+            u = s(j.text, j[`text__${m}`], n);
         return e.jsx(e.Fragment, {
             children:
-                o === b.vehicles
-                    ? e.jsx(H, { reward: a, style: { nameHeight: i }, className: l })
-                    : e.jsx(d, {
-                          className: l,
-                          classNames: { text: O.innerText },
-                          text: C(c),
-                          styleBase: { fontSize: r, maxHeight: t },
+                o === p.vehicles
+                    ? e.jsx(H, { reward: t, style: { nameHeight: i }, className: u })
+                    : e.jsx(h, {
+                          className: u,
+                          classNames: { text: j.innerText },
+                          text: P(c),
+                          styleBase: { fontSize: r, maxHeight: a },
+                          tooltipDisabled: !0,
                       }),
         });
     }),
-    (X.Overlay = function ({ size: a, name: t, special: i, className: r }) {
-        const m = z({ size: a, name: t, special: i }),
-            n = t === b.attachment,
-            o = F.includes(i);
-        return e.jsx('div', {
-            className: s(j.base, j[`base__${a}`], n && j.base__normalize, o && j.base__trophy, r),
-            style: { backgroundImage: `url(${m})` },
-        });
+    (E.Overlay = function ({ size: t, name: a, special: i, className: r }) {
+        const m = _({ size: t, name: a, special: i });
+        return e.jsx('div', { className: s(F, r), style: { backgroundImage: `url(${m})` } });
     }),
-    (X.LoupeButton = ({ onClick: a, onMouseEnter: t, icon: i, className: r = '' }) =>
+    (E.LoupeButton = ({ onClick: t, onMouseEnter: a, icon: i, className: r = '' }) =>
         e.jsx('div', {
             className: s(B, r),
-            onClick: a,
-            onMouseEnter: t,
-            children: e.jsx('div', { className: s(P, i.className), style: { backgroundImage: `url(${i.img})` } }),
+            onClick: t,
+            onMouseEnter: a,
+            children: e.jsx('div', { className: s(C, i.className), style: { backgroundImage: `url(${i.img})` } }),
         })));
-export { $ as C, x as I, v as P, X as R, H as T, b as a, z as b, C as f, p as g, y as h, W as i, f as u };
+export { y as C, x as I, v as P, E as R, H as T, p as a, _ as b, P as f, z as g, $ as h, X as i, f as u };

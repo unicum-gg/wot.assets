@@ -461,7 +461,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function r(u) {
                     let e = '';
-                    for (let t = a.length - 1; t >= 0; t--) for (; u >= a[t]; ) ((e += n[t]), (u -= a[t]));
+                    for (let t = a.length - 1; t >= 0; t--) for (; u >= a[t];) ((e += n[t]), (u -= a[t]));
                     return e;
                 }
                 const E = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -941,9 +941,13 @@
                         if (t.mediumWidth && B) return r(e, t, f);
                         if (t.smallWidth && C) return r(e, t, f);
                         if (t.extraSmallWidth && d) return r(e, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -1702,7 +1706,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = cu(a.keys()); !(u = t()).done; ) r(u.value, e);
+                                                        for (var u, t = cu(a.keys()); !(u = t()).done;) r(u.value, e);
                                                     },
                                                     unsubscribe: r,
                                                 };

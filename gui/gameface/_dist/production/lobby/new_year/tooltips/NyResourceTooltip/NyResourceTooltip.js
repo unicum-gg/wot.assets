@@ -1276,7 +1276,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = $(r.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = $(r.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };

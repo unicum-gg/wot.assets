@@ -64,6 +64,9 @@ html[lang='th'] input {
     left: 50%;
     transform: translateX(-50%);
 }
+.DifficultyApp_items__searching_3a590255 {
+    opacity: 0.7;
+}
 
 .DifficultyApp_item_80f31962 {
     margin: 0 5rem;
@@ -2298,7 +2301,7 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.IntroOverlay_glow_f3f2a9f3,
+.IntroOverlay_glow_48b8ad88,
 .IntroOverlay_hoverHelper_9cec2539 {
     position: absolute;
     top: 0;
@@ -2319,22 +2322,22 @@ html[lang='th'] input {
         opacity: 1;
     }
 }
-.IntroOverlay_5db6888d {
-    border: 1rem solid #93c7fe;
+.IntroOverlay_8d89d328 {
+    border: 1rem solid #ffc36e;
 }
-.IntroOverlay_base__extraChapter_d35cc3d4 {
-    border-color: #89ed65;
+.IntroOverlay_base__extraChapter_2f0d6d76 {
+    border-color: #ffb947;
 }
 .IntroOverlay_base__holiday_2f0d6d76 {
     border-color: #ffb947;
 }
 
-.IntroOverlay_glow_f3f2a9f3 {
-    box-shadow: 0 0 25rem 0 #93c7fe inset;
+.IntroOverlay_glow_48b8ad88 {
+    box-shadow: 0 0 25rem 0 #ffc36e inset;
     animation: IntroOverlay_pulse_66f832c2 2s ease-in-out infinite;
 }
-.IntroOverlay_base__extraChapter_d35cc3d4 .IntroOverlay_glow_f3f2a9f3 {
-    box-shadow: 0 0 25rem 0 #89ed65 inset;
+.IntroOverlay_base__extraChapter_2f0d6d76 .IntroOverlay_glow_48b8ad88 {
+    box-shadow: 0 0 25rem 0 #ffb947 inset;
 }
 
 .IntroOverlay_hoverHelper_9cec2539 {
@@ -3325,54 +3328,51 @@ html[lang='th'] input {
     line-height: 1.2;
 }
 
-.QuestCard_condition_f845cfdd {
+.QuestCard_condition_bf90cd2e {
     width: 90rem;
     max-height: 50rem;
 }
-.QuestCard_base__fullSize_9c76dd70 .QuestCard_condition_f845cfdd {
+.QuestCard_base__fullSize_9c76dd70 .QuestCard_condition_bf90cd2e {
     width: 100%;
 }
-.QuestCard_base__digits_9c76dd70 .QuestCard_condition_f845cfdd {
+.QuestCard_base__digits_9c76dd70 .QuestCard_condition_bf90cd2e {
     width: 148rem;
 }
-.mediaLargeWidth .QuestCard_base__digits_9c76dd70 .QuestCard_condition_f845cfdd {
+.mediaLargeWidth .QuestCard_base__digits_9c76dd70 .QuestCard_condition_bf90cd2e {
     width: 218rem;
 }
 .mediaLargeWidth .QuestCard_base__digits_9c76dd70 .QuestCard_condition__bonus_525c74c2 {
     width: 178rem;
 }
-.QuestCard_base__aboveTens_9c76dd70 .QuestCard_condition_f845cfdd {
+.QuestCard_base__aboveTens_9c76dd70 .QuestCard_condition_bf90cd2e {
     width: 135rem;
 }
-.mediaLargeWidth .QuestCard_base__aboveTens_9c76dd70 .QuestCard_condition_f845cfdd {
+.mediaLargeWidth .QuestCard_base__aboveTens_9c76dd70 .QuestCard_condition_bf90cd2e {
     width: 205rem;
 }
 .mediaLargeWidth .QuestCard_base__aboveTens_9c76dd70 .QuestCard_condition__bonus_525c74c2 {
     width: 178rem;
 }
-.QuestCard_base__aboveHundred_9c76dd70 .QuestCard_condition_f845cfdd {
+.QuestCard_base__aboveHundred_9c76dd70 .QuestCard_condition_bf90cd2e {
     width: 121rem;
 }
-.mediaLargeWidth .QuestCard_base__aboveHundred_9c76dd70 .QuestCard_condition_f845cfdd {
+.mediaLargeWidth .QuestCard_base__aboveHundred_9c76dd70 .QuestCard_condition_bf90cd2e {
     width: 191rem;
 }
 .mediaLargeWidth .QuestCard_base__aboveHundred_9c76dd70 .QuestCard_condition__bonus_525c74c2 {
     width: 178rem;
 }
-.QuestCard_base__aboveThousand_9c76dd70 .QuestCard_condition_f845cfdd {
+.QuestCard_base__aboveThousand_9c76dd70 .QuestCard_condition_bf90cd2e {
     width: 96rem;
 }
-.mediaLargeWidth .QuestCard_base__aboveThousand_9c76dd70 .QuestCard_condition_f845cfdd {
+.mediaLargeWidth .QuestCard_base__aboveThousand_9c76dd70 .QuestCard_condition_bf90cd2e {
     width: 168rem;
 }
-.QuestCard_base__aboveTenThousand_9c76dd70 .QuestCard_condition_f845cfdd {
+.QuestCard_base__aboveTenThousand_9c76dd70 .QuestCard_condition_bf90cd2e {
     width: 87rem;
 }
-.mediaLargeWidth .QuestCard_base__aboveTenThousand_9c76dd70 .QuestCard_condition_f845cfdd {
-    width: 156rem;
-}
-.mediaExtraLargeWidth .QuestCard_base__aboveTenThousand_9c76dd70 .QuestCard_condition_f845cfdd {
-    width: 154rem;
+.mediaLargeWidth .QuestCard_base__aboveTenThousand_9c76dd70 .QuestCard_condition_bf90cd2e {
+    width: 151rem;
 }
 
 .QuestCard_contentWrapper_89591e48 {
@@ -3612,20 +3612,24 @@ html[lang='th'] input {
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
-.ShopCard_text_d5aa3e1e {
+.ShopCard_3a4dd01f:hover .ShopCard_bg_7b45baea {
+    filter: brightness(1.2);
+}
+
+.ShopCard_text_3bedaa3d {
     max-width: 120rem;
-    max-height: 45rem;
+    max-height: 54rem;
     margin-left: 13rem;
     color: #e9e2bf;
     font-size: 22rem;
     line-height: 1.2;
     transition: all 300ms ease;
 }
-.ShopCard_base__small_3a4dd01f .ShopCard_text_d5aa3e1e {
+.ShopCard_base__small_3a4dd01f .ShopCard_text_3bedaa3d {
     font-size: 18rem;
 }
 
-.ShopCard_bg_71f315be {
+.ShopCard_bg_7b45baea {
     position: absolute;
     top: 3rem;
     right: 3rem;
@@ -3636,7 +3640,7 @@ html[lang='th'] input {
     align-items: center;
     background: url('R.images.last_stand.gui.maps.icons.gsw.shop_bg_big') no-repeat 100% 0%/313rem 68rem;
 }
-.ShopCard_base__small_3a4dd01f .ShopCard_bg_71f315be {
+.ShopCard_base__small_3a4dd01f .ShopCard_bg_7b45baea {
     background: url('R.images.last_stand.gui.maps.icons.gsw.shop_bg') no-repeat 100% 0%/235rem 68rem;
 } /* stylelint-disable selector-no-qualifying-type */
 :root {
@@ -8931,7 +8935,8 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Background_video_443e9455 {
+.Background_blackScreen_8059ab48,
+.Background_video_b750298c {
     position: absolute;
     top: 0;
     right: 0;
@@ -8946,11 +8951,11 @@ html[lang='th'] input {
     position: relative;
 }
 
-.Background_slideWrapper_e95d7813 {
+.Background_slideWrapper_6ecb9d33 {
     width: 100%;
     height: 100%;
     position: relative;
-    transition: filter 0.4s linear;
+    transition: filter 0.2s linear;
 }
 .Background_slideWrapper__blur_d29995f3 {
     filter: blur(6rem);
@@ -8964,26 +8969,28 @@ html[lang='th'] input {
     top: 50%;
     left: 32%;
 }
-.Background_content__switchShake_3ae94935 {
-    animation: Background_switchShake_26effab7 0.2s infinite alternate step-end;
+.Background_content__switchShake_ffdcccaf {
+    animation: Background_switchShake_26effab7 0.1s infinite alternate step-end;
 }
 
-.Background_blackScreen_c5101c05 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.Background_blackScreen_8059ab48 {
     background-color: #101010;
     opacity: 0;
+    transition: opacity 0.4s ease;
     pointer-events: none;
 }
+.Background_blackScreen__show_7f14a6c7 {
+    opacity: 1;
+}
+.Background_blackScreen__hide_e9f8dfb3 {
+    opacity: 0;
+}
 
-.Background_video_443e9455 {
+.Background_video_b750298c {
     mix-blend-mode: screen;
     z-index: 999;
-    transform: rotate(180deg);
-    transition: opacity 0.2s linear;
+    transform: scale(-1, 1);
+    transition: opacity 0.1s linear;
     pointer-events: none;
 }
 .Background_video__hide_e9f8dfb3 {
@@ -9008,11 +9015,11 @@ html[lang='th'] input {
     }
     85% {
         top: 49.8%;
-        left: 31.5%;
+        left: 31.3%;
     }
     100% {
         top: 49.9%;
-        left: 32.3%;
+        left: 31.9%;
     }
 } /* stylelint-disable selector-no-qualifying-type */
 :root {
@@ -12769,6 +12776,14 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+.Ability_emptyOverlay_4b58118f {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 /* stylelint-disable scss/dollar-variable-pattern */
 .Ability_f85eb27a {
     position: relative;
@@ -12786,6 +12801,9 @@ html[lang='th'] input {
 }
 .Ability_slot__grabbing_48b2b603 {
     cursor: grabbing;
+}
+.Ability_slot__empty_8223f0fe {
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .Ability_hotKeyLabel_cc1f067c {
@@ -12819,11 +12837,32 @@ html[lang='th'] input {
     opacity: 0;
 }
 
-.Ability_selectedOverlay_aaa26207 {
+.Ability_selectedOverlay_799bff1a {
     position: absolute;
     top: -1rem;
     right: -1rem;
     left: -1rem;
+    z-index: 2;
+}
+
+.Ability_emptySlot_2bc17d5e {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Ability_emptySlot__hovered_913d5cab {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.Ability_emptyContent_9a9263e5 {
+    z-index: 2;
+}
+.Ability_emptyContent__hovered_d65f6077 {
+    background-image: url('R.images.last_stand.gui.maps.icons.tanksetup.panel.emptySlot.plus_hover');
+}
+
+.Ability_emptyOverlay_4b58118f {
+    background-color: rgba(94, 0, 0, 0.42);
 } /* stylelint-disable selector-no-qualifying-type */
 :root {
     --hangar-highlight-shadow:
@@ -13130,95 +13169,6 @@ html[lang='th'] input {
     top: -1rem;
     right: -1rem;
     left: -1rem;
-} /* stylelint-disable selector-no-qualifying-type */
-:root {
-    --hangar-highlight-shadow:
-        0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
-}
-
-/* stylelint-disable selector-max-id */
-/* stylelint-disable selector-no-qualifying-type */
-#Trainings_root_c64b79fc,
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    color: var(--color-general-primary);
-    font-size: 14rem;
-}
-
-body,
-button,
-input {
-    font-family: PFDINMax;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-}
-
-html[lang='ja'] body,
-html[lang='ko'] body,
-html[lang='zh_tw'] body,
-html[lang='zh_sg'] body,
-html[lang='zh_cn'] body,
-html[lang='vi'] body,
-html[lang='th'] body,
-html[lang='ja'] button,
-html[lang='ko'] button,
-html[lang='zh_tw'] button,
-html[lang='zh_sg'] button,
-html[lang='zh_cn'] button,
-html[lang='vi'] button,
-html[lang='th'] button,
-html[lang='ja'] input,
-html[lang='ko'] input,
-html[lang='zh_tw'] input,
-html[lang='zh_sg'] input,
-html[lang='zh_cn'] input,
-html[lang='vi'] input,
-html[lang='th'] input {
-    font-family: Warhelios;
-    letter-spacing: 0;
-}
-
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
-.Trainings_f0a414b9 {
-    display: flex;
-    flex-direction: column;
-}
-.mediaLarge .Trainings_f0a414b9 {
-    padding: 1rem 0;
-}
-.mediaExtraLarge .Trainings_f0a414b9 {
-    padding: 9rem 0;
-}
-
-.Trainings_button_bf9590ac {
-    width: 38rem;
-}
-.Trainings_button_bf9590ac + .Trainings_button_bf9590ac {
-    margin-top: 2rem;
-}
-.mediaLarge .Trainings_button_bf9590ac + .Trainings_button_bf9590ac {
-    margin-top: 8rem;
-}
-
-.Trainings_button_bf9590ac .Trainings_toggleContent_8fe22dba {
-    padding-bottom: 0;
-}
-
-.Trainings_image_cc494d75 {
-    width: 24rem;
-    height: 24rem;
-    filter: drop-shadow(0 1rem 0 #0d0e10);
-    opacity: 0.5;
-    transition: opacity 0.2s;
-}
-.Trainings_image__on_3cef43a {
-    opacity: 1;
 } /* stylelint-disable selector-no-qualifying-type */
 :root {
     --hangar-highlight-shadow:
@@ -17283,6 +17233,17 @@ html[lang='th'] input {
     --base-padding-horizontal: 48rem;
 }
 
+.HangarApp_parallaxRef_7051ab1d {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 102vw;
+    height: 102vh;
+    z-index: 999;
+    pointer-events: none;
+}
+
 .HangarApp_vehicleInfo_c748b13a {
     margin-bottom: 2rem;
 }
@@ -17409,6 +17370,9 @@ html[lang='th'] input {
     font-size: 18rem;
     font-weight: 400;
     line-height: 1.3em;
+}
+.HangarApp_narrationBtnText_6b7efacb[lang='th'] {
+    font-size: 16rem;
 }
 
 .HangarApp_narrationImage_80b7c7e9 {

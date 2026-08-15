@@ -1,0 +1,22 @@
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.App_b90d9797 {
+    width: 286rem;
+    position: relative;
+}
+
+.App_title_833cd813 {
+    font-size: 20rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    margin: 20rem 20rem 8rem;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    font-weight: 600;
+}
+
+.App_content_95cfe0c9 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10rem 20rem 20rem;
+}

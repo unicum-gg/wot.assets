@@ -948,15 +948,13 @@
                             if (u.mediumWidth && d) return s(t, u, f);
                             if (u.smallWidth && E) return s(t, u, f);
                             if (u.extraSmallWidth && p) return s(t, u, f);
-                            if (
-                                !(
-                                    u.extraLargeWidth ||
-                                    u.largeWidth ||
-                                    u.mediumWidth ||
-                                    u.smallWidth ||
-                                    u.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                u.extraLargeWidth ||
+                                u.largeWidth ||
+                                u.mediumWidth ||
+                                u.smallWidth ||
+                                u.extraSmallWidth
+                            )) {
                                 if (u.extraLargeHeight && A) return t;
                                 if (u.largeHeight && g) return t;
                                 if (u.mediumHeight && v) return t;
@@ -3389,7 +3387,7 @@
                     Kt = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function Zt(e) {
                     let t = '';
-                    for (let u = Kt.length - 1; u >= 0; u--) for (; e >= Kt[u]; ) ((t += Yt[u]), (e -= Kt[u]));
+                    for (let u = Kt.length - 1; u >= 0; u--) for (; e >= Kt[u];) ((t += Yt[u]), (e -= Kt[u]));
                     return t;
                 }
                 const Qt = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -5648,7 +5646,7 @@
                                     const t = i[e] || '',
                                         u = _[E] || '';
                                     if (t.match(d) || t === u) {
-                                        for (; t !== _[E] && E < _.length; ) E++;
+                                        for (; t !== _[E] && E < _.length;) E++;
                                         E++;
                                     }
                                 }
@@ -5677,8 +5675,8 @@
                                 if (s) return;
                                 let c = l;
                                 const _ = o.test(i[l]);
-                                if (u && _) for (; o.test(i[c]) && c < i.length; ) c++;
-                                if (t && _) for (; o.test(i[c]) && c > 0; ) c--;
+                                if (u && _) for (; o.test(i[c]) && c < i.length;) c++;
+                                if (t && _) for (; o.test(i[c]) && c > 0;) c--;
                                 if (c !== l || (t && _))
                                     return (e.preventDefault(), (c = c < 0 ? 0 : c), void this.setCursorPosition(c, c));
                                 ((t && 1 === n && 1 === i.length) || u) &&
@@ -7754,7 +7752,7 @@
                         let s = yi.exec(e),
                             o = e,
                             l = 0;
-                        for (; s; ) {
+                        for (; s;) {
                             const u = s[0],
                                 r = wi.exec(u),
                                 c = Ni.exec(u),

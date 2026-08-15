@@ -409,7 +409,7 @@
                         let c = a.exec(e),
                             _ = e,
                             m = 0;
-                        for (; c; ) {
+                        for (; c;) {
                             const d = c[0],
                                 p = o.exec(d),
                                 g = l.exec(d),

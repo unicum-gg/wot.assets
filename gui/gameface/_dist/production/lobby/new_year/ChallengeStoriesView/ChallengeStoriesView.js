@@ -921,9 +921,13 @@
                         if (n.mediumWidth && _) return s(t, n, S);
                         if (n.smallWidth && g) return s(t, n, S);
                         if (n.extraSmallWidth && h) return s(t, n, S);
-                        if (
-                            !(n.extraLargeWidth || n.largeWidth || n.mediumWidth || n.smallWidth || n.extraSmallWidth)
-                        ) {
+                        if (!(
+                            n.extraLargeWidth ||
+                            n.largeWidth ||
+                            n.mediumWidth ||
+                            n.smallWidth ||
+                            n.extraSmallWidth
+                        )) {
                             if (n.extraLargeHeight && p) return t;
                             if (n.largeHeight && w) return t;
                             if (n.mediumHeight && E) return t;
@@ -1930,7 +1934,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, n = Le(a.keys()); !(e = n()).done; ) o(e.value, t);
+                                                        for (var e, n = Le(a.keys()); !(e = n()).done;) o(e.value, t);
                                                     },
                                                     unsubscribe: o,
                                                 };
@@ -2275,7 +2279,7 @@
                                             t(e).delete(n);
                                         },
                                         a = (e, ...n) => {
-                                            for (var r, a = Be(t(e).values()); !(r = a()).done; ) (0, r.value)(...n);
+                                            for (var r, a = Be(t(e).values()); !(r = a()).done;) (0, r.value)(...n);
                                         };
                                     return (0, o.useMemo)(() => ({ on: n, off: r, trigger: a }), []);
                                 })(),

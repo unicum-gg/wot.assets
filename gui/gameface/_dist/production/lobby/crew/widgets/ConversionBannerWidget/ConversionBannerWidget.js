@@ -425,7 +425,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var u, t = o(s.keys()); !(u = t()).done; ) {
+                            for (var u, t = o(s.keys()); !(u = t()).done;) {
                                 a(u.value, e);
                             }
                         },

@@ -461,7 +461,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function s(e) {
                     let t = '';
-                    for (let n = r.length - 1; n >= 0; n--) for (; e >= r[n]; ) ((t += a[n]), (e -= r[n]));
+                    for (let n = r.length - 1; n >= 0; n--) for (; e >= r[n];) ((t += a[n]), (e -= r[n]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1158,9 +1158,13 @@
                         if (n.mediumWidth && m) return v(t, n, w);
                         if (n.smallWidth && g) return v(t, n, w);
                         if (n.extraSmallWidth && _) return v(t, n, w);
-                        if (
-                            !(n.extraLargeWidth || n.largeWidth || n.mediumWidth || n.smallWidth || n.extraSmallWidth)
-                        ) {
+                        if (!(
+                            n.extraLargeWidth ||
+                            n.largeWidth ||
+                            n.mediumWidth ||
+                            n.smallWidth ||
+                            n.extraSmallWidth
+                        )) {
                             if (n.extraLargeHeight && p) return t;
                             if (n.largeHeight && f) return t;
                             if (n.mediumHeight && b) return t;
@@ -2017,8 +2021,8 @@
                     dt = { [Ue.Engraving]: 'engravingGrid', [Ue.Background]: 'backgroundGrid' },
                     ut = { [Ue.Engraving]: 'engraving', [Ue.Background]: 'background' },
                     mt = (e, t) => {
-                        for (var n, a = Je(e.values()); !(n = a()).done; ) {
-                            for (var r, s = Je(n.value.value.items.values()); !(r = s()).done; ) {
+                        for (var n, a = Je(e.values()); !(n = a()).done;) {
+                            for (var r, s = Je(n.value.value.items.values()); !(r = s()).done;) {
                                 const e = r.value;
                                 if (e.value.id === t) return e.value;
                             }
@@ -4853,7 +4857,7 @@
                                             t(e).delete(n);
                                         },
                                         r = (e, ...n) => {
-                                            for (var a, r = Ss(t(e).values()); !(a = r()).done; ) (0, a.value)(...n);
+                                            for (var a, r = Ss(t(e).values()); !(a = r()).done;) (0, a.value)(...n);
                                         };
                                     return (0, d.useMemo)(() => ({ on: n, off: a, trigger: r }), []);
                                 })(),

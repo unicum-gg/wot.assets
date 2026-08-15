@@ -1,7 +1,6 @@
-import { f as e, j as a, v as r } from '../../../../chunks/vendor.js';
-import { bo as _, bS as s, i as d, N as n, m as c, bY as t, J as l, U as i, d as o } from '../../../../chunks/lib.js';
-const u = {
-        root: 'CurrencyReward_root_798b3220',
+import { f as e, j as a, w as r } from '../../../../chunks/vendor.js';
+import { bx as s, c9 as _, i as d, O as n, m as c, cd as l, J as t, U as i, d as o } from '../../../../chunks/lib.js';
+/* empty css                       */ const u = {
         base: 'CurrencyReward_1a2de39e',
         icon: 'CurrencyReward_icon_fc335ed4',
         icon__credits: 'CurrencyReward_icon__credits_14df6f8b',
@@ -33,16 +32,16 @@ const u = {
                 a.jsx('span', { className: c }),
                 a.jsx('span', {
                     className: n,
-                    children: a.jsx(_, { value: r, format: d === s.gold ? 'gold' : 'integral' }),
+                    children: a.jsx(s, { value: r, format: d === _.gold ? 'gold' : 'integral' }),
                 }),
             ],
         });
     },
     [y, v] = d()(({ observableModel: e }) => ({ ...{ rewards: e.array('rewards') } }), n),
-    C = 'Content_7bb15980',
-    w = 'Content_separator_9582cf97',
-    f = 'Content_image_c31329d1',
-    x = 'Content_section_3b18e32a',
+    w = 'Content_7bb15980',
+    C = 'Content_separator_9582cf97',
+    x = 'Content_image_c31329d1',
+    f = 'Content_section_3b18e32a',
     j = 'Content_title_616045b9',
     m = 'Content_text_8f35597f',
     h = 'Content_funds_633ee744',
@@ -55,25 +54,25 @@ const u = {
         const { model: e } = v(),
             { items: r } = e.rewards.get();
         return a.jsxs('div', {
-            className: C,
+            className: w,
             children: [
-                a.jsx('div', { className: f }),
+                a.jsx('div', { className: x }),
                 a.jsxs('div', {
-                    className: x,
+                    className: f,
                     children: [
                         a.jsx('div', { className: j, children: g }),
                         a.jsx('div', { className: m, children: k }),
-                        a.jsx('div', { className: w }),
+                        a.jsx('div', { className: C }),
                         a.jsx('div', {
                             className: h,
                             children: c(r, (e) => a.jsx(b, { type: e.key, value: e.value }, e.key)),
                         }),
-                        a.jsx('div', { className: w }),
+                        a.jsx('div', { className: C }),
                     ],
                 }),
                 a.jsx('div', { className: p, children: I }),
             ],
         });
     }),
-    X = () => a.jsx(t, { children: a.jsx(t.Decorator, { children: a.jsx(P, {}) }) });
-o(new l().add(i).addWithProps(y, {}).render(a.jsx(X, {})));
+    X = () => a.jsx(l, { children: a.jsx(l.Decorator, { children: a.jsx(P, {}) }) });
+o(new t().add(i).addWithProps(y, {}).render(a.jsx(X, {})));

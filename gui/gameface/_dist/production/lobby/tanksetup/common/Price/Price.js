@@ -527,7 +527,7 @@
                     i = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function o(e) {
                     let n = '';
-                    for (let t = i.length - 1; t >= 0; t--) for (; e >= i[t]; ) ((n += r[t]), (e -= i[t]));
+                    for (let t = i.length - 1; t >= 0; t--) for (; e >= i[t];) ((n += r[t]), (e -= i[t]));
                     return n;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

@@ -944,15 +944,13 @@
                             if (t.mediumWidth && m) return i(u, t, v);
                             if (t.smallWidth && d) return i(u, t, v);
                             if (t.extraSmallWidth && A) return i(u, t, v);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && C) return u;
                                 if (t.largeHeight && B) return u;
                                 if (t.mediumHeight && g) return u;
@@ -1417,11 +1415,11 @@
                                                             const u = [];
                                                             if (e === Z.Other) {
                                                                 const e = t();
-                                                                for (; e.length > 0; ) {
+                                                                for (; e.length > 0;) {
                                                                     const t = e.shift();
                                                                     if (t) {
                                                                         let e = !0;
-                                                                        for (var r, n = te(ae); !(r = n()).done; ) {
+                                                                        for (var r, n = te(ae); !(r = n()).done;) {
                                                                             const u = r.value;
                                                                             if (oe[u].includes(t.template)) {
                                                                                 e = !1;
@@ -4021,7 +4019,7 @@
                                                     let r = 0,
                                                         n = t - 1,
                                                         a = !1;
-                                                    for (; n - r > 1; ) {
+                                                    for (; n - r > 1;) {
                                                         const t = r + Math.floor(0.5 * (n - r + 1));
                                                         ((a = Ft(e[t], u)), a ? (n = t) : (r = t));
                                                     }
@@ -4098,7 +4096,7 @@
                             let u = gt.exec(e),
                                 t = e;
                             const r = {};
-                            for (; u; ) {
+                            for (; u;) {
                                 const a = u[0],
                                     i = ht.exec(a),
                                     s = pt.exec(a),

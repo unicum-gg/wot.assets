@@ -596,7 +596,7 @@
                         let m = t.exec(e),
                             c = e,
                             g = 0;
-                        for (; m; ) {
+                        for (; m;) {
                             const u = m[0],
                                 p = o.exec(u),
                                 b = i.exec(u),

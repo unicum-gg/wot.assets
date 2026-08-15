@@ -1986,7 +1986,7 @@
                             void 0 !== U.threshold && (this.threshold = U.threshold)));
                 }
                 applyToElement(W) {
-                    for (var U, B = e(this.getBlocks(W)); !(U = B()).done; ) {
+                    for (var U, B = e(this.getBlocks(W)); !(U = B()).done;) {
                         const W = U.value;
                         (o(W.hasText()), this.applyToParagraph(W));
                     }
@@ -2015,11 +2015,11 @@
                     const t = !U || 1 === B,
                         r = t ? new a(W) : U;
                     o(r);
-                    for (var i, l = e(W.childNodes); !(i = l()).done; ) {
+                    for (var i, l = e(W.childNodes); !(i = l()).done;) {
                         const W = i.value;
                         switch (W.nodeType) {
                             case 1:
-                                for (var T, c = e(this.getBlocks(W, r)); !(T = c()).done; ) {
+                                for (var T, c = e(this.getBlocks(W, r)); !(T = c()).done;) {
                                     const W = T.value;
                                     yield W;
                                 }
@@ -2039,7 +2039,7 @@
                     if ((o(t.length > 0), o(t.reduce((W, U) => W + U.length, 0) === B.length), t.length <= 1)) return;
                     const r = [];
                     let n = 0;
-                    for (var s, a = e(t); !(s = a()).done; ) {
+                    for (var s, a = e(t); !(s = a()).done;) {
                         const W = s.value;
                         (o(W.length > 0), (n += W.length), r.push(n));
                     }
@@ -2058,7 +2058,7 @@
                         r = U[0];
                     o(r > 0);
                     let n = 0;
-                    for (var s, a = e(W); !(s = a()).done; ) {
+                    for (var s, a = e(W); !(s = a()).done;) {
                         const W = s.value,
                             B = W.nodeValue;
                         if (!B) continue;
@@ -2069,7 +2069,7 @@
                         }
                         const a = [];
                         let i = 0;
-                        for (; r < e; ) {
+                        for (; r < e;) {
                             const W = r - n;
                             (o(W >= i), a.push(B.substring(i, W)), (i = W), ++t, o(U[t] > r), (r = U[t]));
                         }
@@ -2083,7 +2083,7 @@
                     if ('string' == typeof B) return void (W.nodeValue = U.join(B));
                     const t = W.ownerDocument;
                     let r = [];
-                    for (var n, s = e(U); !(n = s()).done; ) {
+                    for (var n, s = e(U); !(n = s()).done;) {
                         const W = n.value;
                         (W && r.push(t.createTextNode(W)), r.push(null));
                     }

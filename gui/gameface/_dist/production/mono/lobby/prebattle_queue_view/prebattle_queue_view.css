@@ -6,73 +6,6 @@
 
 /* stylelint-disable selector-max-id */
 /* stylelint-disable selector-no-qualifying-type */
-#SceneWrapper_root_af92b2b4,
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    color: var(--color-general-primary);
-    font-size: 14rem;
-}
-
-body,
-button,
-input {
-    font-family: PFDINMax;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-}
-
-html[lang='ja'] body,
-html[lang='ko'] body,
-html[lang='zh_tw'] body,
-html[lang='zh_sg'] body,
-html[lang='zh_cn'] body,
-html[lang='vi'] body,
-html[lang='th'] body,
-html[lang='ja'] button,
-html[lang='ko'] button,
-html[lang='zh_tw'] button,
-html[lang='zh_sg'] button,
-html[lang='zh_cn'] button,
-html[lang='vi'] button,
-html[lang='th'] button,
-html[lang='ja'] input,
-html[lang='ko'] input,
-html[lang='zh_tw'] input,
-html[lang='zh_sg'] input,
-html[lang='zh_cn'] input,
-html[lang='vi'] input,
-html[lang='th'] input {
-    font-family: Warhelios;
-    letter-spacing: 0;
-}
-
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
-.SceneWrapper_52fcfc1e {
-    width: 100%;
-    height: 100%;
-    cursor: grab;
-}
-
-.SceneWrapper_base__down_4ece5089 {
-    cursor: all-scroll;
-}
-
-.SceneWrapper_base__moveSpaceDisabled_1b1cd939 {
-    cursor: auto;
-} /* stylelint-disable selector-no-qualifying-type */
-:root {
-    --hangar-highlight-shadow:
-        0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
-}
-
-/* stylelint-disable selector-max-id */
-/* stylelint-disable selector-no-qualifying-type */
 #PrebattleQueueApp_root_de517c82,
 html,
 body {
@@ -119,6 +52,16 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+.PrebattleQueueApp_sceneWrapper_de517c82,
+.PrebattleQueueApp_vignette_7c7f8ce2,
+.PrebattleQueueApp_container_26435402 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 /* stylelint-disable scss/dollar-variable-pattern */
 .PrebattleQueueApp_dad90a27 {
     width: 100%;
@@ -126,20 +69,7 @@ html[lang='th'] input {
     overflow: hidden;
 }
 
-.PrebattleQueueApp_sceneWrapper_e240a18f {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.PrebattleQueueApp_vignette_df4e667c {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.PrebattleQueueApp_vignette_7c7f8ce2 {
     background: url('R.images.last_stand.gui.maps.icons.backgrounds.vignette_simple') no-repeat 50%/100% 100%;
 }
 
@@ -157,12 +87,7 @@ html[lang='th'] input {
     top: 0;
 }
 
-.PrebattleQueueApp_container_653beeb8 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.PrebattleQueueApp_container_26435402 {
     pointer-events: none;
 }
 

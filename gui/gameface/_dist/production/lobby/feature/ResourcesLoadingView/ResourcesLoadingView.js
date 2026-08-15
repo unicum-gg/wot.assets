@@ -682,7 +682,7 @@
                     n = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let u = '';
-                    for (let t = n.length - 1; t >= 0; t--) for (; e >= n[t]; ) ((u += r[t]), (e -= n[t]));
+                    for (let t = n.length - 1; t >= 0; t--) for (; e >= n[t];) ((u += r[t]), (e -= n[t]));
                     return u;
                 }
                 const s = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -1274,9 +1274,13 @@
                         if (t.mediumWidth && A) return i(u, t, b);
                         if (t.smallWidth && F) return i(u, t, b);
                         if (t.extraSmallWidth && D) return i(u, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && g) return u;
                             if (t.largeHeight && p) return u;
                             if (t.mediumHeight && C) return u;
@@ -3203,7 +3207,7 @@
                                     const u = s[e] || '',
                                         t = d[m] || '';
                                     if (u.match(_) || u === t) {
-                                        for (; u !== d[m] && m < d.length; ) m++;
+                                        for (; u !== d[m] && m < d.length;) m++;
                                         m++;
                                     }
                                 }
@@ -3235,8 +3239,8 @@
                                 if (i) return;
                                 let c = l;
                                 const d = o.test(s[l]);
-                                if (t && d) for (; o.test(s[c]) && c < s.length; ) c++;
-                                if (u && d) for (; o.test(s[c]) && c > 0; ) c--;
+                                if (t && d) for (; o.test(s[c]) && c < s.length;) c++;
+                                if (u && d) for (; o.test(s[c]) && c > 0;) c--;
                                 if (c !== l || (u && d))
                                     return (e.preventDefault(), (c = c < 0 ? 0 : c), void this.setCursorPosition(c, c));
                                 ((u && 1 === n && 1 === s.length) || t) &&

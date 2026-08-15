@@ -727,7 +727,7 @@ const La = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
             ? `${e}`
             : (function (e) {
                   let a = '';
-                  for (let s = Ba.length - 1; s >= 0; s--) for (; e >= Ba[s]; ) ((a += $a[s]), (e -= Ba[s]));
+                  for (let s = Ba.length - 1; s >= 0; s--) for (; e >= Ba[s];) ((a += $a[s]), (e -= Ba[s]));
                   return a;
               })(e),
     Qa = 'PlayerVehicleInfo_6f34f0a1',

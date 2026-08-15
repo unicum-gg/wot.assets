@@ -1,60 +1,59 @@
-import { j as e, v as s, f as t } from '../../../../chunks/vendor.js';
-import { i, N as a, c3 as o, bY as l, J as r, U as n, d as c } from '../../../../chunks/lib.js';
-import { V as d } from '../../../../chunks/vehicle_info.js';
-import { B as p } from '../../../../chunks/types.js';
-import { P as _, a as m } from '../../../../chunks/per_battle_points_table.js';
-import { W as h } from '../../../../chunks/wot_plus_banner.js';
-const j = 'BlockCompleted_separator_83511b0d',
+import { j as e, w as s, f as t } from '../../../../chunks/vendor.js';
+import { i, O as a, cq as l, cd as o, J as r, U as n, d as c } from '../../../../chunks/lib.js';
+import { W as d, V as p } from '../../../../chunks/wot_plus_banner.js';
+import { B as _ } from '../../../../chunks/types.js';
+import { P as m, a as h } from '../../../../chunks/per_battle_points_table.js';
+/* empty css                       */ const j = 'BlockCompleted_separator_83511b0d',
     b = 'BlockCompleted_whiteBg_a08ae6b3',
-    v = 'BlockCompleted_whiteBgLine_8eb9ddee',
-    x = 'BlockCompleted_whiteBgIcon_94f12276',
-    N = 'BlockCompleted_description_13a24155',
-    P = ({ label: s, description: t }) =>
+    x = 'BlockCompleted_whiteBgLine_8eb9ddee',
+    v = 'BlockCompleted_whiteBgIcon_94f12276',
+    P = 'BlockCompleted_description_13a24155',
+    N = ({ label: s, description: t }) =>
         e.jsxs(e.Fragment, {
             children: [
                 e.jsx('div', { className: j }),
                 e.jsx('div', {
                     className: b,
-                    children: e.jsxs('div', { className: v, children: [e.jsx('div', { className: x }), s] }),
+                    children: e.jsxs('div', { className: x, children: [e.jsx('div', { className: v }), s] }),
                 }),
                 t &&
                     e.jsxs(e.Fragment, {
-                        children: [e.jsx('div', { className: j }), e.jsx('div', { className: N, children: t })],
+                        children: [e.jsx('div', { className: j }), e.jsx('div', { className: P, children: t })],
                     }),
             ],
         }),
     [g, C] = i()(({ observableModel: e }) => ({ root: e.object(), rewardPoints: e.array('rewardPoints') }), a),
-    u = 'Footer_rewards_776b4a2d',
-    w = 'Footer_description_c49306d9',
-    f = 'Footer_perBattlePointsTable_bf277a7f',
-    T = 'Footer_awardImage_cecbbe76',
+    w = 'Footer_rewards_776b4a2d',
+    u = 'Footer_description_c49306d9',
+    T = 'Footer_perBattlePointsTable_bf277a7f',
+    f = 'Footer_awardImage_cecbbe76',
     k = 'Footer_awardPoints_d704d9c6',
     B = R.strings.battle_pass.tooltips.vehiclePoints,
-    L = [p.COMP7, p.COMP7_LIGHT],
+    L = [_.COMP7, _.COMP7_LIGHT],
     y = s(() => {
         const { model: s } = C(),
-            { pointsReward: t, isSpecialVehicle: i, battleType: a, isWotPlusShown: o } = s.root.get(),
-            l = s.rewardPoints.get();
+            { pointsReward: t, isSpecialVehicle: i, battleType: a, isWotPlusShown: l } = s.root.get(),
+            o = s.rewardPoints.get();
         return e.jsxs(e.Fragment, {
             children: [
-                e.jsx('div', { className: w, children: i ? B.special.descr() : B.$dyn(a) || B.descr() }),
-                e.jsx(_, {
-                    separatorRows: l.items,
-                    mixClass: f,
-                    children: e.jsx(m, {
-                        rewardPoints: l,
-                        hasAdditionalPoints: o,
+                e.jsx('div', { className: u, children: i ? B.special.descr() : B.$dyn(a) || B.descr() }),
+                e.jsx(m, {
+                    separatorRows: o.items,
+                    mixClass: T,
+                    children: e.jsx(h, {
+                        rewardPoints: o,
+                        hasAdditionalPoints: l,
                         topPlace:
                             R.strings.battle_pass.tooltips[L.includes(a) ? 'prestigePoints' : 'pointsTable'].topPlace(),
                         battleType: a,
                     }),
                 }),
-                o && e.jsx(h, {}),
+                l && e.jsx(d, {}),
                 e.jsxs('div', {
-                    className: u,
+                    className: w,
                     children: [
                         B.award(),
-                        e.jsx('div', { className: T, children: e.jsx('div', { className: k, children: t }) }),
+                        e.jsx('div', { className: f, children: e.jsx('div', { className: k, children: t }) }),
                     ],
                 }),
             ],
@@ -62,17 +61,17 @@ const j = 'BlockCompleted_separator_83511b0d',
     }),
     F = 'Points_4c36b52e',
     I = 'Points_pointsSplitter_a76cd1d',
-    E = 'Points_pointsCurrentLabel_e046ee39',
-    G = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
-    O = s(({ isCompleted: s = !1 }) => {
+    O = 'Points_pointsCurrentLabel_e046ee39',
+    E = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
+    G = s(({ isCompleted: s = !1 }) => {
         const { model: t } = C(),
             { pointsCurrent: i, pointsTotal: a } = t.root.get();
         return e.jsxs('div', {
             className: F,
             children: [
-                e.jsx('div', { className: s ? '' : E, children: o(i, G.INTEGRAL) }),
+                e.jsx('div', { className: s ? '' : O, children: l(i, E.INTEGRAL) }),
                 e.jsx('div', { className: I, children: '/' }),
-                o(a, G.INTEGRAL),
+                l(a, E.INTEGRAL),
             ],
         });
     }),
@@ -82,29 +81,29 @@ const j = 'BlockCompleted_separator_83511b0d',
     V = 'Content_base__small_5ddeabe7',
     W = 'Content_title_6a70595e',
     D = 'Content_titleLabel_e593300',
-    z = s(() => {
+    q = s(() => {
         const { model: s } = C(),
             {
                 vehicleLevel: i,
                 vehicleName: a,
-                vehicleType: o,
-                pointsCurrent: l,
+                vehicleType: l,
+                pointsCurrent: o,
                 pointsTotal: r,
                 isSpecialVehicle: n,
                 isElite: c,
             } = s.root.get(),
-            p = l === r;
+            d = o === r;
         return e.jsx('div', {
-            className: t(S, p ? V : M),
+            className: t(S, d ? V : M),
             children: e.jsxs('div', {
                 className: W,
                 children: [
                     e.jsx('div', { className: D, children: R.strings.battle_pass.tooltips.vehiclePoints.title() }),
-                    e.jsx(d, { isSpecial: n, vehicleLevel: i, vehicleName: a, vehicleType: o, isElite: c }),
+                    e.jsx(p, { isSpecial: n, vehicleLevel: i, vehicleName: a, vehicleType: l, isElite: c }),
                     e.jsx('div', { className: A }),
-                    e.jsx(O, { isCompleted: p }),
-                    p
-                        ? e.jsx(P, {
+                    e.jsx(G, { isCompleted: d }),
+                    d
+                        ? e.jsx(N, {
                               label: R.strings.battle_pass.tooltips.vehiclePoints.pointsObtained(),
                               description: R.strings.battle_pass.tooltips.vehiclePoints.continuePlaying(),
                           })
@@ -113,5 +112,5 @@ const j = 'BlockCompleted_separator_83511b0d',
             }),
         });
     }),
-    H = () => e.jsx(l, { children: e.jsx(l.Decorator, { children: e.jsx(z, {}) }) });
-c(new r().add(n).addWithProps(g, {}).render(e.jsx(H, {})));
+    z = () => e.jsx(o, { children: e.jsx(o.Decorator, { children: e.jsx(q, {}) }) });
+c(new r().add(n).addWithProps(g, {}).render(e.jsx(z, {})));

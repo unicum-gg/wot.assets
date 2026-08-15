@@ -1196,16 +1196,14 @@
     flex-direction: column;
 }
 
-.Description_text_30186c18 {
+.Description_text_f0d64694 {
     max-height: 20rem;
-    padding-bottom: 1rem;
     color: rgba(var(--color-general-primary-rgb), 0.8);
     font-size: 18rem;
     line-height: 1.11;
 }
-.mediaLarge .Description_text_30186c18 {
+.mediaLarge .Description_text_f0d64694 {
     max-height: 24rem;
-    padding-bottom: 3rem;
     font-size: 22rem;
     font-weight: 400;
     line-height: 1.09;

@@ -1,6 +1,6 @@
 import { D as s, j as t, E as i } from '../../../../chunks/vendor.js';
-import { i as a, a7 as e, a8 as o, d as l, di as n, dj as d, r as c, dk as p } from '../../../../chunks/lib.js';
-import { S as r, s as _ } from '../../../../chunks/story_point.js';
+import { i as a, ac as e, d as o, e as l, ds as n, dt as d, r as c, dr as r } from '../../../../chunks/lib.js';
+import { S as p, s as _ } from '../../../../chunks/story_point.js';
 const [m, j] = a()(({ observableModel: s }) => ({ root: s.object() }), e),
     x = 'PointsTooltipApp_84924c5f',
     h = 'PointsTooltipApp_header_7f7425e6',
@@ -24,7 +24,7 @@ const [m, j] = a()(({ observableModel: s }) => ({ root: s.object() }), e),
                 endDate: e,
                 effective: o,
                 obelisk: c,
-                missionDaily: p,
+                missionDaily: r,
                 vehicleDaily: m,
                 bundleKey: O,
             } = s.root.get();
@@ -33,7 +33,7 @@ const [m, j] = a()(({ observableModel: s }) => ({ root: s.object() }), e),
             lang: R.strings.settings.LANGUAGE_CODE(),
             children: [
                 t.jsx('div', { className: h, children: R.strings.last_stand_tooltips.points.header() }),
-                t.jsx(r, { size: _.s80x80, classNames: { base: v } }),
+                t.jsx(p, { size: _.s80x80, classNames: { base: v } }),
                 t.jsx(l, {
                     className: b,
                     text: R.strings.last_stand_tooltips.points.body(),
@@ -64,12 +64,12 @@ const [m, j] = a()(({ observableModel: s }) => ({ root: s.object() }), e),
                                                   t.jsxs('div', { className: u, children: [k(c), ' '] }),
                                               ],
                                           }),
-                                      p > 0 &&
+                                      r > 0 &&
                                           t.jsxs('div', {
                                               className: T,
                                               children: [
                                                   R.strings.last_stand_tooltips.points.missionDaily(),
-                                                  t.jsxs('div', { className: u, children: [k(p), ' '] }),
+                                                  t.jsxs('div', { className: u, children: [k(r), ' '] }),
                                               ],
                                           }),
                                       m > 0 &&
@@ -139,4 +139,4 @@ const [m, j] = a()(({ observableModel: s }) => ({ root: s.object() }), e),
         });
         var G, M;
     });
-c(t.jsx(m, { children: t.jsx(p, { children: t.jsx(O, {}) }) }));
+c(t.jsx(m, { children: t.jsx(r, { children: t.jsx(O, {}) }) }));

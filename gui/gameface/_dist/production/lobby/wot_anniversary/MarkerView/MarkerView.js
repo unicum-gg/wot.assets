@@ -185,7 +185,7 @@
                     T = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function W(e) {
                     let t = '';
-                    for (let r = T.length - 1; r >= 0; r--) for (; e >= T[r]; ) ((t += M[r]), (e -= T[r]));
+                    for (let r = T.length - 1; r >= 0; r--) for (; e >= T[r];) ((t += M[r]), (e -= T[r]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -459,9 +459,13 @@
                         if (r.mediumWidth && g) return u(t, r, L);
                         if (r.smallWidth && h) return u(t, r, L);
                         if (r.extraSmallWidth && f) return u(t, r, L);
-                        if (
-                            !(r.extraLargeWidth || r.largeWidth || r.mediumWidth || r.smallWidth || r.extraSmallWidth)
-                        ) {
+                        if (!(
+                            r.extraLargeWidth ||
+                            r.largeWidth ||
+                            r.mediumWidth ||
+                            r.smallWidth ||
+                            r.extraSmallWidth
+                        )) {
                             if (r.extraLargeHeight && v) return t;
                             if (r.largeHeight && x) return t;
                             if (r.mediumHeight && w) return t;
@@ -784,7 +788,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, r = et(n.keys()); !(e = r()).done; ) i(e.value, t);
+                                                        for (var e, r = et(n.keys()); !(e = r()).done;) i(e.value, t);
                                                     },
                                                     unsubscribe: i,
                                                 };

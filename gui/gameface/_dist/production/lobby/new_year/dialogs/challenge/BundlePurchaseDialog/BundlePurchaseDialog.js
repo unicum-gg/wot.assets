@@ -1032,9 +1032,13 @@
                         if (t.mediumWidth && m) return i(u, t, v);
                         if (t.smallWidth && _) return i(u, t, v);
                         if (t.extraSmallWidth && A) return i(u, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && g) return u;
                             if (t.largeHeight && C) return u;
                             if (t.mediumHeight && B) return u;
@@ -1697,7 +1701,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = pe(a.keys()); !(e = t()).done; ) r(e.value, u);
+                                                        for (var e, t = pe(a.keys()); !(e = t()).done;) r(e.value, u);
                                                     },
                                                     unsubscribe: r,
                                                 };
@@ -2046,7 +2050,7 @@
                                             u(e).delete(t);
                                         },
                                         a = (e, ...t) => {
-                                            for (var n, a = Ge(u(e).values()); !(n = a()).done; ) (0, n.value)(...t);
+                                            for (var n, a = Ge(u(e).values()); !(n = a()).done;) (0, n.value)(...t);
                                         };
                                     return (0, r.useMemo)(() => ({ on: t, off: n, trigger: a }), []);
                                 })(),
@@ -4810,7 +4814,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = Da.length - 1; t >= 0; t--)
-                                      for (; e >= Da[t]; ) ((u += Fa[t]), (e -= Da[t]));
+                                      for (; e >= Da[t];) ((u += Fa[t]), (e -= Da[t]));
                                   return u;
                               })(e),
                     Ba = {

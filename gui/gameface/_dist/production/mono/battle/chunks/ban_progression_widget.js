@@ -1,5 +1,5 @@
-import { n as e, q as s, r as a, j as t, w as r, e as n } from './vendor.js';
-import { E as o, i as c, p as i, G as m } from './lib.js';
+import { n as e, q as s, r as a, j as t, t as r, e as n } from './vendor.js';
+import { w as o, i as c, p as i, x as m } from './lib.js';
 import { B as l } from './enums.js';
 const d = { [l.Prepick]: 0, [l.Voting]: 1, [l.Finished]: 2, [l.None]: 3 };
 function u(e) {
@@ -66,8 +66,8 @@ const T = s(({ stage: e, soundsEnabled: s, className: n, classNames: o }) => {
     }),
     h = 'BanProgressionWidget_e508801a',
     B = 'BanProgressionWidget_background_6a4cb777',
-    E = 'BanProgressionWidget_stage_68c90a63',
-    P = [l.Prepick, l.Voting, l.Finished],
+    P = 'BanProgressionWidget_stage_68c90a63',
+    E = [l.Prepick, l.Voting, l.Finished],
     k = s(({ soundsEnabled: e = !0, className: s, classNames: r }) => {
         const { model: o } = _(),
             { banState: c } = o.root.get();
@@ -79,7 +79,7 @@ const T = s(({ stage: e, soundsEnabled: s, className: n, classNames: o }) => {
             className: n(h, s),
             children: [
                 t.jsx('div', { className: B }),
-                P.map((s) => t.jsx(T, { soundsEnabled: e, stage: s, className: E, classNames: m }, s)),
+                E.map((s) => t.jsx(T, { soundsEnabled: e, stage: s, className: P, classNames: m }, s)),
             ],
         });
     }),

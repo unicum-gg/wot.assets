@@ -1,20 +1,20 @@
-import { n as s, j as a } from '../../../../chunks/vendor.js';
+import { q as s, j as a } from '../../../../chunks/vendor.js';
 import {
     i as o,
     r as t,
-    u as e,
+    d as e,
     a0 as n,
-    E as r,
+    I as r,
     B as i,
-    z as l,
-    A as c,
+    b as l,
+    t as c,
     a1 as m,
-    q as d,
-    J as u,
+    L as d,
+    M as u,
     U as p,
-    t as j,
+    N as b,
 } from '../../../../chunks/lib.js';
-import { t as b } from '../../../../chunks/sounds.js';
+import { t as j } from '../../../../chunks/sounds.js';
 import { D as h, c as f } from '../../../../chunks/common.module.js';
 const [C, k] = o()(
         ({ observableModel: s }) => ({ root: s.object() }),
@@ -53,8 +53,8 @@ const [C, k] = o()(
             })
         );
     });
-function v() {
+function N() {
     return a.jsx(m, { children: a.jsx(g, {}) });
 }
-const A = d(b);
-j(new u().add(C).addWithProps(p, { soundsOverrides: A }).render(a.jsx(v, {})));
+const v = d(j);
+b(new u().add(C).addWithProps(p, { soundsOverrides: v }).render(a.jsx(N, {})));

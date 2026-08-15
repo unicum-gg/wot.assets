@@ -1,139 +1,184 @@
-import { i as s, u as e, r as a, j as t, t as r, E as i, D as o, f as n } from '../../../chunks/vendor.js';
+import { i as e, j as s, E as a, u as t, r as i, t as o, D as r, f as n } from '../../../chunks/vendor.js';
 import {
-    i as c,
-    a7 as d,
-    ck as l,
-    bt as m,
-    cl as _,
+    i as l,
+    ac as c,
+    cn as d,
+    bw as m,
+    co as _,
     p as u,
     m as p,
-    k as b,
+    l as b,
     I as g,
-    bj as x,
+    bm as x,
     b as f,
-    h,
-    E as j,
-    A as y,
-    a8 as v,
-    u as N,
-    B as A,
-    aS as C,
-    al as I,
-    au as w,
-    b2 as P,
-    g as k,
-    d2 as z,
-    aE as D,
-    cW as Q,
-    cZ as M,
-    cu as T,
+    j as h,
+    E as y,
+    A as j,
+    d as v,
+    u as A,
+    B as C,
+    Z as N,
+    ap as w,
+    ay as I,
+    b5 as P,
+    g as z,
+    X as T,
+    aJ as k,
+    cZ as D,
+    d0 as Q,
+    cx as S,
     U as $,
-    r as B,
-    c$ as S,
-    d0 as E,
+    r as M,
+    d2 as B,
+    d3 as H,
 } from '../../../chunks/lib.js';
-import { t as H, a as F, b as V } from '../../../chunks/sounds.js';
+import { t as V, a as E, b as F } from '../../../chunks/sounds.js';
 import { S as L } from '../../../chunks/spring_wrapper.js';
 import { Q as W } from '../../../chunks/sound.js';
-import { g as K, a as O, c as U, d as Z, b as q, e as G } from '../../../chunks/utils.js';
-import { S as J } from '../../../chunks/story_point.js';
-const [X, Y] = c('BundleCardProvider')(
-        ({ observableModel: s }) => ({ ...s.primitives(['id', 'descriptionKey']) }),
-        ({ externalModel: s }) => ({ click: s.createCallback((s) => ({ id: s }), 'onClick') }),
+import { g as K, a as O, c as Z, d as J, b as U, e as X } from '../../../chunks/utils.js';
+import { S as q } from '../../../chunks/story_point.js';
+const [G, Y] = l('BundleCardProvider')(
+        ({ observableModel: e }) => ({ ...e.primitives(['id', 'descriptionKey']) }),
+        ({ externalModel: e }) => ({ click: e.createCallback((e) => ({ id: e }), 'onClick') }),
     ),
-    [ss, es] = c()(({ observableModel: s }) => ({ root: s.object(), bonuses: s.array('bonuses') }), d),
-    [as, ts] = c()(
-        ({ observableModel: e }) => {
-            const a = { ...e.primitives(['points', 'currentArtefactID']), artefacts: e.array('artefacts') },
-                t = s(() => l(a.artefacts.get(), (s) => s.id === a.currentArtefactID.get())),
-                r = s(() => m(a.artefacts.get(), (s, e) => (s = Math.max(s, e.cost)), 0)),
-                i = s(() => r() * a.artefacts.get().length),
-                o = s(() => {
-                    const s = _(a.artefacts.get(), (s) => s.isCompleted).length,
-                        e = t(),
-                        i = e ? a.points.get() / e.cost : 0;
-                    return r() * s + r() * i;
+    [ee, se] = l()(({ observableModel: e }) => ({ root: e.object(), bonuses: e.array('bonuses') }), c),
+    [ae, te] = l()(
+        ({ observableModel: s }) => {
+            const a = {
+                    ...s.primitives(['points', 'currentArtefactID', 'openFromQuestCard']),
+                    artefacts: s.array('artefacts'),
+                },
+                t = e(() => d(a.artefacts.get(), (e) => e.id === a.currentArtefactID.get())),
+                i = e(() => m(a.artefacts.get(), (e, s) => (e = Math.max(e, s.cost)), 0)),
+                o = e(() => i() * a.artefacts.get().length),
+                r = e(() => {
+                    const e = _(a.artefacts.get(), (e) => e.isCompleted).length,
+                        s = t(),
+                        o = s ? a.points.get() / s.cost : 0;
+                    return i() * e + i() * o;
                 }),
-                n = s(() => 0 === _(a.artefacts.get(), (s) => !s.isCompleted).length);
+                n = e(() => 0 === _(a.artefacts.get(), (e) => !e.isCompleted).length);
             return {
                 ...a,
-                computes: { inprogressArtefact: t, maxProgress: i, currentProgress: o, progressionCompleted: n },
+                computes: { inprogressArtefact: t, maxProgress: o, currentProgress: r, progressionCompleted: n },
             };
         },
-        ({ externalModel: s }) => ({
-            viewLoaded: s.createCallbackNoArgs('onViewLoaded'),
-            close: s.createCallbackNoArgs('onClose'),
-            showAbout: s.createCallbackNoArgs('onAbout'),
-            showIntro: s.createCallbackNoArgs('onShowIntro'),
-            goToMission: s.createCallback((s) => ({ artefactID: s }), 'goToMission'),
+        ({ externalModel: e }) => ({
+            viewLoaded: e.createCallbackNoArgs('onViewLoaded'),
+            close: e.createCallbackNoArgs('onClose'),
+            showAbout: e.createCallbackNoArgs('onAbout'),
+            showIntro: e.createCallbackNoArgs('onShowIntro'),
+            goToMission: e.createCallback((e) => ({ artefactID: e }), 'goToMission'),
         }),
     ),
-    rs = 100,
-    is = 'ArtefactItem_selected_a9ecccae',
-    os = 'ArtefactItem_57bf5e44',
-    ns = 'ArtefactItem_base__completed_438526b8',
-    cs = 'ArtefactItem_header_26a9c61',
-    ds = 'ArtefactItem_overlay_67626f84',
-    ls = 'ArtefactItem_index_229c4676',
-    ms = 'ArtefactItem_base__inprogress_8bfb1d48',
-    _s = 'ArtefactItem_check_f758d1f',
-    us = 'ArtefactItem_block_e3607490',
-    ps = 'ArtefactItem_rewardIcon_ccf4c7cc',
-    bs = 'ArtefactItem_reward_4a09e03f',
-    gs = 'ArtefactItem_reward__completed_b917ecc',
-    xs = 'ArtefactItem_reward__booster_ca49785a';
-function fs(s, e = !1) {
-    return s.name === Z
-        ? e
-            ? `R.images.last_stand.gui.maps.icons.boosters.c_68x68.${s.icon}`
-            : `R.images.last_stand.gui.maps.icons.boosters.c_68x68.disabled.${s.icon}`
-        : q(s, g.Small);
+    ie = 100,
+    oe = {
+        root: 'CallToActionAnimation_root_7cb89466',
+        base: 'CallToActionAnimation_15bd18c5',
+        rays: 'CallToActionAnimation_rays_76b917a',
+        glow: 'CallToActionAnimation_glow_b4696bff',
+        ray: 'CallToActionAnimation_ray_b5efe493',
+        ray__wide: 'CallToActionAnimation_ray__wide_415294e1',
+        base__horizontal: 'CallToActionAnimation_base__horizontal_7cb89466',
+        glowSlideHorizontal: 'CallToActionAnimation_glowSlideHorizontal_7cb89466',
+        raysSlideHorizontal: 'CallToActionAnimation_raysSlideHorizontal_7cb89466',
+        base__vertical: 'CallToActionAnimation_base__vertical_7cb89466',
+        glowSlideVertical: 'CallToActionAnimation_glowSlideVertical_7cb89466',
+        raysSlideVertical: 'CallToActionAnimation_raysSlideVertical_7cb89466',
+    };
+var re = ((e) => ((e.horizontal = 'horizontal'), (e.vertical = 'vertical'), e))(re || {});
+function ne({ className: e, direction: t = 'horizontal', duration: i = 600, delay: o = 600 }) {
+    return s.jsxs('div', {
+        className: a(oe.base, oe[`base__${t}`], e),
+        children: [
+            s.jsx('div', { className: oe.glow, style: { animationDuration: `${i}ms`, animationDelay: `${o}ms` } }),
+            s.jsxs('div', {
+                className: oe.rays,
+                style: { animationDuration: `${i}ms`, animationDelay: `${o}ms` },
+                children: [
+                    s.jsx('div', { className: oe.ray }),
+                    s.jsx('div', { className: a(oe.ray, oe.ray__wide) }),
+                    s.jsx('div', { className: oe.ray }),
+                ],
+            }),
+        ],
+    });
 }
-function hs({ id: s, index: o, rewards: n, className: c, inprogress: d, canceledAnim: l, completed: m }) {
-    const [_, x] = e(() => ({ y: 20, opacity: 0 }));
+const le = 'ArtefactItem_selected_a9ecccae',
+    ce = 'ArtefactItem_2b327ebd',
+    de = 'ArtefactItem_base__completed_438526b8',
+    me = 'ArtefactItem_header_26a9c61',
+    _e = 'ArtefactItem_overlay_67626f84',
+    ue = 'ArtefactItem_index_229c4676',
+    pe = 'ArtefactItem_base__inprogress_8bfb1d48',
+    be = 'ArtefactItem_check_f758d1f',
+    ge = 'ArtefactItem_block_e3607490',
+    xe = 'ArtefactItem_rewardIcon_ccf4c7cc',
+    fe = 'ArtefactItem_reward_4a09e03f',
+    he = 'ArtefactItem_reward__completed_b917ecc',
+    ye = 'ArtefactItem_reward__booster_ca49785a';
+function je(e, s = !1) {
+    return e.name === J
+        ? s
+            ? `R.images.last_stand.gui.maps.icons.boosters.c_68x68.${e.icon}`
+            : `R.images.last_stand.gui.maps.icons.boosters.c_68x68.disabled.${e.icon}`
+        : U(e, g.Small);
+}
+function ve({
+    id: e,
+    index: r,
+    rewards: n,
+    className: l,
+    inprogress: c,
+    canceledAnim: d,
+    completed: m,
+    callToAction: _,
+}) {
+    const [x, f] = t(() => ({ y: 20, opacity: 0 }));
     return (
-        a.useEffect(() => {
-            x.start({
+        i.useEffect(() => {
+            f.start({
                 to: { y: 0, opacity: 1 },
-                delay: l ? 0 : 80 * o + rs,
+                delay: d ? 0 : 80 * r + ie,
                 config: { tension: 80, friction: 10 },
-                immediate: l,
+                immediate: d,
                 onStart: () => {
                     u.sound(W);
                 },
             });
-        }, [x, l, o]),
-        t.jsxs(r.div, {
-            className: i(os, d && ms, m && ns, c),
-            style: _,
+        }, [f, d, r]),
+        s.jsxs(o.div, {
+            className: a(ce, c && pe, m && de, l),
+            style: x,
             children: [
-                t.jsxs('div', {
-                    className: cs,
+                _ && s.jsx(ne, { direction: re.vertical, duration: 900, delay: 3e3 }),
+                s.jsxs('div', {
+                    className: me,
                     children: [
-                        d && t.jsx('div', { className: ds, style: { animationDuration: '1500ms' } }),
-                        t.jsx('div', { className: ls, children: o }),
-                        m && t.jsx('div', { className: _s }),
+                        c && s.jsx('div', { className: _e, style: { animationDuration: '1500ms' } }),
+                        s.jsx('div', { className: ue, children: r }),
+                        m && s.jsx('div', { className: be }),
                     ],
                 }),
-                t.jsxs('div', {
-                    className: us,
+                s.jsxs('div', {
+                    className: ge,
                     children: [
-                        d && t.jsx('div', { className: is, style: { animationDuration: '1500ms' } }),
-                        p(n, (e, a) =>
-                            t.jsx(
+                        c && s.jsx('div', { className: le, style: { animationDuration: '1500ms' } }),
+                        p(n, (t, i) =>
+                            s.jsx(
                                 b,
                                 {
-                                    name: e.name,
-                                    value: U(e),
-                                    className: i(bs, m && gs, e.name === Z && xs),
-                                    classNames: { rewardIcon: ps },
-                                    special: e.overlayType,
+                                    name: t.name,
+                                    value: Z(t),
+                                    className: a(fe, m && he, t.name === J && ye),
+                                    classNames: { rewardIcon: xe },
+                                    special: t.overlayType,
                                     size: g.Small,
-                                    image: fs(e, m),
-                                    valueType: O(e.name),
-                                    tooltipArgs: K(e),
+                                    image: je(t, m),
+                                    valueType: O(t.name),
+                                    tooltipArgs: K(t),
                                 },
-                                `${e.name}${s}${a}`,
+                                `${t.name}${e}${i}`,
                             ),
                         ),
                     ],
@@ -142,84 +187,85 @@ function hs({ id: s, index: o, rewards: n, className: c, inprogress: d, canceled
         })
     );
 }
-const js = o(function () {
-        const { model: s } = ts();
-        return t.jsx(x, {
+const Ae = r(function () {
+        const { model: e } = te();
+        return s.jsx(x, {
             size: x.sizes.large,
-            value: s.computes.currentProgress(),
-            maxValue: s.computes.maxProgress(),
+            value: e.computes.currentProgress(),
+            maxValue: e.computes.maxProgress(),
             status: x.statuses.doneInactive,
-            children: t.jsx(x.Fill, {}),
+            children: s.jsx(x.Fill, {}),
         });
     }),
-    ys = 'ProgressionHeader_completedLabel_9abba8c5',
-    vs = 'ProgressionHeader_currentProgress_90745a20',
-    Ns = 'ProgressionHeader_spIcon_9d24495b',
-    As = o(function () {
-        const { model: s } = ts(),
-            e = s.computes.inprogressArtefact(),
-            a = e?.cost,
-            r = f({ size: J.sizes.s16x16 }, { medium: { size: J.sizes.s24x24 } }),
-            i = h({ contentId: R.views.last_stand.mono.lobby.tooltips.points_tooltip('resId') });
-        return t.jsx(t.Fragment, {
-            children: s.computes.progressionCompleted()
-                ? t.jsx('div', { className: ys, children: R.strings.last_stand_lobby.rewardPath.completed() })
-                : t.jsx(j, {
+    Ce = 'ProgressionHeader_completedLabel_9abba8c5',
+    Ne = 'ProgressionHeader_currentProgress_90745a20',
+    we = 'ProgressionHeader_spIcon_9d24495b',
+    Ie = r(function () {
+        const { model: e } = te(),
+            a = e.computes.inprogressArtefact(),
+            t = a?.cost,
+            i = f({ size: q.sizes.s16x16 }, { medium: { size: q.sizes.s24x24 } }),
+            o = h({ contentId: R.views.last_stand.mono.lobby.tooltips.points_tooltip('resId') });
+        return s.jsx(s.Fragment, {
+            children: e.computes.progressionCompleted()
+                ? s.jsx('div', { className: Ce, children: R.strings.last_stand_lobby.rewardPath.completed() })
+                : s.jsx(y, {
                       text: R.strings.last_stand_lobby.rewardPath.progress(),
-                      alignContent: y.FlexEnd,
+                      alignContent: j.FlexEnd,
                       binding: {
-                          artefactIndex: e?.index,
-                          currentProgress: t.jsx('div', { className: vs, children: G(s.points.get(), a) }),
-                          maxProgress: a,
-                          icon: t.jsx('div', { ...i, className: Ns, children: t.jsx(J, { size: r.size }) }),
+                          artefactIndex: a?.index,
+                          currentProgress: s.jsx('div', { className: Ne, children: X(e.points.get(), t) }),
+                          maxProgress: t,
+                          icon: s.jsx('div', { ...o, className: we, children: s.jsx(q, { size: i.size }) }),
                       },
                   }),
         });
     }),
-    Cs = 'Artefacts_9c0f750b',
-    Is = 'Artefacts_title_e09aab86',
-    ws = 'Artefacts_list_f836ebac',
-    Ps = 'Artefacts_item_405af956',
-    Rs = 'Artefacts_divider_423e6820',
-    ks = 'Artefacts_divider__cancel_a2faf44e',
-    zs = 'Artefacts_progressBar_d08a92a4',
-    Ds = { from: { width: '0%', opacity: 0 }, to: { width: '100%', opacity: 1 } },
-    Qs = { from: { y: 5, x: 0, opacity: 0 }, to: { y: 0, x: 0, opacity: 0.8 }, config: { tension: 240, friction: 7 } },
-    Ms = o(function ({ canceledAnim: s, className: e }) {
+    Pe = 'Artefacts_9c0f750b',
+    ze = 'Artefacts_title_e09aab86',
+    Re = 'Artefacts_list_f836ebac',
+    Te = 'Artefacts_item_405af956',
+    ke = 'Artefacts_divider_423e6820',
+    De = 'Artefacts_divider__cancel_a2faf44e',
+    Qe = 'Artefacts_progressBar_d08a92a4',
+    Se = { from: { width: '0%', opacity: 0 }, to: { width: '100%', opacity: 1 } },
+    $e = { from: { y: 5, x: 0, opacity: 0 }, to: { y: 0, x: 0, opacity: 0.8 }, config: { tension: 240, friction: 7 } },
+    Me = r(function ({ canceledAnim: e, className: t }) {
         const {
-            model: { currentArtefactID: a, artefacts: r },
-        } = ts();
-        return t.jsxs('div', {
-            className: i(Cs, e),
+            model: { currentArtefactID: i, artefacts: o, openFromQuestCard: r },
+        } = te();
+        return s.jsxs('div', {
+            className: a(Pe, t),
             children: [
-                t.jsx(L, { className: Is, ...Qs, delay: rs, isCanceled: s, children: t.jsx(As, {}) }),
-                t.jsxs('div', {
-                    className: ws,
+                s.jsx(L, { className: ze, ...$e, delay: ie, isCanceled: e, children: s.jsx(Ie, {}) }),
+                s.jsxs('div', {
+                    className: Re,
                     children: [
-                        t.jsx(L, {
-                            className: zs,
-                            ...Ds,
+                        s.jsx(L, {
+                            className: Qe,
+                            ...Se,
                             delay: 900,
                             duration: 500,
-                            isCanceled: s,
-                            children: t.jsx(js, {}),
+                            isCanceled: e,
+                            children: s.jsx(Ae, {}),
                         }),
-                        p(r.get(), (e, o) =>
-                            t.jsxs(
+                        p(o.get(), (t, n) =>
+                            s.jsxs(
                                 'div',
                                 {
-                                    className: Ps,
+                                    className: Te,
                                     children: [
-                                        t.jsx(hs, {
-                                            ...e,
-                                            inprogress: e.id === a.get(),
-                                            completed: e.isCompleted,
-                                            canceledAnim: s,
+                                        s.jsx(ve, {
+                                            ...t,
+                                            inprogress: t.id === i.get(),
+                                            completed: t.isCompleted,
+                                            canceledAnim: e,
+                                            callToAction: t.id === i.get() && !r.get(),
                                         }),
-                                        o < r.get().length - 1 && t.jsx('div', { className: i(Rs, s && ks) }),
+                                        n < o.get().length - 1 && s.jsx('div', { className: a(ke, e && De) }),
                                     ],
                                 },
-                                e.id,
+                                t.id,
                             ),
                         ),
                     ],
@@ -227,149 +273,150 @@ const js = o(function () {
             ],
         });
     }),
-    Ts = 'BundleCard_4232f0d2',
-    $s = 'BundleCard_bg_ebc1b5c2',
-    Bs = 'BundleCard_name_94b03ec8',
-    Ss = 'BundleCard_button_f32dc703',
-    Es = v.resolve('strings'),
-    Hs = o(function ({ className: s }) {
-        const { model: e, controls: a } = Y(),
+    Be = 'BundleCard_4232f0d2',
+    He = 'BundleCard_bg_2bc5119',
+    Ve = 'BundleCard_name_5f5aae72',
+    Ee = 'BundleCard_button_f32dc703',
+    Fe = v.resolve('strings'),
+    Le = r(function ({ className: e }) {
+        const { model: a, controls: t } = Y(),
             {
-                breakpoint: { weight: r },
-            } = N(),
-            i = f({ size: A.sizes.extraSmall }, { large: { size: A.sizes.medium } });
-        return e.id.get()
-            ? t.jsxs('div', {
-                  className: n(Ts, s),
+                breakpoint: { weight: i },
+            } = A(),
+            o = f({ size: C.sizes.extraSmall }, { large: { size: C.sizes.medium } });
+        return a.id.get()
+            ? s.jsxs('div', {
+                  className: n(Be, e),
                   children: [
-                      t.jsx('div', { className: $s }),
-                      r > C.medium.weight &&
-                          t.jsx(j, {
-                              text: Es.readOrEmpty(`R.strings.last_stand_lobby.bundle.name.${e.descriptionKey.get()}`),
+                      s.jsx('div', { className: He }),
+                      i > N.medium.weight &&
+                          s.jsx(y, {
+                              text: Fe.readOrEmpty(`R.strings.last_stand_lobby.bundle.name.${a.descriptionKey.get()}`),
                               isTruncationAvailable: !0,
                               isTooltipEnable: !0,
-                              justifyContent: y.Center,
-                              classMix: Bs,
+                              justifyContent: j.Center,
+                              classMix: Ve,
                           }),
-                      t.jsx(A, {
-                          className: Ss,
-                          theme: A.themes.secondary,
-                          size: i.size,
-                          onClick: () => a.click(e.id.get()),
+                      s.jsx(C, {
+                          className: Ee,
+                          theme: C.themes.secondary,
+                          size: o.size,
+                          onClick: () => t.click(a.id.get()),
                           children: R.strings.last_stand_lobby.rewardPath.btn.shop(),
                       }),
                   ],
               })
             : null;
     });
-function Fs(s) {
-    const e = R.aliases.last_stand.shared.BundleCard('resId'),
-        r = a.useMemo(() => ({ rootId: e }), [e]);
-    return t.jsx(I, { id: e, children: t.jsx(X, { options: r, children: t.jsx(Hs, { ...s }) }) });
+function We(e) {
+    const a = R.aliases.last_stand.shared.BundleCard('resId'),
+        t = i.useMemo(() => ({ rootId: a }), [a]);
+    return s.jsx(w, { id: a, children: s.jsx(G, { options: t, children: s.jsx(Le, { ...e }) }) });
 }
-const Vs = 'DailyQuestsCard_8452735',
-    Ls = 'DailyQuestsCard_content_9dfeafcb',
-    Ws = 'DailyQuestsCard_timer_88092dd5',
-    Ks = 'DailyQuestsCard_icon_e3692c40',
-    Os = 'DailyQuestsCard_description_716ab6d8',
-    Us = 'DailyQuestsCard_base__completed_2dd05187',
-    Zs = 'DailyQuestsCard_progress_a181f69d',
-    qs = 'DailyQuestsCard_currentProgress_a63d05d7',
-    Gs = 'DailyQuestsCard_progressValue_59475865',
-    Js = 'DailyQuestsCard_rewards_a8cdf255',
-    Xs = 'DailyQuestsCard_reward_461f11ab',
-    Ys = o(function ({ className: s }) {
-        const { model: e } = es(),
-            { breakpoint: a } = N(),
+const Ke = 'DailyQuestsCard_8452735',
+    Oe = 'DailyQuestsCard_content_9dfeafcb',
+    Ze = 'DailyQuestsCard_timer_88092dd5',
+    Je = 'DailyQuestsCard_icon_e3692c40',
+    Ue = 'DailyQuestsCard_description_716ab6d8',
+    Xe = 'DailyQuestsCard_base__completed_2dd05187',
+    qe = 'DailyQuestsCard_progress_a181f69d',
+    Ge = 'DailyQuestsCard_currentProgress_a63d05d7',
+    Ye = 'DailyQuestsCard_progressValue_59475865',
+    es = 'DailyQuestsCard_rewards_a8cdf255',
+    ss = 'DailyQuestsCard_reward_461f11ab',
+    as = r(function ({ className: e, callToAction: t }) {
+        const { model: i } = se(),
+            { breakpoint: o } = A(),
             {
                 name: r,
-                conditionName: o,
-                resetTime: n,
+                conditionName: n,
+                resetTime: l,
                 currentProgress: c,
                 maximumProgress: d,
-                isCompleted: l,
-                isHidden: m,
-                allDailyCompleted: _,
-            } = e.root.get(),
-            u = w({
-                body: l
+                isCompleted: m,
+                isHidden: _,
+                allDailyCompleted: u,
+            } = i.root.get(),
+            f = I({
+                body: m
                     ? R.strings.last_stand_tooltips.daily.timer.bodyCompleted()
                     : R.strings.last_stand_tooltips.daily.timer.body(),
             }),
-            f = d > 0,
-            h = a.weight <= C.medium.weight,
-            v = h ? g.S24x24 : g.Small;
-        return m
+            h = d > 0,
+            v = o.weight <= N.medium.weight,
+            C = v ? g.S24x24 : g.Small;
+        return _
             ? null
-            : t.jsx('div', {
-                  className: i(Vs, l && Us, s),
-                  children: t.jsxs('div', {
-                      className: Ls,
+            : s.jsx('div', {
+                  className: a(Ke, m && Xe, e),
+                  children: s.jsxs('div', {
+                      className: Oe,
                       children: [
-                          n > 0 &&
-                              (!_ || (_ && !l)) &&
-                              t.jsx('div', {
-                                  ...u,
-                                  className: Ws,
-                                  children: t.jsx(P, {
-                                      size: h ? P.size.x24x24 : P.size.x32x32,
-                                      start: n,
+                          t && s.jsx(ne, {}),
+                          l > 0 &&
+                              (!u || (u && !m)) &&
+                              s.jsx('div', {
+                                  ...f,
+                                  className: Ze,
+                                  children: s.jsx(P, {
+                                      size: v ? P.size.x24x24 : P.size.x32x32,
+                                      start: l,
                                       format: P.format.default,
                                   }),
                               }),
-                          t.jsx('div', {
-                              className: Ks,
+                          s.jsx('div', {
+                              className: Je,
                               style: {
-                                  backgroundImage: `url(${l ? 'R.images.gui.maps.icons.userMissions.hub.basic.done_icon_m' : `'R.images.gui.maps.icons.userMissions.missionIcons.c_80.${o}_silver'`})`,
+                                  backgroundImage: `url(${m ? 'R.images.gui.maps.icons.userMissions.hub.basic.done_icon_m' : `'R.images.gui.maps.icons.userMissions.missionIcons.c_80.${n}_silver'`})`,
                               },
                           }),
-                          t.jsx(
-                              j,
+                          s.jsx(
+                              y,
                               {
-                                  classMix: Os,
+                                  classMix: Ue,
                                   text: r,
-                                  justifyContent: h ? y.FlexStart : y.Center,
+                                  justifyContent: v ? j.FlexStart : j.Center,
                                   isTruncationAvailable: !0,
                               },
-                              `description${a.name}`,
+                              `description${o.name}`,
                           ),
-                          f &&
-                              t.jsxs('div', {
-                                  className: Zs,
+                          h &&
+                              s.jsxs('div', {
+                                  className: qe,
                                   children: [
-                                      t.jsx(j, {
-                                          classMix: Gs,
+                                      s.jsx(y, {
+                                          classMix: Ye,
                                           text: R.strings.last_stand_lobby.common.progress(),
                                           binding: {
-                                              value: t.jsx('div', { className: qs, children: k(c, 1) }),
-                                              maxValue: k(d, 1),
+                                              value: s.jsx('div', { className: Ge, children: z(c, 1) }),
+                                              maxValue: z(d, 1),
                                           },
                                       }),
-                                      t.jsx(x, {
+                                      s.jsx(x, {
                                           size: x.sizes.medium,
                                           value: c,
                                           maxValue: d + 1,
                                           status: x.statuses.doneInactive,
-                                          children: t.jsx(x.Fill, {}),
+                                          children: s.jsx(x.Fill, {}),
                                       }),
                                   ],
                               }),
-                          t.jsx('div', {
-                              className: Js,
-                              children: p(e.bonuses.get(), (s, e) =>
-                                  t.jsx(
+                          s.jsx('div', {
+                              className: es,
+                              children: p(i.bonuses.get(), (e, a) =>
+                                  s.jsx(
                                       b,
                                       {
-                                          name: s.name,
-                                          value: U(s),
-                                          className: Xs,
-                                          special: s.overlayType,
-                                          size: v,
-                                          image: q(s, v),
-                                          valueType: O(s.name),
-                                          tooltipArgs: K(s, R.aliases.last_stand.shared.Quests('resId')),
+                                          name: e.name,
+                                          value: Z(e),
+                                          className: ss,
+                                          special: e.overlayType,
+                                          size: C,
+                                          image: U(e, C),
+                                          valueType: O(e.name),
+                                          tooltipArgs: K(e, R.aliases.last_stand.shared.Quests('resId')),
                                       },
-                                      `${s.name}${e}`,
+                                      `${e.name}${a}`,
                                   ),
                               ),
                           }),
@@ -377,107 +424,107 @@ const Vs = 'DailyQuestsCard_8452735',
                   }),
               });
     }),
-    se = { rootId: R.aliases.last_stand.shared.Quests('resId') };
-function ee(s) {
-    return t.jsx(I, { id: se.rootId, children: t.jsx(ss, { options: se, children: t.jsx(Ys, { ...s }) }) });
+    ts = { rootId: R.aliases.last_stand.shared.Quests('resId') };
+function is(e) {
+    return s.jsx(w, { id: ts.rootId, children: s.jsx(ee, { options: ts, children: s.jsx(as, { ...e }) }) });
 }
-const ae = 'Header_e83ca27a',
-    te = 'Header_card_ecb415bd',
-    re = 'Header_divider_1ed29076',
-    ie = o(function ({ className: s, canceledAnim: e }) {
-        const { model: a } = es(),
-            { model: r } = Y(),
-            i = [
-                { component: t.jsx(ee, {}), visible: !a.root.get().isHidden },
-                { component: t.jsx(Fs, {}), visible: Boolean(r.id.get()) },
+const os = 'Header_e83ca27a',
+    rs = 'Header_card_ecb415bd',
+    ns = 'Header_divider_1ed29076',
+    ls = r(function ({ className: e, canceledAnim: a, playQuestAnimation: t }) {
+        const { model: i } = se(),
+            { model: o } = Y(),
+            r = [
+                { component: s.jsx(is, { callToAction: t }), visible: !i.root.get().isHidden },
+                { component: s.jsx(We, {}), visible: Boolean(o.id.get()) },
             ],
-            o = _(i, (s) => s.visible);
-        return t.jsx('div', {
-            className: n(ae, s),
-            children: p(o, (s, a) =>
-                t.jsxs(
+            l = _(r, (e) => e.visible);
+        return s.jsx('div', {
+            className: n(os, e),
+            children: p(l, (e, t) =>
+                s.jsxs(
                     'div',
                     {
-                        className: te,
+                        className: rs,
                         children: [
-                            t.jsx(L, {
+                            s.jsx(L, {
                                 from: { y: 15, opacity: 0 },
                                 to: { y: 0, opacity: 1 },
                                 config: { tension: 180, friction: 12 },
-                                delay: rs * a,
-                                isCanceled: e,
-                                children: s.component,
+                                delay: ie * t,
+                                isCanceled: a,
+                                children: e.component,
                             }),
-                            a !== o.length - 1 &&
-                                t.jsx(L, {
+                            t !== l.length - 1 &&
+                                s.jsx(L, {
                                     from: { y: 15, opacity: 0 },
                                     to: { y: 0, opacity: 1 },
                                     config: { tension: 180, friction: 12 },
-                                    delay: rs * a + 100,
-                                    isCanceled: e,
-                                    children: t.jsx('div', { className: re }),
+                                    delay: ie * t + 100,
+                                    isCanceled: a,
+                                    children: s.jsx('div', { className: ns }),
                                 }),
                         ],
                     },
-                    `card${a}`,
+                    `card${t}`,
                 ),
             ),
         });
     }),
-    oe = 'RewardPathApp_7f1678b4',
-    ne = 'RewardPathApp_vignette_9da9dd3c',
-    ce = 'RewardPathApp_bg_6166d40a',
-    de = 'RewardPathApp_itemsBlock_c1ba6b30',
-    le = 'RewardPathApp_footer_1bf05925',
-    me = 'RewardPathApp_completedTitle_bb261d47',
-    _e = 'RewardPathApp_title_9b71379b',
-    ue = 'RewardPathApp_icon_36f650db',
-    pe = 'RewardPathApp_header_aca0c837',
-    be = o(function () {
-        const { model: s, controls: e } = ts(),
-            { breakpoint: r } = N();
-        (z(e.close),
-            a.useEffect(() => {
-                D(() => {
-                    (e.viewLoaded(), Q(!0));
+    cs = 'RewardPathApp_vignette_b928ef12',
+    ds = 'RewardPathApp_7f1678b4',
+    ms = 'RewardPathApp_bg_6166d40a',
+    _s = 'RewardPathApp_itemsBlock_c1ba6b30',
+    us = 'RewardPathApp_footer_1bf05925',
+    ps = 'RewardPathApp_completedTitle_bb261d47',
+    bs = 'RewardPathApp_title_9b71379b',
+    gs = 'RewardPathApp_icon_36f650db',
+    xs = 'RewardPathApp_header_aca0c837',
+    fs = r(function () {
+        const { model: e, controls: a } = te(),
+            { breakpoint: t } = A();
+        (T(a.close),
+            i.useEffect(() => {
+                k(() => {
+                    (a.viewLoaded(), D(!0));
                 });
-            }, [e]));
-        const [i, o] = a.useState(!1),
+            }, [a]));
+        const [o, r] = i.useState(!1),
             n = h({ contentId: R.views.last_stand.mono.lobby.tooltips.additional_data_tooltip('resId') });
-        return t.jsxs('div', {
-            className: oe,
-            onClick: () => o(!0),
+        return s.jsxs('div', {
+            className: ds,
+            onClick: () => r(!0),
             children: [
-                t.jsx('div', { className: ce }),
-                t.jsx('div', { className: ne }),
-                t.jsx('div', {
-                    className: _e,
-                    children: s.computes.progressionCompleted()
-                        ? t.jsx('div', {
-                              className: me,
+                s.jsx('div', { className: ms }),
+                s.jsx('div', { className: cs }),
+                s.jsx('div', {
+                    className: bs,
+                    children: e.computes.progressionCompleted()
+                        ? s.jsx('div', {
+                              className: ps,
                               children: R.strings.last_stand_lobby.rewardPath.completedTitle(),
                           })
-                        : t.jsx(j, {
+                        : s.jsx(y, {
                               text: R.strings.last_stand_lobby.rewardPath.boostTitle(),
                               binding: {
-                                  icon: r.weight >= C.medium.weight ? t.jsx('div', { ...n, className: ue }) : '',
+                                  icon: t.weight >= N.medium.weight ? s.jsx('div', { ...n, className: gs }) : '',
                               },
                           }),
                 }),
-                t.jsx(ie, { className: pe }),
-                t.jsx('div', { className: le, children: t.jsx(Ms, { className: de, canceledAnim: i }) }),
+                s.jsx(ls, { className: xs, playQuestAnimation: e.openFromQuestCard.get() }),
+                s.jsx('div', { className: us, children: s.jsx(Me, { className: _s, canceledAnim: o }) }),
             ],
         });
     }),
-    ge = M([H, F, V]);
-B(
-    new T()
-        .addWithProps($, { soundsOverrides: ge })
-        .add(as)
-        .addWithProps(X, { options: { rootId: R.aliases.last_stand.shared.BundleCard('resId') } })
-        .addWithProps(ss, { options: { rootId: R.aliases.last_stand.shared.Quests('resId') } })
-        .render(t.jsx(be, {})),
+    hs = Q([V, E, F]);
+M(
+    new S()
+        .addWithProps($, { soundsOverrides: hs })
+        .add(ae)
+        .addWithProps(G, { options: { rootId: R.aliases.last_stand.shared.BundleCard('resId') } })
+        .addWithProps(ee, { options: { rootId: R.aliases.last_stand.shared.Quests('resId') } })
+        .render(s.jsx(fs, {})),
 )
-    .then(() => S(document.getElementById('root')))
-    .then(() => E())
-    .then(() => Q(!1));
+    .then(() => B(document.getElementById('root')))
+    .then(() => H())
+    .then(() => D(!1));

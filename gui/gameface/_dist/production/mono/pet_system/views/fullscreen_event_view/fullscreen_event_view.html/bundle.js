@@ -4,12 +4,12 @@ import {
     i as p,
     m as o,
     g as i,
-    o as n,
+    q as n,
     b as c,
     I as _,
     e as m,
-    h as j,
-    p as v,
+    h as v,
+    v as j,
     M as x,
     B as y,
     A as h,
@@ -48,9 +48,9 @@ import { S as b } from '../../../chunks/synergy_rewards.js';
     z = 'App_descriptionWrapper_656353e9',
     M = 'App_descriptionScrollWrapper_a39002f9',
     W = 'App_descriptionContent_4f66c3aa',
-    F = 'App_descriptionBar_b3366266',
-    T = 'App_text_0',
-    q = 'App_joke_14331c43',
+    q = 'App_descriptionBar_b3366266',
+    F = 'App_text_0',
+    T = 'App_joke_14331c43',
     L = 'App_rewardsTitle_4923ec50',
     P = 'App_flexBreak_1ff3f8f2',
     U = 'App_rewards_d0d451da',
@@ -96,8 +96,8 @@ import { S as b } from '../../../chunks/synergy_rewards.js';
                                 r.jsxs(r.Fragment, {
                                     children: [
                                         r.jsx('div', { className: C, style: { backgroundImage: `url(${o})` } }),
-                                        !j.isLow() &&
-                                            r.jsx(v, {
+                                        !v.isLow() &&
+                                            r.jsx(j, {
                                                 className: $,
                                                 src: R.videos.pet_system.pet_rays(),
                                                 autoplay: !0,
@@ -122,11 +122,11 @@ import { S as b } from '../../../chunks/synergy_rewards.js';
                                             defaultColor: '#eeede980',
                                             br: r.jsx('span', { className: P }),
                                         },
-                                        className: T,
+                                        className: F,
                                         split: !0,
                                     }),
                                 }),
-                                r.jsx(g, { classNames: { base: F } }),
+                                r.jsx(g, { classNames: { base: q } }),
                             ],
                         }),
                     }),
@@ -143,7 +143,7 @@ import { S as b } from '../../../chunks/synergy_rewards.js';
                             }),
                         ],
                     }),
-                    p && r.jsx(l.div, { style: _[3], children: r.jsx(x, { className: q, text: p }) }),
+                    p && r.jsx(l.div, { style: _[3], children: r.jsx(x, { className: T, text: p }) }),
                     r.jsx(l.div, {
                         style: _[p ? 4 : 3],
                         className: G,

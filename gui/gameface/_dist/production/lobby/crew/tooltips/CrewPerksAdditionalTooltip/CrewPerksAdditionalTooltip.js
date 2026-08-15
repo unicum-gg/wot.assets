@@ -431,7 +431,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -990,8 +990,8 @@
                     return n;
                 }
                 const M = (e) => (0 === e ? window : window.subViews.get(e));
-                var z = t(5369);
-                const j = ((e, u) => {
+                var j = t(5369);
+                const z = ((e, u) => {
                         const t = (0, n.createContext)({});
                         return [
                             function ({ mode: a = 'real', options: o, children: i, mocks: s }) {
@@ -1048,7 +1048,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = L(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = L(r.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -1200,7 +1200,7 @@
                                     ]),
                                     { popularityList: e.array('popularityList', []) },
                                 ),
-                                t = (0, z.Om)(() => {
+                                t = (0, j.Om)(() => {
                                     return ((e = u.popularityList.get()),
                                     (t = (e, u) => ({ value: e, originalIndex: u })),
                                     Array.isArray(e)
@@ -1214,8 +1214,8 @@
                         },
                         () => ({}),
                     ),
-                    V = j[0],
-                    $ = j[1],
+                    V = z[0],
+                    $ = z[1],
                     G = (e, u, t) => (t < e ? e : t > u ? u : t),
                     W = [
                         'src',
@@ -2217,19 +2217,19 @@
                             shadow: '0 0 4px 1px #ffaa0066, 0 0 9px 1px #ffaa0066, 0 0 12px 2px #ff550066, 0 0 12px 4px #ff000066',
                         },
                     },
-                    ze = {
+                    je = {
                         freezed: !1,
                         withStack: !1,
                         type: ae.Growing,
                         delta: { duration: 500, delay: 0 },
                         line: { duration: 500, delay: 0 },
                     },
-                    je = (0, n.memo)(
+                    ze = (0, n.memo)(
                         ({
                             maxValue: e = 100,
                             theme: u = Me,
                             size: t = re.Default,
-                            animationSettings: a = ze,
+                            animationSettings: a = je,
                             disabled: o = !1,
                             withoutBackground: i = !1,
                             value: l,
@@ -2705,7 +2705,7 @@
                     gu = (e, u, t, n) => {
                         let r = u.exec(e),
                             a = 0;
-                        for (; r; ) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
+                        for (; r;) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
                         a !== e.length && t(e.slice(a));
                     },
                     pu = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -2751,7 +2751,7 @@
                               if (!n) return [e];
                               const r = [];
                               let a = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const o = u.justifyContent === nu.FlexEnd ? n.index : t.lastIndex;
                                   (r.push(e.slice(a, o)), (a = o), (n = t.exec(e)));
                               }
@@ -2796,7 +2796,9 @@
                     },
                     bu = (e, u, t = '', n) => {
                         const r = [],
-                            a = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            a = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             gu(
                                 a,
@@ -2926,7 +2928,7 @@
                             c = ((e, u) => {
                                 let t = 0,
                                     n = e.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const r = t + Math.ceil(0.5 * (n - t));
                                     vu(e[r], u) ? (n = r - 1) : (t = r + 1);
                                 }
@@ -3116,7 +3118,7 @@
                                             },
                                         }),
                                     ),
-                                    r().createElement(je, { value: t }),
+                                    r().createElement(ze, { value: t }),
                                 ),
                                 l &&
                                     r().createElement(
@@ -3137,8 +3139,8 @@
                     Ru = 'AltContentSection_info_b243d',
                     Iu = 'AltContentSection_infoIcon_a13f5',
                     Mu = 'AltContentSection_infoText_a8ecc',
-                    zu = 'AltContentSection_skillProgress_d13f6',
-                    ju = 'AltContentSection_header_a0e62',
+                    ju = 'AltContentSection_skillProgress_d13f6',
+                    zu = 'AltContentSection_header_a0e62',
                     Vu = 'AltContentSection_popularity_b1d7e',
                     $u = 'AltContentSection_popularityList_cb4ac',
                     Gu = 'AltContentSection_popularityList_headerIcon_f4984',
@@ -3189,10 +3191,10 @@
                                 n &&
                                     r().createElement(
                                         'div',
-                                        { className: zu },
+                                        { className: ju },
                                         r().createElement(
                                             'div',
-                                            { className: ju },
+                                            { className: zu },
                                             R.strings.crew.matrix.skillTooltip.main.additional.header(),
                                         ),
                                         r().createElement(Ou, a),

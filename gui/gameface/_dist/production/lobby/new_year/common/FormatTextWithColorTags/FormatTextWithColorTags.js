@@ -154,7 +154,7 @@
                             let t = A.exec(u),
                                 o = u,
                                 n = 0;
-                            for (; t; ) {
+                            for (; t;) {
                                 const l = t[0],
                                     s = D.exec(l),
                                     i = e.exec(l),

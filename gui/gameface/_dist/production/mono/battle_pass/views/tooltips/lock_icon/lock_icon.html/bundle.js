@@ -1,12 +1,12 @@
-import { v as s, j as e } from '../../../../chunks/vendor.js';
-import { i as o, N as t, bY as a, J as d, U as i, d as r } from '../../../../chunks/lib.js';
-const [c, n] = o()(({ observableModel: s }) => ({ ...{ root: s.object() } }), t),
+import { w as s, j as e } from '../../../../chunks/vendor.js';
+import { i as o, O as t, cd as a, J as c, U as d, d as i } from '../../../../chunks/lib.js';
+/* empty css                       */ const [r, n] = o()(({ observableModel: s }) => ({ ...{ root: s.object() } }), t),
     l = 'Content_59739b4',
     j = 'Content_title_14ef9ac4',
     h = 'Content_description1_ee3d8a6c',
     m = 'Content_description2_54cf7dba',
     b = R.strings.battle_pass.tooltips.iconLock,
-    x = s(() => {
+    p = s(() => {
         const { model: s } = n(),
             { isHoliday: o } = s.root.get();
         return e.jsxs('div', {
@@ -18,5 +18,5 @@ const [c, n] = o()(({ observableModel: s }) => ({ ...{ root: s.object() } }), t)
             ],
         });
     }),
-    _ = () => e.jsx(a, { children: e.jsx(a.Decorator, { children: e.jsx(x, {}) }) });
-r(new d().add(i).addWithProps(c, {}).render(e.jsx(_, {})));
+    x = () => e.jsx(a, { children: e.jsx(a.Decorator, { children: e.jsx(p, {}) }) });
+i(new c().add(d).addWithProps(r, {}).render(e.jsx(x, {})));

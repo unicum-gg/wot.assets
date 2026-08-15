@@ -1,0 +1,149 @@
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.LabelOverflow_66e8b7ee {
+    max-height: 2.2em;
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+.LabelOverflow_base__rare_1eef7c47 {
+    color: #c2fbff;
+}
+.LabelOverflow_base__epic_e83ce98c {
+    color: #f0c2ff;
+}
+.LabelOverflow_base__legendary_31fd8d8e {
+    color: #ffecc2;
+}
+
+.LabelOverflow_text_db94c191 {
+    justify-content: center;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.ShakingComponent_5911c90e {
+    animation: ShakingComponent_shakeAndScale_206aa4ba 2600ms cubic-bezier(0, 0.55, 0.45, 1) forwards;
+}
+
+@keyframes ShakingComponent_shakeAndScale_206aa4ba {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    23% {
+        transform: scale(1.25) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.25) rotate(2.5deg);
+    }
+    27% {
+        transform: scale(1.25) rotate(-2.5deg);
+    }
+    29% {
+        transform: scale(1.25) rotate(2.5deg);
+    }
+    31% {
+        transform: scale(1.25) rotate(-2.5deg);
+    }
+    33% {
+        transform: scale(1.25) rotate(2.5deg);
+    }
+    35% {
+        transform: scale(1.25) rotate(-2.5deg);
+    }
+    37% {
+        transform: scale(1.25) rotate(2.5deg);
+    }
+    39% {
+        transform: scale(1.25) rotate(-2.5deg);
+    }
+    41% {
+        transform: scale(1.25) rotate(2.5deg);
+    }
+    43% {
+        transform: scale(1.25) rotate(-2.5deg);
+    }
+    45% {
+        transform: scale(1.25) rotate(2.5deg);
+    }
+    47% {
+        transform: scale(1.25) rotate(-2.5deg);
+    }
+    49% {
+        transform: scale(1.25) rotate(2.5deg);
+    }
+    51% {
+        transform: scale(1.25) rotate(-2.5deg);
+    }
+    53% {
+        transform: scale(1.25) rotate(2.5deg);
+    }
+    55% {
+        transform: scale(1.25) rotate(-2.5deg);
+    }
+    57% {
+        transform: scale(1.25) rotate(2.5deg);
+    }
+    59% {
+        transform: scale(1.25) rotate(-2.5deg);
+    }
+    61% {
+        transform: scale(1.25) rotate(2.5deg);
+    }
+    63% {
+        transform: scale(1.25) rotate(-2.5deg);
+    }
+    65% {
+        transform: scale(1.25) rotate(2.5deg);
+    }
+    67% {
+        transform: scale(1.25) rotate(-2.5deg);
+    }
+    69% {
+        transform: scale(1.25) rotate(2.5deg);
+    }
+    71% {
+        transform: scale(1.25) rotate(-2.5deg);
+    }
+    73% {
+        transform: scale(1.25) rotate(2.5deg);
+    }
+    75% {
+        transform: scale(1.25) rotate(-2.5deg);
+    }
+    77% {
+        transform: scale(1.25) rotate(0deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.JmReward_9551c376 {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.JmReward_raritySign_dbb317ca {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.JmReward_label_8a6b6361 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    max-width: 80rem;
+    position: absolute;
+    top: 57rem;
+    z-index: 3;
+}
+.JmReward_label__token_4b754cfe {
+    top: 50rem;
+}

@@ -1,5 +1,5 @@
 import { h as e, t as s, j as t } from '../../../../chunks/vendor.js';
-import { i as a, au as r, F as o, r as l, U as d, bv as n } from '../../../../chunks/lib.js';
+import { i as a, h as r, F as o, r as l, U as d, bv as n } from '../../../../chunks/lib.js';
 import { T as b } from '../../../../chunks/table.js';
 /* empty css                        */ const [i, c] = a()(({ observableModel: s }) => {
         const t = { battleTypes: s.array('battleTypes'), battleModes: s.array('battleModes') },

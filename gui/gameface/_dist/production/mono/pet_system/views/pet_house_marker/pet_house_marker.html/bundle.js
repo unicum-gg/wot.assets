@@ -1,5 +1,5 @@
 import { s as e, R as s, r as a, j as t, f as r } from '../../../chunks/vendor.js';
-import { i as p, t as i, r as l, j as n, v as c, w as d, x as m, k as o, U as f } from '../../../chunks/lib.js';
+import { i as p, n as i, r as n, j as l, o as c, p as d, t as o, k as m, U as f } from '../../../chunks/lib.js';
 /* empty css                    */ const [h, _] = p()(
         ({ observableModel: e }) => ({ ...{ ...e.primitives(['petNameID', 'hasUpdate', 'isVisible']) } }),
         i,
@@ -9,20 +9,20 @@ import { i as p, t as i, r as l, j as n, v as c, w as d, x as m, k as o, U as f 
     j = 'App_inner_f0b59ee5',
     x = 'App_name_a1466fa8',
     N = 'App_bubble_14dbfc23',
-    v = l.resolve('strings'),
+    v = n.resolve('strings'),
     g = e(function () {
         const e = s.useRef(null),
             { model: p } = _(),
             i = p.isVisible.get(),
-            l = p.petNameID.get(),
-            o = p.hasUpdate.get();
+            n = p.petNameID.get(),
+            m = p.hasUpdate.get();
         return (
             a.useEffect(() => {
                 const s = e.current;
                 if (!s) return;
                 const a = s.scrollWidth,
                     t = s.scrollHeight;
-                n(a, t);
+                l(a, t);
             }, [e]),
             t.jsx('div', {
                 ref: e,
@@ -33,21 +33,21 @@ import { i as p, t as i, r as l, j as n, v as c, w as d, x as m, k as o, U as f 
                         t.jsx('div', {
                             className: x,
                             children:
-                                0 === l
+                                0 === n
                                     ? t.jsx(c, { path: 'pet_system.petHouseMarker.default' })
                                     : t.jsx(c, {
                                           path: 'pet_system.petHouseMarker.pet',
                                           params: {
-                                              petName: v.readOr(`pet_names.petName_${l}`, () =>
+                                              petName: v.readOr(`pet_names.petName_${n}`, () =>
                                                   v.readOrEmpty('pet_names.petName_default'),
                                               ),
                                           },
                                       }),
                         }),
-                        t.jsx(d.Root, { className: N, hidden: !o, children: t.jsx(d.Icon, { type: m.bubble }) }),
+                        t.jsx(d.Root, { className: N, hidden: !m, children: t.jsx(d.Icon, { type: o.bubble }) }),
                     ],
                 }),
             })
         );
     });
-o(t.jsx(f, { children: t.jsx(h, { children: t.jsx(g, {}) }) }));
+m(t.jsx(f, { children: t.jsx(h, { children: t.jsx(g, {}) }) }));

@@ -7,11 +7,11 @@ import {
     w as o,
     x as l,
     S as p,
-    O as u,
+    P as u,
     B as d,
-    N as m,
-    M as _,
-    P as T,
+    O as m,
+    N as _,
+    Q as T,
 } from '../../../chunks/lib.js';
 const x = 'Tips_79909a0',
     v = 'Tips_textBlock_182bfa9e',
@@ -22,15 +22,15 @@ const x = 'Tips_79909a0',
     b = 'Tips_arrow__prev_bf61631b',
     j = 'Tips_arrow__next_ffedf751',
     S = 'Tips_arrow__focused_1d6c0538',
-    M = n.resolve('strings');
-function w({ descr: a, onShowPrevTip: i, onShowNextTip: n, focusedIndex: c }) {
+    w = n.resolve('strings');
+function M({ descr: a, onShowPrevTip: i, onShowNextTip: n, focusedIndex: c }) {
     return e.jsxs('div', {
         className: x,
         children: [
             e.jsxs('div', {
                 className: v,
                 children: [
-                    e.jsx('div', { className: h, children: M.readOrEmpty('maps_training.queue.titleTips') }),
+                    e.jsx('div', { className: h, children: w.readOrEmpty('maps_training.queue.titleTips') }),
                     e.jsx(r, { split: !0, upgradeLegacy: !0, className: g, text: a }),
                 ],
             }),
@@ -130,7 +130,7 @@ const I = a(function () {
                         m && e.jsx('div', { className: B, children: m }),
                     ],
                 }),
-                e.jsx(w, {
+                e.jsx(M, {
                     descr: a.descrTip.get(),
                     onShowPrevTip: n.showPrevTip,
                     onShowNextTip: n.showNextTip,

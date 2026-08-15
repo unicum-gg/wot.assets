@@ -1491,7 +1491,9 @@ function useTooltip({
             let o = null;
             function i() {
                 s ||
-                    ((a.current.status = statuses.await),
+                    ('display' === a.current.status &&
+                        (sendEvent$1.tooltip.hide(e, u, t), (a.current.status = statuses.idle)),
+                    (a.current.status = statuses.await),
                     window.clearTimeout(a.current.timeoutId),
                     (a.current.timeoutId = window.setTimeout(l, r)));
             }
@@ -1509,7 +1511,7 @@ function useTooltip({
                 ) {
                     displayedTooltips.delete(o);
                     let e = o.parentElement;
-                    for (; e && !displayedTooltips.has(e); ) e = e.parentElement;
+                    for (; e && !displayedTooltips.has(e);) e = e.parentElement;
                     if (e) {
                         displayedTooltips.get(e).show();
                     }
@@ -2267,7 +2269,7 @@ function resolveAttrParams(e, u) {
     for (let t = 0; t < e.length; t++) {
         if ('$' === e[t]) {
             let s = t + 1;
-            for (; s < e.length && !isEnd(e[s]); ) s++;
+            for (; s < e.length && !isEnd(e[s]);) s++;
             const n = e.slice(t + 1, s),
                 r = u[n];
             if (r) return resolveAttrParams(e.replace(`$${n}`, String(r)), u);
@@ -2514,6 +2516,7 @@ const multiValueTypes = [
         RewardType.DeluxeGift,
         RewardType.BattleBoosterGift,
         RewardType.OptionalDevice,
+        RewardType.TmanToken,
     ],
     currencyValueTypes = [RewardType.Gold, RewardType.Credits, RewardType.Crystal, RewardType.FreeXp],
     numberValueTypes = [RewardType.BattlePassPoints, RewardType.EquipCoin],
@@ -2802,6 +2805,7 @@ const root$4 = 'Reward_root_21f091ec',
                 args: E?.args,
                 resId: E?.resId,
                 decoratorId: E?.decoratorId,
+                disabled: E?.disabled,
             }),
             f = useSimpleTooltip({ header: p?.header, body: p?.body });
         return jsxRuntimeExports.jsxs('div', {
@@ -3077,7 +3081,7 @@ const sounds = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
     ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
 function arabic2roman$1(e) {
     let u = '';
-    for (let t = ARABIC.length - 1; t >= 0; t--) for (; e >= ARABIC[t]; ) ((u += ROMAN[t]), (e -= ARABIC[t]));
+    for (let t = ARABIC.length - 1; t >= 0; t--) for (; e >= ARABIC[t];) ((u += ROMAN[t]), (e -= ARABIC[t]));
     return u;
 }
 const ROMAN_FORBIDDEN_LANGUAGE_CODES = ['ko', 'no'];
@@ -5223,29 +5227,30 @@ const base = 'Tooltip_6d997cee',
     });
 Tooltip.Decorator = Decorator;
 export {
-    useVerticalScroll as A,
+    Image as A,
     Button as B,
-    useScrollBounding as C,
-    Area as D,
-    Toggle as E,
+    useVerticalScroll as C,
+    useScrollBounding as D,
+    Area as E,
     FormatText$1 as F,
-    toggleSizes as G,
-    Input as H,
+    Toggle as G,
+    toggleSizes as H,
     ImageSize as I,
-    Base$2 as J,
-    Bar as K,
-    JSXBuilder as L,
-    UIProvider as M,
-    runView as N,
-    FormatText as O,
-    initExternalPaddings$1 as P,
-    CloseButton as Q,
+    Input as J,
+    Base$2 as K,
+    Bar as L,
+    JSXBuilder as M,
+    UIProvider as N,
+    runView as O,
+    FormatText as P,
+    initExternalPaddings$1 as Q,
     Rewards as R,
     SceneWrapper as S,
     Tooltip$1 as T,
     UPSCALE as U,
-    noop as V,
-    Tooltip as W,
+    CloseButton as V,
+    noop as W,
+    Tooltip as X,
     useSimpleTooltip as a,
     onRescale as b,
     computeds as c,
@@ -5270,6 +5275,6 @@ export {
     useEvent as v,
     useKeydownListener as w,
     keyCodes as x,
-    useUpscale as y,
-    Image as z,
+    remToPx$1 as y,
+    useUpscale as z,
 };

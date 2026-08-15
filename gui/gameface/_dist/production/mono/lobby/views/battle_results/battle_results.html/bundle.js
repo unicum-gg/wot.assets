@@ -1588,7 +1588,8 @@ const Wt = t(function () {
             { deathReason: m, isLeftBattle: u } = e.userStatus.get(),
             _ = e.user.get(),
             b = e.killer.get(),
-            g = !u && _.isKilled;
+            g = e.computes.currentPlayer(),
+            p = !u && _.isKilled;
         return (
             $(a),
             r.jsxs('div', {
@@ -1608,6 +1609,10 @@ const Wt = t(function () {
                                             ),
                                             r.jsx('div', { className: or }),
                                             window.systemLocale.toUpperCase(n),
+                                            g?.vehicle?.name &&
+                                                r.jsxs(r.Fragment, {
+                                                    children: [r.jsx('div', { className: or }), g.vehicle.name],
+                                                }),
                                         ],
                                     }),
                                     r.jsxs('div', {
@@ -1632,7 +1637,7 @@ const Wt = t(function () {
                                     r.jsxs('div', {
                                         className: lr,
                                         children: [
-                                            g
+                                            p
                                                 ? r.jsxs('div', {
                                                       className: nr,
                                                       children: [

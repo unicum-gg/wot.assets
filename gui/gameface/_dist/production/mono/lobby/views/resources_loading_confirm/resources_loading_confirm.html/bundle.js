@@ -1,5 +1,5 @@
 import { e, j as r, q as c } from '../../../chunks/vendor.js';
-import { h as s, i as o, u as n, B as t, F as a, g as u, C as _, r as i, U as l } from '../../../chunks/lib.js';
+import { v as s, i as o, u as n, B as t, F as a, g as u, C as _, r as i, U as l } from '../../../chunks/lib.js';
 import { V as d } from '../../../chunks/vehicle_count.js';
 import { V as p } from '../../../chunks/vignette.js';
 /* empty css                     */ const m = {
@@ -66,7 +66,7 @@ const [f, x] = o()(
     j = 'Buttons_3e326d4',
     I = 'Buttons_button_8aa2a9b',
     N = R.strings.resource_well.confirm,
-    g = ({ operationType: c, handleOnConfirm: s, handleOnCancel: o, className: a }) => {
+    v = ({ operationType: c, handleOnConfirm: s, handleOnCancel: o, className: a }) => {
         const u = n({ buttonSize: 'small' }, { large: { buttonSize: 'medium' } });
         return r.jsxs('div', {
             className: e(j, a),
@@ -91,13 +91,13 @@ const [f, x] = o()(
             ],
         });
     },
-    v = 'Description_da993e7b',
+    g = 'Description_da993e7b',
     C = 'Description_text_78de58ff',
     y = 'Description_percentText_5e5c85be',
     w = R.strings.resource_well.confirm,
     A = ({ operationType: c, progressDiff: s = 0, vehicleName: o, className: n }) =>
         r.jsx('div', {
-            className: e(v, n),
+            className: e(g, n),
             children: r.jsx('div', {
                 className: C,
                 children: (() => {
@@ -190,7 +190,7 @@ const [f, x] = o()(
                                 ],
                             }),
                             r.jsx(A, { progressDiff: o, operationType: s, vehicleName: n, className: M }),
-                            r.jsx(g, {
+                            r.jsx(v, {
                                 operationType: s,
                                 handleOnCancel: c.cancel,
                                 handleOnConfirm: c.confirm,

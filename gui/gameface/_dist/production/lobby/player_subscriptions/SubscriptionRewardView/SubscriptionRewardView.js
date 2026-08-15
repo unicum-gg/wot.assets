@@ -188,7 +188,7 @@
                     f = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function T(e) {
                     let u = '';
-                    for (let t = f.length - 1; t >= 0; t--) for (; e >= f[t]; ) ((u += b[t]), (e -= f[t]));
+                    for (let t = f.length - 1; t >= 0; t--) for (; e >= f[t];) ((u += b[t]), (e -= f[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -883,9 +883,13 @@
                         if (t.mediumWidth && F) return a(u, t, w);
                         if (t.smallWidth && m) return a(u, t, w);
                         if (t.extraSmallWidth && D) return a(u, t, w);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return u;
                             if (t.largeHeight && g) return u;
                             if (t.mediumHeight && C) return u;
@@ -1410,6 +1414,7 @@
                         N.BattleBoosterGift,
                         N.OptionalDevice,
                         N.Attachment,
+                        N.TmanToken,
                     ],
                     Y = [N.Gold, N.Credits, N.Crystal, N.FreeXp],
                     j = [N.BattlePassPoints, N.EquipCoin],

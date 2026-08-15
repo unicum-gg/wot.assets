@@ -1,5 +1,5 @@
-import { q as s, j as e } from '../../../../chunks/vendor.js';
-import { i, j as n, k as o, t as r, l as a, r as t, U as c } from '../../../../chunks/lib.js';
+import { s, j as e } from '../../../../chunks/vendor.js';
+import { i, q as n, j as o, k as a, l as r, c as t, U as c } from '../../../../chunks/lib.js';
 const [l, d] = i()(
         ({ observableModel: s }) => ({ ...s.primitives(['header', 'description', 'buttonText', 'icon']) }),
         ({ externalModel: s }) => ({ onClose: s.createCallbackNoArgs('onClose') }),
@@ -27,8 +27,8 @@ const [l, d] = i()(
                             e.jsx('div', { className: h, children: s.description.get() }),
                             e.jsx('div', { className: _ }),
                             e.jsx(o, {
-                                size: a.small,
-                                theme: r.primary,
+                                size: r.small,
+                                theme: a.primary,
                                 onClick: i.onClose,
                                 children: s.buttonText.get(),
                             }),

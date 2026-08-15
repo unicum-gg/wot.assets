@@ -79,7 +79,7 @@
                         pxToRem: () => j,
                         remToPx: () => K,
                         resize: () => V,
-                        sendEvent: () => k,
+                        sendEvent: () => D,
                         setAnimateWindow: () => X,
                         setEventHandled: () => Z,
                         setInputPaddingsRem: () => H,
@@ -213,7 +213,7 @@
                     I = 16,
                     C = 32,
                     A = 64,
-                    D = (e, t) => {
+                    k = (e, t) => {
                         const n = 'GFViewEventProxy';
                         if (void 0 !== t) {
                             const a = t.args,
@@ -250,15 +250,15 @@
                         return viewEnv.handleViewEvent({ __Type: n, type: e });
                         var r;
                     },
-                    k = {
+                    D = {
                         close(e) {
-                            D('popover' === e ? N : C);
+                            k('popover' === e ? N : C);
                         },
                         minimize() {
-                            D(A);
+                            k(A);
                         },
                         move(e) {
-                            D(I, { isMouseEvent: !0, on: e });
+                            k(I, { isMouseEvent: !0, on: e });
                         },
                     },
                     B = 15;
@@ -405,7 +405,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function i(e) {
                     let t = '';
-                    for (let n = a.length - 1; n >= 0; n--) for (; e >= a[n]; ) ((t += r[n]), (e -= a[n]));
+                    for (let n = a.length - 1; n >= 0; n--) for (; e >= a[n];) ((t += r[n]), (e -= a[n]));
                     return t;
                 }
                 const o = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -885,9 +885,13 @@
                         if (n.mediumWidth && g) return i(t, n, y);
                         if (n.smallWidth && h) return i(t, n, y);
                         if (n.extraSmallWidth && p) return i(t, n, y);
-                        if (
-                            !(n.extraLargeWidth || n.largeWidth || n.mediumWidth || n.smallWidth || n.extraSmallWidth)
-                        ) {
+                        if (!(
+                            n.extraLargeWidth ||
+                            n.largeWidth ||
+                            n.mediumWidth ||
+                            n.smallWidth ||
+                            n.extraSmallWidth
+                        )) {
                             if (n.extraLargeHeight && v) return t;
                             if (n.largeHeight && f) return t;
                             if (n.mediumHeight && w) return t;
@@ -1089,8 +1093,8 @@
                 const I = 'App_base_edcdd',
                     C = 'App_closeButton_adb11',
                     A = 'Body_base_d9195',
-                    D = 'Body_header_aee87',
-                    k = 'Body_main_e3245';
+                    k = 'Body_header_aee87',
+                    D = 'Body_main_e3245';
                 let B = (function (e) {
                     return (
                         (e[(e.LEFT = 0)] = 'LEFT'),
@@ -1339,7 +1343,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, n = Y(a.keys()); !(e = n()).done; ) i(e.value, t);
+                                                        for (var e, n = Y(a.keys()); !(e = n()).done;) i(e.value, t);
                                                     },
                                                     unsubscribe: i,
                                                 };
@@ -1738,6 +1742,7 @@
                         fe.BattleBoosterGift,
                         fe.OptionalDevice,
                         fe.Attachment,
+                        fe.TmanToken,
                     ],
                     Le = [fe.Gold, fe.Credits, fe.Crystal, fe.FreeXp],
                     Me = [fe.BattlePassPoints, fe.EquipCoin],
@@ -1754,7 +1759,7 @@
                                   : be.STRING,
                     Ce = ['engravings', 'backgrounds'],
                     Ae = ['engraving', 'background'],
-                    De = (e, t = we.Small) => {
+                    ke = (e, t = we.Small) => {
                         const n = e.name,
                             r = e.type,
                             a = e.value,
@@ -1851,7 +1856,7 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.${n}`;
                         }
                     },
-                    ke = (e, t, n) => {
+                    De = (e, t, n) => {
                         const r = t && { contentId: t };
                         return Object.assign(
                             {
@@ -2404,7 +2409,7 @@
                             { className: ct },
                             Je(t.rewards.get(), (e, t, i) => {
                                 const o = e.tooltipId,
-                                    s = ke({ tooltipId: o }, Number(e.tooltipContentId)),
+                                    s = De({ tooltipId: o }, Number(e.tooltipContentId)),
                                     l = Ie(e.name),
                                     c = l === be.CURRENCY || e.name === it;
                                 return a().createElement(
@@ -2413,7 +2418,7 @@
                                     a().createElement(
                                         Ze,
                                         ut({}, e, {
-                                            image: De(e, r),
+                                            image: ke(e, r),
                                             size: r,
                                             special: e.overlayType,
                                             valueType: l,
@@ -2490,7 +2495,7 @@
                         { className: pt },
                         Je(t.rewards.get(), (e, t, i) => {
                             const o = e.tooltipId,
-                                s = ke({ tooltipId: o }, Number(e.tooltipContentId)),
+                                s = De({ tooltipId: o }, Number(e.tooltipContentId)),
                                 l = Ie(e.name),
                                 c = l === be.CURRENCY || e.name === it,
                                 u = e.name === fe.Customizations;
@@ -2502,7 +2507,7 @@
                                     : a().createElement(
                                           Ze,
                                           vt({}, e, {
-                                              image: De(e, r),
+                                              image: ke(e, r),
                                               size: r,
                                               special: e.overlayType,
                                               valueType: l,
@@ -2568,7 +2573,7 @@
                         At.apply(null, arguments)
                     );
                 }
-                const Dt = (0, $.Pi)(({ showDelay: e }) => {
+                const kt = (0, $.Pi)(({ showDelay: e }) => {
                     const t = Z(),
                         n = t.model,
                         r = t.controls,
@@ -2602,7 +2607,7 @@
                             { className: Ct },
                             Je(n.additionalRewards.get(), (t, n, o) => {
                                 const s = t.tooltipId,
-                                    l = ke({ tooltipId: s }, Number(t.tooltipContentId)),
+                                    l = De({ tooltipId: s }, Number(t.tooltipContentId)),
                                     c = Ie(t.name),
                                     u = c === be.CURRENCY || t.name === it,
                                     d = t.name === fe.Customizations;
@@ -2612,7 +2617,7 @@
                                     a().createElement(
                                         Ze,
                                         At({}, t, {
-                                            image: De(t, i),
+                                            image: ke(t, i),
                                             size: i,
                                             special: t.overlayType,
                                             valueType: c,
@@ -2635,9 +2640,9 @@
                         ),
                     );
                 });
-                function kt() {
+                function Dt() {
                     return (
-                        (kt = Object.assign
+                        (Dt = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var t = 1; t < arguments.length; t++) {
@@ -2646,7 +2651,7 @@
                                   }
                                   return e;
                               }),
-                        kt.apply(null, arguments)
+                        Dt.apply(null, arguments)
                     );
                 }
                 const Bt = (e) => {
@@ -2695,7 +2700,7 @@
                                                     )
                                                         ? Ut.tooltip_window.TooltipWindow('resId')
                                                         : void 0;
-                                            return ke({ tooltipId: t }, n, { decoratorId: r, ignoreShowDelay: !0 });
+                                            return De({ tooltipId: t }, n, { decoratorId: r, ignoreShowDelay: !0 });
                                         })(e.tooltipContentId, s),
                                         c = e.name === fe.Vehicles;
                                     return (
@@ -2716,8 +2721,8 @@
                                                       { className: Pt },
                                                       a().createElement(
                                                           Ze,
-                                                          kt({}, e, {
-                                                              image: De(e, i),
+                                                          Dt({}, e, {
+                                                              image: ke(e, i),
                                                               size: i,
                                                               valueType: Ie(e.name),
                                                               tooltipArgs: l,
@@ -2739,7 +2744,7 @@
                                     );
                                 }),
                             ),
-                            r && a().createElement('div', { className: Mt }, a().createElement(Dt, { showDelay: o })),
+                            r && a().createElement('div', { className: Mt }, a().createElement(kt, { showDelay: o })),
                         );
                     }),
                     Gt = (0, $.Pi)(() => {
@@ -2781,8 +2786,8 @@
                         a().createElement(
                             'div',
                             { className: A },
-                            a().createElement('div', { className: D }, a().createElement(le, null)),
-                            a().createElement('div', { className: k }, a().createElement(Ft, null)),
+                            a().createElement('div', { className: k }, a().createElement(le, null)),
+                            a().createElement('div', { className: D }, a().createElement(Ft, null)),
                             a().createElement(re, null),
                         ),
                     Wt = {

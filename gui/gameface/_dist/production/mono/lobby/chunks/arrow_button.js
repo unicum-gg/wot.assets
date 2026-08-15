@@ -1,5 +1,5 @@
 import { a3 as e, j as a } from './vendor.js';
-import { av as r } from './lib.js';
+import { as as r } from './lib.js';
 const _ = {
         base: 'ArrowButton_6b3aeda7',
         base__disabled: 'ArrowButton_base__disabled_66128a31',

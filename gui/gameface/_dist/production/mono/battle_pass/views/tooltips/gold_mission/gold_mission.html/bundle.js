@@ -1,6 +1,9 @@
-import { v as s, j as t } from '../../../../chunks/vendor.js';
-import { i as n, N as e, n as i, bY as a, J as o, U as d, d as c } from '../../../../chunks/lib.js';
-const [r, l] = n()(({ observableModel: s }) => ({ ...s.primitives(['count', 'days']) }), e),
+import { w as s, j as t } from '../../../../chunks/vendor.js';
+import { i as n, O as e, D as i, cd as a, J as o, U as c, d } from '../../../../chunks/lib.js';
+/* empty css                       */ const [r, l] = n()(
+        ({ observableModel: s }) => ({ ...s.primitives(['count', 'days']) }),
+        e,
+    ),
     x = 'Content_471ad094',
     h = 'Content_separator_5b0d3262',
     _ = 'Content_title_57e98533',
@@ -11,7 +14,7 @@ const [r, l] = n()(({ observableModel: s }) => ({ ...s.primitives(['count', 'day
     b = 'Content_description_1ae2425a',
     u = 'Content_highlight_38dca14b',
     C = R.strings.battle_pass.tooltips.goldMission,
-    v = s(() => {
+    f = s(() => {
         const { model: s } = l();
         return t.jsxs('div', {
             className: x,
@@ -35,5 +38,5 @@ const [r, l] = n()(({ observableModel: s }) => ({ ...s.primitives(['count', 'day
             ],
         });
     }),
-    N = () => t.jsx(a, { children: t.jsx(a.Decorator, { children: t.jsx(v, {}) }) });
-c(new o().add(d).addWithProps(r, {}).render(t.jsx(N, {})));
+    v = () => t.jsx(a, { children: t.jsx(a.Decorator, { children: t.jsx(f, {}) }) });
+d(new o().add(c).addWithProps(r, {}).render(t.jsx(v, {})));

@@ -461,7 +461,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function i(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -956,9 +956,13 @@
                         if (t.mediumWidth && m) return o(u, t, p);
                         if (t.smallWidth && D) return o(u, t, p);
                         if (t.extraSmallWidth && C) return o(u, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return u;
                             if (t.largeHeight && f) return u;
                             if (t.mediumHeight && g) return u;
@@ -1300,7 +1304,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = z(r.keys()); !(e = t()).done; ) i(e.value, u);
+                                                        for (var e, t = z(r.keys()); !(e = t()).done;) i(e.value, u);
                                                     },
                                                     unsubscribe: i,
                                                 };
@@ -1648,7 +1652,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = le(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = le(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, i.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),

@@ -921,15 +921,13 @@
                             if (n.mediumWidth && m) return o(t, n, D);
                             if (n.smallWidth && p) return o(t, n, D);
                             if (n.extraSmallWidth && b) return o(t, n, D);
-                            if (
-                                !(
-                                    n.extraLargeWidth ||
-                                    n.largeWidth ||
-                                    n.mediumWidth ||
-                                    n.smallWidth ||
-                                    n.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                n.extraLargeWidth ||
+                                n.largeWidth ||
+                                n.mediumWidth ||
+                                n.smallWidth ||
+                                n.extraSmallWidth
+                            )) {
                                 if (n.extraLargeHeight && h) return t;
                                 if (n.largeHeight && f) return t;
                                 if (n.mediumHeight && A) return t;
@@ -1630,7 +1628,7 @@
                 const fe = (e, t = []) => {
                         const n = document.getElementById('root');
                         n && (n.style.cursor = e ? 'grabbing' : 'default');
-                        for (var a, s = Ee(t); !(a = s()).done; ) {
+                        for (var a, s = Ee(t); !(a = s()).done;) {
                             const t = a.value,
                                 n = document.getElementById(t);
                             n && (n.style.pointerEvents = e ? 'none' : 'auto');
@@ -1639,7 +1637,7 @@
                     Ae = (e, t, n) => {
                         let a = '',
                             s = 8e3;
-                        for (var i, u = Ee(n); !(i = u()).done; ) {
+                        for (var i, u = Ee(n); !(i = u()).done;) {
                             const e = i.value,
                                 n = Math.abs(e.centerX - t);
                             n < s && ((a = e.id), (s = n));
@@ -8132,7 +8130,7 @@
                         let o = ci.exec(e),
                             r = e,
                             l = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const n = o[0],
                                 i = _i.exec(n),
                                 c = di.exec(n),
@@ -8205,7 +8203,7 @@
                                                     let a = 0,
                                                         s = n - 1,
                                                         i = !1;
-                                                    for (; s - a > 1; ) {
+                                                    for (; s - a > 1;) {
                                                         const n = a + Math.floor(0.5 * (s - a + 1));
                                                         ((i = ri(e[n], t)), i ? (s = n) : (a = n));
                                                     }
@@ -9126,7 +9124,7 @@
                     tu = (e, t, n, a) => {
                         let s = t.exec(e),
                             i = 0;
-                        for (; s; ) (i !== s.index && n(e.slice(i, s.index)), a(s), (i = t.lastIndex), (s = t.exec(e)));
+                        for (; s;) (i !== s.index && n(e.slice(i, s.index)), a(s), (i = t.lastIndex), (s = t.exec(e)));
                         i !== e.length && n(e.slice(i));
                     },
                     nu = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
@@ -9173,7 +9171,7 @@
                               if (!a) return [e];
                               const s = [];
                               let i = 0;
-                              for (; a; ) {
+                              for (; a;) {
                                   const u = t.justifyContent === Ui.FlexEnd ? a.index : n.lastIndex;
                                   (s.push(e.slice(i, u)), (i = u), (a = n.exec(e)));
                               }
@@ -9406,7 +9404,7 @@
                                                     c = ((e, t) => {
                                                         let n = 0,
                                                             a = e.length - 1;
-                                                        for (; a - n >= 0; ) {
+                                                        for (; a - n >= 0;) {
                                                             const s = n + Math.ceil(0.5 * (a - n));
                                                             ru(e[s], t) ? (a = s - 1) : (n = s + 1);
                                                         }

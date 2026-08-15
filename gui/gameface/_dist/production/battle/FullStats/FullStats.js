@@ -226,15 +226,13 @@
                             if (t.mediumWidth && A) return (0, n.H)(u, t, f);
                             if (t.smallWidth && F) return (0, n.H)(u, t, f);
                             if (t.extraSmallWidth && h) return (0, n.H)(u, t, f);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && b) return u;
                                 if (t.largeHeight && D) return u;
                                 if (t.mediumHeight && g) return u;
@@ -2102,7 +2100,7 @@
                               if (!a) return [e];
                               const n = [];
                               let r = 0;
-                              for (; a; ) {
+                              for (; a;) {
                                   const i = u.justifyContent === s.v2.FlexEnd ? a.index : t.lastIndex;
                                   (n.push(e.slice(r, i)), (r = i), (a = t.exec(e)));
                               }
@@ -2261,7 +2259,7 @@
                 const a = (e, u, t, a) => {
                     let n = u.exec(e),
                         r = 0;
-                    for (; n; ) (r !== n.index && t(e.slice(r, n.index)), a(n), (r = u.lastIndex), (n = u.exec(e)));
+                    for (; n;) (r !== n.index && t(e.slice(r, n.index)), a(n), (r = u.lastIndex), (n = u.exec(e)));
                     r !== e.length && t(e.slice(r));
                 };
             },
@@ -2337,7 +2335,7 @@
                             m = ((e, u) => {
                                 let t = 0,
                                     a = e.length - 1;
-                                for (; a - t >= 0; ) {
+                                for (; a - t >= 0;) {
                                     const n = t + Math.ceil(0.5 * (a - t));
                                     s(e[n], u) ? (a = n - 1) : (t = n + 1);
                                 }

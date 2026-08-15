@@ -1,173 +1,923 @@
-import { m as e, j as s, e as o, n as t, r as a } from './vendor.js';
-import { S as n, A as r, M as c } from './use_cover_size.js';
-import { d as i, P as l, R as u, S as m, B as d, a as x } from './statistics2.js';
-import { i as p, P as g, F as b, t as j, a0 as B, e as w, T as h } from './lib.js';
-import { a as f, g as C, C as N } from './resources.js';
-import { g as v } from './getConfig.js';
-import { S as y } from './sounds.js';
-import { B as _ } from './big_button.js';
-import './title.js';
-import './utils.js';
-import './title2.js';
-import './getRewardImage.js';
-import './scroll_with_lips.js';
-import './statistics.js';
-const k = {
-        videos: { background: 'noBoxesView.background' },
+import { o as e, n as a, f as s, r as t, p as i, j as r, e as n, s as o, k as c, l } from './vendor.js';
+import { d, b as m, R as u, h as p, M as g } from './box_panel.js';
+import {
+    h,
+    c as w,
+    a as x,
+    b as _,
+    d as b,
+    u as f,
+    e as y,
+    I as v,
+    R as N,
+    f as j,
+    s as S,
+    g as A,
+    C,
+    i as I,
+    r as T,
+    F as z,
+    E as k,
+    j as H,
+    k as P,
+    P as V,
+    B as O,
+    O as B,
+} from './reward.js';
+import { a as E, g as L, r as G } from './getRewardImage.js';
+import { a as W, g as $, B as D, c as F } from './resources.js';
+import { a as q, f as M, h as X, b as U, i as Y } from './utils.js';
+import {
+    i as Z,
+    c as J,
+    z as K,
+    m as Q,
+    u as ee,
+    $ as ae,
+    Z as se,
+    I as te,
+    a0 as ie,
+    W as re,
+    w as ne,
+    ab as oe,
+    X as ce,
+    v as le,
+    F as de,
+    R as me,
+    e as ue,
+} from './lib.js';
+import { S as pe } from './sounds.js';
+import { T as ge } from './tank_name.js';
+import { L as he } from './loupe_button.js';
+import './shield.js';
+import './vehicle_info.js';
+const we = {
+        rewardAppear: pe.rewardAppear,
+        compensationAppear: pe.compensationAppear,
+        rareAnimation: pe.rareAnimation,
+        epicAnimation: pe.epicAnimation,
+        open: pe.open,
+        openRare: pe.openRare,
+    },
+    xe = {
         images: {
-            background: 'noBoxesView.background',
-            noBoxes: 'noBoxesView.noBoxesArt',
-            guaranteedGlowIcon: 'awardViews.guaranteedGlow',
-            glowIcon: 'awardViews.glow',
-            slotGlow: 'hasBoxesView.guaranteed.slotGlow',
-            guaranteedIco: 'hasBoxesView.guaranteed.guaranteedIco',
-            statsIcon: 'statistics.stats',
+            previewIcon: 'awardViews.previewIcon',
+            compensationIcon: 'common.icons.compensation.s36x36',
+            guaranteedIconS: 'common.shield.shieldS',
+            guaranteedIconM: 'common.shield.shieldM',
+            infoIcon: 'common.info',
+            loader: 'common.waiting',
+        },
+        videos: {
+            compensationGlow: 'awardViews.compensationGlow',
+            rareGlow: 'awardViews.rareGlow',
+            commonGlow: 'awardViews.commonGlow',
+            compensationParticles: 'awardViews.compensationParticles',
+            rare: 'awardViews.raritySimpleAnimations.rare',
+            epic: 'awardViews.raritySimpleAnimations.epic',
         },
         texts: {
-            infoButton: 'common.infoButton',
-            closeButton: 'common.closeButton',
-            statsButton: 'common.statsButton',
-            description: 'noBoxesView.description',
-            buyBoxesButtonText: 'common.getButton.lowerCase',
-            eventName: 'eventName.upperCase',
+            multiplier: 'common.rewards.multiplier',
+            headerTitle: 'singleRewardView.header.title',
+            guaranteedTitle: 'guaranteedTitle.text',
+            guaranteedTitleName: 'guaranteedTitle.textName',
+            quantityAvailableTitle: 'quantityTitle.boxesAvailable',
+            quantityNoBoxesTitle: 'quantityTitle.noBoxes',
+            extraRewardText: 'singleRewardView.extraReward.text',
+            uniqueTankmanText: 'singleRewardView.uniqueTankman',
+            loader: 'common.loader',
+            rareOverlayButtonContinue: 'rareRewardOverlay.rewardDescription.button.text',
+            rareOverlayTitle: 'rareRewardOverlay.rewardDescription.title.text',
+            rareOverlayStyleTitle: 'rareRewardOverlay.rewardDescription.style.text',
+            rareOverlayStyleDescription: 'rareRewardOverlay.rewardDescription.style.description.text',
         },
-        sounds: {
-            purchaseClick: y.purchaseClick,
-            purchaseHover: y.purchaseHover,
-            entryHover: y.entryHover,
-            switch: y.switch,
-        },
+        sounds: we,
     },
-    I = { dynamicTexts: { boxName: 'common.boxCategory.upperCase', tabText: 'hasBoxesView.guaranteedTitle.tabText' } },
-    [S, A] = p()(
+    _e = {
+        dynamicVideos: { boxesOpening: 'awardViews.openingBoxVideo' },
+        dynamicTexts: { rewardsPremiumDay: 'common.rewards.premiumDay' },
+        dynamicImages: { boxesOpening: 'awardViews.openingBox' },
+    },
+    [be, fe] = Z()(
         ({ observableModel: s }) => {
-            const o = {
-                    ...s.primitives(['eventName', 'useStats', 'isShopVisible']),
-                    boxesInfo: s.arrayClone('boxesInfo'),
+            const t = {
+                    root: s.object(),
+                    ...s.primitives(['eventName', 'isAnimationActive', 'isAwaitingResponse', 'isReopen']),
+                    bonuses: s.arrayClone('bonuses.items'),
+                    extraBonuses: s.arrayClone('extraBonuses.items'),
+                    activeRareReward: e.box(null),
                 },
-                t = e(() => f(k, o.eventName.get())),
-                a = e(() => C(I, o.eventName.get())),
-                n = e(() => v(o.eventName.get(), N.HasBoxesView)),
-                r = g.isHigh(),
-                c = e(() => {
-                    const { images: e, videos: s } = t(),
-                        o = r ? s.background : '';
-                    return i(e.background, o);
+                i = a(() => W(xe, t.root.get().eventName), { equals: J }),
+                r = a(() => $(_e, t.root.get().eventName), { equals: J }),
+                n = a(() => K(t.bonuses.get(), (e) => q(e)), { equals: J }),
+                o = a(() => {
+                    const { boxCategory: e } = t.root.get(),
+                        a = `${e}_${D.Common}`,
+                        s = `${e}_${D.Rare}`,
+                        n = r().dynamicVideos.boxesOpening.dynOpt(a, D.Common),
+                        o = r().dynamicVideos.boxesOpening.dynOpt(s, D.Rare),
+                        c = r().dynamicImages.boxesOpening.dynOpt(a, D.Common),
+                        l = r().dynamicImages.boxesOpening.dynOpt(s, D.Rare),
+                        p = i().sounds,
+                        g = F(E(R.sounds, `${we.open}_${t.root.get().eventName}_${e}`), p.open, we.open),
+                        h = F(E(R.sounds, `${we.openRare}_${t.root.get().eventName}_${e}`), p.openRare, we.openRare),
+                        w = d(c, n),
+                        x = d(l, o);
+                    return {
+                        [m.common]:
+                            w.type === u.video ? { video: w.src, image: c, sound: g } : { image: w.src, sound: g },
+                        [m.rare]:
+                            x.type === u.video ? { video: x.src, image: l, sound: h } : { image: x.src, sound: h },
+                    };
                 });
-            return { ...o, computes: { resources: t, dynamicResources: a, backgroundData: c, settings: n } };
+            return { ...t, computes: { resources: i, dynamicResources: r, hasRareReward: n, multimediaResource: o } };
         },
-        ({ externalModel: e }) => ({
-            openInfoPage: e.createCallbackNoArgs('onInfoOpen'),
+        ({ externalModel: e, model: a }) => ({
+            goPreview: e.createCallback((e) => e, 'onPreview'),
+            openNext: e.createCallbackNoArgs('onOpen'),
+            goBack: e.createCallbackNoArgs('onGoBack'),
             close: e.createCallbackNoArgs('onClose'),
             buyBoxes: e.createCallbackNoArgs('onBuyBoxes'),
+            toggleAnimationState: e.createCallback((e) => ({ isAnimationActive: !e }), 'onAnimationStateChanged'),
+            setIsVideoPlaying: e.createCallback((e) => ({ isPlaying: e }), 'onVideoPlaying'),
+            setActiveRareReward: s((e) => a.activeRareReward.set(e)),
+            clearActiveRareReward: s(() => a.activeRareReward.set(null)),
         }),
     ),
-    H = 'Asset_ebe8cb3e';
-const V = 'Content_5b2426e4';
-const T = 'Shadow_6b416642';
-const G = 'Body_4f642c84';
-function P({ children: e, className: t }) {
-    return s.jsx('div', { className: o(G, t), children: e });
-}
-((P.Shadow = function ({ classNames: e = '' }) {
-    return s.jsx('div', { className: o(T, e) });
-}),
-    (P.Asset = function ({ image: e, classNames: t = '' }) {
-        return s.jsx('div', { className: o(H, t), style: { backgroundImage: `url(${e})` } });
+    ye = t.createContext(null),
+    ve = 'REWARD_IN',
+    Ne = 'REWARD_OUT',
+    je = 'OVERLAY_REWARD',
+    Re = 'RARE_REWARD',
+    Se = 'TWITCH',
+    Ae = 'COMPENSATION',
+    Ce = 'FINISH',
+    Ie = {
+        [je]: { duration: 0, pauseNextSteps: !0 },
+        [Re]: { duration: 0, pauseNextSteps: !0 },
+        [ve]: { duration: 200 },
+        [Ne]: { duration: 400 },
+        [Se]: { duration: 2e3 },
+        [Ae]: { duration: 1e3, delay: 50 },
+        [Ce]: { name: Ce, duration: 0, delay: 500 },
+    },
+    Te = (e, a) => ({ ...Ie[e], name: `animation_${a}_${e}` }),
+    ze = (e, a) => {
+        const s = [];
+        return (
+            Q(e, (e, t) => {
+                const i = q(e),
+                    r = h(a, e.specialAwardName);
+                if (i) {
+                    if (r) return (s.push(Te(je, t)), void s.push(Te(Ne, t)));
+                    s.push(Te(Re, t));
+                }
+                (s.push(Te(ve, t)), s.push(Te(Ne, t)), e.isCompensation && (s.push(Te(Se, t)), s.push(Te(Ae, t))));
+            }),
+            s.push(Ie.FINISH),
+            s
+        );
+    },
+    ke = i(function ({ children: e }) {
+        const { model: a } = fe(),
+            s = a.eventName.get(),
+            t = w({ steps: ze(a.bonuses.get(), s), autoStart: !1 })();
+        return r.jsx(ye.Provider, { value: t, children: e });
     }),
-    (P.Content = function ({ children: e, classNames: t = '' }) {
-        return s.jsx('div', { className: o(V, t), children: e });
+    He = 'ExtraReward_d82b07a8';
+const Pe = 'ExtraRewards_a358aca3',
+    Ve = 'ExtraRewards_extraRewardsWrapper_671c8474',
+    Oe = 'ExtraRewards_text_5bd89c73';
+function Be({ children: e, text: a, className: s }) {
+    return r.jsxs('div', {
+        className: n(Pe, s),
+        children: [r.jsx('div', { className: Oe, children: a }), r.jsx('div', { className: Ve, children: e })],
+    });
+}
+((Be.Reward = function ({ image: e, className: a }) {
+    return r.jsx('div', { className: n(He, a), style: { backgroundImage: `url(${e})` } });
+}),
+    (Be.Tooltip = function ({ children: e, contentId: a, tooltipId: s, className: t }) {
+        const i = ee({ contentId: a, args: { tooltipId: s } });
+        return r.jsx('div', { ...i, className: t, children: e });
     }));
-const O = 'Content_da09528a',
-    R = 'Content_asset_c686aa08',
-    M = 'Content_subTitle_711c70aa',
-    D = 'Content_shadow_d31ad2ce';
-const E = t(function () {
-        const { model: e, controls: o } = A(),
-            t = e.isShopVisible.get(),
-            { images: a, texts: c, sounds: i } = e.computes.resources();
-        return s.jsxs(P, {
-            className: O,
+const Ee = 'AdditionRewards_6fbe30c4',
+    Le = 'AdditionRewards_extraRewards_d23daaa9',
+    Ge = { opacity: 0, filter: 'brightness(2)' },
+    We = { opacity: 1, filter: 'brightness(1)' },
+    $e = {
+        to: [{ opacity: 1, filter: 'brightness(2)' }, We],
+        config: { duration: 600, easing: se.easeInOutCubic },
+        onRest: () => {
+            _.send({ type: b.toPage });
+        },
+    },
+    De = i(function ({ className: e }) {
+        const { model: a } = fe(),
+            {
+                breakpoint: { weight: s },
+            } = ae(),
+            i = o(_, (e) => e.value),
+            { texts: d } = a.computes.resources(),
+            m = a.extraBonuses.get(),
+            [u, p] = c(() => ({ from: Ge }));
+        return (
+            t.useEffect(() => {
+                switch (i) {
+                    case x.skip:
+                        p.set(We);
+                        break;
+                    case x.preparation:
+                        p.set(Ge);
+                        break;
+                    case x.extra:
+                        p.start($e);
+                }
+            }, [i, p]),
+            r.jsx(l.div, {
+                style: u,
+                className: n(Ee, e),
+                children: r.jsx(Be, {
+                    text: d.extraRewardText,
+                    className: Le,
+                    children: Q(m, (e, a) =>
+                        r.jsx(
+                            Be.Tooltip,
+                            {
+                                contentId: Number(e.tooltipContentId),
+                                tooltipId: e.tooltipId,
+                                children: r.jsx(Be.Reward, { image: L(e, s >= ie.medium.weight ? te.Big : te.Small) }),
+                            },
+                            a + e.name,
+                        ),
+                    ),
+                }),
+            })
+        );
+    }),
+    Fe = 'Rewards_deed6d51';
+function qe({ children: e, className: a }) {
+    return r.jsx('div', { className: n(Fe, a), children: e });
+}
+const Me = {
+    base: 'Title_60f02b6b',
+    label: 'Title_label_89fdbc07',
+    base__lootBox: 'Title_base__lootBox_2e63cf3',
+    description: 'Title_description_5c6cc82d',
+    base__credits: 'Title_base__credits_2e63cf3',
+    base__gold: 'Title_base__gold_2e63cf3',
+    base__premium_plus: 'Title_base__premium_plus_2e63cf3',
+    base__crystal: 'Title_base__crystal_2e63cf3',
+    fadeIn: 'Title_fadeIn_2e63cf3',
+};
+const Xe = 'Compensation_22c7fec0';
+function Ue({ children: e, size: a, className: s }) {
+    return r.jsx('div', { className: n(Xe, s), style: { width: a.width, height: a.height }, children: e });
+}
+((Ue.Glow = function ({ src: e, size: a, className: s }) {
+    return r.jsx(re, { className: s, style: { width: a.width, height: a.height }, src: e, autoplay: !0, loop: !0 });
+}),
+    (Ue.Title = function ({ reward: e, style: a, className: s = '' }) {
+        const { name: t, label: i, value: o } = e;
+        return r.jsxs('div', {
+            className: n(Me.base, Me[`base__${t}`], s),
             children: [
-                s.jsx(P.Shadow, { classNames: D }),
-                s.jsxs(P.Content, {
+                r.jsx('div', { className: Me.label, style: { fontSize: a?.labelFontSize }, children: i }),
+                r.jsx('div', {
+                    className: Me.description,
+                    style: { fontSize: a?.descriptionFontSize },
+                    children: r.jsx(ne, { text: M(o) }),
+                }),
+            ],
+        });
+    }));
+const Ye = 'PreviewButton_fdc3bedf';
+const Ze = 'RareGlow_c6e2840e',
+    Je = 'RareGlow_video_c4cd6073';
+const Ke = 'Description_e25f8a92';
+const Qe = {
+    base: 'Label_7f88fbb1',
+    base__credits: 'Label_base__credits_c318c9f1',
+    base__gold: 'Label_base__gold_e3f8b3ce',
+    base__premium_plus: 'Label_base__premium_plus_5d5126e1',
+    base__freeXP: 'Label_base__freeXP_e3f8b3ce',
+    base__bptaler: 'Label_base__bptaler_e3f8b3ce',
+    base__crystal: 'Label_base__crystal_34a7d691',
+    fadeIn: 'Label_fadeIn_e3f8b3ce',
+};
+const ea = {
+    base: 'Plural_97a9f954',
+    base__premium_plus: 'Plural_base__premium_plus_3f7ab6cc',
+    fadeIn: 'Plural_fadeIn_e8c3c4d2',
+};
+const aa = 'Title_60f02b6b';
+function sa({ children: e, className: a }) {
+    return r.jsx('div', { className: n(aa, a), children: e });
+}
+((sa.Description = function ({ children: e, style: a, className: s }) {
+    return r.jsx('div', { className: n(Ke, s), style: a, children: e });
+}),
+    (sa.Label = function ({ children: e, rewardType: a, style: s, className: t }) {
+        return r.jsx('div', { className: n(Qe.base, Qe[`base__${a}`], t), style: s, children: e });
+    }),
+    (sa.Plural = function ({ text: e, rewardType: a, style: s, className: t }) {
+        return r.jsx('span', { className: n(ea.base, ea[`base__${a}`], t), style: s, children: e });
+    }));
+const ta = 'RewardCard_ecfc0889';
+function ia({ children: e, className: a, ...s }) {
+    return r.jsx('div', { className: n(ta, a), ...s, children: e });
+}
+((ia.PreviewButton = function ({ image: e, onClick: a, className: s }) {
+    return r.jsx('div', { className: n(Ye, s), children: r.jsx(he, { icon: { img: e }, onClick: a }) });
+}),
+    (ia.RareGlow = function ({ src: e, className: a }) {
+        return r.jsx('div', {
+            className: n(Ze, a),
+            children: r.jsx(re, { className: Je, src: e, autoplay: !0, loop: !0 }),
+        });
+    }),
+    (ia.Title = sa),
+    (ia.Compensation = Ue));
+const ra = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', immediate: !0 },
+    na = { opacity: 1, transform: 'scale(1.4)', filter: 'brightness(3)', visibility: 'hidden' },
+    oa = { opacity: 1, transform: 'scale(1)', filter: 'brightness(1)', visibility: 'visible' },
+    ca = { opacity: 0, display: 'flex' },
+    la = { opacity: 0, display: 'none' },
+    da = { display: 'none' },
+    ma = { opacity: 0 },
+    ua = { display: 'flex' },
+    pa = () => ({
+        to: { opacity: 1, transform: 'scale(1.02)', filter: 'brightness(1.5)' },
+        config: { duration: 200, easing: se.easeOutCubic },
+    }),
+    ga = (e = 200) => ({ to: { opacity: 1 }, config: { duration: e, easing: se.easeOutCubic } }),
+    ha = (e = 400) => ({
+        to: { opacity: 1, transform: 'scale(1)', filter: 'brightness(1)' },
+        config: { duration: e, easing: se.easeInOutCubic },
+    }),
+    wa = (e = 500) => ({
+        to: [{ opacity: 1, transform: 'scale(1.4)', filter: 'brightness(3)', visibility: 'visible' }, oa],
+        config: { duration: e, easing: se.easeOutCirc },
+    }),
+    xa = {
+        extraLarge: {
+            rewardWidth: '600rem',
+            rewardHeight: '450rem',
+            compensationIconWidth: '36rem',
+            compensationIconHeight: '36rem',
+            countHeight: '36rem',
+            nameHeight: '22rem',
+            descriptionHeight: '20rem',
+            compensationGlowSize: '780rem',
+            imageSize: te.S600x450,
+            glowSize: '780rem',
+            rareVideoSize: '512rem',
+        },
+        large: {
+            rewardWidth: '400rem',
+            rewardHeight: '300rem',
+            compensationIconWidth: '36rem',
+            compensationIconHeight: '36rem',
+            countHeight: '28rem',
+            nameHeight: '18rem',
+            descriptionHeight: '16rem',
+            compensationGlowSize: '520rem',
+            imageSize: te.S600x450,
+            glowSize: '520rem',
+            rareVideoSize: '512rem',
+        },
+        medium: {
+            rewardWidth: '296rem',
+            rewardHeight: '222rem',
+            compensationIconWidth: '36rem',
+            compensationIconHeight: '36rem',
+            countHeight: '24rem',
+            nameHeight: '18rem',
+            descriptionHeight: '16rem',
+            compensationGlowSize: '386rem',
+            imageSize: te.S600x450,
+            glowSize: '386rem',
+            rareVideoSize: '440rem',
+        },
+        small: {
+            rewardWidth: '232rem',
+            rewardHeight: '174rem',
+            compensationIconWidth: '24rem',
+            compensationIconHeight: '24rem',
+            countHeight: '22rem',
+            nameHeight: '15rem',
+            descriptionHeight: '14rem',
+            compensationGlowSize: '302rem',
+            imageSize: te.S600x450,
+            glowSize: '302rem',
+            rareVideoSize: '384rem',
+        },
+        extraSmall: {
+            rewardWidth: '180rem',
+            rewardHeight: '135rem',
+            compensationIconWidth: '24rem',
+            compensationIconHeight: '24rem',
+            countHeight: '18rem',
+            nameHeight: '15rem',
+            descriptionHeight: '14rem',
+            compensationGlowSize: '238rem',
+            imageSize: te.S600x450,
+            glowSize: '238rem',
+            rareVideoSize: '256rem',
+        },
+    },
+    _a = (e, a) => {
+        switch (!0) {
+            case e === ie.extraLarge.weight && a < 4:
+                return xa.extraLarge;
+            case (e === ie.extraLarge.weight && a > 3) ||
+                (e === ie.medium.weight && a < 4) ||
+                (e === ie.large.weight && a < 5):
+                return xa.large;
+            case (e === ie.large.weight && a > 4) ||
+                (e === ie.medium.weight && a < 6 && a > 3) ||
+                ((e === ie.small.weight || e === ie.extraSmall.weight) && a < 4):
+                return xa.medium;
+            case (e === ie.medium.weight && 6 === a) ||
+                (e === ie.small.weight && a < 6 && a > 3) ||
+                (e === ie.extraSmall.weight && 4 === a):
+                return xa.small;
+            default:
+                return xa.extraSmall;
+        }
+    },
+    ba = (e, a) => {
+        switch (!0) {
+            case (e >= 3 && 1 === a) || (e >= 4 && [1, e - 2].includes(a)):
+                return -40;
+            case (5 === e && 2 === a) || (6 === e && [2, e - 3].includes(a)):
+                return -80;
+            default:
+                return 0;
+        }
+    },
+    fa = 'Compensation_db29c4dc',
+    ya = 'Compensation_glow_db29c4dc',
+    va = 'Compensation_particles_6a26f8c1',
+    Na = 'Compensation_compensationIcon_c9f69818',
+    ja = i(function ({ reward: e, index: a, className: s }) {
+        const { model: i } = fe(),
+            o = i.bonuses.get(),
+            { images: d, videos: m, sounds: u } = i.computes.resources(),
+            {
+                breakpoint: { weight: p },
+            } = ae(),
+            g = t.useRef(null),
+            h = f(g),
+            [w, x] = c(() => ca),
+            [_, b] = c(() => na),
+            [N, j] = c(() => da),
+            R = _a(p, o.length),
+            S = y(ye);
+        return (
+            t.useEffect(() => {
+                const e = (e) => {
+                    switch (e.name) {
+                        case Te(Se, a).name:
+                            (x.start({
+                                to: [
+                                    { opacity: 1, display: 'flex' },
+                                    { ...la, config: { duration: 0 } },
+                                ],
+                                config: { duration: 2e3 },
+                            }),
+                                ce.sound(u.compensationAppear),
+                                g.current?.play());
+                            break;
+                        case Te(Ae, a).name:
+                            (j.start(ua), b.start(wa()));
+                    }
+                };
+                return (
+                    S.events.on('change', e),
+                    () => {
+                        S.events.off('change', e);
+                    }
+                );
+            }, [u, S.events, a]),
+            t.useEffect(() => {
+                const e = () => {
+                    (j.start({ from: { display: 'flex' }, config: { duration: 0 } }), b.start(wa(0)));
+                };
+                return (
+                    S.events.on('skipAll', e),
+                    () => {
+                        S.events.off('skipAll', e);
+                    }
+                );
+            }, [S.events]),
+            r.jsxs(ia.Compensation, {
+                className: n(fa, s),
+                size: { width: R.rewardWidth, height: R.rewardHeight },
+                children: [
+                    r.jsx(l.div, {
+                        style: { ...w },
+                        className: ya,
+                        children: r.jsx(ia.Compensation.Glow, {
+                            src: m.compensationGlow,
+                            size: { width: R.compensationGlowSize, height: R.compensationGlowSize },
+                        }),
+                    }),
+                    r.jsx(oe, {
+                        ref: g,
+                        className: va,
+                        style: { width: R.compensationGlowSize, height: R.compensationGlowSize },
+                        src: m.compensationParticles,
+                        onEnded: function () {
+                            (h(), x.stop(), x.set(la));
+                        },
+                    }),
+                    r.jsx(l.div, {
+                        style: { ..._, visibility: _.visibility },
+                        children: r.jsx(v, {
+                            icon: L(e, te.S600x450, e.isCompensation),
+                            sizes: { height: R.rewardHeight, width: R.rewardWidth },
+                        }),
+                    }),
+                    r.jsxs(l.div, {
+                        style: { ...N },
+                        children: [
+                            r.jsx(ia.Compensation.Title, {
+                                reward: e.compensation,
+                                style: { descriptionFontSize: R.descriptionHeight, labelFontSize: R.nameHeight },
+                            }),
+                            r.jsx(v, {
+                                className: Na,
+                                icon: d.compensationIcon,
+                                sizes: { height: R.compensationIconHeight, width: R.compensationIconWidth },
+                            }),
+                        ],
+                    }),
+                ],
+            })
+        );
+    }),
+    Ra = 'Title_2e63cf3',
+    Sa = 'Title_text_f2795d1c',
+    Aa = i(function ({ reward: e, style: a }) {
+        const { model: s } = fe(),
+            { texts: t } = s.computes.resources(),
+            { dynamicTexts: i } = s.computes.dynamicResources(),
+            { name: n, value: o, label: c, description: l } = e,
+            d = le.resolve('strings'),
+            m = (() => {
+                switch (!0) {
+                    case Boolean(o):
+                        return r.jsx(de, {
+                            className: Sa,
+                            upgradeLegacy: !0,
+                            split: !0,
+                            text: n === G.tmanToken ? t.uniqueTankmanText : c,
+                        });
+                    case n === G.attachment:
+                        return r.jsx(de, {
+                            className: Sa,
+                            upgradeLegacy: !0,
+                            split: !0,
+                            text: d.readOrEmpty('item_types.customization.attachment.rarity'),
+                            params: {
+                                rarity: d.readOrEmpty(`vehicle_customization.customization.rarity.${e.overlayType}`),
+                            },
+                        });
+                    default:
+                        return r.jsx(de, { className: Sa, upgradeLegacy: !0, split: !0, text: l });
+                }
+            })(),
+            u = !0 === Boolean(o) ? (n === G.tmanToken ? c : M(o)) : c,
+            p = n === G.premiumPlus;
+        return r.jsxs(ia.Title, {
+            className: Ra,
+            children: [
+                m && r.jsx(ia.Title.Description, { style: { fontSize: a?.descriptionFontSize }, children: m }),
+                r.jsxs(ia.Title.Label, {
+                    rewardType: e.name,
+                    style: { fontSize: a?.labelFontSize },
                     children: [
-                        a.noBoxes && s.jsx(P.Asset, { image: a.noBoxes, classNames: R }),
-                        s.jsx(n, { text: s.jsx(b, { text: c.description }), alignType: r.Center, className: M }),
-                        t &&
-                            s.jsx('div', {
-                                children: s.jsx(_, {
-                                    text: c.buyBoxesButtonText,
-                                    onClick: () => {
-                                        (j.sound(i.purchaseClick), o.buyBoxes());
-                                    },
-                                    soundHover: i.purchaseHover,
-                                }),
+                        r.jsx(de, { className: Sa, text: u, upgradeLegacy: !0, split: !0 }),
+                        p &&
+                            r.jsx(ia.Title.Plural, {
+                                rewardType: e.name,
+                                text: i.rewardsPremiumDay.plural('premiumDay', Number(o.split(' ').at(-1))),
+                                style: { fontSize: a?.labelFontSize },
                             }),
                     ],
                 }),
             ],
         });
     }),
-    z = 'App_43bfa38',
-    F = 'App_layer_bb0bfe54',
-    X = 'App_statsButton_403e9f7b',
-    $ = 'App_popover_e06fed7f',
-    q = { context: 'model.noBoxes.statistics' };
-const J = t(function () {
-        const [e, o] = a.useState(!1),
-            { model: t, controls: n } = A(),
-            { texts: r, images: c, sounds: i } = t.computes.resources(),
-            p = t.boxesInfo.get(),
-            g = t.useStats.get(),
-            { dynamicTexts: b } = t.computes.dynamicResources(),
-            j = t.eventName.get(),
-            { tabsGuaranteedCount: f } = t.computes.settings(),
-            C = t.computes.backgroundData(),
-            { boxCategory: N } = B(p, 0),
-            v = p.length > 1,
-            y = v ? r.eventName : b.boxName.dynOpt(N);
-        return (
-            w(n.close),
-            s.jsxs(l, {
-                className: z,
-                children: [
-                    s.jsx(u, { className: F, layer: C, loop: !0, autoplay: !0 }),
-                    s.jsxs(l.PanelControls, {
-                        children: [
-                            g &&
-                                s.jsx(m, {
-                                    onClick: () => o(!0),
-                                    className: X,
-                                    label: r.statsButton,
-                                    icon: c.statsIcon,
-                                }),
-                            s.jsx(h, { caption: r.infoButton, type: 'info', side: 'left', onClick: n.openInfoPage }),
-                        ],
-                    }),
-                    s.jsx(l.Close, { text: r.closeButton, onClick: n.close }),
-                    s.jsx(l.Heading, { text: y }),
-                    s.jsx(l.Body, { children: s.jsx(E, {}) }),
-                    v &&
-                        s.jsx(l.Switcher, {
-                            children: s.jsx(d, {
-                                tabs: p,
-                                texts: b.tabText,
-                                sounds: { switch: i.switch, entryHover: i.entryHover },
-                                icons: {
-                                    slotGlow: c.slotGlow,
-                                    numberGlow: c.guaranteedGlowIcon,
-                                    glowIcon: c.glowIcon,
-                                    guaranteedIco: c.guaranteedIco,
-                                },
-                                tabsGuaranteedCount: f,
-                                eventName: j,
-                            }),
+    Ca = 'Card_previewWrapper_58bcc92f',
+    Ia = 'Card_f4c22d1c',
+    Ta = 'Card_previewButton_6ec3b3ed',
+    za = 'Card_previewButton__ready_affac095',
+    ka = 'Card_rareVideo_f4c22d1c',
+    Ha = 'Card_glow_951fb0ef',
+    Pa = 'Card_compensation_60211107',
+    Va = i(function ({ reward: e, index: a }) {
+        const { model: s, controls: i } = fe(),
+            d = s.bonuses.get().length,
+            m = s.eventName.get(),
+            { images: u, videos: p, texts: g, sounds: h } = s.computes.resources(),
+            [w, b] = t.useState(!1),
+            {
+                breakpoint: { weight: f },
+            } = ae(),
+            v = _a(f, d),
+            R = o(_, (e) => e.value),
+            [S, A] = c(() => ra),
+            [C, I] = c(() => ra),
+            [T, z] = c(() => ma),
+            k = e.name === me.Vehicles,
+            H = f === ie.extraSmall.weight && d > 4,
+            P = y(ye);
+        (t.useEffect(() => {
+            const s = (s) => {
+                switch (s.name) {
+                    case Te(je, a).name:
+                        i.setActiveRareReward(e);
+                        break;
+                    case Te(Re, a).name:
+                        b(!0);
+                        break;
+                    case Te(ve, a).name:
+                        (A.start(pa()), I.start(pa()), z.start(ga()), ce.sound(h.rewardAppear));
+                        break;
+                    case Te(Ne, a).name:
+                        (A.start(ha()), z.start(ga()), I.start(ha()));
+                        break;
+                    case Te(Se, a).name:
+                        A.start({
+                            to: { opacity: 1, transform: 'scale(1.15)', filter: 'brightness(3)' },
+                            config: { duration: 2500, easing: se.linear },
+                        });
+                        break;
+                    case Te(Ae, a).name:
+                        (A.start({
+                            to: { opacity: 0, transform: 'scale(1)', filter: 'brightness(1)' },
+                            config: { duration: 0 },
                         }),
-                    e && s.jsx(x, { options: q, onHidden: () => o(!1), isStatsEnabled: g, className: $ }),
-                ],
-            })
+                            I.start({ from: { opacity: 0 }, config: { duration: 0 } }));
+                }
+            };
+            return (
+                P.events.on('change', s),
+                () => {
+                    P.events.off('change', s);
+                }
+            );
+        }, [h, P.events, i, a]),
+            t.useEffect(() => {
+                const e = () => {
+                    (A.start(ha(0)), I.start(ha(0)), z.start(ga(0)));
+                };
+                return (
+                    P.events.on('skipAll', e),
+                    () => {
+                        P.events.off('skipAll', e);
+                    }
+                );
+            }, [P.events]));
+        const { tooltipId: V, tooltipContentId: O, rarity: B } = e,
+            E = ee({
+                contentId: Number(O),
+                args: { tooltipId: V, boxCategory: e.icon, eventName: m },
+                disabled: R !== x.initial,
+            }),
+            L = X(B) ? p.rareGlow : U(B) ? p.commonGlow : '';
+        return r.jsxs(ia, {
+            ...E,
+            style: { marginTop: H ? 0 : `${ba(d, a)}rem` },
+            className: Ia,
+            children: [
+                e.isCompensation && r.jsx(ja, { index: a, reward: e, className: Pa }),
+                Boolean(L) &&
+                    r.jsx(l.div, {
+                        style: { opacity: T.opacity, width: v.glowSize, height: v.glowSize },
+                        className: Ha,
+                        children: r.jsx(ia.RareGlow, { src: L }),
+                    }),
+                r.jsx(l.div, {
+                    style: { ...S },
+                    children: r.jsx(N, { reward: e, sizes: v, countText: g.multiplier, currentAnimationState: R }),
+                }),
+                r.jsx(l.div, {
+                    style: { ...C },
+                    children: k
+                        ? r.jsx(ge, { reward: e, style: v })
+                        : r.jsx(Aa, {
+                              reward: e,
+                              style: { descriptionFontSize: v.descriptionHeight, labelFontSize: v.nameHeight },
+                          }),
+                }),
+                Y(e) &&
+                    !e.isCompensation &&
+                    r.jsx(l.div, {
+                        className: Ca,
+                        style: { ...C },
+                        children: r.jsx(ia.PreviewButton, {
+                            image: u.previewIcon,
+                            onClick: () =>
+                                i.goPreview({ bonusType: e.name, bonusId: e.id ? e.id : '', styleID: e.styleID }),
+                            className: n(Ta, R === x.initial && za),
+                        }),
+                    }),
+                q(e) &&
+                    r.jsx(j, {
+                        className: ka,
+                        style: { width: v.rareVideoSize, height: v.rareVideoSize },
+                        sound: e.rarity === D.Rare ? h.rareAnimation : h.epicAnimation,
+                        src: p[e.rarity],
+                        show: w,
+                        onEnded: function () {
+                            (P.resume(), b(!1));
+                        },
+                    }),
+            ],
+        });
+    }),
+    Oa = 'RewardList_7f0b73c7',
+    Ba = 'RewardList_base__small_a45a17be',
+    Ea = (e) => e + 1,
+    La = i(function ({ className: e, resume: a }) {
+        const { model: s, controls: i } = fe(),
+            { sounds: c } = s.computes.resources(),
+            {
+                breakpoint: { weight: l },
+            } = ae(),
+            d = s.bonuses.get(),
+            m = d.length,
+            u = s.extraBonuses.get().length,
+            p = l === ie.extraSmall.weight && m > 4,
+            [g, h] = t.useState(0),
+            w = o(_, (e) => e.value),
+            f = y(ye);
+        return (
+            t.useEffect(() => {
+                const e = (e) => {
+                    if (e.name === Ce) _.send({ type: u > 0 ? b.toExtra : b.toPage });
+                };
+                return (
+                    f.events.on('change', e),
+                    () => {
+                        f.events.off('change', e);
+                    }
+                );
+            }, [f.events, i, u]),
+            t.useEffect(() => {
+                switch (S(w)) {
+                    case x.skip:
+                        f.skipAll();
+                        break;
+                    case x.preparation:
+                        (f.reset(), h(Ea));
+                        break;
+                    case x.rewards:
+                        f.start();
+                }
+            }, [w]),
+            t.useEffect(() => {
+                a.active && (ce.sound(c.rewardAppear), a.reset());
+            }, [c, a]),
+            r.jsx(
+                qe,
+                {
+                    className: n(Oa, p && Ba, e),
+                    children: Q(d, (e, a) => r.jsx(Va, { reward: e, index: a }, `reward_${e.name}_${a}`)),
+                },
+                g,
+            )
         );
     }),
-    K = () => s.jsx(S, { options: c.NO_BOXES, children: s.jsx(J, {}) });
-export { K as default };
+    Ga = 'Layout_1c0c8eb5',
+    Wa = 'Layout_base__ready_73e4204f',
+    $a = 'Layout_overlay_2156876',
+    Da = 'Layout_extraRewards_55183b28',
+    Fa = 'Layout_rewardsPosition_1066384c',
+    qa = i(function () {
+        const { model: e, controls: a } = fe(),
+            {
+                boxCategory: s,
+                boxesCount: i,
+                boxesCountToGuaranteed: c,
+                isWindowAccessible: l,
+                isShopVisible: d,
+            } = e.root.get(),
+            m = e.isAnimationActive.get(),
+            { texts: u } = e.computes.resources(),
+            p = e.extraBonuses.get().length,
+            g = e.activeRareReward.get(),
+            h = e.eventName.get(),
+            [w, f] = t.useState(!1),
+            v = A(),
+            N = o(_, (e) => e.value),
+            j = { active: w, reset: t.useCallback(() => f(!1), []) },
+            R = y(ye),
+            S = t.useCallback(() => {
+                (a.clearActiveRareReward(), f(!0), R.resume());
+            }, [R, a]);
+        return r.jsxs(C, {
+            className: n(Ga, N === x.initial && Wa),
+            children: [
+                Boolean(g) &&
+                    r.jsx(C.Overlay, {
+                        className: $a,
+                        children: r.jsx(I, {
+                            res: T(h, g?.specialAwardName, g?.isWheeled),
+                            rareBonus: g,
+                            texts: u,
+                            controls: {
+                                onClose: S,
+                                onPlay: () => a.setIsVideoPlaying(!0),
+                                onEnded: () => a.setIsVideoPlaying(!1),
+                            },
+                            minimized: !l,
+                        }),
+                    }),
+                r.jsx(C.Header, { text: u.headerTitle, className: v }),
+                r.jsxs(C.Body, {
+                    children: [
+                        r.jsx(La, { resume: j, className: n(p > 0 && Fa) }),
+                        p > 0 && r.jsx(De, { className: Da }),
+                    ],
+                }),
+                r.jsx(z, {
+                    eventName: h,
+                    actions: {
+                        ...a,
+                        openNext: () => {
+                            _.send({ type: b.toPreparation });
+                        },
+                    },
+                    boxes: { category: s, balance: i, guaranteedCounts: c },
+                    className: v,
+                }),
+                r.jsx(k, {
+                    eventName: h,
+                    boxCategory: s,
+                    controls: a,
+                    isAnimationActive: m,
+                    isShopVisible: d && 0 === i,
+                    className: v,
+                }),
+            ],
+        });
+    }),
+    Ma = 'App_loaderWrapper_a177675d',
+    Xa = 'App_0',
+    Ua = 'App_background_bb0bfe54',
+    Ya = i(function () {
+        const { model: e, controls: a } = fe(),
+            { images: s, texts: i } = e.computes.resources(),
+            { isWindowAccessible: n, eventName: c, boxCategory: d } = e.root.get(),
+            u = e.isAnimationActive.get(),
+            g = e.isAwaitingResponse.get(),
+            h = e.computes.hasRareReward(),
+            w = e.computes.multimediaResource(),
+            f = e.isReopen.get(),
+            v = o(_, (e) => e.value),
+            N = y(ye);
+        (ue(() => {
+            v === x.initial && a.close();
+        }),
+            t.useEffect(
+                () => (
+                    _.start(),
+                    () => {
+                        _.stop();
+                    }
+                ),
+                [],
+            ),
+            t.useEffect(() => {
+                _.send({ type: b.setAnimationComplex, isAnimationComplex: u && p(c, d) });
+            }, [u, c, d]),
+            H(f, g, v));
+        const { loadingStyle: j, contentStyle: R } = P(v, a.openNext);
+        return r.jsxs(V, {
+            className: Xa,
+            ref: N.rootRef,
+            children: [
+                r.jsx(O, {
+                    activeType: h ? m.rare : m.common,
+                    minimized: !n,
+                    res: w,
+                    className: Ua,
+                    onPlay: () => a.setIsVideoPlaying(!0),
+                    onEnded: () => a.setIsVideoPlaying(!1),
+                }),
+                S(v) !== B && r.jsx(l.div, { style: R, children: r.jsx(V.Content, { children: r.jsx(qa, {}) }) }),
+                v === x.waiting &&
+                    r.jsx(l.div, {
+                        style: j,
+                        className: Ma,
+                        children: r.jsx(V.Waiting, { image: s.loader, text: i.loader }),
+                    }),
+            ],
+        });
+    }),
+    Za = () => r.jsx(be, { options: g.SINGLE_REWARD, children: r.jsx(ke, { children: r.jsx(Ya, {}) }) });
+export { Za as default };

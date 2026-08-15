@@ -334,7 +334,7 @@ const Be = t.memo(function ({
                     const e = r[p] || '',
                         s = d[m] || '';
                     if (e.match(_) || e === s) {
-                        for (; e !== d[m] && m < d.length; ) m++;
+                        for (; e !== d[m] && m < d.length;) m++;
                         m++;
                     }
                 }
@@ -472,8 +472,8 @@ const Be = t.memo(function ({
                                                     if (i) return;
                                                     let c = l;
                                                     const d = o.test(r[l]);
-                                                    if (a && d) for (; o.test(r[c]) && c < r.length; ) c++;
-                                                    if (s && d) for (; o.test(r[c]) && c > 0; ) c--;
+                                                    if (a && d) for (; o.test(r[c]) && c < r.length;) c++;
+                                                    if (s && d) for (; o.test(r[c]) && c > 0;) c--;
                                                     if (c !== l || (s && d))
                                                         return (e.preventDefault(), (c = c < 0 ? 0 : c), void O(c, c));
                                                     ((s && 1 === t && 1 === r.length) || a) &&

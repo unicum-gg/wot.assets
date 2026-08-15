@@ -1,8 +1,8 @@
 import { h as e, E as s, j as t, F as a } from '../../../../chunks/vendor.js';
 import {
     a as n,
-    c as i,
-    m as o,
+    c as o,
+    m as i,
     e as r,
     h as d,
     g as c,
@@ -12,11 +12,11 @@ import {
     Y as m,
     Q as g,
     v as p,
-    di as x,
-    dj as b,
-    dk as T,
+    dr as x,
+    ds as b,
+    dt as T,
     a6 as f,
-    de as j,
+    dl as j,
 } from '../../../../chunks/lib.js';
 import { F as v } from '../../../../chunks/fun_random_progression_state.js';
 import { c as N } from '../../../../chunks/readResource.js';
@@ -32,14 +32,14 @@ const [I, E] = n()(({ observableModel: s }) => {
             },
             a = e(
                 (e) =>
-                    o(t.rewards.get(), (s) => ({
+                    i(t.rewards.get(), (s) => ({
                         name: s.name,
                         image: d(s, e),
                         value: s.value,
                         special: s.overlayType,
                         valueType: r(s.name),
                     })),
-                { equals: i },
+                { equals: o },
             ),
             n = e(
                 (e) => {
@@ -47,7 +47,7 @@ const [I, E] = n()(({ observableModel: s }) => {
                     if (!s) throw new Error(`Unexpected quest index: ${e}`);
                     return { ...s };
                 },
-                { equals: i },
+                { equals: o },
             );
         return { ...t, computes: { getRewards: a, quest: n } };
     }, l),
@@ -68,17 +68,17 @@ const [I, E] = n()(({ observableModel: s }) => {
         const { model: e } = E(),
             { currentPoints: s, maximumPoints: a } = e.currentStage.get(),
             { text: n } = e.condition.get(),
-            i = P.progression.$dyn(s > 0 ? 'stepsCurrent' : 'stepsNoProgress'),
-            o = 1 === e.quests.get().length ? e.computes.quest(0).questCondition : 'win';
+            o = P.progression.$dyn(s > 0 ? 'stepsCurrent' : 'stepsNoProgress'),
+            i = 1 === e.quests.get().length ? e.computes.quest(0).questCondition : 'win';
         return t.jsxs('div', {
             className: h,
             children: [
-                t.jsx('div', { className: C, children: t.jsx('div', { className: M, style: L(o) }) }),
+                t.jsx('div', { className: C, children: t.jsx('div', { className: M, style: L(i) }) }),
                 t.jsx('div', { className: w, children: n }),
                 t.jsxs('div', {
                     className: S,
                     children: [
-                        t.jsx('div', { className: A, children: t.jsx(_, { text: i, binding: { done: s, total: a } }) }),
+                        t.jsx('div', { className: A, children: t.jsx(_, { text: o, binding: { done: s, total: a } }) }),
                         t.jsx(u, { size: m.Small, value: s, maxValue: a }),
                     ],
                 }),
@@ -86,8 +86,8 @@ const [I, E] = n()(({ observableModel: s }) => {
         });
     }),
     V = 'Rewards_5d4e74e4',
-    k = 'Rewards_title_c6eb21d3',
-    $ = 'Rewards_rewardBase_fc0065c2',
+    $ = 'Rewards_title_c6eb21d3',
+    k = 'Rewards_rewardBase_fc0065c2',
     B = 'Rewards_reward_445a79f1',
     D = 'Rewards_reward__small_74754faa',
     Q = R.strings.fun_random.metaProgressionTooltip.reward.header,
@@ -95,20 +95,20 @@ const [I, E] = n()(({ observableModel: s }) => {
         const { model: e } = E(),
             { status: s } = e.progressionState.get(),
             { requiredPoints: n } = e.currentStage.get(),
-            i = e.rewards.get().length,
-            r = i > 5 ? 4 : 5,
-            d = Math.min(i, 5) >= 3,
+            o = e.rewards.get().length,
+            r = o > 5 ? 4 : 5,
+            d = Math.min(o, 5) >= 3,
             c = e.computes.getRewards(d ? g.Small : g.Big),
             l = s === v.ACTIVE_INFINITE_RESETTABLE || s === v.ACTIVE_INFINITE_FINAL,
-            _ = o(c, (e) => ({ ...e, image: e.image, className: a(e.className, a(B, d && D)) }));
+            _ = i(c, (e) => ({ ...e, image: e.image, className: a(e.className, a(B, d && D)) }));
         return t.jsxs('div', {
             className: V,
             children: [
                 t.jsx('div', {
-                    className: k,
+                    className: $,
                     children: t.jsx(p, { text: l ? Q.infinite() : Q.common(), binding: { stagePoints: n } }),
                 }),
-                t.jsx(x, { rewardItemClassMix: $, size: g.Small, data: _, count: r }),
+                t.jsx(x, { rewardItemClassMix: k, size: g.Small, data: _, count: r }),
             ],
         });
     }),
@@ -123,17 +123,18 @@ const [I, E] = n()(({ observableModel: s }) => {
     },
     U = s(({ fullMode: e }) => {
         const { model: s } = E(),
-            { statusTimer: n, status: i } = s.progressionState.get(),
-            o = s.isMultipleSubModes.get(),
+            { statusTimer: n, status: o } = s.progressionState.get();
+        if (0 === n) return null;
+        const i = s.isMultipleSubModes.get(),
             r =
-                i === v.COMPLETED_RESETTABLE
+                o === v.COMPLETED_RESETTABLE
                     ? R.strings.fun_random.metaProgressionTooltip.timer.untilRelaunch()
                     : R.strings.fun_random.metaProgressionTooltip.timer.untilFinish();
         return t.jsxs('div', {
             className: a(z.base, e && z.base__fullMode),
             children: [
                 t.jsx('div', { className: z.background }),
-                o && t.jsx('div', { className: a(z.separator, z.separator__top) }),
+                i && t.jsx('div', { className: a(z.separator, z.separator__top) }),
                 t.jsx('div', {
                     className: z.content,
                     children: t.jsx(p, {
@@ -164,17 +165,17 @@ const [I, E] = n()(({ observableModel: s }) => {
     X = s(() => {
         const { model: e } = E(),
             s = e.isMultipleSubModes.get(),
-            { currentStage: n, maximumStage: i, status: o } = e.progressionState.get(),
+            { currentStage: n, maximumStage: o, status: i } = e.progressionState.get(),
             r = e.assetsPointer.get(),
             { dynamicTexts: d } = N('metaProgressionTooltip', { assetsPointer: r }),
-            c = [v.ACTIVE_INFINITE_RESETTABLE, v.ACTIVE_INFINITE_FINAL].includes(o);
+            c = [v.ACTIVE_INFINITE_RESETTABLE, v.ACTIVE_INFINITE_FINAL].includes(i);
         return t.jsxs('div', {
-            className: a(W.base, W[`base__${o}`]),
+            className: a(W.base, W[`base__${i}`]),
             children: [
                 t.jsxs('div', {
                     className: W.title,
                     children: [
-                        t.jsx(_, { text: d.header.active(), binding: { done: n, total: c ? '' : i } }),
+                        t.jsx(_, { text: d.header.active(), binding: { done: n, total: c ? '' : o } }),
                         c && t.jsx('div', { className: W.infiniteIcon }),
                     ],
                 }),
@@ -204,12 +205,12 @@ const [I, E] = n()(({ observableModel: s }) => {
         const { model: e } = E(),
             { status: s } = e.progressionState.get(),
             n = e.assetsPointer.get(),
-            { staticTexts: i, dynamicTexts: o } = N('metaProgressionTooltip', { assetsPointer: n });
+            { staticTexts: o, dynamicTexts: i } = N('metaProgressionTooltip', { assetsPointer: n });
         return t.jsxs('div', {
             className: a(Y.base, Y[`base__${s}`]),
             children: [
-                t.jsx('div', { className: Y.noRewardSubTitle, children: o.subheader() }),
-                t.jsx('div', { className: Y.noRewardTitle, children: i.header.$dyn(s) }),
+                t.jsx('div', { className: Y.noRewardSubTitle, children: i.subheader() }),
+                t.jsx('div', { className: Y.noRewardTitle, children: o.header.$dyn(s) }),
                 t.jsx(U, {}),
             ],
         });

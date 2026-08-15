@@ -1045,9 +1045,13 @@
                         if (t.mediumWidth && m) return i(u, t, h);
                         if (t.smallWidth && A) return i(u, t, h);
                         if (t.extraSmallWidth && _) return i(u, t, h);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && g) return u;
@@ -1525,7 +1529,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = te(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = te(r.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -3599,7 +3603,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = ft.length - 1; t >= 0; t--)
-                                      for (; e >= ft[t]; ) ((u += pt[t]), (e -= ft[t]));
+                                      for (; e >= ft[t];) ((u += pt[t]), (e -= ft[t]));
                                   return u;
                               })(e),
                     bt = {
@@ -3981,7 +3985,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = zt(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = zt(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
@@ -4807,7 +4811,7 @@
                             let l = t.exec(e),
                                 c = e,
                                 E = 0;
-                            for (; l; ) {
+                            for (; l;) {
                                 const m = l[0],
                                     A = r.exec(m),
                                     _ = i.exec(m),

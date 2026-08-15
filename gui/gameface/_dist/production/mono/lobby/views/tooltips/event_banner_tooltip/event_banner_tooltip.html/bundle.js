@@ -1,5 +1,5 @@
 import { j as e, l as n } from '../../../../chunks/vendor.js';
-import { i as s, q as t, E as a, A as i, J as o, U as d, H as l, r } from '../../../../chunks/lib.js';
+import { i as s, t, E as a, A as i, J as o, U as d, H as l, r } from '../../../../chunks/lib.js';
 import { u as c } from '../../../../chunks/useFormattedCountdown.js';
 const [p, m] = s()(({ observableModel: e }) => e.object(), t),
     v = 'Countdown_59d5a1f4',

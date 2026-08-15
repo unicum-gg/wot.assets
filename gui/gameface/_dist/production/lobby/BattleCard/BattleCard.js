@@ -459,7 +459,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function _(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += a[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += a[t]), (e -= r[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -956,9 +956,13 @@
                         if (t.mediumWidth && A) return n(u, t, p);
                         if (t.smallWidth && b) return n(u, t, p);
                         if (t.extraSmallWidth && F) return n(u, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && g) return u;
                             if (t.mediumHeight && D) return u;
@@ -1414,7 +1418,7 @@
                             n = u || {};
                         let i = Z.exec(e),
                             o = e;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 r = Q.exec(t),
                                 s = J.exec(t),
@@ -2160,7 +2164,7 @@
                     Ke = (e, u, t, a) => {
                         let r = u.exec(e),
                             _ = 0;
-                        for (; r; ) (_ !== r.index && t(e.slice(_, r.index)), a(r), (_ = u.lastIndex), (r = u.exec(e)));
+                        for (; r;) (_ !== r.index && t(e.slice(_, r.index)), a(r), (_ = u.lastIndex), (r = u.exec(e)));
                         _ !== e.length && t(e.slice(_));
                     },
                     qe = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -2207,7 +2211,7 @@
                               if (!a) return [e];
                               const r = [];
                               let _ = 0;
-                              for (; a; ) {
+                              for (; a;) {
                                   const n = u.justifyContent === Ie.FlexEnd ? a.index : t.lastIndex;
                                   (r.push(e.slice(_, n)), (_ = n), (a = t.exec(e)));
                               }
@@ -2440,7 +2444,7 @@
                                                     l = ((e, u) => {
                                                         let t = 0,
                                                             a = e.length - 1;
-                                                        for (; a - t >= 0; ) {
+                                                        for (; a - t >= 0;) {
                                                             const r = t + Math.ceil(0.5 * (a - t));
                                                             eu(e[r], u) ? (a = r - 1) : (t = r + 1);
                                                         }

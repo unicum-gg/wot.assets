@@ -1,6 +1,6 @@
-import { r as s, j as e, f as t, v as a } from '../../../../chunks/vendor.js';
-import { i, n, c2 as r, bY as d, J as c, U as o, d as l } from '../../../../chunks/lib.js';
-const [x, m] = i()(
+import { r as s, j as e, f as t, w as a } from '../../../../chunks/vendor.js';
+import { i, D as n, ck as r, cd as d, J as c, U as o, d as l } from '../../../../chunks/lib.js';
+/* empty css                       */ const [x, m] = i()(
         ({ observableModel: s }) => ({ root: s.object() }),
         () => ({}),
     ),
@@ -18,9 +18,9 @@ const [x, m] = i()(
     },
     b = 'Content_faa5acc0',
     p = 'Content_image_e25fcf8a',
-    N = 'Content_title_36b16647',
-    u = 'Content_subTitle_e6924907',
-    w = 'Content_divider_c4025bde',
+    u = 'Content_title_36b16647',
+    w = 'Content_subTitle_e6924907',
+    N = 'Content_divider_c4025bde',
     M = 'Content_rewardBase_967dd44a',
     g = 'Content_reward_19ccaf6b',
     C = 'Content_expireTime_ac535d7',
@@ -33,10 +33,10 @@ const [x, m] = i()(
             className: b,
             children: [
                 e.jsx('div', { className: p }),
-                e.jsx(n, { text: f.title(), binding: { vehicleName: t }, classMix: N }),
-                i && e.jsx(n, { text: f.condition(), binding: { condition: i }, classMix: u }),
-                e.jsx('div', { className: u, children: f.rewardsTitle() }),
-                e.jsx('div', { className: w }),
+                e.jsx(n, { text: f.title(), binding: { vehicleName: t }, classMix: u }),
+                i && e.jsx(n, { text: f.condition(), binding: { condition: i }, classMix: w }),
+                e.jsx('div', { className: w, children: f.rewardsTitle() }),
+                e.jsx('div', { className: N }),
                 e.jsxs(v, {
                     className: M,
                     children: [
@@ -48,7 +48,7 @@ const [x, m] = i()(
                         e.jsx(r, { text: f.rewards.standardEquipment(), classMix: g }),
                     ],
                 }),
-                e.jsx('div', { className: w }),
+                e.jsx('div', { className: N }),
                 e.jsx(r, {
                     text: f.expireTime(),
                     binding: { day: d.getDate(), month: R.strings.menu.dateTime.months.$num(d.getMonth() + 1) },
@@ -57,5 +57,5 @@ const [x, m] = i()(
             ],
         });
     }),
-    y = () => e.jsx(d, { children: e.jsx(d.Decorator, { children: e.jsx(T, {}) }) });
-l(new c().add(o).addWithProps(x, {}).render(e.jsx(y, {})));
+    k = () => e.jsx(d, { children: e.jsx(d.Decorator, { children: e.jsx(T, {}) }) });
+l(new c().add(o).addWithProps(x, {}).render(e.jsx(k, {})));

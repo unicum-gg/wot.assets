@@ -996,15 +996,13 @@
                             if (t.mediumWidth && m) return a(u, t, v);
                             if (t.smallWidth && F) return a(u, t, v);
                             if (t.extraSmallWidth && D) return a(u, t, v);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && B) return u;
                                 if (t.largeHeight && C) return u;
                                 if (t.mediumHeight && g) return u;
@@ -2615,7 +2613,7 @@
                                                     let r = 0,
                                                         n = t - 1,
                                                         a = !1;
-                                                    for (; n - r > 1; ) {
+                                                    for (; n - r > 1;) {
                                                         const t = r + Math.floor(0.5 * (n - r + 1));
                                                         ((a = lu(e[t], u)), a ? (n = t) : (r = t));
                                                     }

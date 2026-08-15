@@ -1079,7 +1079,7 @@
                                                     };
                                                 },
                                                 dispose: function () {
-                                                    for (var e, t = w(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                    for (var e, t = w(r.keys()); !(e = t()).done;) a(e.value, u);
                                                 },
                                                 unsubscribe: a,
                                             };
@@ -1377,9 +1377,13 @@
                         if (t.mediumWidth && E) return H(u, t, C);
                         if (t.smallWidth && _) return H(u, t, C);
                         if (t.extraSmallWidth && m) return H(u, t, C);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && A) return u;
                             if (t.largeHeight && F) return u;
                             if (t.mediumHeight && g) return u;
@@ -2205,7 +2209,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = Ge(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = Ge(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),

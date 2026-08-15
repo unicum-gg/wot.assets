@@ -1,30 +1,30 @@
-import { V as s, j as e, f as a } from '../../../chunks/vendor.js';
-import { i as o, c as i, d as r, u as t, V as n, J as c, M as p, r as m } from '../../../chunks/lib.js';
-import { W as d, r as l, s as _ } from '../../../chunks/flag_view_model.js';
-/* empty css                     */ const [u, v] = o()(({ observableModel: s }) => {
+import { U as s, j as e, f as a } from '../../../chunks/vendor.js';
+import { i as o, f as i, h as t, j as r, V as n, J as c, k as l, r as p } from '../../../chunks/lib.js';
+import { W as m, r as d, s as _ } from '../../../chunks/flag_view_model.js';
+/* empty css                     */ const [v, u] = o()(({ observableModel: s }) => {
         const e = { ...s.primitives(['winStatus', 'isLeave']), achievements: s.arrayClone('achievements') },
-            a = i.primitive(() => e.winStatus.get() === d && !e.isLeave.get());
+            a = i.primitive(() => e.winStatus.get() === m && !e.isLeave.get());
         return { ...e, computes: { isWin: a } };
     }),
-    b = 'App_cb654453',
-    f = 'App_flag_4ed23b16',
-    h = 'App_flag__hidden_8afb9008',
-    g = r('Flag', b);
+    h = 'App_cb654453',
+    b = 'App_flag_4ed23b16',
+    f = 'App_flag__hidden_8afb9008',
+    g = t('Flag', h);
 const j = s(function () {
-    const s = t(),
-        { model: o } = v();
+    const s = r(),
+        { model: o } = u();
     return e.jsx(g, {
-        className: b,
+        className: h,
         children: e.jsx(n, {
             loop: !0,
             autoplay: !0,
-            className: a(f, s.location !== l[_.overview] && h),
+            className: a(b, s.location !== d[_.overview] && f),
             src: String(
                 o.computes.isWin()
-                    ? R.videos.comp7.no_epic_victory_ribbon()
-                    : R.videos.comp7.no_epic_defeat_draw_ribbon(),
+                    ? R.videos.comp7_light.no_epic_victory_ribbon()
+                    : R.videos.comp7_light.no_epic_defeat_draw_ribbon(),
             ),
         }),
     });
 });
-m(new c().addWithProps(p, { context: 'model.router' }).add(u).render(e.jsx(j, {})));
+p(new c().addWithProps(l, { context: 'model.router' }).add(v).render(e.jsx(j, {})));

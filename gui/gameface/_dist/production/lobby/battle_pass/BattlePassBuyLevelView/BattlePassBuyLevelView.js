@@ -373,9 +373,13 @@
                         if (t.mediumWidth && A) return (0, r.H)(u, t, f);
                         if (t.smallWidth && F) return (0, r.H)(u, t, f);
                         if (t.extraSmallWidth && g) return (0, r.H)(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && D) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && C) return u;
@@ -2840,7 +2844,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, t = r(o.keys()); !(e = t()).done; ) {
+                            for (var e, t = r(o.keys()); !(e = t()).done;) {
                                 i(e.value, u);
                             }
                         },
@@ -3478,7 +3482,7 @@
                             u(e).delete(t);
                         },
                         s = (e, ...t) => {
-                            for (var n, a = r(u(e).values()); !(n = a()).done; ) {
+                            for (var n, a = r(u(e).values()); !(n = a()).done;) {
                                 (0, n.value)(...t);
                             }
                         };
@@ -3718,7 +3722,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

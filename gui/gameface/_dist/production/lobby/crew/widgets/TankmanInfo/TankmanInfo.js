@@ -232,9 +232,13 @@
                         if (t.mediumWidth && A) return (0, r.H)(u, t, C);
                         if (t.smallWidth && F) return (0, r.H)(u, t, C);
                         if (t.extraSmallWidth && g) return (0, r.H)(u, t, C);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && h) return u;
                             if (t.largeHeight && D) return u;
                             if (t.mediumHeight && p) return u;
@@ -770,7 +774,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, t = r(s.keys()); !(e = t()).done; ) {
+                            for (var e, t = r(s.keys()); !(e = t()).done;) {
                                 o(e.value, u);
                             }
                         },
@@ -1539,7 +1543,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                     return u;
                 }
                 const i = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -2181,7 +2185,7 @@
                               if (!n) return [e];
                               const r = [];
                               let a = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const s = u.justifyContent === i.v2.FlexEnd ? n.index : t.lastIndex;
                                   (r.push(e.slice(a, s)), (a = s), (n = t.exec(e)));
                               }
@@ -2226,7 +2230,9 @@
                     },
                     d = (e, u, t = '', n) => {
                         const r = [],
-                            s = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            s = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             (0, a.Z)(
                                 s,
@@ -2341,7 +2347,7 @@
                 const n = (e, u, t, n) => {
                     let r = u.exec(e),
                         a = 0;
-                    for (; r; ) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
+                    for (; r;) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
                     a !== e.length && t(e.slice(a));
                 };
             },
@@ -2417,7 +2423,7 @@
                             m = ((e, u) => {
                                 let t = 0,
                                     n = e.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const r = t + Math.ceil(0.5 * (n - t));
                                     i(e[r], u) ? (n = r - 1) : (t = r + 1);
                                 }
@@ -3028,8 +3034,8 @@
                 var W = t(5208),
                     V = t(370),
                     G = t(5090),
-                    U = t(5369),
-                    j = t(9932);
+                    j = t(5369),
+                    U = t(9932);
                 const $ = (0, G.q3)()(
                         ({ observableModel: e }) => {
                             const u = Object.assign(
@@ -3056,20 +3062,20 @@
                                         nativeVehicle: e.object('nativeVehicle'),
                                     },
                                 ),
-                                t = (0, U.Om)(() => u.skillsEfficiency.get() === V.sU, !0),
-                                n = (0, U.Om)(() => u.skillsEfficiency.get() < V.yb),
-                                r = (0, U.Om)(() => {
+                                t = (0, j.Om)(() => u.skillsEfficiency.get() === V.sU, !0),
+                                n = (0, j.Om)(() => u.skillsEfficiency.get() < V.yb),
+                                r = (0, j.Om)(() => {
                                     const e = u.currentVehicle.get(),
                                         t = u.nativeVehicle.get();
                                     if (void 0 === e && void 0 === t)
                                         return { isWrongVehicleType: !0, isWrongVehicle: !0 };
                                     const n = Boolean(e.name);
                                     return {
-                                        isWrongVehicleType: n && e.type !== t.type && !(0, j.f)(e.tags, W.Yl),
+                                        isWrongVehicleType: n && e.type !== t.type && !(0, U.f)(e.tags, W.Yl),
                                         isWrongVehicle: n && e.name !== t.name && !e.isPremium,
                                     };
                                 }),
-                                a = (0, U.Om)(() =>
+                                a = (0, j.Om)(() =>
                                     u.hasRetrainDiscount.get()
                                         ? {
                                               args: { tooltipId: 'actionPrice', componentKey: u.componentKey.get() },
@@ -3389,14 +3395,14 @@
                     We = t(1308),
                     Ve = t(5497),
                     Ge = t(1247);
-                const Ue = {
+                const je = {
                     base: 'VehicleTypeIcon_base_b73d0',
                     base__big: 'VehicleTypeIcon_base__big_f3c69',
                     base__c_44x44: 'VehicleTypeIcon_base__c_44x44_fe243',
                     base__c_48x48_specSlot: 'VehicleTypeIcon_base__c_48x48_specSlot_a25d3',
                     base__c_60x54: 'VehicleTypeIcon_base__c_60x54_f8136',
                 };
-                let je = (function (e) {
+                let Ue = (function (e) {
                     return (
                         (e.c83x74 = 'big'),
                         (e.c60x54 = 'c_60x54'),
@@ -3405,11 +3411,11 @@
                         e
                     );
                 })({});
-                const $e = a().memo(function ({ vehicleType: e, isElite: u, className: t, iconSize: n = je.c44x44 }) {
+                const $e = a().memo(function ({ vehicleType: e, isElite: u, className: t, iconSize: n = Ue.c44x44 }) {
                         const r = `${(0, B.BN)(e)}${u ? '_elite' : ''}`,
                             i = R.images.gui.maps.icons.vehicleTypes.$dyn(n);
                         return a().createElement('div', {
-                            className: s()(Ue.base, Ue[`base__${n}`], t),
+                            className: s()(je.base, je[`base__${n}`], t),
                             style: { backgroundImage: `url(${null == i ? void 0 : i.$dyn(r)})` },
                         });
                     }),
@@ -3482,7 +3488,7 @@
                                             isElite: o.isPremium,
                                             vehicleType: o.type,
                                             className: nu,
-                                            iconSize: o.isPremium ? je.c44x44 : je.c48x48_specSlot,
+                                            iconSize: o.isPremium ? Ue.c44x44 : Ue.c48x48_specSlot,
                                         }),
                                         a().createElement('div', { className: tu }, o.name),
                                     ),

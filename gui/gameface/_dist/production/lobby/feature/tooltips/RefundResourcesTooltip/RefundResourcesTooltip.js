@@ -301,7 +301,7 @@
                     })(),
                     eu = function (u) {
                         let F = '';
-                        for (let A = S.length - 1; A >= 0; A--) for (; u >= S[A]; ) ((F += _[A]), (u -= S[A]));
+                        for (let A = S.length - 1; A >= 0; A--) for (; u >= S[A];) ((F += _[A]), (u -= S[A]));
                         return F;
                     };
                 function Bu() {

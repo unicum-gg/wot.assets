@@ -186,9 +186,13 @@
                         if (t.mediumWidth && F) return (0, n.H)(u, t, b);
                         if (t.smallWidth && D) return (0, n.H)(u, t, b);
                         if (t.extraSmallWidth && C) return (0, n.H)(u, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && m) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && f) return u;
@@ -736,7 +740,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, t = n(i.keys()); !(e = t()).done; ) {
+                            for (var e, t = n(i.keys()); !(e = t()).done;) {
                                 s(e.value, u);
                             }
                         },
@@ -1542,7 +1546,7 @@
                     n = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function o(e) {
                     let u = '';
-                    for (let t = n.length - 1; t >= 0; t--) for (; e >= n[t]; ) ((u += r[t]), (e -= n[t]));
+                    for (let t = n.length - 1; t >= 0; t--) for (; e >= n[t];) ((u += r[t]), (e -= n[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -2117,7 +2121,7 @@
                               if (!r) return [e];
                               const n = [];
                               let o = 0;
-                              for (; r; ) {
+                              for (; r;) {
                                   const i = u.justifyContent === a.v2.FlexEnd ? r.index : t.lastIndex;
                                   (n.push(e.slice(o, i)), (o = i), (r = t.exec(e)));
                               }
@@ -2162,7 +2166,9 @@
                     },
                     d = (e, u, t = '', r) => {
                         const n = [],
-                            i = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            i = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             (0, o.Z)(
                                 i,
@@ -2275,7 +2281,7 @@
                 const r = (e, u, t, r) => {
                     let n = u.exec(e),
                         o = 0;
-                    for (; n; ) (o !== n.index && t(e.slice(o, n.index)), r(n), (o = u.lastIndex), (n = u.exec(e)));
+                    for (; n;) (o !== n.index && t(e.slice(o, n.index)), r(n), (o = u.lastIndex), (n = u.exec(e)));
                     o !== e.length && t(e.slice(o));
                 };
             },
@@ -2350,7 +2356,7 @@
                             A = ((e, u) => {
                                 let t = 0,
                                     r = e.length - 1;
-                                for (; r - t >= 0; ) {
+                                for (; r - t >= 0;) {
                                     const n = t + Math.ceil(0.5 * (r - t));
                                     a(e[n], u) ? (r = n - 1) : (t = n + 1);
                                 }
@@ -2971,7 +2977,7 @@
                                             u(e).delete(t);
                                         },
                                         n = (e, ...t) => {
-                                            for (var r, n = ae(u(e).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = ae(u(e).values()); !(r = n()).done;) (0, r.value)(...t);
                                         };
                                     return (0, o.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),
@@ -3953,6 +3959,9 @@
                                         }
                                     );
                             }, [Z, ee]),
+                                (0, o.useEffect)(() => {
+                                    !z && Z && ee();
+                                }, [z, Z, ee]),
                                 (0, o.useEffect)(() => {
                                     void 0 !== D && (L.current.open = D);
                                 }, [D]));

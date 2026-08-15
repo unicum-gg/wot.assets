@@ -1,21 +1,21 @@
 import { r as e, u as s, j as a, E as t, t as o, D as r } from '../../../chunks/vendor.js';
 import {
     i,
-    co as n,
+    cr as n,
     p as c,
-    d2 as d,
-    G as l,
-    J as h,
-    O as m,
-    N as p,
+    X as d,
+    K as l,
+    N as h,
+    W as m,
+    Q as p,
     C as u,
     E as _,
     A as f,
-    d9 as g,
-    da as b,
-    db as j,
+    de as g,
+    df as b,
+    dg as j,
     B as v,
-    K as C,
+    O as C,
     r as x,
     U as y,
 } from '../../../chunks/lib.js';
@@ -42,9 +42,9 @@ const H = 1e3,
     M = 'ContainerAnimation_img_89f111a1',
     O = 'ContainerAnimation_frame_d123d03b',
     z = 'ContainerAnimation_base__started_448f44b3',
-    G = (e) => (e < 0.5 ? 4 * e * e * e : (e - 1) * (2 * e - 2) * (2 * e - 2) + 1),
-    J = (e, s, a, t) => (a ? t.width / e : t.height / s),
-    K = e.memo(function ({
+    K = (e) => (e < 0.5 ? 4 * e * e * e : (e - 1) * (2 * e - 2) * (2 * e - 2) + 1),
+    Q = (e, s, a, t) => (a ? t.width / e : t.height / s),
+    X = e.memo(function ({
         isStarted: r,
         scaleCover: i,
         screenWidth: n,
@@ -61,21 +61,21 @@ const H = 1e3,
                     u.start({
                         to: [
                             {
-                                transform: `scale(${J(n, c, l, { width: c * T * 0.6, height: (n / T) * 0.6 })})`,
+                                transform: `scale(${Q(n, c, l, { width: c * T * 0.6, height: (n / T) * 0.6 })})`,
                                 x: 0,
                                 y: 0,
                                 opacity: 1,
                                 config: { duration: 800 },
                             },
                             {
-                                transform: `scale(${J(n, c, l, W)})})`,
+                                transform: `scale(${Q(n, c, l, W)})`,
                                 x: ((n / 2 - 200) / i) * d,
                                 y: ((-c / 2 + 180) / i) * d,
                                 opacity: 0,
                                 config: { duration: 1e3 },
                             },
                         ],
-                        config: { easing: G },
+                        config: { easing: K },
                     });
             }, [u, l, r, d, c, i, n]),
             e.useEffect(() => {
@@ -92,12 +92,12 @@ const H = 1e3,
             })
         );
     }),
-    q = 'PromoApp_6e17783a',
-    F = 'PromoApp_container_c21d069a',
-    I = 'PromoApp_vignetteBg_3b32fdde',
-    Q = 'PromoApp_header_70c24a9c',
-    V = 'PromoApp_base__started_a4fe4c39',
-    X = 'PromoApp_subheader_e22f84af',
+    q = 'PromoApp_vignetteBg_ae9ebec',
+    F = 'PromoApp_6e17783a',
+    G = 'PromoApp_container_c21d069a',
+    I = 'PromoApp_header_70c24a9c',
+    J = 'PromoApp_base__started_a4fe4c39',
+    V = 'PromoApp_subheader_e22f84af',
     Y = 'PromoApp_gradient_5d52cdb6',
     Z = 'PromoApp_bottomContainer_8e2a2910',
     ee = 'PromoApp_topContainer_609c5a3b',
@@ -140,13 +140,13 @@ const H = 1e3,
                 (c.sound(E), L(), m(L), p(L));
             }, []),
             a.jsxs('div', {
-                className: t(q, y && V),
+                className: t(F, y && J),
                 children: [
                     a.jsx(u, { className: ae, onClose: B }),
                     a.jsx('div', {
-                        className: F,
+                        className: G,
                         style: { width: w * W, height: S * W, transform: `scale(${H.scaleCover})` },
-                        children: a.jsx(K, {
+                        children: a.jsx(X, {
                             isStarted: y,
                             scaleCover: H.scaleCover,
                             screenHeight: H.height,
@@ -155,18 +155,18 @@ const H = 1e3,
                             isCoverWidth: H.isCoverWidth,
                         }),
                     }),
-                    a.jsx('div', { className: I }),
+                    a.jsx('div', { className: q }),
                     a.jsx('div', { className: Y }),
                     a.jsx(A, {
                         className: ee,
                         ...U[k.HEADER],
-                        children: a.jsx('div', { className: Q, children: te.header() }),
+                        children: a.jsx('div', { className: I, children: te.header() }),
                     }),
                     a.jsx(A, {
                         className: ee,
                         ...U[k.SUBHEADER],
                         children: a.jsx(_, {
-                            classMix: X,
+                            classMix: V,
                             text: te.subheader(),
                             binding: {
                                 dateRange: a.jsx(g, {

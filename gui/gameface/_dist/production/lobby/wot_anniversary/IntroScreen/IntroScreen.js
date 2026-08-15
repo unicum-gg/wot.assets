@@ -853,9 +853,13 @@
                         if (t.mediumWidth && D) return n(e, t, p);
                         if (t.smallWidth && C) return n(e, t, p);
                         if (t.extraSmallWidth && d) return n(e, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -1524,7 +1528,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Du(a.keys()); !(u = t()).done; ) n(u.value, e);
+                                                        for (var u, t = Du(a.keys()); !(u = t()).done;) n(u.value, e);
                                                     },
                                                     unsubscribe: n,
                                                 };
@@ -1687,7 +1691,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = vu.length - 1; t >= 0; t--)
-                                      for (; u >= vu[t]; ) ((e += gu[t]), (u -= vu[t]));
+                                      for (; u >= vu[t];) ((e += gu[t]), (u -= vu[t]));
                                   return e;
                               })(u),
                     bu = {
@@ -1725,7 +1729,7 @@
                         let E = fu.exec(u),
                             A = u,
                             o = 0;
-                        for (; E; ) {
+                        for (; E;) {
                             const t = E[0],
                                 r = xu.exec(t),
                                 F = Tu.exec(t),

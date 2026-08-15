@@ -1,5 +1,5 @@
 import { E as e, j as t, F as s } from '../../../../chunks/vendor.js';
-import { a, F as i, cH as n, aX as r, dg as o, q as c, a6 as p, de as m } from '../../../../chunks/lib.js';
+import { a, F as i, cI as n, aX as r, dn as o, q as c, a6 as p, dl as m } from '../../../../chunks/lib.js';
 import { c as d, g as _ } from '../../../../chunks/readResource.js';
 const [l, f] = a()(({ observableModel: e }) => ({ root: e.object(), performance: e.object('performance') })),
     x = {

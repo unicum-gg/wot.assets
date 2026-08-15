@@ -1,46 +1,46 @@
 import { j as e, f as s, Q as t, D as a } from '../../../../chunks/vendor.js';
 import {
     i,
-    Q as r,
-    dq as l,
-    a7 as c,
-    W as n,
-    dr as o,
-    cT as m,
-    ds as d,
-    dt as u,
-    as as p,
-    a8 as h,
-    aL as _,
+    _ as r,
+    dz as l,
+    ac as c,
+    $ as n,
+    dA as o,
+    cW as m,
+    dB as d,
+    dC as u,
+    aw as p,
+    d as h,
+    aQ as _,
     m as x,
-    bg as v,
-    an as g,
-    bL as j,
-    v as f,
-    aN as y,
-    du as N,
-    a4 as b,
-    dv as T,
-    n as C,
-    c0 as E,
-    bB as R,
-    Y as S,
-    dw as w,
-    dx as O,
-    j as k,
-    cC as L,
-    f as P,
-    b8 as I,
-    dy as $,
-    de as G,
-    y as A,
-    z as M,
-    cu as D,
+    bj as v,
+    ar as g,
+    bO as j,
+    w as f,
+    aS as N,
+    dD as y,
+    a9 as b,
+    dE as E,
+    n as T,
+    c3 as S,
+    bE as C,
+    a1 as R,
+    dF as w,
+    dG as O,
+    k,
+    cF as P,
+    h as L,
+    bb as I,
+    dH as $,
+    dj as G,
+    D as A,
+    G as D,
+    cx as M,
     U as V,
     r as H,
 } from '../../../../chunks/lib.js';
-import { d as z, T as B, e as W } from '../../../../chunks/tankman_role.js';
-var F = ((e) => ((e.UNDEFINED = 'undefined'), (e.SILVER = 'silver'), (e.GOLD = 'gold'), e))(F || {});
+import { d as z, T as B, e as F } from '../../../../chunks/tankman_role.js';
+var W = ((e) => ((e.UNDEFINED = 'undefined'), (e.SILVER = 'silver'), (e.GOLD = 'gold'), e))(W || {});
 const [Q, U] = i('VehicleTooltipModelProvider')(({ observableModel: e }) => {
         const s = {
                 ...e.primitives(['status', 'stateLevel', 'bpEntityValid']),
@@ -83,16 +83,16 @@ const [Q, U] = i('VehicleTooltipModelProvider')(({ observableModel: e }) => {
         };
     }, c),
     X = 'INACTIVE',
-    q = 'ACTIVE',
-    K = 'CANCELLED',
-    Y = 'critical',
-    Z = 'info',
-    J = { 1: 3, 2: 2, 3: 1, 4: 4 },
+    K = 'ACTIVE',
+    Z = 'CANCELLED',
+    q = 'critical',
+    J = 'info',
+    Y = { 1: 3, 2: 2, 3: 1, 4: 4 },
     ee = (e) => {
         switch (e) {
-            case Y:
+            case q:
                 return '#f31201';
-            case Z:
+            case J:
                 return '#7ab300';
             default:
                 return '#ee7000';
@@ -158,8 +158,8 @@ const he = 'Crew_2339425e',
     }),
     je = 'Rent_leftColumn_a909b981',
     fe = 'Rent_rentValue_f91a4efd',
-    ye = 'Rent_text_94f0c0d7';
-function Ne({ rentPeriodLeft: s, rentType: t }) {
+    Ne = 'Rent_text_94f0c0d7';
+function ye({ rentPeriodLeft: s, rentType: t }) {
     const a = h.resolve('strings'),
         i = g('ui_kit.rental_counter.rent_x24x24', 'ui_kit.rental_counter.rent_x48x48');
     return e.jsxs(pe, {
@@ -171,7 +171,7 @@ function Ne({ rentPeriodLeft: s, rentType: t }) {
                     e.jsx(f, { path: i, width: 24, height: 24 }),
                 ],
             }),
-            e.jsx('div', { className: ye, children: a.readOrEmpty(`tooltips.vehicle.rentLeft.${t}`) }),
+            e.jsx('div', { className: Ne, children: a.readOrEmpty(`tooltips.vehicle.rentLeft.${t}`) }),
         ],
     });
 }
@@ -183,36 +183,36 @@ const be = t(function () {
                 return o(s, d(1)) ? u(s, ne) : u(s, oe);
             })(t);
         return t > 0
-            ? e.jsx(Ne, { rentPeriodLeft: r.value, rentType: r.unit })
+            ? e.jsx(ye, { rentPeriodLeft: r.value, rentType: r.unit })
             : a > 0
-              ? e.jsx(Ne, { rentPeriodLeft: a, rentType: le })
+              ? e.jsx(ye, { rentPeriodLeft: a, rentType: le })
               : i > 0
-                ? e.jsx(Ne, { rentPeriodLeft: i, rentType: ce })
+                ? e.jsx(ye, { rentPeriodLeft: i, rentType: ce })
                 : null;
     }),
-    Te = 'Role_c276c189',
-    Ce = 'Role_vehicleRoleIcon_a0c92760',
-    Ee = 'Role_property_8f6d69d9',
-    Re = t(function ({ className: t }) {
+    Ee = 'Role_c276c189',
+    Te = 'Role_vehicleRoleIcon_a0c92760',
+    Se = 'Role_property_8f6d69d9',
+    Ce = t(function ({ className: t }) {
         const { model: a } = U(),
             { type: i, role: r } = a.statistics.get(),
             l = h.resolve('strings');
         return e.jsxs(pe, {
-            className: s(Te, t),
+            className: s(Ee, t),
             title: ie,
             children: [
-                e.jsx(y, { classNames: { icon: Ce }, roleKey: b(r), size: N.x16x16 }),
+                e.jsx(N, { classNames: { icon: Te }, roleKey: b(r), size: y.x16x16 }),
                 se(i) &&
                     e.jsx('div', {
-                        className: Ee,
+                        className: Se,
                         children: l.readOrEmpty(`menu.roleExp.roleGroupName.role_${te[i]}_${b(r)}`),
                     }),
             ],
         });
     }),
-    Se = h.resolve('strings'),
+    Re = h.resolve('strings'),
     we = t(function ({ className: s }) {
-        return e.jsx(pe, { className: s, children: Se.readOrEmpty('tooltips.vehicle.telecomRentalsRenting') });
+        return e.jsx(pe, { className: s, children: Re.readOrEmpty('tooltips.vehicle.telecomRentalsRenting') });
     }),
     Oe = {
         leftColumn: 'TradeIn_leftColumn_e8d75ad6',
@@ -220,7 +220,7 @@ const be = t(function () {
         text: 'TradeIn_text_1e5d2ead',
     },
     ke = h.resolve('strings'),
-    Le = t(function ({ className: t }) {
+    Pe = t(function ({ className: t }) {
         return e.jsxs(pe, {
             className: s(Oe.base, t),
             children: [
@@ -229,7 +229,7 @@ const be = t(function () {
             ],
         });
     }),
-    Pe = 'WotPlus_wotPlus_c07472c2',
+    Le = 'WotPlus_wotPlus_c07472c2',
     Ie = 'WotPlus_wotPlus__timer_fb00f649',
     $e = t(function ({ className: t }) {
         const { model: a } = U(),
@@ -240,25 +240,25 @@ const be = t(function () {
                 e.jsx(pe, {
                     className: t,
                     children: e.jsx('div', {
-                        className: Pe,
+                        className: Le,
                         children: l.readOrEmpty('tooltips.vehicle.wotPlusRenting.title'),
                     }),
                 }),
-                r !== q &&
+                r !== K &&
                     e.jsx(pe, {
                         className: t,
                         children: (() => {
                             switch (r) {
-                                case K:
+                                case Z:
                                     return e.jsx(_, {
                                         upgradeLegacy: !0,
-                                        className: s(Pe, Ie),
+                                        className: s(Le, Ie),
                                         path: 'tooltips.vehicle.wotPlusRenting.remainingTime',
-                                        params: { time: e.jsx(T, { datetime: i, format: 'ShortDateTime' }) },
+                                        params: { time: e.jsx(E, { datetime: i, format: 'ShortDateTime' }) },
                                     });
                                 case X:
                                     return e.jsx('div', {
-                                        className: s(Pe, Ie),
+                                        className: s(Le, Ie),
                                         children: l.readOrEmpty('tooltips.vehicle.wotPlusRenting.inactive'),
                                     });
                                 default:
@@ -271,8 +271,8 @@ const be = t(function () {
     }),
     Ge = 'Header_name_154815cc',
     Ae = 'Header_tier_e0bb96ee',
-    Me = 'Header_level_d1428bec',
-    De = 'Header_tierText_ab47090b',
+    De = 'Header_level_d1428bec',
+    Me = 'Header_tierText_ab47090b',
     Ve = 'Header_row_d4a891e5',
     He = p('Header'),
     ze = t(function ({ className: s }) {
@@ -288,31 +288,31 @@ const be = t(function () {
                     className: Ae,
                     title: ae,
                     children: e.jsx(_, {
-                        className: De,
-                        path: `tooltips.tankCaruselTooltip.vehicleType.tier.${o ? 'elite' : 'normal'}.${C(n)}`,
-                        params: { tier: e.jsx(E, { value: m, className: Me }) },
+                        className: Me,
+                        path: `tooltips.tankCaruselTooltip.vehicleType.tier.${o ? 'elite' : 'normal'}.${T(n)}`,
+                        params: { tier: e.jsx(S, { value: m, className: De }) },
                     }),
                 }),
-                d !== R && d !== S.spg && e.jsx(Re, { className: Ve }),
+                d !== C && d !== R.spg && e.jsx(Ce, { className: Ve }),
                 e.jsx(ge, { className: Ve }),
                 a && e.jsx($e, { className: Ve }),
                 i && e.jsx(we, { className: Ve }),
-                r && e.jsx(Le, {}),
+                r && e.jsx(Pe, {}),
                 e.jsx(be, {}),
             ],
         });
     }),
     Be = 'EliteSystem_leftColumn_6aa7810f',
-    We = 'EliteSystem_c476a5a0',
-    Fe = 'EliteSystem_eliteSystem_5a135969',
+    Fe = 'EliteSystem_c476a5a0',
+    We = 'EliteSystem_eliteSystem_5a135969',
     Qe = 'EliteSystem_eliteSystem__prestige_2b06b89c',
     Ue = 'EliteSystem_values_c91f1a15',
     Xe = 'EliteSystem_currency_4591b107',
-    qe = 'EliteSystem_icon_505ae9fd',
-    Ke = 'EliteSystem_slash_f65daa35',
-    Ye = 'EliteSystem_xp_4e0b1db9',
-    Ze = 'EliteSystem_progressBarBorder_45636892',
-    Je = t(function ({ className: t }) {
+    Ke = 'EliteSystem_icon_505ae9fd',
+    Ze = 'EliteSystem_slash_f65daa35',
+    qe = 'EliteSystem_xp_4e0b1db9',
+    Je = 'EliteSystem_progressBarBorder_45636892',
+    Ye = t(function ({ className: t }) {
         const a = h.resolve('strings'),
             { model: i } = U(),
             {
@@ -324,11 +324,11 @@ const be = t(function () {
             } = i.serviceRecords.get(),
             m = c === $.prestige;
         return e.jsxs(pe, {
-            className: s(We, t),
+            className: s(Fe, t),
             children: [
                 e.jsx('div', { className: Be, children: e.jsx(w, { level: r, grade: l, type: c, size: O.xs }) }),
                 e.jsxs('div', {
-                    className: s(Fe, m && Qe),
+                    className: s(We, m && Qe),
                     children: [
                         e.jsxs('div', {
                             className: Ue,
@@ -342,21 +342,21 @@ const be = t(function () {
                                 !m &&
                                     e.jsxs(k, {
                                         reverse: !0,
-                                        size: P.small,
-                                        type: L.tankXP,
-                                        classNames: { base: Xe, icon: qe },
+                                        size: L.small,
+                                        type: P.tankXP,
+                                        classNames: { base: Xe, icon: Ke },
                                         children: [
                                             e.jsx('div', { children: j.formatNumber('integral', o) }),
                                             e.jsx('div', {
-                                                className: Ke,
+                                                className: Ze,
                                                 children: a.readOrEmpty('common.common.slash'),
                                             }),
-                                            e.jsx('div', { className: Ye, children: j.formatNumber('integral', n) }),
+                                            e.jsx('div', { className: qe, children: j.formatNumber('integral', n) }),
                                         ],
                                     }),
                             ],
                         }),
-                        !m && e.jsx(I, { value: n, size: 'small', maxValue: o, classNames: { background: Ze } }),
+                        !m && e.jsx(I, { value: n, size: 'small', maxValue: o, classNames: { background: Je } }),
                     ],
                 }),
             ],
@@ -392,11 +392,11 @@ const be = t(function () {
     ts = t(function () {
         const { model: s } = U(),
             { marksOfMastery: t } = s.serviceRecords.get(),
-            a = g(`tooltip.proficiency.class_icons_${J[t]}`, `tooltip.proficiency.class_icons_${J[t]}_upscale`);
+            a = g(`tooltip.proficiency.class_icons_${Y[t]}`, `tooltip.proficiency.class_icons_${Y[t]}_upscale`);
         return e.jsxs(pe, {
             children: [
                 e.jsx('div', { className: es.leftColumn, children: e.jsx(f, { path: a, width: 24, height: 24 }) }),
-                e.jsx(_, { className: es.text, path: `achievements.markOfMastery${J[t]}` }),
+                e.jsx(_, { className: es.text, path: `achievements.markOfMastery${Y[t]}` }),
             ],
         });
     });
@@ -433,7 +433,7 @@ const is = p('ServiceRecords', es.base),
                     className: es.title,
                     children: n.readOrEmpty('tooltips.tankCaruselTooltip.serviceRecords.header'),
                 }),
-                t.computes.elite() && 'undefined' !== a && e.jsx(Je, { className: es.eliteSystem }),
+                t.computes.elite() && 'undefined' !== a && e.jsx(Ye, { className: es.eliteSystem }),
                 i > 0 && e.jsx(ts, {}),
                 c > 0 && e.jsx(ss, {}),
                 l > 0 && e.jsx(as, { rate: o }),
@@ -467,7 +467,7 @@ const is = p('ServiceRecords', es.base),
                                         className: ls.leftColumn,
                                         children: e.jsx(f, {
                                             path:
-                                                s.rank === F.GOLD
+                                                s.rank === W.GOLD
                                                     ? `vehicle_hub.mechanics.special.x48x48.${s.name}`
                                                     : `vehicle_hub.mechanics.x48x48.${s.name}`,
                                             width: 48,
@@ -519,7 +519,7 @@ const is = p('ServiceRecords', es.base),
                         e.jsx(A, {
                             type: i,
                             premium: a.computes.elite(),
-                            size: M.x64x64,
+                            size: D.x64x64,
                             className: s(us, a.computes.elite() && ps),
                         }),
                     e.jsxs('div', {
@@ -546,11 +546,11 @@ const is = p('ServiceRecords', es.base),
     gs = h.resolve('aliases');
 var js;
 H(
-    new D()
+    new M()
         .add(Q)
         .add(V)
         .addWithProps(
-            W,
+            F,
             ((js = (e) => e.common.shared.DynamicEconomics('resId')), { options: { rootId: gs.read(js) } }),
         )
         .render(e.jsx(vs, {})),

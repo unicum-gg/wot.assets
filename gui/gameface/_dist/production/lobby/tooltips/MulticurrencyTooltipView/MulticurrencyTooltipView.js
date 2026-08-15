@@ -929,7 +929,7 @@
                         let n = T.exec(u),
                             D = u,
                             a = 0;
-                        for (; n; ) {
+                        for (; n;) {
                             const A = n[0],
                                 t = y.exec(A),
                                 o = x.exec(A),

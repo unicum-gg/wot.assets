@@ -1,22 +1,22 @@
 import { j as e, R as a, r as s } from '../../../chunks/vendor.js';
 import {
     u as t,
-    aS as o,
+    Z as o,
     m as i,
     p as n,
     E as r,
     A as l,
     i as c,
-    d2 as d,
-    G as m,
-    aR as g,
+    X as d,
+    K as m,
+    Y as g,
     b as _,
     B as p,
     C as b,
     r as y,
     U as u,
 } from '../../../chunks/lib.js';
-import { e as h } from '../../../chunks/sound.js';
+import { c as h } from '../../../chunks/sound.js';
 import { S as f } from '../../../chunks/spring_wrapper.js';
 const I = { y: 0, opacity: 1 };
 var x = ((e) => (
@@ -91,16 +91,16 @@ const N = 'InfoBlock_f854eb14',
         ({ observableModel: e }) => ({ root: e.object() }),
         ({ externalModel: e }) => ({ onClose: e.createCallbackNoArgs('onClose') }),
     ),
-    w = 'MetaIntroApp_f24aa649',
-    L = 'MetaIntroApp_background_47115184',
-    S = 'MetaIntroApp_container_1d43a669',
-    O = 'MetaIntroApp_content_7027a85a',
-    $ = 'MetaIntroApp_header_b706abdc',
-    K = 'MetaIntroApp_bottomContainer_341b7343',
+    w = 'MetaIntroApp_background_ed2a9e7',
+    L = 'MetaIntroApp_f24aa649',
+    O = 'MetaIntroApp_container_1d43a669',
+    S = 'MetaIntroApp_content_7027a85a',
+    K = 'MetaIntroApp_header_b706abdc',
+    $ = 'MetaIntroApp_bottomContainer_341b7343',
     U = 'MetaIntroApp_topContainer_9352c5d0',
     D = 'MetaIntroApp_btn_4fa2f453',
     H = 'MetaIntroApp_closeBtn_f6844130',
-    G = [
+    P = [
         {
             header: R.strings.last_stand_lobby.metaIntro.header.fight(),
             text: R.strings.last_stand_lobby.metaIntro.description.fight(),
@@ -120,7 +120,7 @@ const N = 'InfoBlock_f854eb14',
             imageBig: R.images.last_stand.gui.maps.icons.metaIntro.big.reward(),
         },
     ],
-    P = () => {
+    X = () => {
         const { controls: a } = z(),
             [t, o] = s.useState(!1);
         (d(a.onClose), m(g.ENTER, a.onClose), m(g.SPACE, a.onClose));
@@ -129,24 +129,24 @@ const N = 'InfoBlock_f854eb14',
             { medium: { size: p.sizes.small }, large: { size: p.sizes.medium }, extraLarge: { size: p.sizes.large } },
         );
         return e.jsxs('div', {
-            className: w,
+            className: L,
             onClick: () => o(!0),
             children: [
                 e.jsx(b, { className: H, onClose: a.onClose }),
-                e.jsx('div', { className: L }),
+                e.jsx('div', { className: w }),
                 e.jsx(f, {
                     className: U,
                     isCanceled: t,
                     ...C[x.HEADER],
-                    children: e.jsx('div', { className: $, children: R.strings.last_stand_lobby.metaIntro.title() }),
+                    children: e.jsx('div', { className: K, children: R.strings.last_stand_lobby.metaIntro.title() }),
                 }),
                 e.jsx('div', {
-                    className: S,
-                    children: e.jsx('div', { className: O, children: e.jsx(M, { canceledAnim: t, items: G }) }),
+                    className: O,
+                    children: e.jsx('div', { className: S, children: e.jsx(M, { canceledAnim: t, items: P }) }),
                 }),
                 e.jsx(f, {
                     isCanceled: t,
-                    className: K,
+                    className: $,
                     ...C[x.BUTTON],
                     children: e.jsx('div', {
                         className: D,
@@ -161,4 +161,4 @@ const N = 'InfoBlock_f854eb14',
             ],
         });
     };
-y(e.jsx(u, { children: e.jsx(T, { children: e.jsx(P, {}) }) }));
+y(e.jsx(u, { children: e.jsx(T, { children: e.jsx(X, {}) }) }));

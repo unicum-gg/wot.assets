@@ -1,4 +1,4 @@
-import { q as s, r as _, l as e, j as o, m as i } from '../../../chunks/vendor.js';
+import { q as s, r as _, k as e, j as o, m as i } from '../../../chunks/vendor.js';
 import {
     e as a,
     c as r,
@@ -43,7 +43,7 @@ import {
         ({ externalModel: s }) => ({ startAssembling: s.createCallbackNoArgs('startAssembling') }),
     ),
     A = { base: 'AssemblingVideo_e9b4126e', video: 'AssemblingVideo_video_64714e8e' },
-    N = s(function () {
+    k = s(function () {
         const s = p.resolve('videos'),
             { model: a, controls: r } = x(),
             t = a.operationID.get(),
@@ -51,14 +51,14 @@ import {
             b = _.useRef(null),
             I = _.useRef(!1),
             h = n(),
-            [N, k] = e(() => y),
+            [k, N] = e(() => y),
             [C, S] = e(() => ({ ...j, onRest: d.closeView }));
         function V() {
             I.current ||
                 ((I.current = !0),
                 r.startAssembling(),
                 h.play('stopIntro', { target: 'IntroView' }),
-                k.start({ ...f, onRest: () => S.start({ to: { opacity: 0 } }) }));
+                N.start({ ...f, onRest: () => S.start({ to: { opacity: 0 } }) }));
         }
         return (
             m(v.ESCAPE, V),
@@ -76,7 +76,7 @@ import {
                 style: C,
                 children: o.jsx(i.div, {
                     className: A.wrapper,
-                    style: N,
+                    style: k,
                     children: o.jsx(u, {
                         ref: b,
                         className: A.video,
@@ -91,4 +91,4 @@ import {
             })
         );
     });
-g(o.jsx(b, { soundsOverrides: I, children: o.jsx(h, { children: o.jsx(N, {}) }) }));
+g(o.jsx(b, { soundsOverrides: I, children: o.jsx(h, { children: o.jsx(k, {}) }) }));

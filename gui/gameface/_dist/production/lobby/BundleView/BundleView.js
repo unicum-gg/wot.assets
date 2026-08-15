@@ -1356,15 +1356,13 @@
                             if (t.mediumWidth && E) return a(u, t, b);
                             if (t.smallWidth && g) return a(u, t, b);
                             if (t.extraSmallWidth && F) return a(u, t, b);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && p) return u;
                                 if (t.largeHeight && h) return u;
                                 if (t.mediumHeight && D) return u;
@@ -1932,7 +1930,7 @@
                     me = (e, u, t, n) => {
                         let r = u.exec(e),
                             a = 0;
-                        for (; r; ) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
+                        for (; r;) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
                         a !== e.length && t(e.slice(a));
                     },
                     Ae = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
@@ -1979,7 +1977,7 @@
                               if (!n) return [e];
                               const r = [];
                               let a = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const i = u.justifyContent === re.FlexEnd ? n.index : t.lastIndex;
                                   (r.push(e.slice(a, i)), (a = i), (n = t.exec(e)));
                               }
@@ -2213,7 +2211,7 @@
                                                     c = ((e, u) => {
                                                         let t = 0,
                                                             n = e.length - 1;
-                                                        for (; n - t >= 0; ) {
+                                                        for (; n - t >= 0;) {
                                                             const r = t + Math.ceil(0.5 * (n - t));
                                                             Ce(e[r], u) ? (n = r - 1) : (t = r + 1);
                                                         }
@@ -3013,7 +3011,7 @@
                                     const u = a[e] || '',
                                         t = c[E] || '';
                                     if (u.match(d) || u === t) {
-                                        for (; u !== c[E] && E < c.length; ) E++;
+                                        for (; u !== c[E] && E < c.length;) E++;
                                         E++;
                                     }
                                 }
@@ -3194,8 +3192,8 @@
                                                                 if (s) return;
                                                                 let c = l;
                                                                 const _ = o.test(i[l]);
-                                                                if (t && _) for (; o.test(i[c]) && c < i.length; ) c++;
-                                                                if (u && _) for (; o.test(i[c]) && c > 0; ) c--;
+                                                                if (t && _) for (; o.test(i[c]) && c < i.length;) c++;
+                                                                if (u && _) for (; o.test(i[c]) && c > 0;) c--;
                                                                 if (c !== l || (u && _))
                                                                     return (
                                                                         e.preventDefault(),

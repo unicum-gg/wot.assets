@@ -1,6 +1,6 @@
 import { r as a, j as e, z as s } from './vendor.js';
-import { q as t, de as i, a6 as m, aC as l, en as n } from './lib.js';
-const o = { small: 'small', big: 'big' },
+import { o as t, di as i, a3 as m, az as l, eo as o } from './lib.js';
+const n = { small: 'small', big: 'big' },
     r = { full: 'full', medium: 'medium', small: 'small' },
     d = { appear: 'appear', fadeIn: 'fadeIn', slideUpIn: 'slideUpIn' },
     c = { battlePass: 'battlePass', events: 'events', missions: 'missions' },
@@ -10,8 +10,8 @@ const o = { small: 'small', big: 'big' },
     h = t.resolve('strings'),
     g = { full: 'full', numeric: 'numeric', compact: 'compact' },
     D = { [g.full]: i.DayMonthFull, [g.numeric]: i.DayMonthNumeric };
-function b({ startDate: t, endDate: i, className: o, size: d, isAdaptive: c, isMode: x }) {
-    const v = n,
+function b({ startDate: t, endDate: i, className: n, size: d, isAdaptive: c, isMode: x }) {
+    const v = o,
         _ = d === r.medium,
         j = d === r.small,
         w = a.useMemo(
@@ -19,7 +19,7 @@ function b({ startDate: t, endDate: i, className: o, size: d, isAdaptive: c, isM
             [c, _, x, j],
         );
     return e.jsxs('div', {
-        className: s(u, o),
+        className: s(u, n),
         children: [
             e.jsx(m, {
                 className: f,
@@ -40,4 +40,4 @@ function b({ startDate: t, endDate: i, className: o, size: d, isAdaptive: c, isM
     });
 }
 b.format = g;
-export { b as D, d as a, c as b, r as c, o as w };
+export { b as D, d as a, c as b, r as c, n as w };

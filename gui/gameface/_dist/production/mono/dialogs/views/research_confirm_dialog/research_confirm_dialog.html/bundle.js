@@ -1,17 +1,5 @@
 import { i as e, j as s } from '../../../chunks/vendor.js';
-import {
-    i as c,
-    u as n,
-    k as a,
-    B as r,
-    t,
-    F as o,
-    C as i,
-    a as l,
-    b as m,
-    r as d,
-    U as x,
-} from '../../../chunks/lib.js';
+import { i as c, u as n, a, B as r, t, F as o, C as i, b as l, c as m, r as d, U as x } from '../../../chunks/lib.js';
 const [f, p] = c()(
         ({ observableModel: e }) => ({ root: e.object() }),
         ({ externalModel: e }) => ({
@@ -42,8 +30,8 @@ const [f, p] = c()(
         );
     }),
     N = 'Content_9d793ed8',
-    k = 'Content_description_a55da9f4',
-    u = 'Content_xp_75170af7',
+    u = 'Content_description_a55da9f4',
+    k = 'Content_xp_75170af7',
     b = 'Content_freeXp_a9a9ecd5',
     v = 'Content_currencyIcon_4a4254fc',
     g = R.strings.dialogs.confirmUnlock;
@@ -51,10 +39,10 @@ function A({ xp: e, freeXP: c }) {
     return s.jsx(o, {
         text: g.content.currencyBlock.text(),
         params: {
-            xp: s.jsx(i, { type: l.tankXP, className: u, reverse: !0, classNames: { icon: v }, children: e }),
+            xp: s.jsx(i, { type: l.tankXP, className: k, reverse: !0, classNames: { icon: v }, children: e }),
             freeXP: s.jsx(i, { type: l.freeXP, className: b, reverse: !0, classNames: { icon: v }, children: c }),
         },
-        className: k,
+        className: u,
     });
 }
 const P = e(function () {
@@ -63,7 +51,7 @@ const P = e(function () {
         return s.jsxs('div', {
             className: N,
             children: [
-                s.jsx(o, { text: g.content.researchItem.text(), params: { items: c }, className: k }),
+                s.jsx(o, { text: g.content.researchItem.text(), params: { items: c }, className: u }),
                 s.jsx(A, { xp: n, freeXP: a }),
             ],
         });

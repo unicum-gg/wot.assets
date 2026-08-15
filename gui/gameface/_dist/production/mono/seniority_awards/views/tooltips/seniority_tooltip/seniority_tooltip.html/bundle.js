@@ -1,5 +1,5 @@
-import { j as e, n as a, h as s, r } from '../../../../chunks/vendor.js';
-import { i as t, a3 as c, r as i, E as n, F as o, a4 as l, a5 as d, t as m, U as p } from '../../../../chunks/lib.js';
+import { j as e, q as a, h as s, r } from '../../../../chunks/vendor.js';
+import { i as t, a3 as c, r as i, I as o, F as l, a4 as n, a5 as d, N as m, U as p } from '../../../../chunks/lib.js';
 import { B as _, b as h, g as j } from '../../../../chunks/category.js';
 const x = (e, a) => ({ alphaTester: e.includes(h), betaTester: e.includes(_), notNewbie: a > 0 }),
     [b, g] = t()(({ observableModel: e }) => ({ root: e.object(), categories: e.array('categories', []) }), c),
@@ -17,7 +17,7 @@ const x = (e, a) => ({ alphaTester: e.includes(h), betaTester: e.includes(_), no
     k = 'Header_title_59b528cf',
     w = 'Header_formattedTitle_d01fbd5',
     A = 'seniority_awards.tooltip.medalBlock.label',
-    E = ({ category: a, years: s }) => {
+    O = ({ category: a, years: s }) => {
         const { alphaTester: r, betaTester: t, notNewbie: c } = x(a, s),
             d = i.resolve('intl'),
             m = i.resolve('strings'),
@@ -28,10 +28,10 @@ const x = (e, a) => ({ alphaTester: e.includes(h), betaTester: e.includes(_), no
                 e.jsxs('div', {
                     className: $,
                     children: [
-                        r && e.jsx(n, { className: T, path: 'achievement.c_80x80.alphaTester' }),
-                        t && e.jsx(n, { className: T, path: 'achievement.c_80x80.betaTester' }),
+                        r && e.jsx(o, { className: T, path: 'achievement.c_80x80.alphaTester' }),
+                        t && e.jsx(o, { className: T, path: 'achievement.c_80x80.betaTester' }),
                         c &&
-                            e.jsx(n, {
+                            e.jsx(o, {
                                 className: T,
                                 path: `achievement.c_80x80.c_${s < 10 ? '0' : ''}${s}YearsOfService`,
                             }),
@@ -42,46 +42,46 @@ const x = (e, a) => ({ alphaTester: e.includes(h), betaTester: e.includes(_), no
                     children: [
                         c &&
                             (r || t
-                                ? e.jsx(o, {
+                                ? e.jsx(l, {
                                       className: w,
                                       upgradeLegacy: !0,
                                       split: !0,
                                       text: m.readOrEmpty(`${A}.and`),
                                       params: {
                                           abLabel: p,
-                                          yearsLabel: e.jsx(l, {
+                                          yearsLabel: e.jsx(n, {
                                               path: `${A}.duration`,
                                               count: s,
                                               params: { count: d.formatNumber('integral', s) },
                                           }),
                                       },
                                   })
-                                : e.jsx(l, { path: `${A}.duration`, count: s, params: { count: '' } })),
+                                : e.jsx(n, { path: `${A}.duration`, count: s, params: { count: '' } })),
                         !c && (r || t) && p,
                     ],
                 }),
             ],
         });
     },
-    O = 'App_decorator_5f3651a8',
+    E = 'App_decorator_5f3651a8',
     H = 'App_content_6e357f20',
     D = 'App_content__headerVisible_d70f2fdc',
     L = 'App_section_cfb8f1aa',
     B = 'App_separator_d4523299',
     F = 'App_subtitle_462cd49b',
-    C = a(() => {
+    q = a(() => {
         const { model: a } = g(),
-            { category: t, maxCategory: c, years: n } = a.root.get(),
-            { alphaTester: o, betaTester: l, notNewbie: m } = x(t, n),
-            p = o || l || m,
+            { category: t, maxCategory: c, years: o } = a.root.get(),
+            { alphaTester: l, betaTester: n, notNewbie: m } = x(t, o),
+            p = l || n || m,
             _ = i.resolve('strings');
         return e.jsx(d, {
             children: e.jsx(d.Decorator, {
-                className: O,
+                className: E,
                 children: e.jsxs('div', {
                     className: s(H, p && D),
                     children: [
-                        p && e.jsx(E, { category: t, years: n }),
+                        p && e.jsx(O, { category: t, years: o }),
                         e.jsxs('div', {
                             className: L,
                             children: [
@@ -115,4 +115,4 @@ const x = (e, a) => ({ alphaTester: e.includes(h), betaTester: e.includes(_), no
             }),
         });
     });
-m(e.jsx(b, { children: e.jsx(p, { children: e.jsx(C, {}) }) }));
+m(e.jsx(b, { children: e.jsx(p, { children: e.jsx(q, {}) }) }));

@@ -919,8 +919,7 @@
                             ? `${u}`
                             : (function (u) {
                                   let e = '';
-                                  for (let t = g.length - 1; t >= 0; t--)
-                                      for (; u >= g[t]; ) ((e += C[t]), (u -= g[t]));
+                                  for (let t = g.length - 1; t >= 0; t--) for (; u >= g[t];) ((e += C[t]), (u -= g[t]));
                                   return e;
                               })(u);
                 var v = t(281);
@@ -1324,15 +1323,13 @@
                             if (t.mediumWidth && d) return X(e, t, g);
                             if (t.smallWidth && _) return X(e, t, g);
                             if (t.extraSmallWidth && A) return X(e, t, g);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && F) return e;
                                 if (t.largeHeight && m) return e;
                                 if (t.mediumHeight && D) return e;

@@ -6,16 +6,16 @@ import {
     h as t,
     t as i,
     r as o,
-    q as m,
-    v as d,
-    w as u,
-    x as b,
-    y as v,
-    z as p,
+    l as m,
+    o as d,
+    q as u,
+    v as b,
+    w as v,
+    x as p,
     m as x,
-    D as j,
+    y as j,
     d as f,
-    E as h,
+    z as h,
     C as _,
     F as g,
     j as y,
@@ -24,7 +24,7 @@ import {
 } from '../../../chunks/lib.js';
 import { g as z } from '../../../chunks/resources.js';
 import { u as A } from '../../../chunks/usePreloadImages.js';
-const [C, E] = r()(
+const [C, S] = r()(
         ({ observableModel: e }) => ({
             root: e.object(),
             price: e.object('price'),
@@ -36,13 +36,13 @@ const [C, E] = r()(
             cancel: e.createCallbackNoArgs('cancel'),
         }),
     ),
-    S = 'ControlsBlock_27dfa27d',
-    V = e(function ({ className: e = '' }) {
-        const { model: l, controls: r } = E(),
+    V = 'ControlsBlock_27dfa27d',
+    W = e(function ({ className: e = '' }) {
+        const { model: l, controls: r } = S(),
             { getText: o } = z(l.bundleType.get()),
             m = c({ buttonSize: n.medium }, { medium: { buttonSize: n.large } });
         return a.jsxs('div', {
-            className: s(S, e),
+            className: s(V, e),
             children: [
                 a.jsx(t, { size: m.buttonSize, onClick: r.confirm, children: o('confirmation.buttons.purchase') }),
                 a.jsx(t, {
@@ -54,30 +54,30 @@ const [C, E] = r()(
             ],
         });
     }),
-    W = 'Divider_7c8e14f6';
+    E = 'Divider_7c8e14f6';
 function T() {
-    return a.jsx('div', { className: W });
+    return a.jsx('div', { className: E });
 }
 const w = 'Currency_value_b1cf6531',
     I = 'Currency_value__unavailable_3a328d4',
     M = 'Currency_dash_2806b61e',
-    D = 'Currency_formattedValue_b7cad7e0',
-    F = 1e6,
-    O = 1e5;
-function P({ wgMoneyAvailable: e, value: r, type: c, classNames: n }) {
+    F = 'Currency_formattedValue_b7cad7e0',
+    O = 1e6,
+    P = 1e5;
+function q({ wgMoneyAvailable: e, value: r, type: c, classNames: n }) {
     const t = l.useRef(null),
         i = o.resolve('intl'),
         v = o.resolve('strings'),
         p = m(
-            { displayValue: () => (r >= F ? { abbreviated: !0, value: d(r, O) / F } : { abbreviated: !1, value: r }) },
+            { displayValue: () => (r >= O ? { abbreviated: !0, value: d(r, P) / O } : { abbreviated: !1, value: r }) },
             {
                 medium: {
                     displayValue: () =>
-                        r >= 1e7 ? { abbreviated: !0, value: d(r, O) / F } : { abbreviated: !1, value: r },
+                        r >= 1e7 ? { abbreviated: !0, value: d(r, P) / O } : { abbreviated: !1, value: r },
                 },
                 large: {
                     displayValue: () =>
-                        r >= 1e8 ? { abbreviated: !0, value: d(r, O) / F } : { value: r, abbreviated: !1 },
+                        r >= 1e8 ? { abbreviated: !0, value: d(r, P) / O } : { value: r, abbreviated: !1 },
                 },
             },
         );
@@ -98,32 +98,32 @@ function P({ wgMoneyAvailable: e, value: r, type: c, classNames: n }) {
                   path: 'menu.hangar_header.million',
                   params: { value: x.value },
                   brackets: { start: '%(', end: ')s' },
-                  className: s(D, n?.formattedValue),
+                  className: s(F, n?.formattedValue),
               })
             : i.formatNumber(c === b.gold ? 'gold' : 'integral', x.value),
     });
 }
-const q = 'Wallet_a31ff660',
-    B = 'Wallet_currencyWrapper_d5b0eb25',
+const B = 'Wallet_a31ff660',
+    D = 'Wallet_currencyWrapper_d5b0eb25',
     L = 'Wallet_currencyIcon_f69fe579',
     R = e(function ({ className: e = '' }) {
-        const { model: l } = E(),
+        const { model: l } = S(),
             r = m({ size: v.extraSmall }, { large: { size: v.small }, extraLarge: { size: v.medium } }),
             c = p(r.size, v.small),
             n = l.isWalletAvailable.get();
         return a.jsx('div', {
-            className: s(q, e),
+            className: s(B, e),
             children: x(l.balance.get(), ({ value: e, name: s }) =>
                 a.jsx(
                     'div',
                     {
-                        className: B,
+                        className: D,
                         children: a.jsx(j, {
                             reverse: !0,
                             classNames: { icon: L },
                             type: s,
                             size: c,
-                            children: a.jsx(P, { wgMoneyAvailable: n, value: e, type: s }),
+                            children: a.jsx(q, { wgMoneyAvailable: n, value: e, type: s }),
                         }),
                     },
                     s,
@@ -138,7 +138,7 @@ const q = 'Wallet_a31ff660',
     J = 'App_purchase_eb811881',
     K = 'App_description_20c4a89e',
     Q = e(function () {
-        const { model: e, controls: s } = E(),
+        const { model: e, controls: s } = S(),
             { getExtImage: l, getText: r } = z(e.bundleType.get()),
             c = e.price.get();
         f(h.ESCAPE, s.cancel);
@@ -161,7 +161,7 @@ const q = 'Wallet_a31ff660',
                         }),
                         a.jsx(g, { text: r('confirmation.description'), className: K }),
                         a.jsx(T, {}),
-                        a.jsx(V, { className: H }),
+                        a.jsx(W, { className: H }),
                     ],
                 }),
         });

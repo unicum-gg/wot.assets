@@ -69,7 +69,7 @@
                         let c = o.exec(e),
                             d = e,
                             _ = 0;
-                        for (; c; ) {
+                        for (; c;) {
                             const u = c[0],
                                 y = s.exec(u),
                                 p = r.exec(u),

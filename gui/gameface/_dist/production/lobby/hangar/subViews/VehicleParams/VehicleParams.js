@@ -387,7 +387,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function o(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -931,7 +931,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = D(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = D(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, s.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
@@ -2054,7 +2054,7 @@
                     je = (e, u, t, n) => {
                         let r = u.exec(e),
                             o = 0;
-                        for (; r; ) (o !== r.index && t(e.slice(o, r.index)), n(r), (o = u.lastIndex), (r = u.exec(e)));
+                        for (; r;) (o !== r.index && t(e.slice(o, r.index)), n(r), (o = u.lastIndex), (r = u.exec(e)));
                         o !== e.length && t(e.slice(o));
                     },
                     Ve = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -2100,7 +2100,7 @@
                               if (!n) return [e];
                               const r = [];
                               let o = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const a = u.justifyContent === ye.FlexEnd ? n.index : t.lastIndex;
                                   (r.push(e.slice(o, a)), (o = a), (n = t.exec(e)));
                               }
@@ -2145,7 +2145,9 @@
                     },
                     qe = (e, u, t = '', n) => {
                         const r = [],
-                            o = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            o = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             je(
                                 o,
@@ -2275,7 +2277,7 @@
                             c = ((e, u) => {
                                 let t = 0,
                                     n = e.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const r = t + Math.ceil(0.5 * (n - t));
                                     Ke(e[r], u) ? (n = r - 1) : (t = r + 1);
                                 }
@@ -2859,7 +2861,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = s(r.keys()); !(e = t()).done; ) o(e.value, u);
+                                                        for (var e, t = s(r.keys()); !(e = t()).done;) o(e.value, u);
                                                     },
                                                     unsubscribe: o,
                                                 };

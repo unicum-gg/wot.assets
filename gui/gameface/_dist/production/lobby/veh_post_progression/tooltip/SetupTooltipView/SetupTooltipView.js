@@ -419,7 +419,7 @@
                     E = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function A(u) {
                     let e = '';
-                    for (let t = E.length - 1; t >= 0; t--) for (; u >= E[t]; ) ((e += F[t]), (u -= E[t]));
+                    for (let t = E.length - 1; t >= 0; t--) for (; u >= E[t];) ((e += F[t]), (u -= E[t]));
                     return e;
                 }
                 const n = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -1074,7 +1074,7 @@
                         let D = O.exec(u),
                             r = u,
                             o = 0;
-                        for (; D; ) {
+                        for (; D;) {
                             const t = D[0],
                                 F = k.exec(t),
                                 a = P.exec(t),

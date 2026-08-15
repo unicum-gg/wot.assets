@@ -1,30 +1,24 @@
-import { e as s, B as e } from './resources.js';
-import { R as a } from './lib.js';
-const t = (s) => s.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&nbsp;'),
-    r = ['style', 'style_3d'],
-    i = (s) => {
-        const { name: e, icon: t } = s;
+import { j as s, e } from './vendor.js';
+import { R as t } from './lib.js';
+import { d as a, B as r } from './resources.js';
+const n = 'Title_653f3fec';
+function o({ text: t, className: a = '' }) {
+    return s.jsx('div', { className: e(n, a), children: t });
+}
+const i = (s) => s.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&nbsp;'),
+    c = ['style', 'style_3d'],
+    m = (s) => {
+        const { name: e, icon: a } = s;
         switch (e) {
-            case a.Vehicles:
+            case t.Vehicles:
                 return !0;
-            case a.Customizations:
-                return r.includes(t);
+            case t.Customizations:
+                return c.includes(a);
             default:
                 return !1;
         }
-    };
-var n = ((s) => ((s.Disable = 'disable'), (s.Active = 'active'), (s.Default = 'default'), s))(n || {});
-const c = (s, e, a) => {
-        switch (!0) {
-            case 0 === a:
-                return 'disable';
-            case s === e:
-                return 'active';
-            default:
-                return 'default';
-        }
     },
-    o = (e) => s.includes(e),
-    l = (s) => !s.isCompensation && o(s.rarity),
-    u = (s) => s === e.Common;
-export { n as S, l as a, u as b, t as f, c as g, o as h, i };
+    l = (s) => a.includes(s),
+    d = (s) => !s.isCompensation && l(s.rarity),
+    u = (s) => s === r.Common;
+export { o as T, d as a, u as b, i as f, l as h, m as i };

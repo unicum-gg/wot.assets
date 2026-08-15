@@ -1254,7 +1254,7 @@ function arabicToRoman(e) {
     let t = '';
     for (let s = ARABIC$1.length - 1; s >= 0; s--) {
         let r = ARABIC$1[s];
-        for (; void 0 !== r && e >= r; ) ((t += ROMAN$1[s]), (e -= r));
+        for (; void 0 !== r && e >= r;) ((t += ROMAN$1[s]), (e -= r));
     }
     return t;
 }
@@ -1345,15 +1345,15 @@ function eq(e, t, s, r, n) {
     if (0 === s) return !1;
     (s < 0 && (s = -1), (n = n || []));
     let u = (r = r || []).length;
-    for (; u--; ) if (r[u] === i) return n[u] === l;
+    for (; u--;) if (r[u] === i) return n[u] === l;
     if ((r.push(e), n.push(t), c)) {
         if (((u = i.length), u !== l.length)) return !1;
-        for (; u--; ) if (!eq(i[u], l[u], s - 1, r, n)) return !1;
+        for (; u--;) if (!eq(i[u], l[u], s - 1, r, n)) return !1;
     } else {
         const e = Object.keys(i);
         let t;
         if (((u = e.length), Object.keys(l).length !== u)) return !1;
-        for (; u--; ) {
+        for (; u--;) {
             if (((t = e[u]), void 0 === t))
                 return (console.error('Error: met undefined in object during deepEqual comparison'), !1);
             if (!Object.prototype.hasOwnProperty.call(l, t) || !eq(i[t], l[t], s - 1, r, n)) return !1;
@@ -1939,7 +1939,9 @@ function useTooltip({
             let i = null;
             function l() {
                 r ||
-                    ((a.current.status = statuses.await),
+                    ('display' === a.current.status &&
+                        (sendEvent$1.tooltip.hide(e, t, s), (a.current.status = statuses.idle)),
+                    (a.current.status = statuses.await),
                     window.clearTimeout(a.current.timeoutId),
                     (a.current.timeoutId = window.setTimeout(c, o)));
             }
@@ -1957,7 +1959,7 @@ function useTooltip({
                 ) {
                     displayedTooltips.delete(i);
                     let e = i.parentElement;
-                    for (; e && !displayedTooltips.has(e); ) e = e.parentElement;
+                    for (; e && !displayedTooltips.has(e);) e = e.parentElement;
                     if (e) {
                         displayedTooltips.get(e).show();
                     }
@@ -2881,7 +2883,7 @@ function resolveAttrParams(e, t) {
     for (let s = 0; s < e.length; s++) {
         if ('$' === e[s]) {
             let r = s + 1;
-            for (; r < e.length && !isEnd(e[r]); ) r++;
+            for (; r < e.length && !isEnd(e[r]);) r++;
             const n = e.slice(s + 1, r),
                 o = t[n];
             if (o) return resolveAttrParams(e.replace(`$${n}`, String(o)), t);
@@ -3765,7 +3767,7 @@ const MIN_LEVEL = 1,
         base__enamel: base__enamel,
     };
 function PrestigeLevel({ level: e, grade: t, type: s, direction: r, classNames: n, ...o }) {
-    return e < MIN_LEVEL
+    return e < MIN_LEVEL || 'undefined' === s
         ? null
         : jsxRuntimeExports.jsxs('div', {
               ...o,
@@ -4385,11 +4387,9 @@ function usePopoverInstance(e) {
             function o(e) {
                 s((t) => {
                     const s = e(t);
-                    return (
-                        t.opened === s.opened ||
-                            (s.opened ? r.onBeforeOpen.forEach((e) => e()) : r.onBeforeClose.forEach((e) => e())),
-                        s
-                    );
+                    return t.opened === s.opened
+                        ? t
+                        : (s.opened ? r.onBeforeOpen.forEach((e) => e()) : r.onBeforeClose.forEach((e) => e()), s);
                 });
             }
             return {
@@ -4632,59 +4632,59 @@ const root$3 = 'PopoverTip_root_a48d88bb',
     verticals = [positions.top, positions.bottom],
     horizontals = [positions.left, positions.right],
     rotations = { top: 180, bottom: 0, left: 90, right: -90 },
-    Tip = reactExports.forwardRef(({ ...e }, t) => {
-        const s = reactExports.useRef(null),
-            r = usePopoverOptional(),
-            [n, o] = reactExports.useState(e.size),
-            [a, i] = reactExports.useState(e.position || (r && oppositePositions[r.portal.position.get()]) || 'bottom'),
-            [l, c] = reactExports.useState(e.offset),
-            u = useEvent((t, s, r) => {
-                let n = a;
-                if ((e.position || ((n = oppositePositions[r]), i(n)), !e.size)) {
-                    const e = isVerticalPosition(n)
-                        ? `${Math.min(t.width, s.width)}px`
-                        : `${Math.min(t.height, s.height)}px`;
-                    o(e);
+    Tip = reactExports.forwardRef(({ classNames: e, ...t }, s) => {
+        const r = reactExports.useRef(null),
+            n = usePopoverOptional(),
+            [o, a] = reactExports.useState(t.size),
+            [i, l] = reactExports.useState(t.position || (n && oppositePositions[n.portal.position.get()]) || 'bottom'),
+            [c, u] = reactExports.useState(t.offset),
+            d = useEvent((e, s, r) => {
+                let n = i;
+                if ((t.position || ((n = oppositePositions[r]), l(n)), !t.size)) {
+                    const t = isVerticalPosition(n)
+                        ? `${Math.min(e.width, s.width)}px`
+                        : `${Math.min(e.height, s.height)}px`;
+                    a(t);
                 }
-                if (!e.offset) {
-                    const e = isVerticalPosition(n)
-                        ? `${Math.max(0, t.left - s.left)}px`
-                        : `${Math.max(0, t.top - s.top)}px`;
-                    c(e);
+                if (!t.offset) {
+                    const t = isVerticalPosition(n)
+                        ? `${Math.max(0, e.left - s.left)}px`
+                        : `${Math.max(0, e.top - s.top)}px`;
+                    u(t);
                 }
             });
         return (
             reactExports.useEffect(() => {
-                if (s.current && r)
+                if (r.current && n)
                     return autorun(() => {
-                        const e = r.trigger.bounding.get(),
-                            t = r.portal.bounding.get(),
-                            s = r.portal.position.get();
-                        e && s && t && u(e, t, s);
+                        const e = n.trigger.bounding.get(),
+                            t = n.portal.bounding.get(),
+                            s = n.portal.position.get();
+                        e && s && t && d(e, t, s);
                     });
-            }, [r, u]),
+            }, [n, d]),
             jsxRuntimeExports.jsxs('div', {
-                ...e,
-                ref: assignRefs([t, s]),
+                ...t,
+                ref: assignRefs([s, r]),
                 style: {
-                    width: (verticals.includes(a) && n) || '1rem',
-                    height: (horizontals.includes(a) && n) || '1rem',
-                    top: (horizontals.includes(a) && l) || 'auto',
-                    bottom: 'bottom' === a ? '0' : 'auto',
-                    left: (verticals.includes(a) && l) || 'auto',
-                    right: 'right' === a ? '0' : 'auto',
-                    ...e.style,
+                    width: (verticals.includes(i) && o) || '1rem',
+                    height: (horizontals.includes(i) && o) || '1rem',
+                    top: (horizontals.includes(i) && c) || 'auto',
+                    bottom: 'bottom' === i ? '0' : 'auto',
+                    left: (verticals.includes(i) && c) || 'auto',
+                    right: 'right' === i ? '0' : 'auto',
+                    ...t.style,
                 },
-                className: clsx(styles$a.base, e.flipped && styles$a[`base__flipped-${a}`], e.className),
+                className: clsx(styles$a.base, t.flipped && styles$a[`base__flipped-${i}`], t.className),
                 children: [
                     jsxRuntimeExports.jsx('div', {
-                        className: clsx(styles$a.arrow, styles$a[`arrow__position-${a}`]),
-                        style: { transform: `translate(-50%, -50%) rotate(${rotations[a]}deg)` },
+                        className: clsx(styles$a.arrow, styles$a[`arrow__position-${i}`], e?.icon),
+                        style: { transform: `translate(-50%, -50%) rotate(${rotations[i]}deg)` },
                     }),
-                    !1 === e.noGlow &&
+                    !1 === t.noGlow &&
                         jsxRuntimeExports.jsx('div', {
                             className: styles$a.glow,
-                            style: { transform: `translate(-50%, -50%) rotate(${rotations[a]}deg)` },
+                            style: { transform: `translate(-50%, -50%) rotate(${rotations[i]}deg)` },
                         }),
                 ],
             })
@@ -5777,7 +5777,7 @@ const sounds = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
     ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
 function arabic2roman$1(e) {
     let t = '';
-    for (let s = ARABIC.length - 1; s >= 0; s--) for (; e >= ARABIC[s]; ) ((t += ROMAN[s]), (e -= ARABIC[s]));
+    for (let s = ARABIC.length - 1; s >= 0; s--) for (; e >= ARABIC[s];) ((t += ROMAN[s]), (e -= ARABIC[s]));
     return t;
 }
 const ROMAN_FORBIDDEN_LANGUAGE_CODES = ['ko', 'no'];
@@ -6573,6 +6573,7 @@ const FormatNumber = ({ value: e, format: t = 'integral' }) => {
     RewardType.BattleBoosterGift,
     RewardType.OptionalDevice,
     RewardType.Attachment,
+    RewardType.TmanToken,
     RewardType.Gold,
     RewardType.Credits,
     RewardType.Crystal,
@@ -7166,11 +7167,18 @@ function isSerializableReactNode(e) {
     );
 }
 Tooltip.Decorator = Decorator;
-const base$1 = 'MultilineOverflow_8834bd8e',
+const base$1 = 'MultilineOverflow_ec9f8e47',
     content = 'MultilineOverflow_content_b539970d',
     styles$1 = { base: base$1, content: content };
 function isSerializableParams(e) {
     return !e || Object.values(e).every(isSerializableReactNode);
+}
+function cloneNode(e) {
+    return e instanceof HTMLElement
+        ? e.cloneNode(!0)
+        : e.nodeType === Node.TEXT_NODE
+          ? document.createTextNode(e.nodeValue ?? '')
+          : void 0;
 }
 const MultilineOverflow = reactExports.forwardRef(function (
     {
@@ -7189,120 +7197,116 @@ const MultilineOverflow = reactExports.forwardRef(function (
         classNames: p,
         style: m,
         styleBase: _,
-        ...f
+        styleText: f,
+        ...h
     },
-    h,
+    g,
 ) {
-    const g = reactExports.useRef(null),
-        [E, x] = reactExports.useState(!1);
+    const E = reactExports.useRef(null),
+        x = reactExports.useRef(null),
+        [b, v] = reactExports.useState(!1);
     reactExports.useEffect(() => {
         if (0 === e.length) return;
-        const t = g.current;
-        if (!t) return;
-        const s = document.createElement('div');
-        let r = noop;
+        const t = E.current,
+            s = x.current;
+        if (!t || !s) return;
+        const r = document.createElement('div');
         function n() {
-            if (!t) return;
-            (r(),
-                (s.style.visibility = 'hidden'),
-                (s.className = clsx(styles$1.content, t.children[0].className)),
-                (s.innerHTML = ''),
-                t.appendChild(s));
+            if (!t || !s) return;
             const e = t.children[0];
             if (!e) return console.warn("MultilineOverflow can't get first child to handle it", t);
-            const n = relativeOffset(t.getBoundingClientRect(), e.getBoundingClientRect());
-            (e instanceof HTMLElement && (s.style.cssText = e.style.cssText),
-                (s.style.left = `${n.x}px`),
-                (s.style.top = `${n.y}px`));
-            for (let t of e.childNodes.values()) {
-                if (t instanceof HTMLElement) {
-                    const e = t.cloneNode(!0);
-                    s.appendChild(e);
-                }
-                if (t.nodeType === Node.TEXT_NODE) {
-                    const e = document.createTextNode(t.nodeValue ?? '');
-                    s.appendChild(e);
-                }
+            (r.remove(),
+                (r.className = clsx(styles$1.content, t.children[0].className)),
+                (r.innerHTML = ''),
+                e instanceof HTMLElement && (r.style.cssText = e.style.cssText));
+            const n = e.childNodes.length - 1;
+            let o = n;
+            for (; o >= 0; o--) {
+                const s = e.childNodes[o];
+                if (s instanceof HTMLElement && !(s.offsetTop + s.offsetHeight > t.clientHeight)) break;
             }
-            const o = document.createElement('div');
-            ((o.innerHTML = '...'),
-                s.appendChild(o),
-                (r = createLayoutReadyInEffect(() => {
-                    const e = [];
-                    for (let r = s.childNodes.length - 2; 0 !== r; r--) {
-                        const n = s.childNodes[r];
-                        if (n instanceof HTMLElement) {
-                            if (n.offsetTop + n.offsetHeight <= t.offsetHeight) break;
-                            e.push(n);
-                        }
-                    }
-                    if (0 === e.length) (x(!1), o.remove());
-                    else {
-                        (x(!0), e.forEach((e) => e.remove()));
-                        let s = 0;
-                        for (; s++ < 1e3 && o.previousSibling && o.offsetTop + o.offsetHeight > t.offsetHeight; )
-                            o.previousSibling?.remove();
-                    }
-                    s.style.visibility = '';
-                })));
+            if (o === n) v(!1);
+            else {
+                v(!0);
+                const n = relativeOffset(t.getBoundingClientRect(), e.getBoundingClientRect());
+                for (r.style.visibility = '', r.style.left = `${n.x}px`, r.style.top = `${n.y}px`; o >= 0; o--) {
+                    const t = e.childNodes[o];
+                    if (t instanceof HTMLElement && !(t.offsetLeft + t.offsetWidth + s.offsetWidth > e.clientWidth))
+                        break;
+                }
+                for (let t = 0; t <= o; t++) {
+                    const s = e.childNodes[t];
+                    if (!(s instanceof HTMLElement)) continue;
+                    const n = cloneNode(s);
+                    n ? r.appendChild(n) : console.warn('Unexpected type of target node', s);
+                }
+                const a = s.cloneNode(!0);
+                (a.removeAttribute('style'), r.appendChild(a), t.appendChild(r));
+            }
         }
         const o = new ResizeObserver(n);
         return (
             o.observe(t),
             new DisposeBuilder()
-                .add(() => r())
                 .add(addEventListener(window, 'resize', n))
                 .add(o.disconnect.bind(o))
-                .add(s.remove.bind(s)).dispose
+                .add(r.remove.bind(r)).dispose
         );
-    }, [h, e]);
-    const b = isSerializableParams(s),
-        v = useParamTooltip(
+    }, [g, e]);
+    const y = isSerializableParams(s),
+        w = useParamTooltip(
             'format_text',
             reactExports.useMemo(
                 () => ({
                     text: e,
-                    params: b ? s : void 0,
+                    params: y ? s : void 0,
                     split: o,
                     upgradeLegacy: n,
                     brackets: t,
                     resId: resources.resolve('views').read((e) => e.mono.tooltips.tooltips('resId')),
                 }),
-                [e, t, o, n, s, b],
+                [e, t, o, n, s, y],
             ),
         ),
-        y = u ?? v;
+        T = u ?? w;
     if (
         (reactExports.useEffect(() => {
-            c || E || y.onMouseLeave();
-        }, [E, y, u, c, b]),
+            c || b || T.onMouseLeave();
+        }, [b, T, u, c, y]),
         0 === e.length)
     )
         return null;
-    return jsxRuntimeExports.jsx('div', {
-        ...f,
+    return jsxRuntimeExports.jsxs('div', {
+        ...h,
         onMouseEnter: function (e) {
-            (a?.(e), E && !c && y.onMouseEnter(e));
+            (a?.(e), b && !c && T.onMouseEnter(e));
         },
         onClick: function (e) {
-            (l?.(e), c || y.onClick());
+            (l?.(e), c || T.onClick());
         },
         onMouseLeave: function (e) {
-            (i?.(e), c || y.onMouseLeave());
+            (i?.(e), c || T.onMouseLeave());
         },
-        ref: assignRefs([h, g]),
+        ref: assignRefs([g, E]),
         className: clsx(styles$1.base, d, p?.base),
-        style: _,
-        children: jsxRuntimeExports.jsx(FormatText, {
-            text: e,
-            brackets: t,
-            params: s,
-            upgradeLegacy: n,
-            split: o,
-            formatters: r,
-            className: p?.text,
-            style: { ...m, visibility: 'hidden' },
-        }),
+        style: { ...m, ..._ },
+        children: [
+            jsxRuntimeExports.jsx(FormatText, {
+                text: e,
+                brackets: t,
+                params: s,
+                upgradeLegacy: n,
+                split: o,
+                formatters: r,
+                className: p?.text,
+                style: { ...f, visibility: b ? 'hidden' : void 0 },
+            }),
+            jsxRuntimeExports.jsx('div', {
+                ref: x,
+                style: { visibility: 'hidden', position: 'absolute' },
+                children: '...',
+            }),
+        ],
     });
 });
 function FormatTextSplited({ className: e, ...t }) {

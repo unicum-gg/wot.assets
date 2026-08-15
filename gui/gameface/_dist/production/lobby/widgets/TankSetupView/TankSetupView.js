@@ -256,15 +256,13 @@
                             if (u.mediumWidth && b) return (0, a.H)(t, u, B);
                             if (u.smallWidth && A) return (0, a.H)(t, u, B);
                             if (u.extraSmallWidth && F) return (0, a.H)(t, u, B);
-                            if (
-                                !(
-                                    u.extraLargeWidth ||
-                                    u.largeWidth ||
-                                    u.mediumWidth ||
-                                    u.smallWidth ||
-                                    u.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                u.extraLargeWidth ||
+                                u.largeWidth ||
+                                u.mediumWidth ||
+                                u.smallWidth ||
+                                u.extraSmallWidth
+                            )) {
                                 if (u.extraLargeHeight && D) return t;
                                 if (u.largeHeight && p) return t;
                                 if (u.mediumHeight && g) return t;
@@ -2167,7 +2165,7 @@
                 const C = (e, t = []) => {
                         const u = document.getElementById('root');
                         u && (u.style.cursor = e ? 'grabbing' : 'default');
-                        for (var n, a = p(t); !(n = a()).done; ) {
+                        for (var n, a = p(t); !(n = a()).done;) {
                             const t = n.value,
                                 u = document.getElementById(t);
                             u && (u.style.pointerEvents = e ? 'none' : 'auto');
@@ -2176,7 +2174,7 @@
                     h = (e, t, u) => {
                         let n = '',
                             a = 8e3;
-                        for (var i, s = p(u); !(i = s()).done; ) {
+                        for (var i, s = p(u); !(i = s()).done;) {
                             const e = i.value,
                                 u = Math.abs(e.centerX - t);
                             u < a && ((n = e.id), (a = u));

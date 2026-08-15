@@ -301,7 +301,7 @@
                     })(),
                     Du = function (u) {
                         let e = '';
-                        for (let F = S.length - 1; F >= 0; F--) for (; u >= S[F]; ) ((e += P[F]), (u -= S[F]));
+                        for (let F = S.length - 1; F >= 0; F--) for (; u >= S[F];) ((e += P[F]), (u -= S[F]));
                         return e;
                     };
                 function tu() {
@@ -555,7 +555,7 @@
                         let D = _u.exec(u),
                             t = u,
                             C = 0;
-                        for (; D; ) {
+                        for (; D;) {
                             const F = D[0],
                                 B = Tu.exec(F),
                                 r = Pu.exec(F),

@@ -486,7 +486,7 @@
                     o = n.call(t),
                     a = [];
                 try {
-                    for (; (void 0 === e || e-- > 0) && !(r = o.next()).done; ) a.push(r.value);
+                    for (; (void 0 === e || e-- > 0) && !(r = o.next()).done;) a.push(r.value);
                 } catch (t) {
                     i = { error: t };
                 } finally {
@@ -532,7 +532,7 @@
                         o = n.call(t),
                         a = [];
                     try {
-                        for (; (void 0 === e || e-- > 0) && !(r = o.next()).done; ) a.push(r.value);
+                        for (; (void 0 === e || e-- > 0) && !(r = o.next()).done;) a.push(r.value);
                     } catch (t) {
                         i = { error: t };
                     } finally {
@@ -602,13 +602,13 @@
                     };
                 }, []),
                     (0, i.Z)(function () {
-                        for (; n.current.length; ) {
+                        for (; n.current.length;) {
                             var t = s(n.current.shift(), 2);
                             u(t[0], t[1]);
                         }
                     }),
                     (0, r.useEffect)(function () {
-                        for (; e.current.length; ) {
+                        for (; e.current.length;) {
                             var t = s(e.current.shift(), 2);
                             u(t[0], t[1]);
                         }
@@ -626,7 +626,7 @@
                         o = n.call(t),
                         a = [];
                     try {
-                        for (; (void 0 === e || e-- > 0) && !(r = o.next()).done; ) a.push(r.value);
+                        for (; (void 0 === e || e-- > 0) && !(r = o.next()).done;) a.push(r.value);
                     } catch (t) {
                         i = { error: t };
                     } finally {
@@ -1342,7 +1342,7 @@
                             void 0 !== e.threshold && (this.threshold = e.threshold)));
                 }
                 applyToElement(t) {
-                    for (var e, n = a(this.getBlocks(t)); !(e = n()).done; ) {
+                    for (var e, n = a(this.getBlocks(t)); !(e = n()).done;) {
                         const t = e.value;
                         (c(t.hasText()), this.applyToParagraph(t));
                     }
@@ -1371,11 +1371,11 @@
                     const r = !e || n === l,
                         i = r ? new g(t) : e;
                     c(i);
-                    for (var o, s = a(t.childNodes); !(o = s()).done; ) {
+                    for (var o, s = a(t.childNodes); !(o = s()).done;) {
                         const t = o.value;
                         switch (t.nodeType) {
                             case u:
-                                for (var m, W = a(this.getBlocks(t, i)); !(m = W()).done; ) {
+                                for (var m, W = a(this.getBlocks(t, i)); !(m = W()).done;) {
                                     const t = m.value;
                                     yield t;
                                 }
@@ -1395,7 +1395,7 @@
                     if ((c(r.length > 0), c(r.reduce((t, e) => t + e.length, 0) === n.length), r.length <= 1)) return;
                     const i = [];
                     let o = 0;
-                    for (var s, u = a(r); !(s = u()).done; ) {
+                    for (var s, u = a(r); !(s = u()).done;) {
                         const t = s.value;
                         (c(t.length > 0), (o += t.length), i.push(o));
                     }
@@ -1414,7 +1414,7 @@
                         i = e[0];
                     c(i > 0);
                     let o = 0;
-                    for (var s, u = a(t); !(s = u()).done; ) {
+                    for (var s, u = a(t); !(s = u()).done;) {
                         const t = s.value,
                             n = t.nodeValue;
                         if (!n) continue;
@@ -1425,7 +1425,7 @@
                         }
                         const u = [];
                         let f = 0;
-                        for (; i < a; ) {
+                        for (; i < a;) {
                             const t = i - o;
                             (c(t >= f), u.push(n.substring(f, t)), (f = t), ++r, c(e[r] > i), (i = e[r]));
                         }
@@ -1439,7 +1439,7 @@
                     if ('string' == typeof n) return void (t.nodeValue = e.join(n));
                     const r = t.ownerDocument;
                     let i = [];
-                    for (var o, s = a(e); !(o = s()).done; ) {
+                    for (var o, s = a(e); !(o = s()).done;) {
                         const t = o.value;
                         (t && i.push(r.createTextNode(t)), i.push(null));
                     }
@@ -1561,7 +1561,7 @@
                         .map(([t, e]) => `${t}:${e}`);
                 }
                 static hasChildTextNode(t) {
-                    for (var e, n = U(t.childNodes); !(e = n()).done; ) {
+                    for (var e, n = U(t.childNodes); !(e = n()).done;) {
                         if (e.value.nodeType === w) return !0;
                     }
                     return !1;
@@ -2445,12 +2445,12 @@
                                   }),
                                   (t.prototype.nodesFromChild = function (t) {
                                       if (t.escapes(this)) return [];
-                                      for (var e = [], n = t; n && n !== this; ) (e.push(n), (n = n.parent));
+                                      for (var e = [], n = t; n && n !== this;) (e.push(n), (n = n.parent));
                                       return (e.push(this), e);
                                   }),
                                   (t.prototype.escapes = function (t) {
                                       if (this === t) return !1;
-                                      for (var e = this.parent; e; ) {
+                                      for (var e = this.parent; e;) {
                                           if (e === t) return !1;
                                           e = e.parent;
                                       }
@@ -2761,7 +2761,7 @@
                                           try {
                                               return this.getStateNodeById(t.slice(1));
                                           } catch (t) {}
-                                      for (var e = (0, a.Q9)(t, this.delimiter).slice(), n = this; e.length; ) {
+                                      for (var e = (0, a.Q9)(t, this.delimiter).slice(), n = this; e.length;) {
                                           var r = e.shift();
                                           if (!r.length) break;
                                           n = n.getStateNode(r);
@@ -3290,7 +3290,7 @@
                     o = n.call(t),
                     a = [];
                 try {
-                    for (; (void 0 === e || e-- > 0) && !(r = o.next()).done; ) a.push(r.value);
+                    for (; (void 0 === e || e-- > 0) && !(r = o.next()).done;) a.push(r.value);
                 } catch (t) {
                     i = { error: t };
                 } finally {
@@ -3593,7 +3593,7 @@
                             (a.push(e),
                                 (function () {
                                     if (!s) {
-                                        for (s = !0; a.length > 0; ) {
+                                        for (s = !0; a.length > 0;) {
                                             var e = a.shift();
                                             ((n = t.transition(n, e, u)),
                                                 o.forEach(function (t) {
@@ -4714,7 +4714,7 @@
                                       this.queue = [];
                                   }),
                                   (t.prototype.flushEvents = function () {
-                                      for (var t = this.queue.shift(); t; ) (this.process(t), (t = this.queue.shift()));
+                                      for (var t = this.queue.shift(); t;) (this.process(t), (t = this.queue.shift()));
                                   }),
                                   (t.prototype.process = function (t) {
                                       this.processingEvent = !0;
@@ -4785,7 +4785,7 @@
                     v = new Set(e);
                 try {
                     for (var p = (0, r.XA)(v), y = p.next(); !y.done; y = p.next())
-                        for (var g = (_ = y.value).parent; g && !v.has(g); ) (v.add(g), (g = g.parent));
+                        for (var g = (_ = y.value).parent; g && !v.has(g);) (v.add(g), (g = g.parent));
                 } catch (t) {
                     n = { error: t };
                 } finally {
@@ -4844,7 +4844,7 @@
                 try {
                     for (var x = (0, r.XA)(v), S = x.next(); !S.done; S = x.next()) {
                         var _;
-                        for (g = (_ = S.value).parent; g && !v.has(g); ) (v.add(g), (g = g.parent));
+                        for (g = (_ = S.value).parent; g && !v.has(g);) (v.add(g), (g = g.parent));
                     }
                 } catch (t) {
                     h = { error: t };

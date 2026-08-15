@@ -461,7 +461,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function r(u) {
                     let e = '';
-                    for (let t = a.length - 1; t >= 0; t--) for (; u >= a[t]; ) ((e += n[t]), (u -= a[t]));
+                    for (let t = a.length - 1; t >= 0; t--) for (; u >= a[t];) ((e += n[t]), (u -= a[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -944,9 +944,13 @@
                         if (t.mediumWidth && F) return r(e, t, f);
                         if (t.smallWidth && D) return r(e, t, f);
                         if (t.extraSmallWidth && _) return r(e, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && p) return e;
@@ -1367,7 +1371,7 @@
                                             e(u).delete(t);
                                         },
                                         r = (u, ...t) => {
-                                            for (var n, a = z(e(u).values()); !(n = a()).done; ) (0, n.value)(...t);
+                                            for (var n, a = z(e(u).values()); !(n = a()).done;) (0, n.value)(...t);
                                         };
                                     return (0, n.useMemo)(() => ({ on: t, off: a, trigger: r }), []);
                                 })(),
@@ -2245,7 +2249,7 @@
                                                     };
                                                 },
                                                 dispose: function () {
-                                                    for (var u, t = Wu(a.keys()); !(u = t()).done; ) r(u.value, e);
+                                                    for (var u, t = Wu(a.keys()); !(u = t()).done;) r(u.value, e);
                                                 },
                                                 unsubscribe: r,
                                             };

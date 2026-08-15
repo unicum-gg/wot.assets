@@ -1,5 +1,5 @@
 import { n as e, j as s, m as t, e as a } from '../../../../chunks/vendor.js';
-import { i as n, m as p, n as r, F as c, D as o, a2 as l, j as d } from '../../../../chunks/lib.js';
+import { i as n, m as p, n as r, F as c, y as o, ac as l, j as d } from '../../../../chunks/lib.js';
 import { g as m } from '../../../../chunks/resources.js';
 const [i, u] = n()(({ observableModel: s }) => {
         const t = { root: s.object(), steps: s.arrayClone('steps') },
@@ -21,9 +21,9 @@ function h({ step: e, info: t }) {
 }
 const v = 'App_2f9ddec3',
     g = 'App_base__wide_4a5e9f55',
-    N = 'App_title_17654583',
-    b = 'App_description_e0e18776',
-    y = 'App_stepTitle_a0f8dcfd',
+    y = 'App_title_17654583',
+    N = 'App_description_e0e18776',
+    b = 'App_stepTitle_a0f8dcfd',
     T = 'App_steps_c958d9b7',
     A = t(function () {
         const { model: e } = u(),
@@ -51,11 +51,11 @@ const v = 'App_2f9ddec3',
                 children: s.jsxs('div', {
                     className: a(v, p.length > 10 && g),
                     children: [
-                        s.jsx(c, { className: N, text: r('tooltips.steps.header'), params: { currency: o } }),
-                        s.jsx(c, { className: b, text: r('tooltips.steps.description'), params: { currency: o } }),
+                        s.jsx(c, { className: y, text: r('tooltips.steps.header'), params: { currency: o } }),
+                        s.jsx(c, { className: N, text: r('tooltips.steps.description'), params: { currency: o } }),
                         s.jsxs(s.Fragment, {
                             children: [
-                                s.jsx(c, { className: y, text: r('tooltips.steps.steps') }),
+                                s.jsx(c, { className: b, text: r('tooltips.steps.steps') }),
                                 s.jsx('div', {
                                     className: T,
                                     children: p.map((e, t) => s.jsx(h, { step: e, info: d(e) }, t)),

@@ -1525,7 +1525,7 @@
                               if (!n) return [e];
                               const r = [];
                               let a = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const o = t.justifyContent === s.v2.FlexEnd ? n.index : u.lastIndex;
                                   (r.push(e.slice(a, o)), (a = o), (n = u.exec(e)));
                               }
@@ -1684,7 +1684,7 @@
                 const n = (e, t, u, n) => {
                     let r = t.exec(e),
                         a = 0;
-                    for (; r; ) (a !== r.index && u(e.slice(a, r.index)), n(r), (a = t.lastIndex), (r = t.exec(e)));
+                    for (; r;) (a !== r.index && u(e.slice(a, r.index)), n(r), (a = t.lastIndex), (r = t.exec(e)));
                     a !== e.length && u(e.slice(a));
                 };
             },
@@ -1760,7 +1760,7 @@
                             m = ((e, t) => {
                                 let u = 0,
                                     n = e.length - 1;
-                                for (; n - u >= 0; ) {
+                                for (; n - u >= 0;) {
                                     const r = u + Math.ceil(0.5 * (n - u));
                                     s(e[r], t) ? (n = r - 1) : (u = r + 1);
                                 }
@@ -2206,15 +2206,13 @@
                             if (u.mediumWidth && E) return o(t, u, D);
                             if (u.smallWidth && m) return o(t, u, D);
                             if (u.extraSmallWidth && A) return o(t, u, D);
-                            if (
-                                !(
-                                    u.extraLargeWidth ||
-                                    u.largeWidth ||
-                                    u.mediumWidth ||
-                                    u.smallWidth ||
-                                    u.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                u.extraLargeWidth ||
+                                u.largeWidth ||
+                                u.mediumWidth ||
+                                u.smallWidth ||
+                                u.extraSmallWidth
+                            )) {
                                 if (u.extraLargeHeight && f) return t;
                                 if (u.largeHeight && h) return t;
                                 if (u.mediumHeight && F) return t;

@@ -461,7 +461,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function n(u) {
                     let e = '';
-                    for (let t = a.length - 1; t >= 0; t--) for (; u >= a[t]; ) ((e += r[t]), (u -= a[t]));
+                    for (let t = a.length - 1; t >= 0; t--) for (; u >= a[t];) ((e += r[t]), (u -= a[t]));
                     return e;
                 }
                 const i = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -936,9 +936,13 @@
                         if (t.mediumWidth && F) return n(e, t, w);
                         if (t.smallWidth && D) return n(e, t, w);
                         if (t.extraSmallWidth && m) return n(e, t, w);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && g) return e;
@@ -1428,7 +1432,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Y(a.keys()); !(u = t()).done; ) n(u.value, e);
+                                                        for (var u, t = Y(a.keys()); !(u = t()).done;) n(u.value, e);
                                                     },
                                                     unsubscribe: n,
                                                 };
@@ -2174,6 +2178,7 @@
                         xu.BattleBoosterGift,
                         xu.OptionalDevice,
                         xu.Attachment,
+                        xu.TmanToken,
                     ],
                     Gu = [xu.Gold, xu.Credits, xu.Crystal, xu.FreeXp],
                     Uu = [xu.BattlePassPoints, xu.EquipCoin],
@@ -2872,7 +2877,7 @@
                         let s = Oe.exec(u),
                             o = u,
                             l = 0;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 r = Pe.exec(t),
                                 E = ye.exec(t),

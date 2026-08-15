@@ -918,7 +918,7 @@
                             let l = t.exec(u),
                                 c = u,
                                 E = 0;
-                            for (; l; ) {
+                            for (; l;) {
                                 const _ = l[0],
                                     A = a.exec(_),
                                     m = o.exec(_),
@@ -1169,8 +1169,7 @@
                             ? `${u}`
                             : (function (u) {
                                   let e = '';
-                                  for (let t = v.length - 1; t >= 0; t--)
-                                      for (; u >= v[t]; ) ((e += b[t]), (u -= v[t]));
+                                  for (let t = v.length - 1; t >= 0; t--) for (; u >= v[t];) ((e += b[t]), (u -= v[t]));
                                   return e;
                               })(u);
                 var f = t(3649),
@@ -1529,9 +1528,13 @@
                         if (t.mediumWidth && d) return Y(e, t, g);
                         if (t.smallWidth && _) return Y(e, t, g);
                         if (t.extraSmallWidth && A) return Y(e, t, g);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && m) return e;
                             if (t.largeHeight && F) return e;
                             if (t.mediumHeight && D) return e;
@@ -3727,7 +3730,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Ot(a.keys()); !(u = t()).done; ) r(u.value, e);
+                                                        for (var u, t = Ot(a.keys()); !(u = t()).done;) r(u.value, e);
                                                     },
                                                     unsubscribe: r,
                                                 };

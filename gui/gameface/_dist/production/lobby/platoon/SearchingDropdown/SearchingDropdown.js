@@ -387,7 +387,7 @@
                     o = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let t = '';
-                    for (let n = o.length - 1; n >= 0; n--) for (; e >= o[n]; ) ((t += r[n]), (e -= o[n]));
+                    for (let n = o.length - 1; n >= 0; n--) for (; e >= o[n];) ((t += r[n]), (e -= o[n]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1434,7 +1434,7 @@
                             n = G(t);
                         let r,
                             o = e;
-                        for (; null !== (r = U.exec(e)); ) {
+                        for (; null !== (r = U.exec(e));) {
                             const e = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
                                 const t = n + e[2].replace(/\.\.\//g, '');
@@ -1541,7 +1541,7 @@
                                             let t;
                                             const n = W(),
                                                 r = G(n);
-                                            for (; null !== (t = j.exec(e)); ) {
+                                            for (; null !== (t = j.exec(e));) {
                                                 const e = t[0].match(/href="(.*?)"/);
                                                 if (e && !e[1].includes(z) && r) {
                                                     const t = r + e[1].replace(/\.\.\//g, ''),
@@ -1556,7 +1556,7 @@
                                             ((e) => {
                                                 const t = G(W());
                                                 let n;
-                                                for (; null !== (n = j.exec(e)); ) {
+                                                for (; null !== (n = j.exec(e));) {
                                                     const e = n[0].match(/href="(.*?)"/);
                                                     if (e) {
                                                         const n = t + e[1].replace(/\.\.\//g, ''),
@@ -1891,7 +1891,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, n = Ve(o.keys()); !(e = n()).done; ) a(e.value, t);
+                                                        for (var e, n = Ve(o.keys()); !(e = n()).done;) a(e.value, t);
                                                     },
                                                     unsubscribe: a,
                                                 };

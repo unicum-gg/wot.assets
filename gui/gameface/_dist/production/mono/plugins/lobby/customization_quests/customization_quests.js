@@ -69,7 +69,7 @@ const exports = {};
                           },
                 a = (e) => (t = s ? new n(e, t, 'An error was suppressed during disposal') : ((s = !0), e)),
                 r = (n) => {
-                    for (; (n = e.pop()); )
+                    for (; (n = e.pop());)
                         try {
                             var i = n[1] && n[1].call(n[2]);
                             if (n[0]) return Promise.resolve(i).then(r, (e) => (a(e), r()));
@@ -2969,38 +2969,38 @@ const exports = {};
                     t.config &&
                         !g &&
                         mergeConfig(f, callProp(t.config, r), t.config !== i.config ? callProp(i.config, r) : void 0));
-                let y = getAnimated(this);
-                if (!y || is.und(d)) return s(getFinishedResult(this, !0));
-                const b = is.und(t.reset) ? a && !t.default : !is.und(u) && matchProp(t.reset, r),
-                    v = b ? u : this.get(),
+                let b = getAnimated(this);
+                if (!b || is.und(d)) return s(getFinishedResult(this, !0));
+                const y = is.und(t.reset) ? a && !t.default : !is.und(u) && matchProp(t.reset, r),
+                    v = y ? u : this.get(),
                     R = computeGoal(d),
                     w = is.num(R) || is.arr(R) || isAnimatedString(R),
                     x = !g && (!w || matchProp(i.immediate || t.immediate, r));
                 if (p) {
                     const e = getAnimatedType(d);
-                    if (e !== y.constructor) {
+                    if (e !== b.constructor) {
                         if (!x)
                             throw Error(
-                                `Cannot animate between ${y.constructor.name} and ${e.name}, as the "to" prop suggests`,
+                                `Cannot animate between ${b.constructor.name} and ${e.name}, as the "to" prop suggests`,
                             );
-                        y = this._set(R);
+                        b = this._set(R);
                     }
                 }
-                const E = y.constructor;
+                const E = b.constructor;
                 let T = hasFluidValue(d),
                     S = !1;
                 if (!T) {
-                    const e = b || (!hasAnimated(this) && m);
+                    const e = y || (!hasAnimated(this) && m);
                     ((p || e) && ((S = isEqual(computeGoal(v), R)), (T = !S)),
                         ((isEqual(o.immediate, x) || x) && isEqual(f.decay, h) && isEqual(f.velocity, _)) || (T = !0));
                 }
                 if (
-                    (S && isAnimating(this) && (o.changed && !b ? (T = !0) : T || this._stop(l)),
+                    (S && isAnimating(this) && (o.changed && !y ? (T = !0) : T || this._stop(l)),
                     !g &&
                         ((T || hasFluidValue(l)) &&
-                            ((o.values = y.getPayload()),
+                            ((o.values = b.getPayload()),
                             (o.toValues = hasFluidValue(d) ? null : E == AnimatedString ? [1] : toArray(R))),
-                        o.immediate != x && ((o.immediate = x), x || b || this._set(l)),
+                        o.immediate != x && ((o.immediate = x), x || y || this._set(l)),
                         T))
                 ) {
                     const { onRest: e } = o;
@@ -3010,10 +3010,10 @@ const exports = {};
                         this._pendingCalls.add(s),
                         o.changed &&
                             raf.batchedUpdates(() => {
-                                ((o.changed = !b), e?.(n, this), b ? callProp(i.onRest, n) : o.onStart?.(n, this));
+                                ((o.changed = !y), e?.(n, this), y ? callProp(i.onRest, n) : o.onStart?.(n, this));
                             }));
                 }
-                (b && this._set(v),
+                (y && this._set(v),
                     g
                         ? s(runAsync(t.to, t, this._state, this))
                         : T
@@ -3513,28 +3513,28 @@ const exports = {};
                 ),
             ));
         const _ = getKeys(p, n ? n() : t, h),
-            y = (a && f.current) || [];
+            b = (a && f.current) || [];
         useIsomorphicLayoutEffect(() =>
-            each(y, ({ ctrl: e, item: t, key: s }) => {
+            each(b, ({ ctrl: e, item: t, key: s }) => {
                 (detachRefs(e, m), callProp(c, t, s));
             }),
         );
-        const b = [];
+        const y = [];
         if (
             (h &&
                 each(h, (e, t) => {
                     e.expired
-                        ? (clearTimeout(e.expirationId), y.push(e))
-                        : ~(t = b[t] = _.indexOf(e.key)) && (g[t] = e);
+                        ? (clearTimeout(e.expirationId), b.push(e))
+                        : ~(t = y[t] = _.indexOf(e.key)) && (g[t] = e);
                 }),
             each(p, (e, t) => {
                 g[t] || ((g[t] = { key: _[t], item: e, phase: 'mount', ctrl: new Controller() }), (g[t].ctrl.item = e));
             }),
-            b.length)
+            y.length)
         ) {
             let e = -1;
             const { leave: s } = n ? n() : t;
-            each(b, (t, n) => {
+            each(y, (t, n) => {
                 const a = h[n];
                 ~t ? ((e = g.indexOf(a)), (g[e] = { ...a, item: p[t] })) : s && g.splice(++e, 0, a);
             });
@@ -3571,15 +3571,15 @@ const exports = {};
                 m.config = callProp(t, e.item, s, p);
             }
             v += i;
-            const y = { ...w, delay: g + v, ref: d, immediate: c.immediate, reset: !1, ...m };
-            if ('enter' == p && is.und(y.from)) {
+            const b = { ...w, delay: g + v, ref: d, immediate: c.immediate, reset: !1, ...m };
+            if ('enter' == p && is.und(b.from)) {
                 const a = n ? n() : t,
                     r = is.und(a.initial) || h ? a.from : a.initial;
-                y.from = callProp(r, e.item, s);
+                b.from = callProp(r, e.item, s);
             }
-            const { onResolve: b } = y;
-            y.onResolve = (e) => {
-                callProp(b, e);
+            const { onResolve: y } = b;
+            b.onResolve = (e) => {
+                callProp(y, e);
                 const t = f.current,
                     s = t.find((e) => e.key === a);
                 if (s && (!e.cancelled || 'update' == s.phase) && s.ctrl.idle) {
@@ -3595,10 +3595,10 @@ const exports = {};
                     e && t.some((e) => e.expired) && (E.current.delete(s), l && (T.current = !0), R());
                 }
             };
-            const S = getSprings(e.ctrl, y);
+            const S = getSprings(e.ctrl, b);
             'leave' === p && l
-                ? E.current.set(e, { phase: p, springs: S, payload: y })
-                : x.set(e, { phase: p, springs: S, payload: y });
+                ? E.current.set(e, { phase: p, springs: S, payload: b })
+                : x.set(e, { phase: p, springs: S, payload: b });
         });
         const S = React.useContext(SpringContext),
             $ = usePrev(S),
@@ -4093,7 +4093,9 @@ const exports = {};
                 let o = null;
                 function l() {
                     n ||
-                        ((i.current.status = statuses$1.await),
+                        ('display' === i.current.status &&
+                            (sendEvent$2.tooltip.hide(e, t, s), (i.current.status = statuses$1.idle)),
+                        (i.current.status = statuses$1.await),
                         window.clearTimeout(i.current.timeoutId),
                         (i.current.timeoutId = window.setTimeout(c, r)));
                 }
@@ -4111,7 +4113,7 @@ const exports = {};
                     ) {
                         displayedTooltips.delete(o);
                         let e = o.parentElement;
-                        for (; e && !displayedTooltips.has(e); ) e = e.parentElement;
+                        for (; e && !displayedTooltips.has(e);) e = e.parentElement;
                         if (e) {
                             displayedTooltips.get(e).show();
                         }
@@ -4389,22 +4391,22 @@ const exports = {};
                             };
                         }),
                         h = React.useRef(!1),
-                        [_, y] = React.useState(u);
+                        [_, b] = React.useState(u);
                     React.useEffect(() => {
-                        y(u);
+                        b(u);
                     }, [u]);
-                    const [b, v] = React.useState(() => f(_, o, m));
+                    const [y, v] = React.useState(() => f(_, o, m));
                     return (
                         React.useEffect(() => {
                             h.current ? v(f(_, o, m)) : (h.current = !0);
                         }, [f, m, _, o?.context, o?.initializer, o?.getRoot, o?.rootId]),
                         React.useEffect(
                             () => () => {
-                                (b.externalModel.dispose(), p.current.forEach((e) => e()));
+                                (y.externalModel.dispose(), p.current.forEach((e) => e()));
                             },
-                            [b],
+                            [y],
                         ),
-                        jsxRuntime.jsx(a.Provider, { value: b, children: l })
+                        jsxRuntime.jsx(a.Provider, { value: y, children: l })
                     );
                 }
                 return (
@@ -4894,7 +4896,7 @@ const exports = {};
         for (let s = 0; s < e.length; s++) {
             if ('$' === e[s]) {
                 let n = s + 1;
-                for (; n < e.length && !isEnd(e[n]); ) n++;
+                for (; n < e.length && !isEnd(e[n]);) n++;
                 const a = e.slice(s + 1, n),
                     r = t[a];
                 if (r) return resolveAttrParams(e.replace(`$${a}`, String(r)), t);
@@ -5231,11 +5233,18 @@ const exports = {};
             (!React.isValidElement(e) && !!Array.isArray(e) && e.every(isSerializableReactNode))
         );
     }
-    const base$b = 'MultilineOverflow_8834bd8e',
+    const base$b = 'MultilineOverflow_ec9f8e47',
         content$1 = 'MultilineOverflow_content_b539970d',
         styles$f = { base: base$b, content: content$1 };
     function isSerializableParams(e) {
         return !e || Object.values(e).every(isSerializableReactNode);
+    }
+    function cloneNode(e) {
+        return e instanceof HTMLElement
+            ? e.cloneNode(!0)
+            : e.nodeType === Node.TEXT_NODE
+              ? document.createTextNode(e.nodeValue ?? '')
+              : void 0;
     }
     const MultilineOverflow = React.forwardRef(function (
         {
@@ -5254,120 +5263,116 @@ const exports = {};
             classNames: m,
             style: p,
             styleBase: g,
-            ...f
+            styleText: f,
+            ...h
         },
-        h,
+        _,
     ) {
-        const _ = React.useRef(null),
-            [y, b] = React.useState(!1);
+        const b = React.useRef(null),
+            y = React.useRef(null),
+            [v, R] = React.useState(!1);
         React.useEffect(() => {
             if (0 === e.length) return;
-            const t = _.current;
-            if (!t) return;
-            const s = document.createElement('div');
-            let n = noop$1;
+            const t = b.current,
+                s = y.current;
+            if (!t || !s) return;
+            const n = document.createElement('div');
             function a() {
-                if (!t) return;
-                (n(),
-                    (s.style.visibility = 'hidden'),
-                    (s.className = clsx(styles$f.content, t.children[0].className)),
-                    (s.innerHTML = ''),
-                    t.appendChild(s));
+                if (!t || !s) return;
                 const e = t.children[0];
                 if (!e) return console.warn("MultilineOverflow can't get first child to handle it", t);
-                const a = relativeOffset(t.getBoundingClientRect(), e.getBoundingClientRect());
-                (e instanceof HTMLElement && (s.style.cssText = e.style.cssText),
-                    (s.style.left = `${a.x}px`),
-                    (s.style.top = `${a.y}px`));
-                for (let t of e.childNodes.values()) {
-                    if (t instanceof HTMLElement) {
-                        const e = t.cloneNode(!0);
-                        s.appendChild(e);
-                    }
-                    if (t.nodeType === Node.TEXT_NODE) {
-                        const e = document.createTextNode(t.nodeValue ?? '');
-                        s.appendChild(e);
-                    }
+                (n.remove(),
+                    (n.className = clsx(styles$f.content, t.children[0].className)),
+                    (n.innerHTML = ''),
+                    e instanceof HTMLElement && (n.style.cssText = e.style.cssText));
+                const a = e.childNodes.length - 1;
+                let r = a;
+                for (; r >= 0; r--) {
+                    const s = e.childNodes[r];
+                    if (s instanceof HTMLElement && !(s.offsetTop + s.offsetHeight > t.clientHeight)) break;
                 }
-                const r = document.createElement('div');
-                ((r.innerHTML = '...'),
-                    s.appendChild(r),
-                    (n = createLayoutReadyInEffect(() => {
-                        const e = [];
-                        for (let n = s.childNodes.length - 2; 0 !== n; n--) {
-                            const a = s.childNodes[n];
-                            if (a instanceof HTMLElement) {
-                                if (a.offsetTop + a.offsetHeight <= t.offsetHeight) break;
-                                e.push(a);
-                            }
-                        }
-                        if (0 === e.length) (b(!1), r.remove());
-                        else {
-                            (b(!0), e.forEach((e) => e.remove()));
-                            let s = 0;
-                            for (; s++ < 1e3 && r.previousSibling && r.offsetTop + r.offsetHeight > t.offsetHeight; )
-                                r.previousSibling?.remove();
-                        }
-                        s.style.visibility = '';
-                    })));
+                if (r === a) R(!1);
+                else {
+                    R(!0);
+                    const a = relativeOffset(t.getBoundingClientRect(), e.getBoundingClientRect());
+                    for (n.style.visibility = '', n.style.left = `${a.x}px`, n.style.top = `${a.y}px`; r >= 0; r--) {
+                        const t = e.childNodes[r];
+                        if (t instanceof HTMLElement && !(t.offsetLeft + t.offsetWidth + s.offsetWidth > e.clientWidth))
+                            break;
+                    }
+                    for (let t = 0; t <= r; t++) {
+                        const s = e.childNodes[t];
+                        if (!(s instanceof HTMLElement)) continue;
+                        const a = cloneNode(s);
+                        a ? n.appendChild(a) : console.warn('Unexpected type of target node', s);
+                    }
+                    const i = s.cloneNode(!0);
+                    (i.removeAttribute('style'), n.appendChild(i), t.appendChild(n));
+                }
             }
             const r = new ResizeObserver(a);
             return (
                 r.observe(t),
                 new DisposeBuilder()
-                    .add(() => n())
                     .add(addEventListener(window, 'resize', a))
                     .add(r.disconnect.bind(r))
-                    .add(s.remove.bind(s)).dispose
+                    .add(n.remove.bind(n)).dispose
             );
-        }, [h, e]);
-        const v = isSerializableParams(s),
-            R = useParamTooltip(
+        }, [_, e]);
+        const w = isSerializableParams(s),
+            x = useParamTooltip(
                 'format_text',
                 React.useMemo(
                     () => ({
                         text: e,
-                        params: v ? s : void 0,
+                        params: w ? s : void 0,
                         split: r,
                         upgradeLegacy: a,
                         brackets: t,
                         resId: resources.resolve('views').read((e) => e.mono.tooltips.tooltips('resId')),
                     }),
-                    [e, t, r, a, s, v],
+                    [e, t, r, a, s, w],
                 ),
             ),
-            w = d ?? R;
+            E = d ?? x;
         if (
             (React.useEffect(() => {
-                c || y || w.onMouseLeave();
-            }, [y, w, d, c, v]),
+                c || v || E.onMouseLeave();
+            }, [v, E, d, c, w]),
             0 === e.length)
         )
             return null;
-        return jsxRuntime.jsx('div', {
-            ...f,
+        return jsxRuntime.jsxs('div', {
+            ...h,
             onMouseEnter: function (e) {
-                (i?.(e), y && !c && w.onMouseEnter(e));
+                (i?.(e), v && !c && E.onMouseEnter(e));
             },
             onClick: function (e) {
-                (l?.(e), c || w.onClick());
+                (l?.(e), c || E.onClick());
             },
             onMouseLeave: function (e) {
-                (o?.(e), c || w.onMouseLeave());
+                (o?.(e), c || E.onMouseLeave());
             },
-            ref: assignRefs([h, _]),
+            ref: assignRefs([_, b]),
             className: clsx(styles$f.base, u, m?.base),
-            style: g,
-            children: jsxRuntime.jsx(FormatText, {
-                text: e,
-                brackets: t,
-                params: s,
-                upgradeLegacy: a,
-                split: r,
-                formatters: n,
-                className: m?.text,
-                style: { ...p, visibility: 'hidden' },
-            }),
+            style: { ...p, ...g },
+            children: [
+                jsxRuntime.jsx(FormatText, {
+                    text: e,
+                    brackets: t,
+                    params: s,
+                    upgradeLegacy: a,
+                    split: r,
+                    formatters: n,
+                    className: m?.text,
+                    style: { ...f, visibility: v ? 'hidden' : void 0 },
+                }),
+                jsxRuntime.jsx('div', {
+                    ref: y,
+                    style: { visibility: 'hidden', position: 'absolute' },
+                    children: '...',
+                }),
+            ],
         });
     });
     function getBaseAnimationConfig({
@@ -5556,8 +5561,8 @@ const exports = {};
                     [u, m] = useSpring(() => ({ width: 0 })),
                     [p, g] = useSpring(() => ({ width: 0 })),
                     [f, h] = useSpring(() => ({ left: 0, width: 0 })),
-                    [_, ...y] = r,
-                    [b, v] = React.useState(y),
+                    [_, ...b] = r,
+                    [y, v] = React.useState(b),
                     [R, w] = React.useState(_ ?? 'done'),
                     x = (d.value - e) / d.maxValue,
                     E = useProgressBarSounds(x);
@@ -5570,7 +5575,7 @@ const exports = {};
                 const T = useEvent(i ?? noop$1);
                 React.useEffect(() => T(R), [R, T]);
                 const S = useEvent(() => {
-                    const [e, ...t] = b;
+                    const [e, ...t] = y;
                     void 0 !== e ? (w(e), v(t)) : w('done');
                 });
                 return (
@@ -5688,55 +5693,55 @@ const exports = {};
             slideUpIn: slideUpIn$4,
         },
         AnimatedImage$1 = animated(Image),
-        Done = React.memo(function ({ animationConfig: e, classNames: t }) {
-            const s = useProgressBar(),
-                { activeComponents: n } = useProgressBar(),
-                a = 100 * s.percentage,
-                r = 100 * (s.previous?.percentage ?? 0),
-                i = void 0 === s.previous ? a : r,
-                o = s.status === statuses.doneStatic,
-                l = useSkipFrame(),
-                [c, d] = useSpring(() => ({ width: i }));
+        Done = React.memo(function ({ donePattern: e, donePatternComplete: t, animationConfig: s, classNames: n }) {
+            const a = useProgressBar(),
+                { activeComponents: r } = useProgressBar(),
+                i = 100 * a.percentage,
+                o = 100 * (a.previous?.percentage ?? 0),
+                l = void 0 === a.previous ? i : o,
+                c = a.status === statuses.doneStatic,
+                d = useSkipFrame(),
+                [u, m] = useSpring(() => ({ width: l }));
             return (
                 React.useEffect(() => {
-                    l.run(() =>
-                        d.start(
+                    d.run(() =>
+                        m.start(
                             getBaseAnimationConfig({
-                                baseValue: i,
-                                newValue: a,
-                                animationType: s.animationType,
-                                deltaVisible: n.has('delta'),
-                                preViewDeltaVisible: n.has('previewDelta'),
-                                animationConfig: e,
+                                baseValue: l,
+                                newValue: i,
+                                animationType: a.animationType,
+                                deltaVisible: r.has('delta'),
+                                preViewDeltaVisible: r.has('previewDelta'),
+                                animationConfig: s,
                             }),
                         ),
                     );
-                }, [a, d, i, s.animationType, e, n, l]),
+                }, [i, m, l, a.animationType, s, r, d]),
                 jsxRuntime.jsxs(jsxRuntime.Fragment, {
                     children: [
                         jsxRuntime.jsx(AnimatedImage$1, {
-                            path: `ui.progressbar.bg_pattern_base_done_${s.size}`,
+                            path: e || `ui.progressbar.bg_pattern_base_done_${a.size}`,
                             className: clsx(
-                                t?.done,
+                                n?.done,
                                 styles$c.done,
-                                !s.progressCompleted && styles$c.done__hidden,
-                                s.progressCompleted && (o ? styles$c.done__doneStatic : styles$c.done__visible),
+                                !a.progressCompleted && styles$c.done__hidden,
+                                a.progressCompleted && (c ? styles$c.done__doneStatic : styles$c.done__visible),
                             ),
                             repeat: 'repeat',
                             position: 'left top',
-                            style: { width: c.width.to((e) => `${e}%`) },
+                            style: { width: u.width.to((e) => `${e}%`) },
                         }),
-                        !o &&
+                        !c &&
                             jsxRuntime.jsx(AnimatedImage$1, {
-                                path: `ui.progressbar.bg_pattern_base_done_complete_${s.size}`,
+                                path: t || `ui.progressbar.bg_pattern_base_done_complete_${a.size}`,
                                 className: clsx(
-                                    t?.doneComplete,
+                                    n?.doneComplete,
                                     styles$c.complete,
-                                    s.progressCompleted && styles$c.complete__visible,
+                                    a.progressCompleted && styles$c.complete__visible,
                                 ),
                                 repeat: 'repeat',
                                 position: 'left top',
-                                style: { width: c.width.to((e) => `${e}%`) },
+                                style: { width: u.width.to((e) => `${e}%`) },
                             }),
                     ],
                 })
@@ -5780,65 +5785,75 @@ const exports = {};
                 })
             );
         }),
-        Fill = React.memo(function ({ filledPattern: e, classNames: t, className: s, animationConfig: n, ...a }) {
-            const r = useProgressBar(),
-                i = useProgressBarSounds(),
-                o = useSkipFrame(),
-                { activeComponents: l } = useProgressBar(),
-                c = 100 * r.percentage,
-                d = 100 * (r.previous?.percentage ?? 0),
-                u = void 0 === r.previous ? c : d;
+        Fill = React.memo(function ({
+            filledPattern: e,
+            donePattern: t,
+            donePatternComplete: s,
+            classNames: n,
+            className: a,
+            animationConfig: r,
+            ...i
+        }) {
+            const o = useProgressBar(),
+                l = useProgressBarSounds(),
+                c = useSkipFrame(),
+                { activeComponents: d } = useProgressBar(),
+                u = 100 * o.percentage,
+                m = 100 * (o.previous?.percentage ?? 0),
+                p = void 0 === o.previous ? u : m;
             (useRegisterComponent('fill'),
                 React.useEffect(() => {
-                    'growFreeze' === r.animationType && r.progressCompleted && !r.activeComponents.has('delta') && i();
-                }, [r.activeComponents, r.animationType, r.progressCompleted, i]));
-            const [m, p] = useSpring(() => ({ width: u }));
+                    'growFreeze' === o.animationType && o.progressCompleted && !o.activeComponents.has('delta') && l();
+                }, [o.activeComponents, o.animationType, o.progressCompleted, l]));
+            const [g, f] = useSpring(() => ({ width: p }));
             return (
                 React.useEffect(() => {
-                    o.run(() =>
-                        p.start({
+                    c.run(() =>
+                        f.start({
                             ...getBaseAnimationConfig({
-                                baseValue: u,
-                                newValue: c,
-                                animationType: r.animationType,
-                                deltaVisible: l.has('delta'),
-                                preViewDeltaVisible: l.has('previewDelta'),
-                                animationConfig: n,
+                                baseValue: p,
+                                newValue: u,
+                                animationType: o.animationType,
+                                deltaVisible: d.has('delta'),
+                                preViewDeltaVisible: d.has('previewDelta'),
+                                animationConfig: r,
                             }),
-                            onStart: () => i(),
+                            onStart: () => l(),
                         }),
                     );
-                }, [n, p, u, r.animationType, l, c, i, o]),
+                }, [r, f, p, o.animationType, d, u, l, c]),
                 jsxRuntime.jsxs('div', {
-                    className: clsx(styles$c.base, s),
+                    className: clsx(styles$c.base, a),
                     children: [
                         jsxRuntime.jsx(animated.div, {
-                            className: t?.fill,
-                            style: { width: m.width.to((e) => `${e}%`) },
+                            className: n?.fill,
+                            style: { width: g.width.to((e) => `${e}%`) },
                         }),
-                        a.children ??
+                        i.children ??
                             jsxRuntime.jsxs(jsxRuntime.Fragment, {
                                 children: [
                                     jsxRuntime.jsx(Filled, {
                                         filledPattern: e,
-                                        className: t?.filledPattern,
-                                        animationConfig: n,
+                                        className: n?.filledPattern,
+                                        animationConfig: r,
                                     }),
                                     jsxRuntime.jsx(Done, {
-                                        classNames: { done: t?.done, doneComplete: t?.doneComplete },
-                                        animationConfig: n,
+                                        classNames: n,
+                                        animationConfig: r,
+                                        donePattern: t,
+                                        donePatternComplete: s,
                                     }),
                                 ],
                             }),
                         jsxRuntime.jsx(animated.div, {
                             className: clsx(
-                                t?.edge,
+                                n?.edge,
                                 styles$c.edge,
-                                0 === r.percentage && styles$c.edge__noProgress,
-                                !l.has('previewDelta') && !r.progressCompleted && styles$c.edge__visible,
-                                r.status && styles$c[`edge__${r.status}`],
+                                0 === o.percentage && styles$c.edge__noProgress,
+                                !d.has('previewDelta') && !o.progressCompleted && styles$c.edge__visible,
+                                o.status && styles$c[`edge__${o.status}`],
                             ),
-                            style: { left: m.width.to((e) => `${e}%`) },
+                            style: { left: g.width.to((e) => `${e}%`) },
                         }),
                     ],
                 })
@@ -6647,6 +6662,7 @@ const exports = {};
             RewardType.DeluxeGift,
             RewardType.BattleBoosterGift,
             RewardType.OptionalDevice,
+            RewardType.TmanToken,
         ],
         currencyValueTypes = [RewardType.Gold, RewardType.Credits, RewardType.Crystal, RewardType.FreeXp],
         numberValueTypes = [RewardType.BattlePassPoints, RewardType.EquipCoin],
@@ -6950,17 +6966,18 @@ const exports = {};
                 f = getBottomHighlight(a, r),
                 h = getOverlay(r),
                 _ = getFormattedValue(i, o),
-                y = useTooltip({
+                b = useTooltip({
                     contentId: m?.contentId ?? 0,
                     args: m?.args,
                     resId: m?.resId,
                     decoratorId: m?.decoratorId,
+                    disabled: m?.disabled,
                 }),
-                b = useSimpleTooltip({ header: p?.header, body: p?.body });
+                y = useSimpleTooltip({ header: p?.header, body: p?.body });
             return jsxRuntime.jsxs('div', {
                 className: cx(styles$5.base, styles$5[`base__${a}`], !n && styles$5.base__dynamicBox, d),
                 style: c,
-                ...y,
+                ...b,
                 children: [
                     jsxRuntime.jsxs(jsxRuntime.Fragment, {
                         children: [
@@ -7005,7 +7022,7 @@ const exports = {};
                             l && jsxRuntime.jsx('div', { className: styles$5.title, children: l }),
                         ],
                     }),
-                    s && jsxRuntime.jsx('div', { className: cx(styles$5.timer, u?.periodicIcon), ...b }),
+                    s && jsxRuntime.jsx('div', { className: cx(styles$5.timer, u?.periodicIcon), ...y }),
                 ],
             });
         },
@@ -7234,10 +7251,10 @@ const exports = {};
             );
         }),
         views = resources.resolve('views');
-    function getBoxRewardTooltipArgs({ limit: e, rewardsTooltipResId: t, ...s }) {
+    function getBoxRewardTooltipArgs({ limit: e, rewardsTooltipResId: t, boxRewardTooltipContentId: s, ...n }) {
         return {
-            contentId: views.read((e) => e.lobby.tooltips.AdditionalBattlePassRewardsTooltip('resId')),
-            args: { showFromIndex: e - 1, ...s },
+            contentId: s ?? views.read((e) => e.lobby.tooltips.AdditionalRewardsTooltip('resId')),
+            args: { showFromIndex: e - 1, ...n },
             resId: t,
         };
     }
@@ -7247,39 +7264,41 @@ const exports = {};
         bonuses: s,
         maxRewardsCount: n,
         rewardsTooltipResId: a,
-        immediateAnimation: r,
-        questId: i,
-        level: o,
-        chapter: l,
-        rewardType: c,
-        className: d,
-        rewardItemClassName: u,
+        boxRewardTooltipContentId: r,
+        immediateAnimation: i,
+        questId: o,
+        level: l,
+        chapter: c,
+        rewardType: d,
+        className: u,
+        rewardItemClassName: m,
     }) {
-        const m = {
+        const p = {
             bonuses: s,
-            questId: i,
+            questId: o,
             maxRewardsCount: n,
             size: ImageSize.Small,
             resId: a,
             boxRewardTooltipArgs: getBoxRewardTooltipArgs({
                 limit: n,
                 rewardsTooltipResId: a,
-                rewardType: c,
-                level: o ? o - 1 : void 0,
-                chapter: l,
-                questId: i,
+                boxRewardTooltipContentId: r,
+                rewardType: d,
+                level: l ? l - 1 : void 0,
+                chapter: c,
+                questId: o,
             }),
-            rewardItemClassMix: u,
+            rewardItemClassMix: m,
         };
         return e
             ? jsxRuntime.jsx(AnimatedRewards, {
-                  ...m,
+                  ...p,
                   animationRef: t,
-                  immediateAnimation: r,
-                  className: d,
-                  classNames: { glowContainer: d },
+                  immediateAnimation: i,
+                  className: u,
+                  classNames: { glowContainer: u },
               })
-            : jsxRuntime.jsx(Rewards, { ...m, classMix: d });
+            : jsxRuntime.jsx(Rewards, { ...p, classMix: u });
     }
     const base$1 = 'CompletedMark_fc4eee08',
         glow = 'CompletedMark_glow_33775180',
@@ -7320,7 +7339,7 @@ const exports = {};
                     },
                 ),
                 [h, _] = useSpring(() => ({ from: { opacity: 0 } })),
-                [y] = useSpring(() => ({
+                [b] = useSpring(() => ({
                     ref: t,
                     from: { maskSize: '0% 100%', opacity: 0 },
                     to: [
@@ -7370,7 +7389,7 @@ const exports = {};
                         }),
                         jsxRuntime.jsx(animated.div, {
                             ...u,
-                            style: { ...y, ...l },
+                            style: { ...b, ...l },
                             ref: m,
                             className: c?.icon,
                             children: jsxRuntime.jsx(Image, {
@@ -7548,7 +7567,11 @@ const exports = {};
                                   classNames: { icon: styles$6.completedMarkIcon },
                                   springProps: { immediate: a, delay: CHECK_MARK_ANIMATION_DELAY },
                               })
-                            : jsxRuntime.jsx(Icon, { value: o.path, questType: e.questType }),
+                            : jsxRuntime.jsx(Icon, {
+                                  value: o.path,
+                                  questType: e.questType,
+                                  className: e.iconClassName,
+                              }),
                     }),
                     jsxRuntime.jsx('div', {
                         className: styles$6.questsWithRewards,
@@ -7638,7 +7661,7 @@ const exports = {};
                     if (r) (t.push(e.substring(s, i + 1)), (r = !1));
                     else {
                         let n = s;
-                        for (; '\n' === e[n] || ' ' === e[n]; ) n++;
+                        for (; '\n' === e[n] || ' ' === e[n];) n++;
                         t.push(e.substring(n, i + 1));
                     }
                     s = i + 1;
@@ -7863,7 +7886,7 @@ const exports = {};
         ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
     function arabic2roman$1(e) {
         let t = '';
-        for (let s = ARABIC.length - 1; s >= 0; s--) for (; e >= ARABIC[s]; ) ((t += ROMAN[s]), (e -= ARABIC[s]));
+        for (let s = ARABIC.length - 1; s >= 0; s--) for (; e >= ARABIC[s];) ((t += ROMAN[s]), (e -= ARABIC[s]));
         return t;
     }
     const ROMAN_FORBIDDEN_LANGUAGE_CODES = ['ko', 'no'];
@@ -8402,7 +8425,7 @@ const exports = {};
                         m && m(),
                         (f.current.isVisible = !0));
                 }, [t, c, s, h, m]),
-                y = React.useCallback(() => {
+                b = React.useCallback(() => {
                     if (f.current.isVisible || f.current.timeoutId) {
                         const e = f.current.timeoutId;
                         (e > 0 && (clearTimeout(e), (f.current.timeoutId = 0)),
@@ -8411,34 +8434,34 @@ const exports = {};
                             (f.current.isVisible = !1));
                     }
                 }, [t, c, h, p]),
-                b = React.useCallback((e) => {
+                y = React.useCallback((e) => {
                     f.current.isVisible &&
                         ((f.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
                         (f.current.hideTimerId = window.setTimeout(() => {
                             const t = document.elementFromPoint(e.clientX, e.clientY);
-                            t && !t.isSameNode(f.current.prevTarget) && y();
+                            t && !t.isSameNode(f.current.prevTarget) && b();
                         }, 200)));
                 }, []);
             (React.useEffect(() => {
                 const e = f.current.hideTimerId;
                 return (
-                    document.addEventListener('wheel', b, { capture: !0 }),
+                    document.addEventListener('wheel', y, { capture: !0 }),
                     () => {
-                        (document.removeEventListener('wheel', b, { capture: !0 }), e && window.clearTimeout(e));
+                        (document.removeEventListener('wheel', y, { capture: !0 }), e && window.clearTimeout(e));
                     }
                 );
             }, []),
                 React.useEffect(() => {
-                    !1 === d && y();
-                }, [d, y]),
+                    !1 === d && b();
+                }, [d, b]),
                 React.useEffect(
                     () => (
-                        window.addEventListener('mouseleave', y),
+                        window.addEventListener('mouseleave', b),
                         () => {
-                            (window.removeEventListener('mouseleave', y), y());
+                            (window.removeEventListener('mouseleave', b), b());
                         }
                     ),
-                    [y],
+                    [b],
                 ));
             return d
                 ? React.cloneElement(e, {
@@ -8452,13 +8475,13 @@ const exports = {};
                                   v && v(e));
                           }),
                       onMouseLeave: ((e) => (t) => {
-                          (y(), a?.(t), e?.(t));
+                          (b(), a?.(t), e?.(t));
                       })(e.props.onMouseLeave),
                       onClick: ((e) => (t) => {
-                          (!1 === l && y(), i?.(t), e?.(t));
+                          (!1 === l && b(), i?.(t), e?.(t));
                       })(e.props.onClick),
                       onMouseDown: ((e) => (t) => {
-                          (!1 === l && y(), r?.(t), e?.(t));
+                          (!1 === l && b(), r?.(t), e?.(t));
                       })(e.props.onMouseDown),
                       ...g,
                   })

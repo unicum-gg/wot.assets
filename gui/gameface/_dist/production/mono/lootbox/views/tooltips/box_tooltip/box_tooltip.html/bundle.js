@@ -1,75 +1,55 @@
-import { m as e, j as s, n as t } from '../../../../chunks/vendor.js';
-import { i as o, c as a, A as c, a as i, r, E as l } from '../../../../chunks/lib.js';
-import { l as n } from '../../../../chunks/getRewardImage.js';
-import { a as d, g as p } from '../../../../chunks/resources.js';
-/* empty css                       */ const x = {
-        images: { glow: 'tooltips.glow', divider: 'tooltips.divider' },
-        texts: { howGetTitle: 'boxTooltip.howGet.title' },
-    },
-    m = {
+import { n as e, p as s, j as t } from '../../../../chunks/vendor.js';
+import { i as o, c as a, o as i, r, T as c } from '../../../../chunks/lib.js';
+import { S as n, s as d } from '../../../../chunks/shield.js';
+import { l } from '../../../../chunks/getRewardImage.js';
+import { D as p } from '../../../../chunks/divider.js';
+import { g as m } from '../../../../chunks/resources.js';
+/* empty css                       */ import '../../../../chunks/divider2.js';
+const x = {
         dynamicTexts: {
             boxTitle: 'common.boxCategory.lowerCase',
             boxDescription: 'boxTooltip.description.text',
-            howGetBoxText: 'boxTooltip.howGet.text',
+            howGet: 'boxTooltip.howGet.text',
             guaranteedBoxText: 'boxTooltip.guaranteed.text',
         },
     },
-    [u, b] = o()(({ observableModel: s }) => {
+    [u, j] = o()(({ observableModel: s }) => {
         const t = s.object().get().eventName;
-        return {
-            ...{ root: s.object() },
-            computes: { resources: e(() => d(x, t), { equals: a }), dynamicResources: e(() => p(m, t), { equals: a }) },
-        };
-    }, c),
-    g = 'Divider_a108a991';
-function j({ image: e }) {
-    return s.jsx('div', { className: g, style: { backgroundImage: `url(${e})` } });
-}
-const _ = 'App_fef503db',
-    h = 'App_icon_370a809b',
-    v = 'App_textsBlock_d8714f06',
-    T = 'App_title_8ab43c68',
-    w = 'App_howGetTitle_9b9b34e0',
-    y = 'App_howGetDescription_b9b2156f',
-    N = 'App_description_8f07459c',
-    f = 'App_descriptionGuaranteed_71e24b29',
-    A = 'App_count_3c2c9ca9',
-    k = 'App_howGetBlock_9b8f7ad0',
-    G = 'App_guarantyBlock_367ef0d5',
-    B = 'App_glow_271595c0';
-const C = t(function () {
-    const { model: e } = b(),
-        { boxesCountToGuaranteed: t, boxCategory: o } = e.root.get(),
-        { images: a, texts: c } = e.computes.resources(),
-        { dynamicTexts: r } = e.computes.dynamicResources();
-    return s.jsxs('div', {
-        className: _,
+        return { ...{ root: s.object() }, computes: { dynamicResources: e(() => m(x, t), { equals: a }) } };
+    }, i),
+    b = {
+        base: 'App_d60200ec',
+        icon: 'App_icon_370a809b',
+        textsBlock: 'App_textsBlock_459d87fe',
+        title: 'App_title_753757ae',
+        description: 'App_description_8ae6db83',
+        guarantyBlock: 'App_guarantyBlock_aa4edbb',
+        descriptionGuaranteed: 'App_descriptionGuaranteed_f4ecd99e',
+        divider: 'App_divider_e91f50aa',
+    };
+const h = s(function () {
+    const { model: e } = j(),
+        { boxesCountToGuaranteed: s, boxCategory: o, eventName: a } = e.root.get(),
+        { dynamicTexts: i } = e.computes.dynamicResources();
+    return t.jsxs('div', {
+        className: b.base,
         children: [
-            s.jsx('div', { className: h, style: { backgroundImage: `url(${n('s296x222', o)})` } }),
-            s.jsxs('div', {
-                className: v,
+            t.jsx('div', { className: b.icon, style: { backgroundImage: `url(${l('s296x222', o)})` } }),
+            t.jsxs('div', {
+                className: b.textsBlock,
                 children: [
-                    s.jsx('div', { className: T, children: r.boxTitle.dynOpt(o) }),
-                    s.jsx(i, { className: N, text: r.boxDescription.dynOpt(o) }),
-                    s.jsx(j, { image: a.divider }),
-                    s.jsxs('div', {
-                        className: k,
-                        children: [
-                            s.jsx('div', { className: w, children: c.howGetTitle }),
-                            s.jsx(i, { className: y, text: r.howGetBoxText.dynOpt(o) }),
-                        ],
-                    }),
-                    s.jsx(j, { image: a.divider }),
-                    t > 0 &&
-                        s.jsxs('div', {
-                            className: G,
+                    t.jsx('div', { className: b.title, children: i.boxTitle.dynOpt(o) }),
+                    t.jsx('div', { className: b.description, children: i.boxDescription.dynOpt(o) }),
+                    t.jsx('div', { className: b.description, children: i.howGet.dynOpt(o) }),
+                    t.jsx(p, { className: b.divider, eventName: a }),
+                    s > 0 &&
+                        t.jsxs('div', {
+                            className: b.guarantyBlock,
                             children: [
-                                s.jsx('div', { className: B, style: { backgroundImage: `url(${a.glow})` } }),
-                                s.jsx(i, {
-                                    className: f,
-                                    text: r.guaranteedBoxText.dynOpt(o),
-                                    upgradeLegacy: !0,
-                                    params: { count: s.jsx('span', { className: A, children: t }) },
+                                t.jsx(n, { className: b.shield, counts: s, eventName: a, size: d.large }),
+                                t.jsx('div', {
+                                    className: b.descriptionGuaranteed,
+                                    children: i.guaranteedBoxText.dynOpt(o),
                                 }),
                             ],
                         }),
@@ -78,4 +58,4 @@ const C = t(function () {
         ],
     });
 });
-r(s.jsx(u, { children: s.jsx(l, { children: s.jsx(C, {}) }) }));
+r(t.jsx(u, { children: t.jsx(c, { children: t.jsx(c.Decorator, { children: t.jsx(h, {}) }) }) }));

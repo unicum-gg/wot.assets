@@ -305,7 +305,7 @@
                     })(),
                     eu = function (u) {
                         let e = '';
-                        for (let t = T.length - 1; t >= 0; t--) for (; u >= T[t]; ) ((e += w[t]), (u -= T[t]));
+                        for (let t = T.length - 1; t >= 0; t--) for (; u >= T[t];) ((e += w[t]), (u -= T[t]));
                         return e;
                     };
                 function tu() {
@@ -852,9 +852,13 @@
                         if (t.mediumWidth && c) return n(e, t, v);
                         if (t.smallWidth && m) return n(e, t, v);
                         if (t.extraSmallWidth && _) return n(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && f) return e;
@@ -1502,7 +1506,7 @@
                                     i = e.defaultNumberOfDecimals,
                                     n = G.defaultPrefixForPositiveValue;
                                 for (var a = 0, o = [G.generalOverrides, e.overrides]; a < o.length; a++)
-                                    for (var s, E = W(o[a]); !(s = E()).done; ) {
+                                    for (var s, E = W(o[a]); !(s = E()).done;) {
                                         const e = s.value;
                                         var A, F;
                                         e.condition(u) &&

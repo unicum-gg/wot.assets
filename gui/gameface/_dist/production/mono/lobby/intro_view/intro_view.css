@@ -1,0 +1,127 @@
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.App_f753008c {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.common.background) no-repeat center/cover;
+    position: relative;
+}
+
+.App_close_c79d8d0e {
+    position: absolute;
+    top: 40rem;
+    right: 40rem;
+}
+
+.App_title_ffd16d31 {
+    margin-top: 40rem;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    font-size: 46rem;
+    font-weight: 600;
+    line-height: 1.1;
+}
+.mediaMedium .App_title_ffd16d31 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    margin-top: 50rem;
+}
+.mediaLarge .App_title_ffd16d31 {
+    font-size: 80rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    margin-top: 70rem;
+}
+.mediaExtraLarge .App_title_ffd16d31 {
+    margin-top: 100rem;
+    font-size: 110rem;
+}
+
+.App_content_6d5ac65d {
+    display: flex;
+    justify-content: center;
+}
+
+.App_infoBlock_59a9c25 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.App_spacer_74d68a9 {
+    width: 60rem;
+}
+.mediaLarge .App_spacer_74d68a9 {
+    width: 80rem;
+}
+
+.App_infoBlockImage_29a8a6d7 {
+    width: 320rem;
+    height: 180rem;
+    margin-bottom: 16rem;
+    background: no-repeat center/contain;
+}
+.mediaLarge .App_infoBlockImage_29a8a6d7 {
+    width: 480rem;
+    height: 270rem;
+}
+
+.App_infoBlockTitle_253e098e {
+    font-size: 26rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    margin-bottom: 5rem;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    font-weight: 500;
+}
+.mediaLarge .App_infoBlockTitle_253e098e {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.3em;
+}
+
+.App_infoBlockSubtitle_17db16dc {
+    max-width: 300rem;
+    color: var(--color-general-secondary);
+    font-size: 22rem;
+    line-height: 1.1;
+    text-align: center;
+}
+.mediaLarge .App_infoBlockSubtitle_17db16dc {
+    max-width: 400rem;
+    font-size: 24rem;
+}
+
+.App_logo_747cfe53 {
+    width: 80rem;
+    height: 83rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.intro_view.logo) no-repeat center/cover;
+    position: absolute;
+    right: 30rem;
+    bottom: 30rem;
+}
+.mediaMedium .App_logo_747cfe53 {
+    width: 100rem;
+    height: 104rem;
+}
+.mediaLarge .App_logo_747cfe53 {
+    right: 60rem;
+    bottom: 60rem;
+}
+
+.App_button_36cdaf87 {
+    margin-bottom: 50rem;
+}
+.mediaMedium .App_button_36cdaf87 {
+    margin-bottom: 60rem;
+}
+.mediaLarge .App_button_36cdaf87 {
+    margin-bottom: 80rem;
+}
+.mediaExtraLarge .App_button_36cdaf87 {
+    margin-bottom: 110rem;
+}

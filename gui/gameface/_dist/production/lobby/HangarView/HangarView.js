@@ -310,15 +310,13 @@
                             if (n.mediumWidth && p) return (0, s.H)(t, n, F);
                             if (n.smallWidth && E) return (0, s.H)(t, n, F);
                             if (n.extraSmallWidth && g) return (0, s.H)(t, n, F);
-                            if (
-                                !(
-                                    n.extraLargeWidth ||
-                                    n.largeWidth ||
-                                    n.mediumWidth ||
-                                    n.smallWidth ||
-                                    n.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                n.extraLargeWidth ||
+                                n.largeWidth ||
+                                n.mediumWidth ||
+                                n.smallWidth ||
+                                n.extraSmallWidth
+                            )) {
                                 if (n.extraLargeHeight && h) return t;
                                 if (n.largeHeight && f) return t;
                                 if (n.mediumHeight && v) return t;
@@ -3586,7 +3584,7 @@
                               if (!a) return [e];
                               const s = [];
                               let i = 0;
-                              for (; a; ) {
+                              for (; a;) {
                                   const r = t.justifyContent === u.v2.FlexEnd ? a.index : n.lastIndex;
                                   (s.push(e.slice(i, r)), (i = r), (a = n.exec(e)));
                               }
@@ -3745,7 +3743,7 @@
                 const a = (e, t, n, a) => {
                     let s = t.exec(e),
                         i = 0;
-                    for (; s; ) (i !== s.index && n(e.slice(i, s.index)), a(s), (i = t.lastIndex), (s = t.exec(e)));
+                    for (; s;) (i !== s.index && n(e.slice(i, s.index)), a(s), (i = t.lastIndex), (s = t.exec(e)));
                     i !== e.length && n(e.slice(i));
                 };
             },
@@ -3821,7 +3819,7 @@
                             b = ((e, t) => {
                                 let n = 0,
                                     a = e.length - 1;
-                                for (; a - n >= 0; ) {
+                                for (; a - n >= 0;) {
                                     const s = n + Math.ceil(0.5 * (a - n));
                                     u(e[s], t) ? (a = s - 1) : (n = s + 1);
                                 }
@@ -8391,7 +8389,7 @@
                 const A = (e, t = []) => {
                         const n = document.getElementById('root');
                         n && (n.style.cursor = e ? 'grabbing' : 'default');
-                        for (var a, s = f(t); !(a = s()).done; ) {
+                        for (var a, s = f(t); !(a = s()).done;) {
                             const t = a.value,
                                 n = document.getElementById(t);
                             n && (n.style.pointerEvents = e ? 'none' : 'auto');
@@ -8400,7 +8398,7 @@
                     C = (e, t, n) => {
                         let a = '',
                             s = 8e3;
-                        for (var i, u = f(n); !(i = u()).done; ) {
+                        for (var i, u = f(n); !(i = u()).done;) {
                             const e = i.value,
                                 n = Math.abs(e.centerX - t);
                             n < s && ((a = e.id), (s = n));

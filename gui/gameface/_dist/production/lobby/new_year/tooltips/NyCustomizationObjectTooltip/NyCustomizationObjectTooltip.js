@@ -162,7 +162,7 @@
                             let r = A.exec(u),
                                 C = u,
                                 o = 0;
-                            for (; r; ) {
+                            for (; r;) {
                                 const i = r[0],
                                     s = E.exec(i),
                                     l = n.exec(i),
@@ -611,7 +611,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let A = mu.length - 1; A >= 0; A--)
-                                      for (; u >= mu[A]; ) ((e += du[A]), (u -= mu[A]));
+                                      for (; u >= mu[A];) ((e += du[A]), (u -= mu[A]));
                                   return e;
                               })(u);
                 var gu = A(3649),
@@ -718,7 +718,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, A = yu(E.keys()); !(u = A()).done; ) D(u.value, e);
+                                                        for (var u, A = yu(E.keys()); !(u = A()).done;) D(u.value, e);
                                                     },
                                                     unsubscribe: D,
                                                 };

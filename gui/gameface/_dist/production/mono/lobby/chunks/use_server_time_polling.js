@@ -1,5 +1,5 @@
 import './vendor.js';
-import { dy as o } from './lib.js';
+import { da as o } from './lib.js';
 function i(i, r, s) {
     o(
         () => {

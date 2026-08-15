@@ -1430,7 +1430,7 @@
                     K = (u, e, t, n) => {
                         let r = e.exec(u),
                             o = 0;
-                        for (; r; ) (o !== r.index && t(u.slice(o, r.index)), n(r), (o = e.lastIndex), (r = e.exec(u)));
+                        for (; r;) (o !== r.index && t(u.slice(o, r.index)), n(r), (o = e.lastIndex), (r = e.exec(u)));
                         o !== u.length && t(u.slice(o));
                     },
                     H = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -1477,7 +1477,7 @@
                               if (!n) return [u];
                               const r = [];
                               let o = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const i = e.justifyContent === M.FlexEnd ? n.index : t.lastIndex;
                                   (r.push(u.slice(o, i)), (o = i), (n = t.exec(u)));
                               }
@@ -1711,7 +1711,7 @@
                                                     c = ((u, e) => {
                                                         let t = 0,
                                                             n = u.length - 1;
-                                                        for (; n - t >= 0; ) {
+                                                        for (; n - t >= 0;) {
                                                             const r = t + Math.ceil(0.5 * (n - t));
                                                             J(u[r], e) ? (n = r - 1) : (t = r + 1);
                                                         }

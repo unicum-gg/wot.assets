@@ -110,6 +110,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20rem 0;
     position: relative;
 }
 
@@ -181,7 +182,6 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 90rem;
     border-radius: 5rem;
     background-color: rgba(242, 242, 247, 0.03);
     transition: background-color 0.2s;

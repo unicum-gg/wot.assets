@@ -84,10 +84,11 @@ html[lang='th'] input {
     background-color: var(--color-general-tertiary);
 }
 
-.AdditionalDataTooltipApp_label_dd09314e {
+.AdditionalDataTooltipApp_label_34edb89f {
     font-size: 18rem;
     font-weight: 400;
     line-height: 1.3em;
+    flex: 1 1 0;
     margin-left: 11rem;
     color: var(--color-general-tertiary);
     font-weight: 400;

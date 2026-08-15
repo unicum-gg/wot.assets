@@ -1,7 +1,7 @@
 import { t as s, j as e, F as t, H as a } from '../../../../chunks/vendor.js';
-import { i as r, h as o, n, q as i, aB as c, bw as l, bv as d, r as p, U as m } from '../../../../chunks/lib.js';
+import { i as r, O as o, n, _ as i, aX as c, bw as l, bv as d, r as p, U as m } from '../../../../chunks/lib.js';
 import { p as x } from '../../../../chunks/common.js';
-/* empty css                        */ const [j, u] = r()((s) => {
+/* empty css                        */ const [j, _] = r()((s) => {
     const e = s.observableModel.primitives(['params', 'type']);
     return {
         type: e.type,
@@ -12,7 +12,7 @@ import { p as x } from '../../../../chunks/common.js';
         },
     };
 }, n);
-const _ = 'Content_2a67c3d5',
+const u = 'Content_2a67c3d5',
     h = 'Content_2f46cd49',
     v = 'Content_bg_580b4876',
     N = 'Content_container_f73799e6',
@@ -23,7 +23,7 @@ const _ = 'Content_2a67c3d5',
     w =
         ((C = l(g)),
         function () {
-            return u().model.computes.params(C);
+            return _().model.computes.params(C);
         });
 var C;
 const H = i.resolve('strings'),
@@ -32,7 +32,7 @@ const H = i.resolve('strings'),
             r = x(H.readOrEmpty('battle_royale.tooltips.respawn.solo.description')),
             o = x(H.readOrEmpty('battle_royale.tooltips.respawn.platoon.description'));
         return e.jsx('div', {
-            className: _,
+            className: u,
             children: e.jsx('div', {
                 className: v,
                 children: e.jsxs('div', {
@@ -96,33 +96,33 @@ function F() {
         }),
     });
 }
-const E = 'Header_9a6b431',
-    L = 'Header_icon_937d671c',
-    O = 'Header_description_7d3252af',
-    q = 'Header_title_6d0764fe',
-    A = 'Header_subtitle_c9393f08',
-    B = R.strings.battle_royale.tooltips.respawn;
-function D() {
+const O = 'Header_9a6b431',
+    E = 'Header_icon_937d671c',
+    L = 'Header_description_7d3252af',
+    A = 'Header_title_6d0764fe',
+    D = 'Header_subtitle_c9393f08',
+    M = R.strings.battle_royale.tooltips.respawn;
+function U() {
     return e.jsxs('div', {
-        className: E,
+        className: O,
         children: [
-            e.jsx('div', { className: L }),
+            e.jsx('div', { className: E }),
             e.jsxs('div', {
-                className: O,
+                className: L,
                 children: [
-                    e.jsx('div', { className: q, children: B.title() }),
-                    e.jsx('div', { className: A, children: B.subtitle() }),
+                    e.jsx('div', { className: A, children: M.title() }),
+                    e.jsx('div', { className: D, children: M.subtitle() }),
                 ],
             }),
         ],
     });
 }
-const M = 'App_2e4efbd5';
-function U() {
+const X = 'App_2e4efbd5';
+function q() {
     return e.jsx(d, {
         children: e.jsx(d.Decorator, {
-            children: e.jsxs('div', { className: M, children: [e.jsx(D, {}), e.jsx(T, {}), e.jsx(F, {})] }),
+            children: e.jsxs('div', { className: X, children: [e.jsx(U, {}), e.jsx(T, {}), e.jsx(F, {})] }),
         }),
     });
 }
-p(e.jsx(m, { children: e.jsx(j, { children: e.jsx(U, {}) }) }));
+p(e.jsx(m, { children: e.jsx(j, { children: e.jsx(q, {}) }) }));

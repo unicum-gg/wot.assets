@@ -405,7 +405,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function r(u) {
                     let e = '';
-                    for (let t = a.length - 1; t >= 0; t--) for (; u >= a[t]; ) ((e += n[t]), (u -= a[t]));
+                    for (let t = a.length - 1; t >= 0; t--) for (; u >= a[t];) ((e += n[t]), (u -= a[t]));
                     return e;
                 }
                 const i = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -885,9 +885,13 @@
                         if (t.mediumWidth && D) return r(e, t, b);
                         if (t.smallWidth && _) return r(e, t, b);
                         if (t.extraSmallWidth && m) return r(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && g) return e;
@@ -1485,6 +1489,7 @@
                         Y.BattleBoosterGift,
                         Y.OptionalDevice,
                         Y.Attachment,
+                        Y.TmanToken,
                     ],
                     eu = [Y.Gold, Y.Credits, Y.Crystal, Y.FreeXp],
                     tu = [Y.BattlePassPoints, Y.EquipCoin],
@@ -1849,7 +1854,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = hu(a.keys()); !(u = t()).done; ) r(u.value, e);
+                                                        for (var u, t = hu(a.keys()); !(u = t()).done;) r(u.value, e);
                                                     },
                                                     unsubscribe: r,
                                                 };

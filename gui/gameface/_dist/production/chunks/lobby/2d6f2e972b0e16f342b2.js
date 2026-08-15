@@ -227,7 +227,7 @@
                 r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
             function s(e) {
                 let t = '';
-                for (let a = r.length - 1; a >= 0; a--) for (; e >= r[a]; ) ((t += n[a]), (e -= r[a]));
+                for (let a = r.length - 1; a >= 0; a--) for (; e >= r[a];) ((t += n[a]), (e -= r[a]));
                 return t;
             }
             const i = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),

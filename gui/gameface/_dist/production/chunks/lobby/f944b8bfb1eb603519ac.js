@@ -508,7 +508,7 @@
                         t(e).delete(r);
                     },
                     a = (e, ...r) => {
-                        for (var n, s = o(t(e).values()); !(n = s()).done; ) {
+                        for (var n, s = o(t(e).values()); !(n = s()).done;) {
                             (0, n.value)(...r);
                         }
                     };

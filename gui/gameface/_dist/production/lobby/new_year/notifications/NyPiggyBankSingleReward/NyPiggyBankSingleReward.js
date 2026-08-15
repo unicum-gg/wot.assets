@@ -997,8 +997,7 @@
                             ? `${u}`
                             : (function (u) {
                                   let e = '';
-                                  for (let t = S.length - 1; t >= 0; t--)
-                                      for (; u >= S[t]; ) ((e += T[t]), (u -= S[t]));
+                                  for (let t = S.length - 1; t >= 0; t--) for (; u >= S[t];) ((e += T[t]), (u -= S[t]));
                                   return e;
                               })(u);
                 var I = t(9916);
@@ -1352,9 +1351,13 @@
                         if (t.mediumWidth && d) return K(e, t, g);
                         if (t.smallWidth && _) return K(e, t, g);
                         if (t.extraSmallWidth && A) return K(e, t, g);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && F) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && D) return e;
@@ -3625,7 +3628,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Gt(a.keys()); !(u = t()).done; ) r(u.value, e);
+                                                        for (var u, t = Gt(a.keys()); !(u = t()).done;) r(u.value, e);
                                                     },
                                                     unsubscribe: r,
                                                 };

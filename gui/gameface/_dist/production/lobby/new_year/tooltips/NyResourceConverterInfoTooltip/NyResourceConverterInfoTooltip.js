@@ -155,7 +155,7 @@
                             let n = A.exec(u),
                                 r = u,
                                 o = 0;
-                            for (; n; ) {
+                            for (; n;) {
                                 const a = n[0],
                                     s = e.exec(a),
                                     l = C.exec(a),
@@ -693,7 +693,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, A = mu(e.keys()); !(u = A()).done; ) D(u.value, F);
+                                                        for (var u, A = mu(e.keys()); !(u = A()).done;) D(u.value, F);
                                                     },
                                                     unsubscribe: D,
                                                 };

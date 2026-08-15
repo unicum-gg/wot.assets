@@ -1,5 +1,5 @@
-import { q as t, j as e } from '../../../../chunks/vendor.js';
-import { i as r, n, b as a, d as s, r as i, E as o } from '../../../../chunks/lib.js';
+import { s as t, j as e } from '../../../../chunks/vendor.js';
+import { i as r, n, r as a, a as s, c as i, E as o } from '../../../../chunks/lib.js';
 /* empty css                       */ var p = ((t) => (
     (t.PM3EntryPointTeaser = 'PM3EntryPointTeaser'),
     (t.PM3EntryPointOperation1 = 'PM3EntryPointOperation1'),
@@ -7,26 +7,26 @@ import { i as r, n, b as a, d as s, r as i, E as o } from '../../../../chunks/li
     (t.PM3EntryPointOperation3 = 'PM3EntryPointOperation3'),
     t
 ))(p || {});
-const [l, d] = r()(({ observableModel: t }) => ({ ...t.primitives(['type']) }), n),
-    c = 'App_a3d8287e',
+const [l, c] = r()(({ observableModel: t }) => ({ ...t.primitives(['type']) }), n),
+    d = 'App_a3d8287e',
     P = 'App_card_e2802760',
     m = 'App_title_2810d51e',
     y = 'App_subtitle_b52dd7b8',
     E = 'App_text_6523a44e',
     v = 'hangar_event_banners.event',
-    b = a.resolve('images'),
-    h = a.resolve('strings'),
-    j = t(function () {
-        const { model: t } = d(),
+    h = a.resolve('images'),
+    j = a.resolve('strings'),
+    M = t(function () {
+        const { model: t } = c(),
             r = t.type.get(),
-            n = h.readOrEmpty(`${v}.${r}.title`),
+            n = j.readOrEmpty(`${v}.${r}.title`),
             a =
                 r === p.PM3EntryPointTeaser
-                    ? h.readOrEmpty(`${v}.PM3EntryPointTeaser.tooltip.subtitle`)
-                    : h.readOrEmpty(`${v}.PM3EntryPointOperation.tooltip.subtitle`),
-            i = b.readOrEmpty(`hangarEventBanners.event.${r}.bg_tooltip`);
+                    ? j.readOrEmpty(`${v}.PM3EntryPointTeaser.tooltip.subtitle`)
+                    : j.readOrEmpty(`${v}.PM3EntryPointOperation.tooltip.subtitle`),
+            i = h.readOrEmpty(`hangarEventBanners.event.${r}.bg_tooltip`);
         return e.jsxs('div', {
-            className: c,
+            className: d,
             children: [
                 e.jsxs('div', {
                     className: P,
@@ -41,4 +41,4 @@ const [l, d] = r()(({ observableModel: t }) => ({ ...t.primitives(['type']) }), 
             ],
         });
     });
-i(e.jsx(l, { children: e.jsx(o, { children: e.jsx(o.Decorator, { children: e.jsx(j, {}) }) }) }));
+i(e.jsx(l, { children: e.jsx(o, { children: e.jsx(o.Decorator, { children: e.jsx(M, {}) }) }) }));

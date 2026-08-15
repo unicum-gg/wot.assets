@@ -217,7 +217,7 @@ const exports = {};
             return this.pluralOr(e, t, () => '', n);
         }
     }
-    class j {
+    class C {
         constructor(e = window.R.videos, t) {
             ((this.root = e), (this.prefix = t));
         }
@@ -253,7 +253,7 @@ const exports = {};
             return void 0 !== this.read(e);
         }
     }
-    function C(e) {
+    function j(e) {
         var t,
             n,
             r = '';
@@ -261,20 +261,20 @@ const exports = {};
         else if ('object' == typeof e)
             if (Array.isArray(e)) {
                 var s = e.length;
-                for (t = 0; t < s; t++) e[t] && (n = C(e[t])) && (r && (r += ' '), (r += n));
+                for (t = 0; t < s; t++) e[t] && (n = j(e[t])) && (r && (r += ' '), (r += n));
             } else for (n in e) e[n] && (r && (r += ' '), (r += n));
         return r;
     }
     function S() {
         for (var e, t, n = 0, r = '', s = arguments.length; n < s; n++)
-            (e = arguments[n]) && (t = C(e)) && (r && (r += ' '), (r += t));
+            (e = arguments[n]) && (t = j(e)) && (r && (r += ' '), (r += t));
         return r;
     }
     m.register({
         strings: t.asFunction(() => new E()).singleton(),
         images: t.asFunction(() => new g(window.R.images.gui.maps.icons)).singleton(),
         atlases: t.asFunction(() => new g(window.R.atlases)).singleton(),
-        videos: t.asFunction(() => new j(window.R.videos)).singleton(),
+        videos: t.asFunction(() => new C(window.R.videos)).singleton(),
         views: t
             .asClass(
                 class {
@@ -1021,15 +1021,15 @@ const exports = {};
         if (0 === n) return !1;
         (n < 0 && (n = -1), (s = s || []));
         let u = (r = r || []).length;
-        for (; u--; ) if (r[u] === i) return s[u] === l;
+        for (; u--;) if (r[u] === i) return s[u] === l;
         if ((r.push(e), s.push(t), c)) {
             if (((u = i.length), u !== l.length)) return !1;
-            for (; u--; ) if (!de(i[u], l[u], n - 1, r, s)) return !1;
+            for (; u--;) if (!de(i[u], l[u], n - 1, r, s)) return !1;
         } else {
             const e = Object.keys(i);
             let t;
             if (((u = e.length), Object.keys(l).length !== u)) return !1;
-            for (; u--; ) {
+            for (; u--;) {
                 if (((t = e[u]), void 0 === t))
                     return (console.error('Error: met undefined in object during deepEqual comparison'), !1);
                 if (!Object.prototype.hasOwnProperty.call(l, t) || !de(i[t], l[t], n - 1, r, s)) return !1;
@@ -1229,7 +1229,7 @@ const exports = {};
             );
         },
         Ee = [];
-    function je(e) {
+    function Ce(e) {
         const t = r.useRef(e);
         return (
             r.useLayoutEffect(() => {
@@ -1238,7 +1238,7 @@ const exports = {};
             r.useCallback((...e) => (0, t.current)(...e), Ee)
         );
     }
-    function Ce(e) {
+    function je(e) {
         r.useEffect(() => e, []);
     }
     r.createContext(void 0);
@@ -1462,8 +1462,8 @@ const exports = {};
         Pt = new RegExp('hsl' + vt(_t, yt, yt)),
         kt = new RegExp('hsla' + vt(_t, yt, yt, _t)),
         Et = /^#([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
-        jt = /^#([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
-        Ct = /^#([0-9a-fA-F]{6})$/,
+        Ct = /^#([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
+        jt = /^#([0-9a-fA-F]{6})$/,
         Rt = /^#([0-9a-fA-F]{8})$/;
     function St(e, t, n) {
         return (
@@ -1502,7 +1502,7 @@ const exports = {};
                 ? e >>> 0 === e && e >= 0 && e <= 4294967295
                     ? e
                     : null
-                : (t = Ct.exec(e))
+                : (t = jt.exec(e))
                   ? parseInt(t[1] + 'ff', 16) >>> 0
                   : ot && void 0 !== ot[e]
                     ? ot[e]
@@ -1514,7 +1514,7 @@ const exports = {};
                           ? parseInt(t[1] + t[1] + t[2] + t[2] + t[3] + t[3] + 'ff', 16) >>> 0
                           : (t = Rt.exec(e))
                             ? parseInt(t[1], 16) >>> 0
-                            : (t = jt.exec(e))
+                            : (t = Ct.exec(e))
                               ? parseInt(t[1] + t[1] + t[2] + t[2] + t[3] + t[3] + t[4] + t[4], 16) >>> 0
                               : (t = Pt.exec(e))
                                 ? (255 | Nt(Mt(t[1]), Ft(t[2]), Ft(t[3]))) >>> 0
@@ -1812,13 +1812,13 @@ const exports = {};
                 const t = this.getPayload();
                 return e.length == t.length
                     ? t.map((t, n) => t.setValue(e[n])).some(Boolean)
-                    : (super.setValue(e.map(jn)), !0);
+                    : (super.setValue(e.map(Cn)), !0);
             }
         };
-    function jn(e) {
+    function Cn(e) {
         return (un(e) ? xn : wn).create(e);
     }
-    function Cn(e) {
+    function jn(e) {
         const t = bn(e);
         return t ? t.constructor : Ge.arr(e) ? En : un(e) ? xn : wn;
     }
@@ -2441,7 +2441,7 @@ const exports = {};
                     x = Ge.num(w) || Ge.arr(w) || un(w),
                     P = !f && (!x || Tn(a.immediate || t.immediate, o));
                 if (m) {
-                    const e = Cn(u);
+                    const e = jn(u);
                     if (e !== _.constructor) {
                         if (!P)
                             throw Error(
@@ -2452,14 +2452,14 @@ const exports = {};
                 }
                 const k = _.constructor;
                 let E = Dt(u),
-                    j = !1;
+                    C = !1;
                 if (!E) {
                     const e = y || (!ur(this) && h);
-                    ((m || e) && ((j = Ze(zn(v), w)), (E = !j)),
+                    ((m || e) && ((C = Ze(zn(v), w)), (E = !C)),
                         ((Ze(i.immediate, P) || P) && Ze(p.decay, g) && Ze(p.velocity, b)) || (E = !0));
                 }
                 if (
-                    (j && dr(this) && (i.changed && !y ? (E = !0) : E || this._stop(l)),
+                    (C && dr(this) && (i.changed && !y ? (E = !0) : E || this._stop(l)),
                     !f &&
                         ((E || Dt(l)) &&
                             ((i.values = _.getPayload()), (i.toValues = Dt(u) ? null : k == xn ? [1] : Ye(w))),
@@ -2503,7 +2503,7 @@ const exports = {};
                 if (!Ge.und(n)) {
                     const e = bn(this);
                     if (!e || !Ze(n, e.getValue())) {
-                        const r = Cn(n);
+                        const r = jn(n);
                         (e && e.constructor == r ? e.setValue(n) : _n(this, r.create(n)),
                             e &&
                                 Se.batchedUpdates(() => {
@@ -2588,7 +2588,7 @@ const exports = {};
     }
     var kr = ['onStart', 'onChange', 'onRest'],
         Er = 1,
-        jr = class {
+        Cr = class {
             constructor(e, t) {
                 ((this.id = Er++),
                     (this.springs = {}),
@@ -2632,7 +2632,7 @@ const exports = {};
                 let { queue: t } = this;
                 return (
                     e ? (t = Ye(e).map(_r)) : (this.queue = []),
-                    this._flush ? this._flush(this, t) : (Tr(this, t), Cr(this, t))
+                    this._flush ? this._flush(this, t) : (Tr(this, t), jr(this, t))
                 );
             }
             stop(e, t) {
@@ -2692,7 +2692,7 @@ const exports = {};
                 Se.onFrame(this._onFrame);
             }
         };
-    function Cr(e, t) {
+    function jr(e, t) {
         return Promise.all(t.map((t) => Rr(e, t))).then((t) => Jn(e, t));
     }
     async function Rr(e, t, n) {
@@ -2894,11 +2894,11 @@ const exports = {};
                             flush(e, t) {
                                 const n = Sr(e, t);
                                 return a.current > 0 && !l.queue.length && !Object.keys(n).some((t) => !e.springs[t])
-                                    ? Cr(e, t)
+                                    ? jr(e, t)
                                     : new Promise((r) => {
                                           (Nr(e, n),
                                               l.queue.push(() => {
-                                                  r(Cr(e, t));
+                                                  r(jr(e, t));
                                               }),
                                               i());
                                       });
@@ -2911,7 +2911,7 @@ const exports = {};
                     d = pn(e) || 0;
                 function h(e, n) {
                     for (let r = e; r < n; r++) {
-                        const e = c.current[r] || (c.current[r] = new jr(null, l.flush)),
+                        const e = c.current[r] || (c.current[r] = new Cr(null, l.flush)),
                             n = s ? s(r, e) : t[r];
                         n && (u[r] = yr(n));
                     }
@@ -3007,7 +3007,7 @@ const exports = {};
                         : ~(t = w[t] = y.indexOf(e.key)) && (g[t] = e);
                 }),
             Ke(p, (e, t) => {
-                g[t] || ((g[t] = { key: y[t], item: e, phase: 'mount', ctrl: new jr() }), (g[t].ctrl.item = e));
+                g[t] || ((g[t] = { key: y[t], item: e, phase: 'mount', ctrl: new Cr() }), (g[t].ctrl.item = e));
             }),
             w.length)
         ) {
@@ -3023,8 +3023,8 @@ const exports = {};
         const P = hn(),
             k = $n(t),
             E = new Map(),
-            j = r.useRef(new Map()),
-            C = r.useRef(!1);
+            C = r.useRef(new Map()),
+            j = r.useRef(!1);
         Ke(g, (e, n) => {
             const r = e.key,
                 o = e.phase,
@@ -3071,12 +3071,12 @@ const exports = {};
                                 return void (r <= 2147483647 && (n.expirationId = setTimeout(P, r)));
                         }
                     }
-                    e && t.some((e) => e.expired) && (j.current.delete(n), c && (C.current = !0), P());
+                    e && t.some((e) => e.expired) && (C.current.delete(n), c && (j.current = !0), P());
                 }
             };
             const v = Sr(e.ctrl, p);
             'leave' === h && c
-                ? j.current.set(e, { phase: h, springs: v, payload: p })
+                ? C.current.set(e, { phase: h, springs: v, payload: p })
                 : E.set(e, { phase: h, springs: v, payload: p });
         });
         const R = r.useContext(Or),
@@ -3089,22 +3089,22 @@ const exports = {};
                 });
         }, [R]),
             Ke(E, (e, t) => {
-                if (j.current.size) {
+                if (C.current.size) {
                     const e = g.findIndex((e) => e.key === t.key);
                     g.splice(e, 1);
                 }
             }),
             dn(
                 () => {
-                    Ke(j.current.size ? j.current : E, ({ phase: e, payload: t }, n) => {
+                    Ke(C.current.size ? C.current : E, ({ phase: e, payload: t }, n) => {
                         const { ctrl: r } = n;
                         ((n.phase = e),
                             f?.add(r),
                             N && 'enter' == e && r.start({ default: R }),
                             t &&
                                 (Xn(r, t.ref),
-                                (!r.ref && !f) || C.current
-                                    ? (r.start(t), C.current && (C.current = !1))
+                                (!r.ref && !f) || j.current
+                                    ? (r.start(t), j.current && (j.current = !1))
                                     : r.update(t)));
                     });
                 },
@@ -3133,7 +3133,7 @@ const exports = {};
         constructor(e, t) {
             (super(), (this.source = e), (this.idle = !0), (this._active = new Set()), (this.calc = Ot(...t)));
             const n = this._get(),
-                r = Cn(n);
+                r = jn(n);
             _n(this, r.create(n));
         }
         advance(e) {
@@ -3689,7 +3689,7 @@ const exports = {};
     function cs() {
         const e = r.useRef(0);
         return (
-            Ce(() => {
+            je(() => {
                 window.cancelAnimationFrame(e.current);
             }),
             r.useMemo(
@@ -3725,7 +3725,8 @@ const exports = {};
                     let r = null;
                     function l() {
                         s ||
-                            ((i.current.status = ds),
+                            ('display' === i.current.status && (H.tooltip.hide(e, t, n), (i.current.status = hs)),
+                            (i.current.status = ds),
                             window.clearTimeout(i.current.timeoutId),
                             (i.current.timeoutId = window.setTimeout(c, a)));
                     }
@@ -3741,7 +3742,7 @@ const exports = {};
                         ) {
                             us.delete(r);
                             let e = r.parentElement;
-                            for (; e && !us.has(e); ) e = e.parentElement;
+                            for (; e && !us.has(e);) e = e.parentElement;
                             (e && us.get(e).show(), (r = null));
                         }
                     }
@@ -3767,7 +3768,7 @@ const exports = {};
                 r.useEffect(() => {
                     l.rerun();
                 }, [l]),
-                Ce(je(l.hide)),
+                je(Ce(l.hide)),
                 c
             );
         })({
@@ -3884,8 +3885,8 @@ const exports = {};
     }
     const ks = { deep: !1, equals: Y },
         Es = { cloneItem: !0 },
-        js = { shallow: !1 };
-    class Cs {
+        Cs = { shallow: !1 };
+    class js {
         constructor(e, t = Es) {
             this.options = t;
             const r = {},
@@ -3954,7 +3955,7 @@ const exports = {};
         }
         takeItem(e, t) {
             const n = e.get(t);
-            return this.options.cloneItem ? Ps(n, js) : n;
+            return this.options.cloneItem ? Ps(n, Cs) : n;
         }
         set = n.action((e) => {
             this._data.set(e);
@@ -3978,7 +3979,7 @@ const exports = {};
                 return ('real' === t && e.subscribe((e) => s.push(() => l.set(o(e))), a), l);
             },
             a = (n, o) => {
-                const a = new Cs(r(n), o);
+                const a = new js(r(n), o);
                 return ('real' === t && e.subscribe((e, t) => s.push(() => a.update(e, t)), n), a);
             },
             i = (o, a) => {
@@ -4078,7 +4079,7 @@ const exports = {};
                 }, m),
                 ls(d, [d]),
                 ((e, t, n = !0) => {
-                    const s = je((e) => {
+                    const s = Ce((e) => {
                         const n = e[0];
                         n && t(n);
                     });
@@ -4418,7 +4419,7 @@ const exports = {};
         for (let n = 0; n < e.length; n++) {
             if ('$' === e[n]) {
                 let r = n + 1;
-                for (; r < e.length && !yo(e[r]); ) r++;
+                for (; r < e.length && !yo(e[r]);) r++;
                 const s = e.slice(n + 1, r),
                     o = t[s];
                 if (o) return vo(e.replace(`$${s}`, String(o)), t);
@@ -4465,13 +4466,13 @@ const exports = {};
             .replace(/%\((\w+|\d)\)(?:s|d)?/gi, '{{$1}}')
             .replace(new RegExp('(?<!\\{)\\{(\\w+|\\d)\\}', 'g'), '{{$1}}');
     }
-    function jo(e) {
+    function Co(e) {
         return e.replaceAll('&nbsp;', ' ').replaceAll('&zwnbsp;', '\ufeff');
     }
-    const Co = { start: '{{', end: '}}' },
+    const jo = { start: '{{', end: '}}' },
         Ro = r.memo(function (t) {
             const {
-                    brackets: n = Co,
+                    brackets: n = jo,
                     text: s,
                     params: o,
                     upgradeLegacy: a,
@@ -4511,7 +4512,7 @@ const exports = {};
                                               return e;
                                           }
                                       }
-                                  })(e, jo, ko, Eo);
+                                  })(e, Co, ko, Eo);
                               })(t.text)
                             : t.text,
                     [t.text, t.upgradeLegacy],
@@ -4889,7 +4890,7 @@ const exports = {};
                                                   if (o) (t.push(e.substring(n, a + 1)), (o = !1));
                                                   else {
                                                       let r = n;
-                                                      for (; '\n' === e[r] || ' ' === e[r]; ) r++;
+                                                      for (; '\n' === e[r] || ' ' === e[r];) r++;
                                                       t.push(e.substring(r, a + 1));
                                                   }
                                                   n = a + 1;
@@ -4956,7 +4957,7 @@ const exports = {};
                         f = d ?? h.mocks,
                         p = r.useRef([]),
                         g = o?.useRequires?.(),
-                        b = je((e, r, a) => {
+                        b = Ce((e, r, a) => {
                             const l =
                                     'real' !== e && a
                                         ? (function (e, t) {
@@ -5079,7 +5080,7 @@ const exports = {};
                 i = (function () {
                     const e = r.useRef(0);
                     return (
-                        Ce(() => {
+                        je(() => {
                             window.clearTimeout(e.current);
                         }),
                         r.useMemo(
@@ -5119,8 +5120,8 @@ const exports = {};
                 P = b.currentPrestigeEmblem.get(),
                 k = b.oldPrestigeEmblemModel.get(),
                 E = b.computes.isNextLevel(),
-                j = b.computes.maxLevelReached(),
-                C = b.computes.gainedEqualsMaxValue(),
+                C = b.computes.maxLevelReached(),
+                j = b.computes.gainedEqualsMaxValue(),
                 R = r.useCallback(function (e) {
                     a(e);
                 }, []);
@@ -5164,7 +5165,7 @@ const exports = {};
                                 l.start(),
                                 u.start(),
                                 f.start(),
-                                C &&
+                                j &&
                                     0 === x &&
                                     i.run(() => {
                                         (a(ia), i.clear());
@@ -5191,7 +5192,7 @@ const exports = {};
                             maxLevelXP: w,
                             totalLabel: E,
                             emblem: P,
-                            labelPathKey: Jo(E, j),
+                            labelPathKey: Jo(E, C),
                             deltaPoints: y,
                         };
                     switch (o) {
@@ -5263,7 +5264,7 @@ const exports = {};
                             };
                         }
                     }
-                }, [o, _, y, E, x, v, w, k, P, s, j]),
+                }, [o, _, y, E, x, v, w, k, P, s, C]),
                 N = r.useMemo(
                     () => ({
                         state: o,
@@ -5452,11 +5453,11 @@ const exports = {};
     ((Pa.Label = ya), (Pa.ReceivedValue = wa), (Pa.AnimatedReceivedValue = xa), (Pa.AnimatedLabel = va));
     const ka = 'gold',
         Ea = 'enamel',
-        ja = 'prestige',
-        Ca = { xs: '48x48', sm: '72x72', md: '115x84', lg: '170x124', xl: '400x300', xxl: '600x450' },
+        Ca = 'prestige',
+        ja = { xs: '48x48', sm: '72x72', md: '115x84', lg: '170x124', xl: '400x300', xxl: '600x450' },
         Ra = { xs: '6x12', sm: '9x19', md: '16x33', lg: '23x48', xl: '53x120', xxl: '77x176' };
     function Sa(e, t, n) {
-        return t === ja ? `.c_${Ca[n]}.${t}` : `.c_${Ca[n]}.${t}.c_${e}`;
+        return t === Ca ? `.c_${ja[n]}.${t}` : `.c_${ja[n]}.${t}.c_${e}`;
     }
     const Na = {
         icon: 'VehiclePrestigeEmblem_icon_940474a9',
@@ -5499,7 +5500,7 @@ const exports = {};
             className: S(Na.base, Na[`base__${s}`], o?.base),
             children: [
                 e.jsx(xe, { path: `prestige.emblem${Sa(n, r, s)}`, className: S(Na.icon, o?.icon) }),
-                r !== ja && e.jsx(Aa, { level: t, type: r, size: s, classNames: { levelIcon: o?.level } }),
+                r !== Ca && e.jsx(Aa, { level: t, type: r, size: s, classNames: { levelIcon: o?.level } }),
             ],
         });
     });
@@ -5727,7 +5728,7 @@ const exports = {};
     function _i(e, t) {
         const n = fi(),
             r = ys();
-        return je((s) => {
+        return Ce((s) => {
             if (s)
                 switch (n.animationType) {
                     case 'simple':
@@ -5762,12 +5763,12 @@ const exports = {};
             n = t.soundTarget ?? 'progress-bar',
             r = ys(),
             s = _i(e, n),
-            o = je(() => {
+            o = Ce(() => {
                 t.status !== ci.doneInactive && t.progressCompleted
                     ? r.play('increaseDeltaMax', { target: n })
                     : r.play('progressSimple', { target: n });
             });
-        return je(({ step: e } = {}) => {
+        return Ce(({ step: e } = {}) => {
             if (!t.silent)
                 return t.activeComponents.has('delta') ? s(e) : t.activeComponents.has('fill') ? o() : void 0;
         });
@@ -5778,7 +5779,7 @@ const exports = {};
         Pi = 'Delta_outside__increase_91391b24',
         ki = 'Delta_inside_b1b3a5c5',
         Ei = 'Delta_inside__increase_fcd871c4',
-        ji = r.memo(
+        Ci = r.memo(
             r.forwardRef(function (
                 {
                     from: t,
@@ -5801,16 +5802,16 @@ const exports = {};
                     [w, x] = r.useState(v),
                     [P, k] = r.useState(y ?? 'done'),
                     E = (h.value - t) / h.maxValue,
-                    j = yi(E);
+                    C = yi(E);
                 (pi('delta'),
                     r.useEffect(() => {
                         if (0 === E) return;
                         const [e, ...t] = i;
                         (k(e ?? 'done'), x(t));
                     }, [f, g, i, E]));
-                const C = je(l ?? K);
-                r.useEffect(() => C(P), [P, C]);
-                const R = je(() => {
+                const j = Ce(l ?? K);
+                r.useEffect(() => j(P), [P, j]);
+                const R = Ce(() => {
                     const [e, ...t] = w;
                     void 0 !== e ? (k(e), x(t)) : k('done');
                 });
@@ -5830,7 +5831,7 @@ const exports = {};
                                       to: { width: 100 },
                                       config: n ?? ai,
                                       onRest: R,
-                                      onStart: () => j({ step: P }),
+                                      onStart: () => C({ step: P }),
                                   }))
                                 : 'shrinking' === P
                                   ? (_.set({ left: t, width: r }),
@@ -5840,11 +5841,11 @@ const exports = {};
                                         to: { width: 0 },
                                         config: s ?? ai,
                                         onRest: R,
-                                        onStart: () => j({ step: P }),
+                                        onStart: () => C({ step: P }),
                                     }))
                                   : void 0
                         );
-                    }, [_, h.percentage, E, n, f, R, g, j, s, P]),
+                    }, [_, h.percentage, E, n, f, R, g, C, s, P]),
                     e.jsxs(is.div, {
                         ...c,
                         ref: Pe([u, d]),
@@ -5869,7 +5870,7 @@ const exports = {};
                 );
             }),
         ),
-        Ci = {
+        ji = {
             base: 'Fill_d056f825',
             filled: 'Fill_filled_c16bdce3',
             done: 'Fill_done_4d97d579',
@@ -5887,51 +5888,51 @@ const exports = {};
             edge__noProgress: 'Fill_edge__noProgress_387f6e75',
         },
         Ri = is(xe),
-        Si = r.memo(function ({ animationConfig: t, classNames: n }) {
-            const s = fi(),
-                { activeComponents: o } = fi(),
-                a = 100 * s.percentage,
-                i = 100 * (s.previous?.percentage ?? 0),
-                l = void 0 === s.previous ? a : i,
-                c = s.status === ci.doneStatic,
-                u = cs(),
-                [d, h] = Lr(() => ({ width: l }));
+        Si = r.memo(function ({ donePattern: t, donePatternComplete: n, animationConfig: s, classNames: o }) {
+            const a = fi(),
+                { activeComponents: i } = fi(),
+                l = 100 * a.percentage,
+                c = 100 * (a.previous?.percentage ?? 0),
+                u = void 0 === a.previous ? l : c,
+                d = a.status === ci.doneStatic,
+                h = cs(),
+                [m, f] = Lr(() => ({ width: u }));
             return (
                 r.useEffect(() => {
-                    u.run(() =>
-                        h.start(
+                    h.run(() =>
+                        f.start(
                             si({
-                                baseValue: l,
-                                newValue: a,
-                                animationType: s.animationType,
-                                deltaVisible: o.has('delta'),
-                                preViewDeltaVisible: o.has('previewDelta'),
-                                animationConfig: t,
+                                baseValue: u,
+                                newValue: l,
+                                animationType: a.animationType,
+                                deltaVisible: i.has('delta'),
+                                preViewDeltaVisible: i.has('previewDelta'),
+                                animationConfig: s,
                             }),
                         ),
                     );
-                }, [a, h, l, s.animationType, t, o, u]),
+                }, [l, f, u, a.animationType, s, i, h]),
                 e.jsxs(e.Fragment, {
                     children: [
                         e.jsx(Ri, {
-                            path: `ui.progressbar.bg_pattern_base_done_${s.size}`,
+                            path: t || `ui.progressbar.bg_pattern_base_done_${a.size}`,
                             className: S(
-                                n?.done,
-                                Ci.done,
-                                !s.progressCompleted && Ci.done__hidden,
-                                s.progressCompleted && (c ? Ci.done__doneStatic : Ci.done__visible),
+                                o?.done,
+                                ji.done,
+                                !a.progressCompleted && ji.done__hidden,
+                                a.progressCompleted && (d ? ji.done__doneStatic : ji.done__visible),
                             ),
                             repeat: 'repeat',
                             position: 'left top',
-                            style: { width: d.width.to((e) => `${e}%`) },
+                            style: { width: m.width.to((e) => `${e}%`) },
                         }),
-                        !c &&
+                        !d &&
                             e.jsx(Ri, {
-                                path: `ui.progressbar.bg_pattern_base_done_complete_${s.size}`,
-                                className: S(n?.doneComplete, Ci.complete, s.progressCompleted && Ci.complete__visible),
+                                path: n || `ui.progressbar.bg_pattern_base_done_complete_${a.size}`,
+                                className: S(o?.doneComplete, ji.complete, a.progressCompleted && ji.complete__visible),
                                 repeat: 'repeat',
                                 position: 'left top',
-                                style: { width: d.width.to((e) => `${e}%`) },
+                                style: { width: m.width.to((e) => `${e}%`) },
                             }),
                     ],
                 })
@@ -5965,9 +5966,9 @@ const exports = {};
                     path: t || `ui.progressbar.bg_pattern_base_filled_${o.size}`,
                     className: S(
                         s,
-                        Ci.filled,
-                        o.status && Ci[`filled__${o.status}`],
-                        o.progressCompleted && Ci.filled__hidden,
+                        ji.filled,
+                        o.status && ji[`filled__${o.status}`],
+                        o.progressCompleted && ji.filled__hidden,
                     ),
                     repeat: 'repeat',
                     position: 'left top',
@@ -5975,58 +5976,68 @@ const exports = {};
                 })
             );
         }),
-        Mi = r.memo(function ({ filledPattern: t, classNames: n, className: s, animationConfig: o, ...a }) {
-            const i = fi(),
-                l = yi(),
-                c = cs(),
-                { activeComponents: u } = fi(),
-                d = 100 * i.percentage,
-                h = 100 * (i.previous?.percentage ?? 0),
-                m = void 0 === i.previous ? d : h;
+        Mi = r.memo(function ({
+            filledPattern: t,
+            donePattern: n,
+            donePatternComplete: s,
+            classNames: o,
+            className: a,
+            animationConfig: i,
+            ...l
+        }) {
+            const c = fi(),
+                u = yi(),
+                d = cs(),
+                { activeComponents: h } = fi(),
+                m = 100 * c.percentage,
+                f = 100 * (c.previous?.percentage ?? 0),
+                p = void 0 === c.previous ? m : f;
             (pi('fill'),
                 r.useEffect(() => {
-                    'growFreeze' === i.animationType && i.progressCompleted && !i.activeComponents.has('delta') && l();
-                }, [i.activeComponents, i.animationType, i.progressCompleted, l]));
-            const [f, p] = Lr(() => ({ width: m }));
+                    'growFreeze' === c.animationType && c.progressCompleted && !c.activeComponents.has('delta') && u();
+                }, [c.activeComponents, c.animationType, c.progressCompleted, u]));
+            const [g, b] = Lr(() => ({ width: p }));
             return (
                 r.useEffect(() => {
-                    c.run(() =>
-                        p.start({
+                    d.run(() =>
+                        b.start({
                             ...si({
-                                baseValue: m,
-                                newValue: d,
-                                animationType: i.animationType,
-                                deltaVisible: u.has('delta'),
-                                preViewDeltaVisible: u.has('previewDelta'),
-                                animationConfig: o,
+                                baseValue: p,
+                                newValue: m,
+                                animationType: c.animationType,
+                                deltaVisible: h.has('delta'),
+                                preViewDeltaVisible: h.has('previewDelta'),
+                                animationConfig: i,
                             }),
-                            onStart: () => l(),
+                            onStart: () => u(),
                         }),
                     );
-                }, [o, p, m, i.animationType, u, d, l, c]),
+                }, [i, b, p, c.animationType, h, m, u, d]),
                 e.jsxs('div', {
-                    className: S(Ci.base, s),
+                    className: S(ji.base, a),
                     children: [
-                        e.jsx(is.div, { className: n?.fill, style: { width: f.width.to((e) => `${e}%`) } }),
-                        a.children ??
+                        e.jsx(is.div, { className: o?.fill, style: { width: g.width.to((e) => `${e}%`) } }),
+                        l.children ??
                             e.jsxs(e.Fragment, {
                                 children: [
-                                    e.jsx(Ai, { filledPattern: t, className: n?.filledPattern, animationConfig: o }),
+                                    e.jsx(Ai, { filledPattern: t, className: o?.filledPattern, animationConfig: i }),
                                     e.jsx(Si, {
-                                        classNames: { done: n?.done, doneComplete: n?.doneComplete },
-                                        animationConfig: o,
+                                        classNames: o,
+                                        animationConfig: i,
+                                        donePattern: n,
+                                        donePatternComplete: s,
                                     }),
                                 ],
                             }),
                         e.jsx(is.div, {
                             className: S(
-                                n?.edge,
-                                Ci.edge,
-                                0 === i.percentage && Ci.edge__noProgress,
-                                !u.has('previewDelta') && !i.progressCompleted && Ci.edge__visible,
-                                i.status && Ci[`edge__${i.status}`],
+                                o?.edge,
+                                ji.edge,
+                                0 === c.percentage && ji.edge__noProgress,
+                                !h.has('previewDelta') && !c.progressCompleted && ji.edge__visible,
+                                c.status && ji[`edge__${c.status}`],
                             ),
-                            style: { left: f.width.to((e) => `${e}%`) },
+                            style: { left: g.width.to((e) => `${e}%`) },
                         }),
                     ],
                 })
@@ -6120,19 +6131,19 @@ const exports = {};
             i = ke(n),
             l = ke(o),
             c = r.useRef(new Set()),
-            u = je((e) => s(Math.min(e, t.maxValue))),
-            d = je((e) => c.current.has(e));
+            u = Ce((e) => s(Math.min(e, t.maxValue))),
+            d = Ce((e) => c.current.has(e));
         (r.useLayoutEffect(() => {
             u(t.value);
         }, [t.value, u]),
             r.useLayoutEffect(() => {
                 a(t.maxValue);
             }, [t.maxValue]));
-        const h = je((e) => t.onValueChange?.(e));
+        const h = Ce((e) => t.onValueChange?.(e));
         r.useEffect(() => {
             h(n);
         }, [h, n]);
-        const m = je((e) => t.onMaxValueChange?.(e));
+        const m = Ce((e) => t.onMaxValueChange?.(e));
         r.useEffect(() => {
             m(o);
         }, [m, o]);
@@ -6194,7 +6205,7 @@ const exports = {};
             });
         };
     ((Wi.Fill = Mi),
-        (Wi.Delta = ji),
+        (Wi.Delta = Ci),
         (Wi.PreviewDelta = qi),
         (Wi.NumberIndicators = $i),
         (Wi.sizes = li),
@@ -6215,8 +6226,8 @@ const exports = {};
                     ],
                 }),
             });
-        }),
-        Ki = N.cubicBezier(0.33, 0, 0.25, 1),
+        });
+    const Ki = N.cubicBezier(0.33, 0, 0.25, 1),
         Ji = i.observer(function () {
             const {
                     state: t,
@@ -6444,7 +6455,7 @@ const exports = {};
                             (i = (e) =>
                                 (s = o ? new a(e, s, 'An error was suppressed during disposal') : ((o = !0), e))),
                             (l = (e) => {
-                                for (; (e = r.pop()); )
+                                for (; (e = r.pop());)
                                     try {
                                         var t = e[1] && e[1].call(e[2]);
                                         if (e[0]) return Promise.resolve(t).then(l, (e) => (i(e), l()));

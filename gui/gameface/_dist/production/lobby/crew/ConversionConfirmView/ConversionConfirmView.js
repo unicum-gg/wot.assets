@@ -461,7 +461,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function i(u) {
                     let e = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; u >= r[t]; ) ((e += n[t]), (u -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; u >= r[t];) ((e += n[t]), (u -= r[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -940,9 +940,13 @@
                         if (t.mediumWidth && _) return i(e, t, p);
                         if (t.smallWidth && D) return i(e, t, p);
                         if (t.extraSmallWidth && B) return i(e, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && m) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && h) return e;
@@ -1773,7 +1777,7 @@
                     hu = (u, e, t, n) => {
                         let r = e.exec(u),
                             i = 0;
-                        for (; r; ) (i !== r.index && t(u.slice(i, r.index)), n(r), (i = e.lastIndex), (r = e.exec(u)));
+                        for (; r;) (i !== r.index && t(u.slice(i, r.index)), n(r), (i = e.lastIndex), (r = e.exec(u)));
                         i !== u.length && t(u.slice(i));
                     },
                     gu = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -1819,7 +1823,7 @@
                               if (!n) return [u];
                               const r = [];
                               let i = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const a = e.justifyContent === au.FlexEnd ? n.index : t.lastIndex;
                                   (r.push(u.slice(i, a)), (i = a), (n = t.exec(u)));
                               }
@@ -1864,7 +1868,9 @@
                     },
                     vu = (u, e, t = '', n) => {
                         const r = [],
-                            i = u.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            i = u
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (u) => u.split('').join('\ufeff'));
                         return (
                             hu(
                                 i,
@@ -1994,7 +2000,7 @@
                             c = ((u, e) => {
                                 let t = 0,
                                     n = u.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const r = t + Math.ceil(0.5 * (n - t));
                                     yu(u[r], e) ? (n = r - 1) : (t = r + 1);
                                 }
@@ -2345,7 +2351,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Wu(r.keys()); !(u = t()).done; ) i(u.value, e);
+                                                        for (var u, t = Wu(r.keys()); !(u = t()).done;) i(u.value, e);
                                                     },
                                                     unsubscribe: i,
                                                 };

@@ -299,7 +299,7 @@
                     y = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function f(u) {
                     let e = '';
-                    for (let n = y.length - 1; n >= 0; n--) for (; u >= y[n]; ) ((e += h[n]), (u -= y[n]));
+                    for (let n = y.length - 1; n >= 0; n--) for (; u >= y[n];) ((e += h[n]), (u -= y[n]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

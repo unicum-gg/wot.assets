@@ -1,7 +1,7 @@
 import { j as s, a3 as e } from '../../../../chunks/vendor.js';
-import { r as i } from '../../../../chunks/lib.js';
-import { T as r } from '../../../../chunks/tooltip_decorator.js';
-import { t as c } from '../../../../chunks/tooltips.module.js';
+import { d2 as i } from '../../../../chunks/lib.js';
+import { T as c } from '../../../../chunks/tooltip_decorator.js';
+import { t as r } from '../../../../chunks/tooltips.module.js';
 /* empty css                        */ const a = 'App_4fcbfa35',
     o = 'App_crewIcon_f83bbe77',
     d = 'App_title_bd033b57',
@@ -12,16 +12,16 @@ import { t as c } from '../../../../chunks/tooltips.module.js';
     m = 'App_slotImage_9f9978b0',
     _ = () =>
         s.jsxs('div', {
-            className: e(c.base, a),
+            className: e(r.base, a),
             children: [
-                s.jsx('div', { className: c.heading, children: R.strings.comp7_ext.yearlyRewards.rewards.crew() }),
+                s.jsx('div', { className: r.heading, children: R.strings.comp7_ext.yearlyRewards.rewards.crew() }),
                 s.jsx('div', {
-                    className: e(c.subHeading, c.subHeading__topIndent),
+                    className: e(r.subHeading, r.subHeading__topIndent),
                     children: R.strings.comp7_ext.crewMembersTooltip.subHeading(),
                 }),
                 s.jsx('div', { className: o }),
                 s.jsx('div', {
-                    className: e(c.description, c.description__topIndent),
+                    className: e(r.description, r.description__topIndent),
                     children: R.strings.comp7_ext.crewMembersTooltip.description(),
                 }),
                 s.jsx('div', { className: d, children: R.strings.comp7_ext.crewMembersTooltip.zeroPerks() }),
@@ -36,4 +36,4 @@ import { t as c } from '../../../../chunks/tooltips.module.js';
                 }),
             ],
         });
-i(s.jsx(r, { children: s.jsx(_, {}) }));
+i(s.jsx(c, { children: s.jsx(_, {}) }));

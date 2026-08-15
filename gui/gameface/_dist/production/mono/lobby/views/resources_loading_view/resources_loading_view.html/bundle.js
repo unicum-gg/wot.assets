@@ -2,7 +2,7 @@ import { r as e, q as s, j as t, e as a } from '../../../chunks/vendor.js';
 import {
     i as r,
     x as o,
-    h as n,
+    v as n,
     p as c,
     y as i,
     z as l,
@@ -228,8 +228,8 @@ function xe({
                 l = o && t ? t - 1 : t;
             let u = l;
             const d = c.test(r[l] ?? '');
-            if (n && d) for (; c.test(r[u] ?? '') && u < i; ) u++;
-            if (o && d) for (; c.test(r[u] ?? '') && u > 0; ) u--;
+            if (n && d) for (; c.test(r[u] ?? '') && u < i;) u++;
+            if (o && d) for (; c.test(r[u] ?? '') && u > 0;) u--;
             if (u !== l || (o && d)) return (e.preventDefault(), (u = u < 0 ? 0 : u), void P(u, u));
             ((o && 1 === t && 1 === i) || n) && (e.preventDefault(), L(e.code));
         },
@@ -251,7 +251,7 @@ function xe({
                 const e = l[r] || '',
                     s = f[x] || '';
                 if (e.match(/\d/g) || e === s) {
-                    for (; e !== f[x] && x < f.length; ) x++;
+                    for (; e !== f[x] && x < f.length;) x++;
                     x++;
                 }
             }

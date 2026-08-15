@@ -904,9 +904,13 @@
                         if (t.mediumWidth && A) return i(e, t, v);
                         if (t.smallWidth && _) return i(e, t, v);
                         if (t.extraSmallWidth && F) return i(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && D) return e;
                             if (t.largeHeight && B) return e;
                             if (t.mediumHeight && h) return e;
@@ -2923,7 +2927,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = _t.length - 1; t >= 0; t--)
-                                      for (; u >= _t[t]; ) ((e += At[t]), (u -= _t[t]));
+                                      for (; u >= _t[t];) ((e += At[t]), (u -= _t[t]));
                                   return e;
                               })(u),
                     Ct = 'Vehicle_base_a1',

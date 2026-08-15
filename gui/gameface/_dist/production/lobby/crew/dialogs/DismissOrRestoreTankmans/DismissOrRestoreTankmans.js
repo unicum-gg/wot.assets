@@ -939,9 +939,13 @@
                         if (t.mediumWidth && F) return o(e, t, b);
                         if (t.smallWidth && D) return o(e, t, b);
                         if (t.extraSmallWidth && _) return o(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && h) return e;
@@ -1355,7 +1359,7 @@
                             t = lu(e);
                         let n,
                             r = u;
-                        for (; null !== (n = ou.exec(u)); ) {
+                        for (; null !== (n = ou.exec(u));) {
                             const u = n[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (u) {
                                 const e = t + u[2].replace(iu, '');
@@ -1457,7 +1461,7 @@
                                         ((u) => {
                                             const e = lu(Eu());
                                             let t;
-                                            for (; null !== (t = au.exec(u)); ) {
+                                            for (; null !== (t = au.exec(u));) {
                                                 const u = t[0].match(/href="(.*?)"/);
                                                 if (u) {
                                                     const t = e + u[1].replace(iu, ''),
@@ -1478,7 +1482,7 @@
                                     let e;
                                     const t = Eu(),
                                         n = lu(t);
-                                    for (; null !== (e = au.exec(u)); ) {
+                                    for (; null !== (e = au.exec(u));) {
                                         const u = e[0].match(/href="(.*?)"/);
                                         if (u && !u[1].includes(su) && n) {
                                             const e = n + u[1].replace(iu, ''),
@@ -2177,7 +2181,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Ku(r.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = Ku(r.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };

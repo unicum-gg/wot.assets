@@ -909,9 +909,13 @@
                         if (t.mediumWidth && m) return r(u, t, f);
                         if (t.smallWidth && F) return r(u, t, f);
                         if (t.extraSmallWidth && D) return r(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return u;
                             if (t.largeHeight && g) return u;
                             if (t.mediumHeight && h) return u;
@@ -1281,7 +1285,7 @@
                         let s = ne.exec(e),
                             o = e,
                             l = 0;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 a = re.exec(t),
                                 c = ie.exec(t),
@@ -1529,7 +1533,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = fe(n.keys()); !(e = t()).done; ) r(e.value, u);
+                                                        for (var e, t = fe(n.keys()); !(e = t()).done;) r(e.value, u);
                                                     },
                                                     unsubscribe: r,
                                                 };
@@ -2861,7 +2865,7 @@
                                         u(e).delete(t);
                                     },
                                     r = (e, ...t) => {
-                                        for (var a, n = Tt(u(e).values()); !(a = n()).done; ) (0, a.value)(...t);
+                                        for (var a, n = Tt(u(e).values()); !(a = n()).done;) (0, a.value)(...t);
                                     };
                                 return (0, a.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                             })(),
@@ -4897,7 +4901,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = Nr.length - 1; t >= 0; t--)
-                                      for (; e >= Nr[t]; ) ((u += kr[t]), (e -= Nr[t]));
+                                      for (; e >= Nr[t];) ((u += kr[t]), (e -= Nr[t]));
                                   return u;
                               })(e),
                     Ir = {

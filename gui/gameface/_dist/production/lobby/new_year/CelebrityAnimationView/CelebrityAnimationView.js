@@ -909,9 +909,13 @@
                         if (a.mediumWidth && h) return r(t, a, L);
                         if (a.smallWidth && E) return r(t, a, L);
                         if (a.extraSmallWidth && v) return r(t, a, L);
-                        if (
-                            !(a.extraLargeWidth || a.largeWidth || a.mediumWidth || a.smallWidth || a.extraSmallWidth)
-                        ) {
+                        if (!(
+                            a.extraLargeWidth ||
+                            a.largeWidth ||
+                            a.mediumWidth ||
+                            a.smallWidth ||
+                            a.extraSmallWidth
+                        )) {
                             if (a.extraLargeHeight && w) return t;
                             if (a.largeHeight && f) return t;
                             if (a.mediumHeight && p) return t;

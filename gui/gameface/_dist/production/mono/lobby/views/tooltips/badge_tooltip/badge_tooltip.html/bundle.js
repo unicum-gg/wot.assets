@@ -1,5 +1,5 @@
 import { j as e } from '../../../../chunks/vendor.js';
-import { i as a, q as s, E as i, J as l, U as d, H as c, r as o } from '../../../../chunks/lib.js';
+import { i as a, t as s, E as i, J as l, U as d, H as c, r as o } from '../../../../chunks/lib.js';
 const [p, t] = a()(
         ({ observableModel: e }) =>
             e.primitives([

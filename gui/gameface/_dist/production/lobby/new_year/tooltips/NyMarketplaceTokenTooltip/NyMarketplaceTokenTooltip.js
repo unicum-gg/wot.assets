@@ -416,7 +416,7 @@
                             : (function (u) {
                                   let F = '';
                                   for (let A = du.length - 1; A >= 0; A--)
-                                      for (; u >= du[A]; ) ((F += cu[A]), (u -= du[A]));
+                                      for (; u >= du[A];) ((F += cu[A]), (u -= du[A]));
                                   return F;
                               })(u);
                 A(1281);

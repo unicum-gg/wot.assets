@@ -1,5 +1,5 @@
 import { u as e, r as a, j as s, t } from './vendor.js';
-import { dd as n } from './lib.js';
+import { di as n } from './lib.js';
 const r = { x: 0, y: 0, opacity: 0, transform: 'scale(1) rotate(0deg)' },
     i = { x: 0, y: 0, opacity: 1, transform: 'scale(1) rotate(0deg)' };
 var o = ((e) => (
@@ -26,8 +26,8 @@ function c({
     from: o = r,
     to: c = i,
     config: O,
-    isCanceled: d = !1,
-    isDisabled: l = !1,
+    isCanceled: l = !1,
+    isDisabled: d = !1,
     duration: f = 250,
     delay: m = 0,
     transformOrigin: p = '50% 50%',
@@ -40,16 +40,16 @@ function c({
 }) {
     const h = u[E],
         [v, j] = e(() => o),
-        k = d && !l ? c : { ...v, transformOrigin: p };
+        k = l && !d ? c : { ...v, transformOrigin: p };
     return (
         a.useEffect(() => {
             j.start({
                 from: o,
                 to: c,
                 delay: m,
-                immediate: d,
+                immediate: l,
                 config: O ? { ...O } : { duration: f, easing: h },
-                cancel: d || l,
+                cancel: l || d,
                 reverse: b,
                 onRest: (e) => {
                     !0 === e.finished && g && g();
@@ -58,7 +58,7 @@ function c({
                     I && I();
                 },
             });
-        }, [j, m, f, h, o, d, g, c, y, l, b, I, O]),
+        }, [j, m, f, h, o, l, g, c, y, d, b, I, O]),
         s.jsx(t.div, { className: x, style: k, children: n })
     );
 }

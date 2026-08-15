@@ -343,7 +343,7 @@ const exports = {};
                 for (let a = 0; a < 8; a++) {
                     const a = k(r, t, s) - e;
                     if (Math.abs(a) < n) return r;
-                    const i = j(r, t, s);
+                    const i = I(r, t, s);
                     if (Math.abs(i) < n) break;
                     r -= a / i;
                 }
@@ -355,10 +355,10 @@ const exports = {};
     function k(e, t, s) {
         return 3 * t * (1 - e) ** 2 * e + 3 * s * (1 - e) * e ** 2 + e ** 3;
     }
-    function j(e, t, s) {
+    function I(e, t, s) {
         return 9 * t * (1 - e) ** 2 + 6 * (s - t) * (1 - e) * e + 3 * (1 - s) * e ** 2;
     }
-    function I(e) {
+    function j(e) {
         return (t) => (
             engine.on(e, t),
             () => {
@@ -369,7 +369,7 @@ const exports = {};
     function D(e) {
         viewEnv.setTrackMouseOnStage(e);
     }
-    const O = { down: I('mousedown'), up: I('mouseup'), move: I('mousemove') };
+    const O = { down: j('mousedown'), up: j('mouseup'), move: j('mousemove') };
     function M(e) {
         engine.call('PlaySound', e);
     }
@@ -422,10 +422,10 @@ const exports = {};
         F = { ...Object.keys(B).reduce((e, t) => ((e[t] = () => M(B[t])), e), {}), sound: M },
         $ = { notReady: 0, ready: 1, showing: 2, shown: 3, hiding: 4, hidden: 5 },
         L = {
-            onTextureFrozen: I('self.onTextureFrozen'),
-            onTextureReady: I('self.onTextureReady'),
-            onDomBuilt: I('self.onDomBuilt'),
-            onLoaded: I('self.onLoaded'),
+            onTextureFrozen: j('self.onTextureFrozen'),
+            onTextureReady: j('self.onTextureReady'),
+            onDomBuilt: j('self.onDomBuilt'),
+            onLoaded: j('self.onLoaded'),
             onHitTest: (() => {
                 const e = new Set(),
                     t = (t, s) => {
@@ -443,16 +443,16 @@ const exports = {};
                     }
                 );
             })(),
-            onDisplayChanged: I('self.onShowingStatusChanged'),
-            onFocusUpdated: I('self.onFocusChanged'),
-            onExternalPaddingsUpdated: I('self.onPaddingsUpdated'),
+            onDisplayChanged: j('self.onShowingStatusChanged'),
+            onFocusUpdated: j('self.onFocusChanged'),
+            onExternalPaddingsUpdated: j('self.onPaddingsUpdated'),
             children: {
-                onAdded: I('children.onAdded'),
-                onLoaded: I('children.onLoaded'),
-                onRemoved: I('children.onRemoved'),
-                onAttached: I('children.onAttached'),
-                onTextureReady: I('children.onTextureReady'),
-                onRequestPosition: I('children.requestPosition'),
+                onAdded: j('children.onAdded'),
+                onLoaded: j('children.onLoaded'),
+                onRemoved: j('children.onRemoved'),
+                onAttached: j('children.onAttached'),
+                onTextureReady: j('children.onTextureReady'),
+                onRequestPosition: j('children.requestPosition'),
             },
         },
         z = 1;
@@ -1193,17 +1193,17 @@ const exports = {};
     Te.onFrame = (e) => Fe(e, Ae);
     var ke = Ue();
     Te.onFinish = (e) => Fe(e, ke);
-    var je = [];
+    var Ie = [];
     Te.setTimeout = (e, t) => {
         const s = Te.now() + t,
             n = () => {
-                const e = je.findIndex((e) => e.cancel == n);
-                (~e && je.splice(e, 1), (Me -= ~e ? 1 : 0));
+                const e = Ie.findIndex((e) => e.cancel == n);
+                (~e && Ie.splice(e, 1), (Me -= ~e ? 1 : 0));
             },
             r = { time: s, handler: e, cancel: n };
-        return (je.splice(Ie(s), 0, r), (Me += 1), $e(), r);
+        return (Ie.splice(je(s), 0, r), (Me += 1), $e(), r);
     };
-    var Ie = (e) => ~(~je.findIndex((t) => t.time > e) || ~je.length);
+    var je = (e) => ~(~Ie.findIndex((t) => t.time > e) || ~Ie.length);
     ((Te.cancel = (e) => {
         (Ne.delete(e), Ae.delete(e), ke.delete(e), Se.delete(e), Ce.delete(e));
     }),
@@ -1256,8 +1256,8 @@ const exports = {};
     function ze() {
         const e = Oe;
         Oe = Te.now();
-        const t = Ie(Oe);
-        (t && (qe(je.splice(0, t), (e) => e.handler()), (Me -= t)),
+        const t = je(Oe);
+        (t && (qe(Ie.splice(0, t), (e) => e.handler()), (Me -= t)),
             Me
                 ? (Ne.flush(), Se.flush(e ? Math.min(64, Oe - e) : 16.667), Ae.flush(), Ce.flush(), ke.flush())
                 : (Oe = -1));
@@ -1432,11 +1432,11 @@ const exports = {};
         const t = parseFloat(e);
         return t < 0 ? 0 : t > 1 ? 255 : Math.round(255 * t);
     }
-    function jt(e) {
+    function It(e) {
         const t = parseFloat(e);
         return t < 0 ? 0 : t > 100 ? 1 : t / 100;
     }
-    function It(e) {
+    function jt(e) {
         let t = (function (e) {
             let t;
             return 'number' == typeof e
@@ -1458,9 +1458,9 @@ const exports = {};
                             : (t = Et.exec(e))
                               ? parseInt(t[1] + t[1] + t[2] + t[2] + t[3] + t[3] + t[4] + t[4], 16) >>> 0
                               : (t = wt.exec(e))
-                                ? (255 | Ct(At(t[1]), jt(t[2]), jt(t[3]))) >>> 0
+                                ? (255 | Ct(At(t[1]), It(t[2]), It(t[3]))) >>> 0
                                 : (t = xt.exec(e))
-                                  ? (Ct(At(t[1]), jt(t[2]), jt(t[3])) | kt(t[4])) >>> 0
+                                  ? (Ct(At(t[1]), It(t[2]), It(t[3])) | kt(t[4])) >>> 0
                                   : null;
         })(e);
         if (null === t) return e;
@@ -1563,7 +1563,7 @@ const exports = {};
         ts = (e, t, s, n, r) => `rgba(${Math.round(t)}, ${Math.round(s)}, ${Math.round(n)}, ${r})`,
         ss = (e) => {
             Ht || (Ht = nt ? new RegExp(`(${Object.keys(nt).join('|')})(?!\\w)`, 'g') : /^\b$/);
-            const t = e.output.map((e) => $t(e).replace(Kt, Jt).replace(Yt, It).replace(Ht, It)),
+            const t = e.output.map((e) => $t(e).replace(Kt, Jt).replace(Yt, jt).replace(Ht, jt)),
                 s = t.map((e) => e.match(Wt).map(Number)),
                 n = s[0].map((e, t) =>
                     s.map((e) => {
@@ -1824,9 +1824,9 @@ const exports = {};
     }
     var As = (e, t) => !0 === e || !!(t && e && (Qe.fun(e) ? e(t) : Ze(e).includes(t))),
         ks = (e, t) => (Qe.obj(e) ? t && e[t] : e),
-        js = (e, t) => (!0 === e.default ? e[t] : e.default ? e.default[t] : void 0),
-        Is = (e) => e,
-        Ds = (e, t = Is) => {
+        Is = (e, t) => (!0 === e.default ? e[t] : e.default ? e.default[t] : void 0),
+        js = (e) => e,
+        Ds = (e, t = js) => {
             let s = Os;
             e.default && !0 !== e.default && ((e = e.default), (s = Object.keys(e)));
             const n = {};
@@ -2522,7 +2522,7 @@ const exports = {};
     }
     var vn = ['onStart', 'onRest', 'onChange', 'onPause', 'onResume'];
     function yn(e, t, s) {
-        e.animation[s] = t[s] !== js(t, s) ? ks(t[s], e.key) : void 0;
+        e.animation[s] = t[s] !== Is(t, s) ? ks(t[s], e.key) : void 0;
     }
     function wn(e, t, ...s) {
         (e.animation[t]?.(...s), e.defaultProps[t]?.(...s));
@@ -2661,7 +2661,7 @@ const exports = {};
             ? ((d.paused = t.pause), tt(t.pause ? d.pauseQueue : d.resumeQueue))
             : d.paused && (t.pause = !0);
         const p = (n || Object.keys(e.springs)).map((s) => e.springs[s].start(t)),
-            m = !0 === t.cancel || !0 === js(t, 'cancel');
+            m = !0 === t.cancel || !0 === Is(t, 'cancel');
         ((u || (m && d.asyncId)) &&
             p.push(
                 Ws(++e._lastAsyncId, {
@@ -2718,8 +2718,8 @@ const exports = {};
             An(e.springs, t, (t) => Nn(t, e));
         });
     }
-    var jn,
-        In,
+    var In,
+        jn,
         Dn = ({ children: e, ...t }) => {
             const s = n.useContext(On),
                 r = t.pause || !!s.pause,
@@ -2751,12 +2751,12 @@ const exports = {};
             return p.createElement(i, { value: t }, e);
         },
         On =
-            ((jn = Dn),
-            (In = {}),
-            Object.assign(jn, p.createContext(In)),
-            (jn.Provider._context = jn),
-            (jn.Consumer._context = jn),
-            jn);
+            ((In = Dn),
+            (jn = {}),
+            Object.assign(In, p.createContext(jn)),
+            (In.Provider._context = In),
+            (In.Consumer._context = In),
+            In);
     ((Dn.Provider = On.Provider), (Dn.Consumer = On.Consumer));
     var Mn = () => {
         const e = [],
@@ -3664,7 +3664,8 @@ const exports = {};
                 let n = null;
                 function l() {
                     r ||
-                        ((o.current.status = cr),
+                        ('display' === o.current.status && (H.tooltip.hide(e, t, s), (o.current.status = ur)),
+                        (o.current.status = cr),
                         window.clearTimeout(o.current.timeoutId),
                         (o.current.timeoutId = window.setTimeout(c, i)));
                 }
@@ -3680,7 +3681,7 @@ const exports = {};
                     ) {
                         lr.delete(n);
                         let e = n.parentElement;
-                        for (; e && !lr.has(e); ) e = e.parentElement;
+                        for (; e && !lr.has(e);) e = e.parentElement;
                         if (e) {
                             lr.get(e).show();
                         }
@@ -3993,7 +3994,7 @@ const exports = {};
         );
     });
     const kr = 'TruncateText_dcb41d92',
-        jr = n.forwardRef(function ({ text: t, tooltipParams: s, className: r, ...a }, i) {
+        Ir = n.forwardRef(function ({ text: t, tooltipParams: s, className: r, ...a }, i) {
             const o = mr({ header: s?.header, body: s?.body || t }),
                 l = n.useRef(null),
                 [c, u] = n.useState(!1),
@@ -4041,7 +4042,7 @@ const exports = {};
                 e.jsx('div', { ...a, ref: we([i, l]), className: N(kr, r), ...(c ? o : {}), children: t })
             );
         }),
-        Ir = (e) => ('boolean' == typeof e ? `${e}` : 0 === e ? '0' : e),
+        jr = (e) => ('boolean' == typeof e ? `${e}` : 0 === e ? '0' : e),
         Dr = N,
         Or = (e, t) => (s) => {
             var n;
@@ -4052,7 +4053,7 @@ const exports = {};
                     const t = null == s ? void 0 : s[e],
                         n = null == a ? void 0 : a[e];
                     if (null === t) return null;
-                    const i = Ir(t) || Ir(n);
+                    const i = jr(t) || jr(n);
                     return r[e][i];
                 }),
                 o =
@@ -4406,7 +4407,7 @@ const exports = {};
         for (let s = 0; s < e.length; s++) {
             if ('$' === e[s]) {
                 let n = s + 1;
-                for (; n < e.length && !ba(e[n]); ) n++;
+                for (; n < e.length && !ba(e[n]);) n++;
                 const r = e.slice(s + 1, n),
                     a = t[r];
                 if (a) return va(e.replace(`$${r}`, String(a)), t);
@@ -4523,8 +4524,8 @@ const exports = {};
     }
     const Aa = 'AnimatedValue_d9f4b2f0',
         ka = 'AnimatedValue_animatedValue_4c490d83',
-        ja = A.cubicBezier(0.33, 0, 0.25, 1);
-    function Ia(e) {
+        Ia = A.cubicBezier(0.33, 0, 0.25, 1);
+    function ja(e) {
         return {
             enterElements: document.querySelectorAll(`.js-animated-value-${e}-enter`),
             leftElements: document.querySelectorAll(`.js-animated-value-${e}-leave`),
@@ -4540,9 +4541,9 @@ const exports = {};
                     opacity: 1,
                     y: '0rem',
                     delay: 330,
-                    config: { easing: ja, duration: 330 },
+                    config: { easing: Ia, duration: 330 },
                     onStart: () => {
-                        const { enterElements: e, leftElements: t } = Ia(o);
+                        const { enterElements: e, leftElements: t } = ja(o);
                         (e.forEach((e) => {
                             e instanceof HTMLElement && ((e.style.width = 'auto'), (e.style.position = 'relative'));
                         }),
@@ -4557,10 +4558,10 @@ const exports = {};
                     left: 0,
                     opacity: 0,
                     y: '5rem',
-                    config: { easing: ja, duration: 330 },
+                    config: { easing: Ia, duration: 330 },
                     onStart: () => {
                         let e = 0;
-                        const { enterElements: t, leftElements: s } = Ia(o);
+                        const { enterElements: t, leftElements: s } = ja(o);
                         (s.forEach((t) => {
                             t instanceof HTMLElement &&
                                 ((e = Math.max(e, t.offsetWidth)), (t.style.position = 'relative'));
@@ -4715,7 +4716,7 @@ const exports = {};
                                         void 0 !== s && e.jsx(be, { ...s }),
                                         e.jsx(na.Title, {
                                             className: N(qa.title, u?.title),
-                                            children: e.jsx(jr, { text: t }),
+                                            children: e.jsx(Ir, { text: t }),
                                         }),
                                     ],
                                 }),
@@ -4820,7 +4821,7 @@ const exports = {};
                                                   if (a) (t.push(e.substring(s, i + 1)), (a = !1));
                                                   else {
                                                       let n = s;
-                                                      for (; '\n' === e[n] || ' ' === e[n]; ) n++;
+                                                      for (; '\n' === e[n] || ' ' === e[n];) n++;
                                                       t.push(e.substring(n, i + 1));
                                                   }
                                                   s = i + 1;
@@ -5324,7 +5325,7 @@ const exports = {};
             e
         ))(Ai || {}),
         ki = ((e) => ((e.BATTLE_BOOSTER = 'battleBooster'), e))(ki || {}),
-        ji = ((e) => (
+        Ii = ((e) => (
             (e.ATTACHMENT_RARE = 'rare'),
             (e.ATTACHMENT_EPIC = 'epic'),
             (e.ATTACHMENT_LEGENDARY = 'legendary'),
@@ -5344,8 +5345,8 @@ const exports = {};
             (e.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
             (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'),
             e
-        ))(ji || {});
-    function Ii(e) {
+        ))(Ii || {});
+    function ji(e) {
         return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, 'default') ? e.default : e;
     }
     var Di,
@@ -5385,7 +5386,7 @@ const exports = {};
                     Mi.exports ? ((t.default = t), (Mi.exports = t)) : (window.classNames = t);
                 })()),
             Oi.exports);
-    const Fi = Ii(Bi),
+    const Fi = ji(Bi),
         $i = [
             Ti.Items,
             Ti.Equipment,
@@ -5419,6 +5420,7 @@ const exports = {};
             Ti.DeluxeGift,
             Ti.BattleBoosterGift,
             Ti.OptionalDevice,
+            Ti.TmanToken,
         ],
         Li = [Ti.Gold, Ti.Credits, Ti.Crystal, Ti.FreeXp],
         zi = [Ti.BattlePassPoints, Ti.EquipCoin],
@@ -5587,41 +5589,41 @@ const exports = {};
                     if (void 0 === e) return null;
                     switch (e) {
                         case Ai.BATTLE_BOOSTER:
-                            return ji.BATTLE_BOOSTER;
+                            return Ii.BATTLE_BOOSTER;
                         case Ai.BATTLE_BOOSTER_REPLACE:
-                            return ji.BATTLE_BOOSTER_REPLACE;
+                            return Ii.BATTLE_BOOSTER_REPLACE;
                         case Ai.BUILT_IN_EQUIPMENT:
-                            return ji.BUILT_IN_EQUIPMENT;
+                            return Ii.BUILT_IN_EQUIPMENT;
                         case Ai.EQUIPMENT_PLUS:
-                            return ji.EQUIPMENT_PLUS;
+                            return Ii.EQUIPMENT_PLUS;
                         case Ai.EQUIPMENT_TROPHY_BASIC:
-                            return ji.EQUIPMENT_TROPHY_BASIC;
+                            return Ii.EQUIPMENT_TROPHY_BASIC;
                         case Ai.EQUIPMENT_TROPHY_UPGRADED:
-                            return ji.EQUIPMENT_TROPHY_UPGRADED;
+                            return Ii.EQUIPMENT_TROPHY_UPGRADED;
                         case Ai.EQUIPMENT_MODERNIZED_UPGRADED_1:
-                            return ji.EQUIPMENT_MODERNIZED_UPGRADED_1;
+                            return Ii.EQUIPMENT_MODERNIZED_UPGRADED_1;
                         case Ai.EQUIPMENT_MODERNIZED_UPGRADED_2:
-                            return ji.EQUIPMENT_MODERNIZED_UPGRADED_2;
+                            return Ii.EQUIPMENT_MODERNIZED_UPGRADED_2;
                         case Ai.EQUIPMENT_MODERNIZED_UPGRADED_3:
-                            return ji.EQUIPMENT_MODERNIZED_UPGRADED_3;
+                            return Ii.EQUIPMENT_MODERNIZED_UPGRADED_3;
                         case Ai.PROGRESSION_STYLE_UPGRADED_1:
-                            return ji.PROGRESSION_STYLE_UPGRADED_1;
+                            return Ii.PROGRESSION_STYLE_UPGRADED_1;
                         case Ai.PROGRESSION_STYLE_UPGRADED_2:
-                            return ji.PROGRESSION_STYLE_UPGRADED_2;
+                            return Ii.PROGRESSION_STYLE_UPGRADED_2;
                         case Ai.PROGRESSION_STYLE_UPGRADED_3:
-                            return ji.PROGRESSION_STYLE_UPGRADED_3;
+                            return Ii.PROGRESSION_STYLE_UPGRADED_3;
                         case Ai.PROGRESSION_STYLE_UPGRADED_4:
-                            return ji.PROGRESSION_STYLE_UPGRADED_4;
+                            return Ii.PROGRESSION_STYLE_UPGRADED_4;
                         case Ai.PROGRESSION_STYLE_UPGRADED_5:
-                            return ji.PROGRESSION_STYLE_UPGRADED_5;
+                            return Ii.PROGRESSION_STYLE_UPGRADED_5;
                         case Ai.PROGRESSION_STYLE_UPGRADED_6:
-                            return ji.PROGRESSION_STYLE_UPGRADED_6;
+                            return Ii.PROGRESSION_STYLE_UPGRADED_6;
                         case Ai.ATTACHMENT_RARE:
-                            return ji.ATTACHMENT_RARE;
+                            return Ii.ATTACHMENT_RARE;
                         case Ai.ATTACHMENT_EPIC:
-                            return ji.ATTACHMENT_EPIC;
+                            return Ii.ATTACHMENT_EPIC;
                         case Ai.ATTACHMENT_LEGENDARY:
-                            return ji.ATTACHMENT_LEGENDARY;
+                            return Ii.ATTACHMENT_LEGENDARY;
                     }
                 })(i),
                 v = ((e, t) => {
@@ -5643,7 +5645,13 @@ const exports = {};
                             return e;
                     }
                 })(o, l),
-                y = pr({ contentId: h?.contentId ?? 0, args: h?.args, resId: h?.resId, decoratorId: h?.decoratorId }),
+                y = pr({
+                    contentId: h?.contentId ?? 0,
+                    args: h?.args,
+                    resId: h?.resId,
+                    decoratorId: h?.decoratorId,
+                    disabled: h?.disabled,
+                }),
                 w = mr({ header: f?.header, body: f?.body });
             return e.jsxs('div', {
                 className: Fi(Qi.base, Qi[`base__${a}`], !r && Qi.base__dynamicBox, d),
@@ -5890,10 +5898,10 @@ const exports = {};
         _o = 'free',
         go = 'paid',
         bo = 'both';
-    function vo({ limit: e, rewardsTooltipResId: t, ...s }) {
+    function vo({ limit: e, rewardsTooltipResId: t, boxRewardTooltipContentId: s, ...n }) {
         return {
-            contentId: fo.read((e) => e.lobby.tooltips.AdditionalBattlePassRewardsTooltip('resId')),
-            args: { showFromIndex: e - 1, ...s },
+            contentId: s ?? fo.read((e) => e.lobby.tooltips.AdditionalRewardsTooltip('resId')),
+            args: { showFromIndex: e - 1, ...n },
             resId: t,
         };
     }
@@ -5903,39 +5911,41 @@ const exports = {};
         bonuses: n,
         maxRewardsCount: r,
         rewardsTooltipResId: a,
-        immediateAnimation: i,
-        questId: o,
-        level: l,
-        chapter: c,
-        rewardType: u,
-        className: d,
-        rewardItemClassName: p,
+        boxRewardTooltipContentId: i,
+        immediateAnimation: o,
+        questId: l,
+        level: c,
+        chapter: u,
+        rewardType: d,
+        className: p,
+        rewardItemClassName: m,
     }) {
-        const m = {
+        const h = {
             bonuses: n,
-            questId: o,
+            questId: l,
             maxRewardsCount: r,
             size: Ci.Small,
             resId: a,
             boxRewardTooltipArgs: vo({
                 limit: r,
                 rewardsTooltipResId: a,
-                rewardType: u,
-                level: l ? l - 1 : void 0,
-                chapter: c,
-                questId: o,
+                boxRewardTooltipContentId: i,
+                rewardType: d,
+                level: c ? c - 1 : void 0,
+                chapter: u,
+                questId: l,
             }),
-            rewardItemClassMix: p,
+            rewardItemClassMix: m,
         };
         return t
             ? e.jsx(ho, {
-                  ...m,
+                  ...h,
                   animationRef: s,
-                  immediateAnimation: i,
-                  className: d,
-                  classNames: { glowContainer: d },
+                  immediateAnimation: o,
+                  className: p,
+                  classNames: { glowContainer: p },
               })
-            : e.jsx(ao, { ...m, classMix: d });
+            : e.jsx(ao, { ...h, classMix: p });
     }
     const wo = 'CompletedMark_fc4eee08',
         xo = 'CompletedMark_glow_33775180',
@@ -6062,8 +6072,8 @@ const exports = {};
         No = { simple: 'simple', grow: 'grow', growFreeze: 'growFreeze' },
         Ao = { medium: 'medium', large: 'large' },
         ko = { disabled: 'disabled', doneInactive: 'doneInactive', doneStatic: 'doneStatic' },
-        jo = 'growing',
-        Io = 'shrinking',
+        Io = 'growing',
+        jo = 'shrinking',
         Do = 'done',
         Oo = n.createContext(void 0);
     function Mo() {
@@ -6278,51 +6288,51 @@ const exports = {};
             edge__noProgress: 'Fill_edge__noProgress_387f6e75',
         },
         Xo = ar(be),
-        Zo = n.memo(function ({ animationConfig: t, classNames: s }) {
-            const r = Mo(),
-                { activeComponents: a } = Mo(),
-                i = 100 * r.percentage,
-                o = 100 * (r.previous?.percentage ?? 0),
-                l = void 0 === r.previous ? i : o,
-                c = r.status === ko.doneStatic,
-                u = or(),
-                [d, p] = Bn(() => ({ width: l }));
+        Zo = n.memo(function ({ donePattern: t, donePatternComplete: s, animationConfig: r, classNames: a }) {
+            const i = Mo(),
+                { activeComponents: o } = Mo(),
+                l = 100 * i.percentage,
+                c = 100 * (i.previous?.percentage ?? 0),
+                u = void 0 === i.previous ? l : c,
+                d = i.status === ko.doneStatic,
+                p = or(),
+                [m, h] = Bn(() => ({ width: u }));
             return (
                 n.useEffect(() => {
-                    u.run(() =>
-                        p.start(
+                    p.run(() =>
+                        h.start(
                             So({
-                                baseValue: l,
-                                newValue: i,
-                                animationType: r.animationType,
-                                deltaVisible: a.has('delta'),
-                                preViewDeltaVisible: a.has('previewDelta'),
-                                animationConfig: t,
+                                baseValue: u,
+                                newValue: l,
+                                animationType: i.animationType,
+                                deltaVisible: o.has('delta'),
+                                preViewDeltaVisible: o.has('previewDelta'),
+                                animationConfig: r,
                             }),
                         ),
                     );
-                }, [i, p, l, r.animationType, t, a, u]),
+                }, [l, h, u, i.animationType, r, o, p]),
                 e.jsxs(e.Fragment, {
                     children: [
                         e.jsx(Xo, {
-                            path: `ui.progressbar.bg_pattern_base_done_${r.size}`,
+                            path: t || `ui.progressbar.bg_pattern_base_done_${i.size}`,
                             className: N(
-                                s?.done,
+                                a?.done,
                                 Yo.done,
-                                !r.progressCompleted && Yo.done__hidden,
-                                r.progressCompleted && (c ? Yo.done__doneStatic : Yo.done__visible),
+                                !i.progressCompleted && Yo.done__hidden,
+                                i.progressCompleted && (d ? Yo.done__doneStatic : Yo.done__visible),
                             ),
                             repeat: 'repeat',
                             position: 'left top',
-                            style: { width: d.width.to((e) => `${e}%`) },
+                            style: { width: m.width.to((e) => `${e}%`) },
                         }),
-                        !c &&
+                        !d &&
                             e.jsx(Xo, {
-                                path: `ui.progressbar.bg_pattern_base_done_complete_${r.size}`,
-                                className: N(s?.doneComplete, Yo.complete, r.progressCompleted && Yo.complete__visible),
+                                path: s || `ui.progressbar.bg_pattern_base_done_complete_${i.size}`,
+                                className: N(a?.doneComplete, Yo.complete, i.progressCompleted && Yo.complete__visible),
                                 repeat: 'repeat',
                                 position: 'left top',
-                                style: { width: d.width.to((e) => `${e}%`) },
+                                style: { width: m.width.to((e) => `${e}%`) },
                             }),
                     ],
                 })
@@ -6366,58 +6376,68 @@ const exports = {};
                 })
             );
         }),
-        el = n.memo(function ({ filledPattern: t, classNames: s, className: r, animationConfig: a, ...i }) {
-            const o = Mo(),
-                l = zo(),
-                c = or(),
-                { activeComponents: u } = Mo(),
-                d = 100 * o.percentage,
-                p = 100 * (o.previous?.percentage ?? 0),
-                m = void 0 === o.previous ? d : p;
+        el = n.memo(function ({
+            filledPattern: t,
+            donePattern: s,
+            donePatternComplete: r,
+            classNames: a,
+            className: i,
+            animationConfig: o,
+            ...l
+        }) {
+            const c = Mo(),
+                u = zo(),
+                d = or(),
+                { activeComponents: p } = Mo(),
+                m = 100 * c.percentage,
+                h = 100 * (c.previous?.percentage ?? 0),
+                f = void 0 === c.previous ? m : h;
             (Bo('fill'),
                 n.useEffect(() => {
-                    'growFreeze' === o.animationType && o.progressCompleted && !o.activeComponents.has('delta') && l();
-                }, [o.activeComponents, o.animationType, o.progressCompleted, l]));
-            const [h, f] = Bn(() => ({ width: m }));
+                    'growFreeze' === c.animationType && c.progressCompleted && !c.activeComponents.has('delta') && u();
+                }, [c.activeComponents, c.animationType, c.progressCompleted, u]));
+            const [_, g] = Bn(() => ({ width: f }));
             return (
                 n.useEffect(() => {
-                    c.run(() =>
-                        f.start({
+                    d.run(() =>
+                        g.start({
                             ...So({
-                                baseValue: m,
-                                newValue: d,
-                                animationType: o.animationType,
-                                deltaVisible: u.has('delta'),
-                                preViewDeltaVisible: u.has('previewDelta'),
-                                animationConfig: a,
+                                baseValue: f,
+                                newValue: m,
+                                animationType: c.animationType,
+                                deltaVisible: p.has('delta'),
+                                preViewDeltaVisible: p.has('previewDelta'),
+                                animationConfig: o,
                             }),
-                            onStart: () => l(),
+                            onStart: () => u(),
                         }),
                     );
-                }, [a, f, m, o.animationType, u, d, l, c]),
+                }, [o, g, f, c.animationType, p, m, u, d]),
                 e.jsxs('div', {
-                    className: N(Yo.base, r),
+                    className: N(Yo.base, i),
                     children: [
-                        e.jsx(ar.div, { className: s?.fill, style: { width: h.width.to((e) => `${e}%`) } }),
-                        i.children ??
+                        e.jsx(ar.div, { className: a?.fill, style: { width: _.width.to((e) => `${e}%`) } }),
+                        l.children ??
                             e.jsxs(e.Fragment, {
                                 children: [
-                                    e.jsx(Jo, { filledPattern: t, className: s?.filledPattern, animationConfig: a }),
+                                    e.jsx(Jo, { filledPattern: t, className: a?.filledPattern, animationConfig: o }),
                                     e.jsx(Zo, {
-                                        classNames: { done: s?.done, doneComplete: s?.doneComplete },
-                                        animationConfig: a,
+                                        classNames: a,
+                                        animationConfig: o,
+                                        donePattern: s,
+                                        donePatternComplete: r,
                                     }),
                                 ],
                             }),
                         e.jsx(ar.div, {
                             className: N(
-                                s?.edge,
+                                a?.edge,
                                 Yo.edge,
-                                0 === o.percentage && Yo.edge__noProgress,
-                                !u.has('previewDelta') && !o.progressCompleted && Yo.edge__visible,
-                                o.status && Yo[`edge__${o.status}`],
+                                0 === c.percentage && Yo.edge__noProgress,
+                                !p.has('previewDelta') && !c.progressCompleted && Yo.edge__visible,
+                                c.status && Yo[`edge__${c.status}`],
                             ),
-                            style: { left: h.width.to((e) => `${e}%`) },
+                            style: { left: _.width.to((e) => `${e}%`) },
                         }),
                     ],
                 })
@@ -6588,7 +6608,7 @@ const exports = {};
         (fl.statuses = ko),
         (fl.animations = No));
     const _l = 'ProgressBar_wrapper_a944db13',
-        gl = [jo, Io],
+        gl = [Io, jo],
         bl = n.memo(function ({ progressBar: t, fill: s, delta: n, wrapperSpringProps: r }) {
             const a = Bn({ from: { opacity: 1 }, ...r });
             return e.jsx(fl, {
@@ -6669,8 +6689,8 @@ const exports = {};
         Nl = 'Stage_progress_c5675d64',
         Al = 'Stage_progressStats_f3ded1ed',
         kl = 'Stage_label_56ecd03c',
-        jl = 'Stage_completedMark_7ff4d47',
-        Il = 'Stage_completedMarkIcon_8c8e3dd0',
+        Il = 'Stage_completedMark_7ff4d47',
+        jl = 'Stage_completedMarkIcon_8c8e3dd0',
         Dl = 'Stage_currency_7f0db2dc',
         Ol = 'Stage_progressBar_7044093c',
         Ml = 'Stage_numberStats_cfdc0117',
@@ -6682,9 +6702,10 @@ const exports = {};
         Ul = 'Stage_lock_1e42671c',
         ql = 'Stage_unpaidContainer_37d54891',
         Vl = 'Stage_lastRewards_9578652b',
-        Gl = m.resolve('strings'),
-        Hl = A.cubicBezier(0.33, 0, 0.25, 1);
-    function Ql({
+        Gl = m.resolve('views').read((e) => e.lobby.tooltips.AdditionalBattlePassRewardsTooltip('resId')),
+        Hl = m.resolve('strings'),
+        Ql = A.cubicBezier(0.33, 0, 0.25, 1);
+    function Wl({
         level: t,
         chapter: s,
         currentLevelPoints: r,
@@ -6695,7 +6716,7 @@ const exports = {};
         paidAwards: c,
         combinedRewards: u,
     }) {
-        const d = mr({ body: Gl.readOrEmpty('battle_pass.tooltip.lock') }),
+        const d = mr({ body: Hl.readOrEmpty('battle_pass.tooltip.lock') }),
             { animation: p, immediateAnimation: m } = (function () {
                 const e = n.useContext(Sl);
                 return (oe(void 0 !== e, 'useBattlePass must be used under battlePassContext.Provider'), e);
@@ -6734,14 +6755,14 @@ const exports = {};
                     ? void 0
                     : {
                           from: S,
-                          steps: [jo, Io],
-                          growAnimationConfig: { duration: 600, easing: Hl },
-                          shrinkAnimationConfig: { easing: Hl, duration: 600 },
+                          steps: [Io, jo],
+                          growAnimationConfig: { duration: 600, easing: Ql },
+                          shrinkAnimationConfig: { easing: Ql, duration: 600 },
                           onState(e) {
                               e === Do && T === r && (f.start(), y && h.start(), _.start());
                           },
                       },
-                fill: { animationConfig: { duration: R ? 0 : 600, easing: Hl } },
+                fill: { animationConfig: { duration: R ? 0 : 600, easing: Ql } },
             }),
             [S, T, a, R, f, h, _, y, r],
         );
@@ -6762,8 +6783,8 @@ const exports = {};
                                     y &&
                                         e.jsx(Ro, {
                                             animationRef: h,
-                                            className: jl,
-                                            classNames: { icon: Il },
+                                            className: Il,
+                                            classNames: { icon: jl },
                                             springProps: { immediate: R },
                                         }),
                                 ],
@@ -6804,6 +6825,7 @@ const exports = {};
                               immediateAnimation: R,
                               maxRewardsCount: 5,
                               rewardsTooltipResId: Ei,
+                              boxRewardTooltipContentId: Gl,
                               level: t,
                               chapter: s,
                               rewardType: bo,
@@ -6819,6 +6841,7 @@ const exports = {};
                                       immediateAnimation: R,
                                       maxRewardsCount: w,
                                       rewardsTooltipResId: Ei,
+                                      boxRewardTooltipContentId: Gl,
                                       level: t,
                                       chapter: s,
                                       rewardType: _o,
@@ -6846,6 +6869,7 @@ const exports = {};
                                                           bonuses: c,
                                                           maxRewardsCount: 3,
                                                           rewardsTooltipResId: Ei,
+                                                          boxRewardTooltipContentId: Gl,
                                                           level: t,
                                                           chapter: s,
                                                           rewardType: go,
@@ -6862,20 +6886,20 @@ const exports = {};
             ],
         });
     }
-    const Wl = 'ChapterContent_header_31f4031e',
-        Yl = 'ChapterContent_content_10fd4769',
-        Xl = 'ChapterContent_info_cb358338',
-        Zl = 'ChapterContent_title_481bdaeb',
-        Kl = 'ChapterContent_navigation_b57418c9',
-        Jl = 'ChapterContent_status_18ebfb9b',
-        ec = 'ChapterContent_achievements_ab6a323f',
-        tc = 'ChapterContent_logo_d27a1604',
-        sc = m.resolve('strings'),
-        nc = [],
-        rc = o.observer(function ({ chapterId: t, postProgression: s, handleCardAction: n }) {
+    const Yl = 'ChapterContent_header_31f4031e',
+        Xl = 'ChapterContent_content_10fd4769',
+        Zl = 'ChapterContent_info_cb358338',
+        Kl = 'ChapterContent_title_481bdaeb',
+        Jl = 'ChapterContent_navigation_b57418c9',
+        ec = 'ChapterContent_status_18ebfb9b',
+        tc = 'ChapterContent_achievements_ab6a323f',
+        sc = 'ChapterContent_logo_d27a1604',
+        nc = m.resolve('strings'),
+        rc = [],
+        ac = o.observer(function ({ chapterId: t, postProgression: s, handleCardAction: n }) {
             const { model: a } = Si(),
                 i = mr({
-                    body: sc.readOrEmpty(
+                    body: nc.readOrEmpty(
                         a.navigationEnabled.get()
                             ? 'tooltips.quests.battlePass.linkBtn'
                             : 'battle_pass.tooltip.cardButton.disabled.body',
@@ -6899,7 +6923,7 @@ const exports = {};
             return e.jsxs(e.Fragment, {
                 children: [
                     e.jsxs('div', {
-                        className: Wl,
+                        className: Yl,
                         children: [
                             e.jsx(xi, {
                                 iconSize: b.iconSize,
@@ -6907,40 +6931,40 @@ const exports = {};
                                 containerSize: b.containerSize,
                                 bpPurchased: a.hasBattlePass.get() && !s,
                                 chapterID: t,
-                                className: tc,
+                                className: sc,
                             }),
                             e.jsxs('div', {
-                                className: Yl,
+                                className: Xl,
                                 children: [
                                     e.jsxs('div', {
-                                        className: Xl,
+                                        className: Zl,
                                         children: [
-                                            e.jsx('div', { className: Zl, children: a.computes.chapterTitle(t, s) }),
+                                            e.jsx('div', { className: Kl, children: a.computes.chapterTitle(t, s) }),
                                             c &&
                                                 e.jsx(ei, {
                                                     bpTopPoints: a.bpTopPoints.get(),
                                                     questPoints: a.questPoints.get(),
                                                     bonusCapPoints: a.bonusCapPoints.get(),
                                                     bpTopExternalPoints: a.bpTopExternalPoints.get(),
-                                                    className: ec,
+                                                    className: tc,
                                                 }),
                                         ],
                                     }),
                                     !(o && s) &&
                                         e.jsxs('div', {
-                                            className: Kl,
+                                            className: Jl,
                                             children: [
                                                 !s &&
                                                     a.navigationEnabled.get() &&
                                                     g &&
-                                                    e.jsx('div', { className: Jl, children: g }),
+                                                    e.jsx('div', { className: ec, children: g }),
                                                 e.jsx(qr, {
                                                     ...i,
                                                     theme: qr.themes.secondary,
                                                     size: qr.sizes.small,
                                                     onClick: n,
                                                     disabled: !a.navigationEnabled.get(),
-                                                    children: sc.readOrEmpty(
+                                                    children: nc.readOrEmpty(
                                                         'tooltips.quests.linkBtn.battlePass.select',
                                                     ),
                                                 }),
@@ -6954,22 +6978,22 @@ const exports = {};
                         e.jsxs(e.Fragment, {
                             children: [
                                 h &&
-                                    e.jsx(Ql, {
+                                    e.jsx(Wl, {
                                         level: !o && s ? a.computes.updatedPreviousLevel() : a.previousLevel.get() + 1,
                                         chapter: o ? a.previousChapterID.get() : a.currentChapterID.get(),
                                         currentLevelPoints: a.previousMaxLevelPoints.get(),
                                         maxLevelPoints: a.previousMaxLevelPoints.get(),
                                         pointsDiff: a.computes.prevLevelDiff(),
                                         battlePassPaid: a.hasBattlePass.get(),
-                                        freeAwards: a.computes.previousFreeRewards()[0] || nc,
-                                        paidAwards: a.computes.previousPaidRewards()[0] || nc,
-                                        combinedRewards: a.computes.previousCombinedRewards()[0] || nc,
+                                        freeAwards: a.computes.previousFreeRewards()[0] || rc,
+                                        paidAwards: a.computes.previousPaidRewards()[0] || rc,
+                                        combinedRewards: a.computes.previousCombinedRewards()[0] || rc,
                                     }),
                                 f &&
                                     e.jsx(e.Fragment, {
                                         children: Array.from({ length: a.computes.levelsDiff() - 1 }).map((t, s) =>
                                             e.jsx(
-                                                Ql,
+                                                Wl,
                                                 {
                                                     level: (p < 0 ? a.previousLevel.get() + 1 : p) + s + 1,
                                                     chapter: a.previousChapterID.get(),
@@ -6977,16 +7001,16 @@ const exports = {};
                                                     maxLevelPoints: m,
                                                     pointsDiff: m,
                                                     battlePassPaid: a.hasBattlePass.get(),
-                                                    freeAwards: a.computes.previousFreeRewards()[s + 1] || nc,
-                                                    paidAwards: a.computes.previousPaidRewards()[s + 1] || nc,
-                                                    combinedRewards: a.computes.previousCombinedRewards()[s + 1] || nc,
+                                                    freeAwards: a.computes.previousFreeRewards()[s + 1] || rc,
+                                                    paidAwards: a.computes.previousPaidRewards()[s + 1] || rc,
+                                                    combinedRewards: a.computes.previousCombinedRewards()[s + 1] || rc,
                                                 },
                                                 s,
                                             ),
                                         ),
                                     }),
                                 _ &&
-                                    e.jsx(Ql, {
+                                    e.jsx(Wl, {
                                         level: d,
                                         chapter: a.currentChapterID.get(),
                                         currentLevelPoints: a.currentLevelPoints.get(),
@@ -7002,10 +7026,10 @@ const exports = {};
                 ],
             });
         }),
-        ac = 'missions-progress:battle-pass:random-card',
-        ic = m.resolve('strings'),
-        oc = { rootId: m.resolve('aliases').read((e) => e.battle_results.progression.BattlePass('resId')) },
-        lc = o.observer(function () {
+        ic = 'missions-progress:battle-pass:random-card',
+        oc = m.resolve('strings'),
+        lc = { rootId: m.resolve('aliases').read((e) => e.battle_results.progression.BattlePass('resId')) },
+        cc = o.observer(function () {
             const t = br(),
                 { model: s, controls: n } = Si(),
                 r = s.navigationEnabled.get();
@@ -7013,19 +7037,19 @@ const exports = {};
                 r && n.navigateTo();
             }
             const i = mr({
-                header: ic.readOrEmpty('battle_pass.tooltip.freePoints.header'),
-                body: ic.readOrEmpty('battle_pass.tooltip.freePoints.body'),
+                header: oc.readOrEmpty('battle_pass.tooltip.freePoints.header'),
+                body: oc.readOrEmpty('battle_pass.tooltip.freePoints.body'),
             });
             return s.computes.holidayBattlePassCompleted()
                 ? e.jsx(Va, {
-                      title: ic.readOrEmpty('battle_pass.battlePassVehicleAwardView.content.title'),
+                      title: oc.readOrEmpty('battle_pass.battlePassVehicleAwardView.content.title'),
                       className: Za.base,
                       children: e.jsxs('div', {
                           className: N(Za.freePoints, Za.freePoints__holiday),
                           children: [
                               e.jsx('div', {
                                   className: N(Za.title, Za.title__freePoints),
-                                  children: ic.readOrEmpty('battle_pass.title.earningPoints'),
+                                  children: oc.readOrEmpty('battle_pass.title.earningPoints'),
                               }),
                               e.jsx(ei, {
                                   bpTopPoints: s.bpTopPoints.get(),
@@ -7037,19 +7061,19 @@ const exports = {};
                       }),
                   })
                 : e.jsxs(Va, {
-                      title: ic.readOrEmpty('battle_pass.battlePassVehicleAwardView.content.title'),
+                      title: oc.readOrEmpty('battle_pass.battlePassVehicleAwardView.content.title'),
                       onButtonAction: a,
                       onClick: (e) => {
-                          r && (t.play('click', { target: ac, original: e }), a());
+                          r && (t.play('click', { target: ic, original: e }), a());
                       },
                       onMouseEnter: (e) => {
-                          t.play('mouse-enter', { target: ac, original: e });
+                          t.play('mouse-enter', { target: ic, original: e });
                       },
-                      actionTooltipParams: { body: ic.readOrEmpty('tooltips.quests.battlePass.linkBtn') },
+                      actionTooltipParams: { body: oc.readOrEmpty('tooltips.quests.battlePass.linkBtn') },
                       className: Za.base,
                       disabled: !s.navigationEnabled.get(),
                       children: [
-                          e.jsx(rc, {
+                          e.jsx(ac, {
                               chapterId: s.previousChapterID.get(),
                               postProgression: s.computes.postProgression(),
                               handleCardAction: a,
@@ -7070,7 +7094,7 @@ const exports = {};
                                   ...i,
                                   className: Za.pointsTransfer,
                                   children: [
-                                      ic.readOrEmpty('battle_pass.points.transfer'),
+                                      oc.readOrEmpty('battle_pass.points.transfer'),
                                       e.jsx('span', { className: Za.amount, children: s.pointsAux.get() }),
                                   ],
                               }),
@@ -7080,7 +7104,7 @@ const exports = {};
                                   children: [
                                       e.jsx('div', {
                                           className: N(Za.title, Za.title__freePoints),
-                                          children: ic.readOrEmpty('battle_pass.title.freePoints'),
+                                          children: oc.readOrEmpty('battle_pass.title.freePoints'),
                                       }),
                                       e.jsx(ei, {
                                           bpTopPoints: s.bpTopPoints.get(),
@@ -7093,7 +7117,7 @@ const exports = {};
                           s.battlePassComplete.get() &&
                               s.levelMax.get() &&
                               !s.holidayBattlePass.get() &&
-                              e.jsx(rc, {
+                              e.jsx(ac, {
                                   chapterId: s.currentChapterID.get(),
                                   postProgression: !0,
                                   handleCardAction: a,
@@ -7101,10 +7125,10 @@ const exports = {};
                       ],
                   });
         });
-    function cc({ animation: t, immediateAnimation: s }) {
+    function uc({ animation: t, immediateAnimation: s }) {
         const r = n.useMemo(() => ({ animation: t, immediateAnimation: s }), [t, s]);
         return e.jsx(Ri, {
-            options: oc,
+            options: lc,
             children: e.jsx(Sl.Provider, {
                 value: r,
                 children: e.jsx(Xa, {
@@ -7119,15 +7143,15 @@ const exports = {};
                             ),
                             {},
                         )),
-                    children: e.jsx(lc, {}),
+                    children: e.jsx(cc, {}),
                 }),
             }),
         });
         var a;
     }
-    var uc;
+    var dc;
     exports.plugin =
-        ((uc = async ({ url: t }) => {
+        ((dc = async ({ url: t }) => {
             const s = new te();
             return {
                 async init() {
@@ -7151,7 +7175,7 @@ const exports = {};
                             })(t)}/battle_pass.css`,
                         );
                         (s.add(n.cleanup), await n.promise.catch(console.error));
-                        const r = Y(oc, { name: 'BattlePassProgressDataLayer' }),
+                        const r = Y(lc, { name: 'BattlePassProgressDataLayer' }),
                             a = (u(d, ((c = r.dispose), { [Symbol.dispose]: c })), r.readByPath('levelMax')),
                             i = r.readByPath('levelReached'),
                             o = [];
@@ -7170,7 +7194,7 @@ const exports = {};
                                           path: 'battle_results.missionsProgress.notificationsTabs.battlePass.stageComplete',
                                       }),
                                   }),
-                            { notifications: o, animated: !0, component: cc, categoryOrder: 950, completed: a || i }
+                            { notifications: o, animated: !0, component: uc, categoryOrder: 950, completed: a || i }
                         );
                     } catch (h) {
                         var p = h,
@@ -7193,7 +7217,7 @@ const exports = {};
                             (o = (e) =>
                                 (r = a ? new i(e, r, 'An error was suppressed during disposal') : ((a = !0), e))),
                             (l = (e) => {
-                                for (; (e = n.pop()); )
+                                for (; (e = n.pop());)
                                     try {
                                         var t = e[1] && e[1].call(e[2]);
                                         if (e[0]) return Promise.resolve(t).then(l, (e) => (o(e), l()));
@@ -7209,7 +7233,7 @@ const exports = {};
                 },
             };
         }),
-        async (e) => ({ ...(await uc(e)), id: e.id }));
+        async (e) => ({ ...(await dc(e)), id: e.id }));
 });
 
 export default exports;

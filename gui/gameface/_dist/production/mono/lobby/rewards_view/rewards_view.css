@@ -1,0 +1,103 @@
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.MainRewards_597b951b {
+    display: flex;
+    position: relative;
+}
+
+.MainRewards_ribbonWrapper_626a5e29 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.MainRewards_ribbon_2f081908 {
+    width: 1280rem;
+    height: 334rem;
+    background: url(R.images.gui.maps.icons.library.rewards_ribbon.ribbon_small) no-repeat center center/contain;
+    position: absolute;
+    top: 40rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.mediaMedium .MainRewards_ribbon_2f081908 {
+    width: 1600rem;
+    height: 417rem;
+    background-image: url(R.images.gui.maps.icons.library.rewards_ribbon.ribbon_medium);
+}
+.mediaLarge .MainRewards_ribbon_2f081908 {
+    width: 1920rem;
+    height: 500rem;
+    background-image: url(R.images.gui.maps.icons.library.rewards_ribbon.ribbon_large);
+}
+
+.MainRewards_info_5b70cd30 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: #e9e2bf;
+}
+
+.MainRewards_label_a1f18ebf {
+    max-width: 100%;
+    top: 96.5%;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.App_f753008c {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.common.background) no-repeat center/cover;
+    position: relative;
+}
+
+.App_header_62b47ab {
+    margin-top: 35rem;
+}
+.mediaLarge .App_header_62b47ab {
+    margin-top: 50rem;
+}
+
+.App_content_32b0ab9a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1;
+    width: 100%;
+}
+
+.App_mainRewards_9a6a16c3 {
+    margin-top: -30rem;
+}
+.mediaLarge .App_mainRewards_9a6a16c3 {
+    margin-top: -55rem;
+}
+.App_mainRewards__additional_9a208dfe {
+    margin-top: 0rem;
+}
+.mediaLarge .App_mainRewards__additional_9a208dfe {
+    margin-top: 15rem;
+}
+
+.App_additionalRewards_f1baca99 {
+    margin-top: 40rem;
+}
+.mediaMedium .App_additionalRewards_f1baca99 {
+    margin-top: 60rem;
+}
+.mediaLarge .App_additionalRewards_f1baca99 {
+    margin-top: 100rem;
+}
+
+.App_footer_8855e946 {
+    margin-bottom: 60rem;
+}
+.mediaLarge .App_footer_8855e946 {
+    margin-bottom: 78rem;
+}

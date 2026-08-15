@@ -240,7 +240,7 @@
                         t(e).delete(n);
                     },
                     o = (e, ...n) => {
-                        for (var s, a = r(t(e).values()); !(s = a()).done; ) {
+                        for (var s, a = r(t(e).values()); !(s = a()).done;) {
                             (0, s.value)(...n);
                         }
                     };

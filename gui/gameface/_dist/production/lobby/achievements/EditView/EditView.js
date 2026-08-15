@@ -461,7 +461,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                     return u;
                 }
                 const i = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -953,9 +953,13 @@
                         if (t.mediumWidth && A) return o(u, t, b);
                         if (t.smallWidth && F) return o(u, t, b);
                         if (t.extraSmallWidth && g) return o(u, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && f) return u;
                             if (t.largeHeight && h) return u;
                             if (t.mediumHeight && v) return u;
@@ -1296,7 +1300,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = N(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = N(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
@@ -1714,7 +1718,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = ne(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = ne(r.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -3691,17 +3695,20 @@
                             n = u.controls,
                             r = t.selectingIndex,
                             a = D().mediaSize,
-                            o = t.root.get().ribbonName;
-                        let l;
-                        l = a < h.Medium ? 'small' : a >= h.Medium ? 'normal' : (h.Large, 'large');
-                        const c = (0, z.useTransition)(
-                            ((d = t.selectedAchievements.get()),
-                            (E = (e, u) =>
+                            o = t.root.get(),
+                            l = o.ribbonSmall,
+                            c = o.ribbonNormal,
+                            d = o.ribbonLarge;
+                        let E;
+                        E = a < h.Medium ? l : a >= h.Medium ? c : (h.Large, d);
+                        const m = (0, z.useTransition)(
+                            ((_ = t.selectedAchievements.get()),
+                            (A = (e, u) =>
                                 Object.assign({}, e, {
                                     index: u,
                                     x: (Qe[a].size + Qe[a].indent) * (u + 1) - Qe[a].size + 'rem',
                                 })),
-                            Array.isArray(d) ? d.map(E) : d.map((e, u, t) => E(null == e ? void 0 : e.value, u, t))),
+                            Array.isArray(_) ? _.map(A) : _.map((e, u, t) => A(null == e ? void 0 : e.value, u, t))),
                             {
                                 key: (e) => e.name,
                                 from: { opacity: 0, scale: 1.5, duration: 300, easing: Ze },
@@ -3718,24 +3725,17 @@
                                 onRest: s.O.view.forceTriggerMouseMove,
                             },
                         );
-                        var d, E;
+                        var _, A;
                         return i().createElement(
                             'div',
                             { className: F()(At, e) },
                             i().createElement(
                                 'div',
-                                {
-                                    className: Ft,
-                                    style: o
-                                        ? {
-                                              backgroundImage: `url(R.images.gui.maps.icons.achievements.edit.ribbons.${o}_${l})`,
-                                          }
-                                        : {},
-                                },
+                                { className: Ft, style: { backgroundImage: `url(${E})` } },
                                 i().createElement(
                                     'div',
                                     { className: gt, style: { left: `-${Qe[a].indent}rem` } },
-                                    c((e, u) =>
+                                    m((e, u) =>
                                         i().createElement(
                                             z.animated.div,
                                             { className: ft, style: e },

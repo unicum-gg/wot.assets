@@ -320,7 +320,7 @@
                     })(),
                     ie = function (e) {
                         let t = '';
-                        for (let a = D.length - 1; a >= 0; a--) for (; e >= D[a]; ) ((t += H[a]), (e -= D[a]));
+                        for (let a = D.length - 1; a >= 0; a--) for (; e >= D[a];) ((t += H[a]), (e -= D[a]));
                         return t;
                     };
                 function se() {
@@ -811,9 +811,13 @@
                         if (a.mediumWidth && c) return we(t, a, v);
                         if (a.smallWidth && u) return we(t, a, v);
                         if (a.extraSmallWidth && h) return we(t, a, v);
-                        if (
-                            !(a.extraLargeWidth || a.largeWidth || a.mediumWidth || a.smallWidth || a.extraSmallWidth)
-                        ) {
+                        if (!(
+                            a.extraLargeWidth ||
+                            a.largeWidth ||
+                            a.mediumWidth ||
+                            a.smallWidth ||
+                            a.extraSmallWidth
+                        )) {
                             if (a.extraLargeHeight && p) return t;
                             if (a.largeHeight && b) return t;
                             if (a.mediumHeight && _) return t;

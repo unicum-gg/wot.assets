@@ -1,11 +1,11 @@
 import { j as a } from '../../../../chunks/vendor.js';
-import { de as s, r as i } from '../../../../chunks/lib.js';
+import { dj as s, r as i } from '../../../../chunks/lib.js';
 const t = 'AdditionalDataTooltipApp_aa694135',
     d = 'AdditionalDataTooltipApp_header_103f53ff',
     o = 'AdditionalDataTooltipApp_item_23a91b2d',
     l = 'AdditionalDataTooltipApp_dot_f970fa79',
-    e = 'AdditionalDataTooltipApp_label_dd09314e',
-    n = function () {
+    n = 'AdditionalDataTooltipApp_label_34edb89f',
+    e = function () {
         return a.jsx(s, {
             'data-name': 'AdditionalDataTooltip',
             children: a.jsxs(s.Decorator, {
@@ -17,7 +17,7 @@ const t = 'AdditionalDataTooltipApp_aa694135',
                         children: [
                             a.jsx('div', { className: l }),
                             a.jsx('div', {
-                                className: e,
+                                className: n,
                                 children: R.strings.last_stand_tooltips.rewardPath.info.first(),
                             }),
                         ],
@@ -27,7 +27,7 @@ const t = 'AdditionalDataTooltipApp_aa694135',
                         children: [
                             a.jsx('div', { className: l }),
                             a.jsx('div', {
-                                className: e,
+                                className: n,
                                 children: R.strings.last_stand_tooltips.rewardPath.info.second(),
                             }),
                         ],
@@ -36,4 +36,4 @@ const t = 'AdditionalDataTooltipApp_aa694135',
             }),
         });
     };
-i(a.jsx(n, {}));
+i(a.jsx(e, {}));

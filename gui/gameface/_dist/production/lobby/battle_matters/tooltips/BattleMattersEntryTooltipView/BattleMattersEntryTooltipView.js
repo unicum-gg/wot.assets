@@ -387,7 +387,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(u) {
                     let e = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; u >= r[t]; ) ((e += n[t]), (u -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; u >= r[t];) ((e += n[t]), (u -= r[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -998,7 +998,7 @@
                         let a = $.exec(u),
                             i = u,
                             l = 0;
-                        for (; a; ) {
+                        for (; a;) {
                             const t = a[0],
                                 s = z.exec(t),
                                 E = q.exec(t),
@@ -1254,6 +1254,7 @@
                         X.BattleBoosterGift,
                         X.OptionalDevice,
                         X.Attachment,
+                        X.TmanToken,
                     ],
                     nu = [X.Gold, X.Credits, X.Crystal, X.FreeXp],
                     ru = [X.BattlePassPoints, X.EquipCoin],
@@ -1462,7 +1463,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Fu(r.keys()); !(u = t()).done; ) s(u.value, e);
+                                                        for (var u, t = Fu(r.keys()); !(u = t()).done;) s(u.value, e);
                                                     },
                                                     unsubscribe: s,
                                                 };

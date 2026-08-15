@@ -896,7 +896,7 @@
                             let o = A.exec(u),
                                 B = u,
                                 i = 0;
-                            for (; o; ) {
+                            for (; o;) {
                                 const a = o[0],
                                     s = E.exec(a),
                                     c = D.exec(a),

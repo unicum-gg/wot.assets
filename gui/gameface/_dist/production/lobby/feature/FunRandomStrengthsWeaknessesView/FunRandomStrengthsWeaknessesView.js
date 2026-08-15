@@ -316,7 +316,7 @@
                     })(),
                     te = function (e) {
                         let t = '';
-                        for (let r = _.length - 1; r >= 0; r--) for (; e >= _[r]; ) ((t += M[r]), (e -= _[r]));
+                        for (let r = _.length - 1; r >= 0; r--) for (; e >= _[r];) ((t += M[r]), (e -= _[r]));
                         return t;
                     },
                     re = Object.keys(A).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === A[t]), e), {}),
@@ -454,15 +454,13 @@
                             if (r.mediumWidth && c) return u(t, r, L);
                             if (r.smallWidth && h) return u(t, r, L);
                             if (r.extraSmallWidth && f) return u(t, r, L);
-                            if (
-                                !(
-                                    r.extraLargeWidth ||
-                                    r.largeWidth ||
-                                    r.mediumWidth ||
-                                    r.smallWidth ||
-                                    r.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                r.extraLargeWidth ||
+                                r.largeWidth ||
+                                r.mediumWidth ||
+                                r.smallWidth ||
+                                r.extraSmallWidth
+                            )) {
                                 if (r.extraLargeHeight && v) return t;
                                 if (r.largeHeight && w) return t;
                                 if (r.mediumHeight && x) return t;

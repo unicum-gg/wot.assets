@@ -530,7 +530,7 @@ const We = {
         let l = Ve.exec(s),
             r = s,
             c = 0;
-        for (; l; ) {
+        for (; l;) {
             const e = l[0],
                 n = Ge.exec(e),
                 d = Ke.exec(e),
@@ -565,7 +565,7 @@ const We = {
                     let t = 0,
                         n = s - 1,
                         o = !1;
-                    for (; n - t > 1; ) {
+                    for (; n - t > 1;) {
                         const s = t + Math.floor(0.5 * (n - t + 1));
                         ((o = Ze(e[s], a)), o ? (n = s) : (t = s));
                     }

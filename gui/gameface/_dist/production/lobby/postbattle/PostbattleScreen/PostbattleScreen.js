@@ -1146,9 +1146,13 @@
                         if (a.mediumWidth && m) return I(t, a, f);
                         if (a.smallWidth && d) return I(t, a, f);
                         if (a.extraSmallWidth && p) return I(t, a, f);
-                        if (
-                            !(a.extraLargeWidth || a.largeWidth || a.mediumWidth || a.smallWidth || a.extraSmallWidth)
-                        ) {
+                        if (!(
+                            a.extraLargeWidth ||
+                            a.largeWidth ||
+                            a.mediumWidth ||
+                            a.smallWidth ||
+                            a.extraSmallWidth
+                        )) {
                             if (a.extraLargeHeight && E) return t;
                             if (a.largeHeight && g) return t;
                             if (a.mediumHeight && b) return t;
@@ -3262,7 +3266,7 @@
                                 let a = [],
                                     r = t,
                                     n = e;
-                                for (; r > 0; ) {
+                                for (; r > 0;) {
                                     let e = tr.slice(1, tr.length - n);
                                     (e.length > r ? ((e = e.slice(e.length - r)), (r = 0)) : ((r -= e.length), (n = 0)),
                                         (a = e.concat(a)));
@@ -3510,7 +3514,7 @@
                         });
                         let s = e.length,
                             i = 0;
-                        for (; s--; ) {
+                        for (; s--;) {
                             const t = e[s];
                             if (!t.valuesCount) continue;
                             const a = Number(t.startDelay);
@@ -4955,7 +4959,7 @@
                                             t(e).delete(a);
                                         },
                                         n = (e, ...a) => {
-                                            for (var r, n = In(t(e).values()); !(r = n()).done; ) (0, r.value)(...a);
+                                            for (var r, n = In(t(e).values()); !(r = n()).done;) (0, r.value)(...a);
                                         };
                                     return (0, s.useMemo)(() => ({ on: a, off: r, trigger: n }), []);
                                 })(),

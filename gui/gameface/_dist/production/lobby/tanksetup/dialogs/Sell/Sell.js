@@ -509,7 +509,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function i(u) {
                     let e = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; u >= r[t]; ) ((e += n[t]), (u -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; u >= r[t];) ((e += n[t]), (u -= r[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1351,6 +1351,7 @@
                         b.BattleBoosterGift,
                         b.OptionalDevice,
                         b.Attachment,
+                        b.TmanToken,
                         b.Gold,
                         b.Credits,
                         b.Crystal,
@@ -1832,9 +1833,13 @@
                         if (t.mediumWidth && E) return $(e, t, B);
                         if (t.smallWidth && d) return $(e, t, B);
                         if (t.extraSmallWidth && A) return $(e, t, B);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && D) return e;
                             if (t.largeHeight && F) return e;
                             if (t.mediumHeight && m) return e;
@@ -2203,7 +2208,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Bu(r.keys()); !(u = t()).done; ) i(u.value, e);
+                                                        for (var u, t = Bu(r.keys()); !(u = t()).done;) i(u.value, e);
                                                     },
                                                     unsubscribe: i,
                                                 };
@@ -2926,7 +2931,7 @@
                                     const e = a[u] || '',
                                         t = E[D] || '';
                                     if (e.match(A) || e === t) {
-                                        for (; e !== E[D] && D < E.length; ) D++;
+                                        for (; e !== E[D] && D < E.length;) D++;
                                         D++;
                                     }
                                 }
@@ -2955,8 +2960,8 @@
                                 if (s) return;
                                 let l = c;
                                 const _ = o.test(a[c]);
-                                if (t && _) for (; o.test(a[l]) && l < a.length; ) l++;
-                                if (e && _) for (; o.test(a[l]) && l > 0; ) l--;
+                                if (t && _) for (; o.test(a[l]) && l < a.length;) l++;
+                                if (e && _) for (; o.test(a[l]) && l > 0;) l--;
                                 if (l !== c || (e && _))
                                     return (u.preventDefault(), (l = l < 0 ? 0 : l), void this.setCursorPosition(l, l));
                                 ((e && 1 === r && 1 === a.length) || t) &&

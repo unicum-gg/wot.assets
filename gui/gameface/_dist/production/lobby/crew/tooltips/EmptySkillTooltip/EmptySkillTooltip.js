@@ -431,7 +431,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function o(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -965,7 +965,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = D(r.keys()); !(e = t()).done; ) i(e.value, u);
+                                                        for (var e, t = D(r.keys()); !(e = t()).done;) i(e.value, u);
                                                     },
                                                     unsubscribe: i,
                                                 };
@@ -2326,7 +2326,7 @@
                     He = (e, u, t, n) => {
                         let r = u.exec(e),
                             o = 0;
-                        for (; r; ) (o !== r.index && t(e.slice(o, r.index)), n(r), (o = u.lastIndex), (r = u.exec(e)));
+                        for (; r;) (o !== r.index && t(e.slice(o, r.index)), n(r), (o = u.lastIndex), (r = u.exec(e)));
                         o !== e.length && t(e.slice(o));
                     },
                     Ze = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -2372,7 +2372,7 @@
                               if (!n) return [e];
                               const r = [];
                               let o = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const i = u.justifyContent === Re.FlexEnd ? n.index : t.lastIndex;
                                   (r.push(e.slice(o, i)), (o = i), (n = t.exec(e)));
                               }
@@ -2417,7 +2417,9 @@
                     },
                     eu = (e, u, t = '', n) => {
                         const r = [],
-                            o = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            o = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             He(
                                 o,
@@ -2547,7 +2549,7 @@
                             c = ((e, u) => {
                                 let t = 0,
                                     n = e.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const r = t + Math.ceil(0.5 * (n - t));
                                     nu(e[r], u) ? (n = r - 1) : (t = r + 1);
                                 }

@@ -1,39 +1,49 @@
-import { j as s } from '../../../../chunks/vendor.js';
-import { r as i, cE as t } from '../../../../chunks/lib.js';
-import { T as o } from '../../../../chunks/tooltip_decorator.js';
-/* empty css                        */ const e = 'App_c6f34e00',
-    p = 'App_header_775ebd33',
-    l = 'App_icon_a918e6b4',
-    n = 'App_divider_8b5ac59e',
-    r = 'App_bulletLine_aa4edbb',
-    c = 'App_bullet_581f55cf',
-    _ = () =>
+import { j as s, T as i } from '../../../../chunks/vendor.js';
+import { e as o, r as t, U as e } from '../../../../chunks/lib.js';
+/* empty css                        */ const r = 'TooltipDecorator_decorator_81525906',
+    l = 'TooltipDecorator_decoratorInner_11d8e15d';
+function n({ children: t, classNames: e }) {
+    return s.jsx(o, {
+        children: s.jsx('div', {
+            className: i(r, e?.decoratorInner),
+            children: s.jsx('div', { className: i(l, e?.decoratorInner), children: t }),
+        }),
+    });
+}
+const p = 'App_c6f34e00',
+    c = 'App_header_775ebd33',
+    d = 'App_icon_9a379f5a',
+    a = 'App_divider_8b5ac59e',
+    _ = 'App_bulletLine_aa4edbb',
+    h = 'App_bullet_581f55cf',
+    j = () =>
         s.jsxs('div', {
-            className: e,
+            className: p,
             children: [
                 s.jsxs('div', {
-                    className: p,
+                    className: c,
                     children: [
-                        s.jsx('div', { className: l }),
+                        s.jsx('div', { className: d }),
                         s.jsx('div', {
-                            children: R.strings.comp7_ext.pbs.tooltip.prestige_points_info_tooltip.header(),
+                            children: R.strings.comp7_light.pbs.tooltip.prestige_points_info_tooltip.header(),
                         }),
                     ],
                 }),
-                s.jsx('div', { className: n }),
-                s.jsx('div', { children: R.strings.comp7_ext.pbs.tooltip.prestige_points_info_tooltip.listHeader() }),
-                R.strings.comp7_ext.pbs.tooltip.prestige_points_info_tooltip
+                s.jsx('div', { className: a }),
+                s.jsx('div', { children: R.strings.comp7_light.pbs.tooltip.prestige_points_info_tooltip.listHeader() }),
+                R.strings.comp7_light.pbs.tooltip.prestige_points_info_tooltip
                     .listContent()
                     .split('\n')
                     .map((i) =>
                         s.jsxs(
                             'div',
                             {
-                                className: r,
+                                className: _,
                                 children: [
                                     s.jsx('div', {
-                                        className: c,
-                                        children: R.strings.comp7_ext.pbs.tooltip.prestige_points_info_tooltip.bullet(),
+                                        className: h,
+                                        children:
+                                            R.strings.comp7_light.pbs.tooltip.prestige_points_info_tooltip.bullet(),
                                     }),
                                     s.jsx('div', { children: i }),
                                 ],
@@ -41,7 +51,7 @@ import { T as o } from '../../../../chunks/tooltip_decorator.js';
                             i,
                         ),
                     ),
-                s.jsx('div', { children: R.strings.comp7_ext.pbs.tooltip.prestige_points_info_tooltip.footer() }),
+                s.jsx('div', { children: R.strings.comp7_light.pbs.tooltip.prestige_points_info_tooltip.footer() }),
             ],
         });
-i(s.jsx(t, { children: s.jsx(o, { children: s.jsx(_, {}) }) }));
+t(s.jsx(e, { children: s.jsx(n, { children: s.jsx(j, {}) }) }));

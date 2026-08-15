@@ -188,7 +188,7 @@
                     v = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function S(e) {
                     let u = '';
-                    for (let t = v.length - 1; t >= 0; t--) for (; e >= v[t]; ) ((u += f[t]), (e -= v[t]));
+                    for (let t = v.length - 1; t >= 0; t--) for (; e >= v[t];) ((u += f[t]), (e -= v[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -885,9 +885,13 @@
                         if (t.mediumWidth && _) return s(u, t, b);
                         if (t.smallWidth && F) return s(u, t, b);
                         if (t.extraSmallWidth && g) return s(u, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && D) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && C) return u;
@@ -2158,6 +2162,7 @@
                         Ke.BattleBoosterGift,
                         Ke.OptionalDevice,
                         Ke.Attachment,
+                        Ke.TmanToken,
                     ],
                     ru = [Ke.Gold, Ke.Credits, Ke.Crystal, Ke.FreeXp],
                     au = [Ke.BattlePassPoints, Ke.EquipCoin],

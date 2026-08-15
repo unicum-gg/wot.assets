@@ -900,7 +900,7 @@
                             let A = t.exec(u),
                                 i = u,
                                 s = 0;
-                            for (; A; ) {
+                            for (; A;) {
                                 const l = A[0],
                                     c = r.exec(l),
                                     B = a.exec(l),
@@ -1039,7 +1039,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = D(r.keys()); !(u = t()).done; ) o(u.value, e);
+                                                        for (var u, t = D(r.keys()); !(u = t()).done;) o(u.value, e);
                                                     },
                                                     unsubscribe: o,
                                                 };

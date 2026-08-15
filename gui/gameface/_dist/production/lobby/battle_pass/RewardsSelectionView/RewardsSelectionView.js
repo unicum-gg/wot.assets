@@ -461,7 +461,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1122,7 +1122,7 @@
                                                     };
                                                 },
                                                 dispose: function () {
-                                                    for (var e, t = w(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                    for (var e, t = w(r.keys()); !(e = t()).done;) a(e.value, u);
                                                 },
                                                 unsubscribe: a,
                                             };
@@ -1418,9 +1418,13 @@
                         if (t.mediumWidth && E) return I(u, t, B);
                         if (t.smallWidth && m) return I(u, t, B);
                         if (t.extraSmallWidth && _) return I(u, t, B);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && A) return u;
                             if (t.largeHeight && F) return u;
                             if (t.mediumHeight && g) return u;
@@ -2205,7 +2209,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = Me(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = Me(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),

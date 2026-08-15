@@ -1,19 +1,19 @@
-import { j as e, v as t } from '../../../../chunks/vendor.js';
+import { j as e, w as t } from '../../../../chunks/vendor.js';
 import {
-    n as s,
+    D as s,
     i as a,
-    _ as i,
-    $ as n,
-    M as r,
-    w as c,
-    a3 as o,
-    a4 as l,
-    bX as d,
+    k as i,
+    n,
+    aa as r,
+    E as o,
+    B as c,
+    o as l,
+    C as d,
     J as h,
     U as p,
     d as x,
 } from '../../../../chunks/lib.js';
-const m = 'ExtraChapterDescription_b9765d9b',
+/* empty css                       */ const m = 'ExtraChapterDescription_b9765d9b',
     b = 'ExtraChapterDescription_description_6781df64',
     _ = 'ExtraChapterDescription_warningIcon_be590846',
     j = 'ExtraChapterDescription_highlightText_3444159b',
@@ -40,28 +40,28 @@ const m = 'ExtraChapterDescription_b9765d9b',
     N = 'Container_28f8549e',
     v = 'Container_buttons_4ace6ad5',
     A = 'Container_closeButton_1a873580',
-    z = 'Container_divider_9b7ebff',
+    k = 'Container_divider_9b7ebff',
     E = R.strings.battle_pass.chapterChoice.confirmation,
-    S = t(function () {
+    z = t(function () {
         const { model: t, controls: s } = f(),
             { prevChapter: a } = t.root.get(),
             d = i({ buttonSize: n.small }, { medium: { buttonSize: n.medium }, extraLarge: { buttonSize: n.large } });
         return (
-            r(c.ESCAPE, s.close),
+            r(o.ESCAPE, s.close),
             e.jsxs('div', {
                 className: N,
                 children: [
-                    e.jsx('div', { className: z }),
+                    e.jsx('div', { className: k }),
                     e.jsxs('div', {
                         className: v,
                         children: [
-                            e.jsx(o, {
+                            e.jsx(c, {
                                 size: d.buttonSize,
                                 onClick: s.confirm,
                                 'data-test-id': 'confirmButton',
                                 children: 0 === a ? E.button.submit() : E.button.switch(),
                             }),
-                            e.jsx(o, {
+                            e.jsx(c, {
                                 size: d.buttonSize,
                                 theme: l.secondary,
                                 onClick: s.close,
@@ -75,30 +75,36 @@ const m = 'ExtraChapterDescription_b9765d9b',
             })
         );
     }),
-    k = 'App_3018b200',
-    w = 'App_title_a68d00d7',
-    D = 'App_subTitle_78a165db',
-    T = 'App_topRight_6cd3f8f6',
-    B = 'App_closeBtn_bc1dfeba',
-    M = R.strings.battle_pass.chapterChoice.confirmation,
-    P = (e) => R.strings.battle_pass.chapter.fullName.$num(e),
-    $ = (t, a) => e.jsx(s, { text: M.title.$dyn(t), binding: { chName: P(a) } }),
-    y = (t, a) => e.jsx(s, { text: M.description.$dyn(t), binding: { chName: P(a) } }),
-    F = t(() => {
-        const { model: t, controls: s } = f(),
-            { prevChapter: a, nextChapter: i, isSwitchFromPostProgressionToExtraChapter: n } = t.root.get(),
-            r = 0 !== a ? 'switch' : 'select';
+    D = 'App_3018b200',
+    S = 'App_title_a68d00d7',
+    w = 'App_subTitle_78a165db',
+    B = 'App_topRight_6cd3f8f6',
+    T = 'App_closeBtn_bc1dfeba',
+    P = R.strings.battle_pass.chapterChoice.confirmation,
+    y = (e) => R.strings.battle_pass.chapter.fullName.$num(e),
+    M = t(() => {
+        const { model: t, controls: a } = f(),
+            { prevChapter: i, nextChapter: n, isSwitchFromPostProgressionToExtraChapter: r } = t.root.get(),
+            o = 0 !== i ? 'switch' : 'select';
         return e.jsxs('div', {
-            className: k,
+            className: D,
             children: [
                 e.jsx('div', {
-                    className: T,
-                    children: e.jsx('div', { className: B, children: e.jsx(d, { onClose: s.close }) }),
+                    className: B,
+                    children: e.jsx('div', { className: T, children: e.jsx(d, { onClose: a.close }) }),
                 }),
-                e.jsx('div', { className: w, children: $(r, i) }),
-                n ? e.jsx(u, {}) : e.jsx('div', { className: D, children: y(r, a) }),
-                e.jsx(S, {}),
+                e.jsx('div', {
+                    className: S,
+                    children: e.jsx(s, { text: P.title.$dyn(o), binding: { chName: y(n) } }),
+                }),
+                r
+                    ? e.jsx(u, {})
+                    : e.jsx('div', {
+                          className: w,
+                          children: e.jsx(s, { text: P.description.$dyn(o), binding: { chName: y(i) } }),
+                      }),
+                e.jsx(z, {}),
             ],
         });
     });
-x(new h().add(p).addWithProps(g, {}).render(e.jsx(F, {})));
+x(new h().add(p).addWithProps(g, {}).render(e.jsx(M, {})));

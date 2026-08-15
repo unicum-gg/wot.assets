@@ -2,75 +2,75 @@ import {
     o as e,
     m as a,
     f as s,
-    p as i,
+    n as i,
     j as t,
     r as l,
-    t as c,
+    p as c,
     k as n,
     h as o,
     l as r,
-    n as d,
+    q as d,
     S as h,
     s as _,
 } from '../../../chunks/vendor.js';
 import {
     i as p,
-    v as m,
+    n as m,
     r as f,
-    e as v,
-    w as b,
-    x as u,
-    y as g,
-    z as V,
+    u as v,
+    s as b,
+    a as u,
+    V as g,
+    b as V,
     B as x,
-    A as S,
-    j as w,
-    u as j,
-    D as C,
-    E,
-    G as N,
-    H as A,
-    o as R,
-    K as y,
-    L as I,
-    M as T,
-    N as k,
-    O as L,
-    k as W,
-    P as D,
-    Q as O,
-    S as B,
-    T as F,
-    W as H,
+    t as S,
+    c as w,
+    d as j,
+    e as C,
+    I as E,
+    f as N,
+    g as A,
+    C as R,
+    h as y,
+    A as I,
+    m as T,
+    j as k,
+    k as L,
+    l as W,
+    o as D,
+    p as O,
+    q as B,
+    v as F,
+    w as H,
     F as M,
-    X as U,
-    Y as P,
-    l as $,
-    n as z,
-    d as K,
-    Z as G,
-    C as X,
-    s as q,
-    p as J,
-    q as Q,
-    J as Y,
+    x as U,
+    y as $,
+    z as P,
+    D as z,
+    E as K,
+    G,
+    H as q,
+    J as X,
+    K as J,
+    L as Q,
+    M as Y,
     U as Z,
-    t as ee,
+    N as ee,
 } from '../../../chunks/lib.js';
 import { t as ae } from '../../../chunks/sounds.js';
 import {
-    b as se,
-    F as ie,
-    c as te,
-    d as le,
+    F as se,
+    a as ie,
+    e as te,
+    b as le,
     P as ce,
     I as ne,
-    f as oe,
-    u as re,
+    u as oe,
+    c as re,
     l as de,
     S as he,
     h as _e,
-    a as pe,
+    d as pe,
 } from '../../../chunks/easings.js';
 import { T as me, A as fe, a as ve } from '../../../chunks/category.js';
 var be = ((e) => (
@@ -87,7 +87,7 @@ const ue = (e) => (e === be.SELECTION ? se : ie),
                 vehicles: s.array('vehicles'),
                 previousVehicleIndex: e.box(0),
                 selectedVehicleIndex: e.box(0),
-                selectedVehicleId: e.box(s.array('vehicles').get()[0].value.vehicleId),
+                selectedVehicleId: e.box(s.array('vehicles').get()[0]?.value.vehicleId),
             };
             return { ...i, computes: { vehiclesLength: a(() => i.vehicles.get().length) } };
         },
@@ -341,13 +341,15 @@ const Se = (e) => {
             i = s.vehicles.get(),
             c = s.computes.vehiclesLength(),
             n = s.selectedVehicleIndex.get() > c - 1 ? 0 : s.selectedVehicleIndex.get(),
-            r = i[s.previousVehicleIndex.get() > c - 1 ? 0 : s.previousVehicleIndex.get()].value.techName,
-            [d, h] = l.useState('active');
+            r = s.previousVehicleIndex.get() > c - 1 ? 0 : s.previousVehicleIndex.get();
+        if (!i[r] || !i[n]) return;
+        const d = i[r].value.techName,
+            [h, _] = l.useState('active');
         l.useEffect(() => {
-            'end' === d && e?.();
-        }, [e, d]);
+            'end' === h && e?.();
+        }, [e, h]);
         return t.jsx('div', {
-            className: o(Le.base, 'selectionSubmitted' === d && Le.base__submitted),
+            className: o(Le.base, 'selectionSubmitted' === h && Le.base__submitted),
             children: t.jsx('div', {
                 className: Le.container,
                 children: t.jsx('div', {
@@ -356,14 +358,14 @@ const Se = (e) => {
                         ...i[n].value,
                         index: 0,
                         onRestAnimation: () => {
-                            h('end');
+                            _('end');
                         },
                         size: 'big',
-                        isEnabledSound: 'active' === d,
+                        isEnabledSound: 'active' === h,
                         state: xe.Selection,
-                        previousTechName: r,
+                        previousTechName: d,
                         onSubmitBtnClick: () => {
-                            (h('selectionSubmitted'), a && a());
+                            (_('selectionSubmitted'), a && a());
                         },
                     }),
                 }),
@@ -447,16 +449,19 @@ const Se = (e) => {
                     else if (f) {
                         const a = d.current[e],
                             s = d.current[e + 1];
+                        if (!s || !a) return;
                         g(Math.round(s.getBoundingClientRect().right), a.offsetWidth);
                     }
                 },
                 [f, g, r.length],
             );
-        return (
-            l.useEffect(() => {
+        if (
+            (l.useEffect(() => {
                 b && s?.();
             }, [s, b]),
-            t.jsx('div', {
+            r[0])
+        )
+            return t.jsx('div', {
                 className: o(De.base, c && De.base__afterSelection),
                 children: t.jsx('div', {
                     className: De.container,
@@ -482,7 +487,9 @@ const Se = (e) => {
                                               return t.jsx(
                                                   'div',
                                                   {
-                                                      ref: (e) => (d.current[a] = e),
+                                                      ref: (e) => {
+                                                          d.current[a] = e;
+                                                      },
                                                       className: o(De.item, De.item__offset, De[`item__${s}`]),
                                                       children: t.jsx(ke, {
                                                           ...e,
@@ -504,8 +511,7 @@ const Se = (e) => {
                               ],
                           }),
                 }),
-            })
-        );
+            });
     }),
     Be = ({ isStoppedScrolling: e, onScrollChange: a, onAnimationEnd: s }) =>
         t.jsx(L, { children: t.jsx(Oe, { isStoppedScrolling: e, onScrollChange: a, onAnimationEnd: s }) }),
@@ -556,7 +562,7 @@ const Se = (e) => {
         vehicleType: 'VehicleSlot_vehicleType_dc959042',
         vehicleText: 'VehicleSlot_vehicleText_a59271f6',
     },
-    Pe = ({ name: e, techName: a, type: s, tier: i, isPremium: c, nation: n, vehicleCD: r, selected: d = !1 }) => {
+    $e = ({ name: e, techName: a, type: s, tier: i, isPremium: c, nation: n, vehicleCD: r, selected: d = !1 }) => {
         const [h, _] = W(se),
             p = oe({
                 args: l.useMemo(() => ({ vehicleCD: r, tooltipId: we }), [r]),
@@ -597,7 +603,7 @@ const Se = (e) => {
             ],
         });
     },
-    $e = 'Cards_item_1511ae6d',
+    Pe = 'Cards_item_1511ae6d',
     ze = 'Cards_card_ae2a9340',
     Ke = 'Cards_statusWrapper_50cde2dc',
     Ge = d(() => {
@@ -612,7 +618,7 @@ const Se = (e) => {
                 t.jsx(
                     'div',
                     {
-                        className: $e,
+                        className: Pe,
                         children: t.jsx(F, {
                             className: ze,
                             classNames: { status: { wrapper: Ke } },
@@ -631,7 +637,7 @@ const Se = (e) => {
                                         }),
                                         a.setSelectedVehicleIndex(e));
                                 })(s, e.vehicleCD),
-                            children: t.jsx(Pe, { ...e, selected: s === i }),
+                            children: t.jsx($e, { ...e, selected: s === i }),
                         }),
                     },
                     e.vehicleCD,
@@ -639,17 +645,17 @@ const Se = (e) => {
             ),
         });
     }),
-    Xe = 'VehiclesSelection_d3f32fd7',
-    qe = 'VehiclesSelection_heading_f0acb12a',
+    qe = 'VehiclesSelection_d3f32fd7',
+    Xe = 'VehiclesSelection_heading_f0acb12a',
     Je = 'VehiclesSelection_count_3b1cc792',
     Qe = 'VehiclesSelection_cardsWrapper_f3be9294',
     Ye = () => {
         const e = f.resolve('strings');
         return t.jsxs('div', {
-            className: Xe,
+            className: qe,
             children: [
                 t.jsx(M, {
-                    className: qe,
+                    className: Xe,
                     text: e.readOrEmpty('seniority_awards.rewardsView.selection.available'),
                     params: { count: t.jsx('div', { className: Je, children: 1 }) },
                     upgradeLegacy: !0,
@@ -691,7 +697,7 @@ const Se = (e) => {
             h = j(),
             p = () => h.play('vehicleRewardsViewAppear', { target: 'exit' }),
             m = w(ue(r)),
-            [f] = P(ue(r));
+            [f] = $(ue(r));
         f({ action: R.Displayed, item: ce.VehicleSelectionView });
         const [v, b] = W(ue(r));
         (v(R.KeyDown), v(R.Click));
@@ -716,12 +722,12 @@ const Se = (e) => {
                     }))(r),
             ),
             C = (e = !1) => {
-                (b({ action: e ? R.KeyDown : R.Click, item: ne.CloseButton, parentScreen: aa(r) }), p(), q.close());
+                (b({ action: e ? R.KeyDown : R.Click, item: ne.CloseButton, parentScreen: aa(r) }), p(), X.close());
             },
             E = () => {
                 C(ea);
             };
-        ($(() => {
+        (P(() => {
             C(ea);
         }),
             z(J.ENTER, E),
@@ -745,7 +751,7 @@ const Se = (e) => {
                 }),
                 t.jsx('div', { className: Ze.shadow }),
                 t.jsx('div', { className: Ze.gradient }),
-                t.jsx('div', { className: Ze.closeButton, children: t.jsx(X, { onClose: () => C() }) }),
+                t.jsx('div', { className: Ze.closeButton, children: t.jsx(q, { onClose: () => C() }) }),
                 t.jsx('div', {
                     className: Ze.header,
                     children: t.jsx(he, {
@@ -777,7 +783,7 @@ const Se = (e) => {
                                 K(() => {
                                     const s = e.computes.vehiclesLength() - 1,
                                         i = e.selectedVehicleIndex.get() > s ? s : e.selectedVehicleIndex.get();
-                                    a.selectVehicleReward(d[i].value.vehicleId);
+                                    d[i] && a.selectVehicleReward(d[i].value.vehicleId);
                                 }, 500));
                         },
                     }),

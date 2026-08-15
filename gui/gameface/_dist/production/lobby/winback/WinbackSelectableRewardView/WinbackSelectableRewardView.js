@@ -461,7 +461,7 @@
                     n = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let u = '';
-                    for (let t = n.length - 1; t >= 0; t--) for (; e >= n[t]; ) ((u += r[t]), (e -= n[t]));
+                    for (let t = n.length - 1; t >= 0; t--) for (; e >= n[t];) ((u += r[t]), (e -= n[t]));
                     return u;
                 }
                 const o = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -961,9 +961,13 @@
                         if (t.mediumWidth && F) return i(u, t, p);
                         if (t.smallWidth && m) return i(u, t, p);
                         if (t.extraSmallWidth && D) return i(u, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && g) return u;
@@ -1447,7 +1451,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = K(n.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = K(n.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -3073,7 +3077,7 @@
                         let i = dt.exec(e),
                             s = e,
                             l = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 a = _t.exec(t),
                                 c = At.exec(t),
@@ -3365,7 +3369,7 @@
                                             u(e).delete(t);
                                         },
                                         n = (e, ...t) => {
-                                            for (var r, n = Gt(u(e).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = Gt(u(e).values()); !(r = n()).done;) (0, r.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),
@@ -4170,6 +4174,7 @@
                     Rr.BattleBoosterGift,
                     Rr.OptionalDevice,
                     Rr.Attachment,
+                    Rr.TmanToken,
                     Rr.Gold,
                     Rr.Credits,
                     Rr.Crystal,

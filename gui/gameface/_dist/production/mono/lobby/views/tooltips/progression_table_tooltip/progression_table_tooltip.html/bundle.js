@@ -1,18 +1,18 @@
-import { i as e, k as s, V as a, j as i, a3 as n } from '../../../../chunks/vendor.js';
+import { i as e, k as s, a1 as a, j as i, a3 as n } from '../../../../chunks/vendor.js';
 import {
     i as t,
-    aJ as r,
-    d5 as o,
-    ag as c,
-    al as l,
+    aG as r,
+    d9 as o,
+    ad as c,
+    ai as l,
     n as d,
-    cy as m,
-    cD as _,
-    aI as p,
+    cx as m,
+    cC as _,
+    aF as p,
     m as x,
-    cv as v,
-    cw as b,
-    r as h,
+    cu as v,
+    cv as b,
+    d2 as h,
 } from '../../../../chunks/lib.js';
 import { T as g } from '../../../../chunks/tooltip_decorator.js';
 import { R as j, a as u, i as k } from '../../../../chunks/rank_emblem.js';
@@ -21,7 +21,7 @@ import { b as N, g as T } from '../../../../chunks/get_rank_name.js';
 import { R as I } from '../../../../chunks/consts.js';
 import { S as y, g as w } from '../../../../chunks/get_division_points_step.js';
 import { R as A } from '../../../../chunks/enums.js';
-/* empty css                        */ const [D, E] = t('ProgressionTableTooltipModel')(({ observableModel: a }) => {
+/* empty css                        */ const [C, E] = t('ProgressionTableTooltipModel')(({ observableModel: a }) => {
         const i = { root: a.object(), items: a.array('items') },
             n = e(
                 (e) => {
@@ -51,41 +51,41 @@ import { R as A } from '../../../../chunks/enums.js';
             );
         return { ...i, computes: { item: n, divisions: t, currentDivision: d } };
     }, d),
-    M = {
+    F = {
         base: 'RankInactivityBlock_d683def8',
         heading: 'RankInactivityBlock_heading_82d158ec',
         description: 'RankInactivityBlock_description_6907b70d',
         daysLeft: 'RankInactivityBlock_daysLeft_5f9e9940',
     },
-    C = a(({ className: e }) => {
+    M = a(({ className: e }) => {
         const { model: s } = E(),
             { rankInactivityCount: a, rankInactivityPointsCount: t, currentItemIndex: r } = s.root.get(),
             o = s.computes.item(r).hasRankInactivity;
         return i.jsx('div', {
-            className: n(M.base, o && M.base__active, e),
+            className: n(F.base, o && F.base__active, e),
             children: o
                 ? i.jsxs(i.Fragment, {
                       children: [
                           i.jsx('div', {
-                              className: M.heading,
+                              className: F.heading,
                               children: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.header.active(),
                           }),
                           i.jsx(m, {
                               text: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.description.active(t),
                               binding: { count: t },
-                              classMix: M.description,
+                              classMix: F.description,
                           }),
                           i.jsx(m, {
                               text: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.daysLeft(),
                               binding: { rankInactivityCount: a },
-                              classMix: M.daysLeft,
+                              classMix: F.daysLeft,
                           }),
                       ],
                   })
                 : i.jsxs(i.Fragment, {
                       children: [
                           i.jsx('div', {
-                              className: M.heading,
+                              className: F.heading,
                               children: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.header.notActive(),
                           }),
                           i.jsx(m, {
@@ -99,13 +99,13 @@ import { R as A } from '../../../../chunks/enums.js';
                                       ).join(R.strings.comp7_ext.listSeparator()),
                                   },
                               ),
-                              classMix: M.description,
+                              classMix: F.description,
                           }),
                       ],
                   }),
         });
     }),
-    F = 'TableHeader_35da86a5',
+    D = 'TableHeader_35da86a5',
     L = 'TableHeader_container_fb71aa54',
     $ = 'TableHeader_cell_56183287',
     B = 'TableHeader_cell__rank_fb9e8504',
@@ -113,7 +113,7 @@ import { R as A } from '../../../../chunks/enums.js';
         const { model: s } = E(),
             a = s.computes.divisions(0);
         return i.jsx('div', {
-            className: n(F, e),
+            className: n(D, e),
             children: i.jsxs('div', {
                 className: L,
                 children: [
@@ -208,7 +208,7 @@ import { R as A } from '../../../../chunks/enums.js';
         });
     }),
     z = 'Table_24abbb5a',
-    J = a(({ className: e }) => {
+    G = a(({ className: e }) => {
         const { model: s } = E(),
             a = s.items.get().length - 1;
         return i.jsxs('div', {
@@ -216,12 +216,12 @@ import { R as A } from '../../../../chunks/enums.js';
             children: [i.jsx(H, {}), x(s.items.get().length, (e) => i.jsx(q, { itemIndex: e, hasDivider: e < a }, e))],
         });
     }),
-    V = 'App_98200e88',
-    G = 'App_timer_c376641d',
-    K = 'App_timer__active_d318a2be',
-    O = 'App_container_ec045390',
-    Q = 'App_left_65fdd847',
-    U = 'App_right_9365ab5f',
+    J = 'App_98200e88',
+    K = 'App_timer_c376641d',
+    O = 'App_timer__active_d318a2be',
+    Q = 'App_container_ec045390',
+    U = 'App_left_65fdd847',
+    V = 'App_right_9365ab5f',
     W = 'App_divider_38d98f1f',
     X = 'App_rankEmblem_748380a',
     Y = 'App_rankInfo_11560edd',
@@ -237,14 +237,14 @@ import { R as A } from '../../../../chunks/enums.js';
             l = k(o.rank),
             d = T(o.rank) + (l ? `${R.strings.common.common.dot()} ` : '');
         return i.jsxs('div', {
-            className: V,
+            className: J,
             children: [
-                i.jsx('div', { className: n(G, o.hasRankInactivity && r <= I && K) }),
+                i.jsx('div', { className: n(K, o.hasRankInactivity && r <= I && O) }),
                 i.jsxs('div', {
-                    className: O,
+                    className: Q,
                     children: [
                         i.jsxs('div', {
-                            className: Q,
+                            className: U,
                             children: [
                                 i.jsx(j, { rank: o.rank, size: u.x150, seasonName: s, division: c.name, className: X }),
                                 i.jsxs('div', {
@@ -263,11 +263,11 @@ import { R as A } from '../../../../chunks/enums.js';
                             ],
                         }),
                         i.jsx('div', { className: W }),
-                        i.jsx('div', { className: U, children: i.jsx(C, {}) }),
+                        i.jsx('div', { className: V, children: i.jsx(M, {}) }),
                     ],
                 }),
-                i.jsx(J, { className: ae }),
+                i.jsx(G, { className: ae }),
             ],
         });
     });
-h(i.jsx(D, { children: i.jsx(g, { children: i.jsx(ie, {}) }) }));
+h(i.jsx(C, { children: i.jsx(g, { children: i.jsx(ie, {}) }) }));

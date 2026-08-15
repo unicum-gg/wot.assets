@@ -174,9 +174,13 @@
                         if (t.mediumWidth && F) return (0, n.H)(e, t, b);
                         if (t.smallWidth && D) return (0, n.H)(e, t, b);
                         if (t.extraSmallWidth && m) return (0, n.H)(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && B) return e;
                             if (t.mediumHeight && g) return e;
@@ -745,7 +749,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var u, t = n(o.keys()); !(u = t()).done; ) {
+                            for (var u, t = n(o.keys()); !(u = t()).done;) {
                                 s(u.value, e);
                             }
                         },
@@ -1975,7 +1979,7 @@
                         if (!t) return [u];
                         const r = [];
                         let n = 0;
-                        for (; t; ) (r.push(u.slice(n, e.lastIndex)), (n = e.lastIndex), (t = e.exec(u)));
+                        for (; t;) (r.push(u.slice(n, e.lastIndex)), (n = e.lastIndex), (t = e.exec(u)));
                         return (n !== u.length && r.push(u.slice(n)), r);
                     },
                     s = (u, e = '') => {
@@ -2131,7 +2135,7 @@
                 const r = (u, e, t, r) => {
                     let n = e.exec(u),
                         a = 0;
-                    for (; n; ) (a !== n.index && t(u.slice(a, n.index)), r(n), (a = e.lastIndex), (n = e.exec(u)));
+                    for (; n;) (a !== n.index && t(u.slice(a, n.index)), r(n), (a = e.lastIndex), (n = e.exec(u)));
                     a !== u.length && t(u.slice(a));
                 };
             },
@@ -2207,7 +2211,7 @@
                             d = ((u, e) => {
                                 let t = 0,
                                     r = u.length - 1;
-                                for (; r - t >= 0; ) {
+                                for (; r - t >= 0;) {
                                     const n = t + Math.ceil(0.5 * (r - t));
                                     i(u[n], e) ? (r = n - 1) : (t = n + 1);
                                 }
@@ -2563,7 +2567,7 @@
                             t = U(e);
                         let r,
                             n = u;
-                        for (; null !== (r = j.exec(u)); ) {
+                        for (; null !== (r = j.exec(u));) {
                             const u = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (u) {
                                 const e = t + u[2].replace(W, '');
@@ -2665,7 +2669,7 @@
                                         ((u) => {
                                             const e = U($());
                                             let t;
-                                            for (; null !== (t = I.exec(u)); ) {
+                                            for (; null !== (t = I.exec(u));) {
                                                 const u = t[0].match(/href="(.*?)"/);
                                                 if (u) {
                                                     const t = e + u[1].replace(W, ''),
@@ -2686,7 +2690,7 @@
                                     let e;
                                     const t = $(),
                                         r = U(t);
-                                    for (; null !== (e = I.exec(u)); ) {
+                                    for (; null !== (e = I.exec(u));) {
                                         const u = e[0].match(/href="(.*?)"/);
                                         if (u && !u[1].includes(G) && r) {
                                             const e = r + u[1].replace(W, ''),

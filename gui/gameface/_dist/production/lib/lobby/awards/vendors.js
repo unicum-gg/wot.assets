@@ -197,7 +197,7 @@
                         o = n.call(e),
                         a = [];
                     try {
-                        for (; (void 0 === t || t-- > 0) && !(r = o.next()).done; ) a.push(r.value);
+                        for (; (void 0 === t || t-- > 0) && !(r = o.next()).done;) a.push(r.value);
                     } catch (e) {
                         i = { error: e };
                     } finally {
@@ -1258,11 +1258,11 @@
                                 s.dependenciesState_ > r && (r = s.dependenciesState_));
                         }
                         ((n.length = i), (e.newObserving_ = null), (o = t.length));
-                        for (; o--; ) {
+                        for (; o--;) {
                             var u = t[o];
                             (0 === u.diffValue_ && ct(u, e), (u.diffValue_ = 0));
                         }
-                        for (; i--; ) {
+                        for (; i--;) {
                             var c = n[i];
                             1 === c.diffValue_ && ((c.diffValue_ = 0), ut(c, e));
                         }
@@ -1275,7 +1275,7 @@
             function Je(e) {
                 var t = e.observing_;
                 e.observing_ = [];
-                for (var n = t.length; n--; ) ct(t[n], e);
+                for (var n = t.length; n--;) ct(t[n], e);
                 e.dependenciesState_ = Ke.NOT_TRACKING_;
             }
             function $e(e) {
@@ -1303,7 +1303,7 @@
             function rt(e) {
                 if (e.dependenciesState_ !== Ke.UP_TO_DATE_) {
                     e.dependenciesState_ = Ke.UP_TO_DATE_;
-                    for (var t = e.observing_, n = t.length; n--; ) t[n].lowestObserverState_ = Ke.UP_TO_DATE_;
+                    for (var t = e.observing_, n = t.length; n--;) t[n].lowestObserverState_ = Ke.UP_TO_DATE_;
                 }
             }
             var it = function () {
@@ -1520,7 +1520,7 @@
             }
             function gt() {
                 st.isRunningReactions = !0;
-                for (var e = st.pendingReactions, t = 0; e.length > 0; ) {
+                for (var e = st.pendingReactions, t = 0; e.length > 0;) {
                     ++t === pt && (console.error('[mobx] cycle in reaction: ' + e[0]), e.splice(0));
                     for (var n = e.splice(0), r = 0, i = n.length; r < i; r++) n[r].runReaction_();
                 }
@@ -2368,7 +2368,7 @@
                             return this.entries();
                         }),
                         (t.forEach = function (e, t) {
-                            for (var n, r = I(this); !(n = r()).done; ) {
+                            for (var n, r = I(this); !(n = r()).done;) {
                                 var i = n.value,
                                     o = i[0],
                                     a = i[1];
@@ -2416,7 +2416,7 @@
                             var e = this;
                             tn(function () {
                                 $e(function () {
-                                    for (var t, n = I(e.keys()); !(t = n()).done; ) {
+                                    for (var t, n = I(e.keys()); !(t = n()).done;) {
                                         var r = t.value;
                                         e.delete(r);
                                     }
@@ -2452,7 +2452,7 @@
                                                 o.set(u, c);
                                             }
                                     }
-                                    for (var l, h = I(i.entries()); !(l = h()).done; ) {
+                                    for (var l, h = I(i.entries()); !(l = h()).done;) {
                                         var f = l.value,
                                             d = f[0],
                                             v = f[1],
@@ -2541,7 +2541,7 @@
                             var e = this;
                             tn(function () {
                                 $e(function () {
-                                    for (var t, n = I(e.data_.values()); !(t = n()).done; ) {
+                                    for (var t, n = I(e.data_.values()); !(t = n()).done;) {
                                         var r = t.value;
                                         e.delete(r);
                                     }
@@ -2549,7 +2549,7 @@
                             });
                         }),
                         (t.forEach = function (e, t) {
-                            for (var n, r = I(this); !(n = r()).done; ) {
+                            for (var n, r = I(this); !(n = r()).done;) {
                                 var i = n.value;
                                 e.call(t, i, i, this);
                             }
@@ -2774,7 +2774,7 @@
                                     if (null == (n = this.target_[M]) ? void 0 : n[e]) return;
                                     r(1, t.annotationType_, this.name_ + '.' + e.toString());
                                 }
-                                for (var i = this.target_; i && i !== c; ) {
+                                for (var i = this.target_; i && i !== c;) {
                                     var o = s(i, e);
                                     if (o) {
                                         var a = t.make_(this, e, o, i);
@@ -3175,15 +3175,15 @@
                 }
                 if (0 === n) return !1;
                 (n < 0 && (n = -1), (i = i || []));
-                for (var l = (r = r || []).length; l--; ) if (r[l] === e) return i[l] === t;
+                for (var l = (r = r || []).length; l--;) if (r[l] === e) return i[l] === t;
                 if ((r.push(e), i.push(t), s)) {
                     if ((l = e.length) !== t.length) return !1;
-                    for (; l--; ) if (!ir(e[l], t[l], n - 1, r, i)) return !1;
+                    for (; l--;) if (!ir(e[l], t[l], n - 1, r, i)) return !1;
                 } else {
                     var h,
                         f = Object.keys(e);
                     if (((l = f.length), Object.keys(t).length !== l)) return !1;
-                    for (; l--; ) if (!C(t, (h = f[l])) || !ir(e[h], t[h], n - 1, r, i)) return !1;
+                    for (; l--;) if (!C(t, (h = f[l])) || !ir(e[h], t[h], n - 1, r, i)) return !1;
                 }
                 return (r.pop(), i.pop(), !0);
             }

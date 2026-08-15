@@ -1,14 +1,14 @@
 import { j as e, f as s, r as a, E as t } from '../../../../chunks/vendor.js';
 import {
     C as i,
-    co as n,
+    cr as n,
     m as l,
     i as o,
-    a7 as c,
-    a8 as r,
-    G as m,
-    aR as d,
-    d2 as _,
+    ac as c,
+    d as r,
+    K as m,
+    Y as d,
+    X as _,
     B as u,
     r as g,
     U as b,
@@ -81,9 +81,9 @@ const F = 'Icon_e30b139a',
     S = 'Icon_container_4087e78b',
     O = 'Icon_6ce4463',
     W = 'bottomAlignment',
-    G = 'centredAndThroughContent',
+    K = 'centredAndThroughContent',
     U = 'moveContentBelow';
-function q({ iconPositionLogic: s = U, backgrounds: t = [], overlays: i = [], icons: o }) {
+function X({ iconPositionLogic: s = U, backgrounds: t = [], overlays: i = [], icons: o }) {
     const [c, r] = a.useState(0),
         m = a.useCallback((e) => {
             r(((e) => Math.max(e, 135))(e.currentTarget.height));
@@ -97,7 +97,7 @@ function q({ iconPositionLogic: s = U, backgrounds: t = [], overlays: i = [], ic
             switch (s) {
                 case W:
                     return { height: `${c}rem`, marginTop: `-${Math.round((c - 135) / 2)}rem` };
-                case G:
+                case K:
                     return { height: `${c}rem`, marginBottom: `-${Math.round((c - 135) / 2)}rem` };
                 default:
                     return { height: `${c}rem` };
@@ -141,48 +141,48 @@ function q({ iconPositionLogic: s = U, backgrounds: t = [], overlays: i = [], ic
         }),
     });
 }
-const [J, K] = o('AbilitiesIncompleteConfirmProvider')(c, ({ externalModel: e }) => ({
+const [Y, q] = o('AbilitiesIncompleteConfirmProvider')(c, ({ externalModel: e }) => ({
         submit: e.createCallbackNoArgs('onSubmitClick'),
         cancel: e.createCallbackNoArgs('onCancelClick'),
         close: e.createCallbackNoArgs('onCloseClick'),
     })),
-    Q = 'App_buttons_cb654453',
-    V = 'App_button_fb12011c',
-    X = r.resolve('strings');
-function Y() {
-    const { controls: s } = K();
+    G = 'App_buttons_cb654453',
+    J = 'App_button_fb12011c',
+    Q = r.resolve('strings');
+function V() {
+    const { controls: s } = q();
     return (
         m(d.ENTER, s.submit, !0),
         _(s.close),
         e.jsx(E, {
             onClose: s.close,
-            title: X.readOrEmpty('R.strings.last_stand_lobby.abilitiesIncomplete.title'),
+            title: Q.readOrEmpty('R.strings.last_stand_lobby.abilitiesIncomplete.title'),
             displayFlags: ['disableResponsiveContentPosition'],
-            icon: e.jsx(q, {
+            icon: e.jsx(X, {
                 iconPositionLogic: 'moveContentBelow',
                 icons: ['R.images.last_stand.gui.maps.icons.dialogs.abilities_incomplete.content'],
             }),
             content: e.jsx(v, { text: R.strings.last_stand_lobby.abilitiesIncomplete.warning() }),
             buttons: e.jsxs('div', {
-                className: Q,
+                className: G,
                 children: [
                     e.jsx(u, {
-                        className: V,
+                        className: J,
                         theme: u.themes.primary,
                         size: u.sizes.medium,
                         onClick: s.submit,
-                        children: X.read('R.strings.last_stand_lobby.abilitiesIncomplete.submit'),
+                        children: Q.read('R.strings.last_stand_lobby.abilitiesIncomplete.submit'),
                     }),
                     e.jsx(u, {
-                        className: V,
+                        className: J,
                         theme: u.themes.secondary,
                         size: u.sizes.medium,
                         onClick: s.cancel,
-                        children: X.read('R.strings.last_stand_lobby.abilitiesIncomplete.cancel'),
+                        children: Q.read('R.strings.last_stand_lobby.abilitiesIncomplete.cancel'),
                     }),
                 ],
             }),
         })
     );
 }
-g(e.jsx(b, { children: e.jsx(J, { children: e.jsx(Y, {}) }) }));
+g(e.jsx(b, { children: e.jsx(Y, { children: e.jsx(V, {}) }) }));

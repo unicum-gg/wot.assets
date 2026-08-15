@@ -213,6 +213,10 @@ html[lang='th'] input {
     height: 30rem;
 }
 
+.NarrationText_nowrap_e19b022d {
+    white-space: nowrap;
+}
+
 @keyframes NarrationText_switchText_81c4bd4a {
     0% {
         opacity: 1;
@@ -399,6 +403,15 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+.NarrationSlider_blackScreen_aa8a7b8a,
+.NarrationSlider_video_bac7813f {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 /* stylelint-disable scss/dollar-variable-pattern */
 .NarrationSlider_52899b6f {
     width: 100%;
@@ -406,15 +419,17 @@ html[lang='th'] input {
     position: relative;
 }
 
-.NarrationSlider_blackScreen_2a8ce117 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.NarrationSlider_blackScreen_aa8a7b8a {
     background-color: #101010;
     opacity: 0;
+    transition: opacity 0.4s ease;
     pointer-events: none;
+}
+.NarrationSlider_blackScreen__show_a64fda4f {
+    opacity: 1;
+}
+.NarrationSlider_blackScreen__hide_b6adbcdb {
+    opacity: 0;
 }
 
 .NarrationSlider_slideButton_3ef51db8 {
@@ -468,16 +483,11 @@ html[lang='th'] input {
     filter: blur(0rem);
 }
 
-.NarrationSlider_video_19efa0f0 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.NarrationSlider_video_bac7813f {
     mix-blend-mode: screen;
     z-index: 999;
-    transform: rotate(180deg);
-    transition: opacity 0.2s linear;
+    transform: scale(-1, 1);
+    transition: opacity 0.1s linear;
     pointer-events: none;
 }
 .NarrationSlider_video__hide_b6adbcdb {
@@ -563,6 +573,17 @@ html[lang='th'] input {
     background-color: rgba(0, 0, 0, 0.75);
     overflow: hidden;
     position: relative;
+}
+
+.NarrationApp_parallaxRef_ef33ec2d {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 102vw;
+    height: 102vh;
+    z-index: 999;
+    pointer-events: none;
 }
 
 .NarrationApp_closeButton_f57beb0f {

@@ -23,8 +23,10 @@
     color: var(--color-general-primary);
 }
 
-.Hub_content_39db32f3 {
+.Hub_content_f95705c3 {
     display: flex;
     align-items: center;
     flex: 1;
+    height: 100%;
+    padding: 0 20rem;
 }

@@ -1,0 +1,2070 @@
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Scroll_wrapper_df2306f3 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.Scroll_content_f1bdd2c1 {
+    height: 100%;
+    overflow-y: hidden;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.MapCompleted_9d6ce05e {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    transform: translateY(15rem);
+}
+.mediaMedium .MapCompleted_9d6ce05e {
+    transform: translateY(40rem);
+}
+
+.MapCompleted_background_8d3a6ed0 {
+    width: 1604rem;
+    height: 1070rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.completed_glow) no-repeat
+        center/contain;
+    opacity: 0.4;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+.mediaLarge .MapCompleted_background_8d3a6ed0 {
+    width: 1908rem;
+    height: 1272rem;
+}
+.mediaExtraLarge .MapCompleted_background_8d3a6ed0 {
+    width: 2580rem;
+    height: 1721rem;
+}
+.MapCompleted_base__enter_2826266b .MapCompleted_background_8d3a6ed0 {
+    opacity: 0;
+    animation: MapCompleted_backAppear_2826266b 0.4s ease-out 0.4s forwards;
+}
+
+.MapCompleted_laurel_7c7018ad {
+    width: 104rem;
+    height: 213rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.laurel) no-repeat center/contain;
+}
+.mediaLarge .MapCompleted_laurel_7c7018ad {
+    width: 131rem;
+    height: 269rem;
+}
+.mediaExtraLarge .MapCompleted_laurel_7c7018ad {
+    width: 150rem;
+    height: 308rem;
+}
+.MapCompleted_base__enter_2826266b .MapCompleted_laurel_7c7018ad {
+    opacity: 0;
+    animation: MapCompleted_leftLaurelAppear_2826266b 0.4s ease-out 0.6s forwards;
+}
+.MapCompleted_laurel__right_91fd04aa {
+    transform: scaleX(-1);
+}
+.MapCompleted_base__enter_2826266b .MapCompleted_laurel__right_91fd04aa {
+    opacity: 0;
+    animation: MapCompleted_rightLaurelAppear_2826266b 0.4s ease-out 0.6s forwards;
+}
+
+.MapCompleted_title_bdd13b19 {
+    display: flex;
+    align-items: center;
+}
+.MapCompleted_base__enter_2826266b .MapCompleted_title_bdd13b19 {
+    animation: MapCompleted_titleAppear_2826266b 0.4s ease-out forwards;
+}
+
+.MapCompleted_doneIcon_4732fd0c {
+    width: 36rem;
+    height: 36rem;
+    margin-right: 12rem;
+}
+.mediaLarge .MapCompleted_doneIcon_4732fd0c {
+    width: 48rem;
+    height: 48rem;
+}
+
+.MapCompleted_text_158e085 {
+    font-size: 40rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    font-weight: 600;
+}
+.mediaLarge .MapCompleted_text_158e085 {
+    font-size: 46rem;
+}
+.mediaExtraLarge .MapCompleted_text_158e085 {
+    font-size: 56rem;
+}
+
+@keyframes MapCompleted_titleAppear_2826266b {
+    from {
+        opacity: 0;
+        transform: translateY(50rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+@keyframes MapCompleted_backAppear_2826266b {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.4;
+    }
+}
+@keyframes MapCompleted_leftLaurelAppear_2826266b {
+    from {
+        opacity: 0;
+        transform: translateY(50rem) rotate(-30deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0rem) rotate(0deg);
+    }
+}
+@keyframes MapCompleted_rightLaurelAppear_2826266b {
+    from {
+        opacity: 0;
+        transform: translateY(50rem) rotate(30deg) scaleX(-1);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0rem) rotate(0deg) scaleX(-1);
+    }
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.ProgressBar_ad690be3 {
+    height: 6rem;
+    z-index: 0;
+}
+
+.ProgressBar_border_cc9e47f4 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ProgressBar_border_cc9e47f4::before {
+    border: 1rem solid rgba(117, 89, 69, 0.35);
+    border-radius: 2rem;
+    content: '';
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    left: -1rem;
+}
+
+.ProgressBar_background_a63ef489 {
+    background-color: rgba(13, 14, 16, 0.2);
+}
+
+.ProgressBar_edge_2fc6dd23 {
+    background-color: #ffe0c5;
+}
+
+.ProgressBar_deltaInside_2fc6dd23 {
+    background-color: #ffe0c5;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.QuestIcon_44c4acd9 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.QuestIcon_base__x16_ca39fe8f {
+    width: 16rem;
+    height: 16rem;
+}
+.QuestIcon_base__x24_d32a3c23 {
+    width: 24rem;
+    height: 24rem;
+}
+.QuestIcon_base__x32_3a42e90e {
+    width: 32rem;
+    height: 32rem;
+}
+.QuestIcon_base__x48_c32aa886 {
+    width: 48rem;
+    height: 48rem;
+}
+
+.QuestIcon_icon_ea573823 {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 2rem 0 rgba(255, 227, 179, 0.7));
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Quest_shine_b364ef26 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.Quest_e217a05b {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 230rem;
+    height: 124rem;
+    padding: 13rem 15rem 7rem;
+    border: 1rem solid rgba(86, 52, 17, 0.2);
+    background:
+        rgb(215, 181, 131),
+        url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.quests.bg_texture) no-repeat
+            center/contain;
+    position: relative;
+}
+.mediaMedium .Quest_e217a05b {
+    width: 280rem;
+}
+.mediaLarge .Quest_e217a05b {
+    width: 340rem;
+    height: 146rem;
+    padding-bottom: 8rem;
+}
+
+.Quest_outerBorderImage_e0847b66 {
+    border-image-source: url(R.images.gui.maps.icons.ui.light_noise);
+    border-image-slice: 1;
+    border-image-width: 1rem;
+    border-image-repeat: repeat;
+    opacity: 0.2;
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    left: -1rem;
+}
+
+.Quest_shine_b364ef26 {
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.quests.bottom_shine) no-repeat
+        center bottom/contain;
+}
+.Quest_base__done_3236e985 .Quest_shine_b364ef26 {
+    opacity: 0.5;
+}
+
+.Quest_content_d8138628 {
+    display: flex;
+    position: relative;
+}
+.Quest_base__done_3236e985 .Quest_content_d8138628 {
+    opacity: 0.5;
+}
+
+.Quest_condition_1a2b6d91 {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    margin: -2rem 0 0 10rem;
+    color: #2d231f;
+}
+
+.Quest_conditionText_28ae9aa9 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    height: 40rem;
+    line-height: 1.1em;
+    letter-spacing: 0.12rem;
+}
+.mediaLarge .Quest_conditionText_28ae9aa9 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-bottom: 14rem;
+    line-height: 1.1em;
+}
+
+.Quest_progression_f05a7a {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-bottom: 1rem;
+}
+
+.Quest_progressionTotal_65ef2f81 {
+    opacity: 0.5;
+}
+.Quest_base__done_3236e985 .Quest_progressionTotal_65ef2f81 {
+    opacity: 1;
+}
+
+.Quest_points_f8ad1f8d {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+}
+.Quest_base__done_3236e985 .Quest_points_f8ad1f8d {
+    opacity: 0.5;
+}
+
+.Quest_pointsLine_7a0d88b9 {
+    flex: 1 1;
+    height: 2rem;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4) 3rem,
+        transparent 3rem,
+        transparent 4rem,
+        rgba(0, 0, 0, 0.08) 4rem,
+        rgba(0, 0, 0, 0.2)
+    );
+}
+.Quest_pointsLine__left_c5341c33 {
+    transform: rotate(180deg);
+}
+
+.Quest_pointNumber_f1af7e6b {
+    margin: 0 15rem;
+    color: var(--color-general-dark);
+    font-size: 20rem;
+    font-weight: 500;
+}
+.mediaMedium .Quest_pointNumber_f1af7e6b {
+    font-size: 22rem;
+}
+
+.Quest_pointIcon_ca1ecc55 {
+    width: 16rem;
+    height: 16rem;
+    margin: 0 0 1rem 3rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.nodes.token) no-repeat center/contain;
+}
+
+.Quest_done_8d719fdb {
+    background: rgba(24, 13, 10, 0.2);
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    left: -1rem;
+}
+
+.Quest_doneLine_64b06f8b {
+    width: 100%;
+    height: 1rem;
+    background:
+        linear-gradient(90deg, transparent 25%, rgba(100, 186, 33, 0.5) 50%, transparent 75%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.02));
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.Quest_doneIcon_a1cdc347 {
+    width: 24rem;
+    height: 24rem;
+    position: absolute;
+    bottom: -10rem;
+    left: 50%;
+    transform: translateX(-50%);
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Quests_d15da499 {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30rem;
+}
+.mediaLarge .Quests_d15da499 {
+    padding-left: 48rem;
+}
+
+.Quests_header_23b9773a {
+    display: flex;
+    align-items: center;
+}
+.Quests_header_23b9773a::after {
+    display: block;
+    width: 400rem;
+    height: 1rem;
+    margin-left: 20rem;
+    background:
+        rgba(255, 255, 255, 0.2),
+        url(R.images.gui.maps.icons.ui.light_noise) repeat center/contain;
+    content: '';
+    mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0.25), transparent);
+}
+
+.Quests_headerText_dd93c6c1 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    color: rgba(var(--color-general-primary-rgb), 0.5);
+    font-weight: 500;
+}
+.mediaMedium .Quests_headerText_dd93c6c1 {
+    font-size: 22rem;
+}
+
+.Quests_questList_6d5729d6 {
+    display: flex;
+    margin-top: 5rem;
+    padding-bottom: 10rem;
+    pointer-events: auto;
+}
+.mediaLarge .Quests_questList_6d5729d6 {
+    margin-top: 7rem;
+    padding-bottom: 12rem;
+}
+
+.Quests_quest_7ebbfd6f {
+    margin-right: 10rem;
+}
+.mediaLarge .Quests_quest_7ebbfd6f {
+    margin-right: 15rem;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.QuestsCompleted_4dcf8d1c {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 30rem;
+}
+.mediaLarge .QuestsCompleted_4dcf8d1c {
+    padding: 0 48rem;
+}
+
+.QuestsCompleted_line_f976dbda {
+    flex: 1 1;
+    height: 2rem;
+    padding: 0 1rem;
+    border-left: 3rem solid rgba(217, 217, 217, 0.4);
+    border-right: 3rem solid rgba(217, 217, 217, 0.4);
+}
+.QuestsCompleted_line_f976dbda::before {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(217, 217, 217, 0.2), rgba(217, 217, 217, 0.08));
+    content: '';
+}
+.QuestsCompleted_line__right_6669183 {
+    transform: rotate(180deg);
+}
+
+.QuestsCompleted_content_75eff44b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 40rem;
+}
+
+.QuestsCompleted_header_526fd65b {
+    display: flex;
+    align-items: center;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    font-size: 34rem;
+    font-weight: 500;
+    line-height: 1.3em;
+}
+.mediaLarge .QuestsCompleted_header_526fd65b {
+    font-size: 46rem;
+    font-weight: 600;
+    letter-spacing: 0.4rem;
+}
+.mediaExtraLarge .QuestsCompleted_header_526fd65b {
+    font-size: 56rem;
+}
+
+.QuestsCompleted_headerDone_16cc15d6 {
+    width: 24rem;
+    height: 24rem;
+    margin-right: 5rem;
+}
+.mediaLarge .QuestsCompleted_headerDone_16cc15d6 {
+    width: 40rem;
+    height: 40rem;
+}
+.mediaExtraLarge .QuestsCompleted_headerDone_16cc15d6 {
+    width: 48rem;
+    height: 48rem;
+}
+
+.QuestsCompleted_dateTime_6f967a07 {
+    display: flex;
+    align-items: center;
+    margin-top: -5rem;
+    color: rgba(var(--color-general-primary-rgb), 0.5);
+    font-size: 22rem;
+    font-weight: 500;
+    line-height: 1.3em;
+}
+.mediaLarge .QuestsCompleted_dateTime_6f967a07 {
+    margin-top: -8rem;
+    font-size: 28rem;
+}
+.mediaExtraLarge .QuestsCompleted_dateTime_6f967a07 {
+    font-size: 32rem;
+}
+
+.QuestsCompleted_timer_f34a5899 {
+    margin-top: 2rem;
+    transform: translateY(-2rem);
+}
+.mediaLarge .QuestsCompleted_timer_f34a5899 {
+    margin-top: 6rem;
+}
+
+.mediaExtraLarge .QuestsCompleted_timerLabel_7d7a9681 {
+    font-size: 22rem;
+}
+
+@keyframes QuestsCompleted_baseAppear_7ca39ec5 {
+    0% {
+        opacity: 0;
+        transform: translateY(30rem);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes QuestsCompleted_lineAppear_7ca39ec5 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Footer_c7556f89 {
+    display: flex;
+    pointer-events: none;
+}
+
+.Footer_questsCompleted_509c0c59 {
+    margin-bottom: 2rem;
+}
+.mediaLarge .Footer_questsCompleted_509c0c59 {
+    margin-bottom: 4rem;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Vignette_f2a66b14 {
+    background-image:
+        linear-gradient(180deg, rgba(24, 26, 27, 0.7), transparent),
+        linear-gradient(0deg, rgba(24, 26, 27, 0.62), transparent),
+        linear-gradient(90deg, rgba(24, 26, 27, 0.54), transparent),
+        linear-gradient(270deg, rgba(24, 26, 27, 0.54), transparent);
+    background-repeat: no-repeat;
+    background-position:
+        top,
+        bottom,
+        left top,
+        right top;
+    background-size:
+        100% 22%,
+        100% 25%,
+        11% 100%,
+        11% 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.SunShine_c72f0897 {
+    width: 250rem;
+    height: 250rem;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Banner_50dc9d44 {
+    width: 310rem;
+    height: 86rem;
+    padding-left: 100rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.banner.background) no-repeat left
+        top/347rem 100%;
+    position: relative;
+    z-index: 0;
+}
+.Banner_50dc9d44::before,
+.Banner_50dc9d44::after {
+    height: 1rem;
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+.Banner_50dc9d44::before {
+    background: url(R.images.gui.maps.icons.ui.light_noise) repeat center/contain;
+    top: -3rem;
+    mask-image: linear-gradient(to right, rgba(255, 255, 255, 0.32), transparent);
+}
+.Banner_50dc9d44::after {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, white 18%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0.3;
+    bottom: -2rem;
+    z-index: -1;
+}
+
+.Banner_imageWrapper_17e1f8ea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-40rem, -57rem);
+}
+
+.Banner_sunShine_a30be061 {
+    filter: saturate(0.4);
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.Banner_image_c0937101 {
+    width: 170rem;
+    height: 170rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.banner.image) no-repeat
+        center/contain;
+    position: relative;
+}
+.Banner_image_c0937101::before {
+    width: 100%;
+    height: 100%;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.banner.image) no-repeat
+        center/contain;
+    filter: brightness(1.1);
+    opacity: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.2s;
+}
+.Banner_50dc9d44:hover .Banner_image_c0937101::before {
+    opacity: 1;
+}
+
+.Banner_content_4ac405ff {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+.Banner_title_61e1e387 {
+    width: 400rem;
+    margin: 8rem 0 4rem;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    font-size: 30rem;
+    font-weight: 500;
+    line-height: 1.1;
+    text-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.NaviArrow_1925989e {
+    mix-blend-mode: screen;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.BonusName_4e0f855f {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.BonusName_type_631aa559 {
+    margin: 0 -5rem;
+}
+
+.BonusName_text_8887a35a {
+    font-size: 16rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: #ffe4c0;
+    font-weight: 600;
+    text-align: center;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.NaviHint_355d9398 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 180rem;
+    height: 180rem;
+    filter: brightness(1);
+    position: relative;
+    transition: filter 0.2s ease-out;
+}
+.NaviHint_355d9398:hover {
+    filter: brightness(1.2);
+}
+
+.NaviHint_image_2ea34ca8 {
+    width: 80rem;
+    height: 80rem;
+    background: center/contain no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.NaviHint_rarity_46c2a15d {
+    width: 128rem;
+    height: 128rem;
+    background: no-repeat center/100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.NaviHint_label_4f174728 {
+    color: var(--color-general-primary);
+    line-height: 1;
+    text-shadow: 0 4rem 4rem rgba(189, 142, 40, 0.25);
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+
+.NaviHint_vehicleType_f3bc9b44 {
+    margin: 0rem 1rem;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.NaviLayer_536ca7ee {
+    pointer-events: none;
+}
+
+.NaviLayer_hint_5d90430d {
+    position: absolute;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Token_d0d2eea2 {
+    display: flex;
+    align-items: center;
+}
+
+.Token_value_eabb0f51 {
+    font-size: 40rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: #edcb9e;
+    text-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+.mediaLarge .Token_value_eabb0f51 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.3em;
+}
+.mediaExtraLarge .Token_value_eabb0f51 {
+    font-size: 80rem;
+    font-weight: 700;
+    line-height: 1.3em;
+}
+
+.Token_icon_fd8c3cd7 {
+    margin-left: 4rem;
+    background: no-repeat center/contain;
+    position: relative;
+}
+.Token_base__unlock_tokens_icons_a6eb6161 .Token_icon_fd8c3cd7 {
+    width: 32rem;
+    height: 32rem;
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.unlock_tokens_icons.x32);
+}
+.mediaLarge .Token_base__unlock_tokens_icons_a6eb6161 .Token_icon_fd8c3cd7 {
+    width: 48rem;
+    height: 48rem;
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.unlock_tokens_icons.x48);
+}
+.mediaExtraLarge .Token_base__unlock_tokens_icons_a6eb6161 .Token_icon_fd8c3cd7 {
+    width: 64rem;
+    height: 64rem;
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.unlock_tokens_icons.x64);
+}
+.Token_base__point_icons_a6eb6161 .Token_icon_fd8c3cd7 {
+    width: 32rem;
+    height: 32rem;
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.point_icons.x32);
+}
+.mediaLarge .Token_base__point_icons_a6eb6161 .Token_icon_fd8c3cd7 {
+    width: 48rem;
+    height: 48rem;
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.point_icons.x48);
+}
+.mediaExtraLarge .Token_base__point_icons_a6eb6161 .Token_icon_fd8c3cd7 {
+    width: 64rem;
+    height: 64rem;
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.point_icons.x64);
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Balance_ffc0e0e1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 213rem;
+    height: 104rem;
+    padding-right: 30rem;
+    background:
+        radial-gradient(100% 50% at 100% 50%, rgba(66, 45, 28, 0.6) 35%, transparent 100%),
+        url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.balance.bg) no-repeat right/cover;
+}
+.mediaLarge .Balance_ffc0e0e1 {
+    min-width: 289rem;
+    height: 136rem;
+}
+.mediaExtraLarge .Balance_ffc0e0e1 {
+    min-width: 381rem;
+    height: 150rem;
+    padding-right: 50rem;
+}
+.Balance_base__increase_8a6d377a {
+    animation: Balance_gainToken_cc1d901f 2500ms ease-in-out backwards;
+}
+.Balance_base__reduce_502b9999 {
+    animation: Balance_reduceToken_cc1d901f 2500ms ease-in-out backwards;
+}
+
+.Balance_divider_7003efcb {
+    width: 1rem;
+    height: 32rem;
+    margin: 0 14rem 0 4rem;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.mediaLarge .Balance_divider_7003efcb {
+    height: 48rem;
+}
+.mediaExtraLarge .Balance_divider_7003efcb {
+    height: 64rem;
+    margin: 0 24rem 0 8rem;
+}
+
+@keyframes Balance_gainToken_cc1d901f {
+    0% {
+        filter: brightness(100%);
+    }
+    50% {
+        filter: brightness(150%);
+    }
+    100% {
+        filter: brightness(100%);
+    }
+}
+@keyframes Balance_reduceToken_cc1d901f {
+    0% {
+        filter: brightness(100%);
+    }
+    25% {
+        filter: brightness(140%);
+    }
+    30% {
+        filter: brightness(155%);
+    }
+    35% {
+        filter: brightness(180%);
+    }
+    40% {
+        filter: brightness(140%);
+    }
+    45% {
+        filter: brightness(173%);
+    }
+    50% {
+        filter: brightness(160%);
+    }
+    55% {
+        filter: brightness(147%);
+    }
+    60% {
+        filter: brightness(159%);
+    }
+    65% {
+        filter: brightness(141%);
+    }
+    70% {
+        filter: brightness(172%);
+    }
+    75% {
+        filter: brightness(145%);
+    }
+    80% {
+        filter: brightness(180%);
+    }
+    85% {
+        filter: brightness(166%);
+    }
+    90% {
+        filter: brightness(152%);
+    }
+    100% {
+        filter: brightness(100%);
+    }
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Header_title_b37501e4 {
+    font-size: 40rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    font-size: 46rem;
+    text-shadow: 0rem 2rem 2px rgba(0, 0, 0, 0.2);
+}
+.mediaMedium .Header_title_b37501e4 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.3em;
+}
+.mediaExtraLarge .Header_title_b37501e4 {
+    font-size: 80rem;
+    font-weight: 700;
+    line-height: 1.3em;
+}
+
+.Header_subtitle_c00456ae {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    color: rgba(var(--color-general-primary-rgb), 0.5);
+    text-shadow: 0rem 2rem 2px rgba(0, 0, 0, 0.2);
+}
+.mediaMedium .Header_subtitle_c00456ae {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+.mediaExtraLarge .Header_subtitle_c00456ae {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+.Header_subtitle_c00456ae + .Header_subtitle_c00456ae {
+    margin-top: 12rem;
+}
+
+.Header_timer_1eefd9c {
+    flex-direction: row-reverse;
+    margin: -4rem 0 -4rem 3rem;
+}
+
+.Header_timerText_31a56dd1 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+.mediaMedium .Header_timerText_31a56dd1 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+.mediaExtraLarge .Header_timerText_31a56dd1 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.3em;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.PreviewButton_ffa0e3d5 {
+    width: 64rem;
+    height: 64rem;
+    opacity: 0.7;
+    visibility: visible;
+    position: relative;
+    transition:
+        opacity 0.2s ease-out,
+        visibility 0.2s ease-out;
+}
+.PreviewButton_ffa0e3d5:hover {
+    opacity: 1;
+}
+
+.PreviewButton_content_a95d3ade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.PreviewButton_label_94741dc6 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    color: #ffe4c0;
+    line-height: 1.1;
+    text-shadow:
+        0 0 35px rgba(255, 115, 0, 0.35),
+        0 0 20px rgba(255, 179, 86, 0.35),
+        0 0 7px rgba(255, 230, 159, 0.2);
+    position: absolute;
+    top: 70rem;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: auto;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.LoreObject_b1256986 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.LoreObject_video_548d6b1b {
+    width: 400rem;
+    height: 400rem;
+    opacity: 0;
+    position: relative;
+}
+.LoreObject_base__showVideo_ac92a5c5 .LoreObject_video_548d6b1b {
+    opacity: 1;
+}
+
+.LoreObject_image_c023b8d {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.LoreObject_base__showVideo_ac92a5c5 .LoreObject_image_c023b8d {
+    display: none;
+}
+
+.LoreObject_status_bb9268d2 {
+    position: absolute;
+    bottom: 20rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.LoreObject_hint_9dfad0bc {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    pointer-events: none;
+}
+.LoreObject_hint_9dfad0bc::before {
+    width: 129rem;
+    height: 129rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.trigger_hint) no-repeat
+        center/contain;
+    content: '';
+    animation: LoreObject_hint_9dfad0bc 1400ms infinite;
+}
+
+.LoreObject_locker_dba8eba5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.2s ease-out;
+}
+.LoreObject_base__hover_ac92a5c5 .LoreObject_locker_dba8eba5 {
+    transform: translateY(-10rem);
+}
+.LoreObject_locker_dba8eba5::before {
+    width: 300rem;
+    height: 150rem;
+    background-image: radial-gradient(50% 50% at 50% 50%, #000 0%, transparent 100%);
+    opacity: 0.5;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    pointer-events: none;
+}
+
+.LoreObject_lockIcon_2388f89e {
+    width: 32rem;
+    height: 32rem;
+    margin: 4rem 0 -2rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.lore.locker) no-repeat
+        center/contain;
+    position: relative;
+}
+
+.LoreObject_loreName_fad7a18d {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    color: #d9d2c6;
+    text-shadow:
+        0 0 7px rgba(255, 230, 159, 0.2),
+        0 0 20px rgba(255, 179, 86, 0.35),
+        0 0 35px rgba(255, 115, 0, 0.35);
+    position: relative;
+}
+
+@keyframes LoreObject_hint_9dfad0bc {
+    0% {
+        transform: translateY(-10rem);
+    }
+    50% {
+        transform: translateY(0);
+        animation-timing-function: ease-in-out;
+    }
+    100% {
+        transform: translateY(-10rem);
+        animation-timing-function: ease-in-out;
+    }
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.LoreLayer_b92f62f {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Price_1930fc3e {
+    display: flex;
+    align-items: center;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    font-size: 30rem;
+    font-weight: 500;
+    line-height: 1.15;
+}
+.Price_base__notEnough_e0d7ff83 {
+    color: var(--color-status-alert);
+}
+
+.Price_icon_312b4f7d {
+    width: 24rem;
+    height: 24rem;
+    margin-left: 2rem;
+    background: no-repeat center/contain;
+}
+.Price_icon__coinTokens_3a9c78f5 {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.point_icons.x24);
+}
+.Price_icon__unlockTokens_aa76a9a9 {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.unlock_tokens_icons.x24);
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Content_border_7f41e4bc,
+.Content_borderImage_b0031c43 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.Content_b6c5de88 {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 340rem;
+    border-radius: 3rem;
+    box-shadow:
+        0 8rem 16rem -4rem rgba(18, 17, 15, 0.2),
+        0 8rem 24rem -4rem rgba(18, 17, 15, 0.8);
+    background:
+        #110703,
+        url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.popover.background) repeat center/contain;
+    position: relative;
+}
+.Content_base__locker_624018c2 {
+    background:
+        #200707,
+        url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.popover.background) repeat center/contain;
+}
+
+.Content_border_7f41e4bc {
+    border: 1rem solid rgba(230, 185, 132, 0.3);
+    border-radius: 3rem;
+    pointer-events: none;
+}
+
+.Content_borderImage_b0031c43 {
+    border-image: url(R.images.gui.maps.icons.ui.popover.border) 4/4rem round;
+    pointer-events: none;
+}
+
+.Content_header_f8c3c733 {
+    padding: 24rem 24rem 0;
+    position: relative;
+}
+
+.Content_headerBackground_85827acb {
+    width: 340rem;
+    height: 150rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.popover.header_background)
+        no-repeat center/contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Content_glow_29bb7831 {
+    width: 340rem;
+    height: 114rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.popover.glow) no-repeat
+        center/contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.Content_base__locker_624018c2 .Content_glow_29bb7831 {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.popover.lockGlow);
+}
+
+.Content_title_5c5d03ab {
+    max-width: 170rem;
+    color: #e6b984;
+    font-size: 26rem;
+    font-weight: 500;
+}
+.Content_base__locker_624018c2 .Content_title_5c5d03ab {
+    color: rgba(248, 198, 175, 0.9);
+}
+
+.Content_subtitle_f2c6bb17 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-top: 12rem;
+    color: rgba(var(--color-general-primary-rgb), 0.5);
+    line-height: 1.1;
+}
+
+.Content_body_bd1e923 {
+    padding-top: 12rem;
+}
+
+.Content_nodesCount_9c27dd12 {
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+}
+
+.Content_image_a7591e61 {
+    width: 135rem;
+    height: 135rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.popover.pointer) no-repeat
+        center/contain;
+    position: absolute;
+    top: 10rem;
+    right: 35rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.Content_base__locker_624018c2 .Content_image_a7591e61 {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.popover.unlock);
+}
+
+.Content_tipWrapper_627af5db {
+    background-color: #e6b984;
+    background-image: none;
+    transform: translateY(-50%);
+}
+.Content_base__locker_624018c2 .Content_tipWrapper_627af5db {
+    background-color: #ff6b57;
+}
+.Content_tipWrapper_627af5db::before {
+    width: 52rem;
+    background: radial-gradient(ellipse 60% 60%, rgba(230, 185, 132, 0.25) 0%, transparent 100%);
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+.Content_base__locker_624018c2 .Content_tipWrapper_627af5db::before {
+    background: radial-gradient(ellipse 60% 60%, rgba(255, 107, 87, 0.25) 0%, transparent 100%);
+}
+
+.Content_tipIcon_c5eb7ea0 {
+    width: 47rem;
+    height: 25rem;
+    margin-left: -12rem;
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.popover.tip);
+}
+.Content_base__locker_624018c2 .Content_tipIcon_c5eb7ea0 {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.popover.lockTip);
+}
+
+.Content_scroll_8eaaf71a {
+    display: flex;
+}
+
+.Content_scrollArea_2c40f92c {
+    flex: 1;
+    max-height: 240rem;
+}
+
+.Content_scrollContent_8c677449 {
+    height: auto;
+    max-height: 100%;
+    margin-left: -24rem;
+    padding-left: 24rem;
+}
+
+.Content_alert_d2fa8295 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-bottom: 16rem;
+    color: rgba(var(--color-general-primary-rgb), 0.5);
+    line-height: 1.1;
+}
+
+.Content_alertKey_9c27dd12 {
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+}
+
+.Content_divider_44efed2 {
+    margin: 20rem 0 16rem;
+}
+
+.Content_footer_bc619017 {
+    display: flex;
+    align-items: center;
+}
+
+.Content_button_660477ab {
+    min-width: 100rem;
+    margin-right: 16rem;
+}
+[lang='ja'] .Content_button_660477ab {
+    max-width: 140rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+[lang='ja'] .Content_button_660477ab,
+[lang='uk'] .Content_button_660477ab,
+[lang='ru'] .Content_button_660477ab {
+    margin-right: 10rem;
+    padding: 0 16rem;
+}
+
+.Content_buttonContent_3973f78a {
+    padding-bottom: 2rem;
+}
+[lang='ja'] .Content_buttonContent_3973f78a,
+[lang='zh_sg'] .Content_buttonContent_3973f78a,
+[lang='zh_cn'] .Content_buttonContent_3973f78a,
+[lang='zh_tw'] .Content_buttonContent_3973f78a,
+[lang='ko'] .Content_buttonContent_3973f78a {
+    padding-bottom: 0;
+}
+
+.Content_price_8f469538 {
+    margin-right: 8rem;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Price_3fe4c905 {
+    display: flex;
+    align-items: center;
+    padding: 0 4rem 0 2rem;
+    border-radius: 1rem;
+    box-shadow: 2rem 2rem 1rem rgba(0, 0, 0, 0.3);
+    background-color: #d0b994;
+}
+
+.Price_count_b6437adf {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+    color: var(--color-general-dark);
+    font-size: 22rem;
+    font-weight: 500;
+    line-height: 1.1;
+    overflow: hidden;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.SmallNodeIcon_6bc87b83 {
+    width: 80rem;
+    height: 80rem;
+    position: relative;
+    pointer-events: none;
+}
+
+.SmallNodeIcon_icon_b3062bfa {
+    position: absolute;
+    top: 0;
+    left: 0;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Background_8611ad8a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.Background_6c16fa9e {
+    width: 360rem;
+    height: 360rem;
+    position: relative;
+}
+
+.Background_8611ad8a {
+    background: no-repeat center center/contain;
+    filter: brightness(1);
+    transition: filter 0.2s cubic-bezier(0.1, 0.7, 0.7, 1);
+}
+.Background_base__select_26effab7 .Background_8611ad8a,
+.Background_base__hover_26effab7 .Background_8611ad8a {
+    filter: brightness(1.2);
+}
+
+.Background_popoverTrigger_6f80cca0 {
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.LargeNode_8ee390dd {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 234rem;
+    height: 300rem;
+    position: relative;
+}
+
+.LargeNode_glow_2c001c80 {
+    margin-left: -125rem;
+    filter: grayscale(60%);
+    mix-blend-mode: screen;
+    position: absolute;
+    top: -40rem;
+    left: 50%;
+    pointer-events: none;
+}
+
+.LargeNode_background_986eef98 {
+    position: absolute;
+    top: -42rem;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.LargeNode_flag_790f9291 {
+    width: 150rem;
+    height: 150rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.nodes.large.backgrounds.flag) no-repeat
+        center/contain;
+    position: absolute;
+    right: -140rem;
+    bottom: -14rem;
+    transition: transform 0.2s cubic-bezier(0.1, 0.7, 0.7, 1);
+    pointer-events: none;
+}
+.LargeNode_base__select_60d91076 .LargeNode_flag_790f9291 {
+    transform: translateY(5rem);
+}
+
+.LargeNode_preview_6cc227bc {
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+}
+.LargeNode_preview__hidden_d7de0ca6 {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.LargeNode_ellipse_48bc2217 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 178rem;
+    height: 110rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.nodes.ellipse) no-repeat center/contain;
+    position: absolute;
+    bottom: 76rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    transition: transform 0.5s ease-out;
+}
+
+.LargeNode_smallNode_2ccb093c {
+    filter: brightness(1);
+    position: absolute;
+    bottom: 12rem;
+    left: 32%;
+    transition: filter 0.2s cubic-bezier(0.1, 0.7, 0.7, 1);
+}
+.LargeNode_base__select_60d91076 .LargeNode_smallNode_2ccb093c,
+.LargeNode_base__hover_60d91076 .LargeNode_smallNode_2ccb093c {
+    filter: brightness(1.2);
+}
+
+.LargeNode_doneIcon_c5401d06 {
+    width: 36rem;
+    height: 24rem;
+    position: absolute;
+    bottom: -84rem;
+    left: 50%;
+    transform: translate(-50%, 100%);
+}
+
+.LargeNode_price_931ff45c {
+    position: absolute;
+    bottom: 0rem;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.LockedNode_f84fc8d7 {
+    width: 60rem;
+    height: 60rem;
+    position: relative;
+}
+
+.LockedNode_background_5643b79 {
+    width: 80rem;
+    height: 80rem;
+    background: no-repeat center center/contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.LockedNode_background__active_3a8e62ef {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.nodes.locked.backgrounds.active);
+}
+.LockedNode_background__select_2adc3f08 {
+    width: 100rem;
+    height: 100rem;
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.nodes.locked.backgrounds.select);
+}
+.LockedNode_background__received_6ca24ca9 {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.nodes.locked.backgrounds.received);
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Background_8611ad8a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.Background_46584e05 {
+    width: 140rem;
+    height: 160rem;
+}
+
+.Background_8611ad8a {
+    background: no-repeat center center/contain;
+    filter: brightness(1);
+    transition: filter 0.2s cubic-bezier(0.1, 0.7, 0.7, 1);
+}
+.Background_background__active_26effab7,
+.Background_background__select_2ce1b43e {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.nodes.medium.backgrounds.active);
+}
+.Background_background__received_82bde84b {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.nodes.medium.backgrounds.received);
+}
+.Background_base__select_26effab7 .Background_8611ad8a,
+.Background_base__hover_26effab7 .Background_8611ad8a {
+    filter: brightness(1.2);
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.MediumNode_808e3cba {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 140rem;
+    height: 160rem;
+    position: relative;
+}
+
+.MediumNode_sunShine_150f63ed {
+    margin-left: -125rem;
+    filter: grayscale(60%);
+    mix-blend-mode: screen;
+    position: absolute;
+    top: -80rem;
+    left: 50%;
+    pointer-events: none;
+}
+
+.MediumNode_price_46df0e92 {
+    position: absolute;
+    bottom: -22rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.MediumNode_reward_312e3fe1 {
+    margin-top: 31rem;
+}
+.MediumNode_reward__attachment_c28ebb9a {
+    margin-top: 29rem;
+}
+
+.MediumNode_background_9a61db37 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-8rem);
+    transition: transform 0.5s ease-out;
+}
+.MediumNode_base__select_88ebc2eb .MediumNode_background_9a61db37 {
+    transform: translateY(-13rem);
+}
+
+.MediumNode_smallNode_82facf41 {
+    filter: brightness(1);
+    position: absolute;
+    top: 58%;
+    left: 22%;
+    transition: filter 0.2s cubic-bezier(0.1, 0.7, 0.7, 1);
+    pointer-events: none;
+}
+.MediumNode_base__select_88ebc2eb .MediumNode_smallNode_82facf41,
+.MediumNode_base__hover_88ebc2eb .MediumNode_smallNode_82facf41 {
+    filter: brightness(1.2);
+}
+
+.MediumNode_doneIcon_684217b3 {
+    width: 24rem;
+    height: 24rem;
+    margin-left: -12rem;
+    position: absolute;
+    bottom: 53rem;
+    left: 50%;
+}
+
+.MediumNode_doneIconSvg_2d39b519 {
+    width: 24rem;
+    height: 24rem;
+}
+
+.MediumNode_icon_75b16d34 {
+    width: 64rem;
+    height: 64rem;
+    background: center/contain no-repeat;
+}
+
+.MediumNode_info_5b2ed54b {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-top: -8rem;
+    color: var(--color-general-primary);
+    text-align: center;
+    z-index: 1;
+}
+.MediumNode_info__hidden_baa01049 {
+    display: none;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.SmallNode_72b95b61 {
+    width: 60rem;
+    height: 60rem;
+    position: relative;
+}
+
+.SmallNode_rewardWrapper_74fba996 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -130%);
+}
+
+.SmallNode_icon_aaa2ff7f {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.StartNode_e2ae75ba {
+    pointer-events: none;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Node_triggerFrame_443329e1 {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.Node_small_8b7b938c {
+    filter: brightness(1);
+    transform: translateY(3rem);
+    transition:
+        filter 0.2s cubic-bezier(0.1, 0.7, 0.7, 1),
+        transform 0.2s cubic-bezier(0.1, 0.7, 0.7, 1);
+}
+.Node_small__hover_21c32bd5 {
+    filter: brightness(1.2);
+}
+.Node_small__select_48efd9b1 {
+    filter: brightness(1.2);
+    transform: translateY(-2rem);
+}
+
+.Node_smallNodePopoverTrigger_c4ef4a5b {
+    margin-top: -10rem;
+    padding-top: 10rem;
+}
+
+.Node_large_d4befa31 {
+    transform: translate(1rem, -96rem);
+    transition: transform 0.2s cubic-bezier(0.1, 0.7, 0.7, 1);
+}
+.Node_large__select_a5f86206 {
+    transform: translate(1rem, -101rem);
+}
+
+.Node_medium_e900b62d {
+    transform: translateY(-50rem);
+    transition: transform 0.2s cubic-bezier(0.1, 0.7, 0.7, 1);
+}
+.Node_medium__select_5747bf8e {
+    filter: brightness(1.2);
+    transform: translateY(-55rem);
+}
+
+.Node_locked_9f64bae1 {
+    filter: brightness(1);
+    transform: translateY(0);
+    transition:
+        filter 0.2s cubic-bezier(0.1, 0.7, 0.7, 1),
+        transform 0.2s cubic-bezier(0.1, 0.7, 0.7, 1);
+}
+.Node_locked__hover_21c32bd5 {
+    filter: brightness(1.2);
+}
+.Node_locked__select_36421fb8 {
+    filter: brightness(1.2);
+    transform: translateY(-5rem);
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.NodesLayer_695feba8,
+.NodesLayer_rewardsLayer_92e5e92 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.NodesLayer_695feba8 {
+    pointer-events: none;
+}
+
+.NodesLayer_node_ea712ea3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.SelectionGlow_130f6443 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.SelectionGlow_130f6443 {
+    background: center/contain;
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.edges.unexplored_edge);
+    background-position: center;
+    opacity: 0;
+    mix-blend-mode: screen;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Edge_background_85458b1,
+.Edge_highlight_6bcede58,
+.Edge_selectionGlow_e067e99 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.Edge_ab06a219 {
+    overflow: hidden;
+}
+
+.Edge_background_85458b1 {
+    background: center/contain;
+}
+.Edge_background__explored_35c792c9 {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.edges.explored_edge);
+}
+.Edge_background__unexplored_f638d78c {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.edges.unexplored_edge);
+}
+.Edge_background__locked_25f4b464 {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.edges.locked_edge);
+}
+.Edge_base__left_87b7aa45 .Edge_background_85458b1,
+.Edge_base__bottom_87b7aa45 .Edge_background_85458b1 {
+    transform: scaleY(-1);
+}
+
+.Edge_highlight_6bcede58 {
+    background: center/contain;
+    opacity: 0;
+    transition: all 0.2s;
+}
+.Edge_base__highlighted_87b7aa45.Edge_base__locked_87b7aa45 .Edge_highlight__enough_fabb2dda {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.edges.locked_edge);
+    opacity: 1;
+    mix-blend-mode: screen;
+}
+.Edge_base__highlighted_87b7aa45.Edge_base__unexplored_87b7aa45 .Edge_highlight__enough_fabb2dda {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.edges.unexplored_edge);
+    opacity: 0.7;
+    mix-blend-mode: screen;
+}
+.Edge_base__highlighted_87b7aa45.Edge_base__locked_87b7aa45 .Edge_highlight__notEnough_5bfc6814 {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.edges.locked_edge);
+    opacity: 0.4;
+    mix-blend-mode: difference;
+}
+.Edge_base__highlighted_87b7aa45.Edge_base__unexplored_87b7aa45 .Edge_highlight__notEnough_5bfc6814 {
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.edges.unexplored_edge);
+    opacity: 0.4;
+    mix-blend-mode: difference;
+}
+
+.Edge_selectionGlow_e067e99 {
+    background: center/contain;
+    background-image: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.edges.unexplored_edge);
+    background-position: center;
+    opacity: 0;
+    mix-blend-mode: screen;
+    animation: Edge_shine_87b7aa45 4s linear infinite;
+    animation-delay: calc(130ms * var(--index));
+}
+
+@keyframes Edge_shine_87b7aa45 {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.NodeEdges_edge_4eb9987a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+}
+.NodeEdges_edge__right_ae0f47c6 {
+    transform: translateY(-50%);
+}
+.NodeEdges_edge__left_38da8109 {
+    transform: rotate(180deg) translateY(-50%);
+}
+.NodeEdges_edge__bottom_75afdce2 {
+    transform: rotate(90deg) translateY(-50%);
+}
+.NodeEdges_edge__top_e3cb7a2c {
+    transform: rotate(-90deg) translateY(-50%);
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.PathsLayer_24252c9e {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.PathsLayer_24252c9e {
+    pointer-events: none;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Pointer_fc8bdb88 {
+    width: 130rem;
+    height: 130rem;
+    background: url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.pointer) no-repeat center/contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Map_d68a04fc {
+    width: 4680rem;
+    height: 2520rem;
+    background: #1b2432 url(R.images.journey_marathon.gui.maps.icons.journeyMarathon.map_view.background) no-repeat
+        center/contain;
+    position: relative;
+}
+
+.Map_video_e09d70e7 {
+    position: absolute;
+}
+.Map_video__confetti_6612c0c1 {
+    width: 1300rem;
+    height: 1300rem;
+    top: 0;
+    left: 0;
+}
+.Map_video__flashlight_a8cf334d {
+    width: 700rem;
+    height: 380rem;
+    bottom: 0;
+    left: 3148rem;
+}
+.Map_video__tea_e249e3db {
+    width: 520rem;
+    height: 350rem;
+    top: 157rem;
+    left: 2876rem;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.App_overlay_dd37fdee {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.App_7c05f8c1 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.App_overlay_dd37fdee {
+    cursor: grabbing;
+}
+.App_base__receivingAnimation_0 .App_overlay_dd37fdee {
+    cursor: default;
+}
+
+.App_header_d8ba7f7d {
+    position: absolute;
+    top: var(--external-padding-top);
+    left: 30rem;
+    transition: all 0.2s;
+}
+.mediaLarge .App_header_d8ba7f7d {
+    left: 48rem;
+}
+.App_base__receivingAnimation_0 .App_header_d8ba7f7d,
+.App_base__mapDragging_0 .App_header_d8ba7f7d {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.App_balance_981638b7 {
+    margin-top: -20rem;
+    position: absolute;
+    top: var(--external-padding-top);
+    right: var(--external-padding-right);
+    transition: opacity 0.2s;
+}
+.mediaExtraLarge .App_balance_981638b7 {
+    margin-top: -30rem;
+}
+.App_base__mapCompleted_0 .App_balance_981638b7 {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.App_navigation_99c57afe {
+    position: absolute;
+    top: 18%;
+    right: 0;
+    bottom: 22%;
+    left: 4rem;
+    transition: all 0.2s;
+}
+.mediaMedium .App_navigation_99c57afe {
+    top: 17%;
+}
+.mediaLarge .App_navigation_99c57afe {
+    top: 16%;
+    bottom: 20%;
+}
+.mediaExtraLarge .App_navigation_99c57afe {
+    top: 14%;
+    bottom: 16%;
+}
+.App_base__receivingAnimation_0 .App_navigation_99c57afe {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.App_banner_b3a09e0c {
+    position: absolute;
+    top: 0rem;
+    left: 30rem;
+}
+.mediaLarge .App_banner_b3a09e0c {
+    left: 48rem;
+}
+.App_base__receivingAnimation_0 .App_banner_b3a09e0c,
+.App_base__mapDragging_0 .App_banner_b3a09e0c {
+    pointer-events: none;
+}
+
+.App_footer_237175bc {
+    box-sizing: border-box;
+    padding-left: var(--external-padding-left);
+    padding-right: var(--external-padding-right);
+    padding-bottom: var(--external-padding-bottom);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all 0.2s;
+}
+.App_base__receivingAnimation_0 .App_footer_237175bc,
+.App_base__mapDragging_0 .App_footer_237175bc {
+    opacity: 0;
+    pointer-events: none;
+}

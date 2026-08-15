@@ -172,7 +172,7 @@
                     T = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function h(u) {
                     let e = '';
-                    for (let t = T.length - 1; t >= 0; t--) for (; u >= T[t]; ) ((e += w[t]), (u -= T[t]));
+                    for (let t = T.length - 1; t >= 0; t--) for (; u >= T[t];) ((e += w[t]), (u -= T[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -201,8 +201,8 @@
                     },
                     M = ['args'];
                 const N = 2,
-                    x = 16,
-                    k = 32,
+                    k = 16,
+                    x = 32,
                     I = 64,
                     U = (u, e) => {
                         const t = 'GFViewEventProxy';
@@ -243,13 +243,13 @@
                     },
                     L = {
                         close(u) {
-                            U('popover' === u ? N : k);
+                            U('popover' === u ? N : x);
                         },
                         minimize() {
                             U(I);
                         },
                         move(u) {
-                            U(x, { isMouseEvent: !0, on: u });
+                            U(k, { isMouseEvent: !0, on: u });
                         },
                     },
                     G = 15;
@@ -1102,7 +1102,7 @@
                         base__left: 'TextButton_base__left_ec79d',
                         shine: 'TextButton_shine_f8873',
                     },
-                    x = [
+                    k = [
                         'caption',
                         'onClick',
                         'goto',
@@ -1116,9 +1116,9 @@
                         'soundHover',
                         'soundClick',
                     ];
-                function k() {
+                function x() {
                     return (
-                        (k = Object.assign
+                        (x = Object.assign
                             ? Object.assign.bind()
                             : function (u) {
                                   for (var e = 1; e < arguments.length; e++) {
@@ -1127,7 +1127,7 @@
                                   }
                                   return u;
                               }),
-                        k.apply(null, arguments)
+                        x.apply(null, arguments)
                     );
                 }
                 const I = (u) => {
@@ -1156,7 +1156,7 @@
                                     t[n] = u[n];
                                 }
                             return t;
-                        })(u, x);
+                        })(u, k);
                     const v = (0, n.useCallback)(
                             (u) => {
                                 (null == i || i(u), p.O.sound.play.sound(D));
@@ -1183,7 +1183,7 @@
                         );
                     return r().createElement(
                         'div',
-                        k(
+                        x(
                             {
                                 className: M()(N.base, N[`base__${F}`], N[`base__${_}`], null == a ? void 0 : a.base),
                                 onMouseEnter: v,
@@ -1605,6 +1605,7 @@
                         X.BattleBoosterGift,
                         X.OptionalDevice,
                         X.Attachment,
+                        X.TmanToken,
                     ],
                     ru = [X.Gold, X.Credits, X.Crystal, X.FreeXp],
                     ou = [X.BattlePassPoints, X.EquipCoin],
@@ -1823,7 +1824,7 @@
                             var r = n[t];
                             if ('number' == typeof r) e[t] = u[r];
                             else {
-                                for (var o = 0; void 0 === u[r[o]] && o + 1 < r.length; ) o++;
+                                for (var o = 0; void 0 === u[r[o]] && o + 1 < r.length;) o++;
                                 e[t] = u[r[o]];
                             }
                             return e;
@@ -1893,7 +1894,7 @@
                 function Fu(u) {
                     const e = [lu(u)];
                     let t = 0;
-                    for (; t < e.length; ) {
+                    for (; t < e.length;) {
                         const u = e[t];
                         if ('string' == typeof u) {
                             const n = _u(/\{(.*)Open\}(.*?)\{\1Close\}/, { tag: 1 }).exec(u);
@@ -1912,7 +1913,7 @@
                                             )
                                         ),
                                     );
-                                for (; a < o.length; ) (o.splice(a, 0, ...i), (a += i.length + 1));
+                                for (; a < o.length;) (o.splice(a, 0, ...i), (a += i.length + 1));
                                 ('' === o[0] && o.splice(0, 1), e.splice(t, 1, ...o));
                             } else if (u.substr(0, u.length - 1).includes(' ')) {
                                 const n = u.split(' ').map((u, e, t) => (t.length - 1 === e ? u : u + ' '));

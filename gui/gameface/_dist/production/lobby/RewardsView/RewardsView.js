@@ -147,9 +147,13 @@
                         if (r.mediumWidth && E) return (0, a.H)(t, r, T);
                         if (r.smallWidth && h) return (0, a.H)(t, r, T);
                         if (r.extraSmallWidth && v) return (0, a.H)(t, r, T);
-                        if (
-                            !(r.extraLargeWidth || r.largeWidth || r.mediumWidth || r.smallWidth || r.extraSmallWidth)
-                        ) {
+                        if (!(
+                            r.extraLargeWidth ||
+                            r.largeWidth ||
+                            r.mediumWidth ||
+                            r.smallWidth ||
+                            r.extraSmallWidth
+                        )) {
                             if (r.extraLargeHeight && p) return t;
                             if (r.largeHeight && w) return t;
                             if (r.mediumHeight && b) return t;
@@ -1828,7 +1832,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function i(e) {
                     let t = '';
-                    for (let r = a.length - 1; r >= 0; r--) for (; e >= a[r]; ) ((t += n[r]), (e -= a[r]));
+                    for (let r = a.length - 1; r >= 0; r--) for (; e >= a[r];) ((t += n[r]), (e -= a[r]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

@@ -504,7 +504,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let A = Tu.length - 1; A >= 0; A--)
-                                      for (; u >= Tu[A]; ) ((e += _u[A]), (u -= Tu[A]));
+                                      for (; u >= Tu[A];) ((e += _u[A]), (u -= Tu[A]));
                                   return e;
                               })(u),
                     Ru = 'TankName_base_c0',
@@ -671,9 +671,13 @@
                         if (A.mediumWidth && a) return Vu(e, A, h);
                         if (A.smallWidth && l) return Vu(e, A, h);
                         if (A.extraSmallWidth && o) return Vu(e, A, h);
-                        if (
-                            !(A.extraLargeWidth || A.largeWidth || A.mediumWidth || A.smallWidth || A.extraSmallWidth)
-                        ) {
+                        if (!(
+                            A.extraLargeWidth ||
+                            A.largeWidth ||
+                            A.mediumWidth ||
+                            A.smallWidth ||
+                            A.extraSmallWidth
+                        )) {
                             if (A.extraLargeHeight && s) return e;
                             if (A.largeHeight && c) return e;
                             if (A.mediumHeight && d) return e;
@@ -822,7 +826,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, A = Ae(E.keys()); !(u = A()).done; ) t(u.value, e);
+                                                        for (var u, A = Ae(E.keys()); !(u = A()).done;) t(u.value, e);
                                                     },
                                                     unsubscribe: t,
                                                 };

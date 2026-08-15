@@ -1,7 +1,7 @@
 import { t as s, j as a, F as e, G as t, H as c } from '../../../../chunks/vendor.js';
-import { i as o, h as r, n, q as i, bv as p, aB as l, bw as d, r as m, U as j } from '../../../../chunks/lib.js';
-import { p as u } from '../../../../chunks/common.js';
-/* empty css                        */ const [x, _] = o()((s) => {
+import { i as o, O as r, n, _ as i, bv as p, aX as l, bw as d, r as m, U as _ } from '../../../../chunks/lib.js';
+import { p as j } from '../../../../chunks/common.js';
+/* empty css                        */ const [u, x] = o()((s) => {
     const a = s.observableModel.primitives(['params', 'type']);
     return {
         type: a.type,
@@ -24,16 +24,16 @@ const h = 'App_21e3a147',
     w = R.images.gui.maps.icons.battleRoyale.artefact.c_80x80,
     S = e({ title: t(), iconName: t(), cooldownSeconds: c(), description: t() }),
     L =
-        (($ = d(S)),
+        ((O = d(S)),
         function () {
-            return _().model.computes.params($);
+            return x().model.computes.params(O);
         });
-var $;
-const q = i.resolve('strings'),
-    B = s(function () {
+var O;
+const $ = i.resolve('strings'),
+    C = s(function () {
         const { title: s, iconName: e, cooldownSeconds: t, description: c } = L(),
-            o = u(q.readOrEmpty('tooltips.battle_royale.hangar.tankSetupPanel.ability.cooldownTime')),
-            r = u(c);
+            o = j($.readOrEmpty('tooltips.battle_royale.hangar.tankSetupPanel.ability.cooldownTime')),
+            r = j(c);
         return a.jsx(p, {
             children: a.jsx(p.Decorator, {
                 children: a.jsx('div', {
@@ -81,4 +81,4 @@ const q = i.resolve('strings'),
             }),
         });
     });
-m(a.jsxs(j, { children: [a.jsx(x, { children: a.jsx(B, {}) }), ','] }));
+m(a.jsxs(_, { children: [a.jsx(u, { children: a.jsx(C, {}) }), ','] }));

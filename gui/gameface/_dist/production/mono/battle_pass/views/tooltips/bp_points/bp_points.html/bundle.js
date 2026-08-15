@@ -1,10 +1,59 @@
-import { j as s, v as e, k as t } from '../../../../chunks/vendor.js';
-import { i as a, N as i, g as r, h as l, n, bY as o, J as d, U as c, d as h } from '../../../../chunks/lib.js';
-import { V as _ } from '../../../../chunks/vehicle_list.js';
-import { W as m } from '../../../../chunks/wot_plus_banner.js';
-import { P as j, a as x } from '../../../../chunks/per_battle_points_table.js';
-import '../../../../chunks/vehicle_info.js';
-const [p, v] = a()(
+import { j as s, w as e, k as t } from '../../../../chunks/vendor.js';
+import {
+    m as i,
+    D as a,
+    i as l,
+    O as n,
+    h as o,
+    j as r,
+    cd as c,
+    J as d,
+    U as h,
+    d as _,
+} from '../../../../chunks/lib.js';
+import { V as j, W as x } from '../../../../chunks/wot_plus_banner.js';
+import { P as m, a as p } from '../../../../chunks/per_battle_points_table.js';
+/* empty css                       */ const v = 'VehicleList_82a6a4d',
+    b = 'VehicleList_info_41a84ef',
+    u = 'VehicleList_points_9c8e2f92',
+    N = 'VehicleList_top_af361d05',
+    f = ({ vehiclesList: e }) => {
+        const t = ({
+            vehicleLevel: e,
+            vehicleName: t,
+            vehicleType: i,
+            vehicleBonus: l,
+            vehicleTop: n,
+            isElite: o,
+        }) => ({
+            vehicle: s.jsx(
+                j,
+                { isElite: o, isSpecial: !0, vehicleLevel: e, vehicleName: t, vehicleType: i },
+                'vehicle',
+            ),
+            bonus: s.jsx(
+                'div',
+                {
+                    className: u,
+                    children: s.jsx(a, { text: R.strings.battle_pass.howToEarnPoints.bonus(), binding: { bonus: l } }),
+                },
+                'bonus',
+            ),
+            top: s.jsx(
+                'div',
+                {
+                    className: N,
+                    children: s.jsx(a, { text: R.strings.battle_pass.points.topCount(), binding: { top: n } }),
+                },
+                'top',
+            ),
+        });
+        return s.jsx('div', {
+            className: v,
+            children: i(e, (e, i) => s.jsx(a, { classMix: b, text: e.textResource, binding: t(e) }, i)),
+        });
+    },
+    [g, w] = l()(
         ({ observableModel: s }) => ({
             ...{
                 ...s.primitives(['isWotPlusShown']),
@@ -12,91 +61,91 @@ const [p, v] = a()(
                 vehiclesList: s.array('vehiclesList'),
             },
         }),
-        i,
+        n,
     ),
-    b = 'Header_a103bd21',
-    u = 'Header_icon_eed746ab',
-    f = 'Header_labels_f416515f',
-    N = 'Header_title_381c9f5b',
-    P = 'Header_subtitle_632b6de',
-    g = R.strings.battle_pass.tooltips.points,
-    w = () =>
+    P = 'Header_a103bd21',
+    C = 'Header_icon_eed746ab',
+    L = 'Header_labels_f416515f',
+    k = 'Header_title_381c9f5b',
+    V = 'Header_subtitle_632b6de',
+    W = R.strings.battle_pass.tooltips.points,
+    S = () =>
         s.jsxs('div', {
-            className: b,
+            className: P,
             children: [
-                s.jsx('div', { className: u }),
+                s.jsx('div', { className: C }),
                 s.jsxs('div', {
-                    className: f,
+                    className: L,
                     children: [
-                        s.jsx('div', { className: N, children: g.title() }),
-                        s.jsx('div', { className: P, children: g.subtitle() }),
+                        s.jsx('div', { className: k, children: W.title() }),
+                        s.jsx('div', { className: V, children: W.subtitle() }),
                     ],
                 }),
             ],
         }),
-    C = 'Points_2d36306a',
-    k = 'Points_separator_162767d5',
-    W = 'Points_105728d0',
-    H = 'Points_table_eac25b11',
-    S = e(() => {
-        const { model: e } = v(),
+    H = 'Points_2d36306a',
+    y = 'Points_separator_162767d5',
+    T = 'Points_105728d0',
+    E = 'Points_table_eac25b11',
+    B = e(() => {
+        const { model: e } = w(),
             t = e.rewardPoints.get(),
-            a = e.isWotPlusShown.get(),
-            { breakpoint: i } = r();
+            i = e.isWotPlusShown.get(),
+            { breakpoint: a } = o();
         return s.jsxs('div', {
-            className: C,
+            className: H,
             children: [
-                s.jsx('div', { className: k }),
+                s.jsx('div', { className: y }),
                 s.jsx('div', {
-                    className: W,
-                    children: s.jsx(j, {
+                    className: T,
+                    children: s.jsx(m, {
                         showSeparator: !1,
                         stretchBg: !0,
                         separatorRows: t.items,
-                        mixClass: H,
-                        children: s.jsx(x, {
-                            tableColumnWidth: i.weight < l.small.weight ? 210 : 230,
+                        mixClass: E,
+                        children: s.jsx(p, {
+                            tableColumnWidth: a.weight < r.small.weight ? 210 : 230,
                             rewardPoints: t,
-                            hasAdditionalPoints: a,
+                            hasAdditionalPoints: i,
                         }),
                     }),
                 }),
             ],
         });
     }),
-    L = 'Content_d4d03eba',
-    V = 'Content_separator_774f59ff',
-    y = 'Content_subtitleRules_2104a67e',
-    A = 'Content_subtitleVehicles_ead57094',
-    B = 'Content_pointsWrapper_21e79339',
-    D = 'Content_footerSeparator_a66c0c84',
-    F = 'Content_footer_92eb1524',
-    J = 'Content_footer__offset_9202885e',
-    M = R.strings.battle_pass.tooltips.points,
-    U = e(() => {
-        const { model: e } = v(),
-            { items: a } = e.vehiclesList.get(),
-            i = e.isWotPlusShown.get();
+    D = 'Content_d4d03eba',
+    M = 'Content_separator_774f59ff',
+    A = 'Content_subtitleRules_2104a67e',
+    F = 'Content_subtitleVehicles_ead57094',
+    J = 'Content_pointsWrapper_21e79339',
+    O = 'Content_footerSeparator_a66c0c84',
+    U = 'Content_footer_92eb1524',
+    q = 'Content_footer__offset_9202885e',
+    z = R.strings.battle_pass.tooltips.points,
+    G = e(() => {
+        const { model: e } = w(),
+            { items: i } = e.vehiclesList.get(),
+            l = e.isWotPlusShown.get();
         return s.jsxs('div', {
-            className: L,
+            className: D,
             children: [
-                s.jsx(w, {}),
-                s.jsx('div', { className: y, children: M.rules() }),
+                s.jsx(S, {}),
+                s.jsx('div', { className: A, children: z.rules() }),
                 s.jsxs('div', {
-                    className: B,
-                    children: [s.jsx(S, {}), i && s.jsx(m, {}), s.jsx('div', { className: V })],
+                    className: J,
+                    children: [s.jsx(B, {}), l && s.jsx(x, {}), s.jsx('div', { className: M })],
                 }),
-                a.length > 0 &&
+                i.length > 0 &&
                     s.jsxs(s.Fragment, {
                         children: [
-                            s.jsx('div', { className: A, children: M.specialVehicles() }),
-                            s.jsx(_, { vehiclesList: a }),
-                            s.jsx('div', { className: D, children: s.jsx('div', { className: V }) }),
+                            s.jsx('div', { className: F, children: z.specialVehicles() }),
+                            s.jsx(f, { vehiclesList: i }),
+                            s.jsx('div', { className: O, children: s.jsx('div', { className: M }) }),
                         ],
                     }),
-                s.jsx('div', { className: t(F, !a.length && J), children: s.jsx(n, { text: M.footer() }) }),
+                s.jsx('div', { className: t(U, !i.length && q), children: s.jsx(a, { text: z.footer() }) }),
             ],
         });
     }),
-    Y = () => s.jsx(o, { children: s.jsx(o.Decorator, { children: s.jsx(U, {}) }) });
-h(new d().add(c).addWithProps(p, {}).render(s.jsx(Y, {})));
+    I = () => s.jsx(c, { children: s.jsx(c.Decorator, { children: s.jsx(G, {}) }) });
+_(new d().add(h).addWithProps(g, {}).render(s.jsx(I, {})));

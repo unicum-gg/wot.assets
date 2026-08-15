@@ -431,7 +431,7 @@
                     i = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(u) {
                     let e = '';
-                    for (let t = i.length - 1; t >= 0; t--) for (; u >= i[t]; ) ((e += n[t]), (u -= i[t]));
+                    for (let t = i.length - 1; t >= 0; t--) for (; u >= i[t];) ((e += n[t]), (u -= i[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -934,9 +934,13 @@
                         if (t.mediumWidth && F) return l(e, t, v);
                         if (t.smallWidth && A) return l(e, t, v);
                         if (t.extraSmallWidth && B) return l(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && g) return e;
@@ -1153,7 +1157,7 @@
                             t = H(e);
                         let n,
                             i = u;
-                        for (; null !== (n = L.exec(u)); ) {
+                        for (; null !== (n = L.exec(u));) {
                             const u = n[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (u) {
                                 const e = t + u[2].replace(/\.\.\//g, '');
@@ -1260,7 +1264,7 @@
                                             let e;
                                             const t = V(),
                                                 n = H(t);
-                                            for (; null !== (e = M.exec(u)); ) {
+                                            for (; null !== (e = M.exec(u));) {
                                                 const u = e[0].match(/href="(.*?)"/);
                                                 if (u && !u[1].includes(N) && n) {
                                                     const e = n + u[1].replace(/\.\.\//g, ''),
@@ -1275,7 +1279,7 @@
                                             ((u) => {
                                                 const e = H(V());
                                                 let t;
-                                                for (; null !== (t = M.exec(u)); ) {
+                                                for (; null !== (t = M.exec(u));) {
                                                     const u = t[0].match(/href="(.*?)"/);
                                                     if (u) {
                                                         const t = e + u[1].replace(/\.\.\//g, ''),

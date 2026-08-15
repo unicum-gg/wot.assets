@@ -172,7 +172,7 @@
                     f = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function w(e) {
                     let u = '';
-                    for (let t = f.length - 1; t >= 0; t--) for (; e >= f[t]; ) ((u += y[t]), (e -= f[t]));
+                    for (let t = f.length - 1; t >= 0; t--) for (; e >= f[t];) ((u += y[t]), (e -= f[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1818,7 +1818,7 @@
                                     const u = a[e] || '',
                                         t = d[A] || '';
                                     if (u.match(E) || u === t) {
-                                        for (; u !== d[A] && A < d.length; ) A++;
+                                        for (; u !== d[A] && A < d.length;) A++;
                                         A++;
                                     }
                                 }
@@ -1847,8 +1847,8 @@
                                 if (s) return;
                                 let l = c;
                                 const _ = o.test(a[c]);
-                                if (t && _) for (; o.test(a[l]) && l < a.length; ) l++;
-                                if (u && _) for (; o.test(a[l]) && l > 0; ) l--;
+                                if (t && _) for (; o.test(a[l]) && l < a.length;) l++;
+                                if (u && _) for (; o.test(a[l]) && l > 0;) l--;
                                 if (l !== c || (u && _))
                                     return (e.preventDefault(), (l = l < 0 ? 0 : l), void this.setCursorPosition(l, l));
                                 ((u && 1 === i && 1 === a.length) || t) &&

@@ -480,9 +480,13 @@
                         if (n.mediumWidth && b) return (0, r.H)(t, n, C);
                         if (n.smallWidth && E) return (0, r.H)(t, n, C);
                         if (n.extraSmallWidth && f) return (0, r.H)(t, n, C);
-                        if (
-                            !(n.extraLargeWidth || n.largeWidth || n.mediumWidth || n.smallWidth || n.extraSmallWidth)
-                        ) {
+                        if (!(
+                            n.extraLargeWidth ||
+                            n.largeWidth ||
+                            n.mediumWidth ||
+                            n.smallWidth ||
+                            n.extraSmallWidth
+                        )) {
                             if (n.extraLargeHeight && p) return t;
                             if (n.largeHeight && v) return t;
                             if (n.mediumHeight && h) return t;
@@ -1219,7 +1223,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, n = r(l.keys()); !(e = n()).done; ) {
+                            for (var e, n = r(l.keys()); !(e = n()).done;) {
                                 o(e.value, t);
                             }
                         },
@@ -2138,7 +2142,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function i(e) {
                     let t = '';
-                    for (let n = r.length - 1; n >= 0; n--) for (; e >= r[n]; ) ((t += a[n]), (e -= r[n]));
+                    for (let n = r.length - 1; n >= 0; n--) for (; e >= r[n];) ((t += a[n]), (e -= r[n]));
                     return t;
                 }
                 const s = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -3135,7 +3139,7 @@
                                             t(e).delete(n);
                                         },
                                         r = (e, ...n) => {
-                                            for (var a, r = M(t(e).values()); !(a = r()).done; ) (0, a.value)(...n);
+                                            for (var a, r = M(t(e).values()); !(a = r()).done;) (0, a.value)(...n);
                                         };
                                     return (0, s.useMemo)(() => ({ on: n, off: a, trigger: r }), []);
                                 })(),
@@ -3953,7 +3957,7 @@
                     Ze = (e, t, n, a) => {
                         let r = t.exec(e),
                             i = 0;
-                        for (; r; ) (i !== r.index && n(e.slice(i, r.index)), a(r), (i = t.lastIndex), (r = t.exec(e)));
+                        for (; r;) (i !== r.index && n(e.slice(i, r.index)), a(r), (i = t.lastIndex), (r = t.exec(e)));
                         i !== e.length && n(e.slice(i));
                     },
                     qe = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -3999,7 +4003,7 @@
                               if (!a) return [e];
                               const r = [];
                               let i = 0;
-                              for (; a; ) {
+                              for (; a;) {
                                   const s = t.justifyContent === Ie.FlexEnd ? a.index : n.lastIndex;
                                   (r.push(e.slice(i, s)), (i = s), (a = n.exec(e)));
                               }
@@ -4044,7 +4048,9 @@
                     },
                     Ke = (e, t, n = '', a) => {
                         const r = [],
-                            i = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            i = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             Ze(
                                 i,
@@ -4174,7 +4180,7 @@
                             c = ((e, t) => {
                                 let n = 0,
                                     a = e.length - 1;
-                                for (; a - n >= 0; ) {
+                                for (; a - n >= 0;) {
                                     const r = n + Math.ceil(0.5 * (a - n));
                                     tt(e[r], t) ? (a = r - 1) : (n = r + 1);
                                 }
@@ -5382,6 +5388,9 @@
                                         }
                                     );
                             }, [q, Q]),
+                                (0, s.useEffect)(() => {
+                                    !V && q && Q();
+                                }, [V, q, Q]),
                                 (0, s.useEffect)(() => {
                                     void 0 !== E && (P.current.open = E);
                                 }, [E]));
@@ -6640,7 +6649,7 @@
                         i.size
                             ? s ||
                               (s = window.setInterval(() => {
-                                  for (var e, t = a(i.values()); !(e = t()).done; ) {
+                                  for (var e, t = a(i.values()); !(e = t()).done;) {
                                       (0, e.value)();
                                   }
                               }, 5e3))

@@ -1,10 +1,10 @@
 import { p as s, j as a } from '../../../chunks/vendor.js';
 import { i as e, n as t, r as i, a as l, P as d, b as n, U as r } from '../../../chunks/lib.js';
 const [o, c] = e()(({ observableModel: s }) => ({ primitives: s.primitives(['currentProgress']) }), t),
-    p = 'BattleLoadingApp_b9007f71',
-    g = 'BattleLoadingApp_vignette_8978ecaa',
-    _ = 'BattleLoadingApp_shadow_1e8ca397',
-    m = 'BattleLoadingApp_bgImage_b59d6fa2',
+    p = 'BattleLoadingApp_vignette_d2733c95',
+    g = 'BattleLoadingApp_bgImage_412d6da0',
+    _ = 'BattleLoadingApp_b9007f71',
+    m = 'BattleLoadingApp_shadow_1e8ca397',
     v = 'BattleLoadingApp_block_5da94649',
     j = 'BattleLoadingApp_title_85c5d646',
     b = 'BattleLoadingApp_description_15a2f0f9',
@@ -16,16 +16,16 @@ const [o, c] = e()(({ observableModel: s }) => ({ primitives: s.primitives(['cur
         const { model: s } = c(),
             e = s.primitives.currentProgress.get();
         return a.jsxs('div', {
-            className: p,
+            className: _,
             children: [
                 a.jsx('div', {
-                    className: m,
+                    className: g,
                     style: {
                         backgroundImage: `url('R.images.last_stand.gui.maps.icons.battle.eventLoading.tips.tipBg_${B}')`,
                     },
                 }),
-                a.jsx('div', { className: g }),
-                a.jsx('div', { className: _ }),
+                a.jsx('div', { className: p }),
+                a.jsx('div', { className: m }),
                 a.jsxs('div', {
                     className: v,
                     children: [

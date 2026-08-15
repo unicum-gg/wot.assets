@@ -1,17 +1,17 @@
 import { q as e, j as s, f as n } from '../../../../chunks/vendor.js';
 import {
     i as o,
-    v as t,
+    n as t,
     I as a,
-    F as i,
-    A as r,
+    q as i,
+    p as r,
     L as l,
     S as c,
     H as m,
     M as _,
-    E as p,
+    A as p,
     ay as d,
-    C as h,
+    t as h,
     d as x,
 } from '../../../../chunks/lib.js';
 import { G as j } from '../../../../chunks/gradient_decorator.js';
@@ -52,8 +52,8 @@ import { M as u } from '../../../../chunks/enums.js';
         });
     }),
     I = 'roles',
-    C = 'vehicleTypes',
-    B = { [I]: 'personal_missions_30.common.role', [C]: 'menu.header.vehicleType' },
+    B = 'vehicleTypes',
+    C = { [I]: 'personal_missions_30.common.role', [B]: 'menu.header.vehicleType' },
     L = {
         base: 'ColumnItem_f772e009',
         base__roles: 'ColumnItem_base__roles_fabefe49',
@@ -65,7 +65,7 @@ function $({ item: e, contentType: o = 'roles', className: t }) {
         className: n(L.base, L[`base__${o}`], t),
         children: [
             s.jsx(a, { path: `personal_missions_30.common.${o}.${r(e)}`, className: L.icon }),
-            s.jsx(i, { className: L.text, path: `${B[o]}.${r(e)}` }),
+            s.jsx(i, { className: L.text, path: `${C[o]}.${r(e)}` }),
         ],
     });
 }
@@ -173,8 +173,8 @@ const R = 'assault',
         });
     }),
     U = 'MissionsCategoryTooltip_c7151f3b',
-    O = 'MissionsCategoryTooltip_footer_e1c7b92d',
-    q = e(function () {
+    q = 'MissionsCategoryTooltip_footer_e1c7b92d',
+    O = e(function () {
         const { model: e } = y();
         return s.jsx(d, {
             className: U,
@@ -191,10 +191,10 @@ const R = 'assault',
                             maxLevel: h(e.maxLevel.get()),
                         },
                         split: !0,
-                        className: O,
+                        className: q,
                     }),
                 ],
             }),
         });
     });
-x(s.jsx(b, { children: s.jsx(q, {}) }));
+x(s.jsx(b, { children: s.jsx(O, {}) }));

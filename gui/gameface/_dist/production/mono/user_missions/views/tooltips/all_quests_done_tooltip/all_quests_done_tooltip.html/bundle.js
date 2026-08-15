@@ -1,5 +1,5 @@
 import { j as s } from '../../../../chunks/vendor.js';
-import { i as e, n as o, b as i, r as t } from '../../../../chunks/lib.js';
+import { i as e, n as o, r as i, c as t } from '../../../../chunks/lib.js';
 import { E as r } from '../../../../chunks/extended_tooltip_decorator.js';
 /* empty css                       */ import '../../../../chunks/divider.js';
 const [n, d] = e()(({ observableModel: s }) => ({ ...s.primitives(['countdown']) }), o),

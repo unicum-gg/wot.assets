@@ -480,9 +480,13 @@
                         if (n.mediumWidth && b) return (0, r.H)(t, n, y);
                         if (n.smallWidth && E) return (0, r.H)(t, n, y);
                         if (n.extraSmallWidth && p) return (0, r.H)(t, n, y);
-                        if (
-                            !(n.extraLargeWidth || n.largeWidth || n.mediumWidth || n.smallWidth || n.extraSmallWidth)
-                        ) {
+                        if (!(
+                            n.extraLargeWidth ||
+                            n.largeWidth ||
+                            n.mediumWidth ||
+                            n.smallWidth ||
+                            n.extraSmallWidth
+                        )) {
                             if (n.extraLargeHeight && f) return t;
                             if (n.largeHeight && v) return t;
                             if (n.mediumHeight && h) return t;
@@ -1219,7 +1223,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, n = r(o.keys()); !(e = n()).done; ) {
+                            for (var e, n = r(o.keys()); !(e = n()).done;) {
                                 u(e.value, t);
                             }
                         },
@@ -2179,7 +2183,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function s(e) {
                     let t = '';
-                    for (let n = r.length - 1; n >= 0; n--) for (; e >= r[n]; ) ((t += a[n]), (e -= r[n]));
+                    for (let n = r.length - 1; n >= 0; n--) for (; e >= r[n];) ((t += a[n]), (e -= r[n]));
                     return t;
                 }
                 const i = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -3039,7 +3043,7 @@
                     X = (e, t, n, a) => {
                         let r = t.exec(e),
                             s = 0;
-                        for (; r; ) (s !== r.index && n(e.slice(s, r.index)), a(r), (s = t.lastIndex), (r = t.exec(e)));
+                        for (; r;) (s !== r.index && n(e.slice(s, r.index)), a(r), (s = t.lastIndex), (r = t.exec(e)));
                         s !== e.length && n(e.slice(s));
                     },
                     Y = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -3085,7 +3089,7 @@
                               if (!a) return [e];
                               const r = [];
                               let s = 0;
-                              for (; a; ) {
+                              for (; a;) {
                                   const i = t.justifyContent === L.FlexEnd ? a.index : n.lastIndex;
                                   (r.push(e.slice(s, i)), (s = i), (a = n.exec(e)));
                               }
@@ -3130,7 +3134,9 @@
                     },
                     ee = (e, t, n = '', a) => {
                         const r = [],
-                            s = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            s = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             X(
                                 s,
@@ -3260,7 +3266,7 @@
                             c = ((e, t) => {
                                 let n = 0,
                                     a = e.length - 1;
-                                for (; a - n >= 0; ) {
+                                for (; a - n >= 0;) {
                                     const r = n + Math.ceil(0.5 * (a - n));
                                     ae(e[r], t) ? (a = r - 1) : (n = r + 1);
                                 }
@@ -4296,7 +4302,7 @@
                             t(e).delete(n);
                         },
                         r = (e, ...n) => {
-                            for (var a, r = gn(t(e).values()); !(a = r()).done; ) {
+                            for (var a, r = gn(t(e).values()); !(a = r()).done;) {
                                 (0, a.value)(...n);
                             }
                         };
@@ -6238,7 +6244,7 @@
                         s.size
                             ? i ||
                               (i = window.setInterval(() => {
-                                  for (var e, t = a(s.values()); !(e = t()).done; ) {
+                                  for (var e, t = a(s.values()); !(e = t()).done;) {
                                       (0, e.value)();
                                   }
                               }, 5e3))

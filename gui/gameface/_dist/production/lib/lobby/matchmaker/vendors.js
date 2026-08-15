@@ -657,7 +657,7 @@
                             void 0 !== t.threshold && (this.threshold = t.threshold)));
                 }
                 applyToElement(e) {
-                    for (var t, W = B(this.getBlocks(e)); !(t = W()).done; ) {
+                    for (var t, W = B(this.getBlocks(e)); !(t = W()).done;) {
                         const e = t.value;
                         (o(e.hasText()), this.applyToParagraph(e));
                     }
@@ -686,11 +686,11 @@
                     const U = !t || W === i,
                         r = U ? new h(e) : t;
                     o(r);
-                    for (var n, p = B(e.childNodes); !(n = p()).done; ) {
+                    for (var n, p = B(e.childNodes); !(n = p()).done;) {
                         const e = n.value;
                         switch (e.nodeType) {
                             case s:
-                                for (var f, g = B(this.getBlocks(e, r)); !(f = g()).done; ) {
+                                for (var f, g = B(this.getBlocks(e, r)); !(f = g()).done;) {
                                     const e = f.value;
                                     yield e;
                                 }
@@ -710,7 +710,7 @@
                     if ((o(U.length > 0), o(U.reduce((e, t) => e + t.length, 0) === W.length), U.length <= 1)) return;
                     const r = [];
                     let n = 0;
-                    for (var s, a = B(U); !(s = a()).done; ) {
+                    for (var s, a = B(U); !(s = a()).done;) {
                         const e = s.value;
                         (o(e.length > 0), (n += e.length), r.push(n));
                     }
@@ -729,7 +729,7 @@
                         r = t[0];
                     o(r > 0);
                     let n = 0;
-                    for (var s, a = B(e); !(s = a()).done; ) {
+                    for (var s, a = B(e); !(s = a()).done;) {
                         const e = s.value,
                             W = e.nodeValue;
                         if (!W) continue;
@@ -740,7 +740,7 @@
                         }
                         const a = [];
                         let l = 0;
-                        for (; r < B; ) {
+                        for (; r < B;) {
                             const e = r - n;
                             (o(e >= l), a.push(W.substring(l, e)), (l = e), ++U, o(t[U] > r), (r = t[U]));
                         }
@@ -754,7 +754,7 @@
                     if ('string' == typeof W) return void (e.nodeValue = t.join(W));
                     const U = e.ownerDocument;
                     let r = [];
-                    for (var n, s = B(t); !(n = s()).done; ) {
+                    for (var n, s = B(t); !(n = s()).done;) {
                         const e = n.value;
                         (e && r.push(U.createTextNode(e)), r.push(null));
                     }
@@ -888,7 +888,7 @@
                         .map(([e, t]) => `${e}:${t}`);
                 }
                 static hasChildTextNode(e) {
-                    for (var t, W = O(e.childNodes); !(t = W()).done; ) {
+                    for (var t, W = O(e.childNodes); !(t = W()).done;) {
                         if (t.value.nodeType === m) return !0;
                     }
                     return !1;

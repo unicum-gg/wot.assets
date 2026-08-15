@@ -172,7 +172,7 @@
                     g = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function y(u) {
                     let e = '';
-                    for (let t = g.length - 1; t >= 0; t--) for (; u >= g[t]; ) ((e += h[t]), (u -= g[t]));
+                    for (let t = g.length - 1; t >= 0; t--) for (; u >= g[t];) ((e += h[t]), (u -= g[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1527,7 +1527,7 @@
                             var r = n[t];
                             if ('number' == typeof r) e[t] = u[r];
                             else {
-                                for (var o = 0; void 0 === u[r[o]] && o + 1 < r.length; ) o++;
+                                for (var o = 0; void 0 === u[r[o]] && o + 1 < r.length;) o++;
                                 e[t] = u[r[o]];
                             }
                             return e;
@@ -1597,7 +1597,7 @@
                 function Du(u) {
                     const e = [Au(u)];
                     let t = 0;
-                    for (; t < e.length; ) {
+                    for (; t < e.length;) {
                         const u = e[t];
                         if ('string' == typeof u) {
                             const n = cu(/\{(.*)Open\}(.*?)\{\1Close\}/, { tag: 1 }).exec(u);
@@ -1616,7 +1616,7 @@
                                             )
                                         ),
                                     );
-                                for (; i < o.length; ) (o.splice(i, 0, ...a), (i += a.length + 1));
+                                for (; i < o.length;) (o.splice(i, 0, ...a), (i += a.length + 1));
                                 ('' === o[0] && o.splice(0, 1), e.splice(t, 1, ...o));
                             } else if (u.substr(0, u.length - 1).includes(' ')) {
                                 const n = u.split(' ').map((u, e, t) => (t.length - 1 === e ? u : u + ' '));

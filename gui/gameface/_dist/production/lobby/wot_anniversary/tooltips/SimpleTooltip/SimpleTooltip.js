@@ -163,7 +163,7 @@
                     O = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function S(u) {
                     let F = '';
-                    for (let A = O.length - 1; A >= 0; A--) for (; u >= O[A]; ) ((F += T[A]), (u -= O[A]));
+                    for (let A = O.length - 1; A >= 0; A--) for (; u >= O[A];) ((F += T[A]), (u -= O[A]));
                     return F;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -532,7 +532,7 @@
                         let D = Ru.exec(u),
                             B = u,
                             n = 0;
-                        for (; D; ) {
+                        for (; D;) {
                             const A = D[0],
                                 t = Pu.exec(A),
                                 r = ku.exec(A),
@@ -652,7 +652,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, A = Lu(E.keys()); !(u = A()).done; ) D(u.value, F);
+                                                        for (var u, A = Lu(E.keys()); !(u = A()).done;) D(u.value, F);
                                                     },
                                                     unsubscribe: D,
                                                 };

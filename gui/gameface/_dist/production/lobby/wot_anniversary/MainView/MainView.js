@@ -431,7 +431,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function r(e) {
                     let u = '';
-                    for (let t = a.length - 1; t >= 0; t--) for (; e >= a[t]; ) ((u += n[t]), (e -= a[t]));
+                    for (let t = a.length - 1; t >= 0; t--) for (; e >= a[t];) ((u += n[t]), (e -= a[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -924,9 +924,13 @@
                         if (t.mediumWidth && _) return r(u, t, v);
                         if (t.smallWidth && F) return r(u, t, v);
                         if (t.extraSmallWidth && D) return r(u, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && p) return u;
                             if (t.largeHeight && g) return u;
                             if (t.mediumHeight && h) return u;
@@ -2032,7 +2036,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = Te(a.keys()); !(e = t()).done; ) r(e.value, u);
+                                                        for (var e, t = Te(a.keys()); !(e = t()).done;) r(e.value, u);
                                                     },
                                                     unsubscribe: r,
                                                 };
@@ -3068,7 +3072,7 @@
                                     u(e).delete(t);
                                 },
                                 o = (e, ...t) => {
-                                    for (var n, a = Ku(u(e).values()); !(n = a()).done; ) (0, n.value)(...t);
+                                    for (var n, a = Ku(u(e).values()); !(n = a()).done;) (0, n.value)(...t);
                                 };
                             return (0, n.useMemo)(() => ({ on: t, once: a, off: r, trigger: o }), []);
                         })(),
@@ -4593,7 +4597,7 @@
                         let i = gn.exec(e),
                             s = e,
                             l = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 n = hn.exec(t),
                                 c = Cn.exec(t),

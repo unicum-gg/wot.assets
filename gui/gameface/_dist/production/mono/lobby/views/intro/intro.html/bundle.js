@@ -1,31 +1,48 @@
 import { j as e, e as s, m as a } from '../../../chunks/vendor.js';
-import { F as t, i as r, h as c, f as i, T as n, l, o, C as d, j as m, U as _, n as x } from '../../../chunks/lib.js';
+import {
+    F as t,
+    i as r,
+    h as c,
+    f as i,
+    T as n,
+    D as l,
+    E as o,
+    C as d,
+    j as m,
+    U as _,
+    n as x,
+} from '../../../chunks/lib.js';
 import { B as p } from '../../../chunks/background.js';
 import { g as j } from '../../../chunks/resources.js';
 import { A as u, a as N } from '../../../chunks/arrow.js';
-const b = 'IntroCard_3fb7822b',
-    g = 'IntroCard_image_90f7189',
+const g = 'IntroCard_3fb7822b',
+    b = 'IntroCard_image_90f7189',
     k = 'IntroCard_cardTitle_8314c32d',
     f = 'IntroCard_description_311a8e9a';
 function h({ children: a, description: r, image: c, title: i, bundleName: n = '', className: l = '', classNames: o }) {
     return e.jsxs('div', {
-        className: s(b, l),
+        className: s(g, l),
         children: [
-            e.jsx('div', { className: s(g, o?.image), style: { backgroundImage: c } }),
+            e.jsx('div', { className: s(b, o?.image), style: { backgroundImage: c } }),
             e.jsx('div', { className: s(k, o?.title), children: i }),
             e.jsx(t, { className: s(f, o?.description), text: r, params: { eventName: n } }),
             a,
         ],
     });
 }
-const C = 'Link_6b3c3cc0',
-    v = 'Link_linkText_49aa663f',
-    A = 'Link_linkAsset_375c69fe';
+const C = 'Link_f4d8f841',
+    A = 'Link_linkText_e5373f66',
+    v = 'Link_linkAsset_375c69fe';
 function I({ text: a, image: r, linkClick: c, className: i = '' }) {
-    return e.jsxs('div', {
+    return e.jsx('div', {
         className: s(C, i),
         onClick: c,
-        children: [e.jsx(t, { className: v, text: a }), e.jsx('div', { className: A, style: { backgroundImage: r } })],
+        children: e.jsx(t, {
+            className: A,
+            text: a,
+            params: { icon: e.jsx('span', { className: v, style: { backgroundImage: r } }) },
+            split: !0,
+        }),
     });
 }
 const [T, y] = r()(
@@ -37,8 +54,8 @@ const [T, y] = r()(
     ),
     L = 'Footer_65c52b9c',
     w = 'Footer_arrows_8549b7b9',
-    F = 'Footer_button_a51e1377',
-    H = a(function ({ className: a = '' }) {
+    E = 'Footer_button_a51e1377',
+    F = a(function ({ className: a = '' }) {
         const { model: t, controls: r } = y(),
             { bundleType: n } = t.root.get(),
             { getText: l, getExtImage: o } = j(n);
@@ -46,13 +63,13 @@ const [T, y] = r()(
             className: s(L, a),
             children: [
                 e.jsx(u, { image: o('main.header.arrow'), className: w }),
-                e.jsx(c, { className: F, size: i.medium, onClick: r.close, children: l('entryPoint.button') }),
+                e.jsx(c, { className: E, size: i.medium, onClick: r.close, children: l('entryPoint.button') }),
                 e.jsx(u, { image: o('main.header.arrow'), side: N.right, className: w }),
             ],
         });
     }),
-    $ = 'Header_71860ac',
-    E = 'Header_timerInfo_349b680',
+    H = 'Header_71860ac',
+    $ = 'Header_timerInfo_349b680',
     z = 'Header_timer_381a16e0',
     B = 'Header_title_db08c631',
     M = a(function ({ className: a = '' }) {
@@ -60,10 +77,10 @@ const [T, y] = r()(
             { timeLeft: c, bundleType: i } = r.root.get(),
             { getText: o } = j(i);
         return e.jsxs('div', {
-            className: s($, a),
+            className: s(H, a),
             children: [
                 e.jsx(t, {
-                    className: E,
+                    className: $,
                     text: o('intro.timer'),
                     params: { timer: e.jsx(n, { start: c, classNames: { label: z }, size: l.x32x32 }) },
                 }),
@@ -71,12 +88,12 @@ const [T, y] = r()(
             ],
         });
     }),
-    P = 'App_c2a1a7d4',
-    S = 'App_background_55f1a395',
-    U = 'App_header_f27f8500',
-    W = 'App_footer_bd96d566',
-    q = 'App_cardsWrapper_cb654453',
-    D = 'App_card_be821af5',
+    D = 'App_c2a1a7d4',
+    P = 'App_background_55f1a395',
+    S = 'App_header_f27f8500',
+    U = 'App_footer_bd96d566',
+    W = 'App_cardsWrapper_cb654453',
+    q = 'App_card_be821af5',
     G = 'App_link_f0b59ee5',
     J = 'App_closeButton_f5179698',
     K = a(function () {
@@ -86,31 +103,31 @@ const [T, y] = r()(
         return (
             o(a.close),
             e.jsxs('div', {
-                className: P,
+                className: D,
                 children: [
-                    e.jsx(p, { image: r('intro.background'), className: S }),
-                    e.jsx(M, { className: U }),
+                    e.jsx(p, { image: r('intro.background'), className: P }),
+                    e.jsx(M, { className: S }),
                     e.jsxs('div', {
-                        className: q,
+                        className: W,
                         children: [
                             e.jsx(h, {
                                 description: c('intro.cards.description.c_1'),
                                 image: `url(${r('intro.c_1')})`,
                                 title: c('intro.cards.title.c_1'),
                                 bundleName: c('bundle.name'),
-                                className: D,
+                                className: q,
                             }),
                             e.jsx(h, {
                                 description: c('intro.cards.description.c_2'),
                                 image: `url(${r('intro.c_2')})`,
                                 title: c('intro.cards.title.c_2'),
-                                className: D,
+                                className: q,
                             }),
                             e.jsx(h, {
                                 description: c('intro.cards.description.c_3'),
                                 image: `url(${r('intro.c_3')})`,
                                 title: c('intro.cards.title.c_3'),
-                                className: D,
+                                className: q,
                                 children: e.jsx(I, {
                                     linkClick: a.linkClick,
                                     text: c('intro.cards.link'),
@@ -120,7 +137,7 @@ const [T, y] = r()(
                             }),
                         ],
                     }),
-                    e.jsx(H, { className: W }),
+                    e.jsx(F, { className: U }),
                     e.jsx(d, { className: J, onClose: a.close }),
                 ],
             })

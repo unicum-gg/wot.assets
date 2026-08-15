@@ -383,7 +383,7 @@
                     o = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function r(e) {
                     let u = '';
-                    for (let t = o.length - 1; t >= 0; t--) for (; e >= o[t]; ) ((u += n[t]), (e -= o[t]));
+                    for (let t = o.length - 1; t >= 0; t--) for (; e >= o[t];) ((u += n[t]), (e -= o[t]));
                     return u;
                 }
                 const a = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -3599,6 +3599,9 @@
                                         }
                                     );
                             }, [U, K]),
+                                (0, r.useEffect)(() => {
+                                    !j && U && K();
+                                }, [j, U, K]),
                                 (0, r.useEffect)(() => {
                                     void 0 !== F && (N.current.open = F);
                                 }, [F]));

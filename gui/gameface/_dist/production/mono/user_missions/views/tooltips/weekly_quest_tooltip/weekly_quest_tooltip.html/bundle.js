@@ -1,16 +1,16 @@
-import { q as s, j as e } from '../../../../chunks/vendor.js';
+import { s, j as e } from '../../../../chunks/vendor.js';
 import {
     i as o,
-    m as i,
-    K as a,
-    L as r,
-    p as t,
+    m as a,
+    a0 as i,
+    a1 as r,
+    Q as t,
     n,
-    S as l,
-    b as d,
-    d as m,
-    R as c,
-    r as p,
+    a2 as l,
+    r as d,
+    a as m,
+    a3 as c,
+    c as p,
 } from '../../../../chunks/lib.js';
 import { D as u } from '../../../../chunks/divider.js';
 import { E as y } from '../../../../chunks/extended_tooltip_decorator.js';
@@ -22,13 +22,13 @@ const [j, k] = o()(
             specConditions: s.transform((s) => _(s), 'specialConditionIds'),
             rewards: s.transform(
                 (s) =>
-                    i(s, (s) => {
+                    a(s, (s) => {
                         return {
                             size: t.Small,
                             name: s.name,
                             image: r(s, t.Small),
                             value: s.value,
-                            valueType: a(s.name),
+                            valueType: i(s.name),
                             special:
                                 'overlayType' in s &&
                                 ((e = s.overlayType),
@@ -47,8 +47,8 @@ const [j, k] = o()(
     f = 'WeeklyQuestTooltip_specConditions_dc19d553',
     h = 'WeeklyQuestTooltip_divider_18712a6c',
     T = 'WeeklyQuestTooltip_blockTitle_31eb440a',
-    b = 'WeeklyQuestTooltip_rewards_b03f0c37',
-    x = 'WeeklyQuestTooltip_rewardItem_e6e09bf9',
+    x = 'WeeklyQuestTooltip_rewards_b03f0c37',
+    b = 'WeeklyQuestTooltip_rewardItem_e6e09bf9',
     w = d.resolve('strings'),
     C = s(function () {
         const { model: s } = k(),
@@ -61,7 +61,7 @@ const [j, k] = o()(
                 o.length > 0 && e.jsx(v, { specConditions: o, className: f }),
                 e.jsx(u, { className: h }),
                 e.jsx(m, { path: 'user_missions.tooltip.daily_quests.rewards', className: T }),
-                e.jsx(c, { data: s.rewards.get(), size: t.Small, classMix: b, rewardItemClassMix: x }),
+                e.jsx(c, { data: s.rewards.get(), size: t.Small, classMix: x, rewardItemClassMix: b }),
             ],
         });
     });

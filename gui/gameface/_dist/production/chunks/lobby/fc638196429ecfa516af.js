@@ -487,7 +487,7 @@
                                 const t = o[e] || '',
                                     s = _[h] || '';
                                 if (t.match(d) || t === s) {
-                                    for (; t !== _[h] && h < _.length; ) h++;
+                                    for (; t !== _[h] && h < _.length;) h++;
                                     h++;
                                 }
                             }
@@ -516,8 +516,8 @@
                             if (r) return;
                             let m = l;
                             const _ = c.test(o[l]);
-                            if (s && _) for (; c.test(o[m]) && m < o.length; ) m++;
-                            if (t && _) for (; c.test(o[m]) && m > 0; ) m--;
+                            if (s && _) for (; c.test(o[m]) && m < o.length;) m++;
+                            if (t && _) for (; c.test(o[m]) && m > 0;) m--;
                             if (m !== l || (t && _))
                                 return (e.preventDefault(), (m = m < 0 ? 0 : m), void this.setCursorPosition(m, m));
                             ((t && 1 === a && 1 === o.length) || s) &&
@@ -1292,7 +1292,7 @@
                         let l = s.exec(e),
                             u = e,
                             m = 0;
-                        for (; l; ) {
+                        for (; l;) {
                             const d = l[0],
                                 h = a.exec(d),
                                 p = r.exec(d),
