@@ -23,15 +23,15 @@
                     const E = i()(c.Z.value, c.Z[`value__${r}`], !_ && c.Z.value__notEnough),
                         g = i()(c.Z.icon, c.Z[`icon__${r}-${t}`]),
                         w = i()(c.Z.stock, d && c.Z.stock__indent, n && c.Z.stock__interactive),
-                        h = u && l > 0 && '+',
-                        p = i()(c.Z.base, c.Z[`base__${t}`]);
+                        b = u && l > 0 && '+',
+                        h = i()(c.Z.base, c.Z[`base__${t}`]);
                     return o().createElement(
                         'span',
-                        { className: p },
+                        { className: h },
                         o().createElement(
                             'span',
                             { className: E },
-                            h,
+                            b,
                             o().createElement(s.A, { value: l, format: r === a.V2.gold ? 'gold' : 'integral' }),
                         ),
                         o().createElement('span', { className: g }),
@@ -238,27 +238,28 @@
                         addPreloadTexture: () => a,
                         children: () => r,
                         displayStatus: () => i.W,
-                        displayStatusIs: () => C,
+                        displayStatusIs: () => T,
                         events: () => _.U,
-                        extraSize: () => T,
-                        forceTriggerMouseMove: () => O,
+                        extraSize: () => k,
+                        forceTriggerMouseMove: () => C,
                         freezeTextureBeforeResize: () => g,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => P,
                         getScale: () => w,
                         getSize: () => u,
                         getViewGlobalPosition: () => E,
-                        isEventHandled: () => f,
+                        isClientAccessible: () => y,
+                        isEventHandled: () => O,
                         isFocused: () => m,
-                        pxToRem: () => h,
-                        remToPx: () => p,
+                        pxToRem: () => b,
+                        remToPx: () => h,
                         resize: () => v,
                         sendEvent: () => o.qP,
-                        setAnimateWindow: () => b,
-                        setEventHandled: () => y,
+                        setAnimateWindow: () => p,
+                        setEventHandled: () => f,
                         setInputPaddingsRem: () => s,
                         setSidePaddingsRem: () => d,
-                        whenTutorialReady: () => k,
+                        whenTutorialReady: () => L,
                     }));
                 var r = t(3722),
                     i = t(6112),
@@ -287,7 +288,7 @@
                 }
                 function E(e = 'rem') {
                     const n = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? n : { x: p(n.x), y: p(n.y) };
+                    return 'rem' === e ? n : { x: h(n.x), y: h(n.y) };
                 }
                 function g() {
                     viewEnv.freezeTextureBeforeResize();
@@ -295,35 +296,38 @@
                 function w() {
                     return viewEnv.getScale();
                 }
-                function h(e) {
+                function b(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function p(e) {
+                function h(e) {
                     return viewEnv.remToPx(e);
                 }
-                function b(e, n) {
+                function p(e, n) {
                     viewEnv.setAnimateWindow(e, n);
                 }
                 function m() {
                     return viewEnv.isFocused();
                 }
                 function y() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function f() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function O() {
+                    return viewEnv.isEventHandled();
+                }
+                function C() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function P() {
                     return viewEnv.getShowingStatus();
                 }
-                const C = Object.keys(i.W).reduce(
+                const T = Object.keys(i.W).reduce(
                         (e, n) => ((e[n] = () => viewEnv.getShowingStatus() === i.W[n]), e),
                         {},
                     ),
-                    T = {
+                    k = {
                         set: (e, n) => {
                             viewEnv.setExtraSizeRem(e, n);
                         },
@@ -331,7 +335,7 @@
                             viewEnv.getExtraSizeRem(e, n);
                         },
                     },
-                    k = Promise.all([
+                    L = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : _.U.onDomBuilt(e);
                         }),
@@ -578,7 +582,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (e, n, t) => {
-                t.d(n, { B3: () => c, Z5: () => o, ry: () => p });
+                t.d(n, { B3: () => c, Z5: () => o, ry: () => h });
                 class r {
                     constructor() {
                         ((this.entries = []),
@@ -659,8 +663,8 @@
                     }
                     a.done ? n(s) : Promise.resolve(s).then(r, i);
                 }
-                const h = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
-                    p = (function () {
+                const b = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
+                    h = (function () {
                         var e,
                             n =
                                 ((e = function* () {
@@ -689,7 +693,7 @@
                             return n.apply(this, arguments);
                         };
                     })(),
-                    b = (e, n) => {
+                    p = (e, n) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== n) {
                             const i = n.args,
@@ -727,13 +731,13 @@
                         } else viewEnv.handleViewEvent({ __Type: t, type: e });
                         var r;
                     },
-                    m = () => b(s.CLOSE),
+                    m = () => p(s.CLOSE),
                     y = (e, n) => {
                         e.keyCode === v.n.ESCAPE && n();
                     };
                 var f = t(7572);
                 const O = i.instance,
-                    P = {
+                    C = {
                         DataTracker: _.Z,
                         ViewModel: f.Z,
                         ViewEventType: s,
@@ -741,12 +745,12 @@
                         RealFormatType: l,
                         TimeFormatType: d,
                         DateFormatType: u,
-                        makeGlobalBoundingBox: h,
-                        sendMoveEvent: (e) => b(s.MOVE, { isMouseEvent: !0, on: e }),
+                        makeGlobalBoundingBox: b,
+                        sendMoveEvent: (e) => p(s.MOVE, { isMouseEvent: !0, on: e }),
                         sendCloseEvent: m,
-                        sendClosePopOverEvent: () => b(s.POP_OVER, { on: !1 }),
+                        sendClosePopOverEvent: () => p(s.POP_OVER, { on: !1 }),
                         sendShowContextMenuEvent: (e, n, t = 0) => {
-                            b(s.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: t, args: n });
+                            p(s.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: t, args: n });
                         },
                         sendShowPopOverEvent: (e, n, t, r, i = R.invalid('resId'), _) => {
                             const o = E.O.view.getViewGlobalPosition(),
@@ -761,13 +765,13 @@
                                     width: E.O.view.pxToRem(d),
                                     height: E.O.view.pxToRem(u),
                                 };
-                            b(s.POP_OVER, {
+                            p(s.POP_OVER, {
                                 isMouseEvent: !0,
                                 contentID: e,
                                 decoratorID: r || R.invalid('resId'),
                                 targetID: i,
                                 direction: n,
-                                bbox: h(v),
+                                bbox: b(v),
                                 on: !0,
                                 args: _,
                             });
@@ -782,8 +786,8 @@
                         closeOnEsc: (e) => {
                             y(e, m);
                         },
-                        handleViewEvent: b,
-                        onBindingsReady: p,
+                        handleViewEvent: p,
+                        onBindingsReady: h,
                         onLayoutReady: () =>
                             new Promise((e) => {
                                 requestAnimationFrame(() => {
@@ -816,7 +820,7 @@
                         SystemLocale: o,
                         UserLocale: a,
                     };
-                window.ViewEnvHelper = P;
+                window.ViewEnvHelper = C;
             },
             8401: (e, n, t) => {
                 (t(6179), t(6483), t(7405), t(329));

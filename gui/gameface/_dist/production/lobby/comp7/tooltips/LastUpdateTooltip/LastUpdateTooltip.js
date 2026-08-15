@@ -157,17 +157,18 @@
                         displayStatus: () => F.W,
                         displayStatusIs: () => g,
                         events: () => t.U,
-                        extraSize: () => b,
-                        forceTriggerMouseMove: () => p,
+                        extraSize: () => T,
+                        forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => c,
                         getBrowserTexturePath: () => B,
-                        getDisplayStatus: () => f,
-                        getScale: () => _,
+                        getDisplayStatus: () => b,
+                        getScale: () => l,
                         getSize: () => i,
                         getViewGlobalPosition: () => s,
-                        isEventHandled: () => w,
+                        isClientAccessible: () => w,
+                        isEventHandled: () => p,
                         isFocused: () => v,
-                        pxToRem: () => l,
+                        pxToRem: () => _,
                         remToPx: () => d,
                         resize: () => a,
                         sendEvent: () => D.qP,
@@ -175,7 +176,7 @@
                         setEventHandled: () => h,
                         setInputPaddingsRem: () => r,
                         setSidePaddingsRem: () => o,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => O,
                     }));
                 var E = A(3722),
                     F = A(6112),
@@ -209,10 +210,10 @@
                 function c() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function _() {
+                function l() {
                     return viewEnv.getScale();
                 }
-                function l(u) {
+                function _(u) {
                     return viewEnv.pxToRem(u);
                 }
                 function d(u) {
@@ -224,23 +225,26 @@
                 function v() {
                     return viewEnv.isFocused();
                 }
+                function w() {
+                    return viewEnv.isClientAccessible();
+                }
                 function h() {
                     return viewEnv.setEventHandled();
                 }
-                function w() {
+                function p() {
                     return viewEnv.isEventHandled();
                 }
-                function p() {
+                function f() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function f() {
+                function b() {
                     return viewEnv.getShowingStatus();
                 }
                 const g = Object.keys(F.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === F.W[e]), u),
                         {},
                     ),
-                    b = {
+                    T = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -248,7 +252,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    T = Promise.all([
+                    O = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : t.U.onDomBuilt(u);
                         }),
@@ -567,7 +571,7 @@
                 var a = A(5521),
                     s = A(3138);
                 const c = ['args'];
-                function _(u, e, A, E, F, t, D) {
+                function l(u, e, A, E, F, t, D) {
                     try {
                         var n = u[t](D),
                             r = n.value;
@@ -576,7 +580,7 @@
                     }
                     n.done ? e(r) : Promise.resolve(r).then(E, F);
                 }
-                const l = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
+                const _ = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
                     d = (function () {
                         var u,
                             e =
@@ -594,10 +598,10 @@
                                     return new Promise(function (E, F) {
                                         var t = u.apply(e, A);
                                         function D(u) {
-                                            _(t, E, F, D, n, 'next', u);
+                                            l(t, E, F, D, n, 'next', u);
                                         }
                                         function n(u) {
-                                            _(t, E, F, D, n, 'throw', u);
+                                            l(t, E, F, D, n, 'throw', u);
                                         }
                                         D(void 0);
                                     });
@@ -645,20 +649,20 @@
                         var E;
                     },
                     v = () => m(r.CLOSE),
-                    h = (u, e) => {
+                    w = (u, e) => {
                         u.keyCode === a.n.ESCAPE && e();
                     };
-                var w = A(7572);
+                var h = A(7572);
                 const p = F.instance,
                     f = {
                         DataTracker: t.Z,
-                        ViewModel: w.Z,
+                        ViewModel: h.Z,
                         ViewEventType: r,
                         NumberFormatType: B,
                         RealFormatType: C,
                         TimeFormatType: o,
                         DateFormatType: i,
-                        makeGlobalBoundingBox: l,
+                        makeGlobalBoundingBox: _,
                         sendMoveEvent: (u) => m(r.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: v,
                         sendClosePopOverEvent: () => m(r.POP_OVER, { on: !1 }),
@@ -684,20 +688,20 @@
                                 decoratorID: E || R.invalid('resId'),
                                 targetID: F,
                                 direction: e,
-                                bbox: l(a),
+                                bbox: _(a),
                                 on: !0,
                                 args: t,
                             });
                         },
                         addEscapeListener: (u) => {
-                            const e = (e) => h(e, u);
+                            const e = (e) => w(e, u);
                             return (
                                 window.addEventListener('keydown', e),
                                 () => window.removeEventListener('keydown', e)
                             );
                         },
                         closeOnEsc: (u) => {
-                            h(u, v);
+                            w(u, v);
                         },
                         handleViewEvent: m,
                         onBindingsReady: d,
@@ -796,7 +800,7 @@
                                   return (i(F, /( )/, e).forEach((u) => (A = A.concat(i(u, E, B.left)))), A);
                               })(u, e);
                     };
-                let _;
+                let l;
                 !(function (u) {
                     ((u.SHORT_DATE = 'short-date'),
                         (u.SHORT_TIME = 'short-time'),
@@ -811,50 +815,50 @@
                         (u.WEEK_DAY_TIME = 'week-day-time'),
                         (u.YEAR = 'year'),
                         (u.DATE_YEAR = 'date-year'));
-                })(_ || (_ = {}));
-                var l = A(4179);
+                })(l || (l = {}));
+                var _ = A(4179);
                 Date.now();
-                const d = (0, E.memo)(({ datetime: u, format: e = _.SHORT_DATE, localize: A = !0 }) =>
+                const d = (0, E.memo)(({ datetime: u, format: e = l.SHORT_DATE, localize: A = !0 }) =>
                         ((u, e, A) => {
                             switch (e) {
-                                case _.SHORT_DATE:
+                                case l.SHORT_DATE:
                                     return A
-                                        ? l.Z5.getDateFormat(u, l.kH.SHORT_FORMAT)
-                                        : l.cy.getTimeFormat('%d.%m.%y', u, !0);
-                                case _.SHORT_TIME:
+                                        ? _.Z5.getDateFormat(u, _.kH.SHORT_FORMAT)
+                                        : _.cy.getTimeFormat('%d.%m.%y', u, !0);
+                                case l.SHORT_TIME:
                                     return A
-                                        ? l.Z5.getTimeFormat(u, l.lf.SHORT_FORMAT)
-                                        : l.cy.getTimeFormat('%I:%M %p', u, !0);
-                                case _.SHORT_DATE_TIME:
+                                        ? _.Z5.getTimeFormat(u, _.lf.SHORT_FORMAT)
+                                        : _.cy.getTimeFormat('%I:%M %p', u, !0);
+                                case l.SHORT_DATE_TIME:
                                     return A
-                                        ? `${l.Z5.getDateFormat(u, l.kH.SHORT_FORMAT)}, ${l.Z5.getTimeFormat(u, l.lf.SHORT_FORMAT)}`
-                                        : l.cy.getTimeFormat('%d.%m.%y, %I:%M %p', u, !0);
-                                case _.FULL_DATE:
+                                        ? `${_.Z5.getDateFormat(u, _.kH.SHORT_FORMAT)}, ${_.Z5.getTimeFormat(u, _.lf.SHORT_FORMAT)}`
+                                        : _.cy.getTimeFormat('%d.%m.%y, %I:%M %p', u, !0);
+                                case l.FULL_DATE:
                                     return A
-                                        ? l.Z5.getDateFormat(u, l.kH.LONG_FORMAT)
-                                        : l.cy.getTimeFormat('%B %d, %Y', u, !0);
-                                case _.FULL_DATE_TIME:
+                                        ? _.Z5.getDateFormat(u, _.kH.LONG_FORMAT)
+                                        : _.cy.getTimeFormat('%B %d, %Y', u, !0);
+                                case l.FULL_DATE_TIME:
                                     return A
-                                        ? `${l.Z5.getDateFormat(u, l.kH.LONG_FORMAT)}, ${l.Z5.getTimeFormat(u, l.lf.SHORT_FORMAT)}`
-                                        : l.cy.getTimeFormat('%B %d, %Y, %I:%M %p', u, !0);
-                                case _.MONTH:
-                                    return l.cy.getTimeFormat('%B', u, !0);
-                                case _.MONTH_DATE:
-                                    return l.cy.getTimeFormat('%B %e', u, !0);
-                                case _.DATE_MONTH:
-                                    return l.cy.getTimeFormat('%e %B', u, !0);
-                                case _.MONTH_YEAR:
-                                    return l.cy.getTimeFormat('%B %Y', u, !0);
-                                case _.WEEK_DAY:
-                                    return l.cy.getTimeFormat('%A', u, !0);
-                                case _.WEEK_DAY_TIME:
+                                        ? `${_.Z5.getDateFormat(u, _.kH.LONG_FORMAT)}, ${_.Z5.getTimeFormat(u, _.lf.SHORT_FORMAT)}`
+                                        : _.cy.getTimeFormat('%B %d, %Y, %I:%M %p', u, !0);
+                                case l.MONTH:
+                                    return _.cy.getTimeFormat('%B', u, !0);
+                                case l.MONTH_DATE:
+                                    return _.cy.getTimeFormat('%B %e', u, !0);
+                                case l.DATE_MONTH:
+                                    return _.cy.getTimeFormat('%e %B', u, !0);
+                                case l.MONTH_YEAR:
+                                    return _.cy.getTimeFormat('%B %Y', u, !0);
+                                case l.WEEK_DAY:
+                                    return _.cy.getTimeFormat('%A', u, !0);
+                                case l.WEEK_DAY_TIME:
                                     return A
-                                        ? `${l.cy.getTimeFormat('%A', u, !0)} ${l.Z5.getTimeFormat(u, l.lf.SHORT_FORMAT)}`
-                                        : l.cy.getTimeFormat('%A, %I:%M %p', u, !0);
-                                case _.YEAR:
-                                    return l.cy.getTimeFormat('%Y', u, !0);
-                                case _.DATE_YEAR:
-                                    return l.cy.getTimeFormat('%d, %Y', u, !0);
+                                        ? `${_.cy.getTimeFormat('%A', u, !0)} ${_.Z5.getTimeFormat(u, _.lf.SHORT_FORMAT)}`
+                                        : _.cy.getTimeFormat('%A, %I:%M %p', u, !0);
+                                case l.YEAR:
+                                    return _.cy.getTimeFormat('%Y', u, !0);
+                                case l.DATE_YEAR:
+                                    return _.cy.getTimeFormat('%d, %Y', u, !0);
                             }
                         })(u, e, A),
                     ),
@@ -878,8 +882,8 @@
                                       ),
                                   ),
                               );
-                var h = A(3138);
-                function w() {
+                var w = A(3138);
+                function h() {
                     const u = (0, E.useRef)(0);
                     var e;
                     return (
@@ -914,9 +918,9 @@
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
                     f = ['children', 'className', 'theme'];
-                function g() {
+                function b() {
                     return (
-                        (g =
+                        (b =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -925,10 +929,10 @@
                                 }
                                 return u;
                             }),
-                        g.apply(this, arguments)
+                        b.apply(this, arguments)
                     );
                 }
-                const b = F().forwardRef(function (u, e) {
+                const g = F().forwardRef(function (u, e) {
                     let A = u.children,
                         t = u.className,
                         D = u.theme,
@@ -942,7 +946,7 @@
                             for (E = 0; E < t.length; E++) ((A = t[E]), e.indexOf(A) >= 0 || (F[A] = u[A]));
                             return F;
                         })(u, f);
-                    const C = w(),
+                    const C = h(),
                         o = F().useRef(null);
                     var i;
                     return (
@@ -952,9 +956,9 @@
                                 if (!u) return;
                                 const e = u.scrollWidth,
                                     A = u.scrollHeight;
-                                h.O.view.resize(e, A);
+                                w.O.view.resize(e, A);
                                 const E = window.getComputedStyle(u);
-                                h.O.view.setSidePaddingsRem({
+                                w.O.view.setSidePaddingsRem({
                                     left: parseInt(E.getPropertyValue('padding-left'), 10),
                                     top: parseInt(E.getPropertyValue('padding-top'), 10),
                                     right: parseInt(E.getPropertyValue('padding-right'), 10),
@@ -965,7 +969,7 @@
                         (0, E.useEffect)(i, []),
                         F().createElement(
                             'div',
-                            g({}, B, {
+                            b({}, B, {
                                 className: r()(p.base, p[`base__theme-${n}`], t),
                                 ref: function (u) {
                                     ((o.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
@@ -1058,7 +1062,7 @@
                                                 return {
                                                     subscribe: (A, t) => {
                                                         const n = 'string' == typeof t ? `${E}.${t}` : E,
-                                                            r = h.O.view.addModelObserver(n, e, !0);
+                                                            r = w.O.view.addModelObserver(n, e, !0);
                                                         return (F.set(r, A), u && A(D(t)), r);
                                                     },
                                                     readByPath: D,
@@ -1178,22 +1182,22 @@
                                     a = i[0],
                                     s = i[1],
                                     c = (0, E.useState)(() => C(t, D, r)),
-                                    _ = c[0],
-                                    l = c[1];
+                                    l = c[0],
+                                    _ = c[1];
                                 return (
                                     (0, E.useEffect)(() => {
-                                        o.current ? l(C(a, D, r)) : (o.current = !0);
+                                        o.current ? _(C(a, D, r)) : (o.current = !0);
                                     }, [r, a, D]),
                                     (0, E.useEffect)(() => {
                                         s(t);
                                     }, [t]),
                                     (0, E.useEffect)(
                                         () => () => {
-                                            (_.externalModel.dispose(), B.current.forEach((u) => u()));
+                                            (l.externalModel.dispose(), B.current.forEach((u) => u()));
                                         },
-                                        [_],
+                                        [l],
                                     ),
-                                    F().createElement(A.Provider, { value: _ }, n)
+                                    F().createElement(A.Provider, { value: l }, n)
                                 );
                             },
                             () => (0, E.useContext)(A),
@@ -1207,7 +1211,7 @@
                             e = u.leaderboardUpdateTimestamp,
                             A = u.description;
                         return F().createElement(
-                            b,
+                            g,
                             null,
                             F().createElement(
                                 'div',
@@ -1218,7 +1222,7 @@
                                         date: F().createElement(
                                             'span',
                                             { className: x },
-                                            F().createElement(d, { datetime: e, format: _.SHORT_TIME }),
+                                            F().createElement(d, { datetime: e, format: l.SHORT_TIME }),
                                         ),
                                     },
                                     classMix: r()(y, K),

@@ -41,7 +41,7 @@
             },
             67: (e, t, u) => {
                 'use strict';
-                u.d(t, { O: () => X });
+                u.d(t, { O: () => q });
                 var a = {};
                 (u.r(a), u.d(a, { mouse: () => _, onResize: () => i }));
                 var n = {};
@@ -72,27 +72,28 @@
                         addPreloadTexture: () => w,
                         children: () => r,
                         displayStatus: () => g,
-                        displayStatusIs: () => j,
+                        displayStatusIs: () => $,
                         events: () => A,
-                        extraSize: () => $,
-                        forceTriggerMouseMove: () => U,
+                        extraSize: () => G,
+                        forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => x,
                         getBrowserTexturePath: () => y,
-                        getDisplayStatus: () => V,
+                        getDisplayStatus: () => j,
                         getScale: () => O,
                         getSize: () => N,
                         getViewGlobalPosition: () => M,
-                        isEventHandled: () => z,
+                        isClientAccessible: () => W,
+                        isEventHandled: () => U,
                         isFocused: () => H,
                         pxToRem: () => R,
                         remToPx: () => L,
                         resize: () => I,
                         sendEvent: () => B,
                         setAnimateWindow: () => P,
-                        setEventHandled: () => W,
+                        setEventHandled: () => z,
                         setInputPaddingsRem: () => S,
                         setSidePaddingsRem: () => T,
-                        whenTutorialReady: () => G,
+                        whenTutorialReady: () => X,
                     }));
                 const i = s('clientResized'),
                     c = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
@@ -290,19 +291,22 @@
                     return viewEnv.isFocused();
                 }
                 function W() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function z() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function U() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function V() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function j() {
                     return viewEnv.getShowingStatus();
                 }
-                const j = Object.keys(g).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === g[t]), e), {}),
-                    $ = {
+                const $ = Object.keys(g).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === g[t]), e), {}),
+                    G = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -310,13 +314,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    G = Promise.all([
+                    X = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : A.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    X = { view: o, client: n };
+                    q = { view: o, client: n };
             },
             521: (e, t, u) => {
                 'use strict';

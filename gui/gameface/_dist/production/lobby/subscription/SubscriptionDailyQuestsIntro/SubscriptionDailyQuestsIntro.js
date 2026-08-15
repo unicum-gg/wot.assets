@@ -22,27 +22,28 @@
                         addPreloadTexture: () => K,
                         children: () => D,
                         displayStatus: () => V,
-                        displayStatusIs: () => lu,
+                        displayStatusIs: () => cu,
                         events: () => $,
-                        extraSize: () => cu,
-                        forceTriggerMouseMove: () => su,
+                        extraSize: () => du,
+                        forceTriggerMouseMove: () => iu,
                         freezeTextureBeforeResize: () => Du,
                         getBrowserTexturePath: () => Y,
-                        getDisplayStatus: () => iu,
+                        getDisplayStatus: () => lu,
                         getScale: () => Bu,
                         getSize: () => Fu,
                         getViewGlobalPosition: () => eu,
-                        isEventHandled: () => au,
+                        isClientAccessible: () => ou,
+                        isEventHandled: () => su,
                         isFocused: () => ru,
                         pxToRem: () => Cu,
                         remToPx: () => tu,
                         resize: () => Eu,
                         sendEvent: () => J,
                         setAnimateWindow: () => nu,
-                        setEventHandled: () => ou,
+                        setEventHandled: () => au,
                         setInputPaddingsRem: () => X,
                         setSidePaddingsRem: () => Au,
-                        whenTutorialReady: () => du,
+                        whenTutorialReady: () => mu,
                     }));
                 var C = F(179),
                     t = F.n(C),
@@ -507,19 +508,22 @@
                     return viewEnv.isFocused();
                 }
                 function ou() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function au() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function su() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function iu() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function lu() {
                     return viewEnv.getShowingStatus();
                 }
-                const lu = Object.keys(V).reduce((u, A) => ((u[A] = () => viewEnv.getShowingStatus() === V[A]), u), {}),
-                    cu = {
+                const cu = Object.keys(V).reduce((u, A) => ((u[A] = () => viewEnv.getShowingStatus() === V[A]), u), {}),
+                    du = {
                         set: (u, A) => {
                             viewEnv.setExtraSizeRem(u, A);
                         },
@@ -527,26 +531,26 @@
                             viewEnv.getExtraSizeRem(u, A);
                         },
                     },
-                    du = Promise.all([
+                    mu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : $.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    mu = { view: B, client: e };
-                function vu(u, A) {
+                    vu = { view: B, client: e };
+                function bu(u, A) {
                     var F = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (F) return (F = F.call(u)).next.bind(F);
                     if (
                         Array.isArray(u) ||
                         (F = (function (u, A) {
                             if (!u) return;
-                            if ('string' == typeof u) return bu(u, A);
+                            if ('string' == typeof u) return fu(u, A);
                             var F = Object.prototype.toString.call(u).slice(8, -1);
                             'Object' === F && u.constructor && (F = u.constructor.name);
                             if ('Map' === F || 'Set' === F) return Array.from(u);
                             if ('Arguments' === F || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(F))
-                                return bu(u, A);
+                                return fu(u, A);
                         })(u)) ||
                         (A && u && 'number' == typeof u.length)
                     ) {
@@ -560,13 +564,13 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function bu(u, A) {
+                function fu(u, A) {
                     (null == A || A > u.length) && (A = u.length);
                     for (var F = 0, E = new Array(A); F < A; F++) E[F] = u[F];
                     return E;
                 }
-                const fu = (u) => (0 === u ? window : window.subViews.get(u));
-                const gu = ((u, A) => {
+                const gu = (u) => (0 === u ? window : window.subViews.get(u));
+                const _u = ((u, A) => {
                         const F = (0, C.createContext)({});
                         return [
                             function ({ mode: E = 'real', options: e, children: D, mocks: B }) {
@@ -576,7 +580,7 @@
                                         const B = (function ({
                                                 initializer: u = !0,
                                                 rootId: A = 0,
-                                                getRoot: F = fu,
+                                                getRoot: F = gu,
                                                 context: E = 'model',
                                             } = {}) {
                                                 const e = new Map();
@@ -606,7 +610,7 @@
                                                 return {
                                                     subscribe: (F, D) => {
                                                         const C = 'string' == typeof D ? `${E}.${D}` : E,
-                                                            t = mu.view.addModelObserver(C, A, !0);
+                                                            t = vu.view.addModelObserver(C, A, !0);
                                                         return (e.set(t, F), u && F(B(D)), t);
                                                     },
                                                     readByPath: B,
@@ -623,7 +627,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, F = vu(e.keys()); !(u = F()).done;) D(u.value, A);
+                                                        for (var u, F = bu(e.keys()); !(u = F()).done;) D(u.value, A);
                                                     },
                                                     unsubscribe: D,
                                                 };
@@ -753,39 +757,39 @@
                         },
                         ({ externalModel: u }) => ({ onClose: u.createCallbackNoArgs('onClose') }),
                     ),
-                    _u = gu[0],
-                    pu = gu[1],
-                    hu = 'App_base_8b',
-                    wu = 'App_content_b6',
-                    yu = 'App_image_17',
-                    xu = 'App_info_6d',
-                    Su = 'App_title_dd',
-                    Ru = 'App_description_0c',
-                    Pu = 'App_buttonHolder_b5',
-                    ku = 'App_button_75',
-                    Mu = R.strings.subscription.dailyQuestsIntro,
-                    Ou = (0, x.Pi)(() => {
-                        const u = pu().controls,
+                    pu = _u[0],
+                    hu = _u[1],
+                    wu = 'App_base_8b',
+                    yu = 'App_content_b6',
+                    xu = 'App_image_17',
+                    Su = 'App_info_6d',
+                    Ru = 'App_title_dd',
+                    Pu = 'App_description_0c',
+                    ku = 'App_buttonHolder_b5',
+                    Mu = 'App_button_75',
+                    Ou = R.strings.subscription.dailyQuestsIntro,
+                    Tu = (0, x.Pi)(() => {
+                        const u = hu().controls,
                             A = (0, C.useCallback)(() => {
                                 u.onClose();
                             }, [u]),
-                            F = a()(hu);
+                            F = a()(wu);
                         return t().createElement(
                             'div',
                             { className: F },
                             t().createElement(
                                 'div',
-                                { className: wu },
-                                t().createElement('div', { className: yu }),
+                                { className: yu },
+                                t().createElement('div', { className: xu }),
                                 t().createElement(
                                     'div',
-                                    { className: xu },
-                                    t().createElement('div', { className: Su }, Mu.title()),
-                                    t().createElement(y, { classMix: Ru, text: Mu.description() }),
+                                    { className: Su },
+                                    t().createElement('div', { className: Ru }, Ou.title()),
+                                    t().createElement(y, { classMix: Pu, text: Ou.description() }),
                                     t().createElement(
                                         'div',
-                                        { className: Pu },
-                                        t().createElement(m, { size: c.medium, mixClass: ku, onClick: A }, Mu.button()),
+                                        { className: ku },
+                                        t().createElement(m, { size: c.medium, mixClass: Mu, onClick: A }, Ou.button()),
                                     ),
                                 ),
                             ),
@@ -793,7 +797,7 @@
                     });
                 engine.whenReady.then(() => {
                     r().render(
-                        t().createElement(_u, null, t().createElement(Ou, null)),
+                        t().createElement(pu, null, t().createElement(Tu, null)),
                         document.getElementById('root'),
                     );
                 });

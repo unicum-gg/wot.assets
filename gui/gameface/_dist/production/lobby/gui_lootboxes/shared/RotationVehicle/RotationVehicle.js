@@ -114,13 +114,13 @@
                                 },
                                 [B, m, I, c],
                             ),
-                            G = (0, n.useCallback)(
+                            q = (0, n.useCallback)(
                                 (u) => {
                                     (y(!1), f && f(u));
                                 },
                                 [f],
                             ),
-                            q = (0, n.useCallback)(
+                            G = (0, n.useCallback)(
                                 (u) => {
                                     (h && h(u), _ && (0, E.G)(_), S(!0));
                                 },
@@ -161,10 +161,10 @@
                                     ref: U,
                                     className: Y,
                                     onClick: V,
-                                    onMouseEnter: q,
+                                    onMouseEnter: G,
                                     onMouseLeave: H,
                                     onMouseDown: K,
-                                    onMouseUp: G,
+                                    onMouseUp: q,
                                     onFocus: z,
                                     onBlur: j,
                                 },
@@ -341,27 +341,28 @@
                         addPreloadTexture: () => o,
                         children: () => F,
                         displayStatus: () => A.W,
-                        displayStatusIs: () => f,
+                        displayStatusIs: () => g,
                         events: () => E.U,
-                        extraSize: () => g,
-                        forceTriggerMouseMove: () => p,
+                        extraSize: () => O,
+                        forceTriggerMouseMove: () => m,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => r,
-                        getDisplayStatus: () => m,
+                        getDisplayStatus: () => f,
                         getScale: () => l,
                         getSize: () => s,
                         getViewGlobalPosition: () => C,
-                        isEventHandled: () => h,
+                        isClientAccessible: () => w,
+                        isEventHandled: () => p,
                         isFocused: () => b,
                         pxToRem: () => c,
                         remToPx: () => d,
                         resize: () => B,
                         sendEvent: () => n.qP,
                         setAnimateWindow: () => v,
-                        setEventHandled: () => w,
+                        setEventHandled: () => h,
                         setInputPaddingsRem: () => i,
                         setSidePaddingsRem: () => a,
-                        whenTutorialReady: () => O,
+                        whenTutorialReady: () => P,
                     }));
                 var F = t(3722),
                     A = t(6112),
@@ -411,22 +412,25 @@
                     return viewEnv.isFocused();
                 }
                 function w() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function h() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function p() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function m() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const f = Object.keys(A.W).reduce(
+                const g = Object.keys(A.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === A.W[e]), u),
                         {},
                     ),
-                    g = {
+                    O = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -434,7 +438,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    O = Promise.all([
+                    P = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : E.U.onDomBuilt(u);
                         }),
@@ -1099,6 +1103,7 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
+        (__webpack_require__.j = 175),
         (() => {
             var u = { 175: 0 };
             __webpack_require__.O.j = (e) => 0 === u[e];

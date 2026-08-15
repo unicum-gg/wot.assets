@@ -155,27 +155,28 @@
                         addPreloadTexture: () => s,
                         children: () => o,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => k,
+                        displayStatusIs: () => C,
                         events: () => a.U,
                         extraSize: () => T,
-                        forceTriggerMouseMove: () => O,
+                        forceTriggerMouseMove: () => M,
                         freezeTextureBeforeResize: () => h,
                         getBrowserTexturePath: () => c,
-                        getDisplayStatus: () => M,
+                        getDisplayStatus: () => k,
                         getScale: () => E,
                         getSize: () => d,
                         getViewGlobalPosition: () => b,
-                        isEventHandled: () => y,
+                        isClientAccessible: () => g,
+                        isEventHandled: () => O,
                         isFocused: () => f,
                         pxToRem: () => m,
                         remToPx: () => p,
                         resize: () => v,
                         sendEvent: () => i.qP,
                         setAnimateWindow: () => w,
-                        setEventHandled: () => g,
+                        setEventHandled: () => y,
                         setInputPaddingsRem: () => _,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => C,
+                        whenTutorialReady: () => P,
                     }));
                 var o = n(3722),
                     r = n(6112),
@@ -225,18 +226,21 @@
                     return viewEnv.isFocused();
                 }
                 function g() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function y() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function O() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function M() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function k() {
                     return viewEnv.getShowingStatus();
                 }
-                const k = Object.keys(r.W).reduce(
+                const C = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
@@ -248,7 +252,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    C = Promise.all([
+                    P = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -941,10 +945,10 @@
                         O = g[1],
                         M = (0, o.useState)(!1),
                         k = M[0],
-                        T = M[1],
-                        C = (0, o.useState)(!1),
-                        P = C[0],
-                        A = C[1],
+                        C = M[1],
+                        T = (0, o.useState)(!1),
+                        P = T[0],
+                        A = T[1],
                         S = (0, o.useCallback)(() => {
                             i || (p.current && (p.current.focus(), O(!0)));
                         }, [i]),
@@ -974,19 +978,19 @@
                         ),
                         F = (0, o.useCallback)(
                             (e) => {
-                                i || (h && h(e), T(!1));
+                                i || (h && h(e), C(!1));
                             },
                             [i, h],
                         ),
                         B = (0, o.useCallback)(
                             (e) => {
-                                i || (null !== u && c(u), b && b(e), n && S(), T(!0));
+                                i || (null !== u && c(u), b && b(e), n && S(), C(!0));
                             },
                             [i, u, b, S, n],
                         ),
                         U = (0, o.useCallback)(
                             (e) => {
-                                i || (E && E(e), T(!1));
+                                i || (E && E(e), C(!1));
                             },
                             [i, E],
                         ),
@@ -1057,8 +1061,8 @@
                     return !1;
                 }
                 console.log;
-                var T = n(3915);
-                function C(e, t) {
+                var C = n(3915);
+                function T(e, t) {
                     (null == t || t > e.length) && (t = e.length);
                     for (var n = 0, o = new Array(t); n < t; n++) o[n] = e[n];
                     return o;
@@ -1134,7 +1138,7 @@
                                                                         (n = (function (e, t) {
                                                                             if (e) {
                                                                                 if ('string' == typeof e)
-                                                                                    return C(e, t);
+                                                                                    return T(e, t);
                                                                                 var n = Object.prototype.toString
                                                                                     .call(e)
                                                                                     .slice(8, -1);
@@ -1148,7 +1152,7 @@
                                                                                             /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(
                                                                                                 n,
                                                                                             )
-                                                                                          ? C(e, t)
+                                                                                          ? T(e, t)
                                                                                           : void 0
                                                                                 );
                                                                             }
@@ -1196,11 +1200,11 @@
                                                 observableModel: {
                                                     array: (t, n) => {
                                                         const o = null != n ? n : s(t),
-                                                            r = T.observable.box(o, { equals: k });
+                                                            r = C.observable.box(o, { equals: k });
                                                         return (
                                                             'real' === e &&
                                                                 i.subscribe(
-                                                                    (0, T.action)((e) => r.set(e)),
+                                                                    (0, C.action)((e) => r.set(e)),
                                                                     t,
                                                                 ),
                                                             r
@@ -1208,11 +1212,11 @@
                                                     },
                                                     object: (t, n) => {
                                                         const o = null != n ? n : s(t),
-                                                            r = T.observable.box(o, { equals: k });
+                                                            r = C.observable.box(o, { equals: k });
                                                         return (
                                                             'real' === e &&
                                                                 i.subscribe(
-                                                                    (0, T.action)((e) => r.set(e)),
+                                                                    (0, C.action)((e) => r.set(e)),
                                                                     t,
                                                                 ),
                                                             r
@@ -1222,13 +1226,13 @@
                                                         const o = s(n);
                                                         if (Array.isArray(t)) {
                                                             const r = t.reduce(
-                                                                (e, t) => ((e[t] = T.observable.box(o[t], {})), e),
+                                                                (e, t) => ((e[t] = C.observable.box(o[t], {})), e),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === e &&
                                                                     i.subscribe(
-                                                                        (0, T.action)((e) => {
+                                                                        (0, C.action)((e) => {
                                                                             t.forEach((t) => {
                                                                                 r[t].set(e[t]);
                                                                             });
@@ -1243,7 +1247,7 @@
                                                                 a = Object.entries(r),
                                                                 s = a.reduce(
                                                                     (e, [t, n]) => (
-                                                                        (e[n] = T.observable.box(o[t], {})),
+                                                                        (e[n] = C.observable.box(o[t], {})),
                                                                         e
                                                                     ),
                                                                     {},
@@ -1251,7 +1255,7 @@
                                                             return (
                                                                 'real' === e &&
                                                                     i.subscribe(
-                                                                        (0, T.action)((e) => {
+                                                                        (0, C.action)((e) => {
                                                                             a.forEach(([t, n]) => {
                                                                                 s[n].set(e[t]);
                                                                             });
@@ -1410,6 +1414,7 @@
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
+        (__webpack_require__.j = 403),
         (() => {
             var e = { 403: 0 };
             __webpack_require__.O.j = (t) => 0 === e[t];

@@ -22,27 +22,28 @@
                         addPreloadTexture: () => y,
                         children: () => B,
                         displayStatus: () => c,
-                        displayStatusIs: () => I,
+                        displayStatusIs: () => $,
                         events: () => v,
-                        extraSize: () => $,
-                        forceTriggerMouseMove: () => Z,
+                        extraSize: () => J,
+                        forceTriggerMouseMove: () => q,
                         freezeTextureBeforeResize: () => O,
                         getBrowserTexturePath: () => W,
-                        getDisplayStatus: () => q,
+                        getDisplayStatus: () => I,
                         getScale: () => j,
                         getSize: () => R,
                         getViewGlobalPosition: () => M,
-                        isEventHandled: () => U,
+                        isClientAccessible: () => Q,
+                        isEventHandled: () => Z,
                         isFocused: () => G,
                         pxToRem: () => _,
                         remToPx: () => k,
                         resize: () => z,
                         sendEvent: () => H,
                         setAnimateWindow: () => V,
-                        setEventHandled: () => Q,
+                        setEventHandled: () => U,
                         setInputPaddingsRem: () => L,
                         setSidePaddingsRem: () => P,
-                        whenTutorialReady: () => J,
+                        whenTutorialReady: () => K,
                     }));
                 F(6483);
                 var t = F(6179),
@@ -264,19 +265,22 @@
                     return viewEnv.isFocused();
                 }
                 function Q() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function U() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function Z() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function q() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function I() {
                     return viewEnv.getShowingStatus();
                 }
-                const I = Object.keys(c).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === c[e]), u), {}),
-                    $ = {
+                const $ = Object.keys(c).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === c[e]), u), {}),
+                    J = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -284,22 +288,22 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    J = Promise.all([
+                    K = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : v.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    K = { view: D, client: E };
-                const N = {
+                    N = { view: D, client: E };
+                const X = {
                     extraLarge: { weight: 4, width: 2560, height: 1440 },
                     large: { weight: 3, width: 1920, height: 1080 },
                     medium: { weight: 2, width: 1600, height: 900 },
                     small: { weight: 1, width: 1366, height: 768 },
                     extraSmall: { weight: 0, width: 1024, height: 768 },
                 };
-                var X;
-                function Y(u, e, F) {
+                var Y;
+                function uu(u, e, F) {
                     const A = (function (u, e) {
                             switch (!0) {
                                 case u >= e.extraLarge.width:
@@ -363,14 +367,14 @@
                         (u.mediumHeight = 'mediumHeight'),
                         (u.smallHeight = 'smallHeight'),
                         (u.extraSmallHeight = 'extraSmallHeight'));
-                })(X || (X = {}));
-                const uu = K.client.getSize('rem'),
-                    eu = uu.width,
-                    Fu = uu.height,
-                    Au = Object.assign({ width: eu, height: Fu }, Y(eu, Fu, N)),
-                    Eu = (0, t.createContext)(Au),
-                    Bu = ['children'];
-                const Du = (u) => {
+                })(Y || (Y = {}));
+                const eu = N.client.getSize('rem'),
+                    Fu = eu.width,
+                    Au = eu.height,
+                    Eu = Object.assign({ width: Fu, height: Au }, uu(Fu, Au, X)),
+                    Bu = (0, t.createContext)(Eu),
+                    Du = ['children'];
+                const tu = (u) => {
                     let e = u.children,
                         F = (function (u, e) {
                             if (null == u) return {};
@@ -380,8 +384,8 @@
                                 B = Object.keys(u);
                             for (A = 0; A < B.length; A++) ((F = B[A]), e.indexOf(F) >= 0 || (E[F] = u[F]));
                             return E;
-                        })(u, Bu);
-                    const A = (0, t.useContext)(Eu),
+                        })(u, Du);
+                    const A = (0, t.useContext)(Bu),
                         E = A.extraLarge,
                         B = A.large,
                         D = A.medium,
@@ -426,7 +430,7 @@
                     }
                     return null;
                 };
-                Du.defaultProps = {
+                tu.defaultProps = {
                     extraLarge: !1,
                     large: !1,
                     medium: !1,
@@ -443,32 +447,32 @@
                     smallHeight: !1,
                     extraSmallHeight: !1,
                 };
-                (0, t.memo)(Du);
-                const tu = (u) => {
+                (0, t.memo)(tu);
+                const iu = (u) => {
                     const e = (0, t.useRef)(!1);
                     e.current || (u(), (e.current = !0));
                 };
                 (0, t.memo)(({ children: u }) => {
-                    const e = (0, t.useContext)(Eu),
+                    const e = (0, t.useContext)(Bu),
                         F = (0, t.useState)(e),
                         A = F[0],
                         E = F[1],
                         B = (0, t.useCallback)((u, e) => {
-                            const F = K.view.pxToRem(u),
-                                A = K.view.pxToRem(e);
-                            E(Object.assign({ width: F, height: A }, Y(F, A, N)));
+                            const F = N.view.pxToRem(u),
+                                A = N.view.pxToRem(e);
+                            E(Object.assign({ width: F, height: A }, uu(F, A, X)));
                         }, []);
-                    (tu(() => {
+                    (iu(() => {
                         engine.on('clientResized', B);
                     }),
                         (0, t.useEffect)(() => () => engine.off('clientResized', B), [B]));
                     const D = (0, t.useMemo)(() => Object.assign({}, A), [A]);
-                    return i().createElement(Eu.Provider, { value: D }, u);
+                    return i().createElement(Bu.Provider, { value: D }, u);
                 });
-                let iu;
+                let Cu;
                 !(function (u) {
                     ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
-                })(iu || (iu = {}));
+                })(Cu || (Cu = {}));
                 (() => {
                     const u = new RegExp(
                         /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
@@ -485,7 +489,7 @@
                         'gum',
                     );
                 })();
-                let Cu, ru;
+                let ru, nu;
                 (!(function (u) {
                     ((u.B0 = 'b0'),
                         (u.B1 = 'b1'),
@@ -494,73 +498,73 @@
                         (u.B4 = 'b4'),
                         (u.B5 = 'b5'),
                         (u.B6 = 'b6'));
-                })(Cu || (Cu = {})),
+                })(ru || (ru = {})),
                     (function (u) {
                         ((u.Small = 'small'), (u.Medium = 'medium'), (u.Big = 'big'));
-                    })(ru || (ru = {})));
-                let nu;
+                    })(nu || (nu = {})));
+                let au;
                 !(function (u) {
                     ((u.Huge = 'huge'), (u.Big = 'big'), (u.Medium = 'medium'), (u.Small = 'small'));
-                })(nu || (nu = {}));
-                (Cu.B4,
-                    Cu.B5,
-                    Cu.B6,
-                    Cu.B0,
-                    Cu.B1,
-                    Cu.B2,
-                    Cu.B0,
-                    ru.Big,
-                    nu.Huge,
-                    ru.Medium,
-                    nu.Huge,
-                    ru.Small,
+                })(au || (au = {}));
+                (ru.B4,
+                    ru.B5,
+                    ru.B6,
+                    ru.B0,
+                    ru.B1,
+                    ru.B2,
+                    ru.B0,
                     nu.Big,
-                    Cu.B1,
-                    ru.Big,
-                    nu.Huge,
-                    ru.Medium,
-                    nu.Huge,
-                    ru.Small,
-                    nu.Big,
-                    Cu.B2,
-                    ru.Big,
-                    nu.Huge,
-                    ru.Medium,
-                    nu.Huge,
-                    ru.Small,
-                    nu.Big,
-                    Cu.B3,
-                    ru.Big,
-                    nu.Huge,
-                    ru.Medium,
-                    nu.Big,
-                    ru.Small,
-                    nu.Big,
-                    Cu.B4,
-                    ru.Big,
-                    nu.Big,
-                    ru.Medium,
-                    nu.Big,
-                    ru.Small,
+                    au.Huge,
                     nu.Medium,
-                    Cu.B5,
-                    ru.Big,
-                    nu.Medium,
-                    ru.Medium,
-                    nu.Medium,
-                    ru.Small,
+                    au.Huge,
                     nu.Small,
-                    Cu.B6,
-                    ru.Big,
-                    nu.Medium,
-                    ru.Medium,
-                    nu.Small,
-                    ru.Small,
-                    nu.Small,
-                    nu.Huge,
+                    au.Big,
+                    ru.B1,
                     nu.Big,
+                    au.Huge,
                     nu.Medium,
-                    nu.Small);
+                    au.Huge,
+                    nu.Small,
+                    au.Big,
+                    ru.B2,
+                    nu.Big,
+                    au.Huge,
+                    nu.Medium,
+                    au.Huge,
+                    nu.Small,
+                    au.Big,
+                    ru.B3,
+                    nu.Big,
+                    au.Huge,
+                    nu.Medium,
+                    au.Big,
+                    nu.Small,
+                    au.Big,
+                    ru.B4,
+                    nu.Big,
+                    au.Big,
+                    nu.Medium,
+                    au.Big,
+                    nu.Small,
+                    au.Medium,
+                    ru.B5,
+                    nu.Big,
+                    au.Medium,
+                    nu.Medium,
+                    au.Medium,
+                    nu.Small,
+                    au.Small,
+                    ru.B6,
+                    nu.Big,
+                    au.Medium,
+                    nu.Medium,
+                    au.Small,
+                    nu.Small,
+                    au.Small,
+                    au.Huge,
+                    au.Big,
+                    au.Medium,
+                    au.Small);
             },
         },
         F = {};

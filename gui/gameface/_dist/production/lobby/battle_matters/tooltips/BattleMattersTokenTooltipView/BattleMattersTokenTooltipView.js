@@ -41,7 +41,7 @@
             },
             67: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => V });
+                t.d(e, { O: () => z });
                 var r = {};
                 (t.r(r), t.d(r, { mouse: () => o, onResize: () => i }));
                 var E = {};
@@ -69,30 +69,31 @@
                 (t.r(A),
                     t.d(A, {
                         addModelObserver: () => S,
-                        addPreloadTexture: () => T,
+                        addPreloadTexture: () => f,
                         children: () => a,
                         displayStatus: () => m,
-                        displayStatusIs: () => X,
+                        displayStatusIs: () => K,
                         events: () => c,
-                        extraSize: () => K,
-                        forceTriggerMouseMove: () => U,
+                        extraSize: () => Y,
+                        forceTriggerMouseMove: () => j,
                         freezeTextureBeforeResize: () => y,
                         getBrowserTexturePath: () => b,
-                        getDisplayStatus: () => j,
+                        getDisplayStatus: () => X,
                         getScale: () => P,
                         getSize: () => O,
                         getViewGlobalPosition: () => R,
-                        isEventHandled: () => G,
+                        isClientAccessible: () => I,
+                        isEventHandled: () => U,
                         isFocused: () => W,
                         pxToRem: () => N,
                         remToPx: () => H,
                         resize: () => L,
                         sendEvent: () => v,
                         setAnimateWindow: () => k,
-                        setEventHandled: () => I,
-                        setInputPaddingsRem: () => f,
+                        setEventHandled: () => G,
+                        setInputPaddingsRem: () => T,
                         setSidePaddingsRem: () => M,
-                        whenTutorialReady: () => Y,
+                        whenTutorialReady: () => V,
                     }));
                 const i = F('clientResized'),
                     D = { down: F('mousedown'), up: F('mouseup'), move: F('mousemove') };
@@ -246,10 +247,10 @@
                             x(g, { isMouseEvent: !0, on: u });
                         },
                     };
-                function T(u) {
+                function f(u) {
                     viewEnv.addPreloadTexture(u);
                 }
-                function f(u) {
+                function T(u) {
                     viewEnv.setHitAreaPaddingsRem(u, u, u, u, 15);
                 }
                 function b(u, e, t, r = 1) {
@@ -290,19 +291,22 @@
                     return viewEnv.isFocused();
                 }
                 function I() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function G() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function U() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function j() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function X() {
                     return viewEnv.getShowingStatus();
                 }
-                const X = Object.keys(m).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === m[e]), u), {}),
-                    K = {
+                const K = Object.keys(m).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === m[e]), u), {}),
+                    Y = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -310,13 +314,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    Y = Promise.all([
+                    V = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : c.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    V = { view: A, client: E };
+                    z = { view: A, client: E };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -925,8 +929,8 @@
                 var w = t(364);
                 const x = 1e3,
                     v = 60,
-                    T = 3600,
-                    f = 86400;
+                    f = 3600,
+                    T = 86400;
                 Date.now();
                 const b = () => {},
                     S = (u = 0, e, t = 0, E = b) => {
@@ -1470,7 +1474,7 @@
                             w = u.spaceBetween,
                             x = u.spaceAround,
                             v = u.justifyContent,
-                            T =
+                            f =
                                 void 0 === v
                                     ? (h ? 'flex-start' : g && 'center') ||
                                       (p && 'flex-end') ||
@@ -1478,8 +1482,8 @@
                                       (x && 'space-around') ||
                                       void 0
                                     : v,
-                            f = u.alignItems,
-                            b = void 0 === f ? (h ? 'flex-start' : g && 'center') || (p && 'flex-end') || void 0 : f,
+                            T = u.alignItems,
+                            b = void 0 === T ? (h ? 'flex-start' : g && 'center') || (p && 'flex-end') || void 0 : T,
                             S = u.alignSelf,
                             M = u.wrap,
                             O = u.flexWrap,
@@ -1520,12 +1524,12 @@
                                         display: d || b ? 'flex' : void 0,
                                         flexDirection: d,
                                         flexWrap: L,
-                                        justifyContent: T,
+                                        justifyContent: f,
                                         alignItems: b,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, a, i, o, s, _, H, N, S, d, L, T, b]),
+                            }, [t, a, i, o, s, _, H, N, S, d, L, f, b]),
                             G = I.computedStyle,
                             U = I.computedClassNames;
                         return E().createElement('div', _u({ className: n()(su.base, ...U, e), style: G }, W), k);
@@ -1597,9 +1601,9 @@
                         PROM: 'Text_PROM_65',
                     },
                     vu = ['text', 'variant', 'className', 'color', 'm', 'mt', 'mr', 'mb', 'ml', 'style', 'format'];
-                function Tu() {
+                function fu() {
                     return (
-                        (Tu =
+                        (fu =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1608,11 +1612,11 @@
                                 }
                                 return u;
                             }),
-                        Tu.apply(this, arguments)
+                        fu.apply(this, arguments)
                     );
                 }
                 Object.keys(Y());
-                const fu = Object.keys(wu()),
+                const Tu = Object.keys(wu()),
                     bu = { mt: 'MD', mr: 'SM', mb: 'SM', ml: 'SM' },
                     Su = { mt: 'SM', mr: 'XS', mb: 'XS', ml: 'XS' },
                     Mu = { mt: 'XS', mr: 'XS', mb: 'XS', ml: 'XS' },
@@ -1651,7 +1655,7 @@
                         (Object.keys(Lu),
                         (u) =>
                             u
-                                ? ((u) => fu.includes(u))(u)
+                                ? ((u) => Tu.includes(u))(u)
                                     ? { colorClassName: xu[u] }
                                     : { colorStyle: { color: u } }
                                 : {}),
@@ -1691,7 +1695,7 @@
                             p = h.colorClassName;
                         return E().createElement(
                             du,
-                            Tu(
+                            fu(
                                 {
                                     className: n()(xu.base, t && xu[t], p, a),
                                     style: g,
@@ -1702,7 +1706,7 @@
                                 },
                                 d,
                             ),
-                            void 0 !== c ? E().createElement(gu, Tu({}, c, { text: e })) : e,
+                            void 0 !== c ? E().createElement(gu, fu({}, c, { text: e })) : e,
                         );
                     }),
                     Pu = {
@@ -1770,10 +1774,10 @@
                         const t = Math.floor(Date.now() / x),
                             r = (function (u = 0) {
                                 let e = u;
-                                const t = Math.trunc(e / f);
-                                e -= t * f;
-                                const r = Math.trunc(e / T);
-                                e -= r * T;
+                                const t = Math.trunc(e / T);
+                                e -= t * T;
+                                const r = Math.trunc(e / f);
+                                e -= r * f;
                                 const E = Math.trunc(e / v);
                                 return ((e -= E * v), { days: t, hours: r, minutes: E, seconds: e });
                             })(G(u - t, 1)),

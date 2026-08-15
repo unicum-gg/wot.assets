@@ -923,27 +923,28 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => S,
+                        displayStatusIs: () => v,
                         events: () => i.U,
-                        extraSize: () => v,
-                        forceTriggerMouseMove: () => B,
+                        extraSize: () => w,
+                        forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => A,
                         getBrowserTexturePath: () => l,
-                        getDisplayStatus: () => f,
+                        getDisplayStatus: () => S,
                         getScale: () => F,
                         getSize: () => d,
                         getViewGlobalPosition: () => m,
-                        isEventHandled: () => h,
+                        isClientAccessible: () => C,
+                        isEventHandled: () => B,
                         isFocused: () => g,
                         pxToRem: () => D,
                         remToPx: () => b,
                         resize: () => E,
                         sendEvent: () => r.qP,
                         setAnimateWindow: () => p,
-                        setEventHandled: () => C,
+                        setEventHandled: () => h,
                         setInputPaddingsRem: () => o,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => w,
+                        whenTutorialReady: () => x,
                     }));
                 var n = u(3722),
                     a = u(6112),
@@ -993,22 +994,25 @@
                     return viewEnv.isFocused();
                 }
                 function C() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function h() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function B() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function f() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function S() {
                     return viewEnv.getShowingStatus();
                 }
-                const S = Object.keys(a.W).reduce(
+                const v = Object.keys(a.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    v = {
+                    w = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -1016,7 +1020,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    w = Promise.all([
+                    x = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : i.U.onDomBuilt(e);
                         }),
@@ -2715,14 +2719,15 @@
                     qe = 'AbilitySkillSlot_icon_d2',
                     Ye = ({ skillName: e, tooltipId: t, tooltipHeader: u, tooltipBody: n, className: r }) => {
                         const o = (0, a.useMemo)(
-                            () => ({
-                                args: { tooltipId: t, skillName: e, header: u, body: n, hasHtmlContent: !0 },
-                                header: u,
-                                body: n,
-                                ignoreShowDelay: !0,
-                            }),
-                            [e, u, n, t],
-                        );
+                                () => ({
+                                    args: { tooltipId: t, skillName: e, header: u, body: n, hasHtmlContent: !0 },
+                                    header: u,
+                                    body: n,
+                                    ignoreShowDelay: !0,
+                                }),
+                                [e, u, n, t],
+                            ),
+                            l = R.images.gui.maps.icons.roleSkills.c_48x48;
                         return i().createElement(
                             Xe,
                             { tooltipArgs: o, className: s()(Ke, r) },
@@ -2735,9 +2740,7 @@
                                 }),
                                 i().createElement('div', {
                                     className: qe,
-                                    style: {
-                                        backgroundImage: `url(${R.images.gui.maps.icons.roleSkills.c_48x48.$dyn(e)})`,
-                                    },
+                                    style: { backgroundImage: `url(${l.$dyn(e) || l.$dyn('not_found_artefact')})` },
                                 }),
                             ),
                         );

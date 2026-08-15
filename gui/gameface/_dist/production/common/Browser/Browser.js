@@ -157,25 +157,26 @@
                         displayStatus: () => a.W,
                         displayStatusIs: () => L,
                         events: () => o.U,
-                        extraSize: () => C,
-                        forceTriggerMouseMove: () => O,
+                        extraSize: () => k,
+                        forceTriggerMouseMove: () => M,
                         freezeTextureBeforeResize: () => E,
                         getBrowserTexturePath: () => l,
-                        getDisplayStatus: () => M,
+                        getDisplayStatus: () => C,
                         getScale: () => w,
                         getSize: () => _,
                         getViewGlobalPosition: () => m,
-                        isEventHandled: () => y,
+                        isClientAccessible: () => p,
+                        isEventHandled: () => O,
                         isFocused: () => h,
                         pxToRem: () => g,
                         remToPx: () => b,
                         resize: () => v,
                         sendEvent: () => i.qP,
                         setAnimateWindow: () => f,
-                        setEventHandled: () => p,
+                        setEventHandled: () => y,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => d,
-                        whenTutorialReady: () => k,
+                        whenTutorialReady: () => P,
                     }));
                 var r = n(722),
                     a = n(112),
@@ -225,22 +226,25 @@
                     return viewEnv.isFocused();
                 }
                 function p() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function y() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function O() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function M() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function C() {
                     return viewEnv.getShowingStatus();
                 }
                 const L = Object.keys(a.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    C = {
+                    k = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -248,7 +252,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    k = Promise.all([
+                    P = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : o.U.onDomBuilt(e);
                         }),
@@ -1026,8 +1030,8 @@
                         }),
                     ),
                     M = O[0],
-                    L = O[1],
-                    C = (e) => {
+                    C = O[1],
+                    L = (e) => {
                         (0, r.useEffect)(e, []);
                     };
                 var k = n(403),
@@ -1139,8 +1143,8 @@
                         y = h[1],
                         O = (0, r.useState)(!1),
                         M = O[0],
-                        L = O[1],
-                        C = (0, r.useCallback)(() => {
+                        C = O[1],
+                        L = (0, r.useCallback)(() => {
                             i || (w.current && (w.current.focus(), f(!0)));
                         }, [i]),
                         k = (0, r.useCallback)(
@@ -1157,7 +1161,7 @@
                         ),
                         N = (0, r.useCallback)(
                             (e) => {
-                                i || (null !== c && I(c), u && u(e), L(!0));
+                                i || (null !== c && I(c), u && u(e), C(!0));
                             },
                             [i, c, u],
                         ),
@@ -1175,9 +1179,9 @@
                         ),
                         x = (0, r.useCallback)(
                             (e) => {
-                                i || (null !== l && I(l), _ && _(e), n && C(), y(!0));
+                                i || (null !== l && I(l), _ && _(e), n && L(), y(!0));
                             },
-                            [i, l, _, C, n],
+                            [i, l, _, L, n],
                         ),
                         F = (0, r.useCallback)(
                             (e) => {
@@ -1572,7 +1576,7 @@
                             g = e.onMouseWheel,
                             b = e.onMouseDown,
                             f = e.onMouseUp,
-                            h = L(),
+                            h = C(),
                             p = h.model,
                             y = h.controls,
                             O = p.root.get(),
@@ -1581,13 +1585,13 @@
                             P = O.waitingMessage,
                             S = p.getState(),
                             N = l || S === d.Loaded;
-                        (C(() => {
+                        (L(() => {
                             s && v(M) && y.createWebView();
                         }),
                             (0, r.useEffect)(() => {
                                 _(M) && y.focus();
                             }, [M, y]),
-                            C(
+                            L(
                                 () => (
                                     window.addEventListener('mouseleave', y.blur),
                                     window.addEventListener('mouseenter', y.focus),
@@ -1674,10 +1678,10 @@
                 });
                 var Oe = n(521),
                     Me = n(364);
-                const Le = (e) => {
+                const Ce = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function Ce(e = Oe.n.NONE, t = Le, n = !1) {
+                function Le(e = Oe.n.NONE, t = Ce, n = !1) {
                     (0, r.useEffect)(() => {
                         if (e !== Oe.n.NONE)
                             return (
@@ -1696,7 +1700,7 @@
                 }
                 function ke() {
                     !(function (e = Oe.n.ESCAPE) {
-                        Ce(e, Me.Sy, !0);
+                        Le(e, Me.Sy, !0);
                     })(Oe.n.ESCAPE);
                 }
                 const Pe = 'BrowserApp_base_de',

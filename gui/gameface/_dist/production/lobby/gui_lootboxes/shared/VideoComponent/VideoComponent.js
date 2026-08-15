@@ -66,13 +66,13 @@
                             c = u.largeWidth,
                             v = u.mediumWidth,
                             w = u.smallWidth,
-                            x = u.extraSmallWidth,
-                            f = u.extraLargeHeight,
+                            f = u.extraSmallWidth,
+                            x = u.extraLargeHeight,
                             E = u.largeHeight,
                             S = u.mediumHeight,
                             p = u.smallHeight,
                             L = u.extraSmallHeight,
-                            H = { extraLarge: f, large: E, medium: S, small: p, extraSmall: L };
+                            H = { extraLarge: x, large: E, medium: S, small: p, extraSmall: L };
                         if (r.extraLarge || r.large || r.medium || r.small || r.extraSmall) {
                             if (r.extraLarge && o) return t;
                             if (r.large && d) return t;
@@ -84,7 +84,7 @@
                             if (r.largeWidth && c) return (0, n.H)(t, r, H);
                             if (r.mediumWidth && v) return (0, n.H)(t, r, H);
                             if (r.smallWidth && w) return (0, n.H)(t, r, H);
-                            if (r.extraSmallWidth && x) return (0, n.H)(t, r, H);
+                            if (r.extraSmallWidth && f) return (0, n.H)(t, r, H);
                             if (!(
                                 r.extraLargeWidth ||
                                 r.largeWidth ||
@@ -92,7 +92,7 @@
                                 r.smallWidth ||
                                 r.extraSmallWidth
                             )) {
-                                if (r.extraLargeHeight && f) return t;
+                                if (r.extraLargeHeight && x) return t;
                                 if (r.largeHeight && E) return t;
                                 if (r.mediumHeight && S) return t;
                                 if (r.smallHeight && p) return t;
@@ -374,27 +374,28 @@
                         addPreloadTexture: () => u,
                         children: () => i,
                         displayStatus: () => n.W,
-                        displayStatusIs: () => y,
+                        displayStatusIs: () => T,
                         events: () => a.U,
-                        extraSize: () => T,
-                        forceTriggerMouseMove: () => H,
+                        extraSize: () => W,
+                        forceTriggerMouseMove: () => b,
                         freezeTextureBeforeResize: () => v,
                         getBrowserTexturePath: () => d,
-                        getDisplayStatus: () => b,
+                        getDisplayStatus: () => y,
                         getScale: () => w,
                         getSize: () => g,
                         getViewGlobalPosition: () => c,
-                        isEventHandled: () => L,
+                        isClientAccessible: () => p,
+                        isEventHandled: () => H,
                         isFocused: () => S,
-                        pxToRem: () => x,
-                        remToPx: () => f,
+                        pxToRem: () => f,
+                        remToPx: () => x,
                         resize: () => h,
                         sendEvent: () => l.qP,
                         setAnimateWindow: () => E,
-                        setEventHandled: () => p,
+                        setEventHandled: () => L,
                         setInputPaddingsRem: () => o,
                         setSidePaddingsRem: () => m,
-                        whenTutorialReady: () => W,
+                        whenTutorialReady: () => j,
                     }));
                 var i = r(3722),
                     n = r(6112),
@@ -423,7 +424,7 @@
                 }
                 function c(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? t : { x: f(t.x), y: f(t.y) };
+                    return 'rem' === e ? t : { x: x(t.x), y: x(t.y) };
                 }
                 function v() {
                     viewEnv.freezeTextureBeforeResize();
@@ -431,10 +432,10 @@
                 function w() {
                     return viewEnv.getScale();
                 }
-                function x(e) {
+                function f(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function f(e) {
+                function x(e) {
                     return viewEnv.remToPx(e);
                 }
                 function E(e, t) {
@@ -444,22 +445,25 @@
                     return viewEnv.isFocused();
                 }
                 function p() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function L() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function H() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function b() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function y() {
                     return viewEnv.getShowingStatus();
                 }
-                const y = Object.keys(n.W).reduce(
+                const T = Object.keys(n.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === n.W[t]), e),
                         {},
                     ),
-                    T = {
+                    W = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -467,7 +471,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    W = Promise.all([
+                    j = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -654,10 +658,10 @@
                             for (i = 0; i < a.length; i++) ((r = a[i]), t.indexOf(r) >= 0 || (n[r] = e[r]));
                             return n;
                         })(e, u);
-                    const x = (0, a.useRef)(null),
-                        f = (0, n.GS)(),
-                        E = f.remScreenWidth,
-                        S = f.remScreenHeight,
+                    const f = (0, a.useRef)(null),
+                        x = (0, n.GS)(),
+                        E = x.remScreenWidth,
+                        S = x.remScreenHeight,
                         p = (0, a.useMemo)(() => {
                             const e = ((e, t, r, i) => {
                                 const n = e / t;
@@ -669,7 +673,7 @@
                         }, [S, E, v, c]);
                     return (
                         (0, a.useEffect)(() => {
-                            if (g && x.current) {
+                            if (g && f.current) {
                                 const e = () => {
                                         let e = 0;
                                         const r = (function (r) {
@@ -677,8 +681,8 @@
                                                 return [
                                                     function r() {
                                                         ((() => {
-                                                            if (x.current) {
-                                                                const r = x.current,
+                                                            if (f.current) {
+                                                                const r = f.current,
                                                                     i = r.currentTime,
                                                                     n = r.duration;
                                                                 e !== i &&
@@ -713,11 +717,11 @@
                                         }
                                     ),
                                     n = (e) => {
-                                        x.current && (x.current.currentTime = (0, i.u)(0, x.current.duration, e));
+                                        f.current && (f.current.currentTime = (0, i.u)(0, f.current.duration, e));
                                     },
                                     a = () => {
                                         var e;
-                                        return null == (e = x.current) ? void 0 : e.pause();
+                                        return null == (e = f.current) ? void 0 : e.pause();
                                     },
                                     l = () => {
                                         (a(), n(0));
@@ -730,10 +734,10 @@
                                         on: (e, t) => {
                                             var r;
                                             return (
-                                                null == (r = x.current) || r.addEventListener(e, t),
+                                                null == (r = f.current) || r.addEventListener(e, t),
                                                 () => {
                                                     var r;
-                                                    return null == (r = x.current)
+                                                    return null == (r = f.current)
                                                         ? void 0
                                                         : r.removeEventListener(e, t);
                                                 }
@@ -742,10 +746,10 @@
                                         off: (e, t) => {
                                             var r;
                                             return (
-                                                null == (r = x.current) || r.removeEventListener(e, t),
+                                                null == (r = f.current) || r.removeEventListener(e, t),
                                                 () => {
                                                     var r;
-                                                    return null == (r = x.current)
+                                                    return null == (r = f.current)
                                                         ? void 0
                                                         : r.removeEventListener(e, t);
                                                 }
@@ -753,21 +757,21 @@
                                         },
                                         play: () => {
                                             var e;
-                                            return null == (e = x.current) ? void 0 : e.play();
+                                            return null == (e = f.current) ? void 0 : e.play();
                                         },
                                         pause: a,
                                         stop: l,
                                         cleanup: u,
                                         getCurrentTime: () => {
                                             var e;
-                                            return null == (e = x.current) ? void 0 : e.currentTime;
+                                            return null == (e = f.current) ? void 0 : e.currentTime;
                                         },
                                         getDuration: () => {
                                             var e;
-                                            return null == (e = x.current) ? void 0 : e.duration;
+                                            return null == (e = f.current) ? void 0 : e.duration;
                                         },
                                         setCurrentTime: n,
-                                        domRef: x.current,
+                                        domRef: f.current,
                                         onChangeTime: r,
                                     }),
                                     () => {
@@ -777,17 +781,17 @@
                             }
                         }, [g]),
                         (0, a.useEffect)(() => {
-                            if (x.current)
+                            if (f.current)
                                 return (
-                                    d && x.current.play(),
+                                    d && f.current.play(),
                                     () => {
-                                        x.current && x.current.pause();
+                                        f.current && f.current.pause();
                                     }
                                 );
                         }, []),
                         l().createElement(
                             'video',
-                            o({ src: t, className: r, loop: m, ref: x, onClick: h, style: p }, w, {
+                            o({ src: t, className: r, loop: m, ref: f, onClick: h, style: p }, w, {
                                 onError: w.onError,
                             }),
                         )
@@ -846,6 +850,7 @@
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
+        (i.j = 897),
         (() => {
             var e = { 897: 0 };
             i.O.j = (t) => 0 === e[t];

@@ -218,27 +218,28 @@
                         addPreloadTexture: () => n,
                         children: () => _,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => v,
+                        displayStatusIs: () => w,
                         events: () => r.U,
-                        extraSize: () => w,
-                        forceTriggerMouseMove: () => b,
+                        extraSize: () => f,
+                        forceTriggerMouseMove: () => S,
                         freezeTextureBeforeResize: () => F,
                         getBrowserTexturePath: () => o,
-                        getDisplayStatus: () => S,
+                        getDisplayStatus: () => v,
                         getScale: () => D,
                         getSize: () => A,
                         getViewGlobalPosition: () => d,
-                        isEventHandled: () => p,
+                        isClientAccessible: () => h,
+                        isEventHandled: () => b,
                         isFocused: () => g,
                         pxToRem: () => m,
                         remToPx: () => B,
                         resize: () => c,
                         sendEvent: () => i.qP,
                         setAnimateWindow: () => C,
-                        setEventHandled: () => h,
+                        setEventHandled: () => p,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => E,
-                        whenTutorialReady: () => f,
+                        whenTutorialReady: () => x,
                     }));
                 var _ = t(3722),
                     a = t(6112),
@@ -288,22 +289,25 @@
                     return viewEnv.isFocused();
                 }
                 function h() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function p() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function b() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function S() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function v() {
                     return viewEnv.getShowingStatus();
                 }
-                const v = Object.keys(a.W).reduce(
+                const w = Object.keys(a.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === a.W[e]), u),
                         {},
                     ),
-                    w = {
+                    f = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -311,7 +315,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    f = Promise.all([
+                    x = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : r.U.onDomBuilt(u);
                         }),

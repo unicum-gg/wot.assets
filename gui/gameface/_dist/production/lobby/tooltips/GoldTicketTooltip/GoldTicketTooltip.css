@@ -289,8 +289,13 @@
 .App_base_86 {
     display: flex;
     flex-direction: column;
-    width: 343rem;
-    padding: 20rem;
+    width: 400rem;
+}
+
+.App_headerContainer_c7 {
+    width: 100%;
+    height: auto;
+    background: url('R.images.mt_birthday.gui.maps.icons.tooltips.goldTicketHeader') no-repeat center / contain;
 }
 
 .App_header_22 {
@@ -298,13 +303,7 @@
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 16rem;
-}
-
-.App_icon_8c {
-    width: 296rem;
-    height: 222rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.gold_ticket') no-repeat center / cover;
+    margin: 26rem 24rem;
 }
 
 .App_description_2b {
@@ -312,16 +311,42 @@
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    margin-top: 16rem;
+    margin: 16rem 24rem;
 }
 
 .App_divider_35 {
     display: flex;
     align-self: center;
-    width: 302rem;
-    height: 9rem;
-    margin: 16rem auto;
-    background: url('R.images.mt_birthday.gui.maps.icons.divider') no-repeat center / contain;
+    width: 100%;
+    height: 1rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.divider') no-repeat center / cover;
+}
+
+.App_currencyCountContainer_68 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 18rem 24rem;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(201, 201, 182, 0.07) 38.22%,
+        rgba(201, 201, 182, 0.07) 64.56%,
+        transparent 100%
+    );
+}
+
+.App_currencyCount_73 {
+    color: #cbac77;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
 }
 
 .App_subHeader_f7 {
@@ -329,5 +354,13 @@
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
-    margin-bottom: 8rem;
+    margin: 16rem 24rem 10rem;
+}
+
+.App_howToEarnDescription_fe {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0 24rem 17rem;
 }

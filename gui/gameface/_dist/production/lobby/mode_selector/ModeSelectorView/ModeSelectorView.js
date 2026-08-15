@@ -781,27 +781,28 @@
                         addPreloadTexture: () => i,
                         children: () => u,
                         displayStatus: () => _.W,
-                        displayStatusIs: () => f,
+                        displayStatusIs: () => x,
                         events: () => r.U,
-                        extraSize: () => x,
-                        forceTriggerMouseMove: () => v,
+                        extraSize: () => w,
+                        forceTriggerMouseMove: () => h,
                         freezeTextureBeforeResize: () => g,
                         getBrowserTexturePath: () => s,
-                        getDisplayStatus: () => h,
+                        getDisplayStatus: () => f,
                         getScale: () => E,
                         getSize: () => m,
                         getViewGlobalPosition: () => b,
-                        isEventHandled: () => D,
+                        isClientAccessible: () => B,
+                        isEventHandled: () => v,
                         isFocused: () => F,
                         pxToRem: () => A,
                         remToPx: () => C,
                         resize: () => d,
                         sendEvent: () => n.qP,
                         setAnimateWindow: () => p,
-                        setEventHandled: () => B,
+                        setEventHandled: () => D,
                         setInputPaddingsRem: () => o,
                         setSidePaddingsRem: () => c,
-                        whenTutorialReady: () => w,
+                        whenTutorialReady: () => S,
                     }));
                 var u = a(3722),
                     _ = a(6112),
@@ -851,22 +852,25 @@
                     return viewEnv.isFocused();
                 }
                 function B() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function D() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function v() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function h() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const f = Object.keys(_.W).reduce(
+                const x = Object.keys(_.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === _.W[t]), e),
                         {},
                     ),
-                    x = {
+                    w = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -874,7 +878,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    w = Promise.all([
+                    S = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : r.U.onDomBuilt(e);
                         }),
@@ -1595,6 +1599,13 @@
                         UserLocale: i,
                     };
                 window.ViewEnvHelper = S;
+            },
+            7118: (e, t, a) => {
+                'use strict';
+                a.d(t, { w: () => u });
+                const u = ({ iconPath: e, iconName: t, iconPostfix: a = '' }) => ({
+                    backgroundImage: t ? `url('${e}.${t}${a}')` : '',
+                });
             },
             1729: (e, t, a) => {
                 'use strict';
@@ -2863,6 +2874,7 @@
                     'hideStatus',
                     'noWidgetSizes',
                     'classNames',
+                    'iconPostfix',
                     'resourceFolderGetter',
                 ];
                 function He() {
@@ -2906,9 +2918,10 @@
                             w = e.noWidgetSizes,
                             S = void 0 === w ? [re.Id.B5, re.Id.B6] : w,
                             k = e.classNames,
-                            N = e.resourceFolderGetter,
-                            y = void 0 === N ? re.d6 : N,
-                            T = (function (e, t) {
+                            N = e.iconPostfix,
+                            y = e.resourceFolderGetter,
+                            T = void 0 === y ? re.d6 : y,
+                            L = (function (e, t) {
                                 if (null == e) return {};
                                 var a,
                                     u,
@@ -2917,8 +2930,8 @@
                                 for (u = 0; u < r.length; u++) ((a = r[u]), t.indexOf(a) >= 0 || (_[a] = e[a]));
                                 return _;
                             })(e, $e);
-                        const L = (0, be.O)(),
-                            I = (0, _e.Z)(
+                        const I = (0, be.O)(),
+                            M = (0, _e.Z)(
                                 [
                                     ...(0, re.Hp)(
                                         'base',
@@ -2936,118 +2949,118 @@
                                 ],
                                 Pe,
                             ),
-                            M = X('model', J.None),
-                            P = M.onItemClicked,
-                            O = M.onInfoClicked,
-                            $ = T.resourcesFolderName,
-                            H = T.size,
-                            z = T.isSelected,
-                            U = T.showWidget,
-                            j = T.isNew,
-                            V = T.modeName,
-                            G = T.index,
-                            q = T.isLocked,
-                            Y = (0, be.B)(l),
-                            Z = Y[0],
-                            K = Y[1],
-                            Q = (0, r.useMemo)(() => Oe.S4[H][L], [H, L]),
-                            ee = (0, r.useMemo)(() => {
-                                const e = y($);
+                            P = X('model', J.None),
+                            O = P.onItemClicked,
+                            $ = P.onInfoClicked,
+                            H = L.resourcesFolderName,
+                            z = L.size,
+                            U = L.isSelected,
+                            j = L.showWidget,
+                            V = L.isNew,
+                            G = L.modeName,
+                            q = L.index,
+                            Y = L.isLocked,
+                            Z = (0, be.B)(l),
+                            K = Z[0],
+                            Q = Z[1],
+                            ee = (0, r.useMemo)(() => Oe.S4[z][I], [z, I]),
+                            te = (0, r.useMemo)(() => {
+                                const e = T(H);
                                 if (null !== e) {
-                                    const t = q ? e.$dyn(`icon_${Q}_locked`) : e.$dyn(`icon_${Q}`);
+                                    const t = Y ? e.$dyn(`icon_${ee}_locked`) : e.$dyn(`icon_${ee}${N || ''}`);
                                     if (void 0 !== t) return { backgroundImage: `url(${t})` };
                                 }
-                            }, [y, $, Q, q]),
-                            te = U || z,
-                            ae = Oe.Hi.includes(H),
-                            ue = H === re.Id.B1,
-                            ne = H === re.Id.B2,
-                            ie = H === re.Id.B3,
-                            oe = Oe.u_.includes(H),
-                            se = !S.includes(H) && U && d,
-                            le = te && !ae,
-                            ce = Z && !q && !ae && !te,
-                            me = Z || (z && C),
-                            ge = L !== re.Cg.Big,
-                            Ee = A && A.length > 0 && !u && oe,
-                            Ae = (0, r.useMemo)(
+                            }, [T, H, Y, ee, N]),
+                            ae = j || U,
+                            ue = Oe.Hi.includes(z),
+                            ne = z === re.Id.B1,
+                            ie = z === re.Id.B2,
+                            oe = z === re.Id.B3,
+                            se = Oe.u_.includes(z),
+                            le = !S.includes(z) && j && d,
+                            ce = ae && !ue,
+                            me = K && !Y && !ue && !ae,
+                            ge = K || (U && C),
+                            Ee = I !== re.Cg.Big,
+                            Ae = A && A.length > 0 && !u && se,
+                            Ce = (0, r.useMemo)(
                                 () =>
                                     g
                                         ? R.strings.ranked_battles.rankedBattlesUnreachableView.subtitleText()
                                         : C || a || void 0,
                                 [g, C, a],
                             ),
-                            Ce = (0, r.useMemo)(
-                                () => (oe || ie ? u || '' : void 0 === u ? '' : u.replace('\n', ' ')),
-                                [oe, u, ie],
+                            Fe = (0, r.useMemo)(
+                                () => (se || oe ? u || '' : void 0 === u ? '' : u.replace('\n', ' ')),
+                                [se, u, oe],
                             );
-                        let Fe = '';
-                        ue && _ === Ae ? i && (Fe = (0, W.z4)(i)) : (Fe = (0, W.z4)(_ + F + i));
-                        const Be = o()(
+                        let Be = '';
+                        ne && _ === Ce ? i && (Be = (0, W.z4)(i)) : (Be = (0, W.z4)(_ + F + i));
+                        const De = o()(
                                 Pe.icon,
-                                Pe[`icon__${Q}`],
-                                I[`icon__${H}`],
-                                !ae && Pe.icon__animPrepare,
-                                le && I[`icon__static__${H}`],
-                                ce && I[`icon__anim__${H}`],
+                                Pe[`icon__${ee}`],
+                                M[`icon__${z}`],
+                                !ue && Pe.icon__animPrepare,
+                                ce && M[`icon__static__${z}`],
+                                me && M[`icon__anim__${z}`],
                             ),
-                            De = o()(Pe.mask, I[`mask__${H}`], le && Pe.mask__static, ce && Pe.mask__anim),
-                            he = o()(
-                                I.subtitle,
-                                I[`subtitle__${H}`],
-                                (a || !ae) && Pe.subtitle__normal,
-                                !oe && Pe.subtitle__noReward,
-                                C && ae && Pe.subtitle__statusActive,
-                                C && te && Pe.subtitle__staticPrepare,
-                                me && Pe.subtitle__anim,
+                            he = o()(Pe.mask, M[`mask__${z}`], ce && Pe.mask__static, me && Pe.mask__anim),
+                            fe = o()(
+                                M.subtitle,
+                                M[`subtitle__${z}`],
+                                (a || !ue) && Pe.subtitle__normal,
+                                !se && Pe.subtitle__noReward,
+                                C && ue && Pe.subtitle__statusActive,
+                                C && ae && Pe.subtitle__staticPrepare,
+                                ge && Pe.subtitle__anim,
                                 g && Pe.subtitle__disable,
                                 null == k ? void 0 : k.subtitle,
                             ),
-                            fe = o()(
+                            we = o()(
                                 Pe.statusDescription,
-                                ne && Pe.statusDescription__position,
-                                oe && Pe.statusDescription__color,
+                                ie && Pe.statusDescription__position,
+                                se && Pe.statusDescription__color,
                             ),
-                            we = o()(I.footer, (Z || z) && !U && ie && Pe.footer__anim, null == k ? void 0 : k.footer),
-                            Se = o()(I.formatText, I[`formatText__${H}`]),
-                            ke = o()(Pe.darken, U && Pe.darken__show),
-                            Ne = o()(
+                            Se = o()(M.footer, (K || U) && !j && oe && Pe.footer__anim, null == k ? void 0 : k.footer),
+                            ke = o()(M.formatText, M[`formatText__${z}`]),
+                            Ne = o()(Pe.darken, j && Pe.darken__show),
+                            ye = o()(
                                 Pe.widgetOverlay,
-                                !se && Pe.widgetOverlay__hide,
+                                !le && Pe.widgetOverlay__hide,
                                 null == k ? void 0 : k.widgetOverlay,
                             ),
-                            ye = Fe && oe && !g && !q && (!se || oe);
+                            Te = Be && se && !g && !Y && (!le || se);
                         return n().createElement(
                             'div',
-                            { className: o()(I.base, I[`base__${H}`]) },
+                            { className: o()(M.base, M[`base__${z}`]) },
                             n().createElement(
                                 pe,
-                                He({ onHoverChanged: K, isDisabled: g }, T, {
-                                    onItemClicked: P,
-                                    onInfoClicked: O,
-                                    resourceFolderGetter: y,
+                                He({ onHoverChanged: Q, isDisabled: g }, L, {
+                                    onItemClicked: O,
+                                    onInfoClicked: $,
+                                    resourceFolderGetter: T,
                                 }),
-                                Ee && n().createElement(Re, { size: H, rewardsList: A, isLocked: q }),
+                                Ae && n().createElement(Re, { size: z, rewardsList: A, isLocked: Y }),
                                 u &&
                                     n().createElement(
                                         'div',
-                                        { className: o()(I.statusNotActive, I[`statusNotActive__${H}`]) },
-                                        n().createElement(de.B, { text: Ce, classMix: Se }),
+                                        { className: o()(M.statusNotActive, M[`statusNotActive__${z}`]) },
+                                        n().createElement(de.B, { text: Fe, classMix: ke }),
                                     ),
-                                n().createElement('div', { className: ke }),
-                                d && n().createElement('div', { className: Ne }, d),
+                                n().createElement('div', { className: Ne }),
+                                d && n().createElement('div', { className: ye }, d),
                                 s,
-                                (!se || h) &&
+                                (!le || h) &&
                                     n().createElement(
                                         'div',
-                                        { className: De },
-                                        n().createElement('div', { className: Be, style: ee }),
+                                        { className: he },
+                                        n().createElement('div', { className: De, style: te }),
                                     ),
                                 n().createElement(
                                     'div',
                                     {
-                                        className: o()(Pe.name, I.name, I[`name__${H}`], null == k ? void 0 : k.name, {
-                                            [Pe.name__locked]: q,
+                                        className: o()(Pe.name, M.name, M[`name__${z}`], null == k ? void 0 : k.name, {
+                                            [Pe.name__locked]: Y,
                                         }),
                                     },
                                     t,
@@ -3055,13 +3068,13 @@
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: he },
-                                    !x && !q && (!ne || g) && n().createElement(de.B, { classMix: Se, text: Ae || '' }),
-                                    ye &&
+                                    { className: fe },
+                                    !x && !Y && (!ie || g) && n().createElement(de.B, { classMix: ke, text: Ce || '' }),
+                                    Te &&
                                         n().createElement(
                                             'div',
-                                            { className: fe },
-                                            n().createElement(de.B, { classMix: Se, text: Fe }),
+                                            { className: we },
+                                            n().createElement(de.B, { classMix: ke, text: Be }),
                                         ),
                                     B &&
                                         n().createElement(
@@ -3071,23 +3084,23 @@
                                         ),
                                 ),
                                 i &&
-                                    !q &&
+                                    !Y &&
                                     n().createElement(
                                         'div',
-                                        { className: we },
-                                        n().createElement(de.B, { classMix: Se, text: (0, W.z4)(i) }),
+                                        { className: Se },
+                                        n().createElement(de.B, { classMix: ke, text: (0, W.z4)(i) }),
                                     ),
                                 E &&
-                                    !j &&
+                                    !V &&
                                     n().createElement(ve, {
-                                        index: G,
+                                        index: q,
                                         text: E,
-                                        isSmall: ge,
-                                        classMix: o()(Pe.timeLeft, ge && Pe.timeLeft__small),
+                                        isSmall: Ee,
+                                        classMix: o()(Pe.timeLeft, Ee && Pe.timeLeft__small),
                                         tooltipId: m,
-                                        modeName: V,
+                                        modeName: G,
                                     }),
-                                n().createElement(xe, { modeName: V, isDisabled: g, battlePassState: b, isLocked: q }),
+                                n().createElement(xe, { modeName: G, isDisabled: g, battlePassState: b, isLocked: Y }),
                             ),
                         );
                     },
@@ -5830,13 +5843,21 @@
                                     t = e.status,
                                     u = e.stageCurrentPoints,
                                     _ = e.stageMaximumPoints,
-                                    o =
+                                    o = e.iconPostfix,
+                                    s =
                                         a &&
                                         t === ne.ACTIVE &&
-                                        n().createElement(oe.$, { size: i, isCompletedProgression: u === _ });
+                                        n().createElement(oe.$, {
+                                            size: i,
+                                            isCompletedProgression: u === _,
+                                            iconPostfix: o,
+                                        });
                                 return n().createElement(
                                     $t,
-                                    H_({ widgetComponent: o, widget: a, divider: '\n' }, r, { name: r.name || '' }),
+                                    H_({ widgetComponent: s, widget: a, divider: '\n' }, r, {
+                                        iconPostfix: o,
+                                        name: r.name || '',
+                                    }),
                                 );
                             }
                             case 6:
@@ -6225,10 +6246,11 @@
                     r = a(9924),
                     n = a(6179),
                     i = a.n(n),
-                    o = a(8668),
-                    s = a(9930),
-                    l = a(3486);
-                const c = {
+                    o = a(7118),
+                    s = a(8668),
+                    l = a(9930),
+                    c = a(3486);
+                const m = {
                         base: 'Widget_base_e7',
                         icon: 'Widget_icon_16',
                         icon__huge: 'Widget_icon__huge_6c',
@@ -6264,18 +6286,25 @@
                         icon__b6__extraSmall: 'Widget_icon__b6__extraSmall_3e',
                         icon__b6__small: 'Widget_icon__b6__small_69',
                     },
-                    m = { [o.Jh.Huge]: '130x130', [o.Jh.Big]: '64x64', [o.Jh.Medium]: '64x64', [o.Jh.Small]: '64x64' },
-                    d = R.images.gui.maps.icons.battleRoyale.widget,
-                    b = ({ size: e, isCompletedProgression: t }) => {
-                        const a = (0, s.O)(),
-                            u = (0, r.Z)([...(0, l.Hp)('icon')], c),
-                            n = o.S4[e][a],
-                            b = d.$dyn(`c_${m[n]}`).$dyn(t ? 'bg1' : 'bg2'),
-                            g = _()(c.icon, c[`icon__${n}`], u[`icon__${e}`]);
+                    d = { [s.Jh.Huge]: '130x130', [s.Jh.Big]: '64x64', [s.Jh.Medium]: '64x64', [s.Jh.Small]: '64x64' },
+                    b = ({ size: e, isCompletedProgression: t, iconPostfix: a }) => {
+                        const u = (0, l.O)(),
+                            n = (0, r.Z)([...(0, c.Hp)('icon')], m),
+                            b = s.S4[e][u],
+                            g = d[b],
+                            E = t ? 'bg1' : 'bg2',
+                            A = _()(m.icon, m[`icon__${b}`], n[`icon__${e}`]);
                         return i().createElement(
                             'div',
-                            { className: c.base },
-                            i().createElement('div', { className: g, style: { backgroundImage: `url(${b})` } }),
+                            { className: m.base },
+                            i().createElement('div', {
+                                className: A,
+                                style: (0, o.w)({
+                                    iconPath: `R.images.gui.maps.icons.battleRoyale.widget.c_${g}`,
+                                    iconName: E,
+                                    iconPostfix: a,
+                                }),
+                            }),
                         );
                     };
             },
@@ -6418,7 +6447,7 @@
                                 const e = R.images.gui.maps.icons.epicBattles.metaLvls;
                                 if (null !== e) {
                                     const t = e.$dyn(`c_${C[v]}`);
-                                    if (void 0 !== t && void 0 !== h) return { backgroundImage: `url(${t.$dyn(h)})` };
+                                    if (t && void 0 !== h) return { backgroundImage: `url(${t.$dyn(h)})` };
                                 }
                             }, [h, v]),
                             w = _()(E.icon, E[`icon__${h}`], E[`icon__${v}`], D[`icon__${e}`]);
@@ -6558,8 +6587,10 @@
                             g = void 0 !== b && b,
                             E = (0, i.useMemo)(() => {
                                 const e = R.images.gui.maps.icons.rankedBattles,
-                                    t = x[d];
-                                return { backgroundImage: `url(${e.ranks.$dyn(`c_${t}`).$dyn(`rank${u}_${r}`)})` };
+                                    t = x[d],
+                                    a = e.ranks.$dyn(`c_${t}`),
+                                    _ = a && a.$dyn(`rank${u}_${r}`);
+                                return _ ? { backgroundImage: `url(${_})` } : void 0;
                             }, [u, r, d]),
                             A = (e) => [f[e], f[`${e}__${d}`]],
                             C = _()(f.icon, a && f.icon__next, ...A('icon')),
@@ -7201,8 +7232,11 @@
                                 if (!E) return {};
                                 let t = l;
                                 (C && (t = m), A && (t = c));
-                                const a = t[u];
-                                return { backgroundImage: `url(${b.$dyn(`c_${a}`).$dyn(`rank_${e}`)})` };
+                                const a = t[u] || t[s.Id.B1],
+                                    _ = b.$dyn(`c_${a}`);
+                                if (!_) return {};
+                                const r = _.$dyn(`rank_${e}`);
+                                return r ? { backgroundImage: `url(${r})` } : {};
                             }, [A, C, e, u, E]);
                         return o().createElement(
                             'div',

@@ -2690,23 +2690,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .RewardsList_rewards_a3 {
     display: flex;
     flex-wrap: wrap;
-}
-
-.mediaMedium .RewardsList_rewards_a3 {
     justify-content: space-between;
     width: 345rem;
 }
 
 .RewardsList_reward_08 {
+    width: 135rem;
     margin-right: 15rem;
-}
-
-.RewardsList_reward__last_f8 {
-    margin-right: 0;
+    margin-bottom: 15rem;
 }
 
 .mediaMedium .RewardsList_reward_08 {
-    width: 135rem;
     margin-right: 24rem;
     margin-bottom: 12rem;
 }

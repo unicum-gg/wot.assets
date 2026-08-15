@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (e, t, n) => {
-                n.d(t, { O: () => z });
+                n.d(t, { O: () => Y });
                 var r = {};
                 (n.r(r), n.d(r, { mouse: () => u, onResize: () => l }));
                 var o = {};
@@ -14,7 +14,7 @@
                         graphicsQuality: () => w,
                     }));
                 var i = {};
-                (n.r(i), n.d(i, { getBgUrl: () => b, getTextureUrl: () => E }));
+                (n.r(i), n.d(i, { getBgUrl: () => E, getTextureUrl: () => b }));
                 var a = {};
                 function s(e) {
                     return (t) => (
@@ -33,27 +33,28 @@
                         addPreloadTexture: () => P,
                         children: () => i,
                         displayStatus: () => h,
-                        displayStatusIs: () => W,
+                        displayStatusIs: () => G,
                         events: () => m,
-                        extraSize: () => G,
-                        forceTriggerMouseMove: () => K,
+                        extraSize: () => H,
+                        forceTriggerMouseMove: () => q,
                         freezeTextureBeforeResize: () => N,
                         getBrowserTexturePath: () => A,
-                        getDisplayStatus: () => q,
+                        getDisplayStatus: () => W,
                         getScale: () => x,
                         getSize: () => L,
                         getViewGlobalPosition: () => D,
-                        isEventHandled: () => B,
+                        isClientAccessible: () => j,
+                        isEventHandled: () => K,
                         isFocused: () => V,
                         pxToRem: () => F,
                         remToPx: () => I,
                         resize: () => C,
                         sendEvent: () => T,
                         setAnimateWindow: () => U,
-                        setEventHandled: () => j,
+                        setEventHandled: () => B,
                         setInputPaddingsRem: () => k,
                         setSidePaddingsRem: () => R,
-                        whenTutorialReady: () => H,
+                        whenTutorialReady: () => z,
                     }));
                 const l = s('clientResized'),
                     d = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
@@ -132,11 +133,11 @@
                     isHigh: () => 0 === viewEnv.getGraphicsQuality(),
                     get: () => viewEnv.getGraphicsQuality(),
                 };
-                function E(e, t, n = 1) {
+                function b(e, t, n = 1) {
                     return viewEnv.getChildTexturePath(e, t.width, t.height, n);
                 }
-                function b(e, t, n) {
-                    return `url(${E(e, t, n)})`;
+                function E(e, t, n) {
+                    return `url(${b(e, t, n)})`;
                 }
                 const h = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     m = {
@@ -251,19 +252,22 @@
                     return viewEnv.isFocused();
                 }
                 function j() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function B() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function K() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function q() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function W() {
                     return viewEnv.getShowingStatus();
                 }
-                const W = Object.keys(h).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === h[t]), e), {}),
-                    G = {
+                const G = Object.keys(h).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === h[t]), e), {}),
+                    H = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -271,13 +275,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    H = Promise.all([
+                    z = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : m.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    z = { view: a, client: o };
+                    Y = { view: a, client: o };
             },
             358: (e, t, n) => {
                 n.d(t, { Z: () => i });
@@ -530,8 +534,8 @@
                             (e.SYMBOL = 'Symbol'),
                             (e.SYMBOL_LOCK = 'SymbolLock'));
                     })(w || (w = {})));
-                var E = n(67);
-                const b = ['args'];
+                var b = n(67);
+                const E = ['args'];
                 function h(e, t, n, r, o, i, a) {
                     try {
                         var s = e[i](a),
@@ -583,7 +587,7 @@
                                         i = Object.keys(e);
                                     for (r = 0; r < i.length; r++) ((n = i[r]), t.indexOf(n) >= 0 || (o[n] = e[n]));
                                     return o;
-                                })(t, b);
+                                })(t, E);
                             void 0 !== o
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: n, type: e }, i, {
@@ -631,17 +635,17 @@
                             f(c.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: n, args: t });
                         },
                         sendShowPopOverEvent: (e, t, n, r, o = R.invalid('resId'), i) => {
-                            const a = E.O.view.getViewGlobalPosition(),
+                            const a = b.O.view.getViewGlobalPosition(),
                                 s = n.getBoundingClientRect(),
                                 l = s.x,
                                 d = s.y,
                                 u = s.width,
                                 _ = s.height,
                                 v = {
-                                    x: E.O.view.pxToRem(l) + a.x,
-                                    y: E.O.view.pxToRem(d) + a.y,
-                                    width: E.O.view.pxToRem(u),
-                                    height: E.O.view.pxToRem(_),
+                                    x: b.O.view.pxToRem(l) + a.x,
+                                    y: b.O.view.pxToRem(d) + a.y,
+                                    width: b.O.view.pxToRem(u),
+                                    height: b.O.view.pxToRem(_),
                                 };
                             f(c.POP_OVER, {
                                 isMouseEvent: !0,
@@ -765,9 +769,9 @@
                             _ = e.ignoreShowDelay,
                             v = void 0 !== _ && _,
                             w = e.ignoreMouseClick,
-                            E = void 0 !== w && w,
-                            b = e.decoratorId,
-                            h = void 0 === b ? 0 : b,
+                            b = void 0 !== w && w,
+                            E = e.decoratorId,
+                            h = void 0 === E ? 0 : E,
                             m = e.isEnabled,
                             p = void 0 === m || m,
                             f = e.targetId,
@@ -866,10 +870,10 @@
                                               (A(), null == a || a(t), null == e || e(t));
                                           })(t.props.onMouseLeave),
                                           onClick: ((e) => (t) => {
-                                              (!1 === E && A(), null == u || u(t), null == e || e(t));
+                                              (!1 === b && A(), null == u || u(t), null == e || e(t));
                                           })(t.props.onClick),
                                           onMouseDown: ((e) => (t) => {
-                                              (!1 === E && A(), null == s || s(t), null == e || e(t));
+                                              (!1 === b && A(), null == s || s(t), null == e || e(t));
                                           })(t.props.onMouseDown),
                                       },
                                       M,
@@ -919,8 +923,8 @@
                         t,
                     );
                 };
-                var E = n(515),
-                    b = n(30);
+                var b = n(515),
+                    E = n(30);
                 let h;
                 !(function (e) {
                     ((e[(e.Stronghold = 0)] = 'Stronghold'), (e[(e.GlobalMap = 1)] = 'GlobalMap'));
@@ -1123,9 +1127,9 @@
                                     _ = (0, r.useState)(i),
                                     v = _[0],
                                     w = _[1],
-                                    E = (0, r.useState)(() => d(i, a, c)),
-                                    b = E[0],
-                                    h = E[1];
+                                    b = (0, r.useState)(() => d(i, a, c)),
+                                    E = b[0],
+                                    h = b[1];
                                 return (
                                     (0, r.useEffect)(() => {
                                         u.current ? h(d(v, a, c)) : (u.current = !0);
@@ -1135,11 +1139,11 @@
                                     }, [i]),
                                     (0, r.useEffect)(
                                         () => () => {
-                                            (b.externalModel.dispose(), l.current.forEach((e) => e()));
+                                            (E.externalModel.dispose(), l.current.forEach((e) => e()));
                                         },
-                                        [b],
+                                        [E],
                                     ),
-                                    o().createElement(n.Provider, { value: b }, s)
+                                    o().createElement(n.Provider, { value: E }, s)
                                 );
                             },
                             () => (0, r.useContext)(n),
@@ -1162,13 +1166,13 @@
                         icon_1: 'App_icon_1_1a',
                     },
                     L = R.strings.fortifications,
-                    C = (0, E.Pi)(() => {
-                        const e = (0, b.useSpring)(m),
+                    C = (0, b.Pi)(() => {
+                        const e = (0, E.useSpring)(m),
                             t = A().model.root.get().queue,
                             n = p[t],
                             r = L.$dyn(n);
                         return o().createElement(
-                            b.animated.div,
+                            E.animated.div,
                             { className: S.base, style: e },
                             o().createElement(
                                 w,

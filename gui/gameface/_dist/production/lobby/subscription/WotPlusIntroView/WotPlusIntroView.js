@@ -218,27 +218,28 @@
                         addPreloadTexture: () => i,
                         children: () => r,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => f,
+                        displayStatusIs: () => w,
                         events: () => n.U,
                         extraSize: () => x,
-                        forceTriggerMouseMove: () => v,
+                        forceTriggerMouseMove: () => b,
                         freezeTextureBeforeResize: () => B,
                         getBrowserTexturePath: () => o,
-                        getDisplayStatus: () => b,
+                        getDisplayStatus: () => f,
                         getScale: () => c,
                         getSize: () => D,
                         getViewGlobalPosition: () => _,
-                        isEventHandled: () => p,
+                        isClientAccessible: () => g,
+                        isEventHandled: () => v,
                         isFocused: () => h,
                         pxToRem: () => m,
                         remToPx: () => C,
                         resize: () => l,
                         sendEvent: () => E.qP,
                         setAnimateWindow: () => d,
-                        setEventHandled: () => g,
+                        setEventHandled: () => p,
                         setInputPaddingsRem: () => A,
                         setSidePaddingsRem: () => s,
-                        whenTutorialReady: () => w,
+                        whenTutorialReady: () => M,
                     }));
                 var r = t(722),
                     a = t(112),
@@ -288,18 +289,21 @@
                     return viewEnv.isFocused();
                 }
                 function g() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function p() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function v() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function b() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const f = Object.keys(a.W).reduce(
+                const w = Object.keys(a.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === a.W[e]), u),
                         {},
                     ),
@@ -311,7 +315,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    w = Promise.all([
+                    M = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : n.U.onDomBuilt(u);
                         }),
@@ -1018,7 +1022,7 @@
                             (u[(u.Large = i.large.height)] = 'Large'),
                             (u[(u.ExtraLarge = i.extraLarge.height)] = 'ExtraLarge'));
                     })(f || (f = {})));
-                const x = () => {
+                const w = () => {
                         const u = (0, r.useContext)(_),
                             e = u.width,
                             t = u.height,
@@ -1072,7 +1076,7 @@
                             })(u);
                         return { mediaSize: a, mediaWidth: n, mediaHeight: E, remScreenWidth: e, remScreenHeight: t };
                     },
-                    w = ['children', 'className'];
+                    x = ['children', 'className'];
                 function M() {
                     return (
                         (M =
@@ -1119,8 +1123,8 @@
                                     n = Object.keys(u);
                                 for (r = 0; r < n.length; r++) ((t = n[r]), e.indexOf(t) >= 0 || (a[t] = u[t]));
                                 return a;
-                            })(u, w);
-                        const n = x(),
+                            })(u, x);
+                        const n = w(),
                             E = n.mediaWidth,
                             i = n.mediaHeight,
                             A = n.mediaSize;
@@ -1172,7 +1176,7 @@
                         const t = (
                             (u, e = j) =>
                             (t) => {
-                                const n = x().mediaSize,
+                                const n = w().mediaSize,
                                     E = (0, r.useMemo)(() => e(t, n), [t, n]);
                                 return a().createElement(u, E);
                             }
@@ -1290,7 +1294,7 @@
                             v = u.spaceBetween,
                             b = u.spaceAround,
                             f = u.justifyContent,
-                            x =
+                            w =
                                 void 0 === f
                                     ? (d ? 'flex-start' : g && 'center') ||
                                       (p && 'flex-end') ||
@@ -1298,8 +1302,8 @@
                                       (b && 'space-around') ||
                                       void 0
                                     : f,
-                            w = u.alignItems,
-                            M = void 0 === w ? (d ? 'flex-start' : g && 'center') || (p && 'flex-end') || void 0 : w,
+                            x = u.alignItems,
+                            M = void 0 === x ? (d ? 'flex-start' : g && 'center') || (p && 'flex-end') || void 0 : x,
                             S = u.alignSelf,
                             L = u.wrap,
                             T = u.flexWrap,
@@ -1340,12 +1344,12 @@
                                         display: C || M ? 'flex' : void 0,
                                         flexDirection: C,
                                         flexWrap: R,
-                                        justifyContent: x,
+                                        justifyContent: w,
                                         alignItems: M,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, n, A, F, D, _, N, P, S, C, R, x, M]),
+                            }, [t, n, A, F, D, _, N, P, S, C, R, w, M]),
                             G = W.computedStyle,
                             U = W.computedClassNames;
                         return a().createElement('div', $({ className: h()(V.base, ...U, e), style: G }, I), k);
@@ -1413,8 +1417,8 @@
                         v = g[1],
                         b = (0, r.useState)(!1),
                         f = b[0],
-                        x = b[1],
-                        w = (0, r.useCallback)(() => {
+                        w = b[1],
+                        x = (0, r.useCallback)(() => {
                             E || (c.current && (c.current.focus(), d(!0)));
                         }, [E]),
                         M = (0, r.useCallback)(
@@ -1431,7 +1435,7 @@
                         ),
                         L = (0, r.useCallback)(
                             (u) => {
-                                E || (null !== A && Q(A), F && F(u), x(!0));
+                                E || (null !== A && Q(A), F && F(u), w(!0));
                             },
                             [E, A, F],
                         ),
@@ -1449,9 +1453,9 @@
                         ),
                         y = (0, r.useCallback)(
                             (u) => {
-                                E || (null !== o && Q(o), D && D(u), t && w(), v(!0));
+                                E || (null !== o && Q(o), D && D(u), t && x(), v(!0));
                             },
-                            [E, o, D, w, t],
+                            [E, o, D, x, t],
                         ),
                         H = (0, r.useCallback)(
                             (u) => {
@@ -1693,8 +1697,8 @@
                 }
                 Object.keys(I());
                 const fu = Object.keys(gu()),
-                    xu = { mt: 'MD', mr: 'SM', mb: 'SM', ml: 'SM' },
-                    wu = { mt: 'SM', mr: 'XS', mb: 'XS', ml: 'XS' },
+                    wu = { mt: 'MD', mr: 'SM', mb: 'SM', ml: 'SM' },
+                    xu = { mt: 'SM', mr: 'XS', mb: 'XS', ml: 'XS' },
                     Mu = { mt: 'XS', mr: 'XS', mb: 'XS', ml: 'XS' },
                     Su = {
                         XL: { mt: 'XL', mr: 'XL', mb: 'XL', ml: 'XL' },
@@ -1710,19 +1714,19 @@
                         {
                             'heading-H144': { mt: 'XL', mr: 'LG', mb: 'LG', ml: 'LG' },
                             'heading-H73': { mt: 'LG', mr: 'MD', mb: 'MD', ml: 'MD' },
-                            'heading-H56': xu,
-                            'heading-H36': xu,
-                            'heading-H28': wu,
-                            'heading-H24': wu,
-                            'heading-H24R': wu,
-                            'heading-H22': wu,
-                            'heading-H20R': wu,
-                            'heading-H18': wu,
+                            'heading-H56': wu,
+                            'heading-H36': wu,
+                            'heading-H28': xu,
+                            'heading-H24': xu,
+                            'heading-H24R': xu,
+                            'heading-H22': xu,
+                            'heading-H20R': xu,
+                            'heading-H18': xu,
                             'heading-H15': Mu,
                             'heading-H14': Mu,
-                            'paragraph-P24': wu,
-                            'paragraph-P18': wu,
-                            'paragraph-P16': wu,
+                            'paragraph-P24': xu,
+                            'paragraph-P18': xu,
+                            'paragraph-P16': xu,
                             'paragraph-P14': Mu,
                             'paragraph-P12': Mu,
                             'paragraph-P10': Mu,

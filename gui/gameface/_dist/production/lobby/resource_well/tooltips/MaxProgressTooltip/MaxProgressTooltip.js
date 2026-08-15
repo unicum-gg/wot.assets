@@ -155,27 +155,28 @@
                         addPreloadTexture: () => D,
                         children: () => A,
                         displayStatus: () => F.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => P,
                         events: () => t.U,
-                        extraSize: () => P,
-                        forceTriggerMouseMove: () => g,
+                        extraSize: () => f,
+                        forceTriggerMouseMove: () => h,
                         freezeTextureBeforeResize: () => c,
                         getBrowserTexturePath: () => o,
-                        getDisplayStatus: () => h,
+                        getDisplayStatus: () => b,
                         getScale: () => l,
                         getSize: () => s,
                         getViewGlobalPosition: () => C,
-                        isEventHandled: () => w,
+                        isClientAccessible: () => v,
+                        isEventHandled: () => g,
                         isFocused: () => m,
                         pxToRem: () => _,
                         remToPx: () => d,
                         resize: () => a,
                         sendEvent: () => n.qP,
                         setAnimateWindow: () => p,
-                        setEventHandled: () => v,
+                        setEventHandled: () => w,
                         setInputPaddingsRem: () => r,
                         setSidePaddingsRem: () => i,
-                        whenTutorialReady: () => f,
+                        whenTutorialReady: () => T,
                     }));
                 var A = E(3722),
                     F = E(6112),
@@ -225,22 +226,25 @@
                     return viewEnv.isFocused();
                 }
                 function v() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function w() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function g() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function h() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function b() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(F.W).reduce(
+                const P = Object.keys(F.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === F.W[e]), u),
                         {},
                     ),
-                    P = {
+                    f = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -248,7 +252,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    f = Promise.all([
+                    T = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : t.U.onDomBuilt(u);
                         }),
@@ -944,8 +948,8 @@
                         e.current || (u(), (e.current = !0));
                     },
                     O = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
-                    y = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
-                    S = (u) =>
+                    S = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
+                    y = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, E) => {
                                 const A = f(`${u}.${E}`, window);
@@ -957,7 +961,7 @@
                                     E = e.caller,
                                     A = e.resId,
                                     F = window.__feature && window.__feature !== E && E ? `subViews.${E}` : '';
-                                return { modelPrefix: F, modelPath: y(F, u || ''), resId: A };
+                                return { modelPrefix: F, modelPath: S(F, u || ''), resId: A };
                             })(),
                             E = e.modelPrefix,
                             A = u.split('.');
@@ -965,7 +969,7 @@
                             const u = [A[0]];
                             return (
                                 A.reduce((e, A) => {
-                                    const F = f(y(E, `${e}.${A}`), window);
+                                    const F = f(S(E, `${e}.${A}`), window);
                                     return O(F) ? (u.push(F.id), `${e}.${A}.value`) : (u.push(A), `${e}.${A}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
@@ -993,7 +997,7 @@
                                 const e = f(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                 return O(e) ? e.value : e;
-                            })(S(r)),
+                            })(y(r)),
                         ),
                         B = o[0],
                         i = o[1],
@@ -1027,7 +1031,7 @@
                         B
                     );
                 };
-                let U, L, I, G, V, q, W, z;
+                let L, U, I, G, V, q, W, z, Y;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -1084,13 +1088,15 @@
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
                         (u.LootBoxToken = 'lootBoxToken'),
-                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
-                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.PostStamp = 'giftsystem_5_stamp'),
                         (u.Quests = 'quests'),
                         (u.ArmoryCoin = 'armory_coin'),
                         (u.PremiumPlusUniversal = 'premium_plus_universal'),
-                        (u.DogTagType = 'dogTagComponents'));
-                })(U || (U = {})),
+                        (u.DogTagType = 'dogTagComponents'),
+                        (u.GoldenTicket = 'goldenticket'),
+                        (u.LbStyleProgress = 'lbStyleProgress'),
+                        (u.RewardsSlots = 'rewardsSlots'));
+                })(L || (L = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -1129,7 +1135,7 @@
                             (u.BattlePassPoints = 'battlePassPoints'),
                             (u.BattleBadge = 'dossier_badge'),
                             (u.BattleAchievement = 'dossier_achievement'));
-                    })(L || (L = {})),
+                    })(U || (U = {})),
                     (function (u) {
                         ((u.Big = 'big'),
                             (u.Small = 'small'),
@@ -1185,8 +1191,11 @@
                     })(W || (W = {})),
                     (function (u) {
                         ((u.Small = '400x300'), (u.Big = '600x450'));
-                    })(z || (z = {})));
-                const Y = {
+                    })(z || (z = {})),
+                    (function (u) {
+                        u.ProgressionStyle = 'progressionStyle';
+                    })(Y || (Y = {})));
+                const K = {
                         base: 'Content_base_4a',
                         content: 'Content_content_3e',
                         descriptionText: 'Content_descriptionText_e8',
@@ -1201,44 +1210,44 @@
                         progressWrapper: 'Content_progressWrapper_72',
                         icon: 'Content_icon_f2',
                     },
-                    K = R.strings.resource_well.tooltips.resourcesLoadingView.limitCounter,
-                    H = () => {
+                    H = R.strings.resource_well.tooltips.resourcesLoadingView.limitCounter,
+                    j = () => {
                         const u = N('model', M.None),
                             e = u.currentValue,
                             E = u.maxValue,
                             A = u.resourceType,
-                            t = r()(Y.progress, Y[`progress__${A}`]);
+                            t = r()(K.progress, K[`progress__${A}`]);
                         return F().createElement(
                             'div',
-                            { className: Y.base },
+                            { className: K.base },
                             F().createElement(
                                 'div',
-                                { className: Y.content },
+                                { className: K.content },
                                 F().createElement(b, {
-                                    classMix: Y.descriptionText,
+                                    classMix: K.descriptionText,
                                     binding: {
                                         maxAmount: F().createElement(
                                             'span',
-                                            { className: Y.descriptionText__max },
+                                            { className: K.descriptionText__max },
                                             F().createElement(l, { value: E }),
                                         ),
                                     },
-                                    text: K.header(),
+                                    text: H.header(),
                                 }),
-                                F().createElement('div', { className: Y.description }, K.body()),
+                                F().createElement('div', { className: K.description }, H.body()),
                                 F().createElement(
                                     'div',
-                                    { className: Y.separatorTopWrapper },
-                                    F().createElement('div', { className: Y.separator }),
+                                    { className: K.separatorTopWrapper },
+                                    F().createElement('div', { className: K.separator }),
                                 ),
                                 F().createElement(
                                     'div',
-                                    { className: Y.progressWrapper },
+                                    { className: K.progressWrapper },
                                     F().createElement(b, {
                                         classMix: t,
                                         binding: {
                                             icon: F().createElement('span', {
-                                                className: Y.icon,
+                                                className: K.icon,
                                                 style:
                                                     ((n = A),
                                                     {
@@ -1248,20 +1257,20 @@
                                             amount: F().createElement(l, { value: e }),
                                             maxAmount: F().createElement(
                                                 'span',
-                                                { className: Y.maxValue },
+                                                { className: K.maxValue },
                                                 F().createElement(l, { value: E }),
                                             ),
                                         },
-                                        text: K.amount(),
+                                        text: H.amount(),
                                     }),
                                 ),
                             ),
                         );
                         var n;
                     },
-                    j = () => F().createElement(C, null, F().createElement(H, null));
+                    X = () => F().createElement(C, null, F().createElement(j, null));
                 engine.whenReady.then(() => {
-                    n().render(F().createElement(j, null), document.getElementById('root'));
+                    n().render(F().createElement(X, null), document.getElementById('root'));
                 });
             },
         },

@@ -151,31 +151,32 @@
             7641: (u, e, t) => {
                 (t.r(e),
                     t.d(e, {
-                        addModelObserver: () => i,
+                        addModelObserver: () => o,
                         addPreloadTexture: () => F,
                         children: () => E,
                         displayStatus: () => A.W,
-                        displayStatusIs: () => f,
+                        displayStatusIs: () => w,
                         events: () => r.U,
                         extraSize: () => y,
-                        forceTriggerMouseMove: () => b,
+                        forceTriggerMouseMove: () => h,
                         freezeTextureBeforeResize: () => c,
-                        getBrowserTexturePath: () => o,
-                        getDisplayStatus: () => h,
+                        getBrowserTexturePath: () => i,
+                        getDisplayStatus: () => f,
                         getScale: () => _,
                         getSize: () => s,
                         getViewGlobalPosition: () => C,
-                        isEventHandled: () => p,
+                        isClientAccessible: () => g,
+                        isEventHandled: () => b,
                         isFocused: () => m,
                         pxToRem: () => l,
                         remToPx: () => d,
                         resize: () => B,
                         sendEvent: () => n.qP,
                         setAnimateWindow: () => v,
-                        setEventHandled: () => g,
+                        setEventHandled: () => p,
                         setInputPaddingsRem: () => D,
                         setSidePaddingsRem: () => a,
-                        whenTutorialReady: () => w,
+                        whenTutorialReady: () => O,
                     }));
                 var E = t(3722),
                     A = t(6112),
@@ -187,10 +188,10 @@
                 function D(u) {
                     viewEnv.setHitAreaPaddingsRem(u, u, u, u, 15);
                 }
-                function o(u, e, t, E = 1) {
+                function i(u, e, t, E = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, E);
                 }
-                function i(u, e, t) {
+                function o(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
                 function a(u) {
@@ -225,18 +226,21 @@
                     return viewEnv.isFocused();
                 }
                 function g() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function p() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function b() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function h() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const f = Object.keys(A.W).reduce(
+                const w = Object.keys(A.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === A.W[e]), u),
                         {},
                     ),
@@ -248,7 +252,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    w = Promise.all([
+                    O = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : r.U.onDomBuilt(u);
                         }),
@@ -491,7 +495,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (u, e, t) => {
-                t.d(e, { B3: () => i, Z5: () => n, ry: () => v });
+                t.d(e, { B3: () => o, Z5: () => n, ry: () => v });
                 class E {
                     constructor() {
                         ((this.entries = []),
@@ -546,16 +550,16 @@
                         getTimeString: (u, e, t) => userLocale.getTimeString(u, e, void 0 === t || t),
                     };
                 let D;
-                var o;
-                (((o = D || (D = {}))[(o.UNDEFINED = 0)] = 'UNDEFINED'),
-                    (o[(o.TOOLTIP = 1)] = 'TOOLTIP'),
-                    (o[(o.POP_OVER = 2)] = 'POP_OVER'),
-                    (o[(o.CONTEXT_MENU = 4)] = 'CONTEXT_MENU'),
-                    (o[(o.DROP_DOWN = 8)] = 'DROP_DOWN'),
-                    (o[(o.MOVE = 16)] = 'MOVE'),
-                    (o[(o.CLOSE = 32)] = 'CLOSE'),
-                    (o[(o.MINIMIZE = 64)] = 'MINIMIZE'));
-                const i = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
+                var i;
+                (((i = D || (D = {}))[(i.UNDEFINED = 0)] = 'UNDEFINED'),
+                    (i[(i.TOOLTIP = 1)] = 'TOOLTIP'),
+                    (i[(i.POP_OVER = 2)] = 'POP_OVER'),
+                    (i[(i.CONTEXT_MENU = 4)] = 'CONTEXT_MENU'),
+                    (i[(i.DROP_DOWN = 8)] = 'DROP_DOWN'),
+                    (i[(i.MOVE = 16)] = 'MOVE'),
+                    (i[(i.CLOSE = 32)] = 'CLOSE'),
+                    (i[(i.MINIMIZE = 64)] = 'MINIMIZE'));
+                const o = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     a = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     s = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     B = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
@@ -649,7 +653,7 @@
                         DataTracker: r.Z,
                         ViewModel: b.Z,
                         ViewEventType: D,
-                        NumberFormatType: i,
+                        NumberFormatType: o,
                         RealFormatType: a,
                         TimeFormatType: s,
                         DateFormatType: B,
@@ -663,13 +667,13 @@
                         sendShowPopOverEvent: (u, e, t, E, A = R.invalid('resId'), r) => {
                             const n = c.O.view.getViewGlobalPosition(),
                                 F = t.getBoundingClientRect(),
-                                o = F.x,
-                                i = F.y,
+                                i = F.x,
+                                o = F.y,
                                 a = F.width,
                                 s = F.height,
                                 B = {
-                                    x: c.O.view.pxToRem(o) + n.x,
-                                    y: c.O.view.pxToRem(i) + n.y,
+                                    x: c.O.view.pxToRem(i) + n.x,
+                                    y: c.O.view.pxToRem(o) + n.y,
                                     width: c.O.view.pxToRem(a),
                                     height: c.O.view.pxToRem(s),
                                 };
@@ -737,8 +741,8 @@
                     n = t.n(r),
                     F = t(6483),
                     D = t.n(F),
-                    o = t(3138);
-                const i = {
+                    i = t(3138);
+                const o = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
@@ -810,9 +814,9 @@
                                 if (!u) return;
                                 const e = u.scrollWidth,
                                     t = u.scrollHeight;
-                                o.O.view.resize(e, t);
+                                i.O.view.resize(e, t);
                                 const E = window.getComputedStyle(u);
-                                o.O.view.setSidePaddingsRem({
+                                i.O.view.setSidePaddingsRem({
                                     left: parseInt(E.getPropertyValue('padding-left'), 10),
                                     top: parseInt(E.getPropertyValue('padding-top'), 10),
                                     right: parseInt(E.getPropertyValue('padding-right'), 10),
@@ -824,12 +828,12 @@
                         A().createElement(
                             'div',
                             s({}, B, {
-                                className: D()(i.base, i[`base__theme-${F}`], r),
+                                className: D()(o.base, o[`base__theme-${F}`], r),
                                 ref: function (u) {
                                     ((c.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
                                 },
                             }),
-                            A().createElement('div', { className: i.decorator }, t),
+                            A().createElement('div', { className: o.decorator }, t),
                         )
                     );
                 });
@@ -930,7 +934,7 @@
                     return t;
                 };
                 var b = t(3403);
-                let h, f, y;
+                let h, f, w;
                 (!(function (u) {
                     ((u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge'));
                 })(h || (h = {})),
@@ -944,13 +948,13 @@
                     })(f || (f = {})),
                     (function (u) {
                         ((u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG'));
-                    })(y || (y = {})));
-                var w = t(4179);
+                    })(w || (w = {})));
+                var y = t(4179);
                 class O extends A().PureComponent {
                     render() {
                         let u;
-                        u = 'gold' === this.props.format ? w.B3.GOLD : w.B3.INTEGRAL;
-                        const e = w.Z5.getNumberFormat(this.props.value, u);
+                        u = 'gold' === this.props.format ? y.B3.GOLD : y.B3.INTEGRAL;
+                        const e = y.Z5.getNumberFormat(this.props.value, u);
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
@@ -1007,13 +1011,13 @@
                         isEnough: r,
                         value: n,
                         discountValue: F,
-                        showPlus: o,
-                        stockBackgroundName: i = y.Red,
+                        showPlus: i,
+                        stockBackgroundName: o = w.Red,
                     }) => {
                         const a = D()(P.value, P[`value__${E}`], !r && P.value__notEnough),
                             s = D()(P.icon, P[`icon__${E}-${t}`]),
                             B = D()(P.stock, F && P.stock__indent, e && P.stock__interactive),
-                            C = o && n > 0 && '+',
+                            C = i && n > 0 && '+',
                             c = D()(P.base, P[`base__${t}`]);
                         return A().createElement(
                             'span',
@@ -1031,7 +1035,7 @@
                                     { className: B },
                                     A().createElement('span', {
                                         className: P.stockBackground,
-                                        style: { backgroundImage: `url(R.images.gui.maps.icons.library.${i})` },
+                                        style: { backgroundImage: `url(R.images.gui.maps.icons.library.${o})` },
                                     }),
                                     Boolean(F) && F,
                                 ),
@@ -1068,9 +1072,9 @@
                         isEnough: r,
                         value: n,
                         discountValue: F,
-                        showPlus: o,
+                        showPlus: i,
                     }) => {
-                        const i = D()(T.value, T[`value__${t}`], !r && T.value__notEnough),
+                        const o = D()(T.value, T[`value__${t}`], !r && T.value__notEnough),
                             a = D()(T.icon, T[`icon__${t}`]),
                             s = D()(
                                 T.stock,
@@ -1079,7 +1083,7 @@
                                 t === h.large && T.stock__sizeLarge,
                                 e && T.stock__interactive,
                             ),
-                            B = o && n > 0 && '+';
+                            B = i && n > 0 && '+';
                         return E in f
                             ? A().createElement(k, {
                                   size: t,
@@ -1089,14 +1093,14 @@
                                   isInteractiveDiscount: e,
                                   isEnough: r,
                                   discountValue: n,
-                                  showPlus: o,
+                                  showPlus: i,
                               })
                             : A().createElement(
                                   'span',
                                   { className: T.base },
                                   A().createElement(
                                       'span',
-                                      { className: i },
+                                      { className: o },
                                       B,
                                       A().createElement(O, { value: n, format: 'integral' }),
                                   ),
@@ -1120,10 +1124,10 @@
                             showZero: r = !1,
                             bigSize: n = !1,
                             ignoreDiscount: F = !1,
-                            typeCurrency: o,
+                            typeCurrency: i,
                         }) => {
-                            const i = !F && Boolean(e.length),
-                                a = D()('PriceResolver_price_4c', i && 'PriceResolver_price__discount_d0');
+                            const o = !F && Boolean(e.length),
+                                a = D()('PriceResolver_price_4c', o && 'PriceResolver_price__discount_d0');
                             return A().createElement(
                                 'div',
                                 { className: 'PriceResolver_base_19' },
@@ -1139,12 +1143,12 @@
                                                 { className: a },
                                                 A().createElement(M, {
                                                     key: e,
-                                                    isDiscount: i,
+                                                    isDiscount: o,
                                                     size: n ? h.big : h.small,
                                                     type: u.name,
                                                     value: u.value,
                                                     isEnough: u.isEnough,
-                                                    typeCurrency: o,
+                                                    typeCurrency: i,
                                                 }),
                                             ),
                                         ),
@@ -1170,7 +1174,7 @@
                         return [
                             function ({ mode: u = 'real', options: r, children: n, mocks: F }) {
                                 const D = (0, E.useRef)([]),
-                                    i = (u, t, E) => {
+                                    o = (u, t, E) => {
                                         var A;
                                         const r = (function ({
                                                 initializer: u = !0,
@@ -1205,7 +1209,7 @@
                                                 return {
                                                     subscribe: (t, r) => {
                                                         const F = 'string' == typeof r ? `${E}.${r}` : E,
-                                                            D = o.O.view.addModelObserver(F, e, !0);
+                                                            D = i.O.view.addModelObserver(F, e, !0);
                                                         return (A.set(D, t), u && t(n(r)), D);
                                                     },
                                                     readByPath: n,
@@ -1286,7 +1290,7 @@
                                                       }),
                                             F = (e) =>
                                                 'mocks' === u ? (null == E ? void 0 : E.getter(e)) : n.readByPath(e),
-                                            i = (u) => D.current.push(u),
+                                            o = (u) => D.current.push(u),
                                             a = (({ observableModel: u }) => {
                                                 const e = {
                                                         root: u.object(),
@@ -1395,9 +1399,9 @@
                                                         }
                                                     },
                                                 },
-                                                cleanup: i,
+                                                cleanup: o,
                                             }),
-                                            s = { mode: u, model: a, externalModel: n, cleanup: i };
+                                            s = { mode: u, model: a, externalModel: n, cleanup: o };
                                         return {
                                             model: a,
                                             controls: 'mocks' === u && E ? E.controls(s) : e(s),
@@ -1409,12 +1413,12 @@
                                     s = (0, E.useState)(u),
                                     B = s[0],
                                     C = s[1],
-                                    c = (0, E.useState)(() => i(u, r, F)),
+                                    c = (0, E.useState)(() => o(u, r, F)),
                                     _ = c[0],
                                     l = c[1];
                                 return (
                                     (0, E.useEffect)(() => {
-                                        a.current ? l(i(B, r, F)) : (a.current = !0);
+                                        a.current ? l(o(B, r, F)) : (a.current = !0);
                                     }, [F, B, r]),
                                     (0, E.useEffect)(() => {
                                         C(u);
@@ -1458,7 +1462,7 @@
                             n = e.isTestDriveMode,
                             F = u.computes,
                             D = F.rentText,
-                            o = F.testDrivePrice;
+                            i = F.testDrivePrice;
                         return A().createElement(
                             'div',
                             { className: 'Content_base_17' },
@@ -1492,7 +1496,7 @@
                                         { className: 'Content_priceBlock_ef' },
                                         A().createElement(
                                             N,
-                                            Y({}, u.computes.testDrivePrice(), { typeCurrency: p(o().price) }),
+                                            Y({}, u.computes.testDrivePrice(), { typeCurrency: p(i().price) }),
                                         ),
                                         A().createElement(g, {
                                             classMix: H,
@@ -1585,11 +1589,11 @@
                         D = 0;
                     if (r.some((e) => 0 !== u[e])) {
                         for (E in n) __webpack_require__.o(n, E) && (__webpack_require__.m[E] = n[E]);
-                        if (F) var o = F(__webpack_require__);
+                        if (F) var i = F(__webpack_require__);
                     }
                     for (e && e(t); D < r.length; D++)
                         ((A = r[D]), __webpack_require__.o(u, A) && u[A] && u[A][0](), (u[A] = 0));
-                    return __webpack_require__.O(o);
+                    return __webpack_require__.O(i);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));

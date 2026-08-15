@@ -88,7 +88,7 @@
                             f = u.spaceBetween,
                             P = u.spaceAround,
                             R = u.justifyContent,
-                            M =
+                            L =
                                 void 0 === R
                                     ? (w ? 'flex-start' : T && 'center') ||
                                       (b && 'flex-end') ||
@@ -96,8 +96,8 @@
                                       (P && 'space-around') ||
                                       void 0
                                     : R,
-                            L = u.alignItems,
-                            O = void 0 === L ? (w ? 'flex-start' : T && 'center') || (b && 'flex-end') || void 0 : L,
+                            M = u.alignItems,
+                            O = void 0 === M ? (w ? 'flex-start' : T && 'center') || (b && 'flex-end') || void 0 : M,
                             y = u.alignSelf,
                             N = u.wrap,
                             k = u.flexWrap,
@@ -138,12 +138,12 @@
                                         display: v || O ? 'flex' : void 0,
                                         flexDirection: v,
                                         flexWrap: H,
-                                        justifyContent: M,
+                                        justifyContent: L,
                                         alignItems: O,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, E, a, m, d, g, X, W, y, v, H, M, O]),
+                            }, [t, E, a, m, d, g, X, W, y, v, H, L, O]),
                             z = Z.computedStyle,
                             q = Z.computedClassNames;
                         return n().createElement('div', o({ className: r()(D.Z.base, ...q, e), style: z }, Y), j);
@@ -415,7 +415,7 @@
             },
             2862: (u, e, t) => {
                 'use strict';
-                let E, r, A, F, a, i, n, D;
+                let E, r, A, F, a, i, n, D, s;
                 (t.d(e, { E4: () => E }),
                     (function (u) {
                         ((u.Items = 'items'),
@@ -473,12 +473,14 @@
                             (u.StyleProgress = 'styleProgress'),
                             (u.ParagonsUnlocks = 'paragonsUnlocks'),
                             (u.LootBoxToken = 'lootBoxToken'),
-                            (u.GoldenTicket = 'birthday2025_golden_ticket'),
-                            (u.PostStamp = 'giftsystem_4_stamp'),
+                            (u.PostStamp = 'giftsystem_5_stamp'),
                             (u.Quests = 'quests'),
                             (u.ArmoryCoin = 'armory_coin'),
                             (u.PremiumPlusUniversal = 'premium_plus_universal'),
-                            (u.DogTagType = 'dogTagComponents'));
+                            (u.DogTagType = 'dogTagComponents'),
+                            (u.GoldenTicket = 'goldenticket'),
+                            (u.LbStyleProgress = 'lbStyleProgress'),
+                            (u.RewardsSlots = 'rewardsSlots'));
                     })(E || (E = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -574,7 +576,10 @@
                     })(n || (n = {})),
                     (function (u) {
                         ((u.Small = '400x300'), (u.Big = '600x450'));
-                    })(D || (D = {})));
+                    })(D || (D = {})),
+                    (function (u) {
+                        u.ProgressionStyle = 'progressionStyle';
+                    })(s || (s = {})));
             },
             729: (u, e, t) => {
                 'use strict';
@@ -615,9 +620,10 @@
                     E.E4.CosmicLootboxCommon,
                     E.E4.CosmicLootboxSilver,
                     E.E4.SelectableBonus,
-                    E.E4.GoldenTicket,
                     E.E4.PostStamp,
                     E.E4.PremiumPlusUniversal,
+                    E.E4.GoldenTicket,
+                    E.E4.RewardsSlots,
                     E.E4.Gold,
                     E.E4.Credits,
                     E.E4.Crystal,
@@ -976,27 +982,28 @@
                         addPreloadTexture: () => a,
                         children: () => E,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => v,
+                        displayStatusIs: () => w,
                         events: () => A.U,
-                        extraSize: () => w,
-                        forceTriggerMouseMove: () => x,
+                        extraSize: () => T,
+                        forceTriggerMouseMove: () => S,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => n,
-                        getDisplayStatus: () => S,
+                        getDisplayStatus: () => v,
                         getScale: () => C,
                         getSize: () => o,
                         getViewGlobalPosition: () => l,
-                        isEventHandled: () => p,
+                        isClientAccessible: () => g,
+                        isEventHandled: () => x,
                         isFocused: () => h,
                         pxToRem: () => m,
                         remToPx: () => c,
                         resize: () => B,
                         sendEvent: () => F.qP,
                         setAnimateWindow: () => d,
-                        setEventHandled: () => g,
+                        setEventHandled: () => p,
                         setInputPaddingsRem: () => i,
                         setSidePaddingsRem: () => s,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => b,
                     }));
                 var E = t(3722),
                     r = t(6112),
@@ -1046,22 +1053,25 @@
                     return viewEnv.isFocused();
                 }
                 function g() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function p() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function x() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function S() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function v() {
                     return viewEnv.getShowingStatus();
                 }
-                const v = Object.keys(r.W).reduce(
+                const w = Object.keys(r.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === r.W[e]), u),
                         {},
                     ),
-                    w = {
+                    T = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -1069,7 +1079,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    T = Promise.all([
+                    b = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : A.U.onDomBuilt(u);
                         }),

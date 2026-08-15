@@ -1,0 +1,160 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.SplittedTextWithColorTags_blackReal_79 {
+    color: #000000;
+}
+
+.SplittedTextWithColorTags_whiteReal_d8 {
+    color: #ffffff;
+}
+
+.SplittedTextWithColorTags_white_6a {
+    color: #f2f2f7;
+}
+
+.SplittedTextWithColorTags_whiteOrange_64 {
+    color: #fefeec;
+}
+
+.SplittedTextWithColorTags_whiteSpanish_b7 {
+    color: #e9e2bf;
+}
+
+.SplittedTextWithColorTags_par_20 {
+    color: #8c8c7e;
+}
+
+.SplittedTextWithColorTags_parSecondary_4d {
+    color: #595950;
+}
+
+.SplittedTextWithColorTags_parTertiary_4a {
+    color: #37362e;
+}
+
+.SplittedTextWithColorTags_red_66 {
+    color: #ff2717;
+}
+
+.SplittedTextWithColorTags_redDark_21 {
+    color: #b70000;
+}
+
+.SplittedTextWithColorTags_yellow_97 {
+    color: #feab34;
+}
+
+.SplittedTextWithColorTags_orange_e2 {
+    color: #ee7000;
+}
+
+.SplittedTextWithColorTags_cream_cf {
+    color: #ffdd99;
+}
+
+.SplittedTextWithColorTags_brown_d5 {
+    color: #cbac77;
+}
+
+.SplittedTextWithColorTags_greenBright_e1 {
+    color: #80d43a;
+}
+
+.SplittedTextWithColorTags_green_1a {
+    color: #7ab300;
+}
+
+.SplittedTextWithColorTags_greenDark_5d {
+    color: #497212;
+}
+
+.SplittedTextWithColorTags_blueBooster_0c {
+    color: #ccffff;
+}
+
+.SplittedTextWithColorTags_blueTeamkiller_3a {
+    color: #09e2ff;
+}
+
+.SplittedTextWithColorTags_cred_4d {
+    color: #ced9d9;
+}
+
+.SplittedTextWithColorTags_gold_0e {
+    color: #ffc363;
+}
+
+.SplittedTextWithColorTags_bond_5a {
+    color: #c9c9b6;
+}
+
+.SplittedTextWithColorTags_prom_9e {
+    color: #a29b70;
+}
+
+.App_base_77 {
+    display: flex;
+    flex-direction: column;
+    width: 400rem;
+}
+
+.App_header_bb {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    padding: 17rem 20rem 8rem;
+}
+
+.App_base__questGiver_ca .App_header_bb,
+.App_base__goldWagon_f7 .App_header_bb,
+.App_base__postOffice_1f .App_header_bb {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    padding: 26rem 24rem;
+    background: no-repeat center / contain;
+}
+
+.App_base__questGiver_ca .App_header_bb {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.questGiverHeader');
+}
+
+.App_base__postOffice_1f .App_header_bb {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.tankMailHeader');
+}
+
+.App_base__goldWagon_f7 .App_header_bb {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.goldWagonHeader');
+}
+
+.App_description_e4 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    padding: 0 20rem 16rem;
+}
+
+.App_base__questGiver_ca .App_description_e4,
+.App_base__goldWagon_f7 .App_description_e4,
+.App_base__postOffice_1f .App_description_e4 {
+    padding: 16rem 24rem;
+}

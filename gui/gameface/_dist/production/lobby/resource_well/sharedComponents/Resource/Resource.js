@@ -155,17 +155,18 @@
                         addPreloadTexture: () => s,
                         children: () => i,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => M,
+                        displayStatusIs: () => y,
                         events: () => o.U,
-                        extraSize: () => y,
-                        forceTriggerMouseMove: () => P,
+                        extraSize: () => R,
+                        forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => w,
                         getBrowserTexturePath: () => d,
-                        getDisplayStatus: () => T,
+                        getDisplayStatus: () => M,
                         getScale: () => h,
                         getSize: () => u,
                         getViewGlobalPosition: () => E,
-                        isEventHandled: () => f,
+                        isClientAccessible: () => f,
+                        isEventHandled: () => P,
                         isFocused: () => O,
                         pxToRem: () => p,
                         remToPx: () => b,
@@ -175,7 +176,7 @@
                         setEventHandled: () => g,
                         setInputPaddingsRem: () => _,
                         setSidePaddingsRem: () => l,
-                        whenTutorialReady: () => R,
+                        whenTutorialReady: () => k,
                     }));
                 var i = n(3722),
                     r = n(6112),
@@ -224,23 +225,26 @@
                 function O() {
                     return viewEnv.isFocused();
                 }
+                function f() {
+                    return viewEnv.isClientAccessible();
+                }
                 function g() {
                     return viewEnv.setEventHandled();
                 }
-                function f() {
+                function P() {
                     return viewEnv.isEventHandled();
                 }
-                function P() {
+                function T() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function T() {
+                function M() {
                     return viewEnv.getShowingStatus();
                 }
-                const M = Object.keys(r.W).reduce(
+                const y = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    y = {
+                    R = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -248,7 +252,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    R = Promise.all([
+                    k = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : o.U.onDomBuilt(e);
                         }),
@@ -645,14 +649,14 @@
                         var i;
                     },
                     O = () => m(_.CLOSE),
-                    g = (e, t) => {
+                    f = (e, t) => {
                         e.keyCode === v.n.ESCAPE && t();
                     };
-                var f = n(7572);
+                var g = n(7572);
                 const P = r.instance,
                     T = {
                         DataTracker: o.Z,
-                        ViewModel: f.Z,
+                        ViewModel: g.Z,
                         ViewEventType: _,
                         NumberFormatType: d,
                         RealFormatType: c,
@@ -690,14 +694,14 @@
                             });
                         },
                         addEscapeListener: (e) => {
-                            const t = (t) => g(t, e);
+                            const t = (t) => f(t, e);
                             return (
                                 window.addEventListener('keydown', t),
                                 () => window.removeEventListener('keydown', t)
                             );
                         },
                         closeOnEsc: (e) => {
-                            g(e, O);
+                            f(e, O);
                         },
                         handleViewEvent: m,
                         onBindingsReady: b,

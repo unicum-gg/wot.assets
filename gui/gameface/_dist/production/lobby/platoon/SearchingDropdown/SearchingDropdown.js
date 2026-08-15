@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (e, t, n) => {
-                n.d(t, { O: () => G });
+                n.d(t, { O: () => $ });
                 var o = {};
                 (n.r(o), n.d(o, { mouse: () => u, onResize: () => l }));
                 var r = {};
@@ -33,27 +33,28 @@
                         addPreloadTexture: () => T,
                         children: () => a,
                         displayStatus: () => p,
-                        displayStatusIs: () => W,
+                        displayStatusIs: () => z,
                         events: () => h,
-                        extraSize: () => z,
-                        forceTriggerMouseMove: () => j,
+                        extraSize: () => q,
+                        forceTriggerMouseMove: () => K,
                         freezeTextureBeforeResize: () => D,
                         getBrowserTexturePath: () => P,
-                        getDisplayStatus: () => K,
+                        getDisplayStatus: () => W,
                         getScale: () => I,
                         getSize: () => R,
-                        getViewGlobalPosition: () => A,
-                        isEventHandled: () => U,
+                        getViewGlobalPosition: () => L,
+                        isClientAccessible: () => H,
+                        isEventHandled: () => j,
                         isFocused: () => V,
                         pxToRem: () => B,
                         remToPx: () => x,
-                        resize: () => L,
+                        resize: () => A,
                         sendEvent: () => C,
                         setAnimateWindow: () => F,
-                        setEventHandled: () => H,
+                        setEventHandled: () => U,
                         setInputPaddingsRem: () => M,
                         setSidePaddingsRem: () => N,
-                        whenTutorialReady: () => q,
+                        whenTutorialReady: () => G,
                     }));
                 const l = s('clientResized'),
                     d = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
@@ -225,10 +226,10 @@
                 function R(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function L(e, t, n = 'px') {
+                function A(e, t, n = 'px') {
                     return 'rem' === n ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
                 }
-                function A(e = 'rem') {
+                function L(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? t : { x: x(t.x), y: x(t.y) };
                 }
@@ -251,19 +252,22 @@
                     return viewEnv.isFocused();
                 }
                 function H() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function U() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function j() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function K() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function W() {
                     return viewEnv.getShowingStatus();
                 }
-                const W = Object.keys(p).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === p[t]), e), {}),
-                    z = {
+                const z = Object.keys(p).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === p[t]), e), {}),
+                    q = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -271,13 +275,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    q = Promise.all([
+                    G = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : h.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    G = { view: i, client: r };
+                    $ = { view: i, client: r };
             },
             521: (e, t, n) => {
                 let o, r;
@@ -1154,8 +1158,8 @@
                         t.current || (e(), (t.current = !0));
                     },
                     N = (e) => e && 'ArrayItem' === e.__proto__.constructor.name,
-                    L = (e, t) => (e.length > 0 ? `${e}.${t}` : t),
-                    A = (e) =>
+                    A = (e, t) => (e.length > 0 ? `${e}.${t}` : t),
+                    L = (e) =>
                         ((e, t) =>
                             e.split('.').reduce((e, n) => {
                                 const o = P(`${e}.${n}`, window);
@@ -1167,7 +1171,7 @@
                                     n = t.caller,
                                     o = t.resId,
                                     r = window.__feature && window.__feature !== n && n ? `subViews.${n}` : '';
-                                return { modelPrefix: r, modelPath: L(r, e || ''), resId: o };
+                                return { modelPrefix: r, modelPath: A(r, e || ''), resId: o };
                             })(),
                             n = t.modelPrefix,
                             o = e.split('.');
@@ -1175,7 +1179,7 @@
                             const e = [o[0]];
                             return (
                                 o.reduce((t, o) => {
-                                    const r = P(L(n, `${t}.${o}`), window);
+                                    const r = P(A(n, `${t}.${o}`), window);
                                     return N(r) ? (e.push(r.id), `${t}.${o}.value`) : (e.push(o), `${t}.${o}`);
                                 }),
                                 e.reduce((e, t) => e + '.' + t)
@@ -1203,7 +1207,7 @@
                                 const t = P(e, window);
                                 for (const e in t) 'function' == typeof t[e] && (t[e] = t[e].bind(t));
                                 return N(t) ? t.value : t;
-                            })(A(l)),
+                            })(L(l)),
                         ),
                         u = d[0],
                         _ = d[1],
@@ -1331,13 +1335,13 @@
                             },
                             [a, b],
                         ),
-                        L = (0, s.useCallback)(
+                        A = (0, s.useCallback)(
                             (e) => {
                                 a || (null !== l && E(l), u && u(e), M(!0));
                             },
                             [a, l, u],
                         ),
-                        A = (0, s.useCallback)(
+                        L = (0, s.useCallback)(
                             (e) => {
                                 _ && _(e);
                             },
@@ -1392,8 +1396,8 @@
                             {
                                 ref: p,
                                 className: x,
-                                onMouseEnter: L,
-                                onMouseMove: A,
+                                onMouseEnter: A,
+                                onMouseMove: L,
                                 onMouseUp: D,
                                 onMouseDown: I,
                                 onMouseLeave: B,
@@ -1729,8 +1733,8 @@
                 });
                 const Ne = 'SearchingContent_base_7f',
                     Re = 'SearchingContent_bigPlayers_65',
-                    Le = 'SearchingContent_caption_86',
-                    Ae = 'SearchingContent_stateRow_ef',
+                    Ae = 'SearchingContent_caption_86',
+                    Le = 'SearchingContent_stateRow_ef',
                     De = 'SearchingContent_tableKey_71',
                     Ie = 'SearchingContent_icon_08',
                     Be = 'SearchingContent_dots_3a',
@@ -1763,10 +1767,10 @@
                             'div',
                             { className: Ne },
                             c().createElement('div', { className: Re }, t),
-                            c().createElement('span', { className: Le }, R.strings.platoon.searching.playersInQueue()),
+                            c().createElement('span', { className: Ae }, R.strings.platoon.searching.playersInQueue()),
                             c().createElement(
                                 'div',
-                                { className: Ae },
+                                { className: Le },
                                 c().createElement(
                                     'div',
                                     { className: De },

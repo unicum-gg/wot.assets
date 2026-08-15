@@ -81,8 +81,8 @@
                             h = void 0 === c ? t : c,
                             x = u.column,
                             f = u.row,
-                            p = u.flexDirection,
-                            v = void 0 === p ? (x ? 'column' : f && 'row') || void 0 : p,
+                            v = u.flexDirection,
+                            p = void 0 === v ? (x ? 'column' : f && 'row') || void 0 : v,
                             S = u.flexStart,
                             w = u.center,
                             b = u.flexEnd,
@@ -136,15 +136,15 @@
                                         height: void 0 !== F && 'number' == typeof F ? F + 'rem' : F,
                                         flex: X,
                                         alignSelf: y,
-                                        display: v || O ? 'flex' : void 0,
-                                        flexDirection: v,
+                                        display: p || O ? 'flex' : void 0,
+                                        flexDirection: p,
                                         flexWrap: G,
                                         justifyContent: H,
                                         alignItems: O,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [A, F, B, d, _, h, z, X, y, v, G, H, O]),
+                            }, [A, F, B, d, _, h, z, X, y, p, G, H, O]),
                             Y = U.computedStyle,
                             K = U.computedClassNames;
                         return a().createElement('div', n({ className: E()(C.Z.base, ...K, e), style: Y }, k), I);
@@ -484,8 +484,8 @@
                             _ = void 0 === g ? r : g,
                             c = u.ml,
                             f = void 0 === c ? r : c,
-                            p = u.style,
-                            v = u.format,
+                            v = u.style,
+                            p = u.format,
                             S = (function (u, e) {
                                 if (null == u) return {};
                                 var A,
@@ -500,8 +500,8 @@
                                     e = u.colorClassName,
                                     A = u.colorStyle,
                                     F = void 0 === A ? {} : A;
-                                return { computedStyle: Object.assign({}, p, F), colorClassName: e };
-                            }, [p, B]),
+                                return { computedStyle: Object.assign({}, v, F), colorClassName: e };
+                            }, [v, B]),
                             b = w.computedStyle,
                             L = w.colorClassName;
                         return l().createElement(
@@ -517,7 +517,7 @@
                                 },
                                 S,
                             ),
-                            void 0 !== v ? l().createElement(D.z, o({}, v, { text: e })) : e,
+                            void 0 !== p ? l().createElement(D.z, o({}, p, { text: e })) : e,
                         );
                     });
             },
@@ -723,27 +723,28 @@
                         addPreloadTexture: () => B,
                         children: () => F,
                         displayStatus: () => E.W,
-                        displayStatusIs: () => v,
+                        displayStatusIs: () => S,
                         events: () => t.U,
-                        extraSize: () => S,
-                        forceTriggerMouseMove: () => f,
+                        extraSize: () => w,
+                        forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => s,
                         getBrowserTexturePath: () => a,
                         getDisplayStatus: () => p,
                         getScale: () => o,
                         getSize: () => n,
                         getViewGlobalPosition: () => m,
-                        isEventHandled: () => x,
+                        isClientAccessible: () => h,
+                        isEventHandled: () => f,
                         isFocused: () => c,
                         pxToRem: () => d,
                         remToPx: () => g,
                         resize: () => l,
                         sendEvent: () => D.qP,
                         setAnimateWindow: () => _,
-                        setEventHandled: () => h,
+                        setEventHandled: () => x,
                         setInputPaddingsRem: () => r,
                         setSidePaddingsRem: () => i,
-                        whenTutorialReady: () => w,
+                        whenTutorialReady: () => b,
                     }));
                 var F = A(3722),
                     E = A(6112),
@@ -793,22 +794,25 @@
                     return viewEnv.isFocused();
                 }
                 function h() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function x() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function f() {
+                    return viewEnv.isEventHandled();
+                }
+                function v() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function p() {
                     return viewEnv.getShowingStatus();
                 }
-                const v = Object.keys(E.W).reduce(
+                const S = Object.keys(E.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === E.W[e]), u),
                         {},
                     ),
-                    S = {
+                    w = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -816,7 +820,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    w = Promise.all([
+                    b = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : t.U.onDomBuilt(u);
                         }),

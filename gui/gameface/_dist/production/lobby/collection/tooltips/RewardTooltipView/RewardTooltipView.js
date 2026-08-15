@@ -22,27 +22,28 @@
                         addPreloadTexture: () => N,
                         children: () => a,
                         displayStatus: () => _,
-                        displayStatusIs: () => Q,
+                        displayStatusIs: () => U,
                         events: () => h,
-                        extraSize: () => U,
-                        forceTriggerMouseMove: () => I,
+                        extraSize: () => $,
+                        forceTriggerMouseMove: () => q,
                         freezeTextureBeforeResize: () => M,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => q,
+                        getDisplayStatus: () => Q,
                         getScale: () => V,
                         getSize: () => D,
                         getViewGlobalPosition: () => H,
-                        isEventHandled: () => G,
+                        isClientAccessible: () => B,
+                        isEventHandled: () => I,
                         isFocused: () => k,
                         pxToRem: () => F,
                         remToPx: () => W,
                         resize: () => j,
                         sendEvent: () => R,
                         setAnimateWindow: () => L,
-                        setEventHandled: () => B,
+                        setEventHandled: () => G,
                         setInputPaddingsRem: () => S,
                         setSidePaddingsRem: () => C,
-                        whenTutorialReady: () => $,
+                        whenTutorialReady: () => J,
                     }));
                 var s = n(483),
                     l = n.n(s);
@@ -253,19 +254,22 @@
                     return viewEnv.isFocused();
                 }
                 function B() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function G() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function I() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function q() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const Q = Object.keys(_).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === _[t]), e), {}),
-                    U = {
+                const U = Object.keys(_).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === _[t]), e), {}),
+                    $ = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -273,24 +277,24 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    $ = Promise.all([
+                    J = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : h.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    J = { view: o, client: r };
-                var K = n(179),
-                    X = n.n(K);
-                function Y() {
-                    const e = (0, K.useRef)(0);
+                    K = { view: o, client: r };
+                var X = n(179),
+                    Y = n.n(X);
+                function Z() {
+                    const e = (0, X.useRef)(0);
                     var t;
                     return (
                         (t = () => {
                             window.cancelAnimationFrame(e.current);
                         }),
-                        (0, K.useEffect)(() => t, []),
-                        (0, K.useMemo)(
+                        (0, X.useEffect)(() => t, []),
+                        (0, X.useMemo)(
                             () => ({
                                 run: (t) => {
                                     (window.cancelAnimationFrame(e.current),
@@ -311,15 +315,15 @@
                         )
                     );
                 }
-                const Z = {
+                const ee = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    ee = ['children', 'className', 'theme'];
-                function te() {
+                    te = ['children', 'className', 'theme'];
+                function ne() {
                     return (
-                        (te =
+                        (ne =
                             Object.assign ||
                             function (e) {
                                 for (var t = 1; t < arguments.length; t++) {
@@ -328,10 +332,10 @@
                                 }
                                 return e;
                             }),
-                        te.apply(this, arguments)
+                        ne.apply(this, arguments)
                     );
                 }
-                const ne = X().forwardRef(function (e, t) {
+                const ie = Y().forwardRef(function (e, t) {
                     let n = e.children,
                         i = e.className,
                         r = e.theme,
@@ -344,9 +348,9 @@
                                 a = Object.keys(e);
                             for (i = 0; i < a.length; i++) ((n = a[i]), t.indexOf(n) >= 0 || (r[n] = e[n]));
                             return r;
-                        })(e, ee);
-                    const s = Y(),
-                        d = X().useRef(null);
+                        })(e, te);
+                    const s = Z(),
+                        d = Y().useRef(null);
                     var c;
                     return (
                         (c = () => {
@@ -355,9 +359,9 @@
                                 if (!e) return;
                                 const t = e.scrollWidth,
                                     n = e.scrollHeight;
-                                J.view.resize(t, n);
+                                K.view.resize(t, n);
                                 const i = window.getComputedStyle(e);
-                                J.view.setSidePaddingsRem({
+                                K.view.setSidePaddingsRem({
                                     left: parseInt(i.getPropertyValue('padding-left'), 10),
                                     top: parseInt(i.getPropertyValue('padding-top'), 10),
                                     right: parseInt(i.getPropertyValue('padding-right'), 10),
@@ -365,23 +369,23 @@
                                 });
                             });
                         }),
-                        (0, K.useEffect)(c, []),
-                        X().createElement(
+                        (0, X.useEffect)(c, []),
+                        Y().createElement(
                             'div',
-                            te({}, o, {
-                                className: l()(Z.base, Z[`base__theme-${a}`], i),
+                            ne({}, o, {
+                                className: l()(ee.base, ee[`base__theme-${a}`], i),
                                 ref: function (e) {
                                     ((d.current = e), 'function' == typeof t ? t(e) : t && (t.current = e));
                                 },
                             }),
-                            X().createElement('div', { className: Z.decorator }, n),
+                            Y().createElement('div', { className: ee.decorator }, n),
                         )
                     );
                 });
-                var ie = n(493),
-                    re = n.n(ie),
-                    ae = n(515);
-                const oe = {
+                var re = n(493),
+                    ae = n.n(re),
+                    oe = n(515);
+                const se = {
                         base: 'Content_base_4d',
                         innerWrap: 'Content_innerWrap_d6',
                         divider: 'Content_divider_09',
@@ -395,88 +399,88 @@
                         element: 'Content_element_93',
                         element__wrap: 'Content_element__wrap_70',
                     },
-                    se = (0, ae.Pi)(() =>
-                        X().createElement(
+                    le = (0, oe.Pi)(() =>
+                        Y().createElement(
                             'div',
-                            { className: oe.base },
-                            X().createElement(
+                            { className: se.base },
+                            Y().createElement(
                                 'div',
-                                { className: oe.innerWrap },
-                                X().createElement(
+                                { className: se.innerWrap },
+                                Y().createElement(
                                     'div',
-                                    { className: l()(oe.element, oe.element__wrap) },
-                                    X().createElement('div', { className: oe.titleHeader }, 'AAAAAAAAA'),
-                                    X().createElement(
+                                    { className: l()(se.element, se.element__wrap) },
+                                    Y().createElement('div', { className: se.titleHeader }, 'AAAAAAAAA'),
+                                    Y().createElement(
                                         'div',
-                                        { className: oe.imageWrapper },
-                                        X().createElement('div', { className: oe.image }),
+                                        { className: se.imageWrapper },
+                                        Y().createElement('div', { className: se.image }),
                                     ),
                                 ),
-                                X().createElement('div', { className: oe.divider }),
-                                X().createElement(
+                                Y().createElement('div', { className: se.divider }),
+                                Y().createElement(
                                     'div',
-                                    { className: l()(oe.element, oe.element__wrap) },
-                                    X().createElement('div', { className: oe.titleHeader }, 'AAAAAAAAA'),
-                                    X().createElement(
+                                    { className: l()(se.element, se.element__wrap) },
+                                    Y().createElement('div', { className: se.titleHeader }, 'AAAAAAAAA'),
+                                    Y().createElement(
                                         'div',
-                                        { className: oe.imageWrapper },
-                                        X().createElement('div', { className: oe.image }),
+                                        { className: se.imageWrapper },
+                                        Y().createElement('div', { className: se.image }),
                                     ),
                                 ),
-                                X().createElement('div', { className: oe.divider }),
-                                X().createElement(
+                                Y().createElement('div', { className: se.divider }),
+                                Y().createElement(
                                     'div',
-                                    { className: l()(oe.element, oe.element__wrap) },
-                                    X().createElement('div', { className: oe.titleHeader }, 'AAAAAAAAA'),
-                                    X().createElement(
+                                    { className: l()(se.element, se.element__wrap) },
+                                    Y().createElement('div', { className: se.titleHeader }, 'AAAAAAAAA'),
+                                    Y().createElement(
                                         'div',
-                                        { className: oe.imageWrapper },
-                                        X().createElement('div', { className: oe.image }),
+                                        { className: se.imageWrapper },
+                                        Y().createElement('div', { className: se.image }),
                                     ),
                                 ),
-                                X().createElement('div', { className: oe.divider }),
-                                X().createElement(
+                                Y().createElement('div', { className: se.divider }),
+                                Y().createElement(
                                     'div',
-                                    { className: oe.element__wrap },
-                                    X().createElement(
+                                    { className: se.element__wrap },
+                                    Y().createElement(
                                         'div',
-                                        { className: l()(oe.titleHeader, oe.titleHeader__second) },
+                                        { className: l()(se.titleHeader, se.titleHeader__second) },
                                         'Характеристики элемента',
                                     ),
-                                    X().createElement(
+                                    Y().createElement(
                                         'div',
-                                        { className: l()(oe.titleDescription, oe.titleDescription__list) },
-                                        X().createElement(
+                                        { className: l()(se.titleDescription, se.titleDescription__list) },
+                                        Y().createElement(
                                             'div',
                                             null,
-                                            X().createElement('div', { className: oe.iconMini }),
-                                            X().createElement('div', null, 'Для всех типов карт'),
+                                            Y().createElement('div', { className: se.iconMini }),
+                                            Y().createElement('div', null, 'Для всех типов карт'),
                                         ),
-                                        X().createElement(
+                                        Y().createElement(
                                             'div',
                                             null,
-                                            X().createElement('div', { className: oe.iconMini }),
-                                            X().createElement('div', null, 'Не историчный'),
+                                            Y().createElement('div', { className: se.iconMini }),
+                                            Y().createElement('div', null, 'Не историчный'),
                                         ),
                                     ),
                                 ),
-                                X().createElement('div', { className: oe.divider }),
-                                X().createElement(
+                                Y().createElement('div', { className: se.divider }),
+                                Y().createElement(
                                     'div',
-                                    { className: oe.element__wrap },
-                                    X().createElement(
+                                    { className: se.element__wrap },
+                                    Y().createElement(
                                         'div',
-                                        { className: oe.titleHeader__second },
+                                        { className: se.titleHeader__second },
                                         'Подходит для техники',
                                     ),
-                                    X().createElement('div', { className: oe.titleDescription }, 'Для любой техники'),
+                                    Y().createElement('div', { className: se.titleDescription }, 'Для любой техники'),
                                 ),
                             ),
                         ),
                     );
                 engine.whenReady.then(() => {
-                    re().render(
-                        X().createElement(ne, null, X().createElement(se, null)),
+                    ae().render(
+                        Y().createElement(ie, null, Y().createElement(le, null)),
                         document.getElementById('root'),
                     );
                 });

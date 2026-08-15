@@ -105,7 +105,7 @@
                 A.d(e, { E: () => E });
             },
             153: (u, e, A) => {
-                A.d(e, { O: () => I });
+                A.d(e, { O: () => V });
                 var E = {};
                 (A.r(E), A.d(E, { getBgUrl: () => n, getTextureUrl: () => D }));
                 var F = {};
@@ -115,27 +115,28 @@
                         addPreloadTexture: () => d,
                         children: () => E,
                         displayStatus: () => B,
-                        displayStatusIs: () => S,
+                        displayStatusIs: () => L,
                         events: () => C,
-                        extraSize: () => L,
-                        forceTriggerMouseMove: () => N,
+                        extraSize: () => U,
+                        forceTriggerMouseMove: () => k,
                         freezeTextureBeforeResize: () => b,
                         getBrowserTexturePath: () => v,
-                        getDisplayStatus: () => k,
+                        getDisplayStatus: () => S,
                         getScale: () => O,
                         getSize: () => h,
                         getViewGlobalPosition: () => f,
-                        isEventHandled: () => M,
+                        isClientAccessible: () => x,
+                        isEventHandled: () => N,
                         isFocused: () => R,
                         pxToRem: () => y,
                         remToPx: () => T,
                         resize: () => g,
                         sendEvent: () => _,
                         setAnimateWindow: () => P,
-                        setEventHandled: () => x,
+                        setEventHandled: () => M,
                         setInputPaddingsRem: () => m,
                         setSidePaddingsRem: () => p,
-                        whenTutorialReady: () => U,
+                        whenTutorialReady: () => I,
                     }));
                 var t = A(596);
                 function D(u, e, A = 1) {
@@ -258,19 +259,22 @@
                     return viewEnv.isFocused();
                 }
                 function x() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function M() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function N() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function k() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function S() {
                     return viewEnv.getShowingStatus();
                 }
-                const S = Object.keys(B).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === B[e]), u), {}),
-                    L = {
+                const L = Object.keys(B).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === B[e]), u), {}),
+                    U = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -278,13 +282,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    U = Promise.all([
+                    I = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : C.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    I = { view: F, client: t };
+                    V = { view: F, client: t };
             },
             521: (u, e, A) => {
                 let E, F;

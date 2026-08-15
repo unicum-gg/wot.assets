@@ -35,8 +35,8 @@
                         engine.on('clientResized', o);
                     }),
                         (0, F.useEffect)(() => () => engine.off('clientResized', o), [o]));
-                    const l = (0, F.useMemo)(() => Object.assign({}, D), [D]);
-                    return A().createElement(i.Y.Provider, { value: l }, u);
+                    const s = (0, F.useMemo)(() => Object.assign({}, D), [D]);
+                    return A().createElement(i.Y.Provider, { value: s }, u);
                 });
             },
             6010: (u, e, t) => {
@@ -61,8 +61,8 @@
                             D = r.medium,
                             B = r.small,
                             o = r.extraSmall,
-                            l = r.extraLargeWidth,
-                            s = r.largeWidth,
+                            s = r.extraLargeWidth,
+                            l = r.largeWidth,
                             C = r.mediumWidth,
                             d = r.smallWidth,
                             _ = r.extraSmallWidth,
@@ -79,8 +79,8 @@
                             if (t.small && B) return e;
                             if (t.extraSmall && o) return e;
                         } else {
-                            if (t.extraLargeWidth && l) return (0, A.H)(e, t, v);
-                            if (t.largeWidth && s) return (0, A.H)(e, t, v);
+                            if (t.extraLargeWidth && s) return (0, A.H)(e, t, v);
+                            if (t.largeWidth && l) return (0, A.H)(e, t, v);
                             if (t.mediumWidth && C) return (0, A.H)(e, t, v);
                             if (t.smallWidth && d) return (0, A.H)(e, t, v);
                             if (t.extraSmallWidth && _) return (0, A.H)(e, t, v);
@@ -368,27 +368,28 @@
                         addPreloadTexture: () => r,
                         children: () => F,
                         displayStatus: () => A.W,
-                        displayStatusIs: () => f,
+                        displayStatusIs: () => b,
                         events: () => E.U,
-                        extraSize: () => b,
-                        forceTriggerMouseMove: () => v,
+                        extraSize: () => p,
+                        forceTriggerMouseMove: () => x,
                         freezeTextureBeforeResize: () => C,
                         getBrowserTexturePath: () => n,
-                        getDisplayStatus: () => x,
+                        getDisplayStatus: () => f,
                         getScale: () => d,
                         getSize: () => o,
-                        getViewGlobalPosition: () => s,
-                        isEventHandled: () => w,
+                        getViewGlobalPosition: () => l,
+                        isClientAccessible: () => g,
+                        isEventHandled: () => v,
                         isFocused: () => m,
                         pxToRem: () => _,
                         remToPx: () => c,
-                        resize: () => l,
+                        resize: () => s,
                         sendEvent: () => i.qP,
                         setAnimateWindow: () => h,
-                        setEventHandled: () => g,
+                        setEventHandled: () => w,
                         setInputPaddingsRem: () => a,
                         setSidePaddingsRem: () => B,
-                        whenTutorialReady: () => p,
+                        whenTutorialReady: () => O,
                     }));
                 var F = t(3722),
                     A = t(6112),
@@ -412,10 +413,10 @@
                 function o(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function l(u, e, t = 'px') {
+                function s(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
-                function s(u = 'rem') {
+                function l(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: c(e.x), y: c(e.y) };
                 }
@@ -438,22 +439,25 @@
                     return viewEnv.isFocused();
                 }
                 function g() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function w() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function v() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function x() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const f = Object.keys(A.W).reduce(
+                const b = Object.keys(A.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === A.W[e]), u),
                         {},
                     ),
-                    b = {
+                    p = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -461,7 +465,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    p = Promise.all([
+                    O = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : E.U.onDomBuilt(u);
                         }),
@@ -779,8 +783,8 @@
                 const D = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     B = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     o = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
-                    l = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
-                var s = t(5521),
+                    s = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
+                var l = t(5521),
                     C = t(3138);
                 const d = ['args'];
                 function _(u, e, t, F, A, E, i) {
@@ -862,7 +866,7 @@
                     },
                     g = () => m(a.CLOSE),
                     w = (u, e) => {
-                        u.keyCode === s.n.ESCAPE && e();
+                        u.keyCode === l.n.ESCAPE && e();
                     };
                 var v = t(7572);
                 const x = A.instance,
@@ -873,7 +877,7 @@
                         NumberFormatType: D,
                         RealFormatType: B,
                         TimeFormatType: o,
-                        DateFormatType: l,
+                        DateFormatType: s,
                         makeGlobalBoundingBox: c,
                         sendMoveEvent: (u) => m(a.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: g,
@@ -888,7 +892,7 @@
                                 D = r.y,
                                 B = r.width,
                                 o = r.height,
-                                l = {
+                                s = {
                                     x: C.O.view.pxToRem(n) + i.x,
                                     y: C.O.view.pxToRem(D) + i.y,
                                     width: C.O.view.pxToRem(B),
@@ -900,7 +904,7 @@
                                 decoratorID: F || R.invalid('resId'),
                                 targetID: A,
                                 direction: e,
-                                bbox: c(l),
+                                bbox: c(s),
                                 on: !0,
                                 args: E,
                             });
@@ -1062,6 +1066,7 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
+        (__webpack_require__.j = 557),
         (() => {
             var u = { 557: 0 };
             __webpack_require__.O.j = (e) => 0 === u[e];

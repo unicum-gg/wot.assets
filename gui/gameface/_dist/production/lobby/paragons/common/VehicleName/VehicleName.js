@@ -80,9 +80,9 @@
                             g = u.ml,
                             h = void 0 === g ? t : g,
                             x = u.column,
-                            p = u.row,
-                            v = u.flexDirection,
-                            f = void 0 === v ? (x ? 'column' : p && 'row') || void 0 : v,
+                            v = u.row,
+                            p = u.flexDirection,
+                            f = void 0 === p ? (x ? 'column' : v && 'row') || void 0 : p,
                             S = u.flexStart,
                             b = u.center,
                             w = u.flexEnd,
@@ -249,7 +249,7 @@
                         g = B.mediumHeight,
                         h = B.smallHeight,
                         x = B.extraSmallHeight,
-                        p = { extraLarge: d, large: c, medium: g, small: h, extraSmall: x };
+                        v = { extraLarge: d, large: c, medium: g, small: h, extraSmall: x };
                     if (A.extraLarge || A.large || A.medium || A.small || A.extraSmall) {
                         if (A.extraLarge && r) return e;
                         if (A.large && a) return e;
@@ -257,11 +257,11 @@
                         if (A.small && C) return e;
                         if (A.extraSmall && n) return e;
                     } else {
-                        if (A.extraLargeWidth && l) return (0, F.H)(e, A, p);
-                        if (A.largeWidth && m) return (0, F.H)(e, A, p);
-                        if (A.mediumWidth && s) return (0, F.H)(e, A, p);
-                        if (A.smallWidth && o) return (0, F.H)(e, A, p);
-                        if (A.extraSmallWidth && _) return (0, F.H)(e, A, p);
+                        if (A.extraLargeWidth && l) return (0, F.H)(e, A, v);
+                        if (A.largeWidth && m) return (0, F.H)(e, A, v);
+                        if (A.mediumWidth && s) return (0, F.H)(e, A, v);
+                        if (A.smallWidth && o) return (0, F.H)(e, A, v);
+                        if (A.extraSmallWidth && _) return (0, F.H)(e, A, v);
                         if (!(
                             A.extraLargeWidth ||
                             A.largeWidth ||
@@ -400,7 +400,7 @@
             },
             7613: (u, e, A) => {
                 'use strict';
-                A.d(e, { ZP: () => v });
+                A.d(e, { ZP: () => p });
                 var E = A(6483),
                     F = A.n(E),
                     t = A(3779),
@@ -464,7 +464,7 @@
                             'paragraph-P12': g,
                             'paragraph-P10': g,
                         }),
-                    p =
+                    v =
                         (Object.keys(x),
                         (u) =>
                             u
@@ -472,7 +472,7 @@
                                     ? { colorClassName: m.Z[u] }
                                     : { colorStyle: { color: u } }
                                 : {}),
-                    v = (0, C.ZP)((u) => {
+                    p = (0, C.ZP)((u) => {
                         let e = u.text,
                             A = u.variant,
                             E = u.className,
@@ -486,7 +486,7 @@
                             c = void 0 === d ? r : d,
                             g = u.ml,
                             h = void 0 === g ? r : g,
-                            v = u.style,
+                            p = u.style,
                             f = u.format,
                             S = (function (u, e) {
                                 if (null == u) return {};
@@ -498,12 +498,12 @@
                                 return F;
                             })(u, s);
                         const b = (0, n.useMemo)(() => {
-                                const u = p(B),
+                                const u = v(B),
                                     e = u.colorClassName,
                                     A = u.colorStyle,
                                     E = void 0 === A ? {} : A;
-                                return { computedStyle: Object.assign({}, v, E), colorClassName: e };
-                            }, [v, B]),
+                                return { computedStyle: Object.assign({}, p, E), colorClassName: e };
+                            }, [p, B]),
                             w = b.computedStyle,
                             L = b.colorClassName;
                         return l().createElement(
@@ -725,27 +725,28 @@
                         addPreloadTexture: () => B,
                         children: () => E,
                         displayStatus: () => F.W,
-                        displayStatusIs: () => f,
+                        displayStatusIs: () => S,
                         events: () => t.U,
-                        extraSize: () => S,
+                        extraSize: () => b,
                         forceTriggerMouseMove: () => p,
                         freezeTextureBeforeResize: () => s,
                         getBrowserTexturePath: () => a,
-                        getDisplayStatus: () => v,
+                        getDisplayStatus: () => f,
                         getScale: () => o,
                         getSize: () => n,
                         getViewGlobalPosition: () => m,
-                        isEventHandled: () => x,
+                        isClientAccessible: () => h,
+                        isEventHandled: () => v,
                         isFocused: () => g,
                         pxToRem: () => _,
                         remToPx: () => d,
                         resize: () => l,
                         sendEvent: () => D.qP,
                         setAnimateWindow: () => c,
-                        setEventHandled: () => h,
+                        setEventHandled: () => x,
                         setInputPaddingsRem: () => r,
                         setSidePaddingsRem: () => C,
-                        whenTutorialReady: () => b,
+                        whenTutorialReady: () => w,
                     }));
                 var E = A(3722),
                     F = A(6112),
@@ -795,22 +796,25 @@
                     return viewEnv.isFocused();
                 }
                 function h() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function x() {
+                    return viewEnv.setEventHandled();
+                }
+                function v() {
                     return viewEnv.isEventHandled();
                 }
                 function p() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function v() {
+                function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const f = Object.keys(F.W).reduce(
+                const S = Object.keys(F.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === F.W[e]), u),
                         {},
                     ),
-                    S = {
+                    b = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -818,7 +822,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    b = Promise.all([
+                    w = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : t.U.onDomBuilt(u);
                         }),

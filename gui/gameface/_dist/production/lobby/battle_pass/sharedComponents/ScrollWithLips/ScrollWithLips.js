@@ -176,27 +176,28 @@
                         addPreloadTexture: () => s,
                         children: () => r,
                         displayStatus: () => o.W,
-                        displayStatusIs: () => M,
+                        displayStatusIs: () => O,
                         events: () => i.U,
-                        extraSize: () => O,
-                        forceTriggerMouseMove: () => S,
+                        extraSize: () => R,
+                        forceTriggerMouseMove: () => P,
                         freezeTextureBeforeResize: () => m,
                         getBrowserTexturePath: () => l,
-                        getDisplayStatus: () => P,
+                        getDisplayStatus: () => M,
                         getScale: () => p,
                         getSize: () => _,
                         getViewGlobalPosition: () => f,
-                        isEventHandled: () => y,
+                        isClientAccessible: () => b,
+                        isEventHandled: () => S,
                         isFocused: () => w,
                         pxToRem: () => g,
                         remToPx: () => E,
                         resize: () => v,
                         sendEvent: () => a.qP,
                         setAnimateWindow: () => h,
-                        setEventHandled: () => b,
+                        setEventHandled: () => y,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => d,
-                        whenTutorialReady: () => R,
+                        whenTutorialReady: () => T,
                     }));
                 var r = n(3722),
                     o = n(6112),
@@ -246,22 +247,25 @@
                     return viewEnv.isFocused();
                 }
                 function b() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function y() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function S() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function P() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function M() {
                     return viewEnv.getShowingStatus();
                 }
-                const M = Object.keys(o.W).reduce(
+                const O = Object.keys(o.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === o.W[t]), e),
                         {},
                     ),
-                    O = {
+                    R = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -269,7 +273,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    R = Promise.all([
+                    T = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : i.U.onDomBuilt(e);
                         }),
@@ -992,7 +996,7 @@
                                     },
                                     [S.scrollPosition, R, h],
                                 ),
-                                N = ((e, t = []) => {
+                                C = ((e, t = []) => {
                                     const n = (0, c.useRef)(),
                                         r = (0, c.useCallback)((...t) => {
                                             (n.current && n.current(), (n.current = e(...t)));
@@ -1016,7 +1020,7 @@
                                         }),
                                     [O, S.scrollPosition.goal],
                                 ),
-                                C = (0, d.z)(() => {
+                                N = (0, d.z)(() => {
                                     const e = v.current;
                                     if (!e) return;
                                     const t = a(e, S.scrollPosition.goal);
@@ -1025,12 +1029,12 @@
                                 });
                             (0, c.useEffect)(
                                 () => (
-                                    window.addEventListener('resize', N),
+                                    window.addEventListener('resize', C),
                                     () => {
-                                        window.removeEventListener('resize', N);
+                                        window.removeEventListener('resize', C);
                                     }
                                 ),
-                                [N],
+                                [C],
                             );
                             const L = (0, c.useCallback)((e) => h.trigger('isThumbDraggingChanged', e), [h]);
                             return (0, c.useMemo)(
@@ -1050,11 +1054,11 @@
                                     wrapperRef: p,
                                     scrollPosition: P,
                                     animationScroll: S,
-                                    recalculateContent: C,
+                                    recalculateContent: N,
                                     handleIsThumbDragging: L,
                                     events: { on: h.on, off: h.off },
                                 }),
-                                [S.scrollPosition, O, R, L, h.off, h.on, C, T, P, _.step.clampedArrowStepTimeout],
+                                [S.scrollPosition, O, R, L, h.off, h.on, N, T, P, _.step.clampedArrowStepTimeout],
                             );
                         };
                     },
@@ -1081,8 +1085,8 @@
                     O = 'HorizontalBar_rightButton_03',
                     R = 'HorizontalBar_track_0d',
                     T = 'HorizontalBar_thumb_fd',
-                    N = 'HorizontalBar_rail_32',
-                    C = 'disable',
+                    C = 'HorizontalBar_rail_32',
+                    N = 'disable',
                     L = { pending: !1, offset: 0 },
                     k = (e) => {
                         var t;
@@ -1122,15 +1126,15 @@
                                     ((e) => {
                                         if (i.current && f.current && m.current && p.current) {
                                             if (0 === e)
-                                                return (i.current.classList.add(C), void f.current.classList.remove(C));
+                                                return (i.current.classList.add(N), void f.current.classList.remove(N));
                                             if (
                                                 ((t = m.current),
                                                 (n = p.current),
                                                 e - (t.offsetWidth - n.offsetWidth) >= -0.5)
                                             )
-                                                return (i.current.classList.remove(C), void f.current.classList.add(C));
+                                                return (i.current.classList.remove(N), void f.current.classList.add(N));
                                             var t, n;
-                                            (i.current.classList.remove(C), f.current.classList.remove(C));
+                                            (i.current.classList.remove(N), f.current.classList.remove(N));
                                         }
                                     })(l));
                             },
@@ -1218,7 +1222,7 @@
                             [W],
                         );
                         const U = (e) => {
-                            e.target.classList.contains(C) || (0, v.G)('highlight');
+                            e.target.classList.contains(N) || (0, v.G)('highlight');
                         };
                         return l().createElement(
                             'div',
@@ -1226,7 +1230,7 @@
                             l().createElement('div', {
                                 className: a()(M, t.leftButton),
                                 onMouseDown: (e) => {
-                                    e.target.classList.contains(C) || 0 !== e.button || ((0, v.G)('play'), z(h.Next));
+                                    e.target.classList.contains(N) || 0 !== e.button || ((0, v.G)('play'), z(h.Next));
                                 },
                                 onMouseUp: W,
                                 ref: i,
@@ -1255,12 +1259,12 @@
                                     onMouseEnter: U,
                                 },
                                 l().createElement('div', { ref: p, className: a()(T, t.thumb) }),
-                                l().createElement('div', { className: a()(N, t.rail) }),
+                                l().createElement('div', { className: a()(C, t.rail) }),
                             ),
                             l().createElement('div', {
                                 className: a()(O, t.rightButton),
                                 onMouseDown: (e) => {
-                                    e.target.classList.contains(C) || 0 !== e.button || ((0, v.G)('play'), z(h.Prev));
+                                    e.target.classList.contains(N) || 0 !== e.button || ((0, v.G)('play'), z(h.Prev));
                                 },
                                 onMouseUp: W,
                                 ref: f,
@@ -1494,7 +1498,7 @@
                             ),
                             [T],
                         );
-                        const N = (e) => {
+                        const C = (e) => {
                             e.target.classList.contains(j) || (0, v.G)('highlight');
                         };
                         return l().createElement(
@@ -1506,7 +1510,7 @@
                                     e.target.classList.contains(j) || 0 !== e.button || ((0, v.G)('play'), R(h.Next));
                                 },
                                 ref: i,
-                                onMouseEnter: N,
+                                onMouseEnter: C,
                             }),
                             l().createElement(
                                 'div',
@@ -1534,7 +1538,7 @@
                                             }
                                     },
                                     ref: m,
-                                    onMouseEnter: N,
+                                    onMouseEnter: C,
                                 },
                                 l().createElement('div', { ref: p, className: t.thumb }),
                                 l().createElement('div', { className: a()(q, t.rail) }),
@@ -1546,7 +1550,7 @@
                                 },
                                 onMouseUp: T,
                                 ref: f,
-                                onMouseEnter: N,
+                                onMouseEnter: C,
                             }),
                         );
                     }),

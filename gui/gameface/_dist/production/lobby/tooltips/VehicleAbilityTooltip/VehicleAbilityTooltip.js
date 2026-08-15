@@ -75,16 +75,16 @@
                                         let E = !0;
                                         const F = `mouse${e}`,
                                             D = r[e]((u) => t([u, 'outside']));
-                                        function a(u) {
+                                        function n(u) {
                                             t([u, 'inside']);
                                         }
                                         return (
-                                            window.addEventListener(F, a),
+                                            window.addEventListener(F, n),
                                             A(),
                                             () => {
                                                 E &&
                                                     (D(),
-                                                    window.removeEventListener(F, a),
+                                                    window.removeEventListener(F, n),
                                                     (u.listeners -= 1),
                                                     A(),
                                                     (E = !1));
@@ -203,27 +203,28 @@
                         addPreloadTexture: () => D,
                         children: () => A,
                         displayStatus: () => E.W,
-                        displayStatusIs: () => v,
+                        displayStatusIs: () => b,
                         events: () => F.U,
-                        extraSize: () => b,
-                        forceTriggerMouseMove: () => p,
+                        extraSize: () => S,
+                        forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => m,
-                        getBrowserTexturePath: () => n,
-                        getDisplayStatus: () => f,
+                        getBrowserTexturePath: () => a,
+                        getDisplayStatus: () => v,
                         getScale: () => s,
                         getSize: () => C,
                         getViewGlobalPosition: () => o,
-                        isEventHandled: () => x,
+                        isClientAccessible: () => h,
+                        isEventHandled: () => p,
                         isFocused: () => _,
                         pxToRem: () => c,
                         remToPx: () => d,
                         resize: () => l,
                         sendEvent: () => r.qP,
                         setAnimateWindow: () => g,
-                        setEventHandled: () => h,
-                        setInputPaddingsRem: () => a,
+                        setEventHandled: () => x,
+                        setInputPaddingsRem: () => n,
                         setSidePaddingsRem: () => i,
-                        whenTutorialReady: () => S,
+                        whenTutorialReady: () => w,
                     }));
                 var A = t(3722),
                     E = t(6112),
@@ -232,10 +233,10 @@
                 function D(u) {
                     viewEnv.addPreloadTexture(u);
                 }
-                function a(u) {
+                function n(u) {
                     viewEnv.setHitAreaPaddingsRem(u, u, u, u, 15);
                 }
-                function n(u, e, t, A = 1) {
+                function a(u, e, t, A = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, A);
                 }
                 function B(u, e, t) {
@@ -273,22 +274,25 @@
                     return viewEnv.isFocused();
                 }
                 function h() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function x() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function p() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function f() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function v() {
                     return viewEnv.getShowingStatus();
                 }
-                const v = Object.keys(E.W).reduce(
+                const b = Object.keys(E.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === E.W[e]), u),
                         {},
                     ),
-                    b = {
+                    S = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -296,7 +300,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    S = Promise.all([
+                    w = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : F.U.onDomBuilt(u);
                         }),
@@ -363,10 +367,10 @@
                     F = t(3138),
                     r = t(6179),
                     D = t.n(r);
-                const a = ['children', 'className', 'isSimple'];
-                function n() {
+                const n = ['children', 'className', 'isSimple'];
+                function a() {
                     return (
-                        (n =
+                        (a =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -375,7 +379,7 @@
                                 }
                                 return u;
                             }),
-                        n.apply(this, arguments)
+                        a.apply(this, arguments)
                     );
                 }
                 const B = D().forwardRef(function (u, e) {
@@ -390,7 +394,7 @@
                                 F = Object.keys(u);
                             for (A = 0; A < F.length; A++) ((t = F[A]), e.indexOf(t) >= 0 || (E[t] = u[t]));
                             return E;
-                        })(u, a);
+                        })(u, n);
                     const C = (function () {
                             const u = (0, r.useRef)(0);
                             var e;
@@ -442,7 +446,7 @@
                         (0, r.useEffect)(o, []),
                         D().createElement(
                             'div',
-                            n({}, i, {
+                            a({}, i, {
                                 className: E()('CosmicTooltipDecorator_base_7d', A),
                                 ref: function (u) {
                                     ((l.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
@@ -462,11 +466,11 @@
                     F = t(493),
                     r = t.n(F),
                     D = t(3282);
-                function a() {
+                function n() {
                     return !1;
                 }
                 console.log;
-                var n = t(3915),
+                var a = t(3915),
                     B = t(3138);
                 function i(u, e) {
                     (null == e || e > u.length) && (e = u.length);
@@ -514,8 +518,8 @@
                                                 return {
                                                     subscribe: (t, F) => {
                                                         const D = 'string' == typeof F ? `${A}.${F}` : A,
-                                                            a = B.O.view.addModelObserver(D, e, !0);
-                                                        return (E.set(a, t), u && t(r(F)), a);
+                                                            n = B.O.view.addModelObserver(D, e, !0);
+                                                        return (E.set(n, t), u && t(r(F)), n);
                                                     },
                                                     readByPath: r,
                                                     createCallback: (u, e) => {
@@ -606,11 +610,11 @@
                                                 observableModel: {
                                                     array: (e, t) => {
                                                         const A = null != t ? t : D(e),
-                                                            E = n.observable.box(A, { equals: a });
+                                                            E = a.observable.box(A, { equals: n });
                                                         return (
                                                             'real' === u &&
                                                                 r.subscribe(
-                                                                    (0, n.action)((u) => E.set(u)),
+                                                                    (0, a.action)((u) => E.set(u)),
                                                                     e,
                                                                 ),
                                                             E
@@ -618,11 +622,11 @@
                                                     },
                                                     object: (e, t) => {
                                                         const A = null != t ? t : D(e),
-                                                            E = n.observable.box(A, { equals: a });
+                                                            E = a.observable.box(A, { equals: n });
                                                         return (
                                                             'real' === u &&
                                                                 r.subscribe(
-                                                                    (0, n.action)((u) => E.set(u)),
+                                                                    (0, a.action)((u) => E.set(u)),
                                                                     e,
                                                                 ),
                                                             E
@@ -632,13 +636,13 @@
                                                         const A = D(t);
                                                         if (Array.isArray(e)) {
                                                             const E = e.reduce(
-                                                                (u, e) => ((u[e] = n.observable.box(A[e], {})), u),
+                                                                (u, e) => ((u[e] = a.observable.box(A[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === u &&
                                                                     r.subscribe(
-                                                                        (0, n.action)((u) => {
+                                                                        (0, a.action)((u) => {
                                                                             e.forEach((e) => {
                                                                                 E[e].set(u[e]);
                                                                             });
@@ -653,7 +657,7 @@
                                                                 F = Object.entries(E),
                                                                 D = F.reduce(
                                                                     (u, [e, t]) => (
-                                                                        (u[t] = n.observable.box(A[e], {})),
+                                                                        (u[t] = a.observable.box(A[e], {})),
                                                                         u
                                                                     ),
                                                                     {},
@@ -661,7 +665,7 @@
                                                             return (
                                                                 'real' === u &&
                                                                     r.subscribe(
-                                                                        (0, n.action)((u) => {
+                                                                        (0, a.action)((u) => {
                                                                             F.forEach(([e, t]) => {
                                                                                 D[t].set(u[e]);
                                                                             });
@@ -819,8 +823,8 @@
                             F = E.extraLarge,
                             r = E.large,
                             D = E.medium,
-                            a = E.small,
-                            n = E.extraSmall,
+                            n = E.small,
+                            a = E.extraSmall,
                             B = E.extraLargeWidth,
                             i = E.largeWidth,
                             C = E.mediumWidth,
@@ -836,8 +840,8 @@
                             if (t.extraLarge && F) return e;
                             if (t.large && r) return e;
                             if (t.medium && D) return e;
-                            if (t.small && a) return e;
-                            if (t.extraSmall && n) return e;
+                            if (t.small && n) return e;
+                            if (t.extraSmall && a) return e;
                         } else {
                             if (t.extraLargeWidth && B) return _(e, t, h);
                             if (t.largeWidth && i) return _(e, t, h);
@@ -896,8 +900,8 @@
                         engine.on('clientResized', D);
                     }),
                         (0, A.useEffect)(() => () => engine.off('clientResized', D), [D]));
-                    const a = (0, A.useMemo)(() => Object.assign({}, F), [F]);
-                    return E().createElement(w.Provider, { value: a }, u);
+                    const n = (0, A.useMemo)(() => Object.assign({}, F), [F]);
+                    return E().createElement(w.Provider, { value: n }, u);
                 }),
                     (function (u) {
                         ((u[(u.ExtraSmall = h.extraSmall.width)] = 'ExtraSmall'),
@@ -1117,9 +1121,9 @@
                             F = u.height,
                             r = u.m,
                             D = u.mt,
-                            a = void 0 === D ? r : D,
-                            n = u.mr,
-                            B = void 0 === n ? r : n,
+                            n = void 0 === D ? r : D,
+                            a = u.mr,
+                            B = void 0 === a ? r : a,
                             i = u.mb,
                             C = void 0 === i ? r : i,
                             l = u.ml,
@@ -1164,7 +1168,7 @@
                                 return E;
                             })(u, X);
                         const V = (0, A.useMemo)(() => {
-                                const u = { mt: a, mr: B, mb: C, ml: o },
+                                const u = { mt: n, mr: B, mb: C, ml: o },
                                     e = ((u) =>
                                         k.reduce((e, t) => {
                                             const A = u[t];
@@ -1189,7 +1193,7 @@
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, F, a, B, C, o, W, P, L, g, y, b, w]),
+                            }, [t, F, n, B, C, o, W, P, L, g, y, b, w]),
                             $ = V.computedStyle,
                             K = V.computedClassNames;
                         return E().createElement('div', I({ className: c()(j.base, ...K, e), style: $ }, G), N);
@@ -1338,8 +1342,8 @@
                 const Fu = Object.keys(eu()),
                     ru = { mt: 'MD', mr: 'SM', mb: 'SM', ml: 'SM' },
                     Du = { mt: 'SM', mr: 'XS', mb: 'XS', ml: 'XS' },
-                    au = { mt: 'XS', mr: 'XS', mb: 'XS', ml: 'XS' },
-                    nu =
+                    nu = { mt: 'XS', mr: 'XS', mb: 'XS', ml: 'XS' },
+                    au =
                         (Object.keys({
                             XL: { mt: 'XL', mr: 'XL', mb: 'XL', ml: 'XL' },
                             LG: { mt: 'LG', mr: 'LG', mb: 'LG', ml: 'LG' },
@@ -1360,17 +1364,17 @@
                             'heading-H22': Du,
                             'heading-H20R': Du,
                             'heading-H18': Du,
-                            'heading-H15': au,
-                            'heading-H14': au,
+                            'heading-H15': nu,
+                            'heading-H14': nu,
                             'paragraph-P24': Du,
                             'paragraph-P18': Du,
                             'paragraph-P16': Du,
-                            'paragraph-P14': au,
-                            'paragraph-P12': au,
-                            'paragraph-P10': au,
+                            'paragraph-P14': nu,
+                            'paragraph-P12': nu,
+                            'paragraph-P10': nu,
                         }),
                     Bu =
-                        (Object.keys(nu),
+                        (Object.keys(au),
                         (u) =>
                             u
                                 ? ((u) => Fu.includes(u))(u)
@@ -1383,8 +1387,8 @@
                             F = u.className,
                             r = u.color,
                             D = u.m,
-                            a = u.mt,
-                            n = void 0 === a ? D : a,
+                            n = u.mt,
+                            a = void 0 === n ? D : n,
                             B = u.mr,
                             i = void 0 === B ? D : B,
                             C = u.mb,
@@ -1417,10 +1421,10 @@
                                 {
                                     className: c()(tu.base, t && tu[t], x, F),
                                     style: h,
-                                    mt: !0 === n ? nu[t || 'paragraph-P16'].mt : n,
-                                    mr: !0 === i ? nu[t || 'paragraph-P16'].mr : i,
-                                    mb: !0 === l ? nu[t || 'paragraph-P16'].mb : l,
-                                    ml: !0 === m ? nu[t || 'paragraph-P16'].ml : m,
+                                    mt: !0 === a ? au[t || 'paragraph-P16'].mt : a,
+                                    mr: !0 === i ? au[t || 'paragraph-P16'].mr : i,
+                                    mb: !0 === l ? au[t || 'paragraph-P16'].mb : l,
+                                    ml: !0 === m ? au[t || 'paragraph-P16'].ml : m,
                                 },
                                 g,
                             ),
@@ -1483,14 +1487,14 @@
             if (!t) {
                 var r = 1 / 0;
                 for (B = 0; B < u.length; B++) {
-                    for (var [t, E, F] = u[B], D = !0, a = 0; a < t.length; a++)
-                        (!1 & F || r >= F) && Object.keys(A.O).every((u) => A.O[u](t[a]))
-                            ? t.splice(a--, 1)
+                    for (var [t, E, F] = u[B], D = !0, n = 0; n < t.length; n++)
+                        (!1 & F || r >= F) && Object.keys(A.O).every((u) => A.O[u](t[n]))
+                            ? t.splice(n--, 1)
                             : ((D = !1), F < r && (r = F));
                     if (D) {
                         u.splice(B--, 1);
-                        var n = E();
-                        void 0 !== n && (e = n);
+                        var a = E();
+                        void 0 !== a && (e = a);
                     }
                 }
                 return e;
@@ -1527,13 +1531,13 @@
             var e = (e, t) => {
                     var E,
                         F,
-                        [r, D, a] = t,
-                        n = 0;
+                        [r, D, n] = t,
+                        a = 0;
                     if (r.some((e) => 0 !== u[e])) {
                         for (E in D) A.o(D, E) && (A.m[E] = D[E]);
-                        if (a) var B = a(A);
+                        if (n) var B = n(A);
                     }
-                    for (e && e(t); n < r.length; n++) ((F = r[n]), A.o(u, F) && u[F] && u[F][0](), (u[F] = 0));
+                    for (e && e(t); a < r.length; a++) ((F = r[a]), A.o(u, F) && u[F] && u[F][0](), (u[F] = 0));
                     return A.O(B);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);

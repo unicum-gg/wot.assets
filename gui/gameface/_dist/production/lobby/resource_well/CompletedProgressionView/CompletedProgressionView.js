@@ -629,27 +629,28 @@
                         addPreloadTexture: () => o,
                         children: () => r,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => f,
                         events: () => n.U,
-                        extraSize: () => f,
-                        forceTriggerMouseMove: () => b,
+                        extraSize: () => S,
+                        forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => c,
                         getBrowserTexturePath: () => s,
-                        getDisplayStatus: () => v,
+                        getDisplayStatus: () => w,
                         getScale: () => d,
                         getSize: () => _,
                         getViewGlobalPosition: () => D,
-                        isEventHandled: () => p,
+                        isClientAccessible: () => g,
+                        isEventHandled: () => b,
                         isFocused: () => h,
                         pxToRem: () => m,
                         remToPx: () => B,
                         resize: () => F,
                         sendEvent: () => i.qP,
                         setAnimateWindow: () => C,
-                        setEventHandled: () => g,
+                        setEventHandled: () => p,
                         setInputPaddingsRem: () => E,
                         setSidePaddingsRem: () => l,
-                        whenTutorialReady: () => S,
+                        whenTutorialReady: () => x,
                     }));
                 var r = t(3722),
                     a = t(6112),
@@ -699,22 +700,25 @@
                     return viewEnv.isFocused();
                 }
                 function g() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function p() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function b() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function v() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function w() {
                     return viewEnv.getShowingStatus();
                 }
-                const w = Object.keys(a.W).reduce(
+                const f = Object.keys(a.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === a.W[e]), u),
                         {},
                     ),
-                    f = {
+                    S = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -722,7 +726,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    S = Promise.all([
+                    x = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : n.U.onDomBuilt(u);
                         }),
@@ -2526,12 +2530,12 @@
             },
             6409: (u, e, t) => {
                 'use strict';
-                t.d(e, { Q: () => g });
+                t.d(e, { Q: () => p });
                 var r = t(6483),
                     a = t.n(r),
                     n = t(280);
                 t(3649);
-                let i, o, E, s, A, l, _, F;
+                let i, o, E, s, A, l, _, F, D;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -2588,12 +2592,14 @@
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
                         (u.LootBoxToken = 'lootBoxToken'),
-                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
-                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.PostStamp = 'giftsystem_5_stamp'),
                         (u.Quests = 'quests'),
                         (u.ArmoryCoin = 'armory_coin'),
                         (u.PremiumPlusUniversal = 'premium_plus_universal'),
-                        (u.DogTagType = 'dogTagComponents'));
+                        (u.DogTagType = 'dogTagComponents'),
+                        (u.GoldenTicket = 'goldenticket'),
+                        (u.LbStyleProgress = 'lbStyleProgress'),
+                        (u.RewardsSlots = 'rewardsSlots'));
                 })(i || (i = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2689,58 +2695,61 @@
                     })(_ || (_ = {})),
                     (function (u) {
                         ((u.Small = '400x300'), (u.Big = '600x450'));
-                    })(F || (F = {})));
-                var D = t(2056),
-                    c = t(5415),
-                    d = t(6179),
-                    m = t.n(d),
-                    B = t(9356);
-                const C = {
+                    })(F || (F = {})),
+                    (function (u) {
+                        u.ProgressionStyle = 'progressionStyle';
+                    })(D || (D = {})));
+                var c = t(2056),
+                    d = t(5415),
+                    m = t(6179),
+                    B = t.n(m),
+                    C = t(9356);
+                const h = {
                         base: 'Reward_base_3a',
                         title: 'Reward_title_4c',
                         title__block: 'Reward_title__block_cf',
                         formatText: 'Reward_formatText_d5',
                         infoIco: 'Reward_infoIco_ec',
                     },
-                    h = R.views.lobby.resource_well.tooltips,
-                    g = ({ vehicleInfo: u, personalNumber: e, classNames: t }) => {
+                    g = R.views.lobby.resource_well.tooltips,
+                    p = ({ vehicleInfo: u, personalNumber: e, classNames: t }) => {
                         const r = ((u, e, t) =>
-                            `R.images.gui.maps.icons.resourceWell.vehicles.${e}_${u === c.cJ.Small ? F.Small : F.Big}${t ? '_3d' : ''}`)(
-                            (0, c.GS)().mediaSize,
+                            `R.images.gui.maps.icons.resourceWell.vehicles.${e}_${u === d.cJ.Small ? F.Small : F.Big}${t ? '_3d' : ''}`)(
+                            (0, d.GS)().mediaSize,
                             u.vehicleTechName,
                             e,
                         );
-                        return m().createElement(
+                        return B().createElement(
                             'div',
-                            { className: C.base },
-                            m().createElement('div', {
-                                className: a()(C.img, null == t ? void 0 : t.img, null == t ? void 0 : t.style),
+                            { className: h.base },
+                            B().createElement('div', {
+                                className: a()(h.img, null == t ? void 0 : t.img, null == t ? void 0 : t.style),
                                 style: { backgroundImage: `url(${r})` },
                             }),
-                            m().createElement(
+                            B().createElement(
                                 'div',
-                                { className: a()(C.title, null == t ? void 0 : t.title) },
+                                { className: a()(h.title, null == t ? void 0 : t.title) },
                                 e
-                                    ? m().createElement(
-                                          m().Fragment,
+                                    ? B().createElement(
+                                          B().Fragment,
                                           null,
-                                          m().createElement(n.z, {
-                                              classMix: C.formatText,
+                                          B().createElement(n.z, {
+                                              classMix: h.formatText,
                                               text: R.strings.resource_well.awardView.vehicleNumberTitle(),
                                               binding: {
-                                                  vehicleInfo: m().createElement(B.e, {
+                                                  vehicleInfo: B().createElement(C.e, {
                                                       vehicleInfo: u,
-                                                      theme: B.b.Award,
+                                                      theme: C.b.Award,
                                                   }),
                                               },
                                           }),
-                                          m().createElement(
-                                              D.u,
-                                              { contentId: h.SerialNumberTooltip('resId') },
-                                              m().createElement('div', { className: C.infoIco }),
+                                          B().createElement(
+                                              c.u,
+                                              { contentId: g.SerialNumberTooltip('resId') },
+                                              B().createElement('div', { className: h.infoIco }),
                                           ),
                                       )
-                                    : m().createElement(B.e, { vehicleInfo: u, theme: B.b.Award }),
+                                    : B().createElement(C.e, { vehicleInfo: u, theme: C.b.Award }),
                             ),
                         );
                     };

@@ -376,22 +376,23 @@
                         displayStatus: () => i.W,
                         displayStatusIs: () => P,
                         events: () => E.U,
-                        extraSize: () => S,
-                        forceTriggerMouseMove: () => v,
+                        extraSize: () => b,
+                        forceTriggerMouseMove: () => p,
                         freezeTextureBeforeResize: () => C,
                         getBrowserTexturePath: () => a,
-                        getDisplayStatus: () => p,
+                        getDisplayStatus: () => S,
                         getScale: () => d,
                         getSize: () => D,
                         getViewGlobalPosition: () => B,
-                        isEventHandled: () => w,
+                        isClientAccessible: () => g,
+                        isEventHandled: () => v,
                         isFocused: () => h,
                         pxToRem: () => _,
                         remToPx: () => c,
                         resize: () => l,
                         sendEvent: () => A.qP,
                         setAnimateWindow: () => m,
-                        setEventHandled: () => g,
+                        setEventHandled: () => w,
                         setInputPaddingsRem: () => n,
                         setSidePaddingsRem: () => s,
                         whenTutorialReady: () => x,
@@ -444,22 +445,25 @@
                     return viewEnv.isFocused();
                 }
                 function g() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function w() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function v() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function p() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function S() {
                     return viewEnv.getShowingStatus();
                 }
                 const P = Object.keys(i.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === i.W[e]), u),
                         {},
                     ),
-                    S = {
+                    b = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -1021,7 +1025,7 @@
             },
             6409: (u, e, t) => {
                 (t(6483), t(280), t(3649));
-                let r, i, E, A, F, n, a, o;
+                let r, i, E, A, F, n, a, o, s;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -1078,12 +1082,14 @@
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
                         (u.LootBoxToken = 'lootBoxToken'),
-                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
-                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.PostStamp = 'giftsystem_5_stamp'),
                         (u.Quests = 'quests'),
                         (u.ArmoryCoin = 'armory_coin'),
                         (u.PremiumPlusUniversal = 'premium_plus_universal'),
-                        (u.DogTagType = 'dogTagComponents'));
+                        (u.DogTagType = 'dogTagComponents'),
+                        (u.GoldenTicket = 'goldenticket'),
+                        (u.LbStyleProgress = 'lbStyleProgress'),
+                        (u.RewardsSlots = 'rewardsSlots'));
                 })(r || (r = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1179,7 +1185,10 @@
                     })(a || (a = {})),
                     (function (u) {
                         ((u.Small = '400x300'), (u.Big = '600x450'));
-                    })(o || (o = {})));
+                    })(o || (o = {})),
+                    (function (u) {
+                        u.ProgressionStyle = 'progressionStyle';
+                    })(s || (s = {})));
                 (t(2056), t(5415), t(6179), t(9356));
                 R.views.lobby.resource_well.tooltips;
             },

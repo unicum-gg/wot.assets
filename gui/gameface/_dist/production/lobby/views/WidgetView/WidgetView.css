@@ -77,30 +77,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-}
-
-.Widget_icon__inProgress_e5 {
-    background: url('R.images.battle_royale.gui.maps.widget.in_progress.main_icon_130') no-repeat center / contain;
-}
-
-.mediaSmall .Widget_icon__inProgress_e5 {
-    background-image: url('R.images.battle_royale.gui.maps.widget.in_progress.main_icon_150');
-}
-
-.Widget_icon__completed_4d {
-    background: url('R.images.battle_royale.gui.maps.widget.completed.main_icon_130') no-repeat center / contain;
-}
-
-.mediaSmall .Widget_icon__completed_4d {
-    background-image: url('R.images.battle_royale.gui.maps.widget.completed.main_icon_150');
-}
-
-.Widget_icon__alertMode_c7 {
-    background: url('R.images.battle_royale.gui.maps.widget.curfew.main_icon_130') no-repeat center / contain;
-}
-
-.mediaSmall .Widget_icon__alertMode_c7 {
-    background-image: url('R.images.battle_royale.gui.maps.widget.curfew.main_icon_150');
+    background: no-repeat center / contain;
 }
 
 .mediaMedium .Widget_icon_de {
@@ -120,7 +97,7 @@ html {
     margin-bottom: 25rem;
 }
 
-.mediaMedium .Widget_icon__inProgress_e5 .Widget_label_be {
+.mediaMedium .Widget_label__inProgress_c4 {
     left: -1rem;
 }
 

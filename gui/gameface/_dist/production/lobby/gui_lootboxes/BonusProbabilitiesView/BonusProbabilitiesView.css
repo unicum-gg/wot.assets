@@ -849,10 +849,25 @@
 
 .Rewards_base_e4 {
     display: flex;
+    position: relative;
 }
 
 .Rewards_reward_29 {
     margin: 0 10rem;
+    position: relative;
+}
+
+.Rewards_reward__granted_78 {
+    opacity: 0.3;
+}
+
+.Rewards_checkIcon_a7 {
+    width: 100%;
+    height: 22rem;
+    margin-top: 2rem;
+    background: url('R.images.gui_lootboxes.gui.maps.rotation.check') no-repeat center / contain;
+    position: absolute;
+    bottom: -15rem;
 }
 
 .RewardSlot_base_61 {

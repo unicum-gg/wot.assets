@@ -18,7 +18,7 @@
             },
             67: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => V });
+                t.d(e, { O: () => q });
                 var r = {};
                 (t.r(r), t.d(r, { mouse: () => D, onResize: () => F }));
                 var a = {};
@@ -49,27 +49,28 @@
                         addPreloadTexture: () => f,
                         children: () => E,
                         displayStatus: () => _,
-                        displayStatusIs: () => j,
+                        displayStatusIs: () => z,
                         events: () => d,
-                        extraSize: () => z,
-                        forceTriggerMouseMove: () => G,
+                        extraSize: () => K,
+                        forceTriggerMouseMove: () => $,
                         freezeTextureBeforeResize: () => k,
                         getBrowserTexturePath: () => T,
-                        getDisplayStatus: () => $,
+                        getDisplayStatus: () => j,
                         getScale: () => H,
                         getSize: () => S,
                         getViewGlobalPosition: () => O,
-                        isEventHandled: () => U,
+                        isClientAccessible: () => I,
+                        isEventHandled: () => G,
                         isFocused: () => W,
                         pxToRem: () => R,
                         remToPx: () => P,
                         resize: () => y,
-                        sendEvent: () => b,
+                        sendEvent: () => p,
                         setAnimateWindow: () => N,
-                        setEventHandled: () => I,
+                        setEventHandled: () => U,
                         setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => M,
-                        whenTutorialReady: () => K,
+                        whenTutorialReady: () => V,
                     }));
                 const F = A('clientResized'),
                     o = { down: A('mousedown'), up: A('mouseup'), move: A('mousemove') };
@@ -176,7 +177,7 @@
                     g = 16,
                     v = 32,
                     w = 64,
-                    p = (u, e) => {
+                    b = (u, e) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== e) {
                             const a = e.args,
@@ -212,15 +213,15 @@
                         return viewEnv.handleViewEvent({ __Type: t, type: u });
                         var r;
                     },
-                    b = {
+                    p = {
                         close(u) {
-                            p('popover' === u ? h : v);
+                            b('popover' === u ? h : v);
                         },
                         minimize() {
-                            p(w);
+                            b(w);
                         },
                         move(u) {
-                            p(g, { isMouseEvent: !0, on: u });
+                            b(g, { isMouseEvent: !0, on: u });
                         },
                     };
                 function f(u) {
@@ -267,19 +268,22 @@
                     return viewEnv.isFocused();
                 }
                 function I() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function U() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function G() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function $() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function j() {
                     return viewEnv.getShowingStatus();
                 }
-                const j = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
-                    z = {
+                const z = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
+                    K = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -287,13 +291,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    K = Promise.all([
+                    V = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : d.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    V = { view: n, client: a };
+                    q = { view: n, client: a };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -639,7 +643,7 @@
                     };
                 var v = t(572);
                 const w = a.instance,
-                    p = {
+                    b = {
                         DataTracker: E.Z,
                         ViewModel: v.Z,
                         ViewEventType: i,
@@ -722,7 +726,7 @@
                         SystemLocale: n,
                         UserLocale: A,
                     };
-                window.ViewEnvHelper = p;
+                window.ViewEnvHelper = b;
             },
             959: (u, e, t) => {
                 'use strict';
@@ -917,7 +921,7 @@
                     h = t.n(m),
                     g = t(926),
                     v = t.n(g);
-                let w, p, b;
+                let w, b, p;
                 (!(function (u) {
                     ((u[(u.ExtraSmall = A.extraSmall.width)] = 'ExtraSmall'),
                         (u[(u.Small = A.small.width)] = 'Small'),
@@ -931,14 +935,14 @@
                             (u[(u.Medium = A.medium.width)] = 'Medium'),
                             (u[(u.Large = A.large.width)] = 'Large'),
                             (u[(u.ExtraLarge = A.extraLarge.width)] = 'ExtraLarge'));
-                    })(p || (p = {})),
+                    })(b || (b = {})),
                     (function (u) {
                         ((u[(u.ExtraSmall = A.extraSmall.height)] = 'ExtraSmall'),
                             (u[(u.Small = A.small.height)] = 'Small'),
                             (u[(u.Medium = A.medium.height)] = 'Medium'),
                             (u[(u.Large = A.large.height)] = 'Large'),
                             (u[(u.ExtraLarge = A.extraLarge.height)] = 'ExtraLarge'));
-                    })(b || (b = {})));
+                    })(p || (p = {})));
                 const f = () => {
                         const u = (0, r.useContext)(B),
                             e = u.width,
@@ -962,33 +966,33 @@
                             E = ((u) => {
                                 switch (!0) {
                                     case u.extraLargeWidth:
-                                        return p.ExtraLarge;
+                                        return b.ExtraLarge;
                                     case u.largeWidth:
-                                        return p.Large;
+                                        return b.Large;
                                     case u.mediumWidth:
-                                        return p.Medium;
+                                        return b.Medium;
                                     case u.smallWidth:
-                                        return p.Small;
+                                        return b.Small;
                                     case u.extraSmallWidth:
-                                        return p.ExtraSmall;
+                                        return b.ExtraSmall;
                                     default:
-                                        return (console.error('Unreachable media context resolution'), p.ExtraSmall);
+                                        return (console.error('Unreachable media context resolution'), b.ExtraSmall);
                                 }
                             })(u),
                             n = ((u) => {
                                 switch (!0) {
                                     case u.extraLargeHeight:
-                                        return b.ExtraLarge;
+                                        return p.ExtraLarge;
                                     case u.largeHeight:
-                                        return b.Large;
+                                        return p.Large;
                                     case u.mediumHeight:
-                                        return b.Medium;
+                                        return p.Medium;
                                     case u.smallHeight:
-                                        return b.Small;
+                                        return p.Small;
                                     case u.extraSmallHeight:
-                                        return b.ExtraSmall;
+                                        return p.ExtraSmall;
                                     default:
-                                        return (console.error('Unreachable media context resolution'), b.ExtraSmall);
+                                        return (console.error('Unreachable media context resolution'), p.ExtraSmall);
                                 }
                             })(u);
                         return { mediaSize: a, mediaWidth: E, mediaHeight: n, remScreenWidth: e, remScreenHeight: t };
@@ -1009,18 +1013,18 @@
                     );
                 }
                 const L = {
-                        [p.ExtraSmall]: '',
-                        [p.Small]: v().SMALL_WIDTH,
-                        [p.Medium]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH}`,
-                        [p.Large]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH}`,
-                        [p.ExtraLarge]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH} ${v().EXTRA_LARGE_WIDTH}`,
+                        [b.ExtraSmall]: '',
+                        [b.Small]: v().SMALL_WIDTH,
+                        [b.Medium]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH}`,
+                        [b.Large]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH}`,
+                        [b.ExtraLarge]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH} ${v().EXTRA_LARGE_WIDTH}`,
                     },
                     M = {
-                        [b.ExtraSmall]: '',
-                        [b.Small]: v().SMALL_HEIGHT,
-                        [b.Medium]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT}`,
-                        [b.Large]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT}`,
-                        [b.ExtraLarge]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT} ${v().EXTRA_LARGE_HEIGHT}`,
+                        [p.ExtraSmall]: '',
+                        [p.Small]: v().SMALL_HEIGHT,
+                        [p.Medium]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT}`,
+                        [p.Large]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT}`,
+                        [p.ExtraLarge]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT} ${v().EXTRA_LARGE_HEIGHT}`,
                     },
                     S = {
                         [w.ExtraSmall]: '',
@@ -1124,9 +1128,9 @@
                         g = (0, r.useState)(!1),
                         v = g[0],
                         w = g[1],
-                        p = (0, r.useState)(!1),
-                        b = p[0],
-                        f = p[1],
+                        b = (0, r.useState)(!1),
+                        p = b[0],
+                        f = b[1],
                         x = (0, r.useCallback)(() => {
                             n || (c.current && (c.current.focus(), m(!0)));
                         }, [n]),
@@ -1180,7 +1184,7 @@
                                 [W[`base__${e}`]]: e,
                                 [W.base__focus]: d,
                                 [W.base__highlightActive]: v,
-                                [W.base__firstHover]: b,
+                                [W.base__firstHover]: p,
                             },
                             A,
                         ),
@@ -1741,8 +1745,8 @@
                     gu = 'App_closeButton_16',
                     vu = 'App_dialog_f6',
                     wu = 'App_title_0f',
-                    pu = 'App_content_54',
-                    bu = 'App_token_8b',
+                    bu = 'App_content_54',
+                    pu = 'App_token_8b',
                     fu = 'App_arrow_ec',
                     xu = 'App_target_64',
                     Tu = 'App_description_7c',
@@ -1805,8 +1809,8 @@
                             ),
                             a().createElement(
                                 'div',
-                                { className: pu },
-                                a().createElement('div', { className: bu, style: { backgroundImage: l } }),
+                                { className: bu },
+                                a().createElement('div', { className: pu, style: { backgroundImage: l } }),
                                 a().createElement('div', { className: fu }),
                                 a().createElement('div', { className: xu, style: { backgroundImage: `url(${s})` } }),
                             ),

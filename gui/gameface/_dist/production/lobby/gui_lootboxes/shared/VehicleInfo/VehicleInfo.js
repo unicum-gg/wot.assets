@@ -67,6 +67,7 @@
             }
         })()),
         (E.o = (u, F) => Object.prototype.hasOwnProperty.call(u, F)),
+        (E.j = 222),
         (() => {
             var u = { 222: 0 };
             E.O.j = (F) => 0 === u[F];

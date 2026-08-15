@@ -155,27 +155,28 @@
                         addPreloadTexture: () => n,
                         children: () => A,
                         displayStatus: () => E.W,
-                        displayStatusIs: () => g,
+                        displayStatusIs: () => O,
                         events: () => t.U,
-                        extraSize: () => O,
-                        forceTriggerMouseMove: () => m,
+                        extraSize: () => f,
+                        forceTriggerMouseMove: () => p,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => i,
-                        getDisplayStatus: () => p,
-                        getScale: () => d,
+                        getDisplayStatus: () => g,
+                        getScale: () => c,
                         getSize: () => C,
                         getViewGlobalPosition: () => s,
-                        isEventHandled: () => b,
+                        isClientAccessible: () => h,
+                        isEventHandled: () => m,
                         isFocused: () => w,
-                        pxToRem: () => c,
+                        pxToRem: () => d,
                         remToPx: () => l,
                         resize: () => a,
                         sendEvent: () => D.qP,
                         setAnimateWindow: () => v,
-                        setEventHandled: () => h,
+                        setEventHandled: () => b,
                         setInputPaddingsRem: () => B,
                         setSidePaddingsRem: () => o,
-                        whenTutorialReady: () => f,
+                        whenTutorialReady: () => P,
                     }));
                 var A = F(3722),
                     E = F(6112),
@@ -209,10 +210,10 @@
                 function _() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function d() {
+                function c() {
                     return viewEnv.getScale();
                 }
-                function c(u) {
+                function d(u) {
                     return viewEnv.pxToRem(u);
                 }
                 function l(u) {
@@ -225,22 +226,25 @@
                     return viewEnv.isFocused();
                 }
                 function h() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function b() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function m() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function p() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function g() {
                     return viewEnv.getShowingStatus();
                 }
-                const g = Object.keys(E.W).reduce(
+                const O = Object.keys(E.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === E.W[e]), u),
                         {},
                     ),
-                    O = {
+                    f = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -248,7 +252,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    f = Promise.all([
+                    P = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : t.U.onDomBuilt(u);
                         }),
@@ -589,7 +593,7 @@
                 var a = F(5521),
                     s = F(3138);
                 const _ = ['args'];
-                function d(u, e, F, A, E, t, D) {
+                function c(u, e, F, A, E, t, D) {
                     try {
                         var n = u[t](D),
                             B = n.value;
@@ -598,7 +602,7 @@
                     }
                     n.done ? e(B) : Promise.resolve(B).then(A, E);
                 }
-                const c = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
+                const d = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
                     l = (function () {
                         var u,
                             e =
@@ -616,10 +620,10 @@
                                     return new Promise(function (A, E) {
                                         var t = u.apply(e, F);
                                         function D(u) {
-                                            d(t, A, E, D, n, 'next', u);
+                                            c(t, A, E, D, n, 'next', u);
                                         }
                                         function n(u) {
-                                            d(t, A, E, D, n, 'throw', u);
+                                            c(t, A, E, D, n, 'throw', u);
                                         }
                                         D(void 0);
                                     });
@@ -680,7 +684,7 @@
                         RealFormatType: r,
                         TimeFormatType: o,
                         DateFormatType: C,
-                        makeGlobalBoundingBox: c,
+                        makeGlobalBoundingBox: d,
                         sendMoveEvent: (u) => v(B.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: w,
                         sendClosePopOverEvent: () => v(B.POP_OVER, { on: !1 }),
@@ -706,7 +710,7 @@
                                 decoratorID: A || R.invalid('resId'),
                                 targetID: E,
                                 direction: e,
-                                bbox: c(a),
+                                bbox: d(a),
                                 on: !0,
                                 args: t,
                             });

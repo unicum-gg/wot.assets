@@ -1,0 +1,959 @@
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBar_base_45 {
+    width: 100%;
+    height: 12rem;
+    position: relative;
+}
+.ProgressBar_base__medium_62 {
+    height: 6rem;
+}
+.ProgressBar_base__small_df {
+    height: 2rem;
+}
+.ProgressBar_background_51 {
+    width: 100%;
+    max-width: 8001px;
+    height: 100%;
+    background-image: var(--progress-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ProgressBar_background__medium_6e {
+    height: 6rem;
+}
+.ProgressBar_background__small_46 {
+    height: 2rem;
+}
+.ProgressBar_lineWrapper_6a {
+    display: flex;
+    flex: 1;
+}
+
+.ProgressBarBlink_base_24 {
+    width: 60rem;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+}
+
+.ProgressBarBlink_base__medium_ec {
+    width: 42rem;
+    height: 70rem;
+}
+
+.ProgressBarBlink_base__small_0f {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressLineImpose_base_80 {
+    max-width: 8001px;
+    height: 100%;
+    background-color: var(--progress-line-base);
+    position: relative;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressLineImpose_base__disabled_cc {
+    background-color: var(--progress-line-disabled);
+}
+.ProgressLineImpose_base__finished_d4 {
+    background-color: var(--progress-line-finished);
+}
+.ProgressLineImpose_base__withoutBounce_56 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressLineImpose_pattern_1c {
+    max-width: 8001px;
+    background-image: var(--progress-pattern-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-disabled);
+    left: 0;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-finished);
+}
+.ProgressLineImpose_gradient_35 {
+    max-width: 8001px;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    bottom: 1rem;
+    left: 0;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
+    display: none;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
+}
+.ProgressLineImpose_glow_a5 {
+    width: 60rem;
+    max-width: 8001px;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.ProgressLineImpose_glow__left_d8 {
+    left: 1rem;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+    display: none;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaGrow_base_7e {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressBarDeltaGrow_glow_68 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.OptimizedProgressBar_base_1f {
+    width: 100%;
+    padding: 30rem 0;
+    overflow: hidden;
+}
+.OptimizedProgressBar_wrapper_ab {
+    position: relative;
+}
+.OptimizedProgressBar_line_ef {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.OptimizedProgressBar_background_ce {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 8001px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.App_base_2a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.App_postBoxContainer_4a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100rem;
+    height: 100rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.eventEntryPoint.mailBox') no-repeat center / contain;
+    filter: brightness(1);
+    position: relative;
+    z-index: 1;
+    transition: filter 0.3s ease-in-out;
+}
+.mediaMedium .App_postBoxContainer_4a {
+    width: 130rem;
+    height: 130rem;
+}
+.App_base__paused_fc .App_postBoxContainer_4a {
+    filter: saturate(0.3);
+}
+.App_postBoxContainer__hover_83 {
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+.App_stage_d0 {
+    color: #f2f2f7;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    transform: translateY(13rem);
+    /* stylelint-disable-next-line property-no-unknown */
+    text-stroke: 2rem rgba(0, 0, 0, 0.3);
+}
+.mediaMedium .App_stage_d0 {
+    color: #f2f2f7;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+    transform: translateY(0rem);
+}
+.App_base__paused_fc .App_stage_d0 {
+    opacity: 0.5;
+}
+.App_bonusContainer_93 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100rem;
+    height: 44rem;
+    margin-top: -20rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.eventEntryPoint.mailIcon') no-repeat center / cover;
+    filter: brightness(1);
+    transform: translateY(0);
+    transition: all 0.2s linear;
+}
+.mediaMedium .App_bonusContainer_93 {
+    width: 130rem;
+    height: 56rem;
+    margin-top: -24rem;
+}
+.App_bonusContainer__hover_d8 {
+    filter: brightness(1.1);
+    transform: translateY(3rem);
+    cursor: pointer;
+}
+.App_bonusIcon_a8 {
+    width: 29rem;
+    height: 11rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.eventEntryPoint.bonusIcon') no-repeat center / cover;
+    transform: translateY(4rem) translateX(-1rem) rotateZ(11.47deg);
+}
+.mediaMedium .App_bonusIcon_a8 {
+    width: 37rem;
+    height: 14rem;
+    transform: translateY(5rem) translateX(-2rem) rotateZ(11.47deg);
+}
+.App_bonus_7a {
+    color: #000000;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    font-weight: 700;
+    transform: translateX(9rem) translateY(2rem) rotateZ(-4.49deg);
+}
+.mediaMedium .App_bonus_7a {
+    color: #000000;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    transform: translateX(9rem) translateY(3rem) rotateZ(-4.49deg);
+}
+.App_progression_a5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48rem;
+    height: 45rem;
+    margin-top: 2rem;
+    transform: translateY(1rem);
+}
+.mediaMedium .App_progression_a5 {
+    width: 65rem;
+    margin-top: -25rem;
+    transform: translateY(11rem);
+}
+.App_progression__infinity_28 {
+    margin-top: 2rem;
+    transform: translateY(2rem);
+}
+.mediaMedium .App_progression__infinity_28 {
+    margin-top: -25rem;
+    transform: translateY(18rem);
+}
+.App_infinityStage_16 {
+    color: #f2f2f7;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    transform: translateY(15rem);
+}
+.mediaMedium .App_infinityStage_16 {
+    color: #f2f2f7;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    transform: translateY(0rem);
+}
+.App_base__paused_fc .App_infinityStage_16 {
+    opacity: 0.5;
+}
+.App_infinityIcon_c7 {
+    width: 16rem;
+    height: 16rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.eventEntryPoint.infinityIcon') no-repeat center / contain;
+    transform: translateY(20rem);
+}
+.mediaMedium .App_infinityIcon_c7 {
+    width: 20rem;
+    height: 23rem;
+    transform: translateY(5rem);
+}
+.App_base__paused_fc .App_infinityIcon_c7 {
+    opacity: 0.5;
+}
+.App_infinityStageContainer_37 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40rem;
+}
+.mediaMedium .App_infinityStageContainer_37 {
+    height: 65rem;
+}
+.App_stageContainer_27 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 50rem;
+    height: 40rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transform: translateY(22rem);
+}
+.mediaMedium .App_stageContainer_27 {
+    height: 50rem;
+    transform: translateY(10rem);
+}
+.App_stages_f2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-16rem);
+}
+.mediaMedium .App_stages_f2 {
+    transform: translateY(0rem);
+}
+.App_stages__animate_bc {
+    animation: App_levelChangeSmall_bb 1.5s ease-in-out;
+}
+.mediaMedium .App_stages__animate_bc {
+    animation: App_levelChange_ba 1.5s ease-in-out;
+}
+.App_infinityStageAnimationContainer_ef {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 50rem;
+    height: 31rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transform: translateY(11rem);
+}
+.mediaMedium .App_infinityStageAnimationContainer_ef {
+    height: 28rem;
+    transform: translateY(0);
+}
+.App_infinityStageAnimation_45 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-13rem);
+}
+.mediaMedium .App_infinityStageAnimation_45 {
+    transform: translateY(3rem);
+}
+.App_infinityStageAnimation__animate_1b {
+    animation: App_infinityLevelChangeSmall_28 1.5s ease-in-out;
+}
+.mediaMedium .App_infinityStageAnimation__animate_1b {
+    animation: App_infinityLevelChange_40 1.5s ease-in-out;
+}
+.App_progressBar_fb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.App_progressBar__hide_f4 {
+    animation: App_fadeOutProgression_24 1.5s ease-out;
+}
+.App_progressBar__infinity_e9 {
+    animation: App_fadeInProgression_7d 1.5s ease-out;
+}
+@keyframes App_levelChange_ba {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    40% {
+        transform: translateY(70rem);
+    }
+
+    50% {
+        transform: translateY(50rem);
+    }
+
+    60% {
+        transform: translateY(66rem);
+    }
+
+    70% {
+        transform: translateY(60rem);
+    }
+
+    80% {
+        transform: translateY(62rem);
+    }
+
+    85% {
+        transform: translateY(64rem);
+    }
+
+    90% {
+        transform: translateY(62rem);
+    }
+
+    100% {
+        transform: translateY(62rem);
+    }
+}
+@keyframes App_levelChangeSmall_bb {
+    0% {
+        transform: translateY(-14rem);
+    }
+
+    40% {
+        transform: translateY(40rem);
+    }
+
+    50% {
+        transform: translateY(20rem);
+    }
+
+    60% {
+        transform: translateY(33rem);
+    }
+
+    70% {
+        transform: translateY(24rem);
+    }
+
+    80% {
+        transform: translateY(29rem);
+    }
+
+    85% {
+        transform: translateY(26rem);
+    }
+
+    90% {
+        transform: translateY(25rem);
+    }
+
+    100% {
+        transform: translateY(25rem);
+    }
+}
+@keyframes App_infinityLevelChange_40 {
+    0% {
+        transform: translateY(3rem);
+    }
+
+    40% {
+        transform: translateY(54rem);
+    }
+
+    50% {
+        transform: translateY(30rem);
+    }
+
+    60% {
+        transform: translateY(45rem);
+    }
+
+    70% {
+        transform: translateY(33rem);
+    }
+
+    80% {
+        transform: translateY(37rem);
+    }
+
+    85% {
+        transform: translateY(36rem);
+    }
+
+    90% {
+        transform: translateY(34rem);
+    }
+
+    100% {
+        transform: translateY(34rem);
+    }
+}
+@keyframes App_infinityLevelChangeSmall_28 {
+    0% {
+        transform: translateY(-13rem);
+    }
+
+    40% {
+        transform: translateY(30rem);
+    }
+
+    50% {
+        transform: translateY(10rem);
+    }
+
+    60% {
+        transform: translateY(20rem);
+    }
+
+    70% {
+        transform: translateY(12rem);
+    }
+
+    80% {
+        transform: translateY(17rem);
+    }
+
+    85% {
+        transform: translateY(19rem);
+    }
+
+    90% {
+        transform: translateY(16rem);
+    }
+
+    100% {
+        transform: translateY(16rem);
+    }
+}
+@keyframes App_fadeInProgression_7d {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes App_fadeOutProgression_24 {
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.Progression_base_a1 {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+.Progression_progressLineContainer_c2 {
+    width: 100%;
+    height: 100%;
+    margin-top: -12rem;
+    transition: transform 0.5s cubic-bezier(0.34, -0.02, 0.33, 1.01);
+}
+.mediaMedium .Progression_progressLineContainer_c2 {
+    margin-top: 0;
+}
+.Progression_point_9f {
+    color: #f2f2f7;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    width: 2rem;
+    margin-top: 8rem;
+    position: absolute;
+}
+.mediaMedium .Progression_point_9f {
+    margin-top: 20rem;
+}
+.Progression_line_4c {
+    width: 1rem;
+    height: 7rem;
+}
+.Progression_line__top_7d {
+    margin-bottom: 4rem;
+    background: linear-gradient(0deg, #d9d9d9 0%, rgba(217, 217, 217, 0) 100%);
+}
+.Progression_line__bottom_50 {
+    height: 3rem;
+    margin-top: 4rem;
+    background: linear-gradient(180deg, #d9d9d9 0%, rgba(217, 217, 217, 0) 100%);
+}

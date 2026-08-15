@@ -863,22 +863,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 10;
 }
 
-.BattleIcon_base__completed_6e .BattleIcon_icon_f7 {
-    background-image: url('R.images.battle_royale_progression.gui.maps.battleQuestAwards.emblem_done_130_130');
-}
-
-.mediaLarge .BattleIcon_base__completed_6e .BattleIcon_icon_f7 {
-    background-image: url('R.images.battle_royale_progression.gui.maps.battleQuestAwards.emblem_done_150_150');
-}
-
-.BattleIcon_base__inProgress_32 .BattleIcon_icon_f7 {
-    background-image: url('R.images.battle_royale_progression.gui.maps.battleQuestAwards.emblem_in_progress_130_130');
-}
-
-.mediaLarge .BattleIcon_base__inProgress_32 .BattleIcon_icon_f7 {
-    background-image: url('R.images.battle_royale_progression.gui.maps.battleQuestAwards.emblem_in_progress_150_150');
-}
-
 .mediaLarge .BattleIcon_icon_f7 {
     width: 150rem;
     height: 150rem;

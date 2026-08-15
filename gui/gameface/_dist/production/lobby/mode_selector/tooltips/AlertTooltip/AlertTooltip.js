@@ -155,27 +155,28 @@
                         addPreloadTexture: () => B,
                         children: () => E,
                         displayStatus: () => F.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => g,
                         events: () => D.U,
-                        extraSize: () => g,
-                        forceTriggerMouseMove: () => h,
+                        extraSize: () => O,
+                        forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => c,
                         getBrowserTexturePath: () => C,
-                        getDisplayStatus: () => f,
+                        getDisplayStatus: () => b,
                         getScale: () => _,
                         getSize: () => o,
                         getViewGlobalPosition: () => s,
-                        isEventHandled: () => m,
+                        isClientAccessible: () => p,
+                        isEventHandled: () => h,
                         isFocused: () => w,
-                        pxToRem: () => d,
-                        remToPx: () => l,
+                        pxToRem: () => l,
+                        remToPx: () => d,
                         resize: () => a,
                         sendEvent: () => t.qP,
                         setAnimateWindow: () => v,
-                        setEventHandled: () => p,
+                        setEventHandled: () => m,
                         setInputPaddingsRem: () => n,
                         setSidePaddingsRem: () => i,
-                        whenTutorialReady: () => O,
+                        whenTutorialReady: () => T,
                     }));
                 var E = A(3722),
                     F = A(6112),
@@ -204,7 +205,7 @@
                 }
                 function s(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: l(e.x), y: l(e.y) };
+                    return 'rem' === u ? e : { x: d(e.x), y: d(e.y) };
                 }
                 function c() {
                     viewEnv.freezeTextureBeforeResize();
@@ -212,10 +213,10 @@
                 function _() {
                     return viewEnv.getScale();
                 }
-                function d(u) {
+                function l(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function l(u) {
+                function d(u) {
                     return viewEnv.remToPx(u);
                 }
                 function v(u, e) {
@@ -225,22 +226,25 @@
                     return viewEnv.isFocused();
                 }
                 function p() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function m() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function h() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function f() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function b() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(F.W).reduce(
+                const g = Object.keys(F.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === F.W[e]), u),
                         {},
                     ),
-                    g = {
+                    O = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -248,7 +252,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    O = Promise.all([
+                    T = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : D.U.onDomBuilt(u);
                         }),
@@ -495,7 +499,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (u, e, A) => {
-                A.d(e, { Sw: () => D.Z, ry: () => l });
+                A.d(e, { Sw: () => D.Z, ry: () => d });
                 class E {
                     constructor() {
                         ((this.entries = []),
@@ -576,8 +580,8 @@
                     }
                     B.done ? e(n) : Promise.resolve(n).then(E, F);
                 }
-                const d = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
-                    l = (function () {
+                const l = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
+                    d = (function () {
                         var u,
                             e =
                                 ((u = function* () {
@@ -658,7 +662,7 @@
                         RealFormatType: r,
                         TimeFormatType: i,
                         DateFormatType: o,
-                        makeGlobalBoundingBox: d,
+                        makeGlobalBoundingBox: l,
                         sendMoveEvent: (u) => v(n.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: w,
                         sendClosePopOverEvent: () => v(n.POP_OVER, { on: !1 }),
@@ -684,7 +688,7 @@
                                 decoratorID: E || R.invalid('resId'),
                                 targetID: F,
                                 direction: e,
-                                bbox: d(a),
+                                bbox: l(a),
                                 on: !0,
                                 args: D,
                             });
@@ -700,7 +704,7 @@
                             p(u, w);
                         },
                         handleViewEvent: v,
-                        onBindingsReady: l,
+                        onBindingsReady: d,
                         onLayoutReady: () =>
                             new Promise((u) => {
                                 requestAnimationFrame(() => {
@@ -797,7 +801,7 @@
                               })(u, e);
                     },
                     _ = 'FormatText_base_d0',
-                    d = ({ binding: u, text: e = '', classMix: A, alignment: D = C.left }) =>
+                    l = ({ binding: u, text: e = '', classMix: A, alignment: D = C.left }) =>
                         null === e
                             ? (console.error("FormatText was supplied with 'null'"), null)
                             : F().createElement(
@@ -816,7 +820,7 @@
                                       ),
                                   ),
                               );
-                var l = A(3138);
+                var d = A(3138);
                 function v() {
                     const u = (0, E.useRef)(0);
                     var e;
@@ -890,9 +894,9 @@
                                 if (!u) return;
                                 const e = u.scrollWidth,
                                     A = u.scrollHeight;
-                                l.O.view.resize(e, A);
+                                d.O.view.resize(e, A);
                                 const E = window.getComputedStyle(u);
-                                l.O.view.setSidePaddingsRem({
+                                d.O.view.setSidePaddingsRem({
                                     left: parseInt(E.getPropertyValue('padding-left'), 10),
                                     top: parseInt(E.getPropertyValue('padding-top'), 10),
                                     right: parseInt(E.getPropertyValue('padding-right'), 10),
@@ -1051,13 +1055,13 @@
                                 'div',
                                 { className: L },
                                 F().createElement('div', { className: U }, e),
-                                F().createElement('div', { className: I }, F().createElement(d, { text: A })),
+                                F().createElement('div', { className: I }, F().createElement(l, { text: A })),
                                 E &&
                                     F().createElement(
                                         'div',
                                         { className: W },
                                         F().createElement('span', { className: V }),
-                                        F().createElement('div', null, F().createElement(d, { text: E })),
+                                        F().createElement('div', null, F().createElement(l, { text: E })),
                                     ),
                             ),
                         );

@@ -155,24 +155,25 @@
                         addPreloadTexture: () => a,
                         children: () => o,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => R,
+                        displayStatusIs: () => k,
                         events: () => i.U,
-                        extraSize: () => k,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => O,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => l,
-                        getDisplayStatus: () => S,
+                        getDisplayStatus: () => R,
                         getScale: () => v,
                         getSize: () => u,
                         getViewGlobalPosition: () => m,
-                        isEventHandled: () => g,
+                        isClientAccessible: () => b,
+                        isEventHandled: () => S,
                         isFocused: () => T,
-                        pxToRem: () => h,
-                        remToPx: () => w,
+                        pxToRem: () => w,
+                        remToPx: () => h,
                         resize: () => E,
                         sendEvent: () => s.qP,
                         setAnimateWindow: () => P,
-                        setEventHandled: () => b,
+                        setEventHandled: () => g,
                         setInputPaddingsRem: () => _,
                         setSidePaddingsRem: () => d,
                         whenTutorialReady: () => f,
@@ -204,7 +205,7 @@
                 }
                 function m(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? t : { x: w(t.x), y: w(t.y) };
+                    return 'rem' === e ? t : { x: h(t.x), y: h(t.y) };
                 }
                 function p() {
                     viewEnv.freezeTextureBeforeResize();
@@ -212,10 +213,10 @@
                 function v() {
                     return viewEnv.getScale();
                 }
-                function h(e) {
+                function w(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function w(e) {
+                function h(e) {
                     return viewEnv.remToPx(e);
                 }
                 function P(e, t) {
@@ -225,22 +226,25 @@
                     return viewEnv.isFocused();
                 }
                 function b() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function g() {
+                    return viewEnv.setEventHandled();
+                }
+                function S() {
                     return viewEnv.isEventHandled();
                 }
                 function O() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function S() {
+                function R() {
                     return viewEnv.getShowingStatus();
                 }
-                const R = Object.keys(r.W).reduce(
+                const k = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    k = {
+                    y = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -562,7 +566,7 @@
                 var m = n(5521),
                     p = n(3138);
                 const v = ['args'];
-                function h(e, t, n, o, r, i, s) {
+                function w(e, t, n, o, r, i, s) {
                     try {
                         var a = e[i](s),
                             _ = a.value;
@@ -571,7 +575,7 @@
                     }
                     a.done ? t(_) : Promise.resolve(_).then(o, r);
                 }
-                const w = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
+                const h = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
                     P = (function () {
                         var e,
                             t =
@@ -589,10 +593,10 @@
                                     return new Promise(function (o, r) {
                                         var i = e.apply(t, n);
                                         function s(e) {
-                                            h(i, o, r, s, a, 'next', e);
+                                            w(i, o, r, s, a, 'next', e);
                                         }
                                         function a(e) {
-                                            h(i, o, r, s, a, 'throw', e);
+                                            w(i, o, r, s, a, 'throw', e);
                                         }
                                         s(void 0);
                                     });
@@ -643,17 +647,17 @@
                     g = (e, t) => {
                         e.keyCode === m.n.ESCAPE && t();
                     };
-                var O = n(7572);
-                const S = r.instance,
+                var S = n(7572);
+                const O = r.instance,
                     k = {
                         DataTracker: i.Z,
-                        ViewModel: O.Z,
+                        ViewModel: S.Z,
                         ViewEventType: _,
                         NumberFormatType: c,
                         RealFormatType: d,
                         TimeFormatType: u,
                         DateFormatType: E,
-                        makeGlobalBoundingBox: w,
+                        makeGlobalBoundingBox: h,
                         sendMoveEvent: (e) => T(_.MOVE, { isMouseEvent: !0, on: e }),
                         sendCloseEvent: b,
                         sendClosePopOverEvent: () => T(_.POP_OVER, { on: !1 }),
@@ -679,7 +683,7 @@
                                 decoratorID: o || R.invalid('resId'),
                                 targetID: r,
                                 direction: t,
-                                bbox: w(E),
+                                bbox: h(E),
                                 on: !0,
                                 args: i,
                             });
@@ -724,7 +728,7 @@
                                 }
                             return n;
                         },
-                        ClickOutsideManager: S,
+                        ClickOutsideManager: O,
                         SystemLocale: s,
                         UserLocale: a,
                     };
@@ -733,8 +737,8 @@
             6620: (e, t, n) => {
                 var o = n(6179),
                     r = n.n(o);
-                let i, s, a, _, l, c, d, u;
-                var E, m, p, v, h;
+                let i, s, a, _, l, c, d, u, E;
+                var m, p, v, w, h;
                 (((h = i || (i = {})).Items = 'items'),
                     (h.Equipment = 'equipment'),
                     (h.Xp = 'xp'),
@@ -790,12 +794,14 @@
                     (h.StyleProgress = 'styleProgress'),
                     (h.ParagonsUnlocks = 'paragonsUnlocks'),
                     (h.LootBoxToken = 'lootBoxToken'),
-                    (h.GoldenTicket = 'birthday2025_golden_ticket'),
-                    (h.PostStamp = 'giftsystem_4_stamp'),
+                    (h.PostStamp = 'giftsystem_5_stamp'),
                     (h.Quests = 'quests'),
                     (h.ArmoryCoin = 'armory_coin'),
                     (h.PremiumPlusUniversal = 'premium_plus_universal'),
                     (h.DogTagType = 'dogTagComponents'),
+                    (h.GoldenTicket = 'goldenticket'),
+                    (h.LbStyleProgress = 'lbStyleProgress'),
+                    (h.RewardsSlots = 'rewardsSlots'),
                     (function (e) {
                         ((e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -835,23 +841,37 @@
                             (e.BattleBadge = 'dossier_badge'),
                             (e.BattleAchievement = 'dossier_achievement'));
                     })(s || (s = {})),
-                    ((v = a || (a = {})).Big = 'big'),
-                    (v.Small = 'small'),
-                    (v.Mini = 'mini'),
-                    (v.S600x450 = 's600x450'),
-                    (v.S400x300 = 's400x300'),
-                    (v.S296x222 = 's296x222'),
-                    (v.S232x174 = 's232x174'),
-                    (v.S180x135 = 's180x135'),
-                    (v.S128x100 = 's128x100'),
-                    (v.S80x80 = 's80x80'),
-                    (v.S48x48 = 's48x48'),
-                    ((p = _ || (_ = {})).MULTI = 'multi'),
-                    (p.CURRENCY = 'currency'),
-                    (p.PREMIUM_PLUS = 'premium_plus'),
-                    (p.NUMBER = 'number'),
-                    (p.STRING = 'string'),
-                    ((m = l || (l = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    ((w = a || (a = {})).Big = 'big'),
+                    (w.Small = 'small'),
+                    (w.Mini = 'mini'),
+                    (w.S600x450 = 's600x450'),
+                    (w.S400x300 = 's400x300'),
+                    (w.S296x222 = 's296x222'),
+                    (w.S232x174 = 's232x174'),
+                    (w.S180x135 = 's180x135'),
+                    (w.S128x100 = 's128x100'),
+                    (w.S80x80 = 's80x80'),
+                    (w.S48x48 = 's48x48'),
+                    ((v = _ || (_ = {})).MULTI = 'multi'),
+                    (v.CURRENCY = 'currency'),
+                    (v.PREMIUM_PLUS = 'premium_plus'),
+                    (v.NUMBER = 'number'),
+                    (v.STRING = 'string'),
+                    ((p = l || (l = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    (p.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
+                    (p.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
+                    (p.EQUIPMENT_PLUS = 'equipmentPlus'),
+                    (p.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
+                    (p.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
+                    (p.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
+                    (p.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
+                    (p.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
+                    (p.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
+                    (p.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
+                    (p.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
+                    (p.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
+                    ((c || (c = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    ((m = d || (d = {})).BATTLE_BOOSTER = 'battleBooster'),
                     (m.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                     (m.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                     (m.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -864,35 +884,22 @@
                     (m.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                     (m.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                     (m.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
-                    ((c || (c = {})).BATTLE_BOOSTER = 'battleBooster'),
-                    ((E = d || (d = {})).BATTLE_BOOSTER = 'battleBooster'),
-                    (E.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
-                    (E.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
-                    (E.EQUIPMENT_PLUS = 'equipmentPlus'),
-                    (E.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
-                    (E.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
-                    (E.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
-                    (E.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
-                    (E.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
-                    (E.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
-                    (E.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
-                    (E.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
-                    (E.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                     (function (e) {
                         ((e.Small = '400x300'), (e.Big = '600x450'));
-                    })(u || (u = {})));
-                var w = n(4179);
-                class P extends r().PureComponent {
+                    })(u || (u = {})),
+                    ((E || (E = {})).ProgressionStyle = 'progressionStyle'));
+                var P = n(4179);
+                class T extends r().PureComponent {
                     render() {
                         let e;
-                        e = 'gold' === this.props.format ? w.B3.GOLD : w.B3.INTEGRAL;
-                        const t = w.Z5.getNumberFormat(this.props.value, e);
+                        e = 'gold' === this.props.format ? P.B3.GOLD : P.B3.INTEGRAL;
+                        const t = P.Z5.getNumberFormat(this.props.value, e);
                         return void 0 !== this.props.value && void 0 !== t ? t : null;
                     }
                 }
-                let T, b, g, O, S, R, k, f, y;
-                var M, C, A;
-                ((P.defaultProps = { format: 'integral' }),
+                let b, g, S, O, R, k, y, f, M;
+                var C, A, D;
+                ((T.defaultProps = { format: 'integral' }),
                     i.Items,
                     i.Equipment,
                     i.Xp,
@@ -928,9 +935,10 @@
                     i.CosmicLootboxCommon,
                     i.CosmicLootboxSilver,
                     i.SelectableBonus,
-                    i.GoldenTicket,
                     i.PostStamp,
                     i.PremiumPlusUniversal,
+                    i.GoldenTicket,
+                    i.RewardsSlots,
                     i.Gold,
                     i.Credits,
                     i.Crystal,
@@ -949,42 +957,42 @@
                             (e.s360 = '360'),
                             (e.s400 = '400'),
                             (e.s600 = '600'));
-                    })(T || (T = {})),
-                    ((A = b || (b = {})).Active = 'active'),
-                    (A.Paused = 'paused'),
-                    (A.Completed = 'completed'),
-                    (A.NotStarted = 'notStarted'),
-                    (A.Disabled = 'disabled'),
+                    })(b || (b = {})),
+                    ((D = g || (g = {})).Active = 'active'),
+                    (D.Paused = 'paused'),
+                    (D.Completed = 'completed'),
+                    (D.NotStarted = 'notStarted'),
+                    (D.Disabled = 'disabled'),
                     (function (e) {
                         ((e.Default = 'default'), (e.Marathon = 'marathon'), (e.Resource = 'resource'));
-                    })(g || (g = {})),
+                    })(S || (S = {})),
                     (function (e) {
                         ((e.Micro = 'micro'), (e.Small = 'small'), (e.Medium = 'medium'));
                     })(O || (O = {})),
                     (function (e) {
                         ((e.ACTIVE = 'active'), (e.COMPLETED = 'completed'), (e.NOT_CHOSEN = 'notChosen'));
-                    })(S || (S = {})),
-                    ((C = R || (R = {})).AwaitSeason = 'awaitSeason'),
-                    (C.Bought = 'bought'),
-                    (C.Free = 'free'),
-                    (C.Completed = 'completed'),
-                    (C.CompletedRightNow = 'completedRightNow'),
-                    (C.SwitchedChapterRightNow = 'switchedChapterRightNow'),
-                    (C.NoVehiclesBase = 'noVehiclesBase'),
-                    (C.ChapterNotChosen = 'chapterNotChosen'),
+                    })(R || (R = {})),
+                    ((A = k || (k = {})).AwaitSeason = 'awaitSeason'),
+                    (A.Bought = 'bought'),
+                    (A.Free = 'free'),
+                    (A.Completed = 'completed'),
+                    (A.CompletedRightNow = 'completedRightNow'),
+                    (A.SwitchedChapterRightNow = 'switchedChapterRightNow'),
+                    (A.NoVehiclesBase = 'noVehiclesBase'),
+                    (A.ChapterNotChosen = 'chapterNotChosen'),
                     (function (e) {
                         ((e.None = ''),
                             (e.ShowLevel = 'show'),
                             (e.HideLevel = 'hide'),
                             (e.HideLevelWithDelay = 'hideWithDelay'));
-                    })(k || (k = {})),
-                    ((M = f || (f = {})).style = 'style'),
-                    (M.tankman = 'tankman'),
-                    (M.vehicle = 'vehicle'),
-                    (M.mixed = 'mixed'),
+                    })(y || (y = {})),
+                    ((C = f || (f = {})).style = 'style'),
+                    (C.tankman = 'tankman'),
+                    (C.vehicle = 'vehicle'),
+                    (C.mixed = 'mixed'),
                     (function (e) {
                         ((e.Default = 'default'), (e.Marathon = 'marathon'), (e.Resource = 'resource'));
-                    })(y || (y = {})),
+                    })(M || (M = {})),
                     f.style,
                     f.tankman);
             },
@@ -1045,6 +1053,7 @@
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
+        (__webpack_require__.j = 251),
         (() => {
             var e = { 251: 0 };
             __webpack_require__.O.j = (t) => 0 === e[t];

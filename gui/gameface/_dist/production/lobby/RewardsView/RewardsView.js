@@ -298,8 +298,8 @@
                     })(n || (n = {})));
             },
             2862: (e, t, r) => {
-                let n, a, i, s, o, l, c, u;
-                (r.d(t, { $h: () => s, A2: () => l, E4: () => n, h2: () => i, kK: () => o, sh: () => c }),
+                let n, a, i, s, o, l, c, u, d;
+                (r.d(t, { $h: () => s, A2: () => l, E4: () => n, h2: () => i, kK: () => o, sh: () => c, ye: () => d }),
                     (function (e) {
                         ((e.Items = 'items'),
                             (e.Equipment = 'equipment'),
@@ -356,12 +356,14 @@
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
                             (e.LootBoxToken = 'lootBoxToken'),
-                            (e.GoldenTicket = 'birthday2025_golden_ticket'),
-                            (e.PostStamp = 'giftsystem_4_stamp'),
+                            (e.PostStamp = 'giftsystem_5_stamp'),
                             (e.Quests = 'quests'),
                             (e.ArmoryCoin = 'armory_coin'),
                             (e.PremiumPlusUniversal = 'premium_plus_universal'),
-                            (e.DogTagType = 'dogTagComponents'));
+                            (e.DogTagType = 'dogTagComponents'),
+                            (e.GoldenTicket = 'goldenticket'),
+                            (e.LbStyleProgress = 'lbStyleProgress'),
+                            (e.RewardsSlots = 'rewardsSlots'));
                     })(n || (n = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -457,7 +459,10 @@
                     })(c || (c = {})),
                     (function (e) {
                         ((e.Small = '400x300'), (e.Big = '600x450'));
-                    })(u || (u = {})));
+                    })(u || (u = {})),
+                    (function (e) {
+                        e.ProgressionStyle = 'progressionStyle';
+                    })(d || (d = {})));
             },
             1558: (e, t, r) => {
                 r.d(t, { m9: () => b, L_: () => p, i2: () => v, ry: () => E, pI: () => w, p3: () => m });
@@ -510,9 +515,10 @@
                         o.E4.CosmicLootboxCommon,
                         o.E4.CosmicLootboxSilver,
                         o.E4.SelectableBonus,
-                        o.E4.GoldenTicket,
                         o.E4.PostStamp,
                         o.E4.PremiumPlusUniversal,
+                        o.E4.GoldenTicket,
+                        o.E4.RewardsSlots,
                     ],
                     c = [o.E4.Gold, o.E4.Credits, o.E4.Crystal, o.E4.FreeXp],
                     u = [o.E4.BattlePassPoints],
@@ -651,7 +657,6 @@
                             case 'groups':
                             case 'lootBoxToken':
                             case 'customizations':
-                            case 'styleProgress':
                             case 'crewSkins':
                             case 'goodies':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.${i}`;
@@ -686,6 +691,9 @@
                                             return _.s600;
                                     }
                                 })(t)}`;
+                            case o.E4.StyleProgress:
+                            case o.E4.LbStyleProgress:
+                                return f(i, t, o.ye.ProgressionStyle);
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.${r}`;
                         }
@@ -759,6 +767,11 @@
                             default:
                                 return e;
                         }
+                    },
+                    f = (e, t, r) => {
+                        const n = R.images.gui.maps.icons.quests.bonuses.$dyn(t),
+                            a = n.$dyn(e);
+                        return String(null != a ? a : n.$dyn(r));
                     };
             },
             7078: (e, t, r) => {
@@ -1445,27 +1458,28 @@
                         addPreloadTexture: () => o,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => T,
+                        displayStatusIs: () => x,
                         events: () => i.U,
-                        extraSize: () => x,
-                        forceTriggerMouseMove: () => R,
+                        extraSize: () => y,
+                        forceTriggerMouseMove: () => P,
                         freezeTextureBeforeResize: () => h,
                         getBrowserTexturePath: () => c,
-                        getDisplayStatus: () => P,
+                        getDisplayStatus: () => T,
                         getScale: () => E,
                         getSize: () => _,
                         getViewGlobalPosition: () => g,
-                        isEventHandled: () => S,
+                        isClientAccessible: () => f,
+                        isEventHandled: () => R,
                         isFocused: () => b,
                         pxToRem: () => w,
                         remToPx: () => p,
                         resize: () => m,
                         sendEvent: () => s.qP,
                         setAnimateWindow: () => v,
-                        setEventHandled: () => f,
+                        setEventHandled: () => S,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => d,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => O,
                     }));
                 var n = r(3722),
                     a = r(6112),
@@ -1515,22 +1529,25 @@
                     return viewEnv.isFocused();
                 }
                 function f() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function S() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function R() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function P() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function T() {
                     return viewEnv.getShowingStatus();
                 }
-                const T = Object.keys(a.W).reduce(
+                const x = Object.keys(a.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    x = {
+                    y = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -1538,7 +1555,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    y = Promise.all([
+                    O = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : i.U.onDomBuilt(e);
                         }),
