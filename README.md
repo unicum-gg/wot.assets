@@ -1,15 +1,26 @@
-# unicum.gg/wot.assets
+# wot.assets
 
-A mirror fork of [Kurzdor/wot.assets](https://github.com/Kurzdor/wot.assets).
+Vehicle icons from the World of Tanks / Мир танков clients, one branch per
+client build. Used by [unicum.gg](https://unicum.gg) to picture a vehicle the
+public CDN does not serve.
 
-The game and asset content lives on the mirror branches (`WG`, `WG_CT`, `Lesta`,
-`Lesta_PT`), kept fast-forwarded to upstream by the
-[`Sync upstream branches`](.github/workflows/sync-upstream.yml) workflow
-(scheduled twice daily plus a manual trigger).
+| Branch | Client |
+| --- | --- |
+| [`WG`](../../tree/WG) | Wargaming release |
+| [`WG_CT`](../../tree/WG_CT) | Wargaming Common Test |
+| [`Lesta`](../../tree/Lesta) | Lesta release (Мир танков) |
+| [`Lesta_PT`](../../tree/Lesta_PT) | Lesta public test |
 
-This `main` branch is automation only (this README plus the workflow); it holds
-no assets on purpose, so consumers should reference a mirror branch, e.g.
-`raw.githubusercontent.com/unicum-gg/wot.assets/WG/<path>`.
+Every branch is rebuilt daily from the client itself by the `assets` workflow in
+[`unicum-gg/wot-src`](https://github.com/unicum-gg/wot-src), which reads the
+update CDN directly. This repository began as a fork of
+[Kurzdor/wot.assets](https://github.com/Kurzdor/wot.assets) and was
+fast-forwarded from it; that sync is gone, because a branch cannot be both
+mirrored from upstream and written to here.
 
-> Don't commit to the mirror branches directly. Any divergence makes the
-> fast-forward sync fail, so fork-specific changes belong on `main`.
+It also carries a narrower scope than upstream: `gui/maps/icons/vehicle/**`
+rather than the whole `gui` tree, which is 21 GB and would not fit in a build.
+
+## Notice
+
+Assets provided in the repository are the property of their sole owners.
