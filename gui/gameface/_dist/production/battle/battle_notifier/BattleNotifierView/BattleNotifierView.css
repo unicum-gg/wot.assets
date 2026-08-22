@@ -25,10 +25,10 @@
     position: absolute;
     top: 80rem;
     animation-name: App_resultBackgroundAnimation_d5978, App_slideOut_e4276;
-    animation-duration: 0.5s, 3s;
+    animation-duration: .5s, 3s;
     animation-fill-mode: both;
     animation-timing-function: ease-in;
-    animation-delay: 0s, 0.5s;
+    animation-delay: 0s, .5s;
 }
 .App_base__victory_d20a3 .App_resultBackground_b7463 {
     background-size: contain;
@@ -48,7 +48,7 @@
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
-    animation-delay: 0.2s;
+    animation-delay: .2s;
 }
 .App_base__victory_d20a3 .App_resultBackgroundFadeOut_cfdca {
     background-size: contain;
@@ -64,7 +64,7 @@
     text-shadow: 0 0 12rem #fff;
     position: relative;
     top: 85rem;
-    animation: App_resultAnimation_d4c16 3s ease-out both 0.2s;
+    animation: App_resultAnimation_d4c16 3s ease-out both .2s;
 }
 .App_base__victory_d20a3 .App_result_af5b9 {
     color: #bae3ef;
@@ -99,32 +99,32 @@
     left: 10rem;
 }
 .App_map_b70ae {
-    animation: App_upperStatAnimation_caad9 3s ease-out both 0.5s;
+    animation: App_upperStatAnimation_caad9 3s ease-out both .5s;
 }
 .App_vehicle_a4608 {
     display: flex;
     flex-direction: row;
     align-items: center;
     min-width: 292rem;
-    animation: App_upperStatAnimation_caad9 3s both 0.6s;
+    animation: App_upperStatAnimation_caad9 3s both .6s;
 }
 .App_credits_c78ef {
     background-repeat: no-repeat;
     background-position: left center;
     background-size: contain;
-    animation: App_lowerStatAnimation_a3ecb 3s both 0.7s;
+    animation: App_lowerStatAnimation_a3ecb 3s both .7s;
 }
 .App_experience_b6e28 {
     background-repeat: no-repeat;
     background-position: left center;
     background-size: contain;
-    animation: App_lowerStatAnimation_a3ecb 3s both 0.8s;
+    animation: App_lowerStatAnimation_a3ecb 3s both .8s;
 }
 .App_crystals_d7fb7 {
     background-repeat: no-repeat;
     background-position: left top;
     background-size: contain;
-    animation: App_lowerStatAnimation_a3ecb 3s both 0.9s;
+    animation: App_lowerStatAnimation_a3ecb 3s both .9s;
 }
 .App_upperGlow_b8e87 {
     min-width: 292rem;
@@ -159,7 +159,7 @@
     animation-duration: 1.5s;
     animation-fill-mode: both;
     animation-timing-function: ease-out;
-    animation-delay: 0.2s;
+    animation-delay: .2s;
 }
 .App_base__victory_d20a3 .App_upperGlowFadeOut_f962f {
     background-size: contain;
@@ -290,7 +290,7 @@
 }
 @keyframes App_upperGlowFadeOutAnimation_fbb0b {
     from {
-        opacity: 0.8;
+        opacity: .8;
         transform: scaleX(1.5);
     }
 
@@ -305,3 +305,4 @@ body {
     line-height: normal;
     overflow: hidden;
 }
+

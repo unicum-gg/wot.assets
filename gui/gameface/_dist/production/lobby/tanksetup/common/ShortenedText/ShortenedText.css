@@ -5,12 +5,12 @@
     max-height: 18rem;
     opacity: 0;
     overflow: hidden;
-    transition: opacity ease 0.2s;
+    transition: opacity ease .2s;
 }
 
-.ShortenedText_base__shown_f9822 {
-    opacity: 1;
-}
+    .ShortenedText_base__shown_f9822 {
+        opacity: 1;
+    }
 
 .FormatText_base_f27a4 {
     display: flex;
@@ -22,23 +22,23 @@
 }
 
 .FormatTextWithColorTags_whiteReal_c12a8 {
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 .FormatTextWithColorTags_white_c5665 {
-    color: #f2f2f7;
+    color: #F2F2F7;
 }
 
 .FormatTextWithColorTags_whiteOrange_fff65 {
-    color: #fefeec;
+    color: #FEFEEC;
 }
 
 .FormatTextWithColorTags_whiteSpanish_d24b3 {
-    color: #e9e2bf;
+    color: #E9E2BF;
 }
 
 .FormatTextWithColorTags_par_ee7d9 {
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .FormatTextWithColorTags_parSecondary_a5b8c {
@@ -46,39 +46,39 @@
 }
 
 .FormatTextWithColorTags_parTertiary_a0c09 {
-    color: #37362e;
+    color: #37362E;
 }
 
 .FormatTextWithColorTags_red_ad70c {
-    color: #ff2717;
+    color: #FF2717;
 }
 
 .FormatTextWithColorTags_redDark_afb30 {
-    color: #b70000;
+    color: #B70000;
 }
 
 .FormatTextWithColorTags_yellow_e47d1 {
-    color: #feab34;
+    color: #FEAB34;
 }
 
 .FormatTextWithColorTags_orange_e08c4 {
-    color: #ee7000;
+    color: #EE7000;
 }
 
 .FormatTextWithColorTags_cream_f2e96 {
-    color: #ffdd99;
+    color: #FFDD99;
 }
 
 .FormatTextWithColorTags_brown_ed7be {
-    color: #cbac77;
+    color: #CBAC77;
 }
 
 .FormatTextWithColorTags_greenBright_b0875 {
-    color: #80d43a;
+    color: #80D43A;
 }
 
 .FormatTextWithColorTags_green_d0263 {
-    color: #7ab300;
+    color: #7AB300;
 }
 
 .FormatTextWithColorTags_greenDark_f19b8 {
@@ -86,32 +86,33 @@
 }
 
 .FormatTextWithColorTags_blueBooster_fd3be {
-    color: #ccffff;
+    color: #CCFFFF;
 }
 
 .FormatTextWithColorTags_blueTeamkiller_fd915 {
-    color: #09e2ff;
+    color: #09E2FF;
 }
 
 .FormatTextWithColorTags_cred_fdafa {
-    color: #ced9d9;
+    color: #CED9D9;
 }
 
 .FormatTextWithColorTags_gold_ab90e {
-    color: #ffc363;
+    color: #FFC363;
 }
 
 .FormatTextWithColorTags_bond_e83f5 {
-    color: #c9c9b6;
+    color: #C9C9B6;
 }
 
 .FormatTextWithColorTags_prom_aa30c {
-    color: #a29b70;
+    color: #A29B70;
 }
 
 /* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
 
 .FormatTextWithColorTags_parNoWidth_bf7ac {
     width: 0;
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
+

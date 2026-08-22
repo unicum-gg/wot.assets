@@ -4,12 +4,12 @@
 }
 
 .TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.atlases.components.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.atlases.components.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
 
 .Divider_base_bbd6a {
     width: 100%;
@@ -46,13 +46,13 @@
     position: relative;
 }
 
-.ExtendedText_base__zeroPadding_d1a1c {
-    padding: 0;
-}
+    .ExtendedText_base__zeroPadding_d1a1c {
+        padding: 0;
+    }
 
-.ExtendedText_base__isTruncationAvailable_cb880 {
-    width: 100%;
-}
+    .ExtendedText_base__isTruncationAvailable_cb880 {
+        width: 100%;
+    }
 
 .ExtendedText_truncated_a4268 {
     display: flex;
@@ -62,8 +62,8 @@
 }
 
 .ExtendedText_truncated__hide_d75b4 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .ExtendedText_unTruncated_ff478 {
     display: flex;
@@ -74,7 +74,7 @@
     height: 100%;
     justify-content: flex-start;
     align-content: flex-start;
-    color: #ff2717;
+    color: #FF2717;
     opacity: 0;
     position: absolute;
     top: 0;
@@ -87,51 +87,51 @@
 }
 
 .ExtendedText_tooltip__justify-flex-start_ade81 {
-    justify-content: flex-start;
-}
+        justify-content: flex-start;
+    }
 
 .ExtendedText_tooltip__justify-center_aa541 {
-    justify-content: center;
-}
+        justify-content: center;
+    }
 
 .ExtendedText_tooltip__justify-flex-end_af6c3 {
-    justify-content: flex-end;
-}
+        justify-content: flex-end;
+    }
 
 .ExtendedText_tooltip__align-flex-start_fbfc0 {
-    align-content: flex-start;
-}
+        align-content: flex-start;
+    }
 
 .ExtendedText_tooltip__align-center_d5b4a {
-    align-content: center;
-}
+        align-content: center;
+    }
 
 .ExtendedText_tooltip__align-flex-end_fc0e0 {
-    align-content: flex-end;
-}
+        align-content: flex-end;
+    }
 
 .colors_blackReal_a68be {
     color: #000000;
 }
 
 .colors_whiteReal_f79f8 {
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 .colors_white_b5c87 {
-    color: #f2f2f7;
+    color: #F2F2F7;
 }
 
 .colors_whiteOrange_ba58d {
-    color: #fefeec;
+    color: #FEFEEC;
 }
 
 .colors_whiteSpanish_fd764 {
-    color: #e9e2bf;
+    color: #E9E2BF;
 }
 
 .colors_par_e836f {
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .colors_parSecondary_f260a {
@@ -139,39 +139,39 @@
 }
 
 .colors_parTertiary_d47f7 {
-    color: #37362e;
+    color: #37362E;
 }
 
 .colors_red_c02cb {
-    color: #ff2717;
+    color: #FF2717;
 }
 
 .colors_redDark_cdd63 {
-    color: #b70000;
+    color: #B70000;
 }
 
 .colors_yellow_ec93b {
-    color: #feab34;
+    color: #FEAB34;
 }
 
 .colors_orange_bbde2 {
-    color: #ee7000;
+    color: #EE7000;
 }
 
 .colors_cream_e3bb8 {
-    color: #ffdd99;
+    color: #FFDD99;
 }
 
 .colors_brown_bcb6a {
-    color: #cbac77;
+    color: #CBAC77;
 }
 
 .colors_greenBright_e6055 {
-    color: #80d43a;
+    color: #80D43A;
 }
 
 .colors_green_b6f21 {
-    color: #7ab300;
+    color: #7AB300;
 }
 
 .colors_greenDark_ce9bf {
@@ -179,27 +179,27 @@
 }
 
 .colors_blueBooster_b2848 {
-    color: #ccffff;
+    color: #CCFFFF;
 }
 
 .colors_blueTeamkiller_e7dd8 {
-    color: #09e2ff;
+    color: #09E2FF;
 }
 
 .colors_cred_ddb07 {
-    color: #ced9d9;
+    color: #CED9D9;
 }
 
 .colors_gold_c405a {
-    color: #ffc363;
+    color: #FFC363;
 }
 
 .colors_bond_bb139 {
-    color: #c9c9b6;
+    color: #C9C9B6;
 }
 
 .colors_prom_d1186 {
-    color: #a29b70;
+    color: #A29B70;
 }
 
 .renderers_noBreakWrapper_d986b {
@@ -229,9 +229,9 @@
     height: 25rem;
 }
 
-.default_cell_d2d2b + .default_title_ffe38 {
-    margin-top: 5rem;
-}
+    .default_cell_d2d2b + .default_title_ffe38 {
+        margin-top: 5rem;
+    }
 
 .default_title_ffe38 {
     display: flex;
@@ -242,7 +242,7 @@
 
 .Param_base_ffb95 {
     justify-content: flex-end;
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .ParamSource_base_db603 {
@@ -254,12 +254,12 @@
     width: 24rem;
     height: 24rem;
     background: no-repeat 50% / cover;
-    opacity: 0.5;
+    opacity: .5;
 }
 
 .ParamSource_base__enabled_eda62 .ParamSource_icon_e3858 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .ParamSource_asteriskIcon_b58f8 {
     width: 16rem;
@@ -276,8 +276,8 @@
 }
 
 .ParamSource_base__enabled_eda62 .ParamSource_sourceName_b9d57 {
-    color: #8c8c7e;
-}
+        color: #8C8C7E;
+    }
 
 .Title_base_edc3d {
     display: flex;
@@ -286,7 +286,7 @@
 }
 
 .Title_title_c3f37 {
-    color: #fefeec;
+    color: #FEFEEC;
     font-size: 14rem;
     font-weight: 700;
     line-height: 1.15;
@@ -296,8 +296,8 @@
 }
 
 .Title_base__penalty_e81b4 .Title_title_c3f37 {
-    color: #ff2717;
-}
+        color: #FF2717;
+    }
 
 .TooltipAdvancedFooter_base_b214f {
     display: flex;
@@ -318,21 +318,21 @@
     max-width: 520rem;
 }
 
-.Note_base__warning_f06f9 {
-    justify-content: flex-start;
-    margin-left: 50rem;
-}
+    .Note_base__warning_f06f9 {
+        justify-content: flex-start;
+        margin-left: 50rem;
+    }
 
-.Note_base__textOnly_f8283,
-.Note_base__content_e2d4b,
-.Note_base__autoReloadTime_a8275 {
-    justify-content: flex-start;
-}
+    .Note_base__textOnly_f8283,
+    .Note_base__content_e2d4b,
+    .Note_base__autoReloadTime_a8275 {
+        justify-content: flex-start;
+    }
 
-.Note_base__autoReloadTime_a8275 {
-    padding-left: 60rem;
-    position: relative;
-}
+    .Note_base__autoReloadTime_a8275 {
+        padding-left: 60rem;
+        position: relative;
+    }
 
 .Note_icon_f540d {
     width: 16rem;
@@ -342,11 +342,11 @@
 }
 
 .Note_base__autoReloadTime_a8275 .Note_icon_f540d {
-    margin-right: 0;
-    position: absolute;
-    top: 10rem;
-    left: 30rem;
-}
+        margin-right: 0;
+        position: absolute;
+        top: 10rem;
+        left: 30rem;
+    }
 
 .Note_title_fd094 {
     color: #595950;
@@ -356,13 +356,13 @@
 }
 
 .Note_base__content_e2d4b .Note_title_fd094,
-.Note_base__autoReloadTime_a8275 .Note_title_fd094 {
-    color: #8c8c7e;
-}
+    .Note_base__autoReloadTime_a8275 .Note_title_fd094 {
+        color: #8C8C7E;
+    }
 
 .Footer_base_e0d0a {
     padding: 0;
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .FormatText_base_f27a4 {
@@ -397,11 +397,11 @@
 }
 
 .Header_base__withIcon_e112e .Header_texts_eeda1 {
-    padding-left: 60rem;
-}
+        padding-left: 60rem;
+    }
 
 .Header_titleWrapper_d1299 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
@@ -413,7 +413,7 @@
 }
 
 .Header_unitOfMeasurement_edd10 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
@@ -427,7 +427,7 @@
 }
 
 .Header_description_aa57e {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -442,3 +442,4 @@
 .VehicleParamsTooltipApp_categories_bbfd0 {
     margin-bottom: -4rem;
 }
+

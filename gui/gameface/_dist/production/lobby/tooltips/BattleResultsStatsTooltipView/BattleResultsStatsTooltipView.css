@@ -4,12 +4,12 @@
 }
 
 .TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.atlases.components.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.atlases.components.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
 
 .App_base_d2730 {
     display: flex;
@@ -31,7 +31,7 @@
 }
 
 .Content_base_f333b {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -39,11 +39,11 @@
 }
 
 .Content_paragraph__indent_a8e56 {
-    margin-top: 1em;
-}
+        margin-top: 1em;
+    }
 
 .Footer_base_fa5b1 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -57,7 +57,7 @@
     justify-content: flex-end;
     min-width: 50rem;
     margin-right: 10rem;
-    color: #f2f2f7;
+    color: #F2F2F7;
 }
 
 .Footer_textColumn_ec41c {
@@ -99,10 +99,11 @@
 }
 
 .Header_description_a237f {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
     position: relative;
     top: -1rem;
 }
+

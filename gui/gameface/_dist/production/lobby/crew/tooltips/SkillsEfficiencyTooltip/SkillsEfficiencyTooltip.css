@@ -4,12 +4,12 @@
 }
 
 .TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.atlases.components.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.atlases.components.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
 
 .BulletListItem_base_dd83c {
     display: flex;
@@ -70,8 +70,8 @@
     position: relative;
 }
 .ProgressBar_base__small_af6d6 {
-    height: var(--progress-bg-height-small);
-}
+        height: var(--progress-bg-height-small);
+    }
 .ProgressBar_background_a4e18 {
     width: 100%;
     max-width: 8001px;
@@ -85,12 +85,13 @@
     left: 0;
 }
 .ProgressBar_background__small_e2b95 {
-    height: var(--progress-bg-height-small);
-}
+        height: var(--progress-bg-height-small);
+    }
 .ProgressBar_lineWrapper_e670c {
     display: flex;
     flex: 1;
 }
+
 
 .ProgressBarBlink_base_d7125 {
     width: var(--progress-glow-width);
@@ -105,11 +106,11 @@
     pointer-events: none;
 }
 
-.ProgressBarBlink_base__small_b92f8 {
-    width: var(--progress-glow-small-width);
-    height: var(--progress-glow-small-height);
-    background-image: var(--progress-glow-small);
-}
+    .ProgressBarBlink_base__small_b92f8 {
+        width: var(--progress-glow-small-width);
+        height: var(--progress-glow-small-height);
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -122,18 +123,18 @@
     background-color: var(--progress-line-base);
     filter: var(--progress-line-filter);
     position: relative;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressLineImpose_base__disabled_a9e8e {
-    background-color: var(--progress-line-disabled);
-}
+        background-color: var(--progress-line-disabled);
+    }
 .ProgressLineImpose_base__finished_f889e {
-    background-color: var(--progress-line-finished);
-}
+        background-color: var(--progress-line-finished);
+    }
 .ProgressLineImpose_base__withoutBounce_c0ff9 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 .ProgressLineImpose_pattern_a4023 {
     max-width: 8001px;
     background-image: var(--progress-pattern-base);
@@ -147,16 +148,16 @@
     left: var(--progress-pattern-border-size);
 }
 .ProgressLineImpose_base__small_da260 .ProgressLineImpose_pattern_a4023 {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_pattern_a4023 {
-    background-image: var(--progress-pattern-disabled);
-    left: 0;
-}
+        background-image: var(--progress-pattern-disabled);
+        left: 0;
+    }
 .ProgressLineImpose_base__finished_f889e .ProgressLineImpose_pattern_a4023 {
-    background-image: var(--progress-pattern-finished);
-}
+        background-image: var(--progress-pattern-finished);
+    }
 .ProgressLineImpose_gradient_f73c0 {
     max-width: 8001px;
     background-image: var(--progress-pattern-gradient);
@@ -168,15 +169,15 @@
     left: 0;
 }
 .ProgressLineImpose_base__small_da260 .ProgressLineImpose_gradient_f73c0 {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_gradient_f73c0 {
-    display: none;
-}
+        display: none;
+    }
 .ProgressLineImpose_base__finished_f889e .ProgressLineImpose_gradient_f73c0 {
-    background-image: var(--progress-pattern-gradient-finished);
-}
+        background-image: var(--progress-pattern-gradient-finished);
+    }
 .ProgressLineImpose_glow_f237a {
     width: var(--progress-glow-width);
     max-width: 8001px;
@@ -191,17 +192,17 @@
     pointer-events: none;
 }
 .ProgressLineImpose_glow__left_b7ffa {
-    left: var(--progress-pattern-border-size);
-}
+        left: var(--progress-pattern-border-size);
+    }
 .ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_glow_f237a,
-.ProgressLineImpose_base__finished_f889e .ProgressLineImpose_glow_f237a {
-    display: none;
-}
+    .ProgressLineImpose_base__finished_f889e .ProgressLineImpose_glow_f237a {
+        display: none;
+    }
 .ProgressLineImpose_base__small_da260 .ProgressLineImpose_glow_f237a {
-    width: var(--progress-glow-small-width);
-    height: var(--progress-glow-small-height);
-    background-image: var(--progress-glow-small);
-}
+        width: var(--progress-glow-small-width);
+        height: var(--progress-glow-small-height);
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -213,12 +214,12 @@
     height: 100%;
     position: absolute;
     top: 0;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b1398 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 .ProgressBarDeltaGrow_glow_c912d {
     width: 0;
     max-width: 8001px;
@@ -228,12 +229,12 @@
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b1398 .ProgressBarDeltaGrow_glow_c912d {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -255,7 +256,7 @@
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1), cubic-bezier(.21, .61, .35, 1);
     transition-property: width, transform;
 }
 
@@ -269,23 +270,23 @@
 }
 
 .FormatTextWithColorTags_whiteReal_c12a8 {
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 .FormatTextWithColorTags_white_c5665 {
-    color: #f2f2f7;
+    color: #F2F2F7;
 }
 
 .FormatTextWithColorTags_whiteOrange_fff65 {
-    color: #fefeec;
+    color: #FEFEEC;
 }
 
 .FormatTextWithColorTags_whiteSpanish_d24b3 {
-    color: #e9e2bf;
+    color: #E9E2BF;
 }
 
 .FormatTextWithColorTags_par_ee7d9 {
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .FormatTextWithColorTags_parSecondary_a5b8c {
@@ -293,39 +294,39 @@
 }
 
 .FormatTextWithColorTags_parTertiary_a0c09 {
-    color: #37362e;
+    color: #37362E;
 }
 
 .FormatTextWithColorTags_red_ad70c {
-    color: #ff2717;
+    color: #FF2717;
 }
 
 .FormatTextWithColorTags_redDark_afb30 {
-    color: #b70000;
+    color: #B70000;
 }
 
 .FormatTextWithColorTags_yellow_e47d1 {
-    color: #feab34;
+    color: #FEAB34;
 }
 
 .FormatTextWithColorTags_orange_e08c4 {
-    color: #ee7000;
+    color: #EE7000;
 }
 
 .FormatTextWithColorTags_cream_f2e96 {
-    color: #ffdd99;
+    color: #FFDD99;
 }
 
 .FormatTextWithColorTags_brown_ed7be {
-    color: #cbac77;
+    color: #CBAC77;
 }
 
 .FormatTextWithColorTags_greenBright_b0875 {
-    color: #80d43a;
+    color: #80D43A;
 }
 
 .FormatTextWithColorTags_green_d0263 {
-    color: #7ab300;
+    color: #7AB300;
 }
 
 .FormatTextWithColorTags_greenDark_f19b8 {
@@ -333,34 +334,34 @@
 }
 
 .FormatTextWithColorTags_blueBooster_fd3be {
-    color: #ccffff;
+    color: #CCFFFF;
 }
 
 .FormatTextWithColorTags_blueTeamkiller_fd915 {
-    color: #09e2ff;
+    color: #09E2FF;
 }
 
 .FormatTextWithColorTags_cred_fdafa {
-    color: #ced9d9;
+    color: #CED9D9;
 }
 
 .FormatTextWithColorTags_gold_ab90e {
-    color: #ffc363;
+    color: #FFC363;
 }
 
 .FormatTextWithColorTags_bond_e83f5 {
-    color: #c9c9b6;
+    color: #C9C9B6;
 }
 
 .FormatTextWithColorTags_prom_aa30c {
-    color: #a29b70;
+    color: #A29B70;
 }
 
 /* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
 
 .FormatTextWithColorTags_parNoWidth_bf7ac {
     width: 0;
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .SkillsEfficiencyProgress_base_a538c {
@@ -379,7 +380,7 @@
 }
 
 .SkillsEfficiencyProgress_percent_aa806 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 24rem;
     font-weight: 700;
     line-height: 1.2;
@@ -387,8 +388,8 @@
 }
 
 .SkillsEfficiencyProgress_percent__red_b4937 {
-    color: #ff2717;
-}
+        color: #FF2717;
+    }
 
 .SkillsEfficiencyProgress_xpIcon_e9104 {
     width: 16rem;
@@ -399,7 +400,7 @@
 }
 
 .SkillsEfficiencyTooltipApp_base_d1770 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -421,8 +422,8 @@
 }
 
 .SkillsEfficiencyTooltipApp_lightning__red_a80f9 {
-    background: radial-gradient(73% 76% at 0% 0%, rgba(177, 0, 21, 0.5) 0%, rgba(177, 0, 21, 0) 100%);
-}
+        background: radial-gradient(73% 76% at 0% 0%, rgba(177, 0, 21, 0.5) 0%, rgba(177, 0, 21, 0) 100%);
+    }
 
 .SkillsEfficiencyTooltipApp_content_b3543 {
     position: relative;
@@ -430,14 +431,14 @@
 }
 
 .SkillsEfficiencyTooltipApp_header_ee608 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
 }
 
 .SkillsEfficiencyTooltipApp_subHeader_da435 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
@@ -450,7 +451,7 @@
 
 .SkillsEfficiencyTooltipApp_retrainingInformation_e5536 {
     margin-top: 6rem;
-    color: #e9e2bf;
+    color: #E9E2BF;
 }
 
 .SkillsEfficiencyTooltipApp_informationContainer_d5130 {
@@ -462,3 +463,4 @@
     margin: 16rem 0 0 -1rem;
     padding: 0;
 }
+

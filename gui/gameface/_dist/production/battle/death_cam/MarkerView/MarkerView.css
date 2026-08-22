@@ -4,25 +4,18 @@
     justify-content: center;
 }
 
-.Section_base__separator_aa313 {
-    border-top: 1rem solid;
-    border-image: repeating-linear-gradient(
-            to right,
-            rgba(255, 255, 255, 0.25),
-            rgba(255, 255, 255, 0.25) 10rem,
-            transparent 10rem,
-            transparent 14rem
-        )
-        1;
-}
+    .Section_base__separator_aa313 {
+        border-top: 1rem solid;
+        border-image: repeating-linear-gradient(to right, rgba(255, 255, 255, .25), rgba(255, 255, 255, .25) 10rem, transparent 10rem, transparent 14rem) 1;
+    }
 
 .ImpactIndicator_base_faef4 {
     position: absolute;
     top: -11rem;
 }
 
-.mediaSmall .ImpactIndicator_base_faef4 {
-    top: -5rem;
+    .mediaSmall .ImpactIndicator_base_faef4 {
+        top: -5rem;
 }
 
 .ImpactIndicator_shadowedOverlay_d3d86 {
@@ -38,9 +31,9 @@
     position: absolute;
 }
 
-.mediaSmall .Icon_base_fff8b {
-    width: 44rem;
-    height: 44rem;
+    .mediaSmall .Icon_base_fff8b {
+        width: 44rem;
+        height: 44rem;
 }
 
 .DataLine_base_b4b94 {
@@ -51,12 +44,12 @@
     position: relative;
 }
 
-.DataLine_base_b4b94 .DataLine_iconContainer__impactAngle_ca8a3 {
-    padding-left: 3rem;
-}
+    .DataLine_base_b4b94 .DataLine_iconContainer__impactAngle_ca8a3 {
+        padding-left: 3rem;
+    }
 
-.mediaSmall .DataLine_base_b4b94 {
-    font-size: 16rem;
+    .mediaSmall .DataLine_base_b4b94 {
+        font-size: 16rem;
 }
 
 .DataLine_iconContainer_a108e {
@@ -66,23 +59,23 @@
 }
 
 .mediaSmall .DataLine_iconContainer_a108e {
-    width: 44rem;
+        width: 44rem;
 }
 
 .mediaSmall .DataLine_iconContainer__wide_fc6dd {
-    width: 41rem;
-}
+            width: 41rem;
+        }
 
 .DataLine_iconContainer__impactAngle_ca8a3 {
-    align-self: flex-start;
-    width: 39rem;
-    margin: 2rem 8rem 0 -4rem;
-    position: relative;
-}
+        align-self: flex-start;
+        width: 39rem;
+        margin: 2rem 8rem 0 -4rem;
+        position: relative;
+    }
 
 .mediaSmall .DataLine_iconContainer__impactAngle_ca8a3 {
-    width: 48rem;
-    margin: 5rem 3rem 0 -5rem;
+            width: 48rem;
+            margin: 5rem 3rem 0 -5rem;
 }
 
 .DataLine_value_e9bdf {
@@ -97,39 +90,36 @@
 }
 
 .DataLine_value__unspottedDetailed_d13e8 {
-    margin-right: -17rem;
-}
+        margin-right: -17rem;
+    }
 
 .mediaSmall .DataLine_value__unspottedDetailed_d13e8 {
-    margin-right: -22rem;
+            margin-right: -22rem;
 }
 
 .DataLine_value__unspottedSimple_ac590 {
-    margin-right: 0rem;
-}
+        margin-right: 0rem;
+    }
 
 .DataLine_orangeGlow_d0827 .DataLine_glowElement_da26d {
     border: 1rem solid;
     border-image-source: linear-gradient(to right, transparent 4%, #ff981f, transparent 96%);
     border-image-slice: 1;
-    background:
-        radial-gradient(50% 100% at center top, rgba(255, 153, 0, 0.5) 0%, transparent 100%) no-repeat center/ contain,
-        radial-gradient(50% 100% at center bottom, rgba(255, 153, 0, 0.5) 0%, transparent 100%) no-repeat center/
-            contain;
+    background: radial-gradient(50% 100% at center top, rgba(255, 153, 0, 0.5) 0%, transparent 100%) no-repeat center/ contain,
+        radial-gradient(50% 100% at center bottom, rgba(255, 153, 0, 0.5) 0%, transparent 100%) no-repeat center/ contain;
     position: absolute;
     top: -1rem;
     right: -1rem;
     bottom: -1rem;
     left: -1rem;
     z-index: -1;
-}
+    }
 
 .DataLine_redGlow_cad26 .DataLine_glowElement_da26d {
     border: 1rem solid;
     border-image-source: linear-gradient(to right, transparent 4%, #ff1f1f, transparent 96%);
     border-image-slice: 1;
-    background:
-        radial-gradient(50% 100% at center top, rgba(255, 0, 0, 0.5) 0%, transparent 100%) no-repeat center/ contain,
+    background: radial-gradient(50% 100% at center top, rgba(255, 0, 0, 0.5) 0%, transparent 100%) no-repeat center/ contain,
         radial-gradient(50% 100% at center bottom, rgba(255, 0, 0, 0.5) 0%, transparent 100%) no-repeat center/ contain;
     position: absolute;
     top: -1rem;
@@ -137,14 +127,14 @@
     bottom: -1rem;
     left: -1rem;
     z-index: -1;
-}
+    }
 
 .DataLine_major_ef469 {
     font-size: 16rem;
 }
 
 .mediaSmall .DataLine_major_ef469 {
-    font-size: 20rem;
+        font-size: 20rem;
 }
 
 .DataLine_extraHeader_a4a11.DataLine_base_b4b94 {
@@ -165,12 +155,12 @@
 }
 
 .DataLine_headIconShell_a281c .DataLine_extraHeader_icon_b29d5 {
-    background: url('R.atlases.deathCam.shell') right / contain no-repeat;
-}
+        background: url('R.atlases.deathCam.shell') right / contain no-repeat;
+    }
 
 .DataLine_headIconTank_f92d2 .DataLine_extraHeader_icon_b29d5 {
-    background: url('R.atlases.deathCam.vehicle') right / contain no-repeat;
-}
+        background: url('R.atlases.deathCam.vehicle') right / contain no-repeat;
+    }
 
 .DataLine_additionalShellInfo_e78fe > .DataLine_additionalShellInfo_e78fe {
     display: flex;
@@ -197,9 +187,9 @@
     position: relative;
 }
 
-.CardContainer_base__empty_cf1d9 {
-    margin: 0;
-}
+    .CardContainer_base__empty_cf1d9 {
+        margin: 0;
+    }
 
 .CardContainer_children_cc23e {
     position: relative;
@@ -209,14 +199,14 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    border: 1rem solid rgba(255, 255, 255, 0.5);
+    border: 1rem solid rgba(255, 255, 255, .5);
 }
 
 .CardContainer_background_ebaed {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, .3);
     filter: blur(2px);
 }
 
@@ -264,9 +254,7 @@ body {
     color: #fff;
     font-size: 12rem;
     font-weight: 400;
-    text-shadow:
-        0 0 4rem rgba(0, 0, 0, 0.5),
-        0 0 4rem rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 4rem rgba(0, 0, 0, .5), 0 0 4rem rgba(0, 0, 0, .5);
     visibility: visible;
     position: relative;
     top: 0;
@@ -274,9 +262,10 @@ body {
 }
 
 .MarkerView_base__hidden_f6377 {
-    visibility: hidden;
-}
+        visibility: hidden;
+    }
 
 .MarkerView_leaderContainer_a6cf8 {
     position: absolute;
 }
+

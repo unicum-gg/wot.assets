@@ -4,12 +4,12 @@
 }
 
 .TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.atlases.components.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.atlases.components.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
 
 .FormatText_base_f27a4 {
     display: flex;
@@ -21,23 +21,23 @@
 }
 
 .FormatTextWithColorTags_whiteReal_c12a8 {
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 .FormatTextWithColorTags_white_c5665 {
-    color: #f2f2f7;
+    color: #F2F2F7;
 }
 
 .FormatTextWithColorTags_whiteOrange_fff65 {
-    color: #fefeec;
+    color: #FEFEEC;
 }
 
 .FormatTextWithColorTags_whiteSpanish_d24b3 {
-    color: #e9e2bf;
+    color: #E9E2BF;
 }
 
 .FormatTextWithColorTags_par_ee7d9 {
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .FormatTextWithColorTags_parSecondary_a5b8c {
@@ -45,39 +45,39 @@
 }
 
 .FormatTextWithColorTags_parTertiary_a0c09 {
-    color: #37362e;
+    color: #37362E;
 }
 
 .FormatTextWithColorTags_red_ad70c {
-    color: #ff2717;
+    color: #FF2717;
 }
 
 .FormatTextWithColorTags_redDark_afb30 {
-    color: #b70000;
+    color: #B70000;
 }
 
 .FormatTextWithColorTags_yellow_e47d1 {
-    color: #feab34;
+    color: #FEAB34;
 }
 
 .FormatTextWithColorTags_orange_e08c4 {
-    color: #ee7000;
+    color: #EE7000;
 }
 
 .FormatTextWithColorTags_cream_f2e96 {
-    color: #ffdd99;
+    color: #FFDD99;
 }
 
 .FormatTextWithColorTags_brown_ed7be {
-    color: #cbac77;
+    color: #CBAC77;
 }
 
 .FormatTextWithColorTags_greenBright_b0875 {
-    color: #80d43a;
+    color: #80D43A;
 }
 
 .FormatTextWithColorTags_green_d0263 {
-    color: #7ab300;
+    color: #7AB300;
 }
 
 .FormatTextWithColorTags_greenDark_f19b8 {
@@ -85,38 +85,38 @@
 }
 
 .FormatTextWithColorTags_blueBooster_fd3be {
-    color: #ccffff;
+    color: #CCFFFF;
 }
 
 .FormatTextWithColorTags_blueTeamkiller_fd915 {
-    color: #09e2ff;
+    color: #09E2FF;
 }
 
 .FormatTextWithColorTags_cred_fdafa {
-    color: #ced9d9;
+    color: #CED9D9;
 }
 
 .FormatTextWithColorTags_gold_ab90e {
-    color: #ffc363;
+    color: #FFC363;
 }
 
 .FormatTextWithColorTags_bond_e83f5 {
-    color: #c9c9b6;
+    color: #C9C9B6;
 }
 
 .FormatTextWithColorTags_prom_aa30c {
-    color: #a29b70;
+    color: #A29B70;
 }
 
 /* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
 
 .FormatTextWithColorTags_parNoWidth_bf7ac {
     width: 0;
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .Description_description_ba5ea {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
@@ -183,10 +183,10 @@
     background: linear-gradient(
         360deg,
         rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.5) 35.31%,
+        rgba(255, 255, 255, .5) 35.31%,
         rgba(255, 255, 255, 0) 100%
     );
-    opacity: 0.3;
+    opacity: .3;
     content: '';
     position: absolute;
     top: -174rem;
@@ -200,13 +200,13 @@
 }
 
 .Table_headerCellWrapper__level_b2dc1 {
-    min-width: 138rem;
-}
+        min-width: 138rem;
+    }
 
 .Table_headerCellWrapper__points_a5a89 {
-    min-width: 170rem;
-    margin-right: 30rem;
-}
+        min-width: 170rem;
+        margin-right: 30rem;
+    }
 
 .Table_tableCell_d0ae5 {
     display: flex;
@@ -214,25 +214,25 @@
 }
 
 .Table_tableCell__header_a069a + .Table_tableCell__header_a069a {
-    justify-content: flex-end;
-}
+            justify-content: flex-end;
+        }
 
 .Table_tableCell__row_b9368 {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
+        color: #8C8C7E;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
+    }
 
 .Table_tableCell__row_b9368 + .Table_tableCell__row_b9368 {
-    justify-content: flex-start;
-    width: 40%;
-    height: 25rem;
-}
+            justify-content: flex-start;
+            width: 40%;
+            height: 25rem;
+        }
 
 .Table_row__active_f4648.Table_tableCell__row_b9368 {
-    color: #ffdd99;
-}
+            color: #FFDD99;
+        }
 
 .Table_levelCell_fe1af {
     display: flex;
@@ -249,8 +249,7 @@
 .Table_divider_cae23 {
     width: 100%;
     height: 1rem;
-    background: linear-gradient(to right, rgba(201, 201, 182, 0.2) 33%, transparent 33%, transparent) repeat right /
-        3rem 1rem;
+    background: linear-gradient(to right, rgba(201,201,182, 0.2) 33%, transparent 33%, transparent) repeat right / 3rem 1rem;
     mask: linear-gradient(90deg, transparent 2%, #000 30%, #000 70%, transparent 98%);
     mask-repeat: no-repeat;
     margin-top: -1rem;
@@ -285,7 +284,7 @@
 }
 
 .App_title_af8fd {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
@@ -300,15 +299,15 @@
 }
 
 .App_ratingImageWrapper_a969f::before {
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
-    filter: blur(14px);
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, .5) 0%, rgba(255, 255, 255, 0) 100%);
+        filter: blur(14px);
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 
 .App_ratingImage_a9c74 {
     width: 100%;
@@ -316,3 +315,4 @@
     background: url('R.images.gui.maps.icons.achievements.summary.rating.rating_0_0') no-repeat center / contain;
     z-index: 2;
 }
+

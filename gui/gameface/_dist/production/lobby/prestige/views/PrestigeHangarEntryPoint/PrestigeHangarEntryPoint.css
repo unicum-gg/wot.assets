@@ -9,8 +9,8 @@
     position: relative;
 }
 .ProgressBar_base__small_af6d6 {
-    height: var(--progress-bg-height-small);
-}
+        height: var(--progress-bg-height-small);
+    }
 .ProgressBar_background_a4e18 {
     width: 100%;
     max-width: 8001px;
@@ -24,12 +24,13 @@
     left: 0;
 }
 .ProgressBar_background__small_e2b95 {
-    height: var(--progress-bg-height-small);
-}
+        height: var(--progress-bg-height-small);
+    }
 .ProgressBar_lineWrapper_e670c {
     display: flex;
     flex: 1;
 }
+
 
 .ProgressBarBlink_base_d7125 {
     width: var(--progress-glow-width);
@@ -44,11 +45,11 @@
     pointer-events: none;
 }
 
-.ProgressBarBlink_base__small_b92f8 {
-    width: var(--progress-glow-small-width);
-    height: var(--progress-glow-small-height);
-    background-image: var(--progress-glow-small);
-}
+    .ProgressBarBlink_base__small_b92f8 {
+        width: var(--progress-glow-small-width);
+        height: var(--progress-glow-small-height);
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -61,18 +62,18 @@
     background-color: var(--progress-line-base);
     filter: var(--progress-line-filter);
     position: relative;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressLineImpose_base__disabled_a9e8e {
-    background-color: var(--progress-line-disabled);
-}
+        background-color: var(--progress-line-disabled);
+    }
 .ProgressLineImpose_base__finished_f889e {
-    background-color: var(--progress-line-finished);
-}
+        background-color: var(--progress-line-finished);
+    }
 .ProgressLineImpose_base__withoutBounce_c0ff9 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 .ProgressLineImpose_pattern_a4023 {
     max-width: 8001px;
     background-image: var(--progress-pattern-base);
@@ -86,16 +87,16 @@
     left: var(--progress-pattern-border-size);
 }
 .ProgressLineImpose_base__small_da260 .ProgressLineImpose_pattern_a4023 {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_pattern_a4023 {
-    background-image: var(--progress-pattern-disabled);
-    left: 0;
-}
+        background-image: var(--progress-pattern-disabled);
+        left: 0;
+    }
 .ProgressLineImpose_base__finished_f889e .ProgressLineImpose_pattern_a4023 {
-    background-image: var(--progress-pattern-finished);
-}
+        background-image: var(--progress-pattern-finished);
+    }
 .ProgressLineImpose_gradient_f73c0 {
     max-width: 8001px;
     background-image: var(--progress-pattern-gradient);
@@ -107,15 +108,15 @@
     left: 0;
 }
 .ProgressLineImpose_base__small_da260 .ProgressLineImpose_gradient_f73c0 {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_gradient_f73c0 {
-    display: none;
-}
+        display: none;
+    }
 .ProgressLineImpose_base__finished_f889e .ProgressLineImpose_gradient_f73c0 {
-    background-image: var(--progress-pattern-gradient-finished);
-}
+        background-image: var(--progress-pattern-gradient-finished);
+    }
 .ProgressLineImpose_glow_f237a {
     width: var(--progress-glow-width);
     max-width: 8001px;
@@ -130,17 +131,17 @@
     pointer-events: none;
 }
 .ProgressLineImpose_glow__left_b7ffa {
-    left: var(--progress-pattern-border-size);
-}
+        left: var(--progress-pattern-border-size);
+    }
 .ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_glow_f237a,
-.ProgressLineImpose_base__finished_f889e .ProgressLineImpose_glow_f237a {
-    display: none;
-}
+    .ProgressLineImpose_base__finished_f889e .ProgressLineImpose_glow_f237a {
+        display: none;
+    }
 .ProgressLineImpose_base__small_da260 .ProgressLineImpose_glow_f237a {
-    width: var(--progress-glow-small-width);
-    height: var(--progress-glow-small-height);
-    background-image: var(--progress-glow-small);
-}
+        width: var(--progress-glow-small-width);
+        height: var(--progress-glow-small-height);
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -152,12 +153,12 @@
     height: 100%;
     position: absolute;
     top: 0;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b1398 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 .ProgressBarDeltaGrow_glow_c912d {
     width: 0;
     max-width: 8001px;
@@ -167,12 +168,12 @@
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b1398 .ProgressBarDeltaGrow_glow_c912d {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -194,7 +195,7 @@
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1), cubic-bezier(.21, .61, .35, 1);
     transition-property: width, transform;
 }
 
@@ -208,23 +209,23 @@
 }
 
 .FormatTextWithColorTags_whiteReal_c12a8 {
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 .FormatTextWithColorTags_white_c5665 {
-    color: #f2f2f7;
+    color: #F2F2F7;
 }
 
 .FormatTextWithColorTags_whiteOrange_fff65 {
-    color: #fefeec;
+    color: #FEFEEC;
 }
 
 .FormatTextWithColorTags_whiteSpanish_d24b3 {
-    color: #e9e2bf;
+    color: #E9E2BF;
 }
 
 .FormatTextWithColorTags_par_ee7d9 {
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .FormatTextWithColorTags_parSecondary_a5b8c {
@@ -232,39 +233,39 @@
 }
 
 .FormatTextWithColorTags_parTertiary_a0c09 {
-    color: #37362e;
+    color: #37362E;
 }
 
 .FormatTextWithColorTags_red_ad70c {
-    color: #ff2717;
+    color: #FF2717;
 }
 
 .FormatTextWithColorTags_redDark_afb30 {
-    color: #b70000;
+    color: #B70000;
 }
 
 .FormatTextWithColorTags_yellow_e47d1 {
-    color: #feab34;
+    color: #FEAB34;
 }
 
 .FormatTextWithColorTags_orange_e08c4 {
-    color: #ee7000;
+    color: #EE7000;
 }
 
 .FormatTextWithColorTags_cream_f2e96 {
-    color: #ffdd99;
+    color: #FFDD99;
 }
 
 .FormatTextWithColorTags_brown_ed7be {
-    color: #cbac77;
+    color: #CBAC77;
 }
 
 .FormatTextWithColorTags_greenBright_b0875 {
-    color: #80d43a;
+    color: #80D43A;
 }
 
 .FormatTextWithColorTags_green_d0263 {
-    color: #7ab300;
+    color: #7AB300;
 }
 
 .FormatTextWithColorTags_greenDark_f19b8 {
@@ -272,34 +273,34 @@
 }
 
 .FormatTextWithColorTags_blueBooster_fd3be {
-    color: #ccffff;
+    color: #CCFFFF;
 }
 
 .FormatTextWithColorTags_blueTeamkiller_fd915 {
-    color: #09e2ff;
+    color: #09E2FF;
 }
 
 .FormatTextWithColorTags_cred_fdafa {
-    color: #ced9d9;
+    color: #CED9D9;
 }
 
 .FormatTextWithColorTags_gold_ab90e {
-    color: #ffc363;
+    color: #FFC363;
 }
 
 .FormatTextWithColorTags_bond_e83f5 {
-    color: #c9c9b6;
+    color: #C9C9B6;
 }
 
 .FormatTextWithColorTags_prom_aa30c {
-    color: #a29b70;
+    color: #A29B70;
 }
 
 /* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
 
 .FormatTextWithColorTags_parNoWidth_bf7ac {
     width: 0;
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .PrestigeProgressLabel_base_d20b4 {
@@ -314,57 +315,57 @@
     background: no-repeat center / contain;
 }
 .PrestigeProgressLabel_base__extraSmall_f0184 .PrestigeProgressLabel_letter_bb96d {
-    width: 6rem;
-    height: 12rem;
-}
+        width: 6rem;
+        height: 12rem;
+    }
 .PrestigeProgressLabel_base__extraSmall_f0184 .PrestigeProgressLabel_letter__s1_e5dc5 {
-    width: 5rem;
-}
+            width: 5rem;
+        }
 .PrestigeProgressLabel_base__small_a0690 .PrestigeProgressLabel_letter_bb96d {
-    width: 9rem;
-    height: 19rem;
-}
+        width: 9rem;
+        height: 19rem;
+    }
 .PrestigeProgressLabel_base__small_a0690 .PrestigeProgressLabel_letter__s1_e5dc5 {
-    width: 8rem;
-}
+            width: 8rem;
+        }
 .PrestigeProgressLabel_base__small_a0690 .PrestigeProgressLabel_letter__s4_b5297 {
-    width: 10rem;
-}
+            width: 10rem;
+        }
 .PrestigeProgressLabel_base__smallExtended_e3726 .PrestigeProgressLabel_letter_bb96d {
-    width: 16rem;
-    height: 33rem;
-}
+        width: 16rem;
+        height: 33rem;
+    }
 .PrestigeProgressLabel_base__smallExtended_e3726 .PrestigeProgressLabel_letter__s1_e5dc5 {
-    width: 12rem;
-}
+            width: 12rem;
+        }
 .PrestigeProgressLabel_base__medium_abb7c .PrestigeProgressLabel_letter_bb96d {
-    width: 23rem;
-    height: 48rem;
-}
+        width: 23rem;
+        height: 48rem;
+    }
 .PrestigeProgressLabel_base__medium_abb7c .PrestigeProgressLabel_letter__s1_e5dc5 {
-    width: 17rem;
-}
+            width: 17rem;
+        }
 .PrestigeProgressLabel_base__mediumExtended_dfd6b .PrestigeProgressLabel_letter_bb96d {
-    width: 39rem;
-    height: 88rem;
-}
+        width: 39rem;
+        height: 88rem;
+    }
 .PrestigeProgressLabel_base__mediumExtended_dfd6b .PrestigeProgressLabel_letter__s1_e5dc5 {
-    width: 32rem;
-}
+            width: 32rem;
+        }
 .PrestigeProgressLabel_base__large_b7efa .PrestigeProgressLabel_letter_bb96d {
-    width: 53rem;
-    height: 120rem;
-}
+        width: 53rem;
+        height: 120rem;
+    }
 .PrestigeProgressLabel_base__large_b7efa .PrestigeProgressLabel_letter__s1_e5dc5 {
-    width: 43rem;
-}
+            width: 43rem;
+        }
 .PrestigeProgressLabel_base__extraLarge_e4d2f .PrestigeProgressLabel_letter_bb96d {
-    width: 77rem;
-    height: 176rem;
-}
+        width: 77rem;
+        height: 176rem;
+    }
 .PrestigeProgressLabel_base__extraLarge_e4d2f .PrestigeProgressLabel_letter__s1_e5dc5 {
-    width: 62rem;
-}
+            width: 62rem;
+        }
 
 .PrestigeProgressSymbol_base_c598c {
     display: flex;
@@ -374,72 +375,72 @@
     position: relative;
 }
 
-.PrestigeProgressSymbol_base__extraSmall_e5f6c {
-    width: 48rem;
-    height: 48rem;
-}
+    .PrestigeProgressSymbol_base__extraSmall_e5f6c {
+        width: 48rem;
+        height: 48rem;
+    }
 
-.PrestigeProgressSymbol_base__small_a98a3 {
-    width: 72rem;
-    height: 72rem;
-}
+    .PrestigeProgressSymbol_base__small_a98a3 {
+        width: 72rem;
+        height: 72rem;
+    }
 
-.PrestigeProgressSymbol_base__smallExtended_c0441 {
-    width: 115rem;
-    height: 84rem;
-}
+    .PrestigeProgressSymbol_base__smallExtended_c0441 {
+        width: 115rem;
+        height: 84rem;
+    }
 
-.PrestigeProgressSymbol_base__medium_d727f {
-    width: 170rem;
-    height: 124rem;
-}
+    .PrestigeProgressSymbol_base__medium_d727f {
+        width: 170rem;
+        height: 124rem;
+    }
 
-.PrestigeProgressSymbol_base__mediumExtended_a60fa {
-    width: 296rem;
-    height: 222rem;
-}
+    .PrestigeProgressSymbol_base__mediumExtended_a60fa {
+        width: 296rem;
+        height: 222rem;
+    }
 
-.PrestigeProgressSymbol_base__large_bb145 {
-    width: 400rem;
-    height: 300rem;
-}
+    .PrestigeProgressSymbol_base__large_bb145 {
+        width: 400rem;
+        height: 300rem;
+    }
 
-.PrestigeProgressSymbol_base__extraLarge_c0053 {
-    width: 600rem;
-    height: 450rem;
-}
+    .PrestigeProgressSymbol_base__extraLarge_c0053 {
+        width: 600rem;
+        height: 450rem;
+    }
 .PrestigeProgressSymbol_icon_c3990 {
     background: no-repeat center / contain;
     position: absolute;
 }
 .PrestigeProgressSymbol_base__extraSmall_e5f6c .PrestigeProgressSymbol_icon_c3990 {
-    width: 48rem;
-    height: 48rem;
-}
+        width: 48rem;
+        height: 48rem;
+    }
 .PrestigeProgressSymbol_base__small_a98a3 .PrestigeProgressSymbol_icon_c3990 {
-    width: 72rem;
-    height: 72rem;
-}
+        width: 72rem;
+        height: 72rem;
+    }
 .PrestigeProgressSymbol_base__smallExtended_c0441 .PrestigeProgressSymbol_icon_c3990 {
-    width: 115rem;
-    height: 84rem;
-}
+        width: 115rem;
+        height: 84rem;
+    }
 .PrestigeProgressSymbol_base__medium_d727f .PrestigeProgressSymbol_icon_c3990 {
-    width: 170rem;
-    height: 124rem;
-}
+        width: 170rem;
+        height: 124rem;
+    }
 .PrestigeProgressSymbol_base__mediumExtended_a60fa .PrestigeProgressSymbol_icon_c3990 {
-    width: 296rem;
-    height: 222rem;
-}
+        width: 296rem;
+        height: 222rem;
+    }
 .PrestigeProgressSymbol_base__large_bb145 .PrestigeProgressSymbol_icon_c3990 {
-    width: 400rem;
-    height: 300rem;
-}
+        width: 400rem;
+        height: 300rem;
+    }
 .PrestigeProgressSymbol_base__extraLarge_c0053 .PrestigeProgressSymbol_icon_c3990 {
-    width: 600rem;
-    height: 450rem;
-}
+        width: 600rem;
+        height: 450rem;
+    }
 
 .App_base_c6320 {
     display: flex;
@@ -453,9 +454,9 @@
     cursor: pointer;
 }
 
-.mediaMedium .App_base_c6320 {
-    height: 72rem;
-    padding-left: 16rem;
+    .mediaMedium .App_base_c6320 {
+        height: 72rem;
+        padding-left: 16rem;
 }
 
 .App_emblem_f2707 {
@@ -472,11 +473,11 @@
 }
 
 .mediaMedium .App_infoBlock_dd5c5 {
-    width: 195rem;
+        width: 195rem;
 }
 
 .App_title_e5f18 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
@@ -485,9 +486,9 @@
 }
 
 .mediaMedium .App_title_e5f18 {
-    margin-top: -4rem;
-    margin-bottom: 2rem;
-    line-height: 1.25;
+        margin-top: -4rem;
+        margin-bottom: 2rem;
+        line-height: 1.25;
 }
 
 .App_progress_e9b7e {
@@ -506,7 +507,7 @@
 }
 
 .App_description_e5add {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -518,7 +519,7 @@
 }
 
 .mediaMedium .App_progressBarWrapper_e38e4 {
-    margin-top: 4rem;
+        margin-top: 4rem;
 }
 
 body {
@@ -530,3 +531,4 @@ body {
 html {
     overflow: hidden;
 }
+

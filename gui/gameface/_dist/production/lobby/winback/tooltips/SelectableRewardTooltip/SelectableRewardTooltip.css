@@ -4,12 +4,12 @@
 }
 
 .TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.atlases.components.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.atlases.components.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
 
 .FormatText_base_f27a4 {
     display: flex;
@@ -21,23 +21,23 @@
 }
 
 .FormatTextWithColorTags_whiteReal_c12a8 {
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 .FormatTextWithColorTags_white_c5665 {
-    color: #f2f2f7;
+    color: #F2F2F7;
 }
 
 .FormatTextWithColorTags_whiteOrange_fff65 {
-    color: #fefeec;
+    color: #FEFEEC;
 }
 
 .FormatTextWithColorTags_whiteSpanish_d24b3 {
-    color: #e9e2bf;
+    color: #E9E2BF;
 }
 
 .FormatTextWithColorTags_par_ee7d9 {
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .FormatTextWithColorTags_parSecondary_a5b8c {
@@ -45,39 +45,39 @@
 }
 
 .FormatTextWithColorTags_parTertiary_a0c09 {
-    color: #37362e;
+    color: #37362E;
 }
 
 .FormatTextWithColorTags_red_ad70c {
-    color: #ff2717;
+    color: #FF2717;
 }
 
 .FormatTextWithColorTags_redDark_afb30 {
-    color: #b70000;
+    color: #B70000;
 }
 
 .FormatTextWithColorTags_yellow_e47d1 {
-    color: #feab34;
+    color: #FEAB34;
 }
 
 .FormatTextWithColorTags_orange_e08c4 {
-    color: #ee7000;
+    color: #EE7000;
 }
 
 .FormatTextWithColorTags_cream_f2e96 {
-    color: #ffdd99;
+    color: #FFDD99;
 }
 
 .FormatTextWithColorTags_brown_ed7be {
-    color: #cbac77;
+    color: #CBAC77;
 }
 
 .FormatTextWithColorTags_greenBright_b0875 {
-    color: #80d43a;
+    color: #80D43A;
 }
 
 .FormatTextWithColorTags_green_d0263 {
-    color: #7ab300;
+    color: #7AB300;
 }
 
 .FormatTextWithColorTags_greenDark_f19b8 {
@@ -85,51 +85,45 @@
 }
 
 .FormatTextWithColorTags_blueBooster_fd3be {
-    color: #ccffff;
+    color: #CCFFFF;
 }
 
 .FormatTextWithColorTags_blueTeamkiller_fd915 {
-    color: #09e2ff;
+    color: #09E2FF;
 }
 
 .FormatTextWithColorTags_cred_fdafa {
-    color: #ced9d9;
+    color: #CED9D9;
 }
 
 .FormatTextWithColorTags_gold_ab90e {
-    color: #ffc363;
+    color: #FFC363;
 }
 
 .FormatTextWithColorTags_bond_e83f5 {
-    color: #c9c9b6;
+    color: #C9C9B6;
 }
 
 .FormatTextWithColorTags_prom_aa30c {
-    color: #a29b70;
+    color: #A29B70;
 }
 
 /* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
 
 .FormatTextWithColorTags_parNoWidth_bf7ac {
     width: 0;
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .App_base_d8879 {
     width: 350rem;
-    box-shadow: inset 0 0 10rem rgba(59, 59, 46, 0.86);
-    background: linear-gradient(
-        180deg,
-        rgba(182, 199, 201, 0.05) 0%,
-        rgba(51, 51, 41, 0) 15.62%,
-        rgba(51, 51, 41, 0) 88.02%,
-        rgba(51, 51, 41, 0.1) 100%
-    );
+    box-shadow: inset 0 0 10rem rgba(59, 59, 46, .86);
+    background: linear-gradient(180deg, rgba(182, 199, 201, .05) 0%, rgba(51, 51, 41, 0) 15.62%, rgba(51, 51, 41, 0) 88.02%, rgba(51, 51, 41, .1) 100%);
 }
 
-.App_base__discount_d4846 {
-    width: 420rem;
-}
+    .App_base__discount_d4846 {
+        width: 420rem;
+    }
 
 .App_body_d9c5d {
     padding: 16rem 20rem;
@@ -137,11 +131,11 @@
 }
 
 .App_base__discount_d4846 .App_body_d9c5d {
-    padding: 17rem 20rem 16rem 88rem;
-}
+        padding: 17rem 20rem 16rem 88rem;
+    }
 
 .App_title_eaed9 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
@@ -149,15 +143,15 @@
 }
 
 .App_base__discount_d4846 .App_title_eaed9 {
-    color: #e9e2bf;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 7rem;
-}
+        color: #E9E2BF;
+        font-size: 18rem;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 7rem;
+    }
 
 .App_description_f5bc5 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -173,19 +167,19 @@
 }
 
 .App_discount_d662f {
-    color: #fefeec;
+    color: #FEFEEC;
     font-size: 14rem;
     font-weight: 700;
     line-height: 1.15;
 }
 
 .App_discount__research_af065 {
-    color: #f2f2f7;
-}
+        color: #F2F2F7;
+    }
 
 .App_discount__purchase_a7315 {
-    color: #ffdd99;
-}
+        color: #FFDD99;
+    }
 
 .App_footer_c5c08 {
     padding: 12rem 20rem 18rem 42rem;
@@ -193,8 +187,8 @@
 }
 
 .App_footer_c5c08 * {
-    position: relative;
-}
+        position: relative;
+    }
 
 .App_separator_b7fae {
     width: 420rem;
@@ -206,14 +200,8 @@
 }
 
 .App_footerMask_eb5af {
-    background: linear-gradient(
-        90deg,
-        rgba(201, 201, 182, 0) 0%,
-        #c9c9b6 38.22%,
-        #c9c9b6 64.56%,
-        rgba(201, 201, 182, 0) 100%
-    );
-    opacity: 0.1;
+    background: linear-gradient(90deg, rgba(201, 201, 182, 0) 0%, #c9c9b6 38.22%, #c9c9b6 64.56%, rgba(201, 201, 182, 0) 100%);
+    opacity: .1;
     position: absolute;
     top: 0;
     right: 0;
@@ -229,3 +217,4 @@
     top: 14rem;
     left: 19rem;
 }
+
