@@ -4,14 +4,15 @@
     background: no-repeat 50% / contain;
 }
 
-.Divider_base__dots_df8bc {
-    background-image: url('R.images.gui.maps.icons.mode_selector.tooltips.separator_dots');
-}
+    .Divider_base__dots_df8bc {
+        background-image: url('R.images.gui.maps.icons.mode_selector.tooltips.separator_dots');
+    }
 
-.Divider_base__dashed_f7200 {
-    background-image: url('R.images.gui.maps.icons.mode_selector.tooltips.separator_dashed');
-}
+    .Divider_base__dashed_f7200 {
+        background-image: url('R.images.gui.maps.icons.mode_selector.tooltips.separator_dashed');
+    }
 
-.Divider_base__short_de63d {
-    background-image: url('R.images.gui.maps.icons.mode_selector.tooltips.separator_dashed_short');
-}
+    .Divider_base__short_de63d {
+        background-image: url('R.images.gui.maps.icons.mode_selector.tooltips.separator_dashed_short');
+    }
+

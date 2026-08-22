@@ -4,12 +4,12 @@
 }
 
 .TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.atlases.components.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.atlases.components.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
 
 .FormatText_base_f27a4 {
     display: flex;
@@ -22,10 +22,10 @@
     position: relative;
 }
 
-.DogTag_base__big_a0a51 {
-    width: 400rem;
-    height: 240rem;
-}
+    .DogTag_base__big_a0a51 {
+        width: 400rem;
+        height: 240rem;
+    }
 
 .DogTag_engraving_ca9f2,
 .DogTag_background_c6df2 {
@@ -45,7 +45,7 @@
 }
 
 .App_header_d80c2 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
@@ -64,8 +64,9 @@
 }
 
 .App_description_efaf5 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
+

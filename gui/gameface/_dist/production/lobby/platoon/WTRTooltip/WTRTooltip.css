@@ -4,12 +4,12 @@
 }
 
 .TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.atlases.components.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.atlases.components.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
 
 .TextOverflow_base_f252d {
     max-width: 100%;
@@ -25,15 +25,15 @@
     background: no-repeat center / contain;
 }
 
-.Badge_base__default_d4e85 {
-    width: 24rem;
-    height: 24rem;
-}
+    .Badge_base__default_d4e85 {
+        width: 24rem;
+        height: 24rem;
+    }
 
-.Badge_base__x48_bded1 {
-    width: 48rem;
-    height: 48rem;
-}
+    .Badge_base__x48_bded1 {
+        width: 48rem;
+        height: 48rem;
+    }
 
 .PlayerNickname_base_b8932 {
     display: flex;
@@ -51,14 +51,14 @@
 }
 
 .PlayerNickname_base__default_ffd8d .PlayerNickname_igrIcon_f4e39 {
-    width: 32rem;
-    height: 14rem;
-}
+        width: 32rem;
+        height: 14rem;
+    }
 
 .PlayerNickname_base__x48_cb6e5 .PlayerNickname_igrIcon_f4e39 {
-    width: 64rem;
-    height: 28rem;
-}
+        width: 64rem;
+        height: 28rem;
+    }
 
 .PlayerNickname_suffixBadgeWrapper_fb261 {
     display: flex;
@@ -73,58 +73,58 @@
 }
 
 .PlayerNickname_base__default_ffd8d .PlayerNickname_suffixBadgeStripe_f38d0 {
-    width: 64rem;
-    height: 24rem;
-    right: 12rem;
-}
+        width: 64rem;
+        height: 24rem;
+        right: 12rem;
+    }
 
 .PlayerNickname_base__default_ffd8d.PlayerNickname_base__inverted_dc94c .PlayerNickname_suffixBadgeStripe_f38d0 {
-    right: auto;
-    left: 12rem;
-    transform: rotateY(180deg);
-}
+        right: auto;
+        left: 12rem;
+        transform: rotateY(180deg);
+    }
 
 .PlayerNickname_base__x48_cb6e5 .PlayerNickname_suffixBadgeStripe_f38d0 {
-    width: 68rem;
-    height: 28rem;
-    right: 16rem;
-}
+        width: 68rem;
+        height: 28rem;
+        right: 16rem;
+    }
 
 .PlayerNickname_base__x48_cb6e5.PlayerNickname_base__inverted_dc94c .PlayerNickname_suffixBadgeStripe_f38d0 {
-    right: auto;
-    left: 16rem;
-    transform: rotateY(180deg);
-}
+        right: auto;
+        left: 16rem;
+        transform: rotateY(180deg);
+    }
 
 .PlayerNickname_suffixBadge_eb327 {
     background: no-repeat center / contain;
 }
 
 .PlayerNickname_base__default_ffd8d .PlayerNickname_suffixBadge_eb327 {
-    width: 24rem;
-    height: 24rem;
-}
+        width: 24rem;
+        height: 24rem;
+    }
 
 .PlayerNickname_base__x48_cb6e5 .PlayerNickname_suffixBadge_eb327 {
-    width: 32rem;
-    height: 32rem;
-}
+        width: 32rem;
+        height: 32rem;
+    }
 
 .PlayerNickname_anonymizedIcon_d3543 {
     background: no-repeat center / contain;
 }
 
 .PlayerNickname_base__default_ffd8d .PlayerNickname_anonymizedIcon_d3543 {
-    width: 24rem;
-    height: 24rem;
-    background-image: url('R.images.gui.maps.icons.library.eye');
-}
+        width: 24rem;
+        height: 24rem;
+        background-image: url('R.images.gui.maps.icons.library.eye');
+    }
 
 .PlayerNickname_base__x48_cb6e5 .PlayerNickname_anonymizedIcon_d3543 {
-    width: 48rem;
-    height: 48rem;
-    background-image: url('R.images.gui.maps.icons.library.eye_48x48');
-}
+        width: 48rem;
+        height: 48rem;
+        background-image: url('R.images.gui.maps.icons.library.eye_48x48');
+    }
 
 /*////////////*/
 
@@ -179,3 +179,4 @@
 .WTRTooltip_description_c852e {
     margin-top: 6rem;
 }
+

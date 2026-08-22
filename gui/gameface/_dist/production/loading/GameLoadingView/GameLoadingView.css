@@ -15,8 +15,8 @@
 }
 
 .Background_bg__invisible_f209e {
-    display: none;
-}
+        display: none;
+    }
 
 .Background_image_c9989 {
     display: none;
@@ -33,7 +33,7 @@
     width: 100%;
     height: 100%;
     background-color: #000;
-    opacity: 0.3;
+    opacity: .3;
     position: absolute;
     top: 0;
     left: 0;
@@ -53,32 +53,34 @@
 }
 
 .ContentFooter_title_f0dc9 {
-    filter: drop-shadow(0 4rem 4rem rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0 4rem 4rem rgba(0,0,0, .25));
     margin-bottom: 4rem;
     font-size: 36rem;
     font-weight: 700;
 }
 
 @media (min-width: 1366px) and (min-height: 768px) {
-    .ContentFooter_title_f0dc9 {
+
+.ContentFooter_title_f0dc9 {
         margin-bottom: 13rem;
-        font-size: 56rem;
-    }
+        font-size: 56rem
 }
+    }
 
 .ContentFooter_title__only_a0960 {
-    margin-bottom: 23rem;
-}
+        margin-bottom: 23rem;
+    }
 
 @media (min-width: 1366px) and (min-height: 768px) {
-    .ContentFooter_title__only_a0960 {
-        margin-bottom: 37rem;
-        font-size: 36rem;
+
+.ContentFooter_title__only_a0960 {
+            margin-bottom: 37rem;
+            font-size: 36rem
     }
-}
+    }
 
 .ContentFooter_description_fe58b {
-    filter: drop-shadow(0 4rem 4rem rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0 4rem 4rem rgba(0,0,0, .25));
     display: inline;
     flex-wrap: wrap;
     width: 680rem;
@@ -88,43 +90,46 @@
 }
 
 @media (min-width: 1366px) and (min-height: 768px) {
-    .ContentFooter_description_fe58b {
+
+.ContentFooter_description_fe58b {
         margin-bottom: 60rem;
-        font-size: 20rem;
-    }
+        font-size: 20rem
 }
+    }
 
 .ContentFooter_progressBar_d35c8 {
     margin-bottom: 60rem;
 }
 
 @media (min-width: 1366px) and (min-height: 768px) {
-    .ContentFooter_progressBar_d35c8 {
-        margin-bottom: 80rem;
-    }
+
+.ContentFooter_progressBar_d35c8 {
+        margin-bottom: 80rem
 }
+    }
 
 .ContentFooter_progressBar__alwaysOnTop_f6b3d {
-    z-index: 2;
-}
+        z-index: 2;
+    }
 
 .ContentFooter_statusText_da3e9 {
-    filter: drop-shadow(0 4rem 4rem rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0 4rem 4rem rgba(0,0,0, .25));
     margin-bottom: 4rem;
     font-size: 14rem;
     font-weight: 800;
 }
 
 @media (min-width: 1366px) and (min-height: 768px) {
-    .ContentFooter_statusText_da3e9 {
+
+.ContentFooter_statusText_da3e9 {
         margin-bottom: 13rem;
-        font-size: 18rem;
-    }
+        font-size: 18rem
 }
+    }
 
 .ContentFooter_statusText__alwaysOnTop_af368 {
-    z-index: 2;
-}
+        z-index: 2;
+    }
 
 .LogoSlide_base_fc635 {
     width: 100vw;
@@ -155,13 +160,14 @@
 }
 
 @media (min-width: 1366px) and (min-height: 768px) {
-    .LogoSlide_logo_f0e8a {
+
+.LogoSlide_logo_f0e8a {
         width: 800rem;
         height: 560rem;
         margin-top: -80rem;
-        background: url('img://gui/maps/loading/login_logo_big.png') no-repeat center / cover;
-    }
+        background: url('img://gui/maps/loading/login_logo_big.png') no-repeat center / cover
 }
+    }
 
 .LogoSlide_awards_da55c {
     width: 764rem;
@@ -222,11 +228,12 @@
 }
 
 @media (min-width: 1366px) and (min-height: 768px) {
-    .Content_contentFooter_a6d4c {
+
+.Content_contentFooter_a6d4c {
         right: 108rem;
-        left: 108rem;
-    }
+        left: 108rem
 }
+    }
 
 .Content_fairPlayMessage_b87e8 {
     position: absolute;
@@ -239,12 +246,13 @@
 }
 
 @media (min-width: 1366px) and (min-height: 768px) {
-    .Content_fairPlayMessage_b87e8 {
+
+.Content_fairPlayMessage_b87e8 {
         width: 1920rem;
         height: 1080rem;
-        background: url('img://gui/maps/loading/fair_play_message_big.png') no-repeat center / cover;
-    }
+        background: url('img://gui/maps/loading/fair_play_message_big.png') no-repeat center / cover
 }
+    }
 
 .Content_vignette_be487 {
     width: 100vw;
@@ -257,8 +265,8 @@
 }
 
 .Content_vignette__invisible_f8184 {
-    display: none;
-}
+        display: none;
+    }
 
 .Content_info_deb4a {
     display: flex;
@@ -273,38 +281,41 @@
 }
 
 @media (min-width: 1366px) and (min-height: 768px) {
-    .Content_info_deb4a {
-        top: calc(50vh + 160rem);
-    }
+
+.Content_info_deb4a {
+        top: calc(50vh + 160rem)
 }
+    }
 
 .Content_info__default_fc16a {
-    height: 55rem;
-    color: #8c8c7e;
-    top: auto;
-    bottom: 5rem;
-}
+        height: 55rem;
+        color: #8c8c7e;
+        top: auto;
+        bottom: 5rem;
+    }
 
 @media (min-width: 1366px) and (min-height: 768px) {
-    .Content_info__default_fc16a {
-        height: 75rem;
-        top: auto;
+
+.Content_info__default_fc16a {
+            height: 75rem;
+            top: auto
     }
-}
+    }
 
 .Content_info__korea_e4c87 {
-    font-size: 32rem;
-}
+        font-size: 32rem;
+    }
 
 @media (min-width: 1600px) and (min-height: 900px) {
-    .Content_info__korea_e4c87 {
-        font-size: 50rem;
+
+.Content_info__korea_e4c87 {
+            font-size: 50rem
     }
-}
+    }
 
 .Content_info__china_bfcfe {
-    color: #fefeec;
-}
+        color: #fefeec;
+    }
 
 .Content_logo_f6b83 {
     width: 250rem;
@@ -316,20 +327,22 @@
 }
 
 @media (min-width: 1366px) and (min-height: 768px) {
-    .Content_logo_f6b83 {
+
+.Content_logo_f6b83 {
         top: 61rem;
-        left: 100rem;
-    }
+        left: 100rem
 }
+    }
 
 @media (min-width: 1600px) and (min-height: 900px) {
-    .Content_logo_f6b83 {
+
+.Content_logo_f6b83 {
         width: 330rem;
         height: 67rem;
         background: url('img://gui/maps/loading/wot_logo_big.png') no-repeat center / 100% 100%;
-        left: 97rem;
-    }
+        left: 97rem
 }
+    }
 
 @keyframes Content_fadeIn_a23c2 {
     from {
@@ -367,16 +380,16 @@
 }
 
 .App_dimmer__visible_fb2a7 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .App_dimmer__fadeOut_eb4b1 {
-    animation: App_fadeOut_cd55f linear;
-}
+        animation: App_fadeOut_cd55f linear;
+    }
 
 .App_dimmer__fadeIn_adc60 {
-    animation: App_fadeIn_cc058 linear;
-}
+        animation: App_fadeIn_cc058 linear;
+    }
 
 @keyframes App_fadeIn_cc058 {
     from {
@@ -397,3 +410,4 @@
         opacity: 0;
     }
 }
+

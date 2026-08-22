@@ -4,12 +4,12 @@
 }
 
 .TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.atlases.components.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.atlases.components.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
 
 .PremiumSpecialization_base_b0a22 {
     display: flex;
@@ -25,7 +25,7 @@
 }
 
 .PremiumSpecialization_label_bdf1f {
-    color: #ffc363;
+    color: #FFC363;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -37,15 +37,15 @@
     background: no-repeat center / cover;
 }
 
-.RankIcon_base__big_e0cf9 {
-    width: 160rem;
-    height: 118rem;
-}
+    .RankIcon_base__big_e0cf9 {
+        width: 160rem;
+        height: 118rem;
+    }
 
-.RankIcon_base__small_f907c {
-    width: 95rem;
-    height: 60rem;
-}
+    .RankIcon_base__small_f907c {
+        width: 95rem;
+        height: 60rem;
+    }
 
 .TooltipAdvancedFooter_base_b214f {
     display: flex;
@@ -64,20 +64,20 @@
     flex-direction: column;
 }
 
-.TooltipContentSection_base_cc676 + .TooltipContentSection_base_cc676 {
-    margin-top: 16rem;
-}
+    .TooltipContentSection_base_cc676 + .TooltipContentSection_base_cc676 {
+        margin-top: 16rem;
+    }
 
 .TooltipContentSection_label_d5805 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
 .TooltipContentSection_base__withPadding_f06a5 .TooltipContentSection_content_c0924 {
-    padding-left: 13rem;
-}
+        padding-left: 13rem;
+    }
 
 .Divided_base_ae250 {
     position: relative;
@@ -130,11 +130,11 @@
 }
 
 .ModifierItem_base__disabled_abd44 .ModifierItem_icon_f0da4 {
-    opacity: 0.3;
-}
+        opacity: 0.3;
+    }
 
 .ModifierItem_valueLabel_e19ba {
-    color: #80d43a;
+    color: #80D43A;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -151,15 +151,15 @@
 }
 
 .ModifierItem_titleLabel_f70c6 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
 .ModifierItem_base__disabled_abd44 .ModifierItem_titleLabel_f70c6 {
-    color: #595950;
-}
+        color: #595950;
+    }
 
 .ModifierItem_descriptionLabel_bd5d0 {
     color: #595950;
@@ -177,7 +177,7 @@
 }
 
 .EfficiencyInfo_efficiencySection_f46bc {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
@@ -199,7 +199,7 @@
 }
 
 .EfficiencyInfo_sectionTitle_d7f30 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -211,8 +211,8 @@
 }
 
 .EfficiencyInfo_modifier_eeab3 + .EfficiencyInfo_modifier_eeab3 {
-    margin-top: 0;
-}
+        margin-top: 0;
+    }
 
 .EfficiencyInfo_finalValue_d003d {
     display: flex;
@@ -220,7 +220,7 @@
 }
 
 .EfficiencyInfo_finalValueLabel_b7896 {
-    color: #80d43a;
+    color: #80D43A;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
@@ -245,11 +245,11 @@
     width: 18rem;
     height: 18rem;
     background: no-repeat center / cover;
-    opacity: 0.4;
+    opacity: .4;
 }
 
 .Header_roleName_a01b0 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -257,7 +257,7 @@
 }
 
 .Header_name_e05f2 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
@@ -266,7 +266,7 @@
 }
 
 .Header_rankUserName_ea6d8 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 12rem;
     font-weight: 400;
     line-height: 1.3;
@@ -286,199 +286,199 @@
     z-index: 1;
 }
 .Currency_base__small_af876 .Currency_icon_d34e3,
-.Currency_base__big_f6388 .Currency_icon_d34e3,
-.Currency_base__large_fb228 .Currency_icon_d34e3,
-.Currency_base__extraLarge_d0b11 .Currency_icon_d34e3 {
-    transform: translateY(3rem);
-}
+    .Currency_base__big_f6388 .Currency_icon_d34e3,
+    .Currency_base__large_fb228 .Currency_icon_d34e3,
+    .Currency_base__extraLarge_d0b11 .Currency_icon_d34e3 {
+        transform: translateY(3rem);
+    }
 .Currency_icon__credits-small_cb645 {
-    background-image: url('R.images.gui.maps.icons.library.CreditsIcon_2');
-}
+        background-image: url('R.images.gui.maps.icons.library.CreditsIcon_2');
+    }
 .Currency_icon__credits-big_bb614 {
-    background-image: url('R.images.gui.maps.icons.library.CreditsIcon_1');
-}
+        background-image: url('R.images.gui.maps.icons.library.CreditsIcon_1');
+    }
 .Currency_icon__credits-large_b65af {
-    width: 48rem;
-    height: 48rem;
-    margin-left: -1rem;
-    background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_silver');
-}
+        width: 48rem;
+        height: 48rem;
+        margin-left: -1rem;
+        background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_silver');
+    }
 .Currency_base__large_fb228 .Currency_icon__credits-large_b65af {
-    transform: translateY(4rem);
-}
+            transform: translateY(4rem);
+        }
 .Currency_icon__credits-extraLarge_a4a53 {
-    width: 80rem;
-    height: 80rem;
-    margin-right: -2rem;
-    background-image: url('R.images.gui.maps.icons.library.credits_icon_80x80');
-}
+        width: 80rem;
+        height: 80rem;
+        margin-right: -2rem;
+        background-image: url('R.images.gui.maps.icons.library.credits_icon_80x80');
+    }
 .Currency_icon__gold-small_eee32 {
-    background-image: url('R.images.gui.maps.icons.library.GoldIcon_2');
-}
+        background-image: url('R.images.gui.maps.icons.library.GoldIcon_2');
+    }
 .Currency_base__small_af876 .Currency_icon__gold-small_eee32 {
-    transform: translateY(2rem);
-}
+            transform: translateY(2rem);
+        }
 .Currency_icon__gold-big_e419a {
-    background-image: url('R.images.gui.maps.icons.library.GoldIcon_1');
-}
+        background-image: url('R.images.gui.maps.icons.library.GoldIcon_1');
+    }
 .Currency_base__big_f6388 .Currency_icon__gold-big_e419a {
-    transform: translateY(4rem);
-}
+            transform: translateY(4rem);
+        }
 .Currency_icon__gold-large_c3a99 {
-    width: 48rem;
-    height: 48rem;
-    margin-left: -1rem;
-    background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_gold');
-}
+        width: 48rem;
+        height: 48rem;
+        margin-left: -1rem;
+        background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_gold');
+    }
 .Currency_base__large_fb228 .Currency_icon__gold-large_c3a99 {
-    transform: translateY(4rem);
-}
+            transform: translateY(4rem);
+        }
 .Currency_icon__gold-extraLarge_f2852 {
-    width: 80rem;
-    height: 80rem;
-    background-image: url('R.images.gui.maps.icons.library.gold_icon_80x80');
-}
+        width: 80rem;
+        height: 80rem;
+        background-image: url('R.images.gui.maps.icons.library.gold_icon_80x80');
+    }
 .Currency_icon__crystal-small_d8644 {
-    background-image: url('R.images.gui.maps.icons.library.CrystalIcon_2');
-}
+        background-image: url('R.images.gui.maps.icons.library.CrystalIcon_2');
+    }
 .Currency_base__small_af876 .Currency_icon__crystal-small_d8644 {
-    transform: translateY(2rem);
-}
+            transform: translateY(2rem);
+        }
 .Currency_icon__crystal-big_f2873 {
-    width: 23rem;
-    height: 22rem;
-    background-image: url('R.images.gui.maps.icons.library.crystal_23x22');
-}
+        width: 23rem;
+        height: 22rem;
+        background-image: url('R.images.gui.maps.icons.library.crystal_23x22');
+    }
 .Currency_base__big_f6388 .Currency_icon__crystal-big_f2873 {
-    transform: translateY(4rem);
-}
+            transform: translateY(4rem);
+        }
 .Currency_icon__crystal-large_cf068 {
-    width: 48rem;
-    height: 48rem;
-    margin-left: -1rem;
-    background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_bonds');
-}
+        width: 48rem;
+        height: 48rem;
+        margin-left: -1rem;
+        background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_bonds');
+    }
 .Currency_icon__crystal-extraLarge_a9843 {
-    width: 80rem;
-    height: 80rem;
-    background-image: url('R.images.gui.maps.icons.library.crystal_80x80');
-}
+        width: 80rem;
+        height: 80rem;
+        background-image: url('R.images.gui.maps.icons.library.crystal_80x80');
+    }
 .Currency_base__extraLarge_d0b11 .Currency_icon__crystal-extraLarge_a9843 {
-    transform: translateY(7rem);
-}
+            transform: translateY(7rem);
+        }
 .Currency_icon__xp-small_f3b46 {
-    background-image: url('R.images.gui.maps.icons.library.NormalXpIcon');
-}
+        background-image: url('R.images.gui.maps.icons.library.NormalXpIcon');
+    }
 .Currency_base__small_af876 .Currency_icon__xp-small_f3b46 {
-    transform: translateY(1rem);
-}
+            transform: translateY(1rem);
+        }
 .Currency_icon__xp-big_c984a {
-    width: 23rem;
-    height: 22rem;
-    margin-left: -5rem;
-    background-image: url('R.images.gui.maps.icons.library.xpIcon_23x22');
-}
+        width: 23rem;
+        height: 22rem;
+        margin-left: -5rem;
+        background-image: url('R.images.gui.maps.icons.library.xpIcon_23x22');
+    }
 .Currency_base__big_f6388 .Currency_icon__xp-big_c984a {
-    transform: translateY(2rem);
-}
+            transform: translateY(2rem);
+        }
 .Currency_icon__xp-large_e9a09 {
-    width: 48rem;
-    height: 48rem;
-    margin: 0 -5rem 0 -6rem;
-    background-image: url('R.images.gui.maps.shop.rewards.c_48x48.exp');
-}
+        width: 48rem;
+        height: 48rem;
+        margin: 0 -5rem 0 -6rem;
+        background-image: url('R.images.gui.maps.shop.rewards.c_48x48.exp');
+    }
 .Currency_icon__xp-extraLarge_f90f7 {
-    width: 80rem;
-    height: 80rem;
-    margin: 0 -5rem;
-    background-image: url('R.images.gui.maps.icons.library.xp_tank_icon_80x80');
-}
+        width: 80rem;
+        height: 80rem;
+        margin: 0 -5rem;
+        background-image: url('R.images.gui.maps.icons.library.xp_tank_icon_80x80');
+    }
 .Currency_icon__freeXP-small_bcda1 {
-    background-image: url('R.images.gui.maps.icons.library.freeXPIcon16x16');
-}
+        background-image: url('R.images.gui.maps.icons.library.freeXPIcon16x16');
+    }
 .Currency_base__small_af876 .Currency_icon__freeXP-small_bcda1 {
-    transform: translateY(1rem);
-}
+            transform: translateY(1rem);
+        }
 .Currency_icon__freeXP-big_eb64e {
-    width: 24rem;
-    height: 24rem;
-    margin-left: -5rem;
-    background-image: url('R.images.gui.maps.icons.library.freeXPIconBig24x24');
-}
+        width: 24rem;
+        height: 24rem;
+        margin-left: -5rem;
+        background-image: url('R.images.gui.maps.icons.library.freeXPIconBig24x24');
+    }
 .Currency_icon__freeXP-large_e46b0 {
-    width: 48rem;
-    height: 48rem;
-    margin: 0 -5rem 0 -6rem;
-    background-image: url('R.images.gui.maps.shop.rewards.c_48x48.freeExp');
-}
+        width: 48rem;
+        height: 48rem;
+        margin: 0 -5rem 0 -6rem;
+        background-image: url('R.images.gui.maps.shop.rewards.c_48x48.freeExp');
+    }
 .Currency_icon__freeXP-extraLarge_e41b1 {
-    width: 80rem;
-    height: 80rem;
-    margin: 0 -5rem;
-    background-image: url('R.images.gui.maps.icons.library.free_xp_icon_80x80');
-}
+        width: 80rem;
+        height: 80rem;
+        margin: 0 -5rem;
+        background-image: url('R.images.gui.maps.icons.library.free_xp_icon_80x80');
+    }
 .Currency_base__extraLarge_d0b11 .Currency_icon__freeXP-extraLarge_e41b1 {
-    transform: translateY(4rem);
-}
+            transform: translateY(4rem);
+        }
 .Currency_icon__eliteXP-small_c4a51 {
-    background-image: url('R.images.gui.maps.icons.library.EliteXpIcon-2');
-}
+        background-image: url('R.images.gui.maps.icons.library.EliteXpIcon-2');
+    }
 .Currency_base__small_af876 .Currency_icon__eliteXP-small_c4a51 {
-    transform: translateY(1rem);
-}
+            transform: translateY(1rem);
+        }
 .Currency_icon__eliteXP-big_eceb0 {
-    width: 24rem;
-    height: 24rem;
-    margin-left: -5rem;
-    background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
-}
+        width: 24rem;
+        height: 24rem;
+        margin-left: -5rem;
+        background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
+    }
 .Currency_icon__eliteXP-large_e35ab {
-    width: 48rem;
-    height: 48rem;
-    margin: 0 -5rem 0 -6rem;
-    background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
-}
+        width: 48rem;
+        height: 48rem;
+        margin: 0 -5rem 0 -6rem;
+        background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
+    }
 .Currency_icon__eliteXP-extraLarge_a17d5 {
-    width: 80rem;
-    height: 80rem;
-    margin: 0 -5rem;
-    background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
-}
+        width: 80rem;
+        height: 80rem;
+        margin: 0 -5rem;
+        background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
+    }
 .Currency_base__extraLarge_d0b11 .Currency_icon__eliteXP-extraLarge_a17d5 {
-    transform: translateY(4rem);
-}
+            transform: translateY(4rem);
+        }
 .Currency_icon__equipCoin-small_d3b9a {
-    width: 16rem;
-    height: 16rem;
-    margin-right: -2rem;
-    background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
-}
+        width: 16rem;
+        height: 16rem;
+        margin-right: -2rem;
+        background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
+    }
 .Currency_base__small_af876 .Currency_icon__equipCoin-small_d3b9a {
-    transform: translateX(-1rem) translateY(1rem);
-}
+            transform: translateX(-1rem) translateY(1rem);
+        }
 .Currency_icon__equipCoin-big_c34e1 {
-    width: 24rem;
-    height: 24rem;
-    background-image: url('R.images.gui.maps.icons.library.equipCoinBig');
-}
+        width: 24rem;
+        height: 24rem;
+        background-image: url('R.images.gui.maps.icons.library.equipCoinBig');
+    }
 .Currency_base__big_f6388 .Currency_icon__equipCoin-big_c34e1 {
-    transform: translateX(-5rem) translateY(3rem);
-}
+            transform: translateX(-5rem) translateY(3rem);
+        }
 .Currency_icon__equipCoin-large_b1b5e {
-    width: 48rem;
-    height: 48rem;
-    margin-right: 2rem;
-    background-image: url('R.images.gui.maps.shop.rewards.c_48x48.equipCoin');
-}
+        width: 48rem;
+        height: 48rem;
+        margin-right: 2rem;
+        background-image: url('R.images.gui.maps.shop.rewards.c_48x48.equipCoin');
+    }
 .Currency_icon__equipCoin-extraLarge_a7b90 {
-    width: 80rem;
-    height: 80rem;
-    margin-right: 8rem;
-    background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
-}
+        width: 80rem;
+        height: 80rem;
+        margin-right: 8rem;
+        background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
+    }
 .Currency_base__extraLarge_d0b11 .Currency_icon__equipCoin-extraLarge_a7b90 {
-    transform: translateX(2rem) translateY(4rem);
-}
+            transform: translateX(2rem) translateY(4rem);
+        }
 .Currency_value_bb176 {
     /* font-size inherit does not work here, so 1em means the size does not change */
     /* stylelint-disable-next-line */
@@ -487,57 +487,57 @@
     z-index: 2;
 }
 .Currency_base__small_af876 .Currency_value_bb176 {
-    padding-right: 2rem;
-}
+        padding-right: 2rem;
+    }
 .Currency_base__big_f6388 .Currency_value_bb176 {
-    padding-right: 5rem;
-    font-size: 24rem;
-    font-weight: 700;
-}
+        padding-right: 5rem;
+        font-size: 24rem;
+        font-weight: 700;
+    }
 .Currency_base__big_f6388 .Currency_value_bb176 + .Currency_icon_d34e3 {
-    font-size: 24rem;
-}
+            font-size: 24rem;
+        }
 .Currency_base__large_fb228 .Currency_value_bb176 {
-    font-size: 36rem;
-    font-weight: 700;
-}
+        font-size: 36rem;
+        font-weight: 700;
+    }
 .Currency_base__large_fb228 .Currency_value_bb176 + .Currency_icon_d34e3 {
-    font-size: 36rem;
-}
+            font-size: 36rem;
+        }
 .Currency_base__extraLarge_d0b11 .Currency_value_bb176 {
-    font-size: 56rem;
-    font-weight: 700;
-}
+        font-size: 56rem;
+        font-weight: 700;
+    }
 .Currency_value__freeXP_db401 {
-    color: #f2f2f7;
-}
+        color: #F2F2F7;
+    }
 .Currency_value__credits_c98c5 {
-    color: #ced9d9;
-}
+        color: #CED9D9;
+    }
 .Currency_value__gold_b8214 {
-    color: #ffc363;
-}
+        color: #FFC363;
+    }
 .Currency_value__xp_eda0a,
-.Currency_value__crystal_cf72e,
-.Currency_value__equipCoin_cb08d,
-.Currency_value__eliteXP_de450 {
-    color: #c9c9b6;
-}
+    .Currency_value__crystal_cf72e,
+    .Currency_value__equipCoin_cb08d,
+    .Currency_value__eliteXP_de450 {
+        color: #C9C9B6;
+    }
 .Currency_base__small_af876 .Currency_value__notEnough_db10a {
-    color: #ff2717;
-}
+            color: #FF2717;
+        }
 .Currency_base__big_f6388 .Currency_value__notEnough_db10a {
-    color: #b70000;
-}
+            color: #B70000;
+        }
 .Currency_base__large_fb228 .Currency_value__notEnough_db10a {
-    color: #b70000;
-}
+            color: #B70000;
+        }
 .Currency_base__extraLarge_d0b11 .Currency_value__notEnough_db10a {
-    color: #b70000;
-}
+            color: #B70000;
+        }
 .Currency_stock_bffbc {
     height: 13rem;
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 13rem;
     line-height: 1;
     position: relative;
@@ -545,23 +545,23 @@
     pointer-events: none;
 }
 .Currency_stock__indent_c4c0d {
-    margin-left: 2rem;
-}
+        margin-left: 2rem;
+    }
 .Currency_base__small_af876 .Currency_stock_bffbc {
-    transform: translateY(0rem);
-}
+        transform: translateY(0rem);
+    }
 .Currency_base__big_f6388 .Currency_stock_bffbc {
-    transform: translateY(4rem);
-}
+        transform: translateY(4rem);
+    }
 .Currency_base__large_fb228 .Currency_stock_bffbc {
-    transform: translateY(10rem);
-}
+        transform: translateY(10rem);
+    }
 .Currency_base__extraLarge_d0b11 .Currency_stock_bffbc {
-    transform: translateY(18rem);
-}
+        transform: translateY(18rem);
+    }
 .Currency_stock__interactive_e78a9 {
-    pointer-events: auto;
-}
+        pointer-events: auto;
+    }
 .Currency_stockBackground_c8ab1 {
     width: 80rem;
     height: 45rem;
@@ -580,13 +580,13 @@
     position: relative;
 }
 
-.ExtendedText_base__zeroPadding_d1a1c {
-    padding: 0;
-}
+    .ExtendedText_base__zeroPadding_d1a1c {
+        padding: 0;
+    }
 
-.ExtendedText_base__isTruncationAvailable_cb880 {
-    width: 100%;
-}
+    .ExtendedText_base__isTruncationAvailable_cb880 {
+        width: 100%;
+    }
 
 .ExtendedText_truncated_a4268 {
     display: flex;
@@ -596,8 +596,8 @@
 }
 
 .ExtendedText_truncated__hide_d75b4 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .ExtendedText_unTruncated_ff478 {
     display: flex;
@@ -608,7 +608,7 @@
     height: 100%;
     justify-content: flex-start;
     align-content: flex-start;
-    color: #ff2717;
+    color: #FF2717;
     opacity: 0;
     position: absolute;
     top: 0;
@@ -621,51 +621,51 @@
 }
 
 .ExtendedText_tooltip__justify-flex-start_ade81 {
-    justify-content: flex-start;
-}
+        justify-content: flex-start;
+    }
 
 .ExtendedText_tooltip__justify-center_aa541 {
-    justify-content: center;
-}
+        justify-content: center;
+    }
 
 .ExtendedText_tooltip__justify-flex-end_af6c3 {
-    justify-content: flex-end;
-}
+        justify-content: flex-end;
+    }
 
 .ExtendedText_tooltip__align-flex-start_fbfc0 {
-    align-content: flex-start;
-}
+        align-content: flex-start;
+    }
 
 .ExtendedText_tooltip__align-center_d5b4a {
-    align-content: center;
-}
+        align-content: center;
+    }
 
 .ExtendedText_tooltip__align-flex-end_fc0e0 {
-    align-content: flex-end;
-}
+        align-content: flex-end;
+    }
 
 .colors_blackReal_a68be {
     color: #000000;
 }
 
 .colors_whiteReal_f79f8 {
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 .colors_white_b5c87 {
-    color: #f2f2f7;
+    color: #F2F2F7;
 }
 
 .colors_whiteOrange_ba58d {
-    color: #fefeec;
+    color: #FEFEEC;
 }
 
 .colors_whiteSpanish_fd764 {
-    color: #e9e2bf;
+    color: #E9E2BF;
 }
 
 .colors_par_e836f {
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .colors_parSecondary_f260a {
@@ -673,39 +673,39 @@
 }
 
 .colors_parTertiary_d47f7 {
-    color: #37362e;
+    color: #37362E;
 }
 
 .colors_red_c02cb {
-    color: #ff2717;
+    color: #FF2717;
 }
 
 .colors_redDark_cdd63 {
-    color: #b70000;
+    color: #B70000;
 }
 
 .colors_yellow_ec93b {
-    color: #feab34;
+    color: #FEAB34;
 }
 
 .colors_orange_bbde2 {
-    color: #ee7000;
+    color: #EE7000;
 }
 
 .colors_cream_e3bb8 {
-    color: #ffdd99;
+    color: #FFDD99;
 }
 
 .colors_brown_bcb6a {
-    color: #cbac77;
+    color: #CBAC77;
 }
 
 .colors_greenBright_e6055 {
-    color: #80d43a;
+    color: #80D43A;
 }
 
 .colors_green_b6f21 {
-    color: #7ab300;
+    color: #7AB300;
 }
 
 .colors_greenDark_ce9bf {
@@ -713,27 +713,27 @@
 }
 
 .colors_blueBooster_b2848 {
-    color: #ccffff;
+    color: #CCFFFF;
 }
 
 .colors_blueTeamkiller_e7dd8 {
-    color: #09e2ff;
+    color: #09E2FF;
 }
 
 .colors_cred_ddb07 {
-    color: #ced9d9;
+    color: #CED9D9;
 }
 
 .colors_gold_c405a {
-    color: #ffc363;
+    color: #FFC363;
 }
 
 .colors_bond_bb139 {
-    color: #c9c9b6;
+    color: #C9C9B6;
 }
 
 .colors_prom_d1186 {
-    color: #a29b70;
+    color: #A29B70;
 }
 
 .renderers_noBreakWrapper_d986b {
@@ -763,35 +763,35 @@
     line-height: 1.3;
 }
 
-.TankName_base__sizeMedium_be079 {
-    color: #fefeec;
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
+    .TankName_base__sizeMedium_be079 {
+        color: #FEFEEC;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 1.2;
+    }
 
-.TankName_base__sizBig_b71dc {
-    color: #f2f2f7;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
+    .TankName_base__sizBig_b71dc {
+        color: #F2F2F7;
+        font-size: 36rem;
+        font-weight: 700;
+        line-height: 1.1;
+    }
 
-.TankName_base__typeWhite_af1ba {
-    color: #f2f2f7;
-}
+    .TankName_base__typeWhite_af1ba {
+        color: #F2F2F7;
+    }
 
-.TankName_base__typeWhiteSpanish_c7979 {
-    color: #e9e2bf;
-}
+    .TankName_base__typeWhiteSpanish_c7979 {
+        color: #E9E2BF;
+    }
 
-.TankName_base__typeWhiteOrange_eb635 {
-    color: #fefeec;
-}
+    .TankName_base__typeWhiteOrange_eb635 {
+        color: #FEFEEC;
+    }
 
 .TankName_base__typeColored_efc8d .TankName_level_fb3d0 {
-    color: #e9e2bf;
-}
+        color: #E9E2BF;
+    }
 
 .TankName_type_f3426 {
     width: 42rem;
@@ -801,40 +801,40 @@
 }
 
 .TankName_type__extraSmall_a1019 {
-    margin: 0 -9rem;
-    top: -8rem;
-}
+        margin: 0 -9rem;
+        top: -8rem;
+    }
 
 .TankName_type__medium_ad9e8 {
-    top: -16rem;
-}
+        top: -16rem;
+    }
 
 .TankName_type__big_cbcfe {
-    top: -10rem;
-}
+        top: -10rem;
+    }
 
 .TankName_type__medium_ad9e8,
-.TankName_type__big_cbcfe {
-    width: 83rem;
-    height: 73rem;
-    margin: 0 -23rem;
-}
+    .TankName_type__big_cbcfe {
+        width: 83rem;
+        height: 73rem;
+        margin: 0 -23rem;
+    }
 
 .TankName_type__eliteExtraSmall_af236 {
-    margin: 0 -6rem;
-}
+        margin: 0 -6rem;
+    }
 
 .TankName_type__eliteMedium_b273d {
-    margin: 0 -16rem;
-}
+        margin: 0 -16rem;
+    }
 
 .TankName_type__eliteBig_a7f6c {
-    margin: 0 -13rem;
-}
+        margin: 0 -13rem;
+    }
 
 .TankName_base__typeColored_efc8d .TankName_name_e6ffb {
-    color: #8c8c7e;
-}
+        color: #8C8C7E;
+    }
 
 .TankName_premiumIGR_bd935 {
     width: 10rem;
@@ -851,58 +851,53 @@
     width: 32rem;
     height: 22rem;
     border-radius: 2rem;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0,0,0, .4);
     position: relative;
     pointer-events: auto;
 }
 
-.EfficiencyIndicator_base__big_a8d2d {
-    align-items: center;
-    height: 26rem;
-}
+    .EfficiencyIndicator_base__big_a8d2d {
+        align-items: center;
+        height: 26rem;
+    }
 
-.EfficiencyIndicator_base__large_ac512 {
-    align-items: center;
-    width: auto;
-    height: 32rem;
-    padding: 0 2rem;
-}
+    .EfficiencyIndicator_base__large_ac512 {
+        align-items: center;
+        width: auto;
+        height: 32rem;
+        padding: 0 2rem;
+    }
 
-.EfficiencyIndicator_base__large_ac512.EfficiencyIndicator_base__untrained_f15c6 {
-    width: 42rem;
-}
+    .EfficiencyIndicator_base__large_ac512.EfficiencyIndicator_base__untrained_f15c6 {
+            width: 42rem;
+        }
 
 .EfficiencyIndicator_percent_a552f {
     margin-top: 2rem;
-    text-shadow:
-        0 0 12rem rgba(255, 0, 0, 0.7),
-        0 0 8rem rgba(226, 0, 0, 0.7);
+    text-shadow: 0 0 12rem rgba(255, 0, 0, 0.7), 0 0 8rem rgba(226, 0, 0, 0.7);
     position: relative;
-    color: #ffc3be;
+    color: #FFC3BE;
     font-size: 14rem;
     font-weight: 700;
     line-height: 1.15;
 }
 
 .EfficiencyIndicator_percent__full_d0b31 {
-    color: #ffffff;
-    text-shadow:
-        0 0 15rem rgb(238, 85, 34),
-        0 0 8rem rgba(254, 171, 52, 0.6),
-        0 0 4rem rgba(255, 127, 0, 0.25);
-    letter-spacing: -1rem;
-}
+        color: #FFFFFF;
+        text-shadow: 0 0 15rem rgb(238, 85, 34), 0 0 8rem rgba(254, 171, 52, 0.6), 0 0 4rem rgba(255, 127, 0, 0.25);
+        letter-spacing: -1rem;
+    }
 
 .EfficiencyIndicator_base__big_a8d2d .EfficiencyIndicator_percent_a552f {
-    position: relative;
-    top: -1rem;
-}
+        position: relative;
+        top: -1rem;
+    }
 
 .EfficiencyIndicator_base__large_ac512 .EfficiencyIndicator_percent_a552f {
-    font-size: 22rem;
-    position: relative;
-    top: -2rem;
-}
+        font-size: 22rem;
+        position: relative;
+        top: -2rem;
+    }
 
 .EfficiencyIndicator_icon_ec21c {
     width: 100%;
@@ -930,22 +925,22 @@
 }
 
 .VehicleSpecialization_tankLevel_f793f {
-    color: #fefeec;
+    color: #FEFEEC;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
 .VehicleSpecialization_tankName_af760 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
 .VehicleSpecialization_tankName__isPremium_d922a {
-    color: #ffc363;
-}
+        color: #FFC363;
+    }
 
 .VehicleSpecialization_efficiency_c7234 {
     margin: -1rem 4rem 0 5rem;
@@ -968,7 +963,7 @@
 }
 
 .VoiceoverInfo_voiceoverRoleLabel_d6b14 {
-    color: #fefeec;
+    color: #FEFEEC;
 }
 
 .VoiceoverInfo_roleIcon_baca9 {
@@ -976,11 +971,11 @@
     height: 18rem;
     margin: 1rem 0 0 2rem;
     background: no-repeat center / contain;
-    opacity: 0.65;
+    opacity: .65;
 }
 
 .TankmanTooltipApp_base_c400d {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -1033,3 +1028,4 @@
 .TankmanTooltipApp_footer_c64e0 {
     padding: 15rem 14rem;
 }
+

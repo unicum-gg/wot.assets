@@ -7,13 +7,13 @@
     position: relative;
 }
 
-.MultilineOverflow_base__truncated_b87b3 .MultilineOverflow_text_d0f75 {
-    opacity: 0;
-}
+    .MultilineOverflow_base__truncated_b87b3 .MultilineOverflow_text_d0f75 {
+            opacity: 0;
+        }
 
-.MultilineOverflow_base__truncated_b87b3 .MultilineOverflow_truncatedContent_a6589 {
-    opacity: 1;
-}
+    .MultilineOverflow_base__truncated_b87b3 .MultilineOverflow_truncatedContent_a6589 {
+            opacity: 1;
+        }
 
 .MultilineOverflow_singleLine_c3524 {
     white-space: pre;
@@ -43,72 +43,70 @@
     justify-content: center;
     align-items: center;
     border-radius: 2rem;
-    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 0 1rem rgba(0,0,0, 0.6);
     position: relative;
     cursor: pointer;
 }
 
-.CButton_base__main_dd05d,
-.CButton_base__primary_c75a2,
-.CButton_base__primaryGreen_ae65b,
-.CButton_base__primaryRed_b1341,
-.CButton_base__secondary_f2c20 {
-    background-size: 100% 100%;
-}
+    .CButton_base__main_dd05d,
+    .CButton_base__primary_c75a2,
+    .CButton_base__primaryGreen_ae65b,
+    .CButton_base__primaryRed_b1341,
+    .CButton_base__secondary_f2c20 {
+        background-size: 100% 100%;
+    }
 
-.CButton_base__main_dd05d {
-    background-image: url('R.images.gui.maps.icons.components.button.back_main');
-}
+    .CButton_base__main_dd05d {
+        background-image: url('R.images.gui.maps.icons.components.button.back_main');
+    }
 
-.CButton_base__primary_c75a2 {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
-}
+    .CButton_base__primary_c75a2 {
+        background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+    }
 
-.CButton_base__primaryGreen_ae65b {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
-}
+    .CButton_base__primaryGreen_ae65b {
+        background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+    }
 
-.CButton_base__primaryRed_b1341 {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
-}
+    .CButton_base__primaryRed_b1341 {
+        background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+    }
 
-.CButton_base__secondary_f2c20 {
-    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
-}
+    .CButton_base__secondary_f2c20 {
+        background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+    }
 
-.CButton_base__ghost_f452b {
-    border-radius: 3rem;
-    box-shadow:
-        0 0 0 1rem rgba(0, 0, 0, 0.3),
-        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
-    background-color: rgba(0, 0, 0, 0.15);
-}
+    .CButton_base__ghost_f452b {
+        border-radius: 3rem;
+        box-shadow: 0 0 0 1rem rgba(0,0,0, 0.3), 0 0 0 1rem rgba(255,255,255, 0.15) inset;
+        background-color: rgba(0,0,0, 0.15);
+    }
 
-.CButton_base__extraSmall_e1273 {
-    min-height: 17rem;
-    padding: 0 16rem;
-}
+    .CButton_base__extraSmall_e1273 {
+        min-height: 17rem;
+        padding: 0 16rem;
+    }
 
-.CButton_base__small_c20a3,
-.CButton_base__medium_ef59a {
-    padding: 0 20rem;
-}
+    .CButton_base__small_c20a3,
+    .CButton_base__medium_ef59a {
+        padding: 0 20rem;
+    }
 
-.CButton_base__small_c20a3 {
-    min-height: 18rem;
-}
+    .CButton_base__small_c20a3 {
+        min-height: 18rem;
+    }
 
-.CButton_base__medium_ef59a {
-    min-height: 32rem;
-}
+    .CButton_base__medium_ef59a {
+        min-height: 32rem;
+    }
 
-.CButton_base__large_bafd5 {
-    min-height: 48rem;
-}
+    .CButton_base__large_bafd5 {
+        min-height: 48rem;
+    }
 
-.CButton_base__disabled_eef7a {
-    cursor: default;
-}
+    .CButton_base__disabled_eef7a {
+        cursor: default;
+    }
 /* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
@@ -124,20 +122,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
 }
 .CButton_base__main_dd05d .CButton_back_e957b {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+    }
 .CButton_base__primary_c75a2 .CButton_back_e957b {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+    }
 .CButton_base__primaryGreen_ae65b .CButton_back_e957b {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+    }
 .CButton_base__primaryRed_b1341 .CButton_back_e957b {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+    }
 .CButton_base__secondary_f2c20 .CButton_back_e957b {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+    }
 .CButton_texture_ccd7e {
     background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
     background-size: 155rem 31rem;
@@ -157,9 +155,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transition: box-shadow 0.16s ease-in-out;
 }
 .CButton_base__focus_b0875 .CButton_state_f2bb4 {
-    border-radius: 2rem;
-    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
-}
+        border-radius: 2rem;
+        box-shadow: inset 0 0 2rem 1rem rgba(255,85,0, 0.2);
+    }
 .CButton_stateHighlightHover_bd0cb,
 .CButton_stateHighlightActive_e9a8a,
 .CButton_stateDisabled_ed209 {
@@ -170,44 +168,39 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
 }
 .CButton_stateHighlightHover_bd0cb {
-    background-image: linear-gradient(
-        180deg,
-        rgba(252, 248, 235, 0.25) 0%,
-        rgba(252, 248, 235, 0.1) 50%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background-image: linear-gradient(180deg, rgba(252,248,235, 0.25) 0%, rgba(252,248,235, 0.1) 50%, rgba(255,255,255, 0) 100%);
     opacity: 0;
 }
 .CButton_base_bb13f:hover .CButton_stateHighlightHover_bd0cb {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .CButton_base_bb13f:active .CButton_stateHighlightHover_bd0cb {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .CButton_base__disabled_eef7a:hover .CButton_stateHighlightHover_bd0cb {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .CButton_base__ghost_f452b .CButton_stateHighlightHover_bd0cb {
-    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
-    background-color: rgba(8, 6, 0, 0.18);
-    background-image: none;
-}
+        box-shadow: 0 15rem 12rem 0 rgba(242,242,230, 0.11) inset;
+        background-color: rgba(8,6,0, 0.18);
+        background-image: none;
+    }
 .CButton_stateHighlightActive_e9a8a {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+    background-image: linear-gradient(180deg, rgba(0,0,0, 0.3) 0%, rgba(0,0,0, 0.15) 100%);
     opacity: 0;
 }
 .CButton_base__highlightActive_db27d .CButton_stateHighlightActive_e9a8a {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .CButton_stateDisabled_ed209 {
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0,0,0, 0.25);
     background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
     background-size: 15rem 15rem;
     visibility: hidden;
 }
 .CButton_base__disabled_eef7a .CButton_stateDisabled_ed209 {
-    visibility: inherit;
-}
+        visibility: inherit;
+    }
 .CButton_content_a99fc {
     display: flex;
     align-items: center;
@@ -219,38 +212,38 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(-1rem);
 }
 .CButton_content_a99fc[lang='ja'],
-.CButton_content_a99fc[lang='ko'],
-.CButton_content_a99fc[lang='zh_tw'],
-.CButton_content_a99fc[lang='zh_sg'],
-.CButton_content_a99fc[lang='zh_cn'],
-.CButton_content_a99fc[lang='th'] {
-    font-weight: 400;
-}
+    .CButton_content_a99fc[lang='ko'],
+    .CButton_content_a99fc[lang='zh_tw'],
+    .CButton_content_a99fc[lang='zh_sg'],
+    .CButton_content_a99fc[lang='zh_cn'],
+    .CButton_content_a99fc[lang='th'] {
+        font-weight: 400;
+    }
 .CButton_base__main_dd05d .CButton_content_a99fc,
-.CButton_base__primaryRed_b1341 .CButton_content_a99fc {
-    text-shadow: 0 -1rem 1rem #600;
-}
+    .CButton_base__primaryRed_b1341 .CButton_content_a99fc {
+        text-shadow: 0 -1rem 1rem #600;
+    }
 .CButton_base__secondary_f2c20 .CButton_content_a99fc {
-    color: rgba(254, 254, 236, 0.75);
-}
+        color: rgba(254,254,236, 0.75);
+    }
 .CButton_base__primaryGreen_ae65b .CButton_content_a99fc {
-    text-shadow: 0 -1rem 1rem #1c2502;
-}
+        text-shadow: 0 -1rem 1rem #1c2502;
+    }
 .CButton_base__extraSmall_e1273 .CButton_content_a99fc {
-    font-size: 12rem;
-}
+        font-size: 12rem;
+    }
 .CButton_base__small_c20a3 .CButton_content_a99fc {
-    font-size: 14rem;
-}
+        font-size: 14rem;
+    }
 .CButton_base__medium_ef59a .CButton_content_a99fc {
-    font-size: 15rem;
-}
+        font-size: 15rem;
+    }
 .CButton_base__large_bafd5 .CButton_content_a99fc {
-    font-size: 18rem;
-}
+        font-size: 18rem;
+    }
 .CButton_base__disabled_eef7a .CButton_content_a99fc {
-    opacity: 0.6;
-}
+        opacity: 0.6;
+    }
 
 .SubscriptionItem_base_d3ab9 {
     --card-width: var(--base-width);
@@ -271,227 +264,225 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: pointer;
 }
 
-.SubscriptionItem_base_d3ab9:hover .SubscriptionItem_subscriptionImage_c5fc6 {
-    filter: brightness(1.13);
+    .SubscriptionItem_base_d3ab9:hover .SubscriptionItem_subscriptionImage_c5fc6 {
+            filter: brightness(1.13);
+        }
+
+    .SubscriptionItem_base__rewardsClaimed_c0d4d .SubscriptionItem_activateButtonLight_f3e9c {
+            width: 233rem;
+            height: 115rem;
+            background: url('R.images.gui.maps.icons.player_subscriptions.claimed_light') center center / cover;
+            opacity: 0.7;
+            top: -70rem;
+            right: -5rem;
+        }
+
+    .SubscriptionItem_base__rewardsClaimed_c0d4d.SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_activateButtonLight_f3e9c {
+                width: 192rem;
+                height: 103rem;
+                top: -63rem;
+                right: -40rem;
+            }
+
+    .SubscriptionItem_base__rewardsClaimed_c0d4d.SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_activateButtonLight_f3e9c {
+                width: 192rem;
+                height: 103rem;
+                top: -62rem;
+                right: -15rem;
+            }
+
+    .mediaSmall .SubscriptionItem_base_d3ab9 {
+        --footer-margin: 30rem;
+        --subscription-text-left-distance: 30rem;
+        --image-width: 24rem;
 }
 
-.SubscriptionItem_base__rewardsClaimed_c0d4d .SubscriptionItem_activateButtonLight_f3e9c {
-    width: 233rem;
-    height: 115rem;
-    background: url('R.images.gui.maps.icons.player_subscriptions.claimed_light') center center / cover;
-    opacity: 0.7;
-    top: -70rem;
-    right: -5rem;
+    .mediaSmall .SubscriptionItem_base_d3ab9 .SubscriptionItem_subscriptionText_ae386 {
+            width: 500rem;
+        }
+
+    .mediaSmall .SubscriptionItem_base_d3ab9 .SubscriptionItem_refreshTimer_de184 {
+            top: 22rem;
+            left: 30rem;
+        }
+
+    .mediaLarge .SubscriptionItem_base_d3ab9 {
+        --footer-margin: 50rem;
+        --subscription-text-left-distance: 50rem;
+        --image-width: 32rem;
 }
 
-.SubscriptionItem_base__rewardsClaimed_c0d4d.SubscriptionItem_base__oneThird_adb43
-    .SubscriptionItem_activateButtonLight_f3e9c {
-    width: 192rem;
-    height: 103rem;
-    top: -63rem;
-    right: -40rem;
+    .mediaLarge .SubscriptionItem_base_d3ab9 .SubscriptionItem_subscriptionText_ae386 {
+            width: 500rem;
+        }
+
+    .mediaLarge .SubscriptionItem_base_d3ab9 .SubscriptionItem_refreshTimer_de184 {
+            top: 30rem;
+            left: 22rem;
+        }
+
+    .SubscriptionItem_base__oneThird_adb43 {
+        --card-width: 260rem;
+        --footer-margin: 20rem;
+    }
+
+    .SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_footerText_e071d {
+                bottom: 130rem;
+            }
+
+    .mediaMedium .SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_footerText_e071d {
+                    bottom: 180rem;
 }
 
-.SubscriptionItem_base__rewardsClaimed_c0d4d.SubscriptionItem_base__twoThirds_c328d
-    .SubscriptionItem_activateButtonLight_f3e9c {
-    width: 192rem;
-    height: 103rem;
-    top: -62rem;
-    right: -15rem;
+    .mediaLarge .SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_footerText_e071d {
+                    bottom: 230rem;
 }
 
-.mediaSmall .SubscriptionItem_base_d3ab9 {
-    --footer-margin: 30rem;
-    --subscription-text-left-distance: 30rem;
-    --image-width: 24rem;
+    .SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_footerTitle_b3f13 {
+                display: block;
+                height: auto;
+            }
+
+    .SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_footerDescription_a0afb {
+                max-height: 100rem;
+                opacity: 1;
+            }
+
+    .SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_subscriptionImage_c5fc6 {
+                filter: none;
+                opacity: 0.1;
+            }
+
+    .SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_subscriptionImage_c5fc6 {
+            background-image: var(--imageUriSmall);
+        }
+
+    .SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_claimedText_ff6d6 {
+            margin-right: 20rem;
+        }
+
+    .SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_activateButton_ffcbd {
+            min-width: 108rem;
+            height: 20rem;
+            padding: 0;
+        }
+
+    .SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_activateButtonLight_f3e9c {
+            width: 411rem;
+            height: 317rem;
+            top: -150rem;
+            right: -156rem;
+        }
+
+    .SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_footer_ba717 {
+            max-width: 80rem;
+        }
+
+    .mediaMedium .SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_footer_ba717 {
+                max-width: 130rem;
 }
 
-.mediaSmall .SubscriptionItem_base_d3ab9 .SubscriptionItem_subscriptionText_ae386 {
-    width: 500rem;
+    .mediaLarge .SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_footer_ba717 {
+                max-width: 183rem;
 }
 
-.mediaSmall .SubscriptionItem_base_d3ab9 .SubscriptionItem_refreshTimer_de184 {
-    top: 22rem;
-    left: 30rem;
+    .SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_cardFooter_a0e15 {
+            justify-content: space-between;
+        }
+
+    .mediaSmall .SubscriptionItem_base__oneThird_adb43 {
+            --card-width: 312rem;
+            --footer-margin: 20rem;
+            --subscription-text-left-distance: 20rem;
 }
 
-.mediaLarge .SubscriptionItem_base_d3ab9 {
-    --footer-margin: 50rem;
-    --subscription-text-left-distance: 50rem;
-    --image-width: 32rem;
+    .mediaLarge .SubscriptionItem_base__oneThird_adb43 {
+            --card-width: 364rem;
+            --footer-margin: 20rem;
+            --subscription-text-left-distance: 20rem;
 }
 
-.mediaLarge .SubscriptionItem_base_d3ab9 .SubscriptionItem_subscriptionText_ae386 {
-    width: 500rem;
+    .SubscriptionItem_base__twoThirds_c328d {
+        --card-width: 535rem;
+        --footer-margin: 20rem;
+        --subscription-text-left-distance: 20rem;
+    }
+
+    .SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_footerText_e071d {
+                bottom: 150rem;
+            }
+
+    .mediaMedium .SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_footerText_e071d {
+                    bottom: 180rem;
 }
 
-.mediaLarge .SubscriptionItem_base_d3ab9 .SubscriptionItem_refreshTimer_de184 {
-    top: 30rem;
-    left: 22rem;
+    .mediaLarge .SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_footerText_e071d {
+                    bottom: 250rem;
 }
 
-.SubscriptionItem_base__oneThird_adb43 {
-    --card-width: 260rem;
-    --footer-margin: 20rem;
+    .SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_footerDescription_a0afb {
+                opacity: 1;
+            }
+
+    .SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_footerTitle_b3f13 {
+                display: block;
+                height: auto;
+            }
+
+    .SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_subscriptionImage_c5fc6 {
+                filter: none;
+                opacity: 0.1;
+            }
+
+    .SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_cardFooter_a0e15 {
+            justify-content: space-between;
+        }
+
+    .SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_subscriptionImage_c5fc6 {
+            background-image: var(--imageUriMedium);
+        }
+
+    .SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_activateButton_ffcbd {
+            min-width: 108rem;
+            height: 20rem;
+            padding: 0;
+        }
+
+    .SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_activateButton_manage_ee2f9 {
+                min-width: 160rem;
+                height: 32rem;
+                padding: 0 10rem;
+            }
+
+    .SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_activateButton_internal_ec415 {
+                padding: 0 10rem;
+            }
+
+    .SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_activateButtonLight_f3e9c {
+            width: 493rem;
+            height: 317rem;
+            top: -145rem;
+            right: -176rem;
+        }
+
+    .SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_cancelledLight_ec0cb {
+            bottom: -30rem;
+        }
+
+    .mediaSmall .SubscriptionItem_base__twoThirds_c328d {
+            --card-width: 643rem;
+            --footer-margin: 20rem;
+            --subscription-text-left-distance: 20rem;
 }
 
-.SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_footerText_e071d {
-    bottom: 130rem;
-}
+    .mediaSmall .SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_cardFooter_a0e15 {
+                justify-content: space-between;
+            }
 
-.mediaMedium .SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_footerText_e071d {
-    bottom: 180rem;
-}
-
-.mediaLarge .SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_footerText_e071d {
-    bottom: 230rem;
-}
-
-.SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_footerTitle_b3f13 {
-    display: block;
-    height: auto;
-}
-
-.SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_footerDescription_a0afb {
-    max-height: 100rem;
-    opacity: 1;
-}
-
-.SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_subscriptionImage_c5fc6 {
-    filter: none;
-    opacity: 0.1;
-}
-
-.SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_subscriptionImage_c5fc6 {
-    background-image: var(--imageUriSmall);
-}
-
-.SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_claimedText_ff6d6 {
-    margin-right: 20rem;
-}
-
-.SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_activateButton_ffcbd {
-    min-width: 108rem;
-    height: 20rem;
-    padding: 0;
-}
-
-.SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_activateButtonLight_f3e9c {
-    width: 411rem;
-    height: 317rem;
-    top: -150rem;
-    right: -156rem;
-}
-
-.SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_footer_ba717 {
-    max-width: 80rem;
-}
-
-.mediaMedium .SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_footer_ba717 {
-    max-width: 130rem;
-}
-
-.mediaLarge .SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_footer_ba717 {
-    max-width: 183rem;
-}
-
-.SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_cardFooter_a0e15 {
-    justify-content: space-between;
-}
-
-.mediaSmall .SubscriptionItem_base__oneThird_adb43 {
-    --card-width: 312rem;
-    --footer-margin: 20rem;
-    --subscription-text-left-distance: 20rem;
-}
-
-.mediaLarge .SubscriptionItem_base__oneThird_adb43 {
-    --card-width: 364rem;
-    --footer-margin: 20rem;
-    --subscription-text-left-distance: 20rem;
-}
-
-.SubscriptionItem_base__twoThirds_c328d {
-    --card-width: 535rem;
-    --footer-margin: 20rem;
-    --subscription-text-left-distance: 20rem;
-}
-
-.SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_footerText_e071d {
-    bottom: 150rem;
-}
-
-.mediaMedium .SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_footerText_e071d {
-    bottom: 180rem;
-}
-
-.mediaLarge .SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_footerText_e071d {
-    bottom: 250rem;
-}
-
-.SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_footerDescription_a0afb {
-    opacity: 1;
-}
-
-.SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_footerTitle_b3f13 {
-    display: block;
-    height: auto;
-}
-
-.SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_subscriptionImage_c5fc6 {
-    filter: none;
-    opacity: 0.1;
-}
-
-.SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_cardFooter_a0e15 {
-    justify-content: space-between;
-}
-
-.SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_subscriptionImage_c5fc6 {
-    background-image: var(--imageUriMedium);
-}
-
-.SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_activateButton_ffcbd {
-    min-width: 108rem;
-    height: 20rem;
-    padding: 0;
-}
-
-.SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_activateButton_manage_ee2f9 {
-    min-width: 160rem;
-    height: 32rem;
-    padding: 0 10rem;
-}
-
-.SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_activateButton_internal_ec415 {
-    padding: 0 10rem;
-}
-
-.SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_activateButtonLight_f3e9c {
-    width: 493rem;
-    height: 317rem;
-    top: -145rem;
-    right: -176rem;
-}
-
-.SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_cancelledLight_ec0cb {
-    bottom: -30rem;
-}
-
-.mediaSmall .SubscriptionItem_base__twoThirds_c328d {
-    --card-width: 643rem;
-    --footer-margin: 20rem;
-    --subscription-text-left-distance: 20rem;
-}
-
-.mediaSmall .SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_cardFooter_a0e15 {
-    justify-content: space-between;
-}
-
-.mediaLarge .SubscriptionItem_base__twoThirds_c328d {
-    --card-width: 750rem;
-    --footer-margin: 20rem;
-    --subscription-text-left-distance: 20rem;
+    .mediaLarge .SubscriptionItem_base__twoThirds_c328d {
+            --card-width: 750rem;
+            --footer-margin: 20rem;
+            --subscription-text-left-distance: 20rem;
 }
 
 .SubscriptionItem_cardFooter_a0e15 {
@@ -512,15 +503,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .SubscriptionItem_subscriptionText_ae386 {
-    padding-left: 54rem;
+        padding-left: 54rem;
 }
 
 .mediaLarge .SubscriptionItem_subscriptionText_ae386 {
-    padding-left: 86rem;
+        padding-left: 86rem;
 }
 
 .SubscriptionItem_subscriptionHeader_b3830 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 28rem;
     font-weight: 700;
     line-height: 1.1;
@@ -529,7 +520,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .SubscriptionItem_subscriptionDescription_c8af1,
 .SubscriptionItem_footerDescription_a0afb {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
@@ -553,10 +544,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .SubscriptionItem_ctaContainer_row_a98bc {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 
 .SubscriptionItem_activateButton_ffcbd {
     justify-content: center;
@@ -566,8 +557,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .SubscriptionItem_activateButton_manage_ee2f9 {
-    min-width: 160rem;
-}
+        min-width: 160rem;
+    }
 
 .SubscriptionItem_linkIcon_bdb30 {
     width: 11rem;
@@ -602,7 +593,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .SubscriptionItem_claimedText_ff6d6 {
-    color: #ffffff;
+    color: #FFFFFF;
     font-size: 14rem;
     font-weight: 700;
     line-height: 1.15;
@@ -611,15 +602,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .SubscriptionItem_claimedText_internal_db83f {
-    margin-right: 20rem;
-}
+        margin-right: 20rem;
+    }
 
 .SubscriptionItem_claimedText_light_e30fa {
-    color: #ffffff;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
+        color: #FFFFFF;
+        font-size: 12rem;
+        font-weight: 400;
+        line-height: 1.3;
+    }
 
 .SubscriptionItem_claimedIcon_b5850 {
     width: 16rem;
@@ -630,8 +621,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .SubscriptionItem_claimedIcon_internal_b9276 {
-    margin-top: 0;
-}
+        margin-top: 0;
+    }
 
 .SubscriptionItem_warningIcon_ed543 {
     width: 16rem;
@@ -652,8 +643,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .SubscriptionItem_spinner__visible_f18ea {
-    display: block;
-}
+        display: block;
+    }
 
 @keyframes SubscriptionItem_pending-spin_a7a61 {
     0% {
@@ -666,7 +657,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .SubscriptionItem_refreshTimer_de184 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -681,7 +672,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .SubscriptionItem_footer_ba717 {
     margin-left: var(--footer-margin);
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 16rem;
     font-weight: 700;
     line-height: 20rem;
@@ -699,8 +690,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaLarge .SubscriptionItem_footerText_e071d {
-    padding-left: 56rem;
-    padding-right: 56rem;
+        padding-left: 56rem;
+        padding-right: 56rem;
 }
 
 .SubscriptionItem_footerTitle_b3f13 {
@@ -710,7 +701,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     text-shadow: 0 0 1rem #000;
     position: relative;
     transition: height 0.2s;
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 22rem;
     font-weight: 700;
     line-height: 1.2;
@@ -723,97 +714,97 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .SubscriptionItem_wotSubscriptionStatus_glow_f564d {
-    width: 364rem;
-    height: 240rem;
-    position: absolute;
-    top: 0rem;
-    left: 0rem;
-}
+        width: 364rem;
+        height: 240rem;
+        position: absolute;
+        top: 0rem;
+        left: 0rem;
+    }
 
 .SubscriptionItem_wotSubscriptionStatus_icon_active_a9c95 {
-    width: 24rem;
-    height: 24rem;
-    margin-top: -20rem;
-    transform: translateX(-5rem);
-}
+            width: 24rem;
+            height: 24rem;
+            margin-top: -20rem;
+            transform: translateX(-5rem);
+        }
 
 .mediaLarge .SubscriptionItem_wotSubscriptionStatus_icon_active_a9c95 {
-    width: 36rem;
-    height: 32rem;
-    margin-top: -20rem;
+                width: 36rem;
+                height: 32rem;
+                margin-top: -20rem;
 }
 
 .SubscriptionItem_base__pro_e5513 .SubscriptionItem_wotSubscriptionStatus_icon_active_a9c95 {
-    margin-top: -40rem;
-}
+                margin-top: -40rem;
+            }
 
 .mediaLarge .SubscriptionItem_base__pro_e5513 .SubscriptionItem_wotSubscriptionStatus_icon_active_a9c95 {
-    margin-top: -45rem;
+                    margin-top: -45rem;
 }
 
 .SubscriptionItem_wotSubscriptionStatus_icon_inactive_d321b {
-    width: 24rem;
-    height: 24rem;
-    margin-top: -18rem;
-    transform: translateX(-5rem);
-}
+            width: 24rem;
+            height: 24rem;
+            margin-top: -18rem;
+            transform: translateX(-5rem);
+        }
 
 .mediaLarge .SubscriptionItem_wotSubscriptionStatus_icon_inactive_d321b {
-    width: 36rem;
-    height: 34rem;
-    margin-top: -22rem;
+                width: 36rem;
+                height: 34rem;
+                margin-top: -22rem;
 }
 
 .SubscriptionItem_base__pro_e5513 .SubscriptionItem_wotSubscriptionStatus_icon_inactive_d321b {
-    margin-top: -38rem;
-}
+                margin-top: -38rem;
+            }
 
 .mediaLarge .SubscriptionItem_base__pro_e5513 .SubscriptionItem_wotSubscriptionStatus_icon_inactive_d321b {
-    margin-top: -41rem;
+                    margin-top: -41rem;
 }
 
 .SubscriptionItem_wotSubscriptionStatus_text_d41db {
-    color: #ffffff;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-end;
-}
+        color: #FFFFFF;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
 
 .SubscriptionItem_wotSubscriptionStatus_active_c6bac {
-    color: #80d43a;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 0;
-}
+        color: #80D43A;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 0;
+    }
 
 .mediaLarge .SubscriptionItem_wotSubscriptionStatus_active_c6bac {
-    color: #80d43a;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 7rem;
+            color: #80D43A;
+            font-size: 28rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 7rem;
 }
 
 .SubscriptionItem_wotSubscriptionStatus_inactive_d4abf {
-    color: #ee7000;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 0;
-}
+        color: #EE7000;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 0;
+    }
 
 .mediaLarge .SubscriptionItem_wotSubscriptionStatus_inactive_d4abf {
-    color: #ee7000;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 7rem;
+            color: #EE7000;
+            font-size: 28rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 7rem;
 }
 
 .SubscriptionItem_wotSubscriptionStatusContainer_e2c87 {
@@ -827,7 +818,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaLarge .SubscriptionItem_wotSubscriptionStatusContainer_e2c87 {
-    top: 28rem;
+        top: 28rem;
 }
 
 .Countdown_base_d0c0c {
@@ -842,8 +833,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Countdown_description_ee2e0 {
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
+

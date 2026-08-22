@@ -13,8 +13,8 @@
 }
 
 .SceneWrapper_grab__down_dea5d {
-    cursor: all-scroll;
-}
+        cursor: all-scroll;
+    }
 
 .Spinner_base_c591d {
     width: 260rem;
@@ -26,7 +26,7 @@
 }
 
 .Spinner_caption_a27b6 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 12rem;
     text-align: center;
     white-space: pre;
@@ -46,7 +46,7 @@
     position: absolute;
     top: -4rem;
     left: 0;
-    animation: Spinner_spin_a092a 0.28s linear infinite;
+    animation: Spinner_spin_a092a .28s linear infinite;
 }
 
 .Spinner_logo_a5cfa {
@@ -142,12 +142,12 @@
 }
 
 .SubViewContainer_subView__showing_e8f27 {
-    animation-name: SubViewContainer_fadeIn_c0fb3;
-}
+        animation-name: SubViewContainer_fadeIn_c0fb3;
+    }
 
 .SubViewContainer_subView__hiding_a6e22 {
-    animation-name: SubViewContainer_fade2Out_a2de1;
-}
+        animation-name: SubViewContainer_fade2Out_a2de1;
+    }
 
 @keyframes CurtainViewApp_showIn_f3700 {
     from {
@@ -214,25 +214,25 @@
 }
 
 .CurtainViewApp_base__hidden_dda2c {
-    transform: translateX(-100%);
-}
+        transform: translateX(-100%);
+    }
 
 .CurtainViewApp_base__opening_df678 {
-    animation-name: CurtainViewApp_showIn_f3700;
-}
+        animation-name: CurtainViewApp_showIn_f3700;
+    }
 
 .CurtainViewApp_base__opened_c7257 {
-    transform: translateX(0%);
-}
+        transform: translateX(0%);
+    }
 
 .CurtainViewApp_base__hiding_dcb60 {
-    animation-name: CurtainViewApp_showOut_dac6a;
-}
+        animation-name: CurtainViewApp_showOut_dac6a;
+    }
 
 .CurtainViewApp_base__small_d68ec,
-.CurtainViewApp_base__extraSmall_fa30c {
-    width: 386rem;
-}
+    .CurtainViewApp_base__extraSmall_fa30c {
+        width: 386rem;
+    }
 
 .CurtainViewApp_waiting_be437 {
     position: absolute;
@@ -241,6 +241,7 @@
     bottom: 0;
     left: 0;
     background-color: #0f0d0d;
-    opacity: 0.8;
+    opacity: .8;
     z-index: 1;
 }
+

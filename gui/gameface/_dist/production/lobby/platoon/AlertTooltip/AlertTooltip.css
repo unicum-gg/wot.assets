@@ -4,12 +4,12 @@
 }
 
 .TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.atlases.components.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.atlases.components.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
 
 .FormatText_base_f27a4 {
     display: flex;
@@ -46,3 +46,4 @@
     margin: 1rem 11rem 0 -1rem;
     background: url('R.images.gui.maps.icons.library.alertIcon') center / contain no-repeat;
 }
+

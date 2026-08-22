@@ -4,12 +4,12 @@
 }
 
 .TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.atlases.components.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.atlases.components.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
 
 .TooltipAdvancedFooter_base_b214f {
     display: flex;
@@ -48,11 +48,11 @@
 }
 
 .InfoBlock_param_d28ef {
-    color: #e9e2bf;
+    color: #E9E2BF;
 }
 
 .MentorAssignmentTooltipApp_base_eb382 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -70,7 +70,7 @@
 }
 
 .MentorAssignmentTooltipApp_title_ae672 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
@@ -89,12 +89,12 @@
     padding: 20rem;
 }
 
-.WarningBlock_base__accent_b0b82 {
-    background: url('R.images.gui.maps.icons.tooltip.tooltip_accent_bg') no-repeat center / cover;
-}
+    .WarningBlock_base__accent_b0b82 {
+        background: url('R.images.gui.maps.icons.tooltip.tooltip_accent_bg') no-repeat center / cover;
+    }
 
 .WarningBlock_text_e0dd4 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -102,25 +102,26 @@
 }
 
 .WarningBlock_base__crewRemove_f21ea .WarningBlock_text_e0dd4 {
-    color: #faac3c;
-}
+        color: #faac3c;
+    }
 
 .WarningBlock_base__freeSkills_b253b .WarningBlock_text_e0dd4 {
-    color: #8c8c7e;
-}
+        color: #8c8c7e;
+    }
 
 .WarningBlock_icon_ab7ac {
     margin-top: 2rem;
 }
 
 .WarningBlock_base__crewRemove_f21ea .WarningBlock_icon_ab7ac {
-    width: 17rem;
-    height: 17rem;
-    background: url('R.images.gui.maps.icons.library.attentionIconFilled') no-repeat center / cover;
-}
+        width: 17rem;
+        height: 17rem;
+        background: url('R.images.gui.maps.icons.library.attentionIconFilled') no-repeat center / cover;
+    }
 
 .WarningBlock_base__freeSkills_b253b .WarningBlock_icon_ab7ac {
-    width: 14rem;
-    height: 14rem;
-    background: url('R.images.gui.maps.icons.crew.profile.zero_icon') no-repeat center / cover;
-}
+        width: 14rem;
+        height: 14rem;
+        background: url('R.images.gui.maps.icons.crew.profile.zero_icon') no-repeat center / cover;
+    }
+

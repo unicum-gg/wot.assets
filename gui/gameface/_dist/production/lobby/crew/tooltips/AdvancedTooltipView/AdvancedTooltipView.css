@@ -4,12 +4,12 @@
 }
 
 .TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.atlases.components.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.atlases.components.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
 
 .AdvancedTooltipViewApp_base_aceef {
     display: flex;
@@ -19,7 +19,7 @@
 }
 
 .AdvancedTooltipViewApp_header_f7838 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
@@ -34,5 +34,6 @@
 
 .AdvancedTooltipViewApp_description_ae089 {
     padding: 10rem 20rem 20rem;
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
+

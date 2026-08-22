@@ -4,10 +4,10 @@
     position: relative;
 }
 
-.DogTag_base__big_a0a51 {
-    width: 400rem;
-    height: 240rem;
-}
+    .DogTag_base__big_a0a51 {
+        width: 400rem;
+        height: 240rem;
+    }
 
 .DogTag_engraving_ca9f2,
 .DogTag_background_c6df2 {
@@ -28,20 +28,20 @@
     position: relative;
 }
 
-.AnimatedDogTag_base__small_cbafa {
-    width: 300rem;
-    height: 180rem;
-}
+    .AnimatedDogTag_base__small_cbafa {
+        width: 300rem;
+        height: 180rem;
+    }
 
-.AnimatedDogTag_base__medium_e49a0 {
-    width: 400rem;
-    height: 240rem;
-}
+    .AnimatedDogTag_base__medium_e49a0 {
+        width: 400rem;
+        height: 240rem;
+    }
 
-.AnimatedDogTag_base__large_ebf4c {
-    width: 500rem;
-    height: 300rem;
-}
+    .AnimatedDogTag_base__large_ebf4c {
+        width: 500rem;
+        height: 300rem;
+    }
 
 .AnimatedDogTag_shadow_de8c5 {
     width: 200rem;
@@ -55,19 +55,19 @@
 }
 
 .AnimatedDogTag_base__small_cbafa .AnimatedDogTag_shadow_de8c5 {
-    width: 300rem;
-    height: 200rem;
-}
+        width: 300rem;
+        height: 200rem;
+    }
 
 .AnimatedDogTag_base__medium_e49a0 .AnimatedDogTag_shadow_de8c5 {
-    width: 406rem;
-    height: 270rem;
-}
+        width: 406rem;
+        height: 270rem;
+    }
 
 .AnimatedDogTag_base__large_ebf4c .AnimatedDogTag_shadow_de8c5 {
-    width: 508rem;
-    height: 338rem;
-}
+        width: 508rem;
+        height: 338rem;
+    }
 
 .AnimatedDogTag_backplateBox_d78df {
     position: absolute;
@@ -92,20 +92,20 @@
 }
 
 .AnimatedDogTag_base__extraSmall_d2bad .AnimatedDogTag_backplate_e119a {
-    transform: translateY(57%) rotate(4deg);
-}
+        transform: translateY(57%) rotate(4deg);
+    }
 
 .AnimatedDogTag_base__small_cbafa .AnimatedDogTag_backplate_e119a {
-    padding-top: 40rem;
-}
+        padding-top: 40rem;
+    }
 
 .AnimatedDogTag_base__medium_e49a0 .AnimatedDogTag_backplate_e119a {
-    padding-top: 54rem;
-}
+        padding-top: 54rem;
+    }
 
 .AnimatedDogTag_base__large_ebf4c .AnimatedDogTag_backplate_e119a {
-    padding-top: 64rem;
-}
+        padding-top: 64rem;
+    }
 
 .AnimatedDogTag_dogTag_d21e8 {
     width: 100%;
@@ -126,20 +126,20 @@
 }
 
 .AnimatedDogTag_base__extraSmall_d2bad .AnimatedDogTag_videoBox_b5a8c {
-    transform: scale(0.5);
-}
+        transform: scale(.5);
+    }
 
 .AnimatedDogTag_base__small_cbafa .AnimatedDogTag_videoBox_b5a8c {
-    transform: scale(0.75);
-}
+        transform: scale(.75);
+    }
 
 .AnimatedDogTag_base__medium_e49a0 .AnimatedDogTag_videoBox_b5a8c {
-    transform: scale(1);
-}
+        transform: scale(1);
+    }
 
 .AnimatedDogTag_base__large_ebf4c .AnimatedDogTag_videoBox_b5a8c {
-    transform: scale(1.25);
-}
+        transform: scale(1.25);
+    }
 
 .AnimatedDogTag_video_a8dec {
     width: 800rem;
@@ -149,14 +149,14 @@
 .Counter_base_f3549 {
     display: flex;
     align-items: center;
-    color: rgba(201, 200, 196, 0.8);
-    filter: drop-shadow(0 2rem 3rem #000) drop-shadow(0 2rem 3rem rgba(0, 0, 0, 0.3));
+    color: rgba(201, 200, 196, .8);
+    filter: drop-shadow(0 2rem 3rem #000) drop-shadow(0 2rem 3rem rgba(0,0,0, .3));
     mix-blend-mode: hard-light;
 }
 
-.Counter_base__extraSmall_f013d {
-    flex-direction: column;
-}
+    .Counter_base__extraSmall_f013d {
+        flex-direction: column;
+    }
 
 .Counter_text_f8d92 {
     max-width: 100rem;
@@ -169,19 +169,19 @@
 }
 
 .Counter_base__extraSmall_f013d .Counter_text_f8d92 {
-    max-width: initial;
-    white-space: normal;
-}
+        max-width: initial;
+        white-space: normal;
+    }
 
 .Counter_base__medium_acc18 .Counter_text_f8d92 {
-    font-size: 20rem;
-    line-height: 22rem;
-}
+        font-size: 20rem;
+        line-height: 22rem;
+    }
 
 .Counter_base__large_ed6ab .Counter_text_f8d92 {
-    font-size: 25rem;
-    line-height: 27rem;
-}
+        font-size: 25rem;
+        line-height: 27rem;
+    }
 
 .Counter_count_e095d {
     padding-bottom: 4rem;
@@ -192,19 +192,19 @@
 }
 
 .Counter_base__small_e5954 .Counter_count_e095d {
-    margin-left: 10rem;
-    font-size: 37rem;
-}
+        margin-left: 10rem;
+        font-size: 37rem;
+    }
 
 .Counter_base__medium_acc18 .Counter_count_e095d {
-    margin-left: 16rem;
-    font-size: 50rem;
-}
+        margin-left: 16rem;
+        font-size: 50rem;
+    }
 
 .Counter_base__large_ed6ab .Counter_count_e095d {
-    margin-left: 20rem;
-    font-size: 62rem;
-}
+        margin-left: 20rem;
+        font-size: 62rem;
+    }
 
 .App_base_d239a {
     display: flex;
@@ -215,3 +215,4 @@
     padding-top: 100rem;
     overflow: hidden;
 }
+

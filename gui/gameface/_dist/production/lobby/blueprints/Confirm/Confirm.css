@@ -7,9 +7,9 @@
     cursor: pointer;
 }
 
-.TextButton_base__right_bfac3 {
-    flex-direction: row-reverse;
-}
+    .TextButton_base__right_bfac3 {
+        flex-direction: row-reverse;
+    }
 .TextButton_icon_cdfc0 {
     width: 32rem;
     height: 32rem;
@@ -17,22 +17,22 @@
     position: relative;
 }
 .TextButton_icon__back_fc1bb,
+    .TextButton_icon__forward_efa2d {
+        margin: -1rem -5rem;
+        background-image: url('R.images.gui.maps.icons.components.text_button.back');
+        transform: translateY(1rem);
+    }
 .TextButton_icon__forward_efa2d {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.back');
-    transform: translateY(1rem);
-}
-.TextButton_icon__forward_efa2d {
-    transform: rotate(180deg) translateY(1rem);
-}
+        transform: rotate(180deg) translateY(1rem);
+    }
 .TextButton_icon__close_e2f0f {
-    margin: -1rem 0;
-    background-image: url('R.images.gui.maps.icons.components.text_button.close');
-}
+        margin: -1rem 0;
+        background-image: url('R.images.gui.maps.icons.components.text_button.close');
+    }
 .TextButton_icon__info_e32c0 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.info');
-}
+        margin: -1rem -5rem;
+        background-image: url('R.images.gui.maps.icons.components.text_button.info');
+    }
 .TextButton_glow_d6e04 {
     width: 100%;
     height: 100%;
@@ -40,82 +40,72 @@
     opacity: 0;
     position: absolute;
     top: 0;
-    transition: opacity 0.16s;
+    transition: opacity .16s;
 }
 .TextButton_icon__back_fc1bb .TextButton_glow_d6e04,
-.TextButton_icon__forward_efa2d .TextButton_glow_d6e04 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-}
+    .TextButton_icon__forward_efa2d .TextButton_glow_d6e04 {
+        background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+    }
 .TextButton_icon__close_e2f0f .TextButton_glow_d6e04 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-}
+        background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+    }
 .TextButton_icon__info_e32c0 .TextButton_glow_d6e04 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-}
+        background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+    }
 .TextButton_base_a231c:hover .TextButton_glow_d6e04 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .TextButton_base_a231c:active .TextButton_glow_d6e04 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .TextButton_caption_f4e8d {
     position: relative;
-    transition:
-        color 0.16s,
-        text-shadow 0.16s;
+    transition: color .16s, text-shadow .16s;
 }
 .TextButton_caption__back_d358d,
-.TextButton_caption__forward_ff93d,
-.TextButton_caption__close_fc554 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
-}
-.TextButton_base_a231c:hover .TextButton_caption__back_d358d,
-.TextButton_base_a231c:hover .TextButton_caption__forward_ff93d,
-.TextButton_base_a231c:hover .TextButton_caption__close_fc554 {
-    color: #fffa9f;
-}
-.TextButton_base_a231c:active .TextButton_caption__back_d358d,
-.TextButton_base_a231c:active .TextButton_caption__forward_ff93d,
-.TextButton_base_a231c:active .TextButton_caption__close_fc554 {
-    color: #ffdd99;
-}
+    .TextButton_caption__forward_ff93d,
+    .TextButton_caption__close_fc554 {
+        color: #FFDD99;
+        text-shadow: 0 0 10rem rgba(255,42,0, 1),
+            0 0 10rem rgba(255,42,0, .4),
+            0 0 10rem rgba(255,42,0, .4),
+            0 0 2rem rgba(255,42,0, .4),
+            0 0 1rem rgba(255,42,0, .4),
+            0 0 2rem rgba(255,42,0, .4),
+            0 0 1rem rgba(255,42,0, .4);
+    }
+.TextButton_base_a231c:hover .TextButton_caption__back_d358d, .TextButton_base_a231c:hover .TextButton_caption__forward_ff93d, .TextButton_base_a231c:hover .TextButton_caption__close_fc554 {
+            color: #fffa9f;
+        }
+.TextButton_base_a231c:active .TextButton_caption__back_d358d, .TextButton_base_a231c:active .TextButton_caption__forward_ff93d, .TextButton_base_a231c:active .TextButton_caption__close_fc554 {
+            color: #FFDD99;
+        }
 .TextButton_caption__info_c263a {
-    padding: 0 5rem;
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 8rem #00eaff;
-}
+        padding: 0 5rem;
+        color: #CCFFFF;
+        text-shadow: 0 0 12rem rgba(31,68,255, .8),
+            0 0 8rem #00eaff;
+    }
 .TextButton_base_a231c:hover .TextButton_caption__info_c263a {
-    color: #e3ffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 12rem rgba(0, 234, 255, 1),
-        0 0 8rem #00eaff;
-}
+            color: #e3ffff;
+            text-shadow: 0 0 12rem rgba(31,68,255, .8),
+                0 0 12rem rgba(0,234,255, 1),
+                0 0 8rem #00eaff;
+        }
 .TextButton_base_a231c:active .TextButton_caption__info_c263a {
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.6),
-        0 0 8rem #00eaff;
-}
+            color: #CCFFFF;
+            text-shadow: 0 0 12rem rgba(31,68,255, .6),
+                0 0 8rem #00eaff;
+        }
 .TextButton_goto_d3960 {
     color: #7c7c6c;
 }
 .TextButton_base__left_ec79d .TextButton_goto_d3960 {
-    margin-left: 8rem;
-}
+        margin-left: 8rem;
+    }
 .TextButton_base__right_bfac3 .TextButton_goto_d3960 {
-    margin-right: 8rem;
-}
+        margin-right: 8rem;
+    }
 .TextButton_shine_f8873 {
     width: 90rem;
     height: 40rem;
@@ -123,94 +113,92 @@
     opacity: 0;
     position: absolute;
     top: -4rem;
-    transition: opacity 0.16s;
+    transition: opacity .16s;
     pointer-events: none;
 }
 .TextButton_base__left_ec79d .TextButton_shine_f8873 {
-    left: -4rem;
-}
+        left: -4rem;
+    }
 .TextButton_base__right_bfac3 .TextButton_shine_f8873 {
-    right: -4rem;
-    transform: rotate(180deg);
-}
+        right: -4rem;
+        transform: rotate(180deg);
+    }
 .TextButton_base_a231c:hover .TextButton_shine_f8873 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .TextButton_base_a231c:active .TextButton_shine_f8873 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .CButton_base_bb13f {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 2rem;
-    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 0 1rem rgba(0,0,0, 0.6);
     position: relative;
     cursor: pointer;
 }
 
-.CButton_base__main_dd05d,
-.CButton_base__primary_c75a2,
-.CButton_base__primaryGreen_ae65b,
-.CButton_base__primaryRed_b1341,
-.CButton_base__secondary_f2c20 {
-    background-size: 100% 100%;
-}
+    .CButton_base__main_dd05d,
+    .CButton_base__primary_c75a2,
+    .CButton_base__primaryGreen_ae65b,
+    .CButton_base__primaryRed_b1341,
+    .CButton_base__secondary_f2c20 {
+        background-size: 100% 100%;
+    }
 
-.CButton_base__main_dd05d {
-    background-image: url('R.images.gui.maps.icons.components.button.back_main');
-}
+    .CButton_base__main_dd05d {
+        background-image: url('R.images.gui.maps.icons.components.button.back_main');
+    }
 
-.CButton_base__primary_c75a2 {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
-}
+    .CButton_base__primary_c75a2 {
+        background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+    }
 
-.CButton_base__primaryGreen_ae65b {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
-}
+    .CButton_base__primaryGreen_ae65b {
+        background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+    }
 
-.CButton_base__primaryRed_b1341 {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
-}
+    .CButton_base__primaryRed_b1341 {
+        background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+    }
 
-.CButton_base__secondary_f2c20 {
-    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
-}
+    .CButton_base__secondary_f2c20 {
+        background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+    }
 
-.CButton_base__ghost_f452b {
-    border-radius: 3rem;
-    box-shadow:
-        0 0 0 1rem rgba(0, 0, 0, 0.3),
-        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
-    background-color: rgba(0, 0, 0, 0.15);
-}
+    .CButton_base__ghost_f452b {
+        border-radius: 3rem;
+        box-shadow: 0 0 0 1rem rgba(0,0,0, 0.3), 0 0 0 1rem rgba(255,255,255, 0.15) inset;
+        background-color: rgba(0,0,0, 0.15);
+    }
 
-.CButton_base__extraSmall_e1273 {
-    min-height: 17rem;
-    padding: 0 16rem;
-}
+    .CButton_base__extraSmall_e1273 {
+        min-height: 17rem;
+        padding: 0 16rem;
+    }
 
-.CButton_base__small_c20a3,
-.CButton_base__medium_ef59a {
-    padding: 0 20rem;
-}
+    .CButton_base__small_c20a3,
+    .CButton_base__medium_ef59a {
+        padding: 0 20rem;
+    }
 
-.CButton_base__small_c20a3 {
-    min-height: 18rem;
-}
+    .CButton_base__small_c20a3 {
+        min-height: 18rem;
+    }
 
-.CButton_base__medium_ef59a {
-    min-height: 32rem;
-}
+    .CButton_base__medium_ef59a {
+        min-height: 32rem;
+    }
 
-.CButton_base__large_bafd5 {
-    min-height: 48rem;
-}
+    .CButton_base__large_bafd5 {
+        min-height: 48rem;
+    }
 
-.CButton_base__disabled_eef7a {
-    cursor: default;
-}
+    .CButton_base__disabled_eef7a {
+        cursor: default;
+    }
 /* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
@@ -226,20 +214,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
 }
 .CButton_base__main_dd05d .CButton_back_e957b {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+    }
 .CButton_base__primary_c75a2 .CButton_back_e957b {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+    }
 .CButton_base__primaryGreen_ae65b .CButton_back_e957b {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+    }
 .CButton_base__primaryRed_b1341 .CButton_back_e957b {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+    }
 .CButton_base__secondary_f2c20 .CButton_back_e957b {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+    }
 .CButton_texture_ccd7e {
     background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
     background-size: 155rem 31rem;
@@ -259,9 +247,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transition: box-shadow 0.16s ease-in-out;
 }
 .CButton_base__focus_b0875 .CButton_state_f2bb4 {
-    border-radius: 2rem;
-    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
-}
+        border-radius: 2rem;
+        box-shadow: inset 0 0 2rem 1rem rgba(255,85,0, 0.2);
+    }
 .CButton_stateHighlightHover_bd0cb,
 .CButton_stateHighlightActive_e9a8a,
 .CButton_stateDisabled_ed209 {
@@ -272,44 +260,39 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
 }
 .CButton_stateHighlightHover_bd0cb {
-    background-image: linear-gradient(
-        180deg,
-        rgba(252, 248, 235, 0.25) 0%,
-        rgba(252, 248, 235, 0.1) 50%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background-image: linear-gradient(180deg, rgba(252,248,235, 0.25) 0%, rgba(252,248,235, 0.1) 50%, rgba(255,255,255, 0) 100%);
     opacity: 0;
 }
 .CButton_base_bb13f:hover .CButton_stateHighlightHover_bd0cb {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .CButton_base_bb13f:active .CButton_stateHighlightHover_bd0cb {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .CButton_base__disabled_eef7a:hover .CButton_stateHighlightHover_bd0cb {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .CButton_base__ghost_f452b .CButton_stateHighlightHover_bd0cb {
-    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
-    background-color: rgba(8, 6, 0, 0.18);
-    background-image: none;
-}
+        box-shadow: 0 15rem 12rem 0 rgba(242,242,230, 0.11) inset;
+        background-color: rgba(8,6,0, 0.18);
+        background-image: none;
+    }
 .CButton_stateHighlightActive_e9a8a {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+    background-image: linear-gradient(180deg, rgba(0,0,0, 0.3) 0%, rgba(0,0,0, 0.15) 100%);
     opacity: 0;
 }
 .CButton_base__highlightActive_db27d .CButton_stateHighlightActive_e9a8a {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .CButton_stateDisabled_ed209 {
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0,0,0, 0.25);
     background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
     background-size: 15rem 15rem;
     visibility: hidden;
 }
 .CButton_base__disabled_eef7a .CButton_stateDisabled_ed209 {
-    visibility: inherit;
-}
+        visibility: inherit;
+    }
 .CButton_content_a99fc {
     display: flex;
     align-items: center;
@@ -321,38 +304,38 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(-1rem);
 }
 .CButton_content_a99fc[lang='ja'],
-.CButton_content_a99fc[lang='ko'],
-.CButton_content_a99fc[lang='zh_tw'],
-.CButton_content_a99fc[lang='zh_sg'],
-.CButton_content_a99fc[lang='zh_cn'],
-.CButton_content_a99fc[lang='th'] {
-    font-weight: 400;
-}
+    .CButton_content_a99fc[lang='ko'],
+    .CButton_content_a99fc[lang='zh_tw'],
+    .CButton_content_a99fc[lang='zh_sg'],
+    .CButton_content_a99fc[lang='zh_cn'],
+    .CButton_content_a99fc[lang='th'] {
+        font-weight: 400;
+    }
 .CButton_base__main_dd05d .CButton_content_a99fc,
-.CButton_base__primaryRed_b1341 .CButton_content_a99fc {
-    text-shadow: 0 -1rem 1rem #600;
-}
+    .CButton_base__primaryRed_b1341 .CButton_content_a99fc {
+        text-shadow: 0 -1rem 1rem #600;
+    }
 .CButton_base__secondary_f2c20 .CButton_content_a99fc {
-    color: rgba(254, 254, 236, 0.75);
-}
+        color: rgba(254,254,236, 0.75);
+    }
 .CButton_base__primaryGreen_ae65b .CButton_content_a99fc {
-    text-shadow: 0 -1rem 1rem #1c2502;
-}
+        text-shadow: 0 -1rem 1rem #1c2502;
+    }
 .CButton_base__extraSmall_e1273 .CButton_content_a99fc {
-    font-size: 12rem;
-}
+        font-size: 12rem;
+    }
 .CButton_base__small_c20a3 .CButton_content_a99fc {
-    font-size: 14rem;
-}
+        font-size: 14rem;
+    }
 .CButton_base__medium_ef59a .CButton_content_a99fc {
-    font-size: 15rem;
-}
+        font-size: 15rem;
+    }
 .CButton_base__large_bafd5 .CButton_content_a99fc {
-    font-size: 18rem;
-}
+        font-size: 18rem;
+    }
 .CButton_base__disabled_eef7a .CButton_content_a99fc {
-    opacity: 0.6;
-}
+        opacity: 0.6;
+    }
 
 body {
     margin: 0;
@@ -365,7 +348,7 @@ body {
     justify-content: center;
     align-content: center;
     height: 100vh;
-    background-color: rgba(19, 18, 16, 0.5);
+    background-color: rgba(19,18,16, .5);
     font-size: 14rem;
     line-height: 1;
     overflow: hidden;
@@ -399,15 +382,15 @@ body {
 }
 
 .DialogTemplate_view__show_c9f7b {
-    animation-name: DialogTemplate_windowIn_d8197;
-    animation-duration: 0.5s;
-    animation-fill-mode: both;
-}
+        animation-name: DialogTemplate_windowIn_d8197;
+        animation-duration: .5s;
+        animation-fill-mode: both;
+    }
 
 .DialogTemplate_title_b1f2d {
     width: 720rem;
     margin: 0;
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 35rem;
     line-height: 1.2;
     text-align: center;
@@ -415,7 +398,7 @@ body {
 
 .DialogTemplate_content_af26f {
     margin-top: 9rem;
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 16rem;
 }
 
@@ -424,13 +407,13 @@ body {
     height: 1rem;
     margin: 38rem 5rem 23rem;
     background-color: #fff;
-    opacity: 0.1;
+    opacity: .1;
 }
 
 .DialogTemplate_footer_ce6da {
     display: flex;
     align-items: center;
-    color: #c9c9b6;
+    color: #C9C9B6;
     font-size: 16rem;
 }
 
@@ -441,12 +424,12 @@ body {
 }
 
 .DialogTemplate_buttons__indent_c306b {
-    margin-top: 24rem;
-}
+        margin-top: 24rem;
+    }
 
 .DialogTemplate_buttonsItem_ae275 + .DialogTemplate_buttonsItem_ae275 {
-    margin-left: 14rem;
-}
+        margin-left: 14rem;
+    }
 
 .DialogTemplate_button_aed67 {
     width: 175rem;
@@ -487,17 +470,17 @@ body {
 }
 
 .IntelligenceAmount_countText_b777c {
-    color: #80d43a;
+    color: #80D43A;
     font-size: 24rem;
     font-weight: 800;
 }
 
 .IntelligenceAmount_countText__disabled_d501b {
-    color: #ff2717;
-}
+        color: #FF2717;
+    }
 
 .IntelligenceAmount_totalCountText_da2b7 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 24rem;
     font-weight: 800;
     font-style: normal;
@@ -523,8 +506,8 @@ in JS 8000 reserved like anchor for start optimization
     position: relative;
 }
 .EditableProgress_base__small_c99df {
-    height: 2rem;
-}
+        height: 2rem;
+    }
 .EditableProgress_glow_abc1c {
     width: 19rem;
     height: 37rem;
@@ -536,17 +519,17 @@ in JS 8000 reserved like anchor for start optimization
     pointer-events: none;
 }
 .EditableProgress_glow__left_a5867 {
-    background-image: url('R.images.gui.maps.icons.battlePass2020.buy.confirm.Flare_left');
-    right: 100%;
-}
+        background-image: url('R.images.gui.maps.icons.battlePass2020.buy.confirm.Flare_left');
+        right: 100%;
+    }
 .EditableProgress_glow__right_eebda {
-    background-image: url('R.images.gui.maps.icons.battlePass2020.buy.confirm.Flare_right');
-    left: 100%;
-}
+        background-image: url('R.images.gui.maps.icons.battlePass2020.buy.confirm.Flare_right');
+        left: 100%;
+    }
 .EditableProgress_base__disabled_c9b48 .EditableProgress_glow_abc1c,
-.EditableProgress_base__finished_b1498 .EditableProgress_glow_abc1c {
-    display: none;
-}
+    .EditableProgress_base__finished_b1498 .EditableProgress_glow_abc1c {
+        display: none;
+    }
 .EditableProgress_picker_d6ef9 {
     position: absolute;
     top: 6rem;
@@ -567,15 +550,15 @@ in JS 8000 reserved like anchor for start optimization
     height: 100%;
     background-color: var(--progress-line-base);
     position: relative;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1.39);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1.39);
     transition-property: width;
 }
 .EditableProgress_base__disabled_c9b48 .EditableProgress_line_b3352 {
-    background-color: var(--progress-line-disabled);
-}
+        background-color: var(--progress-line-disabled);
+    }
 .EditableProgress_base__finished_b1498 .EditableProgress_line_b3352 {
-    background-color: var(--progress-line-finished);
-}
+        background-color: var(--progress-line-finished);
+    }
 .EditableProgress_pattern_b06ef {
     background-image: linear-gradient(90deg, var(--progress-pattern-base) 60%, transparent 40%);
     max-width: 8001px;
@@ -589,15 +572,15 @@ in JS 8000 reserved like anchor for start optimization
     left: 1rem;
 }
 .EditableProgress_base__small_c99df .EditableProgress_pattern_b06ef {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .EditableProgress_base__disabled_c9b48 .EditableProgress_pattern_b06ef {
     background-image: linear-gradient(90deg, var(--progress-pattern-disabled) 60%, transparent 40%);
-}
+    }
 .EditableProgress_base__finished_b1498 .EditableProgress_pattern_b06ef {
     background-image: linear-gradient(90deg, var(--progress-pattern-finished) 60%, transparent 40%);
-}
+    }
 .EditableProgress_delta_acb36 {
     width: 0;
     max-width: 8001px;
@@ -608,12 +591,12 @@ in JS 8000 reserved like anchor for start optimization
     bottom: 0;
     left: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1.39), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1.39), cubic-bezier(.21, .61, .35, 1);
     transition-property: width, transform;
 }
 .EditableProgress_gradient_f6041 {
     max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    background-image: linear-gradient(90deg, rgba(0,0,0, .5), rgba(255,255,255, .75));
     mix-blend-mode: overlay;
     position: absolute;
     top: 1rem;
@@ -622,15 +605,15 @@ in JS 8000 reserved like anchor for start optimization
     left: 0;
 }
 .EditableProgress_base__small_c99df .EditableProgress_gradient_f6041 {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .EditableProgress_base__disabled_c9b48 .EditableProgress_gradient_f6041 {
-    display: none;
-}
+        display: none;
+    }
 .EditableProgress_base__finished_b1498 .EditableProgress_gradient_f6041 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
-}
+        background-image: linear-gradient(90deg, rgba(0,0,0, .5), rgba(255,255,255, .75), rgba(0,0,0, .5));
+    }
 
 .SlideControl_base_f0420 {
     width: 11rem;
@@ -650,16 +633,16 @@ in JS 8000 reserved like anchor for start optimization
 }
 
 .SlideControl_image__hover_f3c2e {
-    background-image: url('R.images.gui.maps.icons.tanksetup.shells.slider_control_hover');
-}
+        background-image: url('R.images.gui.maps.icons.tanksetup.shells.slider_control_hover');
+    }
 
 .SlideControl_image__active_ca2ba {
-    background-image: url('R.images.gui.maps.icons.tanksetup.shells.slider_control_active');
-}
+        background-image: url('R.images.gui.maps.icons.tanksetup.shells.slider_control_active');
+    }
 
 .SlideControl_image__disabled_bdf3d {
-    cursor: default;
-}
+        cursor: default;
+    }
 
 .Slider_base_e58cf {
     display: flex;
@@ -668,10 +651,10 @@ in JS 8000 reserved like anchor for start optimization
     cursor: pointer;
 }
 
-.Slider_base__disabled_de94d {
-    opacity: 0.5;
-    cursor: default;
-}
+    .Slider_base__disabled_de94d {
+        opacity: .5;
+        cursor: default;
+    }
 
 .Slider_workArea_d5a4d {
     position: absolute;
@@ -696,20 +679,20 @@ in JS 8000 reserved like anchor for start optimization
     opacity: 0;
     position: absolute;
     top: 0;
-    transition: opacity 0.3s;
+    transition: opacity .3s;
 }
 
 .Slider_editor__active_ff195 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .Slider_editor__minus_ae5bd {
-    left: -45rem;
-}
+        left: -45rem;
+    }
 
 .Slider_editor__plus_b1270 {
-    right: -45rem;
-}
+        right: -45rem;
+    }
 
 .StepEditor_base_ab1ef {
     width: 36rem;
@@ -718,29 +701,29 @@ in JS 8000 reserved like anchor for start optimization
     position: relative;
 }
 
-.StepEditor_base__enabled_ea181:hover {
-    filter: brightness(1.35);
-}
+    .StepEditor_base__enabled_ea181:hover {
+            filter: brightness(1.35);
+        }
 
-.StepEditor_base__enabled_ea181:active {
-    filter: none;
-}
+    .StepEditor_base__enabled_ea181:active {
+            filter: none;
+        }
 
-.StepEditor_base__minusOff_a74b1 {
-    background-image: url('R.images.gui.maps.icons.tanksetup.shells.minus_off');
-}
+    .StepEditor_base__minusOff_a74b1 {
+        background-image: url('R.images.gui.maps.icons.tanksetup.shells.minus_off');
+    }
 
-.StepEditor_base__minusOn_d3810 {
-    background-image: url('R.images.gui.maps.icons.tanksetup.shells.minus_on');
-}
+    .StepEditor_base__minusOn_d3810 {
+        background-image: url('R.images.gui.maps.icons.tanksetup.shells.minus_on');
+    }
 
-.StepEditor_base__plusOff_ce8f2 {
-    background-image: url('R.images.gui.maps.icons.tanksetup.shells.plus_off');
-}
+    .StepEditor_base__plusOff_ce8f2 {
+        background-image: url('R.images.gui.maps.icons.tanksetup.shells.plus_off');
+    }
 
-.StepEditor_base__plusOn_fee95 {
-    background-image: url('R.images.gui.maps.icons.tanksetup.shells.plus_on');
-}
+    .StepEditor_base__plusOn_fee95 {
+        background-image: url('R.images.gui.maps.icons.tanksetup.shells.plus_on');
+    }
 
 .MultipleSelectorItem_base_f4b99 {
     display: flex;
@@ -758,7 +741,7 @@ in JS 8000 reserved like anchor for start optimization
 }
 
 .MultipleSelectorItem_countText_bcdc2 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 24rem;
     font-weight: 700;
     line-height: 1.2;
@@ -766,12 +749,12 @@ in JS 8000 reserved like anchor for start optimization
 }
 
 .MultipleSelectorItem_countText__notEnough_c63dc {
-    color: #ff2717;
-}
+        color: #FF2717;
+    }
 
 .MultipleSelectorItem_countText__disabled_f7dec {
-    opacity: 0.5;
-}
+        opacity: .5;
+    }
 
 .MultipleSelectorItem_icon_bf24f {
     width: 48rem;
@@ -780,8 +763,8 @@ in JS 8000 reserved like anchor for start optimization
 }
 
 .MultipleSelectorItem_icon__disabled_d82ef {
-    opacity: 0.5;
-}
+        opacity: .5;
+    }
 
 .MultipleSelectorItem_slider_efb22 {
     width: 316rem;
@@ -808,9 +791,9 @@ in JS 8000 reserved like anchor for start optimization
     cursor: pointer;
 }
 
-.SelectorItem_base__disabled_bbb1c {
-    cursor: default;
-}
+    .SelectorItem_base__disabled_bbb1c {
+        cursor: default;
+    }
 
 .SelectorItem_bg_ca9bc {
     width: 162rem;
@@ -822,10 +805,9 @@ in JS 8000 reserved like anchor for start optimization
 }
 
 .SelectorItem_bg_ca9bc:hover {
-    background-image:
-        url('R.images.gui.maps.icons.blueprints.fragment.conversion.hover_bg'),
-        url('R.images.gui.maps.icons.blueprints.fragment.conversion.bg');
-}
+        background-image: url('R.images.gui.maps.icons.blueprints.fragment.conversion.hover_bg'),
+            url('R.images.gui.maps.icons.blueprints.fragment.conversion.bg');
+    }
 
 .SelectorItem_selected_ef4c8 {
     width: 192rem;
@@ -864,7 +846,7 @@ in JS 8000 reserved like anchor for start optimization
 }
 
 .SelectorItem_countText_e43d7 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 24rem;
     font-weight: 700;
     line-height: 1.2;
@@ -873,8 +855,8 @@ in JS 8000 reserved like anchor for start optimization
 }
 
 .SelectorItem_countText__disabled_b87dc {
-    color: #ff2717;
-}
+        color: #FF2717;
+    }
 
 .SelectorItem_icon_b17de {
     width: 102rem;
@@ -900,9 +882,9 @@ in JS 8000 reserved like anchor for start optimization
     position: relative;
 }
 
-.Selector_base__multiple_d54ab {
-    padding-top: 24rem;
-}
+    .Selector_base__multiple_d54ab {
+        padding-top: 24rem;
+    }
 
 .Selector_boxHorizontal_c0776 {
     display: flex;
@@ -938,18 +920,18 @@ in JS 8000 reserved like anchor for start optimization
 }
 
 .Selector_intelligenceAmount__extraSmall_f25ea {
-    position: relative;
-    top: -45rem;
-    left: 0;
-    transform: none;
-}
+        position: relative;
+        top: -45rem;
+        left: 0;
+        transform: none;
+    }
 
 .Selector_divider_d4543 {
     width: 720rem;
     height: 1rem;
     margin: 15rem 0 28rem 23rem;
     background-color: #fff;
-    opacity: 0.1;
+    opacity: .1;
 }
 
 .FormatText_base_f27a4 {
@@ -960,7 +942,7 @@ in JS 8000 reserved like anchor for start optimization
 .SelectorHeader_title_ec93d {
     margin: 0;
     padding-bottom: 10rem;
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 35rem;
     line-height: 1.2;
     text-align: center;
@@ -973,13 +955,13 @@ in JS 8000 reserved like anchor for start optimization
 }
 
 .SelectorHeader_text_a4f7e {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 16rem;
     line-height: 20rem;
 }
 
 .SelectorHeader_allianceText_b97de {
-    color: #fefeec;
+    color: #FEFEEC;
     font-size: 16rem;
     font-weight: 800;
     line-height: 20rem;
@@ -1005,7 +987,7 @@ in JS 8000 reserved like anchor for start optimization
     margin-left: 4rem;
     margin-top: -1rem;
 
-    color: #e9e2bf;
+    color: #E9E2BF;
 
     font-size: 15rem;
 
@@ -1068,7 +1050,7 @@ in JS 8000 reserved like anchor for start optimization
 }
 
 .Storage_label_fb2a8 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -1101,7 +1083,7 @@ in JS 8000 reserved like anchor for start optimization
 
 .AdditionalItem_price_e4610 {
     margin-left: 10rem;
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 24rem;
     font-weight: 800;
     line-height: 20rem;
@@ -1109,8 +1091,8 @@ in JS 8000 reserved like anchor for start optimization
 }
 
 .AdditionalItem_price__notEnough_d04cf {
-    color: #ff2717;
-}
+        color: #FF2717;
+    }
 
 .AdditionalItem_icon_a7b0e {
     width: 23rem;
@@ -1137,7 +1119,7 @@ in JS 8000 reserved like anchor for start optimization
 
 .TotalPrice_label_adc46 {
     margin: 3rem 1rem;
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 16rem;
     line-height: 20rem;
     text-align: right;
@@ -1145,7 +1127,7 @@ in JS 8000 reserved like anchor for start optimization
 
 .TotalPrice_price_cbfa8 {
     margin-left: 10rem;
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 24rem;
     font-weight: 700;
     line-height: 1.2;
@@ -1159,3 +1141,4 @@ in JS 8000 reserved like anchor for start optimization
     margin: 8rem 3rem;
     background: no-repeat 100% 100% / contain;
 }
+

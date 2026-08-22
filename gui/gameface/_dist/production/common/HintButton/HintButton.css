@@ -3,11 +3,11 @@
     position: relative;
 }
 
-.HintButton_base__small_a976e .HintButton_btnInner_a1365 {
-    height: 10rem;
-    font-size: 8rem;
-    line-height: 1.1;
-}
+    .HintButton_base__small_a976e .HintButton_btnInner_a1365 {
+            height: 10rem;
+            font-size: 8rem;
+            line-height: 1.1;
+        }
 
 .HintButton_btnOuter_d6179 {
     display: flex;
@@ -17,8 +17,8 @@
 }
 
 .HintButton_btnOuter__blink_c47d8 {
-    border: 2rem solid #ffbd1f;
-}
+        border: 2rem solid #ffbd1f;
+    }
 
 .HintButton_animationContainer_c28a6 {
     display: flex;
@@ -48,5 +48,6 @@
 }
 
 .HintButton_btnInner__blink_ae582 {
-    background: #ffbd1f;
-}
+        background: #ffbd1f;
+    }
+

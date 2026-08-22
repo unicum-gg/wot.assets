@@ -39,14 +39,14 @@
 }
 
 .Timer_newValue__animated_c57ba {
-    opacity: 1;
-    animation: Timer_flip-new-value_c899c 0.7s cubic-bezier(0.24, 0, 0, 1.1) forwards;
-}
+        opacity: 1;
+        animation: Timer_flip-new-value_c899c 0.7s cubic-bezier(0.24, 0, 0, 1.1) forwards;
+    }
 
 .Timer_currentValue__animated_d196f {
-    transform: translateY(100%);
-    animation: Timer_flip-current-value_ed26a 0.7s cubic-bezier(0.24, 0, 0, 1.1);
-}
+        transform: translateY(100%);
+        animation: Timer_flip-current-value_ed26a 0.7s cubic-bezier(0.24, 0, 0, 1.1);
+    }
 
 @keyframes Timer_flip-new-value_c899c {
     0% {
@@ -121,28 +121,25 @@ body {
 }
 
 .TimerExamples_example1_timer_f619c {
-    color: #ffe3d5;
-    font-size: 21rem;
-}
+        color: #ffe3d5;
+        font-size: 21rem;
+    }
 
 .TimerExamples_example2_timer_b2824 {
-    color: #ff6c00;
-    font-size: 30rem;
-    font-weight: 400;
-    line-height: 38rem;
-    text-shadow: 0 0 4rem #c70000;
-}
+        color: #ff6c00;
+        font-size: 30rem;
+        font-weight: 400;
+        line-height: 38rem;
+        text-shadow: 0 0 4rem #c70000;
+    }
 
 .TimerExamples_example3_timer_cc855 {
-    color: #fad895;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 18rem;
-    text-shadow:
-        0 0 12rem #ff6b00,
-        0 0 12rem #ff6b00,
-        0 0 10rem #ff6b00;
-}
+        color: #fad895;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 18rem;
+        text-shadow: 0 0 12rem #ff6b00, 0 0 12rem #ff6b00, 0 0 10rem #ff6b00;
+    }
 
 .TimerExamples_example4_c4822 {
     justify-content: center;
@@ -150,15 +147,15 @@ body {
 }
 
 .TimerExamples_example4_timer_c92a3 {
-    width: 145rem;
-    font-size: 144rem;
-}
+        width: 145rem;
+        font-size: 144rem;
+    }
 
 .TimerExamples_example4_text_f364c {
-    margin-top: -50rem;
-    font-size: 36rem;
-    font-weight: 700;
-}
+        margin-top: -50rem;
+        font-size: 36rem;
+        font-weight: 700;
+    }
 
 .TimerExamples_example5_aec01 {
     text-align: center;
@@ -166,24 +163,24 @@ body {
 }
 
 .TimerExamples_example5_timer_a6619 {
-    font-size: 73rem;
-}
+        font-size: 73rem;
+    }
 
 .TimerExamples_example5_text_c3e87 {
-    font-size: 24rem;
-}
+        font-size: 24rem;
+    }
 
 .TimerExamples_example5_glow_ce732 {
-    width: 800rem;
-    height: 512rem;
-    background: url('R.images.gui.maps.icons.battle.timer.glow') no-repeat center / cover;
-    mix-blend-mode: screen;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-}
+        width: 800rem;
+        height: 512rem;
+        background: url('R.images.gui.maps.icons.battle.timer.glow') no-repeat center / cover;
+        mix-blend-mode: screen;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+    }
 
 .TimerExamples_example6_e3e2f {
     display: flex;
@@ -191,21 +188,22 @@ body {
     align-items: center;
     width: 380rem;
     height: 86rem;
-    background-color: rgba(255, 0, 0, 0.3);
+    background-color: rgba(255, 0, 0, .3);
 }
 
 .TimerExamples_example6_circle_b407c {
-    width: 50rem;
-    height: 50rem;
-    margin-right: 15rem;
-    border-radius: 50%;
-    background-color: #fff;
-}
+        width: 50rem;
+        height: 50rem;
+        margin-right: 15rem;
+        border-radius: 50%;
+        background-color: #fff;
+    }
 
 .TimerExamples_example6_text_c1417 {
-    font-size: 15rem;
-}
+        font-size: 15rem;
+    }
 
 .TimerExamples_example6_timer_eb03f {
-    font-size: 25rem;
-}
+        font-size: 25rem;
+    }
+
