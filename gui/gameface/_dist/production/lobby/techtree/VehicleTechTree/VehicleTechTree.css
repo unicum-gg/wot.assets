@@ -15,14 +15,14 @@
     transition: transform 0.25s ease-out;
 }
 .App_premiumPanelWrapper__active_47 {
-    transform: translateY(0rem);
-}
+        transform: translateY(0rem);
+    }
 .App_premiumPanelWrapper__effects_fa {
-    pointer-events: none;
-}
+        pointer-events: none;
+    }
 .App_premiumPanelWrapper__noScroll_92 {
-    cursor: default;
-}
+        cursor: default;
+    }
 .App_treeContainer_b0 {
     display: flex;
     flex-direction: column;
@@ -40,16 +40,16 @@
     position: relative;
 }
 .App_treeHolder__withRightPadding_f0 {
-    padding-right: 92rem;
-}
+        padding-right: 92rem;
+    }
 .App_blueprintIcon_41 {
     position: absolute;
     top: -29rem;
     left: -56rem;
 }
 .mediaMedium .App_blueprintIcon_41 {
-    top: -40rem;
-    left: -74rem;
+        top: -40rem;
+        left: -74rem;
 }
 .App_tabs_93 {
     margin-top: 20rem;
@@ -59,16 +59,16 @@
     transform: translateY(-50%);
 }
 .mediaMedium .App_tabs_93 {
-    left: 22rem;
+        left: 22rem;
 }
 @media (min-width: 1700px) and (min-height: 900px) and (max-width: 1919px) and (max-height: 1079px) {
-    .mediaMedium .App_tabs_93 {
-        left: 15rem;
+.mediaMedium .App_tabs_93 {
+            left: 15rem;
     }
-}
+    }
 .App_tabs__dragging_e1 {
-    pointer-events: none;
-}
+        pointer-events: none;
+    }
 .App_scrollHolderHorizontal_5c {
     width: 100%;
     padding: 0 5rem 0 80rem;
@@ -82,11 +82,11 @@
     bottom: 115rem;
 }
 .App_scrollHolderVertical__withoutBottom_45 {
-    bottom: 20rem;
-}
+        bottom: 20rem;
+    }
 .App_scrollHolderVertical__hidden_af {
-    visibility: hidden;
-}
+        visibility: hidden;
+    }
 .App_verticalContent_8e {
     display: flex;
     flex-direction: column;
@@ -99,14 +99,14 @@
     position: relative;
 }
 .App_verticalContent__withPremiumPanel_78 {
-    padding-top: 10rem;
-}
+        padding-top: 10rem;
+    }
 .App_verticalContent__withVerticalScrollBar_40 {
-    justify-content: flex-start;
-    padding-top: 107rem;
-}
+        justify-content: flex-start;
+        padding-top: 107rem;
+    }
 .mediaMedium .App_verticalContent__withVerticalScrollBar_40 {
-    padding-top: 123rem;
+            padding-top: 123rem;
 }
 .App_mainLine_37 {
     width: 100%;
@@ -116,7 +116,7 @@
     background: url('R.images.gui.maps.icons.techtree.researchTree.main_line') no-repeat center / contain;
     opacity: 0.15;
     position: absolute;
-    top: calc(53rem * var(--rows-from-top) - 26.5rem);
+    top: calc(53rem*var(--rows-from-top) - 26.5rem);
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
@@ -135,8 +135,8 @@
     margin-bottom: 16rem;
 }
 .App_rowButtonsContainer_85:last-child {
-    margin-bottom: 0;
-}
+        margin-bottom: 0;
+    }
 .App_blueprintBalance_4d {
     position: absolute;
     top: 32rem;
@@ -152,19 +152,19 @@
     position: absolute;
 }
 .mediaMedium .App_nationTitle_f4 {
-    height: 91rem;
-    padding-bottom: 5rem;
+        height: 91rem;
+        padding-bottom: 5rem;
 }
 .App_base__blueprints_fd .App_nationTitle_f4 {
-    background: #161f26f2;
-}
+        background: #161f26f2;
+    }
 .App_paragonsEntryPoint_ce {
     position: absolute;
     top: 37rem;
     right: 22rem;
 }
 .mediaMedium .App_paragonsEntryPoint_ce {
-    top: 30rem;
+        top: 30rem;
 }
 .App_levels_01 {
     display: flex;
@@ -177,14 +177,14 @@
     left: 0;
 }
 .mediaMedium .App_levels_01 {
-    padding-top: 91rem;
+        padding-top: 91rem;
 }
 .App_levels__witButtons_78 {
-    padding-right: 73rem;
-}
+        padding-right: 73rem;
+    }
 .App_base__blueprints_fd .App_levels_01 {
-    background: #161f26f2;
-}
+        background: #161f26f2;
+    }
 .App_background_9f {
     width: 100%;
     height: 100%;
@@ -209,8 +209,8 @@
 }
 
 .Background_blueprints__active_ac {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .Background_blueprintsGrid_da {
     width: 100%;
@@ -219,114 +219,114 @@
 }
 
 .Background_blueprintsGrid__scale_2f {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.bluegrid_pattern2x') repeat top left;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.bluegrid_pattern2x') repeat top left;
+    }
 
 .Box_mt__XS_0c {
-    margin-top: 4rem;
-}
-.Box_mt__SM_eb {
-    margin-top: 8rem;
-}
-.Box_mt__SMp_cf {
-    margin-top: 10rem;
-}
-.Box_mt__MD_25 {
-    margin-top: 16rem;
-}
-.Box_mt__MDp_49 {
-    margin-top: 20rem;
-}
-.Box_mt__LG_e8 {
-    margin-top: 32rem;
-}
-.Box_mt__XL_83 {
-    margin-top: 64rem;
-}
+            margin-top: 4rem;
+        }
+        .Box_mt__SM_eb {
+            margin-top: 8rem;
+        }
+        .Box_mt__SMp_cf {
+            margin-top: 10rem;
+        }
+        .Box_mt__MD_25 {
+            margin-top: 16rem;
+        }
+        .Box_mt__MDp_49 {
+            margin-top: 20rem;
+        }
+        .Box_mt__LG_e8 {
+            margin-top: 32rem;
+        }
+        .Box_mt__XL_83 {
+            margin-top: 64rem;
+        }
 
 .Box_mr__XS_7c {
-    margin-right: 4rem;
-}
+            margin-right: 4rem;
+        }
 
 .Box_mr__SM_08 {
-    margin-right: 8rem;
-}
+            margin-right: 8rem;
+        }
 
 .Box_mr__SMp_06 {
-    margin-right: 10rem;
-}
+            margin-right: 10rem;
+        }
 
 .Box_mr__MD_4a {
-    margin-right: 16rem;
-}
+            margin-right: 16rem;
+        }
 
 .Box_mr__MDp_b6 {
-    margin-right: 20rem;
-}
+            margin-right: 20rem;
+        }
 
 .Box_mr__LG_d0 {
-    margin-right: 32rem;
-}
+            margin-right: 32rem;
+        }
 
 .Box_mr__XL_db {
-    margin-right: 64rem;
-}
+            margin-right: 64rem;
+        }
 
 .Box_mb__XS_bb {
-    margin-bottom: 4rem;
-}
+            margin-bottom: 4rem;
+        }
 
 .Box_mb__SM_83 {
-    margin-bottom: 8rem;
-}
+            margin-bottom: 8rem;
+        }
 
 .Box_mb__SMp_04 {
-    margin-bottom: 10rem;
-}
+            margin-bottom: 10rem;
+        }
 
 .Box_mb__MD_ed {
-    margin-bottom: 16rem;
-}
+            margin-bottom: 16rem;
+        }
 
 .Box_mb__MDp_65 {
-    margin-bottom: 20rem;
-}
+            margin-bottom: 20rem;
+        }
 
 .Box_mb__LG_c8 {
-    margin-bottom: 32rem;
-}
+            margin-bottom: 32rem;
+        }
 
 .Box_mb__XL_f8 {
-    margin-bottom: 64rem;
-}
+            margin-bottom: 64rem;
+        }
 
 .Box_ml__XS_8a {
-    margin-left: 4rem;
-}
+            margin-left: 4rem;
+        }
 
 .Box_ml__SM_e6 {
-    margin-left: 8rem;
-}
+            margin-left: 8rem;
+        }
 
 .Box_ml__SMp_fb {
-    margin-left: 10rem;
-}
+            margin-left: 10rem;
+        }
 
 .Box_ml__MD_2b {
-    margin-left: 16rem;
-}
+            margin-left: 16rem;
+        }
 
 .Box_ml__MDp_c7 {
-    margin-left: 20rem;
-}
+            margin-left: 20rem;
+        }
 
 .Box_ml__LG_39 {
-    margin-left: 32rem;
-}
+            margin-left: 32rem;
+        }
 
 .Box_ml__XL_4a {
-    margin-left: 64rem;
-}
+            margin-left: 64rem;
+        }
 
 .FormatText_base_d0 {
     display: flex;
@@ -335,167 +335,167 @@
 
 /* eslint-disable-next-line expectedscss*/
 .Text_paragraph-P10_2c {
-    font-size: 10rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 10rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_paragraph-P12_22 {
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 12rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P14_a7 {
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P16_90 {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P18_50 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 18rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P24_33 {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 32rem;
 }
 .Text_heading-H14_8b {
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 14rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H15_9e {
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 15rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H18_b7 {
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 18rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H20R_f6 {
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 20rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_heading-H22_27 {
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .Text_heading-H24R_be {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_heading-H24_0c {
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
+        font-size: 24rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .Text_heading-H28_78 {
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H36_32 {
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 36rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H56_c3 {
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 56rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H73_8f {
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 73rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H144_a9 {
-    font-size: 144rem;
-    font-weight: 700;
-    line-height: 1;
+        font-size: 144rem;
+        font-weight: 700;
+        line-height: 1;
 }
 .Text_BLACK_REAL_30 {
-    color: #000000;
-}
+        color: #000000;
+    }
 .Text_WHITE_REAL_bc {
-    color: #ffffff;
-}
+        color: #FFFFFF;
+    }
 .Text_WHITE_62 {
-    color: #f2f2f7;
-}
+        color: #F2F2F7;
+    }
 .Text_WHITE_ORANGE_54 {
-    color: #fefeec;
-}
+        color: #FEFEEC;
+    }
 .Text_WHITE_SPANISH_df {
-    color: #e9e2bf;
-}
+        color: #E9E2BF;
+    }
 .Text_PAR_15 {
-    color: #8c8c7e;
-}
+        color: #8C8C7E;
+    }
 .Text_PAR_SECONDARY_5d {
-    color: #595950;
-}
+        color: #595950;
+    }
 .Text_PAR_TERTIARY_c9 {
-    color: #37362e;
-}
+        color: #37362E;
+    }
 .Text_INFO_RED_30 {
-    color: #ff0000;
-}
+        color: #FF0000;
+    }
 .Text_RED_66 {
-    color: #ff2717;
-}
+        color: #FF2717;
+    }
 .Text_RED_DARK_d8 {
-    color: #b70000;
-}
+        color: #B70000;
+    }
 .Text_YELLOW_ed {
-    color: #feab34;
-}
+        color: #FEAB34;
+    }
 .Text_ORANGE_be {
-    color: #ee7000;
-}
+        color: #EE7000;
+    }
 .Text_CREAM_57 {
-    color: #ffdd99;
-}
+        color: #FFDD99;
+    }
 .Text_BROWN_18 {
-    color: #cbac77;
-}
+        color: #CBAC77;
+    }
 .Text_GREEN_BRIGHT_3f {
-    color: #80d43a;
-}
+        color: #80D43A;
+    }
 .Text_GREEN_e3 {
-    color: #7ab300;
-}
+        color: #7AB300;
+    }
 .Text_GREEN_DARK_f1 {
-    color: #497212;
-}
+        color: #497212;
+    }
 .Text_BLUE_BOOSTER_21 {
-    color: #ccffff;
-}
+        color: #CCFFFF;
+    }
 .Text_BLUE_TEAMKILLER_ab {
-    color: #09e2ff;
-}
+        color: #09E2FF;
+    }
 .Text_CRED_f7 {
-    color: #ced9d9;
-}
+        color: #CED9D9;
+    }
 .Text_GOLD_28 {
-    color: #ffc363;
-}
+        color: #FFC363;
+    }
 .Text_BOND_be {
-    color: #c9c9b6;
-}
+        color: #C9C9B6;
+    }
 .Text_PROM_65 {
-    color: #a29b70;
-}
+        color: #A29B70;
+    }
 
 .BlueprintBalance_base_e5 {
     display: flex;
@@ -509,7 +509,7 @@
 }
 
 .BlueprintBalance_text_2e {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -518,7 +518,7 @@
 }
 
 .BlueprintBalance_amountWithFlag_70 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -540,9 +540,9 @@
 }
 
 .BlueprintBalance_icon__national_48 {
-    width: 23rem;
-    height: 16rem;
-}
+        width: 23rem;
+        height: 16rem;
+    }
 
 .BlueprintSwitcher_base_b6 {
     display: flex;
@@ -553,14 +553,14 @@
     position: relative;
 }
 
-.mediaMedium .BlueprintSwitcher_base_b6 {
-    width: 250rem;
-    height: 250rem;
+    .mediaMedium .BlueprintSwitcher_base_b6 {
+        width: 250rem;
+        height: 250rem;
 }
 
-.BlueprintSwitcher_base__disabled_bb {
-    opacity: 0.5;
-}
+    .BlueprintSwitcher_base__disabled_bb {
+        opacity: .5;
+    }
 
 .BlueprintSwitcher_hintBody_9f {
     width: 60rem;
@@ -571,10 +571,10 @@
 }
 
 .mediaMedium .BlueprintSwitcher_hintBody_9f {
-    width: 80rem;
-    height: 80rem;
-    top: 85rem;
-    left: 86rem;
+        width: 80rem;
+        height: 80rem;
+        top: 85rem;
+        left: 86rem;
 }
 
 .BlueprintSwitcher_icon_5d {
@@ -585,30 +585,30 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: filter 0.15s ease-in-out;
+    transition: filter .15s ease-in-out;
     cursor: pointer;
 }
 
 .mediaMedium .BlueprintSwitcher_icon_5d {
-    width: 80rem;
-    height: 80rem;
+        width: 80rem;
+        height: 80rem;
 }
 
 .BlueprintSwitcher_icon_5d:hover {
-    filter: brightness(130%);
-}
+        filter: brightness(130%);
+    }
 
 .BlueprintSwitcher_icon_5d:active {
-    filter: brightness(100%);
-}
+        filter: brightness(100%);
+    }
 
 .BlueprintSwitcher_base__disabled_bb .BlueprintSwitcher_icon_5d {
-    cursor: auto;
-}
+        cursor: auto;
+    }
 
 .BlueprintSwitcher_base__disabled_bb .BlueprintSwitcher_icon_5d:hover {
-    filter: brightness(100%);
-}
+            filter: brightness(100%);
+        }
 
 .BlueprintSwitcher_sequence_d4 {
     width: 100%;
@@ -618,15 +618,14 @@
 .BlueprintSwitcher_glow_f8 {
     width: 80rem;
     height: 80rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.blueprintsHeader.switcher.bp_glow') no-repeat
-        center / cover;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.blueprintsHeader.switcher.bp_glow') no-repeat center / cover;
     transform-origin: center;
-    transition: transform 0.15s ease-in-out;
+    transition: transform .15s ease-in-out;
 }
 
 .BlueprintSwitcher_glow__toBlueprintMode_7c {
-    transform: scale(3.1);
-}
+        transform: scale(3.1);
+    }
 
 /* tree node indexes */
 .Levels_base_e6 {
@@ -645,8 +644,8 @@
     position: relative;
 }
 .Levels_levelNumberWrapper__lastColumn_30 {
-    width: 130rem;
-}
+        width: 130rem;
+    }
 .Levels_levelNumber_72 {
     width: 32rem;
     height: 32rem;
@@ -659,8 +658,8 @@
     transition: opacity 0.25s linear;
 }
 .Levels_levelNumber__active_32 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .Levels_levelDividers_8a {
     display: flex;
     justify-content: space-between;
@@ -675,7 +674,7 @@
 .Levels_levelDivider_7d {
     width: 2rem;
     height: 4rem;
-    background: #f2f2f7;
+    background: #F2F2F7;
     opacity: 0.1;
 }
 
@@ -688,14 +687,13 @@
     position: relative;
 }
 .TreeCell_base__premium_87 {
-    justify-content: flex-start;
-}
+        justify-content: flex-start;
+    }
 .TreeCell_premiumBackground_50 {
     display: flex;
     width: 187rem;
     height: 50rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.premiumPanel.dotty_pattern') no-repeat top left /
-        cover;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.premiumPanel.dotty_pattern') no-repeat top left / cover;
     opacity: 0.16;
     position: absolute;
     top: 51%;
@@ -704,11 +702,11 @@
     transform: translate(-2rem, -3rem);
 }
 .TreeCell_base__premiumLastColumn_bf .TreeCell_premiumBackground_50 {
-    width: 4rem;
-}
+        width: 4rem;
+    }
 .TreeCell_base__premiumLastRow_b2 .TreeCell_premiumBackground_50 {
-    height: 4rem;
-}
+        height: 4rem;
+    }
 
 /* tree node indexes */
 .TreeColumn_base_c8 {
@@ -717,14 +715,14 @@
     position: relative;
 }
 .TreeColumn_base__withVerticalScrollBar_06 {
-    margin-bottom: 110rem;
-}
+        margin-bottom: 110rem;
+    }
 .TreeColumn_base__lastColumn_75 {
-    width: 130rem;
-}
+        width: 130rem;
+    }
 .TreeColumn_base__dragging_1e {
-    pointer-events: none;
-}
+        pointer-events: none;
+    }
 
 /* tree node indexes */
 /* требуется описывать 4 состояния для каждого типа стрелок: тонкая, толстая, пунктирная, толстая пунктирная */
@@ -741,11 +739,11 @@
     position: relative;
 }
 .HorizontalConnector_connector__down_ba {
-    transform: scaleY(-1);
-}
+        transform: scaleY(-1);
+    }
 .HorizontalConnector_connector__withPadding_18 {
-    padding-right: 5rem;
-}
+        padding-right: 5rem;
+    }
 .HorizontalConnector_part_93 {
     position: absolute;
     top: 0;
@@ -754,245 +752,233 @@
 .HorizontalConnector_part__line_2d {
     /* normal */
     background: #727272;
-}
+    }
 .HorizontalConnector_base__dashed_37 .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #727272 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
+    }
 .HorizontalConnector_base__thick_38 .HorizontalConnector_part__line_2d {
-    background: #989ea0;
-}
+        background: #989ea0;
+    }
 .HorizontalConnector_base__thick_38.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #989ea0 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
+    }
 /* inBattle */
 .HorizontalConnector_base__inBattle_f0 .HorizontalConnector_part__line_2d {
-    background: #deb368;
-}
+        background: #deb368;
+    }
 .HorizontalConnector_base__inBattle_f0.HorizontalConnector_base__thick_38 .HorizontalConnector_part__line_2d {
-    background: #deb368;
-}
+        background: #deb368;
+    }
 .HorizontalConnector_base__inBattle_f0.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__line_2d {
     background: linear-gradient(0deg, #deb368 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
-.HorizontalConnector_base__inBattle_f0.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38
-    .HorizontalConnector_part__line_2d {
+    }
+.HorizontalConnector_base__inBattle_f0.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38 .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #deb368 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
+    }
 /* blueprint */
 .HorizontalConnector_base__blueprint_ca .HorizontalConnector_part__line_2d {
-    background: #989898;
-}
+        background: #989898;
+    }
 .HorizontalConnector_base__blueprint_ca.HorizontalConnector_base__thick_38 .HorizontalConnector_part__line_2d {
-    background: #989898;
-}
+        background: #989898;
+    }
 .HorizontalConnector_base__blueprint_ca.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #989898 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
-.HorizontalConnector_base__blueprint_ca.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38
-    .HorizontalConnector_part__line_2d {
+    }
+.HorizontalConnector_base__blueprint_ca.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38 .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #989898 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
+    }
 /* earlyAccess */
 .HorizontalConnector_base__earlyAccess_2f .HorizontalConnector_part__line_2d {
-    background: #4c6963;
-}
+        background: #4c6963;
+    }
 .HorizontalConnector_base__earlyAccess_2f.HorizontalConnector_base__thick_38 .HorizontalConnector_part__line_2d {
-    background: #6b958d;
-}
+        background: #6b958d;
+    }
 .HorizontalConnector_base__earlyAccess_2f.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #4c6963 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
-.HorizontalConnector_base__earlyAccess_2f.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38
-    .HorizontalConnector_part__line_2d {
+    }
+.HorizontalConnector_base__earlyAccess_2f.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38 .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #6b958d 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
+    }
 /* paragons ready to reset */
 .HorizontalConnector_base__paragonsReadyToReset_48 .HorizontalConnector_part__line_2d {
-    background: #883611;
-}
-.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__thick_38
-    .HorizontalConnector_part__line_2d {
-    background: #883611;
-}
-.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__dashed_37
-    .HorizontalConnector_part__line_2d {
+        background: #883611;
+    }
+.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__thick_38 .HorizontalConnector_part__line_2d {
+        background: #883611;
+    }
+.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #883611 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
-.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38
-    .HorizontalConnector_part__line_2d {
+    }
+.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38 .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #883611 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
+    }
 .HorizontalConnector_part__vertical_55 {
     /* normal */
     background: #727272;
-}
+    }
 .HorizontalConnector_base__dashed_37 .HorizontalConnector_part__vertical_55 {
     background: linear-gradient(0deg, #727272 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 .HorizontalConnector_base__thick_38 .HorizontalConnector_part__vertical_55 {
-    background: #989ea0;
-}
+        background: #989ea0;
+    }
 .HorizontalConnector_base__thick_38.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__vertical_55 {
     background: linear-gradient(0deg, #989ea0 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 /* inBattle */
 .HorizontalConnector_base__inBattle_f0 .HorizontalConnector_part__vertical_55 {
-    background: #deb368;
-}
+        background: #deb368;
+    }
 .HorizontalConnector_base__inBattle_f0.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__vertical_55 {
     background: linear-gradient(0deg, #deb368 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 /* blueprint */
 .HorizontalConnector_base__blueprint_ca .HorizontalConnector_part__vertical_55 {
-    background: #989898;
-}
+        background: #989898;
+    }
 .HorizontalConnector_base__blueprint_ca.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__vertical_55 {
     background: linear-gradient(0deg, #989898 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 /* earlyAccess */
 .HorizontalConnector_base__earlyAccess_2f .HorizontalConnector_part__vertical_55 {
-    background: #4c6963;
-}
+        background: #4c6963;
+    }
 .HorizontalConnector_base__earlyAccess_2f.HorizontalConnector_base__thick_38 .HorizontalConnector_part__vertical_55 {
-    background: #6b958d;
-}
+        background: #6b958d;
+    }
 .HorizontalConnector_base__earlyAccess_2f.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__vertical_55 {
     background: linear-gradient(0deg, #4c6963 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
-.HorizontalConnector_base__earlyAccess_2f.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38
-    .HorizontalConnector_part__vertical_55 {
+    }
+.HorizontalConnector_base__earlyAccess_2f.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38 .HorizontalConnector_part__vertical_55 {
     background: linear-gradient(0deg, #6b958d 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 /* paragons ready to reset */
 .HorizontalConnector_base__paragonsReadyToReset_48 .HorizontalConnector_part__vertical_55 {
-    background: #883611;
-}
-.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__thick_38
-    .HorizontalConnector_part__vertical_55 {
-    background: #883611;
-}
-.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__dashed_37
-    .HorizontalConnector_part__vertical_55 {
+        background: #883611;
+    }
+.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__thick_38 .HorizontalConnector_part__vertical_55 {
+        background: #883611;
+    }
+.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__vertical_55 {
     background: linear-gradient(0deg, #883611 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
-.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38
-    .HorizontalConnector_part__vertical_55 {
+    }
+.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38 .HorizontalConnector_part__vertical_55 {
     background: linear-gradient(0deg, #883611 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 .HorizontalConnector_part__start_ed {
-    width: 50%;
-    height: 1rem;
-    top: 0;
-    left: 0;
-}
+        width: 50%;
+        height: 1rem;
+        top: 0;
+        left: 0;
+    }
 .HorizontalConnector_base__thick_38 .HorizontalConnector_part__start_ed {
-    height: 3rem;
-}
+            height: 3rem;
+        }
 .HorizontalConnector_part__middle_07 {
-    width: 1rem;
-    height: calc(53rem * var(--size) + 1rem);
-    top: 1rem;
-    transform: translateY(-100%);
-}
+        width: 1rem;
+        height: calc(53rem*var(--size) + 1rem);
+        top: 1rem;
+        transform: translateY(-100%);
+    }
 .HorizontalConnector_base__thick_38 .HorizontalConnector_part__middle_07 {
-    width: 3rem;
-    height: calc(53rem * var(--size) + 3rem);
-    top: 3rem;
-    left: 21rem;
-}
+            width: 3rem;
+            height: calc(53rem*var(--size) + 3rem);
+            top: 3rem;
+            left: 21rem;
+        }
 .HorizontalConnector_part__end_c7 {
-    width: 45%;
-    height: 1rem;
-    transform: translateY(calc(-53rem * var(--size)));
-}
+        width: 45%;
+        height: 1rem;
+        transform: translateY(calc(-53rem*var(--size)));
+    }
 .HorizontalConnector_base__thick_38 .HorizontalConnector_part__end_c7 {
-    height: 3rem;
-}
+            height: 3rem;
+        }
 .HorizontalConnector_part__straight_4b {
-    width: 100%;
-    height: 1rem;
-    left: 0;
-}
+        width: 100%;
+        height: 1rem;
+        left: 0;
+    }
 .HorizontalConnector_base__thick_38 .HorizontalConnector_part__straight_4b {
-    height: 3rem;
-}
+            height: 3rem;
+        }
 .HorizontalConnector_part__arrow_97 {
-    top: -2rem;
-    right: 0;
-    left: auto;
-    transform: translateY(calc(-53rem * var(--size)));
+        top: -2rem;
+        right: 0;
+        left: auto;
+        transform: translateY(calc(-53rem*var(--size)));
     width: 5rem;
     height: 5rem;
     background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHead') no-repeat center / contain;
-}
+    }
 .HorizontalConnector_base__thick_38 .HorizontalConnector_part__arrow_97 {
-    height: 7rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHead') no-repeat center / contain;
-}
+        height: 7rem;
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHead') no-repeat center / contain;
+    }
 .HorizontalConnector_base__inBattle_f0 .HorizontalConnector_part__arrow_97 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.inBattleHead') no-repeat center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.inBattleHead') no-repeat center / contain;
+    }
 .HorizontalConnector_base__thick_38.HorizontalConnector_base__inBattle_f0 .HorizontalConnector_part__arrow_97 {
-    height: 7rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickInBattleHead') no-repeat center / contain;
-}
+        height: 7rem;
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickInBattleHead') no-repeat center /
+            contain;
+    }
 .HorizontalConnector_base__blueprint_ca .HorizontalConnector_part__arrow_97 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.blueprintHead') no-repeat center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.blueprintHead') no-repeat center / contain;
+    }
 .HorizontalConnector_base__thick_38.HorizontalConnector_base__blueprint_ca .HorizontalConnector_part__arrow_97 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHead') no-repeat center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHead') no-repeat center / contain;
+    }
 .HorizontalConnector_base__earlyAccess_2f .HorizontalConnector_part__arrow_97 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHeadEA') no-repeat center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHeadEA') no-repeat center / contain;
+    }
 .HorizontalConnector_base__thick_38.HorizontalConnector_base__earlyAccess_2f .HorizontalConnector_part__arrow_97 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadEA') no-repeat center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadEA') no-repeat center / contain;
+    }
 .HorizontalConnector_base__paragonsReadyToReset_48 .HorizontalConnector_part__arrow_97 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHeadParagonsReadyReset') no-repeat
-        center / contain;
-}
-.HorizontalConnector_base__thick_38.HorizontalConnector_base__paragonsReadyToReset_48
-    .HorizontalConnector_part__arrow_97 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadParagonsReadyReset') no-repeat
-        center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHeadParagonsReadyReset') no-repeat center / contain;
+    }
+.HorizontalConnector_base__thick_38.HorizontalConnector_base__paragonsReadyToReset_48 .HorizontalConnector_part__arrow_97 {
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadParagonsReadyReset') no-repeat center / contain;
+    }
 
 /* tree node indexes */
 /* требуется описывать 4 состояния для каждого типа стрелок: тонкая, толстая, пунктирная, толстая пунктирная */
@@ -1009,8 +995,8 @@
     position: relative;
 }
 .HorizontalVerticalConnector_connector__down_10 {
-    transform: scaleY(-1);
-}
+        transform: scaleY(-1);
+    }
 .HorizontalVerticalConnector_part_b9 {
     position: absolute;
     top: 0;
@@ -1019,248 +1005,221 @@
 .HorizontalVerticalConnector_part__line_9e {
     /* normal */
     background: #727272;
-}
+    }
 .HorizontalVerticalConnector_base__dashed_02 .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #727272 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
+    }
 .HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__line_9e {
-    background: #989ea0;
-}
-.HorizontalVerticalConnector_base__thick_90.HorizontalVerticalConnector_base__dashed_02
-    .HorizontalVerticalConnector_part__line_9e {
+        background: #989ea0;
+    }
+.HorizontalVerticalConnector_base__thick_90.HorizontalVerticalConnector_base__dashed_02 .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #989ea0 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
+    }
 /* inBattle */
 .HorizontalVerticalConnector_base__inBattle_9e .HorizontalVerticalConnector_part__line_9e {
-    background: #deb368;
-}
-.HorizontalVerticalConnector_base__inBattle_9e.HorizontalVerticalConnector_base__thick_90
-    .HorizontalVerticalConnector_part__line_9e {
-    background: #deb368;
-}
-.HorizontalVerticalConnector_base__inBattle_9e.HorizontalVerticalConnector_base__dashed_02
-    .HorizontalVerticalConnector_part__line_9e {
+        background: #deb368;
+    }
+.HorizontalVerticalConnector_base__inBattle_9e.HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__line_9e {
+        background: #deb368;
+    }
+.HorizontalVerticalConnector_base__inBattle_9e.HorizontalVerticalConnector_base__dashed_02 .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(0deg, #deb368 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
-.HorizontalVerticalConnector_base__inBattle_9e.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90
-    .HorizontalVerticalConnector_part__line_9e {
+    }
+.HorizontalVerticalConnector_base__inBattle_9e.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #deb368 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
+    }
 /* blueprint */
 .HorizontalVerticalConnector_base__blueprint_b8 .HorizontalVerticalConnector_part__line_9e {
-    background: #989898;
-}
-.HorizontalVerticalConnector_base__blueprint_b8.HorizontalVerticalConnector_base__thick_90
-    .HorizontalVerticalConnector_part__line_9e {
-    background: #989898;
-}
-.HorizontalVerticalConnector_base__blueprint_b8.HorizontalVerticalConnector_base__dashed_02
-    .HorizontalVerticalConnector_part__line_9e {
+        background: #989898;
+    }
+.HorizontalVerticalConnector_base__blueprint_b8.HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__line_9e {
+        background: #989898;
+    }
+.HorizontalVerticalConnector_base__blueprint_b8.HorizontalVerticalConnector_base__dashed_02 .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #989898 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
-.HorizontalVerticalConnector_base__blueprint_b8.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90
-    .HorizontalVerticalConnector_part__line_9e {
+    }
+.HorizontalVerticalConnector_base__blueprint_b8.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #989898 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
+    }
 /* earlyAccess */
 .HorizontalVerticalConnector_base__earlyAccess_cd .HorizontalVerticalConnector_part__line_9e {
-    background: #4c6963;
-}
-.HorizontalVerticalConnector_base__earlyAccess_cd.HorizontalVerticalConnector_base__thick_90
-    .HorizontalVerticalConnector_part__line_9e {
-    background: #6b958d;
-}
-.HorizontalVerticalConnector_base__earlyAccess_cd.HorizontalVerticalConnector_base__dashed_02
-    .HorizontalVerticalConnector_part__line_9e {
+        background: #4c6963;
+    }
+.HorizontalVerticalConnector_base__earlyAccess_cd.HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__line_9e {
+        background: #6b958d;
+    }
+.HorizontalVerticalConnector_base__earlyAccess_cd.HorizontalVerticalConnector_base__dashed_02 .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #4c6963 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
-.HorizontalVerticalConnector_base__earlyAccess_cd.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90
-    .HorizontalVerticalConnector_part__line_9e {
+    }
+.HorizontalVerticalConnector_base__earlyAccess_cd.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #6b958d 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
+    }
 /* paragons ready to reset */
 .HorizontalVerticalConnector_base__paragonsReadyToReset_64 .HorizontalVerticalConnector_part__line_9e {
-    background: #883611;
-}
-.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__thick_90
-    .HorizontalVerticalConnector_part__line_9e {
-    background: #883611;
-}
-.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__dashed_02
-    .HorizontalVerticalConnector_part__line_9e {
+        background: #883611;
+    }
+.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__line_9e {
+        background: #883611;
+    }
+.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__dashed_02 .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #883611 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
-.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90
-    .HorizontalVerticalConnector_part__line_9e {
+    }
+.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #883611 50%);
     background-position: right;
     background-size: 8rem 100%;
-}
+    }
 .HorizontalVerticalConnector_part__vertical_fa {
     /* normal */
     background: #727272;
-}
+    }
 .HorizontalVerticalConnector_base__dashed_02 .HorizontalVerticalConnector_part__vertical_fa {
     background: linear-gradient(0deg, #727272 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 .HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__vertical_fa {
-    background: #989ea0;
-}
-.HorizontalVerticalConnector_base__thick_90.HorizontalVerticalConnector_base__dashed_02
-    .HorizontalVerticalConnector_part__vertical_fa {
+        background: #989ea0;
+    }
+.HorizontalVerticalConnector_base__thick_90.HorizontalVerticalConnector_base__dashed_02 .HorizontalVerticalConnector_part__vertical_fa {
     background: linear-gradient(0deg, #989ea0 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 /* inBattle */
 .HorizontalVerticalConnector_base__inBattle_9e .HorizontalVerticalConnector_part__vertical_fa {
-    background: #deb368;
-}
-.HorizontalVerticalConnector_base__inBattle_9e.HorizontalVerticalConnector_base__dashed_02
-    .HorizontalVerticalConnector_part__vertical_fa {
+        background: #deb368;
+    }
+.HorizontalVerticalConnector_base__inBattle_9e.HorizontalVerticalConnector_base__dashed_02 .HorizontalVerticalConnector_part__vertical_fa {
     background: linear-gradient(0deg, #deb368 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 /* blueprint */
 .HorizontalVerticalConnector_base__blueprint_b8 .HorizontalVerticalConnector_part__vertical_fa {
-    background: #989898;
-}
-.HorizontalVerticalConnector_base__blueprint_b8.HorizontalVerticalConnector_base__dashed_02
-    .HorizontalVerticalConnector_part__vertical_fa {
+        background: #989898;
+    }
+.HorizontalVerticalConnector_base__blueprint_b8.HorizontalVerticalConnector_base__dashed_02 .HorizontalVerticalConnector_part__vertical_fa {
     background: linear-gradient(0deg, #989898 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 /* earlyAccess */
 .HorizontalVerticalConnector_base__earlyAccess_cd .HorizontalVerticalConnector_part__vertical_fa {
-    background: #4c6963;
-}
-.HorizontalVerticalConnector_base__earlyAccess_cd.HorizontalVerticalConnector_base__thick_90
-    .HorizontalVerticalConnector_part__vertical_fa {
-    background: #6b958d;
-}
-.HorizontalVerticalConnector_base__earlyAccess_cd.HorizontalVerticalConnector_base__dashed_02
-    .HorizontalVerticalConnector_part__vertical_fa {
+        background: #4c6963;
+    }
+.HorizontalVerticalConnector_base__earlyAccess_cd.HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__vertical_fa {
+        background: #6b958d;
+    }
+.HorizontalVerticalConnector_base__earlyAccess_cd.HorizontalVerticalConnector_base__dashed_02 .HorizontalVerticalConnector_part__vertical_fa {
     background: linear-gradient(0deg, #4c6963 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
-.HorizontalVerticalConnector_base__earlyAccess_cd.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90
-    .HorizontalVerticalConnector_part__vertical_fa {
+    }
+.HorizontalVerticalConnector_base__earlyAccess_cd.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__vertical_fa {
     background: linear-gradient(0deg, #6b958d 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 /* paragons ready to reset */
 .HorizontalVerticalConnector_base__paragonsReadyToReset_64 .HorizontalVerticalConnector_part__vertical_fa {
-    background: #883611;
-}
-.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__thick_90
-    .HorizontalVerticalConnector_part__vertical_fa {
-    background: #883611;
-}
-.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__dashed_02
-    .HorizontalVerticalConnector_part__vertical_fa {
+        background: #883611;
+    }
+.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__vertical_fa {
+        background: #883611;
+    }
+.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__dashed_02 .HorizontalVerticalConnector_part__vertical_fa {
     background: linear-gradient(0deg, #883611 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
-.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90
-    .HorizontalVerticalConnector_part__vertical_fa {
+    }
+.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__vertical_fa {
     background: linear-gradient(0deg, #883611 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 .HorizontalVerticalConnector_part__start_94 {
-    width: 100%;
-    height: 1rem;
-    top: 2rem;
-    left: 0;
-}
+        width: 100%;
+        height: 1rem;
+        top: 2rem;
+        left: 0;
+    }
 .HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__start_94 {
-    height: 3rem;
-}
+            height: 3rem;
+        }
 .HorizontalVerticalConnector_part__end_42 {
-    width: 1rem;
-    height: calc(53rem * var(--size) - 18.5rem);
-    top: 3rem;
-    right: 0;
-    left: auto;
-    transform: translateY(-100%);
-}
+        width: 1rem;
+        height: calc(53rem*var(--size) - 18.5rem);
+        top: 3rem;
+        right: 0;
+        left: auto;
+        transform: translateY(-100%);
+    }
 .HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__end_42 {
-    width: 3rem;
-}
+            width: 3rem;
+        }
 .HorizontalVerticalConnector_part__arrow_06 {
-    top: 18.5rem;
-    right: -2rem;
-    left: auto;
-}
+        top: 18.5rem;
+        right: -2rem;
+        left: auto;
+    }
 .HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__arrow_06 {
-    right: -1rem;
-}
+            right: -1rem;
+        }
 .HorizontalVerticalConnector_part__arrow_06 {
-    transform: translateY(calc(-53rem * var(--size))) rotate(-90deg);
+        transform: translateY(calc(-53rem*var(--size))) rotate(-90deg);
     width: 5rem;
     height: 5rem;
     background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHead') no-repeat center / contain;
 }
 .HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__arrow_06 {
-    height: 7rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHead') no-repeat center / contain;
-}
+        height: 7rem;
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHead') no-repeat center / contain;
+    }
 .HorizontalVerticalConnector_base__inBattle_9e .HorizontalVerticalConnector_part__arrow_06 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.inBattleHead') no-repeat center / contain;
-}
-.HorizontalVerticalConnector_base__thick_90.HorizontalVerticalConnector_base__inBattle_9e
-    .HorizontalVerticalConnector_part__arrow_06 {
-    height: 7rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickInBattleHead') no-repeat center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.inBattleHead') no-repeat center / contain;
+    }
+.HorizontalVerticalConnector_base__thick_90.HorizontalVerticalConnector_base__inBattle_9e .HorizontalVerticalConnector_part__arrow_06 {
+        height: 7rem;
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickInBattleHead') no-repeat center /
+            contain;
+    }
 .HorizontalVerticalConnector_base__blueprint_b8 .HorizontalVerticalConnector_part__arrow_06 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.blueprintHead') no-repeat center / contain;
-}
-.HorizontalVerticalConnector_base__thick_90.HorizontalVerticalConnector_base__blueprint_b8
-    .HorizontalVerticalConnector_part__arrow_06 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHead') no-repeat center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.blueprintHead') no-repeat center / contain;
+    }
+.HorizontalVerticalConnector_base__thick_90.HorizontalVerticalConnector_base__blueprint_b8 .HorizontalVerticalConnector_part__arrow_06 {
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHead') no-repeat center / contain;
+    }
 .HorizontalVerticalConnector_base__earlyAccess_cd .HorizontalVerticalConnector_part__arrow_06 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHeadEA') no-repeat center / contain;
-}
-.HorizontalVerticalConnector_base__thick_90.HorizontalVerticalConnector_base__earlyAccess_cd
-    .HorizontalVerticalConnector_part__arrow_06 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadEA') no-repeat center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHeadEA') no-repeat center / contain;
+    }
+.HorizontalVerticalConnector_base__thick_90.HorizontalVerticalConnector_base__earlyAccess_cd .HorizontalVerticalConnector_part__arrow_06 {
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadEA') no-repeat center / contain;
+    }
 .HorizontalVerticalConnector_base__paragonsReadyToReset_64 .HorizontalVerticalConnector_part__arrow_06 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHeadParagonsReadyReset') no-repeat
-        center / contain;
-}
-.HorizontalVerticalConnector_base__thick_90.HorizontalVerticalConnector_base__paragonsReadyToReset_64
-    .HorizontalVerticalConnector_part__arrow_06 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadParagonsReadyReset') no-repeat
-        center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHeadParagonsReadyReset') no-repeat center / contain;
+    }
+.HorizontalVerticalConnector_base__thick_90.HorizontalVerticalConnector_base__paragonsReadyToReset_64 .HorizontalVerticalConnector_part__arrow_06 {
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadParagonsReadyReset') no-repeat center / contain;
+    }
 
 /* tree node indexes */
 /* требуется описывать 4 состояния для каждого типа стрелок: тонкая, толстая, пунктирная, толстая пунктирная */
@@ -1277,8 +1236,8 @@
     position: relative;
 }
 .VerticalConnector_connector__down_14 {
-    transform: scaleY(-1);
-}
+        transform: scaleY(-1);
+    }
 .VerticalConnector_part_bd {
     position: absolute;
     top: 0;
@@ -1287,128 +1246,125 @@
 .VerticalConnector_part__line_2c {
     /* normal */
     background: #727272;
-}
+    }
 .VerticalConnector_base__dashed_12 .VerticalConnector_part__line_2c {
     background: linear-gradient(0deg, #727272 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 .VerticalConnector_base__thick_1a .VerticalConnector_part__line_2c {
-    background: #989ea0;
-}
+        background: #989ea0;
+    }
 .VerticalConnector_base__thick_1a.VerticalConnector_base__dashed_12 .VerticalConnector_part__line_2c {
     background: linear-gradient(0deg, #989ea0 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 /* inBattle */
 .VerticalConnector_base__inBattle_b8 .VerticalConnector_part__line_2c {
-    background: #deb368;
-}
+        background: #deb368;
+    }
 .VerticalConnector_base__inBattle_b8.VerticalConnector_base__dashed_12 .VerticalConnector_part__line_2c {
     background: linear-gradient(0deg, #deb368 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 /* blueprint */
 .VerticalConnector_base__blueprint_38 .VerticalConnector_part__line_2c {
-    background: #989898;
-}
+        background: #989898;
+    }
 .VerticalConnector_base__blueprint_38.VerticalConnector_base__dashed_12 .VerticalConnector_part__line_2c {
     background: linear-gradient(0deg, #989898 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 /* earlyAccess */
 .VerticalConnector_base__earlyAccess_79 .VerticalConnector_part__line_2c {
-    background: #4c6963;
-}
+        background: #4c6963;
+    }
 .VerticalConnector_base__earlyAccess_79.VerticalConnector_base__thick_1a .VerticalConnector_part__line_2c {
-    background: #6b958d;
-}
+        background: #6b958d;
+    }
 .VerticalConnector_base__earlyAccess_79.VerticalConnector_base__dashed_12 .VerticalConnector_part__line_2c {
     background: linear-gradient(0deg, #4c6963 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
-.VerticalConnector_base__earlyAccess_79.VerticalConnector_base__dashed_12.VerticalConnector_base__thick_1a
-    .VerticalConnector_part__line_2c {
+    }
+.VerticalConnector_base__earlyAccess_79.VerticalConnector_base__dashed_12.VerticalConnector_base__thick_1a .VerticalConnector_part__line_2c {
     background: linear-gradient(0deg, #6b958d 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 /* paragons ready to reset */
 .VerticalConnector_base__paragonsReadyToReset_f2 .VerticalConnector_part__line_2c {
-    background: #883611;
-}
+        background: #883611;
+    }
 .VerticalConnector_base__paragonsReadyToReset_f2.VerticalConnector_base__thick_1a .VerticalConnector_part__line_2c {
-    background: #883611;
-}
+        background: #883611;
+    }
 .VerticalConnector_base__paragonsReadyToReset_f2.VerticalConnector_base__dashed_12 .VerticalConnector_part__line_2c {
     background: linear-gradient(0deg, #883611 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
-.VerticalConnector_base__paragonsReadyToReset_f2.VerticalConnector_base__dashed_12.VerticalConnector_base__thick_1a
-    .VerticalConnector_part__line_2c {
+    }
+.VerticalConnector_base__paragonsReadyToReset_f2.VerticalConnector_base__dashed_12.VerticalConnector_base__thick_1a .VerticalConnector_part__line_2c {
     background: linear-gradient(0deg, #883611 50%, transparent 50%);
     background-position: bottom;
     background-size: 100% 8rem;
-}
+    }
 .VerticalConnector_part__straight_59 {
-    width: 1rem;
-    height: calc(53rem * var(--size) - 37rem);
-    top: auto;
-    bottom: 18.5rem;
-    left: -65rem;
-}
+        width: 1rem;
+        height: calc(53rem*var(--size) - 37rem);
+        top: auto;
+        bottom: 18.5rem;
+        left: -65rem;
+    }
 .VerticalConnector_base__thick_1a .VerticalConnector_part__straight_59 {
-    width: 3rem;
-    height: calc(53rem * var(--size) - 44rem);
-}
+            width: 3rem;
+            height: calc(53rem*var(--size) - 44rem);
+        }
 .VerticalConnector_part__arrow_e5 {
-    top: 18.5rem;
-    left: -67rem;
-    transform: translateY(calc(-53rem * var(--size))) rotate(-90deg);
+        top: 18.5rem;
+        left: -67rem;
+        transform: translateY(calc(-53rem*var(--size))) rotate(-90deg);
     width: 5rem;
     height: 5rem;
     background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHead') no-repeat center / contain;
-}
+    }
 .VerticalConnector_base__thick_1a .VerticalConnector_part__arrow_e5 {
-    height: 7rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHead') no-repeat center / contain;
-}
+        height: 7rem;
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHead') no-repeat center / contain;
+    }
 .VerticalConnector_base__inBattle_b8 .VerticalConnector_part__arrow_e5 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.inBattleHead') no-repeat center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.inBattleHead') no-repeat center / contain;
+    }
 .VerticalConnector_base__thick_1a.VerticalConnector_base__inBattle_b8 .VerticalConnector_part__arrow_e5 {
-    height: 7rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickInBattleHead') no-repeat center / contain;
-}
+        height: 7rem;
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickInBattleHead') no-repeat center /
+            contain;
+    }
 .VerticalConnector_base__blueprint_38 .VerticalConnector_part__arrow_e5 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.blueprintHead') no-repeat center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.blueprintHead') no-repeat center / contain;
+    }
 .VerticalConnector_base__thick_1a.VerticalConnector_base__blueprint_38 .VerticalConnector_part__arrow_e5 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHead') no-repeat center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHead') no-repeat center / contain;
+    }
 .VerticalConnector_base__earlyAccess_79 .VerticalConnector_part__arrow_e5 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHeadEA') no-repeat center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHeadEA') no-repeat center / contain;
+    }
 .VerticalConnector_base__thick_1a.VerticalConnector_base__earlyAccess_79 .VerticalConnector_part__arrow_e5 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadEA') no-repeat center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadEA') no-repeat center / contain;
+    }
 .VerticalConnector_base__paragonsReadyToReset_f2 .VerticalConnector_part__arrow_e5 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHeadParagonsReadyReset') no-repeat
-        center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHeadParagonsReadyReset') no-repeat center / contain;
+    }
 .VerticalConnector_base__thick_1a.VerticalConnector_base__paragonsReadyToReset_f2 .VerticalConnector_part__arrow_e5 {
-    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadParagonsReadyReset') no-repeat
-        center / contain;
-}
+        background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadParagonsReadyReset') no-repeat center / contain;
+    }
 .VerticalConnector_base__thick_1a .VerticalConnector_part__arrow_e5 {
-    top: 24.5rem;
-    left: -66rem;
-}
+            top: 24.5rem;
+            left: -66rem;
+        }
 
 .TreeConnectors_base_a6 {
     width: 100%;
@@ -1423,16 +1379,16 @@
     left: 0;
 }
 .TreeConnectors_connectorWrapper__thick_47 {
-    height: 3rem;
-    z-index: 2;
-    transform: translateY(-1rem);
-}
+        height: 3rem;
+        z-index: 2;
+        transform: translateY(-1rem);
+    }
 .TreeConnectors_connectorWrapper__custom_d8 {
-    z-index: 1;
-}
+        z-index: 1;
+    }
 .TreeConnectors_connectorWrapper__thick_47.TreeConnectors_connectorWrapper__custom_d8 {
-    z-index: 3;
-}
+        z-index: 3;
+    }
 
 .Hint_base_b8 {
     pointer-events: none;
@@ -1447,8 +1403,8 @@
 }
 
 .Hint_base__hidden_8b .Hint_border_80 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .Hint_hint_70 {
     display: flex;
@@ -1463,15 +1419,15 @@
 }
 
 .Hint_base__leftToRight_9a .Hint_hint_70 {
-    justify-content: center;
-    right: 100%;
-    left: initial;
-}
+        justify-content: center;
+        right: 100%;
+        left: initial;
+    }
 
 .Hint_base__hidden_8b .Hint_hint_70 {
-    opacity: 0;
-    pointer-events: none;
-}
+        opacity: 0;
+        pointer-events: none;
+    }
 
 .Hint_hintSubstrate_e9 {
     width: 100%;
@@ -1484,8 +1440,8 @@
 }
 
 .Hint_base__hidden_8b .Hint_hintSubstrate_e9 {
-    pointer-events: none;
-}
+        pointer-events: none;
+    }
 
 .Hint_hintArrow_0f {
     width: 86rem;
@@ -1503,41 +1459,40 @@
 }
 
 .Hint_base__leftToRight_9a .Hint_hintArrow_0f {
-    right: -10rem;
-    left: initial;
-    transform: rotateY(180deg);
-    animation-name: Hint_blinkLeftToRight_93;
-}
+        right: -10rem;
+        left: initial;
+        transform: rotateY(180deg);
+        animation-name: Hint_blinkLeftToRight_93;
+    }
 
 .Hint_base__hidden_8b .Hint_hintArrow_0f {
-    animation-play-state: paused;
-    pointer-events: none;
-}
+        animation-play-state: paused;
+        pointer-events: none;
+    }
 
 .Hint_hintText_b9 {
     padding-left: 48rem;
     color: #fd9;
     line-height: 18rem;
     text-align: center;
-    text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 5rem rgba(255, 42, 0, 0.4),
-        0 0 4rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
+    text-shadow: 0 0 10rem rgba(255,42,0, 1),
+ 0 0 5rem rgba(255,42,0, 0.4),
+        0 0 4rem rgba(255,42,0, 0.4),
+ 0 0 2rem rgba(255,42,0, 0.4),
+        0 0 1rem rgba(255,42,0, 0.4),
+ 0 0 2rem rgba(255,42,0, 0.4),
+        0 0 1rem rgba(255,42,0, 0.4);
     white-space: pre-wrap;
     position: relative;
 }
 
 .Hint_base__hidden_8b .Hint_hintText_b9 {
-    pointer-events: none;
-}
+        pointer-events: none;
+    }
 
 .Hint_base__leftToRight_9a .Hint_hintText_b9 {
-    padding-left: 24rem;
-}
+        padding-left: 24rem;
+    }
 
 @keyframes Hint_blink_7e {
     0% {
@@ -1575,21 +1530,21 @@
 
 /* tree node indexes */
 .HintManager_base__blueprintConvert_4c {
-    width: 24rem;
-    height: 24rem;
-    position: absolute;
-    top: -4rem;
-    left: 117rem;
-    z-index: 3;
-}
+        width: 24rem;
+        height: 24rem;
+        position: absolute;
+        top: -4rem;
+        left: 117rem;
+        z-index: 3;
+    }
 .HintManager_base__inBattle_3c {
-    width: 130rem;
-    height: 37rem;
-    position: absolute;
-    top: 8rem;
-    left: 1rem;
-    z-index: 3;
-}
+        width: 130rem;
+        height: 37rem;
+        position: absolute;
+        top: 8rem;
+        left: 1rem;
+        z-index: 3;
+    }
 
 .Currency_base_57 {
     display: flex;
@@ -1607,157 +1562,157 @@
     z-index: 1;
 }
 .Currency_base__small_af .Currency_icon_c5,
-.Currency_base__big_bc .Currency_icon_c5,
-.Currency_base__large_65 .Currency_icon_c5,
-.Currency_base__extraLarge_4d .Currency_icon_c5 {
-    transform: translateY(3rem);
-}
+    .Currency_base__big_bc .Currency_icon_c5,
+    .Currency_base__large_65 .Currency_icon_c5,
+    .Currency_base__extraLarge_4d .Currency_icon_c5 {
+        transform: translateY(3rem);
+    }
 .Currency_icon__credits-small_9b {
-    background-image: url('R.images.gui.maps.icons.library.CreditsIcon_2');
-}
+        background-image: url('R.images.gui.maps.icons.library.CreditsIcon_2');
+    }
 .Currency_icon__credits-big_96 {
-    background-image: url('R.images.gui.maps.icons.library.CreditsIcon_1');
-}
+        background-image: url('R.images.gui.maps.icons.library.CreditsIcon_1');
+    }
 .Currency_icon__credits-large_ac {
-    --icon-height: 48rem;
-    margin-left: -1rem;
-    background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_silver');
-}
+        --icon-height: 48rem;
+        margin-left: -1rem;
+        background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_silver');
+    }
 .Currency_base__large_65 .Currency_icon__credits-large_ac {
-    transform: translateY(4rem);
-}
+            transform: translateY(4rem);
+        }
 .Currency_icon__credits-extraLarge_16 {
-    --icon-height: 80rem;
-    margin-right: -2rem;
-    background-image: url('R.images.gui.maps.icons.library.credits_icon_80x80');
-}
+        --icon-height: 80rem;
+        margin-right: -2rem;
+        background-image: url('R.images.gui.maps.icons.library.credits_icon_80x80');
+    }
 .Currency_icon__gold-small_86 {
-    background-image: url('R.images.gui.maps.icons.library.GoldIcon_2');
-}
+        background-image: url('R.images.gui.maps.icons.library.GoldIcon_2');
+    }
 .Currency_base__small_af .Currency_icon__gold-small_86 {
-    transform: translateY(2rem);
-}
+            transform: translateY(2rem);
+        }
 .Currency_icon__gold-big_15 {
-    background-image: url('R.images.gui.maps.icons.library.GoldIcon_1');
-}
+        background-image: url('R.images.gui.maps.icons.library.GoldIcon_1');
+    }
 .Currency_base__big_bc .Currency_icon__gold-big_15 {
-    transform: translateY(4rem);
-}
+            transform: translateY(4rem);
+        }
 .Currency_icon__gold-large_36 {
-    --icon-height: 48rem;
-    margin-left: -1rem;
-    background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_gold');
-}
+        --icon-height: 48rem;
+        margin-left: -1rem;
+        background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_gold');
+    }
 .Currency_base__large_65 .Currency_icon__gold-large_36 {
-    transform: translateY(4rem);
-}
+            transform: translateY(4rem);
+        }
 .Currency_icon__gold-extraLarge_a0 {
-    --icon-height: 80rem;
-    background-image: url('R.images.gui.maps.icons.library.gold_icon_80x80');
-}
+        --icon-height: 80rem;
+        background-image: url('R.images.gui.maps.icons.library.gold_icon_80x80');
+    }
 .Currency_icon__crystal-small_27 {
-    background-image: url('R.images.gui.maps.icons.library.CrystalIcon_2');
-}
+        background-image: url('R.images.gui.maps.icons.library.CrystalIcon_2');
+    }
 .Currency_base__small_af .Currency_icon__crystal-small_27 {
-    transform: translateY(2rem);
-}
+            transform: translateY(2rem);
+        }
 .Currency_icon__crystal-big_cd {
-    --icon-height: 22rem;
-    --icon-width: 23rem;
-    background-image: url('R.images.gui.maps.icons.library.crystal_23x22');
-}
+        --icon-height: 22rem;
+        --icon-width: 23rem;
+        background-image: url('R.images.gui.maps.icons.library.crystal_23x22');
+    }
 .Currency_base__big_bc .Currency_icon__crystal-big_cd {
-    transform: translateY(4rem);
-}
+            transform: translateY(4rem);
+        }
 .Currency_icon__crystal-large_d3 {
-    --icon-height: 48rem;
-    margin-left: -1rem;
-    background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_bonds');
-}
+        --icon-height: 48rem;
+        margin-left: -1rem;
+        background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_bonds');
+    }
 .Currency_icon__crystal-extraLarge_09 {
-    --icon-height: 80rem;
-    background-image: url('R.images.gui.maps.icons.library.crystal_80x80');
-}
+        --icon-height: 80rem;
+        background-image: url('R.images.gui.maps.icons.library.crystal_80x80');
+    }
 .Currency_base__extraLarge_4d .Currency_icon__crystal-extraLarge_09 {
-    transform: translateY(7rem);
-}
+            transform: translateY(7rem);
+        }
 .Currency_icon__xp-small_a7 {
-    background-image: url('R.images.gui.maps.icons.library.NormalXpIcon');
-}
+        background-image: url('R.images.gui.maps.icons.library.NormalXpIcon');
+    }
 .Currency_base__small_af .Currency_icon__xp-small_a7 {
-    transform: translateY(1rem);
-}
+            transform: translateY(1rem);
+        }
 .Currency_icon__xp-big_97 {
-    --icon-height: 22rem;
-    --icon-width: 23rem;
-    margin-left: -5rem;
-    background-image: url('R.images.gui.maps.icons.library.xpIcon_23x22');
-}
+        --icon-height: 22rem;
+        --icon-width: 23rem;
+        margin-left: -5rem;
+        background-image: url('R.images.gui.maps.icons.library.xpIcon_23x22');
+    }
 .Currency_base__big_bc .Currency_icon__xp-big_97 {
-    transform: translateY(2rem);
-}
+            transform: translateY(2rem);
+        }
 .Currency_icon__xp-large_6b {
-    --icon-height: 48rem;
-    margin: 0 -5rem 0 -6rem;
-    background-image: url('R.images.gui.maps.shop.rewards.c_48x48.exp');
-}
+        --icon-height: 48rem;
+        margin: 0 -5rem 0 -6rem;
+        background-image: url('R.images.gui.maps.shop.rewards.c_48x48.exp');
+    }
 .Currency_icon__xp-extraLarge_67 {
-    --icon-height: 80rem;
-    margin: 0 -5rem;
-    background-image: url('R.images.gui.maps.icons.library.xp_tank_icon_80x80');
-}
+        --icon-height: 80rem;
+        margin: 0 -5rem;
+        background-image: url('R.images.gui.maps.icons.library.xp_tank_icon_80x80');
+    }
 .Currency_icon__freeXP-small_ca {
-    background-image: url('R.images.gui.maps.icons.library.freeXPIcon16x16');
-}
+        background-image: url('R.images.gui.maps.icons.library.freeXPIcon16x16');
+    }
 .Currency_base__small_af .Currency_icon__freeXP-small_ca {
-    transform: translateY(1rem);
-}
+            transform: translateY(1rem);
+        }
 .Currency_icon__freeXP-big_21 {
-    --icon-height: 24rem;
-    margin-left: -5rem;
-    background-image: url('R.images.gui.maps.icons.library.freeXPIconBig24x24');
-}
+        --icon-height: 24rem;
+        margin-left: -5rem;
+        background-image: url('R.images.gui.maps.icons.library.freeXPIconBig24x24');
+    }
 .Currency_icon__freeXP-large_c8 {
-    --icon-height: 48rem;
-    margin: 0 -5rem 0 -6rem;
-    background-image: url('R.images.gui.maps.shop.rewards.c_48x48.freeExp');
-}
+        --icon-height: 48rem;
+        margin: 0 -5rem 0 -6rem;
+        background-image: url('R.images.gui.maps.shop.rewards.c_48x48.freeExp');
+    }
 .Currency_icon__freeXP-extraLarge_58 {
-    --icon-height: 80rem;
-    margin: 0 -5rem;
-    background-image: url('R.images.gui.maps.icons.library.free_xp_icon_80x80');
-}
+        --icon-height: 80rem;
+        margin: 0 -5rem;
+        background-image: url('R.images.gui.maps.icons.library.free_xp_icon_80x80');
+    }
 .Currency_base__extraLarge_4d .Currency_icon__freeXP-extraLarge_58 {
-    transform: translateY(4rem);
-}
+            transform: translateY(4rem);
+        }
 .Currency_icon__equipCoin-small_32 {
-    --icon-height: 16rem;
-    margin-right: -2rem;
-    background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
-}
+        --icon-height: 16rem;
+        margin-right: -2rem;
+        background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
+    }
 .Currency_base__small_af .Currency_icon__equipCoin-small_32 {
-    transform: translateX(-1rem) translateY(1rem);
-}
+            transform: translateX(-1rem) translateY(1rem);
+        }
 .Currency_icon__equipCoin-big_79 {
-    --icon-height: 24rem;
-    background-image: url('R.images.gui.maps.icons.library.equipCoinBig');
-}
+        --icon-height: 24rem;
+        background-image: url('R.images.gui.maps.icons.library.equipCoinBig');
+    }
 .Currency_base__big_bc .Currency_icon__equipCoin-big_79 {
-    transform: translateX(-5rem) translateY(3rem);
-}
+            transform: translateX(-5rem) translateY(3rem);
+        }
 .Currency_icon__equipCoin-large_2c {
-    --icon-height: 48rem;
-    margin-right: 2rem;
-    background-image: url('R.images.gui.maps.shop.rewards.c_48x48.equipCoin');
-}
+        --icon-height: 48rem;
+        margin-right: 2rem;
+        background-image: url('R.images.gui.maps.shop.rewards.c_48x48.equipCoin');
+    }
 .Currency_icon__equipCoin-extraLarge_8a {
-    --icon-height: 80rem;
-    margin-right: 8rem;
-    background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
-}
+        --icon-height: 80rem;
+        margin-right: 8rem;
+        background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
+    }
 .Currency_base__extraLarge_4d .Currency_icon__equipCoin-extraLarge_8a {
-    transform: translateX(2rem) translateY(4rem);
-}
+            transform: translateX(2rem) translateY(4rem);
+        }
 .Currency_value_e1 {
     /* font-size inherit does not work here, so 1em means the size does not change */
     /* stylelint-disable-next-line */
@@ -1767,56 +1722,56 @@
     z-index: 2;
 }
 .Currency_base__small_af .Currency_value_e1 {
-    padding-right: 2rem;
-}
+        padding-right: 2rem;
+    }
 .Currency_base__big_bc .Currency_value_e1 {
-    --font-size: 24rem;
-    padding-right: 5rem;
-    font-weight: 700;
-}
+        --font-size: 24rem;
+        padding-right: 5rem;
+        font-weight: 700;
+    }
 .Currency_base__big_bc .Currency_value_e1 + .Currency_icon_c5 {
-    font-size: 24rem;
-}
+            font-size: 24rem;
+        }
 .Currency_base__large_65 .Currency_value_e1 {
-    --font-size: 36rem;
-    font-weight: 700;
-}
+        --font-size: 36rem;
+        font-weight: 700;
+    }
 .Currency_base__large_65 .Currency_value_e1 + .Currency_icon_c5 {
-    font-size: 36rem;
-}
+            font-size: 36rem;
+        }
 .Currency_base__extraLarge_4d .Currency_value_e1 {
-    --font-size: 56rem;
-    font-weight: 700;
-}
+        --font-size: 56rem;
+        font-weight: 700;
+    }
 .Currency_value__freeXP_cb {
-    color: #f2f2f7;
-}
+        color: #F2F2F7;
+    }
 .Currency_value__credits_76 {
-    color: #ced9d9;
-}
+        color: #CED9D9;
+    }
 .Currency_value__gold_dd {
-    color: #ffc363;
-}
+        color: #FFC363;
+    }
 .Currency_value__xp_b0,
-.Currency_value__crystal_19,
-.Currency_value__equipCoin_d0 {
-    color: #c9c9b6;
-}
+    .Currency_value__crystal_19,
+    .Currency_value__equipCoin_d0 {
+        color: #C9C9B6;
+    }
 .Currency_base__small_af .Currency_value__notEnough_56 {
-    color: #ff2717;
-}
+            color: #FF2717;
+        }
 .Currency_base__big_bc .Currency_value__notEnough_56 {
-    color: #b70000;
-}
+            color: #B70000;
+        }
 .Currency_base__large_65 .Currency_value__notEnough_56 {
-    color: #b70000;
-}
+            color: #B70000;
+        }
 .Currency_base__extraLarge_4d .Currency_value__notEnough_56 {
-    color: #b70000;
-}
+            color: #B70000;
+        }
 .Currency_stock_87 {
     height: 13rem;
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 13rem;
     line-height: 1;
     position: relative;
@@ -1824,23 +1779,23 @@
     pointer-events: none;
 }
 .Currency_stock__indent_a1 {
-    margin-left: 2rem;
-}
+        margin-left: 2rem;
+    }
 .Currency_base__small_af .Currency_stock_87 {
-    transform: translateY(0rem);
-}
+        transform: translateY(0rem);
+    }
 .Currency_base__big_bc .Currency_stock_87 {
-    transform: translateY(4rem);
-}
+        transform: translateY(4rem);
+    }
 .Currency_base__large_65 .Currency_stock_87 {
-    transform: translateY(10rem);
-}
+        transform: translateY(10rem);
+    }
 .Currency_base__extraLarge_4d .Currency_stock_87 {
-    transform: translateY(18rem);
-}
+        transform: translateY(18rem);
+    }
 .Currency_stock__interactive_93 {
-    pointer-events: auto;
-}
+        pointer-events: auto;
+    }
 .Currency_stockBackground_82 {
     width: 80rem;
     height: 45rem;
@@ -1855,26 +1810,26 @@
 
 /* tree node indexes */
 .ActionButton_base_8b > span {
-    display: flex;
-    justify-content: center;
-    max-height: 100%;
-    transform: scale(0.84) translateY(-1rem) translateX(2%);
-    pointer-events: none;
-}
+        display: flex;
+        justify-content: center;
+        max-height: 100%;
+        transform: scale(0.84) translateY(-1rem) translateX(2%);
+        pointer-events: none;
+    }
 .ActionButton_base_8b > span > span:first-child {
-    color: #ecd8b9;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
+            color: #ecd8b9;
+            font-size: 14rem;
+            font-weight: 400;
+            line-height: 1.3;
+        }
 .ActionButton_base_8b > span > span:last-child {
-    background: no-repeat center / cover;
-    top: 1rem;
-    transform: scale(1.2) translateY(1rem);
-}
+            background: no-repeat center / cover;
+            top: 1rem;
+            transform: scale(1.2) translateY(1rem);
+        }
 .ActionButton_base__scaled_c3 > span > span:last-child {
-    top: 0;
-}
+                top: 0;
+            }
 .ActionButton_base_8b {
     display: flex;
     justify-content: center;
@@ -1884,75 +1839,75 @@
     background: no-repeat center / cover;
 }
 .ActionButton_base__buyGold_9b,
-.ActionButton_base__buySilver_08 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.actionButtonBackgrounds.gold');
-}
+    .ActionButton_base__buySilver_08 {
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.actionButtonBackgrounds.gold');
+    }
 .ActionButton_base__buyGold_9b > span > span:last-child {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.goldIcon');
-}
+                background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.goldIcon');
+            }
 .ActionButton_base__buyGold_9b.ActionButton_base__scaled_c3 > span > span:last-child {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.goldIcon_x2');
-}
+                background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.goldIcon_x2');
+            }
 .ActionButton_base__buySilver_08 > span > span:last-child {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.creditsIcon');
-}
+                background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.creditsIcon');
+            }
 .ActionButton_base__buySilver_08.ActionButton_base__scaled_c3 > span > span:last-child {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.creditsIcon_x2');
-}
+                background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.creditsIcon_x2');
+            }
 .ActionButton_base__buyDisabled_83 {
-    height: 19rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.actionButtonBackgrounds.gold_disabled');
-}
+        height: 19rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.actionButtonBackgrounds.gold_disabled');
+    }
 .ActionButton_base__buyDisabled_83 > span > span:last-child {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.creditsIcon');
-}
+                background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.creditsIcon');
+            }
 .ActionButton_base__buyDisabled_83.ActionButton_base__scaled_c3 > span > span:last-child {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.creditsIcon_x2');
-}
+                background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.creditsIcon_x2');
+            }
 .ActionButton_base__explore_ba > span > span:first-child {
-    color: #f2f2f7;
-}
+                color: #F2F2F7;
+            }
 .ActionButton_base__explore_ba > span > span:last-child {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.experienceIcon');
-}
+                background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.experienceIcon');
+            }
 .ActionButton_base__explore_ba {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.actionButtonBackgrounds.green');
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.actionButtonBackgrounds.green');
 }
 .ActionButton_base__explore_ba.ActionButton_base__scaled_c3 > span > span:last-child {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.experienceIcon_x2');
-}
+                background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.experienceIcon_x2');
+            }
 .ActionButton_base__explore_ba.ActionButton_base__scaled_c3 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.actionButtonBackgrounds.green');
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.actionButtonBackgrounds.green');
 }
 .ActionButton_base__exploreDisabled_41 > span > span:first-child {
-    color: #f2f2f7;
-}
+                color: #F2F2F7;
+            }
 .ActionButton_base__exploreDisabled_41 > span > span:last-child {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.experienceIcon');
-}
+                background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.experienceIcon');
+            }
 .ActionButton_base__exploreDisabled_41 {
-    height: 19rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.actionButtonBackgrounds.green_disabled');
+        height: 19rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.actionButtonBackgrounds.green_disabled');
 }
 .ActionButton_base__exploreDisabled_41.ActionButton_base__scaled_c3 > span > span:first-child {
-    color: #f2f2f7;
-}
+                color: #F2F2F7;
+            }
 .ActionButton_base__exploreDisabled_41.ActionButton_base__scaled_c3 > span > span:last-child {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.experienceIcon_x2');
-}
+                background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.experienceIcon_x2');
+            }
 .ActionButton_actionButtonHover_ae {
     width: 67rem;
     height: 17rem;
     margin-top: 1rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.node.actionButtonBackgrounds.hover') no-repeat
-        center / cover;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.node.actionButtonBackgrounds.hover') no-repeat center /
+        cover;
     opacity: 0;
     position: absolute;
     transition: opacity 0.15s ease-in;
 }
 .ActionButton_actionButtonHover__visible_7d {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .ActionButton_recoveryText_c1 {
     color: #ecd8b9;
     font-size: 16rem;
@@ -1964,8 +1919,8 @@
 .AddBluePrintButton_base_2b {
     width: 24rem;
     height: 24rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.addBlueprint') no-repeat
-        center / contain;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.addBlueprint') no-repeat center /
+        contain;
     position: relative;
     cursor: pointer;
 }
@@ -1973,8 +1928,8 @@
 .AddBluePrintButton_hovered_5f {
     width: 24rem;
     height: 24rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.addBlueprint_hovered') no-repeat
-        center / contain;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.addBlueprint_hovered') no-repeat center /
+        contain;
     opacity: 0;
     position: relative;
     top: 0;
@@ -1983,21 +1938,21 @@
 }
 
 .AddBluePrintButton_hovered__visible_cb {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 /* tree node indexes */
 .CompareButton_base_9e {
     width: 29rem;
     height: 22rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.addToCompare') no-repeat
-        center / cover;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.addToCompare') no-repeat center /
+        cover;
     opacity: 0.7;
     transition: opacity 0.15s;
 }
 .CompareButton_base__hovered_6a {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .CompareButton_compareButtonActiveZone_86 {
     width: 100%;
     height: 100%;
@@ -2020,11 +1975,11 @@
     pointer-events: none;
 }
 .ParagonsLocked_paragonsLocked__locked_95 {
-    filter: saturate(0);
-}
+        filter: saturate(0);
+    }
 .ParagonsLocked_paragonsLocked__animation_c8 {
-    animation: ParagonsLocked_paragonsLockedBackgroundAnimation_09 700ms forwards;
-}
+        animation: ParagonsLocked_paragonsLockedBackgroundAnimation_09 700ms forwards;
+    }
 .ParagonsLocked_paragonsLockedIcon_3c {
     width: 18rem;
     height: 18rem;
@@ -2036,11 +1991,11 @@
     cursor: pointer;
 }
 .ParagonsLocked_paragonsLockedIcon__locked_62 {
-    filter: saturate(0) brightness(0.65);
-}
+        filter: saturate(0) brightness(0.65);
+    }
 .ParagonsLocked_paragonsLockedIcon__animation_3d {
-    animation: ParagonsLocked_paragonsLockedIconAnimation_dd 700ms forwards;
-}
+        animation: ParagonsLocked_paragonsLockedIconAnimation_dd 700ms forwards;
+    }
 @keyframes ParagonsLocked_paragonsLockedIconAnimation_dd {
     0% {
         filter: brightness(1);
@@ -2082,8 +2037,8 @@
     cursor: pointer;
 }
 .TreeNode_base__brightness_02 {
-    animation: TreeNode_paragonsResetAnimation_35 700ms forwards;
-}
+        animation: TreeNode_paragonsResetAnimation_35 700ms forwards;
+    }
 .TreeNode_background_3a {
     width: 100%;
     height: 100%;
@@ -2092,24 +2047,24 @@
     z-index: -1;
 }
 .TreeNode_background__locked_9a {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.disabled');
-    z-index: 0;
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.disabled');
+        z-index: 0;
+    }
 .TreeNode_background__unlocked_8f,
-.TreeNode_background__inInventory_36 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.default');
-}
+    .TreeNode_background__inInventory_36 {
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.default');
+    }
 .TreeNode_background__premium_04 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.premSlot');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.premSlot');
+    }
 .TreeNode_background__paragonsReset_9d {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.paragons.reset.default');
-    z-index: -1;
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.paragons.reset.default');
+        z-index: -1;
+    }
 .TreeNode_background__paragonsResetLocked_0e {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.paragons.reset.disabled');
-    z-index: -1;
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.paragons.reset.disabled');
+        z-index: -1;
+    }
 .TreeNode_blueprints_80 {
     width: 0%;
     max-width: 129rem;
@@ -2124,8 +2079,8 @@
     transition: width 0.3s;
 }
 .TreeNode_blueprints__availableToUnlock_3d {
-    z-index: 0;
-}
+        z-index: 0;
+    }
 .TreeNode_border_72 {
     background: no-repeat center / cover;
     position: absolute;
@@ -2133,45 +2088,45 @@
     pointer-events: none;
 }
 .TreeNode_border__blueprint_bc {
-    width: 162rem;
-    height: 70rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.blueprintBorder');
-    top: -16rem;
-    left: -16rem;
-}
+        width: 162rem;
+        height: 70rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.blueprintBorder');
+        top: -16rem;
+        left: -16rem;
+    }
 .TreeNode_border__blueprintScaled_6b {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.blueprintBorder_scaled');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.blueprintBorder_scaled');
+    }
 .TreeNode_border__earlyAccess_ec {
-    width: 158rem;
-    height: 65rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.border');
-    top: -14rem;
-    left: -14rem;
-}
+        width: 158rem;
+        height: 65rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.border');
+        top: -14rem;
+        left: -14rem;
+    }
 .TreeNode_border__earlyAccessLocked_65 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.borderLocked');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.borderLocked');
+    }
 .TreeNode_border__earlyAccessPaused_cc {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.borderPaused');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.borderPaused');
+    }
 .TreeNode_border__inBattle_ee {
-    width: 138rem;
-    height: 45rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.inBattle.inBattleBorder');
-    left: -4rem;
-}
+        width: 138rem;
+        height: 45rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.inBattle.inBattleBorder');
+        left: -4rem;
+    }
 .TreeNode_border__inBattleFirstEntry_2b {
-    width: 158rem;
-    height: 65rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.inBattle.inBattleBorder_firstEntry');
-    left: -13rem;
-}
+        width: 158rem;
+        height: 65rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.inBattle.inBattleBorder_firstEntry');
+        left: -13rem;
+    }
 .TreeNode_border__lockedParagonsReset_c2 {
-    width: 130rem;
-    height: 37rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.paragons.reset.disabledBorder');
-}
+        width: 130rem;
+        height: 37rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.paragons.reset.disabledBorder');
+    }
 .TreeNode_paragonsReadyToResetBorder_1c {
     width: 162rem;
     height: 70rem;
@@ -2210,24 +2165,24 @@
     pointer-events: none;
 }
 .TreeNode_base__hovered_f4 .TreeNode_hover_41 {
-    opacity: 0.6;
-}
+        opacity: 0.6;
+    }
 .TreeNode_hover__earlyAccess_94 {
-    width: 158rem;
-    height: 65rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.border_hovered');
-    top: -14rem;
-    left: -14rem;
-}
+        width: 158rem;
+        height: 65rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.border_hovered');
+        top: -14rem;
+        left: -14rem;
+    }
 .TreeNode_base__hovered_f4 .TreeNode_hover__earlyAccess_94 {
-    opacity: 1;
-}
+            opacity: 1;
+        }
 .TreeNode_hover__earlyAccessLocked_c4 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.borderLocked_hovered');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.borderLocked_hovered');
+    }
 .TreeNode_hover__earlyAccessPaused_6b {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.borderPaused_hovered');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.borderPaused_hovered');
+    }
 .TreeNode_earlyAccessMainButtonHover_e2 {
     width: 128rem;
     height: 35rem;
@@ -2241,8 +2196,8 @@
     transition: opacity 0.2s;
 }
 .TreeNode_earlyAccessMainButtonHover__visible_f7 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .TreeNode_actionButton_21 {
     position: absolute;
     top: 24.5rem;
@@ -2253,8 +2208,8 @@
     cursor: pointer;
 }
 .TreeNode_actionButton__hidden_c4 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .TreeNode_addBlueprintButtonContainer_db {
     position: absolute;
     top: -12rem;
@@ -2267,7 +2222,7 @@
     position: relative;
 }
 .TreeNode_title_d9 {
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 18rem;
     font-weight: 400;
     line-height: 1.25;
@@ -2277,12 +2232,12 @@
     transform: scale(0.75) translateX(15%);
 }
 .TreeNode_base__gold_46 .TreeNode_title_d9 {
-    color: #e8a15f;
-    text-shadow: 2rem 1rem 2rem rgba(0, 0, 0, 0.8);
-}
+        color: #e8a15f;
+        text-shadow: 2rem 1rem 2rem rgba(0, 0, 0, 0.8);
+    }
 .TreeNode_content__locked_46 .TreeNode_title_d9 {
-    opacity: 0.5;
-}
+        opacity: 0.5;
+    }
 .TreeNode_vehicleLevel_51 {
     width: 24rem;
     height: 17rem;
@@ -2292,12 +2247,12 @@
     left: -10rem;
 }
 .TreeNode_base__elite_2d .TreeNode_vehicleLevel_51 {
-    top: -0.5rem;
-    left: -3.5rem;
-}
+        top: -0.5rem;
+        left: -3.5rem;
+    }
 .TreeNode_content__locked_46 .TreeNode_vehicleLevel_51 {
-    opacity: 0.5;
-}
+        opacity: 0.5;
+    }
 .TreeNode_vehicleTypeWrapper_23 {
     display: flex;
     justify-content: center;
@@ -2315,40 +2270,40 @@
     left: 0;
 }
 .TreeNode_vehicleType__lightTank_e4 {
-    top: -1rem;
-    left: 1rem;
-}
+        top: -1rem;
+        left: 1rem;
+    }
 .TreeNode_vehicleType__mediumTank_ba {
-    top: -2rem;
-}
+        top: -2rem;
+    }
 .TreeNode_vehicleType__heavyTank_af {
-    left: -1rem;
-}
+        left: -1rem;
+    }
 .TreeNode_vehicleType__AT-SPG_d7 {
-    top: -3rem;
-    left: -1rem;
-}
+        top: -3rem;
+        left: -1rem;
+    }
 .TreeNode_vehicleType__SPG_6a {
-    top: -1rem;
-}
+        top: -1rem;
+    }
 .TreeNode_base__elite_2d .TreeNode_vehicleType_5f {
-    left: 2rem;
-}
+        left: 2rem;
+    }
 .TreeNode_base__elite_2d .TreeNode_vehicleType__lightTank_e4 {
-    top: -2rem;
-}
+            top: -2rem;
+        }
 .TreeNode_base__elite_2d .TreeNode_vehicleType__heavyTank_af {
-    top: -1rem;
-}
+            top: -1rem;
+        }
 .TreeNode_base__elite_2d .TreeNode_vehicleType__mediumTank_ba {
-    top: -1rem;
-}
+            top: -1rem;
+        }
 .TreeNode_base__elite_2d .TreeNode_vehicleType__AT-SPG_d7 {
-    top: -1rem;
-}
+            top: -1rem;
+        }
 .TreeNode_content__locked_46 .TreeNode_vehicleType_5f {
-    opacity: 0.5;
-}
+        opacity: 0.5;
+    }
 .TreeNode_vehicleIcon_71 {
     width: 100%;
     height: 100%;
@@ -2358,11 +2313,11 @@
     z-index: -1;
 }
 .TreeNode_content__locked_46 .TreeNode_vehicleIcon_71 {
-    opacity: 0.7;
-}
+        opacity: 0.7;
+    }
 .TreeNode_base__blueprint_8f .TreeNode_content__locked_46 .TreeNode_vehicleIcon_71 {
-    z-index: -2;
-}
+            z-index: -2;
+        }
 .TreeNode_tradeIn_84 {
     width: 36rem;
     height: 36rem;
@@ -2385,15 +2340,15 @@
     pointer-events: none;
 }
 .TreeNode_inInventoryIcon__rent_37 {
-    width: 32rem;
-    height: 32rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.rentIcon');
-    top: 18.5rem;
-    left: 50rem;
-}
+        width: 32rem;
+        height: 32rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.rentIcon');
+        top: 18.5rem;
+        left: 50rem;
+    }
 .TreeNode_inInventoryIcon__blueprint_d2 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.inInventory_blueprints');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.inInventory_blueprints');
+    }
 .TreeNode_earlyAccessLocked_16 {
     width: 126rem;
     height: 42rem;
@@ -2413,43 +2368,43 @@
     right: 8rem;
 }
 .TreeNode_xpCost__discount_f5 {
-    right: 26rem;
-}
+        right: 26rem;
+    }
 .TreeNode_xpCost_e5 {
     bottom: 4rem;
 }
 .TreeNode_xpCost_e5 > span {
-    display: flex;
-    justify-content: center;
-    max-height: 100%;
-    transform: scale(0.7) translateX(25%);
-    pointer-events: none;
-}
+        display: flex;
+        justify-content: center;
+        max-height: 100%;
+        transform: scale(0.7) translateX(25%);
+        pointer-events: none;
+    }
 .TreeNode_xpCost_e5 > span > span:first-child {
-    color: #f2f2f7;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    opacity: 0.7;
-}
+            color: #F2F2F7;
+            font-size: 16rem;
+            font-weight: 400;
+            line-height: 1.25;
+            opacity: 0.7;
+        }
 .TreeNode_xpCost_e5 > span > span:last-child {
-    transform: scale(1.42) translateX(2rem) translateY(0.5rem);
-}
+            transform: scale(1.42) translateX(2rem) translateY(0.5rem);
+        }
 .TreeNode_xpCost__earned_ef > span > span:first-child {
-    opacity: 0.85;
-}
+                opacity: 0.85;
+            }
 .TreeNode_xpCost__earned__elite_0d > span > span:last-child {
-    width: 18rem;
-    height: 18rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.currencyIcon.eliteXpIcon.png');
-    top: 1rem;
-}
+                    width: 18rem;
+                    height: 18rem;
+                    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.currencyIcon.eliteXpIcon.png');
+                    top: 1rem;
+                }
 .TreeNode_xpCost_e5 {
     transition: opacity 0.3s ease-in-out;
 }
 .TreeNode_xpCost__hidden_c6 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .TreeNode_discount_61 {
     width: 34rem;
     height: 31rem;
@@ -2459,16 +2414,16 @@
     bottom: 2rem;
 }
 .TreeNode_discount__buy_a4 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.discounts.red');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.discounts.red');
+    }
 .TreeNode_discount__research_fe {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.discounts.blue');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.discounts.blue');
+    }
 .TreeNode_discount__locked_46 {
-    opacity: 0.7;
-}
+        opacity: 0.7;
+    }
 .TreeNode_tokenBalance_cd {
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
@@ -2479,10 +2434,10 @@
     transform: scale(0.7) translateX(25%);
 }
 .TreeNode_tokenBalance__earlyAccess_a3 {
-    opacity: 0.5;
-    right: 19rem;
-    bottom: 7.5rem;
-}
+        opacity: 0.5;
+        right: 19rem;
+        bottom: 7.5rem;
+    }
 .TreeNode_earlyAccessTokenIcon_58 {
     width: 14rem;
     height: 14rem;
@@ -2508,8 +2463,8 @@
 .TreeNode_earlyAccessGlow_a8 {
     width: 100%;
     height: 100%;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.glow') no-repeat
-        center / cover;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.glow') no-repeat center /
+        cover;
     position: relative;
     left: 128rem;
     animation: TreeNode_earlyAccessGlow_a8 600ms;
@@ -2559,16 +2514,61 @@
     position: relative;
 }
 .TreeNodeHolder_base__premiumEmpty_07 {
-    height: 100%;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.premiumPanel.spacer_dot_golden') no-repeat center /
-        contain;
-}
+        height: 100%;
+        background: url('R.images.gui.maps.icons.techtree.researchTree.premiumPanel.spacer_dot_golden') no-repeat center /
+            contain;
+    }
 
 /* tree node indexes */
 .MainNodesWithConnectors_connectors_06 {
     width: 44rem;
     height: 53rem;
     position: relative;
+}
+
+.DateTimer_base_55 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.DateTimer_timeBg_2d {
+    width: 308rem;
+    height: 143rem;
+    background: url('R.images.gui.maps.icons.paragons.seasons.shine_timer') top center / contain no-repeat;
+    position: absolute;
+    top: -78rem;
+}
+
+.EntryPointDateTimer_base_92 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -14rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+    .mediaMedium .EntryPointDateTimer_base_92 {
+        bottom: -18rem;
+}
+
+.EntryPointDateTimer_timeText_5d {
+    color: #fd9;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    text-shadow: 0 0 4rem rgba(255, 127, 0, 0.25), 0 0 8rem #ff2a00, 0 0 15rem #e52;
+}
+
+.mediaMedium .EntryPointDateTimer_timeText_5d {
+        color: #fd9;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 
 /*
@@ -2582,11 +2582,11 @@
     position: relative;
 }
 .ProgressBar_base__medium_62 {
-    height: 6rem;
-}
+        height: 6rem;
+    }
 .ProgressBar_base__small_df {
-    height: 2rem;
-}
+        height: 2rem;
+    }
 .ProgressBar_background_51 {
     width: 100%;
     max-width: 8001px;
@@ -2600,15 +2600,16 @@
     left: 0;
 }
 .ProgressBar_background__medium_6e {
-    height: 6rem;
-}
+        height: 6rem;
+    }
 .ProgressBar_background__small_46 {
-    height: 2rem;
-}
+        height: 2rem;
+    }
 .ProgressBar_lineWrapper_6a {
     display: flex;
     flex: 1;
 }
+
 
 .ProgressBarBlink_base_24 {
     width: 60rem;
@@ -2623,16 +2624,16 @@
     pointer-events: none;
 }
 
-.ProgressBarBlink_base__medium_ec {
-    width: 42rem;
-    height: 70rem;
-}
+    .ProgressBarBlink_base__medium_ec {
+        width: 42rem;
+        height: 70rem;
+    }
 
-.ProgressBarBlink_base__small_0f {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
+    .ProgressBarBlink_base__small_0f {
+        width: 44rem;
+        height: 43rem;
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -2644,18 +2645,18 @@
     height: 100%;
     background-color: var(--progress-line-base);
     position: relative;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressLineImpose_base__disabled_cc {
-    background-color: var(--progress-line-disabled);
-}
+        background-color: var(--progress-line-disabled);
+    }
 .ProgressLineImpose_base__finished_d4 {
-    background-color: var(--progress-line-finished);
-}
+        background-color: var(--progress-line-finished);
+    }
 .ProgressLineImpose_base__withoutBounce_56 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 .ProgressLineImpose_pattern_1c {
     max-width: 8001px;
     background-image: var(--progress-pattern-base);
@@ -2669,19 +2670,19 @@
     left: 1rem;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-disabled);
-    left: 0;
-}
+        background-image: var(--progress-pattern-disabled);
+        left: 0;
+    }
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-finished);
-}
+        background-image: var(--progress-pattern-finished);
+    }
 .ProgressLineImpose_gradient_35 {
     max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    background-image: linear-gradient(90deg, rgba(0,0,0, .5), rgba(255,255,255, .75));
     mix-blend-mode: overlay;
     position: absolute;
     top: 1rem;
@@ -2690,15 +2691,15 @@
     left: 0;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
-    display: none;
-}
+        display: none;
+    }
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
-}
+        background-image: linear-gradient(90deg, rgba(0,0,0, .5), rgba(255,255,255, .75), rgba(0,0,0, .5));
+    }
 .ProgressLineImpose_glow_a5 {
     width: 60rem;
     max-width: 8001px;
@@ -2713,17 +2714,17 @@
     pointer-events: none;
 }
 .ProgressLineImpose_glow__left_d8 {
-    left: 1rem;
-}
+        left: 1rem;
+    }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
-    display: none;
-}
+    .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+        display: none;
+    }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
+        width: 44rem;
+        height: 43rem;
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -2745,7 +2746,7 @@
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1), cubic-bezier(.21, .61, .35, 1);
     transition-property: width, transform;
 }
 
@@ -2759,12 +2760,12 @@
     height: 100%;
     position: absolute;
     top: 0;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 .ProgressBarDeltaGrow_glow_68 {
     width: 0;
     max-width: 8001px;
@@ -2774,12 +2775,12 @@
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -2815,25 +2816,19 @@
     height: 100%;
     overflow-x: hidden;
     position: relative;
-    mask-image: linear-gradient(
-        270deg,
-        rgba(217, 217, 217, 0) 0%,
-        #d9d9d9 13%,
-        #d9d9d9 87%,
-        rgba(217, 217, 217, 0) 100%
-    );
+    mask-image: linear-gradient(270deg, rgba(217, 217, 217, 0) 0%, #d9d9d9 13%, #d9d9d9 87%, rgba(217, 217, 217, 0) 100%);
 }
 .Progression_progressLineContainer_e9 {
     width: 100%;
     height: 100%;
     margin-top: -12rem;
-    transition: transform 0.5s cubic-bezier(0.34, -0.02, 0.33, 1.01);
+    transition: transform .5s cubic-bezier(.34, -0.02, .33, 1.01);
 }
 .mediaMedium .Progression_progressLineContainer_e9 {
-    margin-top: 0;
+        margin-top: 0;
 }
 .Progression_point_f9 {
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 22rem;
     font-weight: 700;
     line-height: 1.2;
@@ -2842,21 +2837,21 @@
     position: absolute;
 }
 .mediaMedium .Progression_point_f9 {
-    margin-top: 20rem;
+        margin-top: 20rem;
 }
 .Progression_line_7f {
     width: 1rem;
     height: 7rem;
 }
 .Progression_line__top_60 {
-    margin-bottom: 4rem;
-    background: linear-gradient(0deg, #d9d9d9 0%, rgba(217, 217, 217, 0) 100%);
-}
+        margin-bottom: 4rem;
+        background: linear-gradient(0deg, #d9d9d9 0%, rgba(217, 217, 217, 0) 100%);
+    }
 .Progression_line__bottom_45 {
-    height: 3rem;
-    margin-top: 4rem;
-    background: linear-gradient(180deg, #d9d9d9 0%, rgba(217, 217, 217, 0) 100%);
-}
+        height: 3rem;
+        margin-top: 4rem;
+        background: linear-gradient(180deg, #d9d9d9 0%, rgba(217, 217, 217, 0) 100%);
+    }
 
 .ActiveEntryPointState_base_a3 {
     display: flex;
@@ -2876,16 +2871,16 @@
     cursor: pointer;
 }
 .mediaMedium .ActiveEntryPointState_entryPoint_93 {
-    width: 140rem;
-    height: 60rem;
+        width: 140rem;
+        height: 60rem;
 }
 .ActiveEntryPointState_entryPoint__small_87 {
-    width: 44rem;
-    height: 44rem;
-}
+        width: 44rem;
+        height: 44rem;
+    }
 .mediaMedium .ActiveEntryPointState_entryPoint__small_87 {
-    width: 60rem;
-    height: 60rem;
+            width: 60rem;
+            height: 60rem;
 }
 .ActiveEntryPointState_bubble_1a {
     display: flex;
@@ -2898,11 +2893,11 @@
     z-index: 4;
 }
 .mediaMedium .ActiveEntryPointState_bubble_1a {
-    width: 38rem;
-    height: 38rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.counter_large');
-    top: -19rem;
-    right: -18rem;
+        width: 38rem;
+        height: 38rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.counter_large');
+        top: -19rem;
+        right: -18rem;
 }
 .ActiveEntryPointState_progress_ea {
     display: flex;
@@ -2913,8 +2908,8 @@
     z-index: 1;
 }
 .mediaMedium .ActiveEntryPointState_progress_ea {
-    width: 110rem;
-    height: 48rem;
+        width: 110rem;
+        height: 48rem;
 }
 .ActiveEntryPointState_progressBg_ee,
 .ActiveEntryPointState_progressHoverBg_fb {
@@ -2925,10 +2920,9 @@
     left: -32rem;
     transition: opacity 0.3s ease-in-out;
 }
-.mediaMedium .ActiveEntryPointState_progressBg_ee,
-.mediaMedium .ActiveEntryPointState_progressHoverBg_fb {
-    width: 148rem;
-    height: 48rem;
+.mediaMedium .ActiveEntryPointState_progressBg_ee, .mediaMedium .ActiveEntryPointState_progressHoverBg_fb {
+        width: 148rem;
+        height: 48rem;
 }
 .ActiveEntryPointState_progressBg_ee {
     background: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_flag') no-repeat top /
@@ -2936,22 +2930,22 @@
     opacity: 1;
 }
 .mediaMedium .ActiveEntryPointState_progressBg_ee {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_flag_large');
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_flag_large');
 }
 .ActiveEntryPointState_entryPoint__hovered_e2 .ActiveEntryPointState_progressBg_ee {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .ActiveEntryPointState_progressHoverBg_fb {
     background: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_flag_hover') no-repeat
         top / cover;
     opacity: 0;
 }
 .mediaMedium .ActiveEntryPointState_progressHoverBg_fb {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_flag_large_hover');
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_flag_large_hover');
 }
 .ActiveEntryPointState_entryPoint__hovered_e2 .ActiveEntryPointState_progressHoverBg_fb {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .ActiveEntryPointState_levelText_4b {
     color: #faf4c9;
     font-size: 18rem;
@@ -2966,19 +2960,19 @@
     z-index: 3;
 }
 .ActiveEntryPointState_levelText__gradient_a4 {
-    color: #a7956a;
-    mask-image: linear-gradient(transparent 14.52%, #fff 80.65%);
-}
+        color: #a7956a;
+        mask-image: linear-gradient(transparent 14.52%, #fff 80.65%);
+    }
 .mediaMedium .ActiveEntryPointState_levelText_4b {
-    color: #faf4c9;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-    width: 80%;
+        color: #faf4c9;
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 1.1;
+        width: 80%;
 }
 .mediaMedium .ActiveEntryPointState_levelText__gradient_a4 {
-    color: #a7956a;
-}
+            color: #a7956a;
+        }
 .ActiveEntryPointState_level_dc {
     display: flex;
     justify-content: center;
@@ -2988,7 +2982,7 @@
     z-index: 3;
 }
 .mediaMedium .ActiveEntryPointState_level_dc {
-    width: 80%;
+        width: 80%;
 }
 .ActiveEntryPointState_progressLine_e4 {
     display: flex;
@@ -2998,11 +2992,22 @@
     height: 45rem;
     margin-top: 5rem;
 }
-.ActiveEntryPointState_icon_2f {
+.ActiveEntryPointState_iconWrapper_97 {
     display: flex;
     width: 44rem;
     height: 44rem;
     margin-left: -23rem;
+    position: relative;
+}
+.mediaMedium .ActiveEntryPointState_iconWrapper_97 {
+        width: 60rem;
+        height: 60rem;
+        margin-left: -30rem;
+}
+.ActiveEntryPointState_icon_2f {
+    display: flex;
+    width: 100%;
+    height: 100%;
     background: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point') no-repeat center /
         cover;
     filter: brightness(1);
@@ -3011,36 +3016,31 @@
     transition: filter 0.3s ease-in-out;
 }
 .mediaMedium .ActiveEntryPointState_icon_2f {
-    width: 60rem;
-    height: 60rem;
-    margin-left: -30rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_large');
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_large');
 }
 .ActiveEntryPointState_entryPoint__hovered_e2 .ActiveEntryPointState_icon_2f {
-    filter: brightness(1.2);
-}
+        filter: brightness(1.2);
+    }
 .ActiveEntryPointState_icon__alfa_b6 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_alfa');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_alfa');
+    }
 .mediaMedium .ActiveEntryPointState_icon__alfa_b6 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_large_alfa');
+            background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_large_alfa');
 }
 .ActiveEntryPointState_icon__bravo_14 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_bravo');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_bravo');
+    }
 .mediaMedium .ActiveEntryPointState_icon__bravo_14 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_large_bravo');
+            background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_large_bravo');
 }
 .ActiveEntryPointState_icon__flipping_84 {
-    animation:
-        ActiveEntryPointState_scaleDown_2a 0.8s forwards,
-        ActiveEntryPointState_scaleUp_e7 0.8s forwards;
-}
+        animation: ActiveEntryPointState_scaleDown_2a 0.8s forwards, ActiveEntryPointState_scaleUp_e7 0.8s forwards;
+    }
 .ActiveEntryPointState_icon__flippedTo11_39 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_logo');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_logo');
+    }
 .mediaMedium .ActiveEntryPointState_icon__flippedTo11_39 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_logo_large');
+            background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_logo_large');
 }
 .ActiveEntryPointState_glowContainer_c6 {
     width: 39rem;
@@ -3053,9 +3053,9 @@
     z-index: 2;
 }
 .mediaMedium .ActiveEntryPointState_glowContainer_c6 {
-    width: 53rem;
-    height: 53rem;
-    top: 1rem;
+        width: 53rem;
+        height: 53rem;
+        top: 1rem;
 }
 .ActiveEntryPointState_glow_68 {
     width: 25rem;
@@ -3068,9 +3068,9 @@
     animation-delay: 0.5s;
 }
 .mediaMedium .ActiveEntryPointState_glow_68 {
-    width: 34rem;
-    height: 60rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_animation_glow_large');
+        width: 34rem;
+        height: 60rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_animation_glow_large');
 }
 @keyframes ActiveEntryPointState_scaleDown_2a {
     from {
@@ -3117,9 +3117,9 @@
     z-index: 1;
 }
 
-.mediaMedium .FreePoints_base_7d {
-    width: 110rem;
-    height: 48rem;
+    .mediaMedium .FreePoints_base_7d {
+        width: 110rem;
+        height: 48rem;
 }
 
 .FreePoints_freePointsBg_f7,
@@ -3132,10 +3132,9 @@
     transition: opacity 0.3s ease-in-out;
 }
 
-.mediaMedium .FreePoints_freePointsBg_f7,
-.mediaMedium .FreePoints_freePointsHoverBg_8a {
-    width: 148rem;
-    height: 48rem;
+.mediaMedium .FreePoints_freePointsBg_f7, .mediaMedium .FreePoints_freePointsHoverBg_8a {
+        width: 148rem;
+        height: 48rem;
 }
 
 .FreePoints_freePointsBg_f7 {
@@ -3145,29 +3144,29 @@
 }
 
 .mediaMedium .FreePoints_freePointsBg_f7 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_flag_large');
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_flag_large');
 }
 
 .FreePoints_base__hovered_3f .FreePoints_freePointsBg_f7 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .FreePoints_freePointsHoverBg_8a {
     background: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_flag_hover') no-repeat
-        top / cover;
+    top / cover;
     opacity: 0;
 }
 
 .mediaMedium .FreePoints_freePointsHoverBg_8a {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_flag_large_hover');
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_flag_large_hover');
 }
 
 .FreePoints_base__hovered_3f .FreePoints_freePointsHoverBg_8a {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .FreePoints_freePointsText_8f {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 14rem;
     font-weight: 700;
     line-height: 1.15;
@@ -3179,22 +3178,22 @@
 }
 
 .FreePoints_freePointsText__gradient_18 {
-    color: #a7956a;
-    mask-image: linear-gradient(transparent 14.52%, #fff 80.65%);
-}
+        color: #a7956a;
+        mask-image: linear-gradient(transparent 14.52%, #fff 80.65%);
+    }
 
 .mediaMedium .FreePoints_freePointsText_8f {
-    color: #e9e2bf;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    top: 10rem;
-    right: 46rem;
+        color: #E9E2BF;
+        font-size: 18rem;
+        font-weight: 700;
+        line-height: 1.1;
+        top: 10rem;
+        right: 46rem;
 }
 
 .mediaMedium .FreePoints_freePointsText__gradient_18 {
-    color: #a7956a;
-}
+            color: #a7956a;
+        }
 
 .AllChaptersCompletedEntryPointState_base_89 {
     display: flex;
@@ -3214,21 +3213,32 @@
     cursor: pointer;
 }
 .mediaMedium .AllChaptersCompletedEntryPointState_entryPoint_60 {
-    width: 140rem;
-    height: 60rem;
+        width: 140rem;
+        height: 60rem;
 }
 .AllChaptersCompletedEntryPointState_entryPoint__small_13 {
-    width: 44rem;
-    height: 44rem;
-}
+        width: 44rem;
+        height: 44rem;
+    }
 .mediaMedium .AllChaptersCompletedEntryPointState_entryPoint__small_13 {
-    width: 60rem;
-    height: 60rem;
+            width: 60rem;
+            height: 60rem;
 }
-.AllChaptersCompletedEntryPointState_icon_40 {
+.AllChaptersCompletedEntryPointState_iconWrapper_d1 {
     display: flex;
     width: 44rem;
     height: 44rem;
+    position: absolute;
+    right: 0;
+}
+.mediaMedium .AllChaptersCompletedEntryPointState_iconWrapper_d1 {
+        width: 60rem;
+        height: 60rem;
+}
+.AllChaptersCompletedEntryPointState_icon_40 {
+    display: flex;
+    width: 100%;
+    height: 100%;
     background: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point') no-repeat center /
         cover;
     filter: brightness(1);
@@ -3238,33 +3248,26 @@
     transition: filter 0.3s ease-in-out;
 }
 .mediaMedium .AllChaptersCompletedEntryPointState_icon_40 {
-    width: 60rem;
-    height: 60rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_large');
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_large');
 }
 .AllChaptersCompletedEntryPointState_icon__disabled_62 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_disabled');
-    cursor: default;
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_disabled');
+        cursor: default;
+    }
 .mediaMedium .AllChaptersCompletedEntryPointState_icon__disabled_62 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_disabled_large');
-}
-.AllChaptersCompletedEntryPointState_entryPoint__small_13 .AllChaptersCompletedEntryPointState_icon_40 {
-    margin-left: 0;
+            background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_disabled_large');
 }
 .AllChaptersCompletedEntryPointState_entryPoint__hovered_14 .AllChaptersCompletedEntryPointState_icon_40 {
-    filter: brightness(1.2);
-}
+        filter: brightness(1.2);
+    }
 .AllChaptersCompletedEntryPointState_icon__flipping_54 {
-    animation:
-        AllChaptersCompletedEntryPointState_scaleDown_e2 0.8s forwards,
-        AllChaptersCompletedEntryPointState_scaleUp_e6 0.8s forwards;
-}
+        animation: AllChaptersCompletedEntryPointState_scaleDown_e2 0.8s forwards, AllChaptersCompletedEntryPointState_scaleUp_e6 0.8s forwards;
+    }
 .AllChaptersCompletedEntryPointState_icon__flippedTo11_b3 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_logo');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_logo');
+    }
 .mediaMedium .AllChaptersCompletedEntryPointState_icon__flippedTo11_b3 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_logo_large');
+            background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_logo_large');
 }
 .AllChaptersCompletedEntryPointState_glowContainer_35 {
     width: 39rem;
@@ -3277,9 +3280,9 @@
     z-index: 2;
 }
 .mediaMedium .AllChaptersCompletedEntryPointState_glowContainer_35 {
-    width: 53rem;
-    height: 53rem;
-    top: 1rem;
+        width: 53rem;
+        height: 53rem;
+        top: 1rem;
 }
 .AllChaptersCompletedEntryPointState_glow_04 {
     width: 25rem;
@@ -3292,9 +3295,9 @@
     animation-delay: 0.5s;
 }
 .mediaMedium .AllChaptersCompletedEntryPointState_glow_04 {
-    width: 34rem;
-    height: 60rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_animation_glow_large');
+        width: 34rem;
+        height: 60rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_animation_glow_large');
 }
 .AllChaptersCompletedEntryPointState_completedIcon_ad {
     width: 56rem;
@@ -3306,11 +3309,11 @@
     z-index: 3;
 }
 .mediaMedium .AllChaptersCompletedEntryPointState_completedIcon_ad {
-    width: 64rem;
-    height: 28rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.check_large');
-    right: -2rem;
-    bottom: -5rem;
+        width: 64rem;
+        height: 28rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.check_large');
+        right: -2rem;
+        bottom: -5rem;
 }
 @keyframes AllChaptersCompletedEntryPointState_scaleDown_e2 {
     from {
@@ -3366,22 +3369,22 @@
     cursor: pointer;
 }
 .ChapterNotChosenEntryPointState_entryPoint__show_64 {
-    width: 100rem;
-}
+        width: 100rem;
+    }
 .mediaMedium .ChapterNotChosenEntryPointState_entryPoint_8c {
-    width: 60rem;
-    height: 60rem;
+        width: 60rem;
+        height: 60rem;
 }
 .mediaMedium .ChapterNotChosenEntryPointState_entryPoint__show_64 {
-    width: 140rem;
-}
+            width: 140rem;
+        }
 .ChapterNotChosenEntryPointState_entryPoint__small_d3 {
-    width: 44rem;
-    height: 44rem;
-}
+        width: 44rem;
+        height: 44rem;
+    }
 .mediaMedium .ChapterNotChosenEntryPointState_entryPoint__small_d3 {
-    width: 60rem;
-    height: 60rem;
+            width: 60rem;
+            height: 60rem;
 }
 .ChapterNotChosenEntryPointState_bubble_87 {
     display: flex;
@@ -3394,16 +3397,27 @@
     z-index: 4;
 }
 .mediaMedium .ChapterNotChosenEntryPointState_bubble_87 {
-    width: 38rem;
-    height: 38rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.counter_large');
-    top: -19rem;
-    right: -18rem;
+        width: 38rem;
+        height: 38rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.counter_large');
+        top: -19rem;
+        right: -18rem;
 }
-.ChapterNotChosenEntryPointState_icon_e7 {
+.ChapterNotChosenEntryPointState_iconWrapper_d6 {
     display: flex;
     width: 44rem;
     height: 44rem;
+    position: absolute;
+    right: 0;
+}
+.mediaMedium .ChapterNotChosenEntryPointState_iconWrapper_d6 {
+        width: 60rem;
+        height: 60rem;
+}
+.ChapterNotChosenEntryPointState_icon_e7 {
+    display: flex;
+    width: 100%;
+    height: 100%;
     background: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point') no-repeat center /
         cover;
     filter: brightness(1);
@@ -3413,33 +3427,26 @@
     transition: filter 0.3s ease-in-out;
 }
 .mediaMedium .ChapterNotChosenEntryPointState_icon_e7 {
-    width: 60rem;
-    height: 60rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_large');
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_large');
 }
 .ChapterNotChosenEntryPointState_icon__disabled_57 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_disabled');
-    cursor: default;
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_disabled');
+        cursor: default;
+    }
 .mediaMedium .ChapterNotChosenEntryPointState_icon__disabled_57 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_disabled_large');
-}
-.ChapterNotChosenEntryPointState_entryPoint__small_d3 .ChapterNotChosenEntryPointState_icon_e7 {
-    margin-left: 0;
+            background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_disabled_large');
 }
 .ChapterNotChosenEntryPointState_entryPoint__hovered_8b .ChapterNotChosenEntryPointState_icon_e7 {
-    filter: brightness(1.2);
-}
+        filter: brightness(1.2);
+    }
 .ChapterNotChosenEntryPointState_icon__flipping_a3 {
-    animation:
-        ChapterNotChosenEntryPointState_scaleDown_e1 0.8s forwards,
-        ChapterNotChosenEntryPointState_scaleUp_a9 0.8s forwards;
-}
+        animation: ChapterNotChosenEntryPointState_scaleDown_e1 0.8s forwards, ChapterNotChosenEntryPointState_scaleUp_a9 0.8s forwards;
+    }
 .ChapterNotChosenEntryPointState_icon__flippedTo11_90 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_logo');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_logo');
+    }
 .mediaMedium .ChapterNotChosenEntryPointState_icon__flippedTo11_90 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_logo_large');
+            background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_logo_large');
 }
 .ChapterNotChosenEntryPointState_glowContainer_59 {
     width: 39rem;
@@ -3452,9 +3459,9 @@
     z-index: 2;
 }
 .mediaMedium .ChapterNotChosenEntryPointState_glowContainer_59 {
-    width: 53rem;
-    height: 53rem;
-    top: 1rem;
+        width: 53rem;
+        height: 53rem;
+        top: 1rem;
 }
 .ChapterNotChosenEntryPointState_glow_56 {
     width: 25rem;
@@ -3467,9 +3474,9 @@
     animation-delay: 0.5s;
 }
 .mediaMedium .ChapterNotChosenEntryPointState_glow_56 {
-    width: 34rem;
-    height: 60rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_animation_glow_large');
+        width: 34rem;
+        height: 60rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_animation_glow_large');
 }
 .ChapterNotChosenEntryPointState_plusIcon_3f {
     width: 22rem;
@@ -3481,11 +3488,11 @@
     z-index: 3;
 }
 .mediaMedium .ChapterNotChosenEntryPointState_plusIcon_3f {
-    width: 30rem;
-    height: 30rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.plus_large');
-    right: 15rem;
-    bottom: 0;
+        width: 30rem;
+        height: 30rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.plus_large');
+        right: 15rem;
+        bottom: 0;
 }
 @keyframes ChapterNotChosenEntryPointState_scaleDown_e1 {
     from {
@@ -3541,21 +3548,36 @@
     cursor: pointer;
 }
 .mediaMedium .NotAvailableEntryPointState_entryPoint_cc {
-    width: 60rem;
-    height: 60rem;
+        width: 60rem;
+        height: 60rem;
 }
 .NotAvailableEntryPointState_entryPoint__small_10 {
-    width: 44rem;
-    height: 44rem;
-}
+        width: 44rem;
+        height: 44rem;
+    }
 .mediaMedium .NotAvailableEntryPointState_entryPoint__small_10 {
-    width: 60rem;
-    height: 60rem;
+            width: 60rem;
+            height: 60rem;
 }
-.NotAvailableEntryPointState_icon_43 {
+.NotAvailableEntryPointState_iconWrapper_38 {
     display: flex;
     width: 44rem;
     height: 44rem;
+    position: absolute;
+    right: 0;
+}
+.mediaMedium .NotAvailableEntryPointState_iconWrapper_38 {
+        width: 60rem;
+        height: 60rem;
+        margin-left: -30rem;
+}
+.NotAvailableEntryPointState_entryPoint__small_10 .NotAvailableEntryPointState_iconWrapper_38 {
+        margin-left: 0;
+    }
+.NotAvailableEntryPointState_icon_43 {
+    display: flex;
+    width: 100%;
+    height: 100%;
     background: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point') no-repeat center /
         cover;
     filter: brightness(1);
@@ -3565,17 +3587,11 @@
     transition: filter 0.3s ease-in-out;
 }
 .mediaMedium .NotAvailableEntryPointState_icon_43 {
-    width: 60rem;
-    height: 60rem;
-    margin-left: -30rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_large');
-}
-.NotAvailableEntryPointState_entryPoint__small_10 .NotAvailableEntryPointState_icon_43 {
-    margin-left: 0;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_large');
 }
 .NotAvailableEntryPointState_entryPoint__hovered_2f .NotAvailableEntryPointState_icon_43 {
-    filter: brightness(1.2);
-}
+        filter: brightness(1.2);
+    }
 
 .PausedEntryPointState_base_38 {
     display: flex;
@@ -3595,21 +3611,36 @@
     cursor: pointer;
 }
 .mediaMedium .PausedEntryPointState_entryPoint_73 {
-    width: 60rem;
-    height: 60rem;
+        width: 60rem;
+        height: 60rem;
 }
 .PausedEntryPointState_entryPoint__small_d0 {
-    width: 44rem;
-    height: 44rem;
-}
+        width: 44rem;
+        height: 44rem;
+    }
 .mediaMedium .PausedEntryPointState_entryPoint__small_d0 {
-    width: 60rem;
-    height: 60rem;
+            width: 60rem;
+            height: 60rem;
 }
-.PausedEntryPointState_icon_ca {
+.PausedEntryPointState_iconWrapper_69 {
     display: flex;
     width: 44rem;
     height: 44rem;
+    position: absolute;
+    right: 0;
+}
+.mediaMedium .PausedEntryPointState_iconWrapper_69 {
+        width: 60rem;
+        height: 60rem;
+        margin-left: -30rem;
+}
+.PausedEntryPointState_entryPoint__small_d0 .PausedEntryPointState_iconWrapper_69 {
+        margin-left: 0;
+    }
+.PausedEntryPointState_icon_ca {
+    display: flex;
+    width: 100%;
+    height: 100%;
     background: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point') no-repeat center /
         cover;
     filter: brightness(1);
@@ -3619,24 +3650,18 @@
     transition: filter 0.3s ease-in-out;
 }
 .mediaMedium .PausedEntryPointState_icon_ca {
-    width: 60rem;
-    height: 60rem;
-    margin-left: -30rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_large');
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_large');
 }
 .PausedEntryPointState_icon__disabled_79 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_disabled');
-    cursor: default;
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_disabled');
+        cursor: default;
+    }
 .mediaMedium .PausedEntryPointState_icon__disabled_79 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_disabled_large');
-}
-.PausedEntryPointState_entryPoint__small_d0 .PausedEntryPointState_icon_ca {
-    margin-left: 0;
+            background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_disabled_large');
 }
 .PausedEntryPointState_entryPoint__hovered_55 .PausedEntryPointState_icon_ca {
-    filter: brightness(1.2);
-}
+        filter: brightness(1.2);
+    }
 
 .MainParagonsEntryPoint_base_90 {
     display: flex;
@@ -3653,29 +3678,31 @@
     pointer-events: none;
 }
 
-.mediaMedium .Frame_base_dc {
-    width: 55rem;
-    height: 36rem;
-}
-
-@media (min-width: 1700px) and (min-height: 900px) and (max-width: 1919px) and (max-height: 1079px) {
     .mediaMedium .Frame_base_dc {
-        width: 60rem;
-        height: 40rem;
+        width: 55rem;
+        height: 36rem;
+}
+
+    @media (min-width: 1700px) and (min-height: 900px) and (max-width: 1919px) and (max-height: 1079px) {
+
+    .mediaMedium .Frame_base_dc {
+            width: 60rem;
+            height: 40rem;
     }
-}
+    }
 
-.mediaMedium .Frame_base__scaled_74 {
-    width: 55rem;
-    height: 36rem;
-}
-
-@media (min-width: 3400px) and (min-height: 1700px) {
     .mediaMedium .Frame_base__scaled_74 {
-        width: 60rem;
-        height: 40rem;
-    }
+            width: 55rem;
+            height: 36rem;
 }
+
+    @media (min-width: 3400px) and (min-height: 1700px) {
+
+    .mediaMedium .Frame_base__scaled_74 {
+                width: 60rem;
+                height: 40rem;
+    }
+    }
 
 .Frame_arrow_ec {
     width: 7rem;
@@ -3697,63 +3724,64 @@
     margin-top: 12rem;
     background: none;
     position: relative;
-    transition:
-        color 0.5s ease-in-out,
-        text-shadow 0.3s ease-in-out;
+    transition: color 0.5s ease-in-out, text-shadow 0.3s ease-in-out;
     cursor: pointer;
 }
 
-.mediaMedium .Tab_base_d9 {
-    width: 55rem;
-    height: 36rem;
-    margin-top: 13rem;
+    .mediaMedium .Tab_base_d9 {
+        width: 55rem;
+        height: 36rem;
+        margin-top: 13rem;
 }
 
-@media (min-width: 1700px) and (min-height: 900px) and (max-width: 1919px) and (max-height: 1079px) {
+    @media (min-width: 1700px) and (min-height: 900px) and (max-width: 1919px) and (max-height: 1079px) {
+
     .mediaMedium .Tab_base_d9 {
+            width: 60rem;
+            height: 40rem;
+            margin-top: 17rem;
+    }
+    }
+
+    .mediaLarge .Tab_base_d9 {
         width: 60rem;
         height: 40rem;
         margin-top: 17rem;
-    }
 }
 
-.mediaLarge .Tab_base_d9 {
-    width: 60rem;
-    height: 40rem;
-    margin-top: 17rem;
-}
-
-.mediaMedium .Tab_base__scaled_bf {
-    width: 55rem;
-    height: 36rem;
-    margin-top: 13rem;
-}
-
-@media (min-width: 3400px) and (min-height: 1700px) {
     .mediaMedium .Tab_base__scaled_bf {
-        width: 60rem;
-        height: 40rem;
+            width: 55rem;
+            height: 36rem;
+            margin-top: 13rem;
+}
+
+    @media (min-width: 3400px) and (min-height: 1700px) {
+
+    .mediaMedium .Tab_base__scaled_bf {
+                width: 60rem;
+                height: 40rem;
     }
-}
+    }
 
-.Tab_base__active_da {
-    cursor: default;
-    pointer-events: none;
-}
+    .Tab_base__active_da {
+        cursor: default;
+        pointer-events: none;
+    }
 
-.Tab_base_d9:nth-child(1) {
-    margin-top: 0;
-}
-
-.mediaMedium .Tab_base_d9:nth-child(1) {
-    margin-top: 0;
-}
-
-@media (min-width: 1700px) and (min-height: 900px) and (max-width: 1919px) and (max-height: 1079px) {
-    .mediaMedium .Tab_base_d9:nth-child(1) {
+    .Tab_base_d9:nth-child(1) {
         margin-top: 0;
     }
+
+    .mediaMedium .Tab_base_d9:nth-child(1) {
+            margin-top: 0;
 }
+
+    @media (min-width: 1700px) and (min-height: 900px) and (max-width: 1919px) and (max-height: 1079px) {
+
+    .mediaMedium .Tab_base_d9:nth-child(1) {
+                margin-top: 0;
+    }
+    }
 
 .Tab_earlyAccessIcon_cc {
     width: 90rem;
@@ -3771,7 +3799,8 @@
 .Tab_discountIcon_6e {
     width: 20rem;
     height: 20rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.nationMenu.discount') no-repeat center / contain;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.nationMenu.discount') no-repeat center /
+        contain;
     position: absolute;
     top: -8rem;
     left: 38rem;
@@ -3780,43 +3809,45 @@
 }
 
 .mediaMedium .Tab_discountIcon_6e {
-    width: 22rem;
-    height: 22rem;
-    top: -10rem;
-    left: 44rem;
+        width: 22rem;
+        height: 22rem;
+        top: -10rem;
+        left: 44rem;
 }
 
 @media (min-width: 1700px) and (min-height: 900px) and (max-width: 1919px) and (max-height: 1079px) {
-    .mediaMedium .Tab_discountIcon_6e {
+
+.mediaMedium .Tab_discountIcon_6e {
+            width: 24rem;
+            height: 24rem;
+            top: -11rem;
+            left: 46rem;
+    }
+    }
+
+.mediaLarge .Tab_discountIcon_6e {
         width: 24rem;
         height: 24rem;
         top: -11rem;
         left: 46rem;
-    }
-}
-
-.mediaLarge .Tab_discountIcon_6e {
-    width: 24rem;
-    height: 24rem;
-    top: -11rem;
-    left: 46rem;
 }
 
 .mediaMedium .Tab_discountIcon__scaled_4c {
-    width: 24rem;
-    height: 24rem;
-    top: -11rem;
-    left: 46rem;
+            width: 24rem;
+            height: 24rem;
+            top: -11rem;
+            left: 46rem;
 }
 
 @media (min-width: 3400px) and (min-height: 1700px) {
-    .mediaMedium .Tab_discountIcon__scaled_4c {
-        width: 24rem;
-        height: 24rem;
-        top: -11rem;
-        left: 46rem;
+
+.mediaMedium .Tab_discountIcon__scaled_4c {
+                width: 24rem;
+                height: 24rem;
+                top: -11rem;
+                left: 46rem;
     }
-}
+    }
 
 .Tab_highlight_1d {
     width: 266rem;
@@ -3828,49 +3859,49 @@
     left: 50%;
     z-index: 1;
     transform: translate(-50%, -50%);
-    transition:
-        opacity 0.5s ease-in-out,
-        width 0.3s ease-out;
+    transition: opacity 0.5s ease-in-out, width 0.3s ease-out;
     transition-duration: 0.2s;
     pointer-events: none;
 }
 
 .Tab_base__active_da .Tab_highlight_1d {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .mediaMedium .Tab_highlight_1d {
-    width: 320rem;
-    height: 151rem;
+        width: 320rem;
+        height: 151rem;
 }
 
 @media (min-width: 1700px) and (min-height: 900px) and (max-width: 1919px) and (max-height: 1079px) {
-    .mediaMedium .Tab_highlight_1d {
-        width: 338rem;
-        height: 168rem;
+
+.mediaMedium .Tab_highlight_1d {
+            width: 338rem;
+            height: 168rem;
     }
-}
+    }
 
 .mediaLarge .Tab_highlight_1d {
-    width: 338rem;
-    height: 168rem;
+        width: 338rem;
+        height: 168rem;
 }
 
 .Tab_base__scaled_bf .Tab_highlight_1d {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.nationMenu.flag_border_2x');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.nationMenu.flag_border_2x');
+    }
 
 .mediaMedium .Tab_base__scaled_bf .Tab_highlight_1d {
-    width: 320rem;
-    height: 151rem;
+            width: 320rem;
+            height: 151rem;
 }
 
 @media (min-width: 3400px) and (min-height: 1700px) {
-    .mediaMedium .Tab_base__scaled_bf .Tab_highlight_1d {
-        width: 338rem;
-        height: 168rem;
+
+.mediaMedium .Tab_base__scaled_bf .Tab_highlight_1d {
+                width: 338rem;
+                height: 168rem;
     }
-}
+    }
 
 .Tab_icon_0f {
     width: 48rem;
@@ -3882,33 +3913,35 @@
 }
 
 .mediaMedium .Tab_icon_0f {
-    width: 55rem;
-    height: 36rem;
+        width: 55rem;
+        height: 36rem;
 }
 
 @media (min-width: 1700px) and (min-height: 900px) and (max-width: 1919px) and (max-height: 1079px) {
-    .mediaMedium .Tab_icon_0f {
-        width: 60rem;
-        height: 40rem;
+
+.mediaMedium .Tab_icon_0f {
+            width: 60rem;
+            height: 40rem;
     }
-}
+    }
 
 .mediaLarge .Tab_icon_0f {
-    width: 60rem;
-    height: 40rem;
+        width: 60rem;
+        height: 40rem;
 }
 
 .mediaMedium .Tab_base__scaled_bf .Tab_icon_0f {
-    width: 55rem;
-    height: 36rem;
+            width: 55rem;
+            height: 36rem;
 }
 
 @media (min-width: 3400px) and (min-height: 1700px) {
-    .mediaMedium .Tab_base__scaled_bf .Tab_icon_0f {
-        width: 60rem;
-        height: 40rem;
+
+.mediaMedium .Tab_base__scaled_bf .Tab_icon_0f {
+                width: 60rem;
+                height: 40rem;
     }
-}
+    }
 
 .VerticalTabs_base_a6 {
     display: flex;
@@ -3947,11 +3980,11 @@
 }
 
 .NationsMenu_shadow__scaled_68 {
-    box-shadow: 0 0 85rem 50rem rgba(0, 0, 0, 0.7);
-}
+        box-shadow: 0 0 85rem 50rem rgba(0, 0, 0, 0.7);
+    }
 
 .mediaMedium .NationsMenu_shadow__scaled_68 {
-    box-shadow: 0 0 94rem 80rem rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 94rem 80rem rgba(0, 0, 0, 0.7);
 }
 
 .NationTitle_base_60 {
@@ -3960,22 +3993,22 @@
     margin-left: 58rem;
 }
 
-.mediaMedium .NationTitle_base_60 {
-    margin-left: 61rem;
+    .mediaMedium .NationTitle_base_60 {
+        margin-left: 61rem;
 }
 
 .NationTitle_nationTitle_06 {
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 24rem;
     font-weight: 700;
     line-height: 1.2;
 }
 
 .mediaMedium .NationTitle_nationTitle_06 {
-    color: #f2f2f7;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
+        color: #F2F2F7;
+        font-size: 36rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 
 .NationTitle_collectionVehicles_5a {
@@ -3992,15 +4025,15 @@
 }
 
 .mediaMedium .NationTitle_collectionVehicles_5a {
-    height: 30rem;
-    margin-left: 13rem;
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.collectionVehiclesIcons.icon__large');
-    top: 10rem;
+        height: 30rem;
+        margin-left: 13rem;
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.collectionVehiclesIcons.icon__large');
+        top: 10rem;
 }
 
 .NationTitle_collectionVehicles_5a:hover {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 /* tree node indexes */
 .PremiumPanel_base_90 {
@@ -4037,8 +4070,8 @@
     transition: opacity 0.2s ease-in-out;
 }
 .PremiumPanel_base__active_05 .PremiumPanel_topBorder_b3 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .PremiumPanel_contentWrapper_a7 {
     width: 100%;
     height: 100%;
@@ -4055,23 +4088,17 @@
     transition: transform 0.2s ease-in-out;
 }
 .PremiumPanel_content__withRowButtons_18 {
-    padding-right: 92rem;
-}
+        padding-right: 92rem;
+    }
 .PremiumPanel_base__active_05 .PremiumPanel_content_63 {
-    transform: translateY(32rem);
-}
+        transform: translateY(32rem);
+    }
 
 /* tree node indexes */
 .PremiumPanelEffects_base_41 {
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        to left,
-        rgba(0, 0, 0, 0.5) 0%,
-        rgba(255, 255, 255, 0) 15%,
-        rgba(255, 255, 255, 0) 85%,
-        rgba(0, 0, 0, 0.5) 100%
-    );
+    background: linear-gradient(to left, rgba(0, 0, 0, .5) 0%, rgba(255, 255, 255, 0) 15%, rgba(255, 255, 255, 0) 85%, rgba(0, 0, 0, .5) 100%);
     position: relative;
     bottom: 0;
     left: 0;
@@ -4079,9 +4106,7 @@
 .PremiumPanelEffects_shadow_63 {
     width: 100%;
     height: 100%;
-    box-shadow:
-        0 360rem 4rem 0 rgba(0, 0, 0, 0.25) inset,
-        0 -3rem 4rem 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 360rem 4rem 0 rgba(0, 0, 0, 0.25) inset, 0 -3rem 4rem 0 rgba(0, 0, 0, 0.2);
     opacity: 1;
     position: absolute;
     bottom: 0;
@@ -4089,8 +4114,8 @@
     transition: opacity 0.2s ease-in-out;
 }
 .PremiumPanelEffects_base__active_6a .PremiumPanelEffects_shadow_63 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .PremiumPanelEffects_topGlow_b7 {
     width: 1920rem;
     height: 360rem;
@@ -4105,8 +4130,8 @@
     pointer-events: none;
 }
 .PremiumPanelEffects_base__active_6a .PremiumPanelEffects_topGlow_b7 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .PremiumPanelEffects_wreathWrapper_96 {
     width: 412rem;
     height: 70rem;
@@ -4124,12 +4149,13 @@
     pointer-events: none;
 }
 .PremiumPanelEffects_base__active_6a .PremiumPanelEffects_wreathContent_bb {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .PremiumPanelEffects_wreath_d8 {
     width: 75rem;
     height: 70rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.premiumPanel.wreath') no-repeat center top / cover;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.premiumPanel.wreath') no-repeat center top /
+        cover;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -4139,13 +4165,13 @@
     width: 100%;
     height: 40rem;
     background: url('R.images.gui.maps.icons.techtree.researchTree.premiumPanel.title_glow') no-repeat center / contain;
-    opacity: 0.6;
+    opacity: .6;
     position: absolute;
     bottom: -9rem;
     left: 0;
 }
 .PremiumPanelEffects_header_72 {
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 18rem;
     font-weight: 400;
     line-height: 1.25;
@@ -4171,8 +4197,8 @@
 }
 
 .EarlyAccessButton_base__disabled_b8 .EarlyAccessButton_touchableZone_30 {
-    cursor: default;
-}
+        cursor: default;
+    }
 
 .EarlyAccessButton_background_4a {
     width: 65rem;
@@ -4185,16 +4211,16 @@
 }
 
 .EarlyAccessButton_base__scaled_47 .EarlyAccessButton_background_4a {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.backgrounds.default_scaled');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.backgrounds.default_scaled');
+    }
 
 .EarlyAccessButton_base__disabled_b8 .EarlyAccessButton_background_4a {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.backgrounds.locked');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.backgrounds.locked');
+    }
 
 .EarlyAccessButton_base__disabled_b8.EarlyAccessButton_base__scaled_47 .EarlyAccessButton_background_4a {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.backgrounds.locked_scaled');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.backgrounds.locked_scaled');
+    }
 
 .EarlyAccessButton_backgroundHovered_e1 {
     width: 35rem;
@@ -4209,12 +4235,12 @@
 }
 
 .EarlyAccessButton_base__scaled_47 .EarlyAccessButton_backgroundHovered_e1 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.backgrounds.hovered_scaled');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.backgrounds.hovered_scaled');
+    }
 
 .EarlyAccessButton_base__hovered_92 .EarlyAccessButton_backgroundHovered_e1 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .EarlyAccessButton_icon_c2 {
     width: 31rem;
@@ -4224,8 +4250,8 @@
 }
 
 .EarlyAccessButton_base__scaled_47 .EarlyAccessButton_icon_c2 {
-    background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.icons.default_sacaled');
-}
+        background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.icons.default_sacaled');
+    }
 
 .EarlyAccessButton_icon_c2 {
     position: absolute;
@@ -4234,8 +4260,8 @@
 }
 
 .EarlyAccessButton_base__disabled_b8 .EarlyAccessButton_icon_c2 {
-    opacity: 0.5;
-}
+        opacity: 0.5;
+    }
 
 .ParagonsRowButton_base_b3 {
     width: 100%;
@@ -4244,9 +4270,9 @@
     cursor: pointer;
 }
 
-.ParagonsRowButton_base__disabled_c8 {
-    cursor: default;
-}
+    .ParagonsRowButton_base__disabled_c8 {
+        cursor: default;
+    }
 
 .ParagonsRowButton_background_1d {
     width: 100%;
@@ -4265,8 +4291,8 @@
 }
 
 .ParagonsRowButton_base__hovered_e6 .ParagonsRowButton_backgroundHovered_4f {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .ParagonsRowButton_icon_a4 {
     width: 16rem;
@@ -4278,12 +4304,12 @@
 }
 
 .ParagonsRowButton_base__disabled_c8 .ParagonsRowButton_icon_a4 {
-    opacity: 0.4;
-}
+        opacity: 0.4;
+    }
 
 .ParagonsRowButton_base__droppedBranch_11 .ParagonsRowButton_icon_a4 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .ParagonsRowButton_iconHovered_42 {
     width: 16rem;
@@ -4297,8 +4323,8 @@
 }
 
 .ParagonsRowButton_base__hovered_e6 .ParagonsRowButton_iconHovered_42 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .ParagonsRowButton_iconGlow_d0 {
     width: 14rem;
@@ -4313,14 +4339,13 @@
 }
 
 .ParagonsRowButton_base__hovered_e6 .ParagonsRowButton_iconGlow_d0 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .ParagonsRowButton_hintArrow_1b {
     width: 65rem;
     height: 65rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.paragons.backgrounds.arrow') no-repeat
-        left / cover;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.paragons.backgrounds.arrow') no-repeat left / cover;
     opacity: 0;
     position: absolute;
     top: -14rem;
@@ -4374,34 +4399,33 @@
     position: relative;
 }
 
-.HorizontalBar_base__nonActive_8b {
-    visibility: hidden;
-}
+    .HorizontalBar_base__nonActive_8b {
+        visibility: hidden;
+    }
 
-.HorizontalBar_base_72 .disable,
-.HorizontalBar_base_72 .disable:hover {
-    opacity: 0.3;
-    cursor: default;
-}
+    .HorizontalBar_base_72 .disable,
+    .HorizontalBar_base_72 .disable:hover {
+        opacity: .3;
+        cursor: default;
+    }
 
 .HorizontalBar_leftButton_14,
 .HorizontalBar_rightButton_88 {
     width: 13rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
-    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    box-shadow: inset 0 0 1rem rgba(255,255,190, .3);
     background: no-repeat center / 7rem 5rem;
-    opacity: 0.5;
+    opacity: .5;
     z-index: 1;
     transform: rotate(-90deg);
     transition: opacity 130ms linear;
     cursor: pointer;
 }
 
-.HorizontalBar_leftButton_14:hover,
-.HorizontalBar_rightButton_88:hover {
-    opacity: 1;
-}
+.HorizontalBar_leftButton_14:hover, .HorizontalBar_rightButton_88:hover {
+        opacity: 1;
+    }
 
 .HorizontalBar_leftButton_14 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
@@ -4424,10 +4448,9 @@
     min-width: 20rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
-    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
-    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb_horizontal') no-repeat center / 8rem
-        7rem;
-    opacity: 0.5;
+    box-shadow: inset 0 0 1rem rgba(255,255,190, .3);
+    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb_horizontal') no-repeat center / 8rem 7rem;
+    opacity: .5;
     position: absolute;
     z-index: 1;
     transition: opacity 130ms linear;
@@ -4435,8 +4458,8 @@
 }
 
 .HorizontalBar_thumb_63:hover {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .HorizontalBar_rail_3b {
     height: 0;
@@ -4448,8 +4471,9 @@
 }
 
 .HorizontalBar_rail_3b:hover {
-    opacity: 0.7;
-}
+        opacity: .7;
+    }
+
 
 .HorizontalScroll_base_f2 {
     width: 100%;
@@ -4480,33 +4504,32 @@
     position: relative;
 }
 
-.VerticalBar_base__nonActive_3c {
-    visibility: hidden;
-}
+    .VerticalBar_base__nonActive_3c {
+        visibility: hidden;
+    }
 
-.VerticalBar_base_d6 .disable,
-.VerticalBar_base_d6 .disable:hover {
-    opacity: 0.3;
-    cursor: default;
-}
+    .VerticalBar_base_d6 .disable,
+    .VerticalBar_base_d6 .disable:hover {
+        opacity: .3;
+        cursor: default;
+    }
 
 .VerticalBar_topButton_6f,
 .VerticalBar_bottomButton_db {
     width: 13rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
-    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    box-shadow: inset 0 0 1rem rgba(255,255,190, .3);
     background: no-repeat center / 7rem 5rem;
-    opacity: 0.5;
+    opacity: .5;
     z-index: 1;
     transition: opacity 130ms linear;
     cursor: pointer;
 }
 
-.VerticalBar_topButton_6f:hover,
-.VerticalBar_bottomButton_db:hover {
-    opacity: 1;
-}
+.VerticalBar_topButton_6f:hover, .VerticalBar_bottomButton_db:hover {
+        opacity: 1;
+    }
 
 .VerticalBar_topButton_6f {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
@@ -4530,9 +4553,9 @@
     height: 100%;
     min-height: 20rem;
     border: 1rem solid #7e7b68;
-    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    box-shadow: inset 0 0 1rem rgba(255,255,190, .3);
     background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb') no-repeat center / 7rem 8rem;
-    opacity: 0.5;
+    opacity: .5;
     position: absolute;
     z-index: 1;
     transition: opacity 130ms linear;
@@ -4540,8 +4563,8 @@
 }
 
 .VerticalBar_thumb_f8:hover {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .VerticalBar_rail_cd {
     width: 0;
@@ -4556,8 +4579,9 @@
 }
 
 .VerticalBar_rail_cd:hover {
-    opacity: 0.7;
-}
+        opacity: .7;
+    }
+
 
 .VerticalScroll_content_dc {
     height: 100%;
@@ -4581,10 +4605,11 @@
     cursor: grab;
 }
 
-.ScrollDrag_base__grabbing_12 {
-    cursor: grabbing;
-}
+    .ScrollDrag_base__grabbing_12 {
+        cursor: grabbing;
+    }
 
-.ScrollDrag_base__noDrag_02 {
-    cursor: default;
-}
+    .ScrollDrag_base__noDrag_02 {
+        cursor: default;
+    }
+

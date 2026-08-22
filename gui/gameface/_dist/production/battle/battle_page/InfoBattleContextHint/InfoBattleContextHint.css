@@ -8,23 +8,23 @@
 }
 
 .FormatTextWithColorTags_whiteReal_8a {
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 .FormatTextWithColorTags_white_16 {
-    color: #f2f2f7;
+    color: #F2F2F7;
 }
 
 .FormatTextWithColorTags_whiteOrange_18 {
-    color: #fefeec;
+    color: #FEFEEC;
 }
 
 .FormatTextWithColorTags_whiteSpanish_10 {
-    color: #e9e2bf;
+    color: #E9E2BF;
 }
 
 .FormatTextWithColorTags_par_ca {
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .FormatTextWithColorTags_parSecondary_8d {
@@ -32,39 +32,39 @@
 }
 
 .FormatTextWithColorTags_parTertiary_a3 {
-    color: #37362e;
+    color: #37362E;
 }
 
 .FormatTextWithColorTags_red_60 {
-    color: #ff2717;
+    color: #FF2717;
 }
 
 .FormatTextWithColorTags_redDark_03 {
-    color: #b70000;
+    color: #B70000;
 }
 
 .FormatTextWithColorTags_yellow_ad {
-    color: #feab34;
+    color: #FEAB34;
 }
 
 .FormatTextWithColorTags_orange_e4 {
-    color: #ee7000;
+    color: #EE7000;
 }
 
 .FormatTextWithColorTags_cream_cd {
-    color: #ffdd99;
+    color: #FFDD99;
 }
 
 .FormatTextWithColorTags_brown_c8 {
-    color: #cbac77;
+    color: #CBAC77;
 }
 
 .FormatTextWithColorTags_greenBright_f0 {
-    color: #80d43a;
+    color: #80D43A;
 }
 
 .FormatTextWithColorTags_green_c5 {
-    color: #7ab300;
+    color: #7AB300;
 }
 
 .FormatTextWithColorTags_greenDark_af {
@@ -72,27 +72,27 @@
 }
 
 .FormatTextWithColorTags_blueBooster_ac {
-    color: #ccffff;
+    color: #CCFFFF;
 }
 
 .FormatTextWithColorTags_blueTeamkiller_6f {
-    color: #09e2ff;
+    color: #09E2FF;
 }
 
 .FormatTextWithColorTags_cred_4e {
-    color: #ced9d9;
+    color: #CED9D9;
 }
 
 .FormatTextWithColorTags_gold_90 {
-    color: #ffc363;
+    color: #FFC363;
 }
 
 .FormatTextWithColorTags_bond_71 {
-    color: #c9c9b6;
+    color: #C9C9B6;
 }
 
 .FormatTextWithColorTags_prom_dd {
-    color: #a29b70;
+    color: #A29B70;
 }
 
 .App_base_4e {
@@ -112,7 +112,7 @@
 }
 
 .mediaSmall .App_video_ef {
-    display: block;
+        display: block;
 }
 
 .App_contentInner_e8 {
@@ -129,7 +129,7 @@
 }
 
 .mediaSmall .App_contentInner_e8 {
-    width: 668rem;
+        width: 668rem;
 }
 
 .App_contentInnerClosing_30 {
@@ -147,23 +147,23 @@
 }
 
 .mediaSmall .App_content_f5 {
-    width: 668rem;
+        width: 668rem;
 }
 
 .mediaMedium .App_content_f5 {
-    margin-bottom: 100rem;
+        margin-bottom: 100rem;
 }
 
 .mediaLarge .App_content_f5 {
-    margin-bottom: 150rem;
+        margin-bottom: 150rem;
 }
 
 .mediaExtraLarge .App_content_f5 {
-    margin-bottom: 200rem;
+        margin-bottom: 200rem;
 }
 
 .App_textContainer_a5 {
-    color: #e9e2bf;
+    color: #F37A02;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
@@ -180,7 +180,7 @@
 }
 
 .mediaSmall .App_text_d7 {
-    justify-content: flex-start;
+        justify-content: flex-start;
 }
 
 .App_shineLineAnimation_77 {
@@ -303,3 +303,4 @@
         transform: translateY(24rem);
     }
 }
+

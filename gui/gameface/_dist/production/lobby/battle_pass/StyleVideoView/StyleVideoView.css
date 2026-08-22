@@ -9,9 +9,9 @@
     transform: translate(-50%, -50%);
 }
 
-.Video_video__visible_77 {
-    visibility: visible;
-}
+    .Video_video__visible_77 {
+        visibility: visible;
+    }
 
 .StyleVideo_base_16 {
     width: 100%;
@@ -27,3 +27,4 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+

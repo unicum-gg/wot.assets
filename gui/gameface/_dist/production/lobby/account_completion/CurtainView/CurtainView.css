@@ -13,8 +13,8 @@
 }
 
 .SceneWrapper_grab__down_3c {
-    cursor: all-scroll;
-}
+        cursor: all-scroll;
+    }
 
 .Spinner_base_87 {
     width: 260rem;
@@ -26,7 +26,7 @@
 }
 
 .Spinner_caption_cf {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 12rem;
     text-align: center;
     white-space: pre;
@@ -142,12 +142,12 @@
 }
 
 .SubViewContainer_subView__showing_05 {
-    animation-name: SubViewContainer_fadeIn_be;
-}
+        animation-name: SubViewContainer_fadeIn_be;
+    }
 
 .SubViewContainer_subView__hiding_e0 {
-    animation-name: SubViewContainer_fade2Out_0f;
-}
+        animation-name: SubViewContainer_fade2Out_0f;
+    }
 
 @keyframes CurtainViewApp_showIn_cf {
     from {
@@ -214,25 +214,25 @@
 }
 
 .CurtainViewApp_base__hidden_44 {
-    transform: translateX(-100%);
-}
+        transform: translateX(-100%);
+    }
 
 .CurtainViewApp_base__opening_49 {
-    animation-name: CurtainViewApp_showIn_cf;
-}
+        animation-name: CurtainViewApp_showIn_cf;
+    }
 
 .CurtainViewApp_base__opened_ac {
-    transform: translateX(0%);
-}
+        transform: translateX(0%);
+    }
 
 .CurtainViewApp_base__hiding_75 {
-    animation-name: CurtainViewApp_showOut_94;
-}
+        animation-name: CurtainViewApp_showOut_94;
+    }
 
 .CurtainViewApp_base__small_4b,
-.CurtainViewApp_base__extraSmall_5f {
-    width: 386rem;
-}
+    .CurtainViewApp_base__extraSmall_5f {
+        width: 386rem;
+    }
 
 .CurtainViewApp_waiting_ac {
     position: absolute;
@@ -241,6 +241,7 @@
     bottom: 0;
     left: 0;
     background-color: #0f0d0d;
-    opacity: 0.8;
+    opacity: .8;
     z-index: 1;
 }
+

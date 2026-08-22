@@ -4,12 +4,12 @@
 }
 
 .TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
 
 .FormatText_base_d0 {
     display: flex;
@@ -21,23 +21,23 @@
 }
 
 .FormatTextWithColorTags_whiteReal_8a {
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 .FormatTextWithColorTags_white_16 {
-    color: #f2f2f7;
+    color: #F2F2F7;
 }
 
 .FormatTextWithColorTags_whiteOrange_18 {
-    color: #fefeec;
+    color: #FEFEEC;
 }
 
 .FormatTextWithColorTags_whiteSpanish_10 {
-    color: #e9e2bf;
+    color: #E9E2BF;
 }
 
 .FormatTextWithColorTags_par_ca {
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .FormatTextWithColorTags_parSecondary_8d {
@@ -45,39 +45,39 @@
 }
 
 .FormatTextWithColorTags_parTertiary_a3 {
-    color: #37362e;
+    color: #37362E;
 }
 
 .FormatTextWithColorTags_red_60 {
-    color: #ff2717;
+    color: #FF2717;
 }
 
 .FormatTextWithColorTags_redDark_03 {
-    color: #b70000;
+    color: #B70000;
 }
 
 .FormatTextWithColorTags_yellow_ad {
-    color: #feab34;
+    color: #FEAB34;
 }
 
 .FormatTextWithColorTags_orange_e4 {
-    color: #ee7000;
+    color: #EE7000;
 }
 
 .FormatTextWithColorTags_cream_cd {
-    color: #ffdd99;
+    color: #FFDD99;
 }
 
 .FormatTextWithColorTags_brown_c8 {
-    color: #cbac77;
+    color: #CBAC77;
 }
 
 .FormatTextWithColorTags_greenBright_f0 {
-    color: #80d43a;
+    color: #80D43A;
 }
 
 .FormatTextWithColorTags_green_c5 {
-    color: #7ab300;
+    color: #7AB300;
 }
 
 .FormatTextWithColorTags_greenDark_af {
@@ -85,27 +85,27 @@
 }
 
 .FormatTextWithColorTags_blueBooster_ac {
-    color: #ccffff;
+    color: #CCFFFF;
 }
 
 .FormatTextWithColorTags_blueTeamkiller_6f {
-    color: #09e2ff;
+    color: #09E2FF;
 }
 
 .FormatTextWithColorTags_cred_4e {
-    color: #ced9d9;
+    color: #CED9D9;
 }
 
 .FormatTextWithColorTags_gold_90 {
-    color: #ffc363;
+    color: #FFC363;
 }
 
 .FormatTextWithColorTags_bond_71 {
-    color: #c9c9b6;
+    color: #C9C9B6;
 }
 
 .FormatTextWithColorTags_prom_dd {
-    color: #a29b70;
+    color: #A29B70;
 }
 
 .tooltips_base_6b {
@@ -115,58 +115,45 @@
 }
 
 .tooltips_heading_ac {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
 }
 
 .tooltips_subHeading_2c {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
 .tooltips_subHeading__topIndent_e1 {
-    margin-top: 8rem;
-}
+        margin-top: 8rem;
+    }
 
 .tooltips_divider_26 {
     width: 100%;
     height: 1rem;
     margin: 12rem 0 8rem;
-    background: linear-gradient(
-            to right,
-            rgba(201, 201, 182, 0.2) 33.33%,
-            rgba(201, 201, 182, 0) 33.33%,
-            rgba(201, 201, 182, 0)
-        )
-        repeat right / 3rem 1rem;
-    mask: linear-gradient(
-        90deg,
-        transparent,
-        rgba(0, 0, 0, 0.6) 5%,
-        rgba(0, 0, 0, 1) 30%,
-        rgba(0, 0, 0, 1) 70%,
-        rgba(0, 0, 0, 0.6) 95%,
-        transparent
-    );
+    background: linear-gradient(to right, rgba(201, 201, 182, .2) 33.33%, rgba(201, 201, 182, 0) 33.33%, rgba(201, 201, 182, 0)) repeat right / 3rem 1rem;
+    mask: linear-gradient(90deg, transparent, rgba(0, 0, 0, .6) 5%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, .6) 95%, transparent);
 }
 
 .tooltips_description_85 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+    max-width: 400rem;
 }
 
 .tooltips_description__topIndent_ba {
-    margin-top: 14rem;
-}
+        margin-top: 14rem;
+    }
 
 .tooltips_highlight_87 {
-    color: #e9e2bf;
+    color: #E9E2BF;
 }
 
 .App_base_ab {
@@ -176,18 +163,12 @@
     height: 100%;
     padding-top: 0;
     background: #12110b;
-    color: #8c8c7e;
+    color: #8C8C7E;
 }
 
 .App_header_7f {
     padding: 15rem 0 11rem;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.05) 40%,
-        rgba(235, 235, 235, 0.05) 60%,
-        transparent
-    );
+    background: linear-gradient(90deg, transparent, rgba(255,255,255, .05) 40%, rgba(235, 235, 235, .05) 60%, transparent);
 }
 
 .App_body_b1 {
@@ -201,16 +182,16 @@
 }
 
 .App_status__achieved_b8 {
-    color: #80d43a;
-}
+        color: #80D43A;
+    }
 
 .App_status__possible_52 {
-    color: #ffdd99;
-}
+        color: #FFDD99;
+    }
 
 .App_status__notAchieved_e4 {
-    color: #595950;
-}
+        color: #595950;
+    }
 
 .App_text_5d {
     font-size: 14rem;
@@ -218,8 +199,8 @@
 }
 
 .App_text_5d + .App_text_5d {
-    margin-top: 8rem;
-}
+        margin-top: 8rem;
+    }
 
 .App_seasonPointIcon_a7 {
     width: 16rem;
@@ -234,3 +215,4 @@
     background: url('R.images.gui.maps.icons.library.crystal_16x16') no-repeat center / cover;
     transform: translate(3rem, 2rem);
 }
+
