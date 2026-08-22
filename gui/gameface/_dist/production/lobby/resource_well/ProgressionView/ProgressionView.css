@@ -7,9 +7,9 @@
     cursor: pointer;
 }
 
-.TextButton_base__right_39 {
-    flex-direction: row-reverse;
-}
+    .TextButton_base__right_39 {
+        flex-direction: row-reverse;
+    }
 .TextButton_icon_17 {
     width: 32rem;
     height: 32rem;
@@ -17,22 +17,22 @@
     position: relative;
 }
 .TextButton_icon__back_43,
+    .TextButton_icon__forward_59 {
+        margin: -1rem -5rem;
+        background-image: url('R.images.gui.maps.icons.components.text_button.back');
+        transform: translateY(1rem);
+    }
 .TextButton_icon__forward_59 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.back');
-    transform: translateY(1rem);
-}
-.TextButton_icon__forward_59 {
-    transform: rotate(180deg) translateY(1rem);
-}
+        transform: rotate(180deg) translateY(1rem);
+    }
 .TextButton_icon__close_53 {
-    margin: -1rem 0;
-    background-image: url('R.images.gui.maps.icons.components.text_button.close');
-}
+        margin: -1rem 0;
+        background-image: url('R.images.gui.maps.icons.components.text_button.close');
+    }
 .TextButton_icon__info_33 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.info');
-}
+        margin: -1rem -5rem;
+        background-image: url('R.images.gui.maps.icons.components.text_button.info');
+    }
 .TextButton_glow_a4 {
     width: 100%;
     height: 100%;
@@ -40,82 +40,72 @@
     opacity: 0;
     position: absolute;
     top: 0;
-    transition: opacity 0.16s;
+    transition: opacity .16s;
 }
 .TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-}
+    .TextButton_icon__forward_59 .TextButton_glow_a4 {
+        background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+    }
 .TextButton_icon__close_53 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-}
+        background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+    }
 .TextButton_icon__info_33 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-}
+        background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+    }
 .TextButton_base_b6:hover .TextButton_glow_a4 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .TextButton_base_b6:active .TextButton_glow_a4 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .TextButton_caption_82 {
     position: relative;
-    transition:
-        color 0.16s,
-        text-shadow 0.16s;
+    transition: color .16s, text-shadow .16s;
 }
 .TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
-}
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
-    color: #fffa9f;
-}
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
-    color: #ffdd99;
-}
+    .TextButton_caption__forward_4e,
+    .TextButton_caption__close_36 {
+        color: #FFDD99;
+        text-shadow: 0 0 10rem rgba(255,42,0, 1),
+            0 0 10rem rgba(255,42,0, .4),
+            0 0 10rem rgba(255,42,0, .4),
+            0 0 2rem rgba(255,42,0, .4),
+            0 0 1rem rgba(255,42,0, .4),
+            0 0 2rem rgba(255,42,0, .4),
+            0 0 1rem rgba(255,42,0, .4);
+    }
+.TextButton_base_b6:hover .TextButton_caption__back_b9, .TextButton_base_b6:hover .TextButton_caption__forward_4e, .TextButton_base_b6:hover .TextButton_caption__close_36 {
+            color: #fffa9f;
+        }
+.TextButton_base_b6:active .TextButton_caption__back_b9, .TextButton_base_b6:active .TextButton_caption__forward_4e, .TextButton_base_b6:active .TextButton_caption__close_36 {
+            color: #FFDD99;
+        }
 .TextButton_caption__info_23 {
-    padding: 0 5rem;
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 8rem #00eaff;
-}
+        padding: 0 5rem;
+        color: #CCFFFF;
+        text-shadow: 0 0 12rem rgba(31,68,255, .8),
+            0 0 8rem #00eaff;
+    }
 .TextButton_base_b6:hover .TextButton_caption__info_23 {
-    color: #e3ffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 12rem rgba(0, 234, 255, 1),
-        0 0 8rem #00eaff;
-}
+            color: #e3ffff;
+            text-shadow: 0 0 12rem rgba(31,68,255, .8),
+                0 0 12rem rgba(0,234,255, 1),
+                0 0 8rem #00eaff;
+        }
 .TextButton_base_b6:active .TextButton_caption__info_23 {
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.6),
-        0 0 8rem #00eaff;
-}
+            color: #CCFFFF;
+            text-shadow: 0 0 12rem rgba(31,68,255, .6),
+                0 0 8rem #00eaff;
+        }
 .TextButton_goto_e7 {
     color: #7c7c6c;
 }
 .TextButton_base__left_ff .TextButton_goto_e7 {
-    margin-left: 8rem;
-}
+        margin-left: 8rem;
+    }
 .TextButton_base__right_39 .TextButton_goto_e7 {
-    margin-right: 8rem;
-}
+        margin-right: 8rem;
+    }
 .TextButton_shine_e2 {
     width: 90rem;
     height: 40rem;
@@ -123,22 +113,22 @@
     opacity: 0;
     position: absolute;
     top: -4rem;
-    transition: opacity 0.16s;
+    transition: opacity .16s;
     pointer-events: none;
 }
 .TextButton_base__left_ff .TextButton_shine_e2 {
-    left: -4rem;
-}
+        left: -4rem;
+    }
 .TextButton_base__right_39 .TextButton_shine_e2 {
-    right: -4rem;
-    transform: rotate(180deg);
-}
+        right: -4rem;
+        transform: rotate(180deg);
+    }
 .TextButton_base_b6:hover .TextButton_shine_e2 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .TextButton_base_b6:active .TextButton_shine_e2 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 @keyframes App_fadeOut_2f {
     from {
@@ -206,7 +196,7 @@
 }
 .App_base_97 {
     opacity: 0;
-    animation: App_fadeIn_c9 0.4s cubic-bezier(0.47, 0, 0.75, 0.72) 0.45s forwards;
+    animation: App_fadeIn_c9 .4s cubic-bezier(.47, 0, .75, .72) .45s forwards;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -217,35 +207,35 @@
     overflow: hidden;
 }
 .mediaSmall .App_base_97 {
-    background-size: 1766rem 922rem;
+        background-size: 1766rem 922rem;
 }
 .mediaMedium .App_base_97 {
-    /* background-size: 2290rem 1194rem;*/
-    background-size: 1766rem 922rem;
+        /* background-size: 2290rem 1194rem;*/
+        background-size: 1766rem 922rem;
 }
 .mediaLarge .App_base_97 {
-    /* background-size: 2700rem 1408rem;*/
-    background-size: 2290rem 1194rem;
+        /* background-size: 2700rem 1408rem;*/
+        background-size: 2290rem 1194rem;
 }
 .mediaExtraLarge .App_base_97 {
-    /* background-size: 3640rem 1900rem;*/
-    background-size: 2700rem 1408rem;
+        /* background-size: 3640rem 1900rem;*/
+        background-size: 2700rem 1408rem;
 }
 .App_base__left_52 {
-    background-image: url('R.images.gui.maps.icons.resourceWell.backgrounds.mainBg_left');
-}
+        background-image: url('R.images.gui.maps.icons.resourceWell.backgrounds.mainBg_left');
+    }
 .App_base__right_2e {
-    background-image: url('R.images.gui.maps.icons.resourceWell.backgrounds.mainBg_right');
-}
+        background-image: url('R.images.gui.maps.icons.resourceWell.backgrounds.mainBg_right');
+    }
 .App_base__before_77 {
-    background-image: url('R.images.gui.maps.icons.resourceWell.backgrounds.preBg');
-}
+        background-image: url('R.images.gui.maps.icons.resourceWell.backgrounds.preBg');
+    }
 .App_base__after_ae {
-    background-image: url('R.images.gui.maps.icons.resourceWell.backgrounds.postBg');
-}
+        background-image: url('R.images.gui.maps.icons.resourceWell.backgrounds.postBg');
+    }
 .App_animationBg_5b {
     opacity: 0;
-    animation: App_fadeIn_c9 0.4s cubic-bezier(0.47, 0, 0.75, 0.72) 0s forwards;
+    animation: App_fadeIn_c9 .4s cubic-bezier(.47, 0, .75, .72) 0s forwards;
     width: 100%;
     height: 100%;
     background-color: #151619;
@@ -256,7 +246,7 @@
     width: 100%;
     height: 100%;
     background: url('R.images.gui.maps.icons.resourceWell.backgrounds.additionalBg') no-repeat center / cover;
-    opacity: 0.4;
+    opacity: .4;
     position: absolute;
     top: 0;
     left: 0;
@@ -287,12 +277,12 @@
     position: relative;
     z-index: 1;
 }
-.mediaExtraLarge .EventInfo_base_7d {
-    margin: 10rem 25rem 25rem;
+    .mediaExtraLarge .EventInfo_base_7d {
+        margin: 10rem 25rem 25rem;
 }
 
 .EventInfo_title_d4 {
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
@@ -300,41 +290,41 @@
 }
 
 .mediaMedium .EventInfo_title_d4 {
-    color: #f2f2f7;
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0;
+        color: #F2F2F7;
+        font-size: 56rem;
+        font-weight: 700;
+        line-height: 1.1;
+        margin: 0;
 }
 
 .mediaLarge .EventInfo_title_d4 {
-    color: #f2f2f7;
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
+        color: #F2F2F7;
+        font-size: 73rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 
 .EventInfo_description_c5 {
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
     text-align: center;
-    opacity: 0.75;
+    opacity: .75;
 }
 
 .mediaMedium .EventInfo_description_c5 {
-    color: #f2f2f7;
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
+        color: #F2F2F7;
+        font-size: 20rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 
 .mediaExtraLarge .EventInfo_description_c5 {
-    color: #f2f2f7;
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
+        color: #F2F2F7;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 
 .CButton_base_40 {
@@ -342,68 +332,67 @@
     justify-content: center;
     align-items: center;
     border-radius: 2rem;
-    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 0 1rem rgba(0,0,0, .6);
     position: relative;
     cursor: pointer;
 }
 
-.CButton_base__main_42,
-.CButton_base__primary_7f,
-.CButton_base__primaryGreen_6f,
-.CButton_base__primaryRed_ec,
-.CButton_base__secondary_50 {
-    background-size: 100% 100%;
-}
+    .CButton_base__main_42,
+    .CButton_base__primary_7f,
+    .CButton_base__primaryGreen_6f,
+    .CButton_base__primaryRed_ec,
+    .CButton_base__secondary_50 {
+        background-size: 100% 100%;
+    }
 
-.CButton_base__main_42 {
-    background-image: url('R.images.gui.maps.icons.components.button.back_main');
-}
+    .CButton_base__main_42 {
+        background-image: url('R.images.gui.maps.icons.components.button.back_main');
+    }
 
-.CButton_base__primary_7f {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
-}
+    .CButton_base__primary_7f {
+        background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+    }
 
-.CButton_base__primaryGreen_6f {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
-}
+    .CButton_base__primaryGreen_6f {
+        background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+    }
 
-.CButton_base__primaryRed_ec {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
-}
+    .CButton_base__primaryRed_ec {
+        background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+    }
 
-.CButton_base__secondary_50 {
-    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
-}
+    .CButton_base__secondary_50 {
+        background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+    }
 
-.CButton_base__ghost_ed {
-    border-radius: 3rem;
-    box-shadow:
-        0 0 0 1rem rgba(0, 0, 0, 0.3),
-        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
-    background-color: rgba(0, 0, 0, 0.15);
-}
+    .CButton_base__ghost_ed {
+        border-radius: 3rem;
+        box-shadow: 0 0 0 1rem rgba(0,0,0, .3),
+            0 0 0 1rem rgba(255,255,255, .15) inset;
+        background-color: rgba(0,0,0, .15);
+    }
 
-.CButton_base__extraSmall_27 {
-    min-height: 17rem;
-    padding: 0 16rem;
-}
+    .CButton_base__extraSmall_27 {
+        min-height: 17rem;
+        padding: 0 16rem;
+    }
 
-.CButton_base__small_df,
-.CButton_base__medium_74 {
-    padding: 0 20rem;
-}
+    .CButton_base__small_df,
+    .CButton_base__medium_74 {
+        padding: 0 20rem;
+    }
 
-.CButton_base__small_df {
-    min-height: 18rem;
-}
+    .CButton_base__small_df {
+        min-height: 18rem;
+    }
 
-.CButton_base__medium_74 {
-    min-height: 32rem;
-}
+    .CButton_base__medium_74 {
+        min-height: 32rem;
+    }
 
-.CButton_base__disabled_d9 {
-    cursor: default;
-}
+    .CButton_base__disabled_d9 {
+        cursor: default;
+    }
 /* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
@@ -419,20 +408,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
 }
 .CButton_base__main_42 .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+    }
 .CButton_base__primary_7f .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+    }
 .CButton_base__primaryGreen_6f .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+    }
 .CButton_base__primaryRed_ec .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+    }
 .CButton_base__secondary_50 .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+    }
 .CButton_texture_fe {
     background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
     background-size: 155rem 31rem;
@@ -449,12 +438,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: 0;
     bottom: 0;
     left: 0;
-    transition: box-shadow 0.16s ease-in-out;
+    transition: box-shadow .16s ease-in-out;
 }
 .CButton_base__focus_83 .CButton_state_11 {
-    border-radius: 2rem;
-    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
-}
+        border-radius: 2rem;
+        box-shadow: inset 0 0 2rem 1rem rgba(255,85,0, .2);
+    }
 .CButton_stateHighlightHover_ff,
 .CButton_stateHighlightActive_35,
 .CButton_stateDisabled_54 {
@@ -465,47 +454,40 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-.CButton_base__firstHover_d5 .CButton_stateHighlightHover_ff,
-.CButton_base__firstHover_d5 .CButton_stateHighlightActive_35,
-.CButton_base__firstHover_d5 .CButton_stateDisabled_54 {
-    transition: opacity 0.16s ease-in-out;
-}
+.CButton_base__firstHover_d5 .CButton_stateHighlightHover_ff, .CButton_base__firstHover_d5 .CButton_stateHighlightActive_35, .CButton_base__firstHover_d5 .CButton_stateDisabled_54 {
+        transition: opacity .16s ease-in-out;
+    }
 .CButton_stateHighlightHover_ff {
-    background-image: linear-gradient(
-        180deg,
-        rgba(252, 248, 235, 0.25) 0%,
-        rgba(252, 248, 235, 0.1) 50%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background-image: linear-gradient(180deg, rgba(252,248,235, .25) 0%, rgba(252,248,235, .1) 50%, rgba(255,255,255, 0) 100%);
 }
 .CButton_base_40:hover .CButton_stateHighlightHover_ff {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .CButton_base_40:active .CButton_stateHighlightHover_ff {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
-    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
-    background-color: rgba(8, 6, 0, 0.18);
-    background-image: none;
-}
+        box-shadow: 0 15rem 12rem 0 rgba(242,242,230, .11) inset;
+        background-color: rgba(8,6,0, .18);
+        background-image: none;
+    }
 .CButton_stateHighlightActive_35 {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+    background-image: linear-gradient(180deg, rgba(0,0,0, .3) 0%, rgba(0,0,0, .15) 100%);
 }
 .CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .CButton_stateDisabled_54 {
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0,0,0, .25);
     background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
     background-size: 15rem;
 }
 .CButton_base__disabled_d9 .CButton_stateDisabled_54 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .CButton_content_cc {
     display: flex;
     align-items: center;
@@ -513,57 +495,57 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-weight: 700;
     line-height: 1.2;
     text-shadow: 0 -1rem 1rem #000;
-    letter-spacing: 0.03em;
+    letter-spacing: .03em;
     transform: translateY(-1rem);
 }
-.CButton_content_cc[lang='ja'],
-.CButton_content_cc[lang='ko'],
-.CButton_content_cc[lang='zh_tw'],
-.CButton_content_cc[lang='zh_sg'],
-.CButton_content_cc[lang='zh_cn'],
-.CButton_content_cc[lang='th'] {
-    font-weight: 400;
-}
+.CButton_content_cc[lang=ja],
+    .CButton_content_cc[lang=ko],
+    .CButton_content_cc[lang=zh_tw],
+    .CButton_content_cc[lang=zh_sg],
+    .CButton_content_cc[lang=zh_cn],
+    .CButton_content_cc[lang=th] {
+        font-weight: 400;
+    }
 .CButton_base__main_42 .CButton_content_cc,
-.CButton_base__primaryRed_ec .CButton_content_cc {
-    text-shadow: 0 -1rem 1rem #600;
-}
+    .CButton_base__primaryRed_ec .CButton_content_cc {
+        text-shadow: 0 -1rem 1rem #600;
+    }
 .CButton_base__secondary_50 .CButton_content_cc {
-    color: rgba(254, 254, 236, 0.75);
-}
+        color: rgba(254,254,236, .75);
+    }
 .CButton_base__primaryGreen_6f .CButton_content_cc {
-    text-shadow: 0 -1rem 1rem #1c2502;
-}
+        text-shadow: 0 -1rem 1rem #1c2502;
+    }
 .CButton_base__extraSmall_27 .CButton_content_cc {
-    font-size: 12rem;
-}
+        font-size: 12rem;
+    }
 .CButton_base__small_df .CButton_content_cc {
-    font-size: 14rem;
-}
+        font-size: 14rem;
+    }
 .CButton_base__medium_74 .CButton_content_cc {
-    font-size: 15rem;
-}
+        font-size: 15rem;
+    }
 .CButton_base__disabled_d9 .CButton_content_cc {
-    opacity: 0.6;
-}
+        opacity: .6;
+    }
 
 .NoVehiclesState_footerTitle_e9 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
     margin-top: 15rem;
     text-align: center;
 }
-.mediaMedium .NoVehiclesState_footerTitle_e9 {
-    color: #e9e2bf;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
+    .mediaMedium .NoVehiclesState_footerTitle_e9 {
+        color: #E9E2BF;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 
 .NoVehiclesState_footerSubtitle_3e {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -571,10 +553,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .NoVehiclesState_footerSubtitle_3e {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
+        color: #8C8C7E;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 
 .NoVehiclesState_buttonsBlock_83 {
@@ -584,8 +566,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .NoVehiclesState_activeState_49 .NoVehiclesState_buttonsBlock_83 {
-    margin: 0;
-}
+        margin: 0;
+    }
 
 .NoVehiclesState_button_86 {
     min-width: 200rem;
@@ -601,17 +583,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: -25rem;
     z-index: 3;
 }
-.mediaMedium .Footer_base_41 {
-    width: 1080rem;
-    height: 160rem;
-    background-image: url('R.images.gui.maps.icons.resourceWell.footer.footer_shadow_bg');
-    bottom: -15rem;
+    .mediaMedium .Footer_base_41 {
+        width: 1080rem;
+        height: 160rem;
+        background-image: url('R.images.gui.maps.icons.resourceWell.footer.footer_shadow_bg');
+        bottom: -15rem;
 }
-.Footer_base__active_91 {
-    bottom: -5rem;
-}
-.mediaMedium .Footer_base__active_91 {
-    bottom: -10rem;
+    .Footer_base__active_91 {
+        bottom: -5rem;
+    }
+    .mediaMedium .Footer_base__active_91 {
+            bottom: -10rem;
 }
 
 .Footer_topLip_1c {
@@ -624,9 +606,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .Footer_topLip_1c {
-    width: 958rem;
-    background-image: url('R.images.gui.maps.icons.resourceWell.footer.footer_lipBig');
-    top: -21rem;
+        width: 958rem;
+        background-image: url('R.images.gui.maps.icons.resourceWell.footer.footer_lipBig');
+        top: -21rem;
 }
 
 .Footer_topLightline_24 {
@@ -639,7 +621,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .Footer_topLightline_24 {
-    width: 1080rem;
+        width: 1080rem;
 }
 
 /*
@@ -653,11 +635,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 .ProgressBar_base__medium_62 {
-    height: 6rem;
-}
+        height: 6rem;
+    }
 .ProgressBar_base__small_df {
-    height: 2rem;
-}
+        height: 2rem;
+    }
 .ProgressBar_background_51 {
     width: 100%;
     max-width: 8001px;
@@ -671,15 +653,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
 }
 .ProgressBar_background__medium_6e {
-    height: 6rem;
-}
+        height: 6rem;
+    }
 .ProgressBar_background__small_46 {
-    height: 2rem;
-}
+        height: 2rem;
+    }
 .ProgressBar_lineWrapper_6a {
     display: flex;
     flex: 1;
 }
+
 
 .ProgressBarBlink_base_24 {
     width: 60rem;
@@ -694,16 +677,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 
-.ProgressBarBlink_base__medium_ec {
-    width: 42rem;
-    height: 70rem;
-}
+    .ProgressBarBlink_base__medium_ec {
+        width: 42rem;
+        height: 70rem;
+    }
 
-.ProgressBarBlink_base__small_0f {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
+    .ProgressBarBlink_base__small_0f {
+        width: 44rem;
+        height: 43rem;
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -715,18 +698,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 100%;
     background-color: var(--progress-line-base);
     position: relative;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressLineImpose_base__disabled_cc {
-    background-color: var(--progress-line-disabled);
-}
+        background-color: var(--progress-line-disabled);
+    }
 .ProgressLineImpose_base__finished_d4 {
-    background-color: var(--progress-line-finished);
-}
+        background-color: var(--progress-line-finished);
+    }
 .ProgressLineImpose_base__withoutBounce_56 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 .ProgressLineImpose_pattern_1c {
     max-width: 8001px;
     background-image: var(--progress-pattern-base);
@@ -740,19 +723,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 1rem;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-disabled);
-    left: 0;
-}
+        background-image: var(--progress-pattern-disabled);
+        left: 0;
+    }
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-finished);
-}
+        background-image: var(--progress-pattern-finished);
+    }
 .ProgressLineImpose_gradient_35 {
     max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    background-image: linear-gradient(90deg, rgba(0,0,0, .5), rgba(255,255,255, .75));
     mix-blend-mode: overlay;
     position: absolute;
     top: 1rem;
@@ -761,15 +744,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
-    display: none;
-}
+        display: none;
+    }
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
-}
+        background-image: linear-gradient(90deg, rgba(0,0,0, .5), rgba(255,255,255, .75), rgba(0,0,0, .5));
+    }
 .ProgressLineImpose_glow_a5 {
     width: 60rem;
     max-width: 8001px;
@@ -784,17 +767,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 .ProgressLineImpose_glow__left_d8 {
-    left: 1rem;
-}
+        left: 1rem;
+    }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
-    display: none;
-}
+    .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+        display: none;
+    }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
+        width: 44rem;
+        height: 43rem;
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -816,7 +799,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1), cubic-bezier(.21, .61, .35, 1);
     transition-property: width, transform;
 }
 
@@ -830,12 +813,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 100%;
     position: absolute;
     top: 0;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 .ProgressBarDeltaGrow_glow_68 {
     width: 0;
     max-width: 8001px;
@@ -845,12 +828,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 
 .ActiveState_progressionWrapper_b9 {
     display: flex;
@@ -858,8 +841,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     padding-top: 5rem;
 }
-.mediaMedium .ActiveState_progressionWrapper_b9 {
-    padding: 0;
+    .mediaMedium .ActiveState_progressionWrapper_b9 {
+        padding: 0;
 }
 
 .ActiveState_topLine_57 {
@@ -870,11 +853,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .ActiveState_topLine_57 {
-    width: 1000rem;
+        width: 1000rem;
 }
 
 .ActiveState_smallTitle_06 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -884,8 +867,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaLarge .ActiveState_smallTitle_06 {
-    font-size: 16rem;
-    top: 15rem;
+        font-size: 16rem;
+        top: 15rem;
 }
 
 .ActiveState_progressionBg_a2 {
@@ -898,8 +881,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .ActiveState_progressionBg_a2 {
-    width: 1080rem;
-    background-image: url('R.images.gui.maps.icons.resourceWell.footer.progressbar_bg');
+        width: 1080rem;
+        background-image: url('R.images.gui.maps.icons.resourceWell.footer.progressbar_bg');
 }
 
 .ActiveState_progressBar_24 {
@@ -910,7 +893,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .ActiveState_progressBar_24 {
-    width: 1000rem;
+        width: 1000rem;
 }
 
 .ActiveState_minValue_aa {
@@ -919,18 +902,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .ActiveState_scaleValueWrapper_91 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 12rem;
     font-weight: 400;
     line-height: 1.3;
     display: flex;
     justify-content: space-between;
     width: 870rem;
-    opacity: 0.3;
+    opacity: .3;
 }
 
 .mediaMedium .ActiveState_scaleValueWrapper_91 {
-    width: 1000rem;
+        width: 1000rem;
 }
 
 .ActiveState_percentWrapper_80 {
@@ -940,11 +923,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .ActiveState_percentWrapper_80 {
-    margin-top: 15rem;
+        margin-top: 15rem;
 }
 
 .ActiveState_activePercent_53 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
@@ -953,7 +936,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .ActiveState_activePercent_53 {
-    left: 7rem;
+        left: 7rem;
 }
 
 .ActiveState_buttonsBlock_1b {
@@ -963,8 +946,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .ActiveState_activeState_78 .ActiveState_buttonsBlock_1b {
-    margin: 0;
-}
+        margin: 0;
+    }
 
 .ActiveState_button_b9 {
     min-width: 200rem;
@@ -972,8 +955,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .ActiveState_activeState_78 .ActiveState_button_b9 {
-    margin: 0 5rem;
-}
+        margin: 0 5rem;
+    }
 
 .ActiveState_footerDescr_d4 {
     color: #595950;
@@ -991,7 +974,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .ActiveState_buttonReturnTooltipText_54 {
-    color: #e9e2bf;
+    color: #E9E2BF;
 }
 
 .ActiveState_iconInfo_54 {
@@ -1001,7 +984,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .ActiveState_iconInfo_54 {
-    margin-top: 4rem;
+        margin-top: 4rem;
 }
 
 .ActiveState_iconInfoEmpty_b8 {
@@ -1010,18 +993,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .BeforeState_footerTitle_cb {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
     margin-top: 15rem;
     text-align: center;
 }
-.mediaMedium .BeforeState_footerTitle_cb {
-    color: #e9e2bf;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
+    .mediaMedium .BeforeState_footerTitle_cb {
+        color: #E9E2BF;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 
 .BeforeState_buttonsBlock_b0 {
@@ -1046,26 +1029,26 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .BeforeState_footerDescr_c2 {
-    margin-top: 15rem;
+        margin-top: 15rem;
 }
 
 .Forbidden_footerTitle_8a {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
     margin-top: 15rem;
     text-align: center;
 }
-.mediaMedium .Forbidden_footerTitle_8a {
-    color: #e9e2bf;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
+    .mediaMedium .Forbidden_footerTitle_8a {
+        color: #E9E2BF;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 
 .Forbidden_footerSubtitle_f8 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -1073,10 +1056,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .Forbidden_footerSubtitle_f8 {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
+        color: #8C8C7E;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 
 .Forbidden_buttonsBlock_64 {
@@ -1091,18 +1074,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .NoProgress_footerTitle_57 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
     margin-top: 15rem;
     text-align: center;
 }
-.mediaMedium .NoProgress_footerTitle_57 {
-    color: #e9e2bf;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
+    .mediaMedium .NoProgress_footerTitle_57 {
+        color: #E9E2BF;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 
 .NoProgress_buttonsBlock_bb {
@@ -1127,7 +1110,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .NoProgress_footerDescr_5f {
-    margin-top: 15rem;
+        margin-top: 15rem;
 }
 
 .Countdown_base_fe {
@@ -1142,7 +1125,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Countdown_description_8d {
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -1155,160 +1138,158 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     width: 60rem;
     height: 60rem;
-    opacity: 0.7;
+    opacity: .7;
     position: relative;
-    transition: opacity 0.25s ease-out;
+    transition: opacity .25s ease-out;
     cursor: pointer;
 }
 
-.Preview_base__hovered_ee {
-    opacity: 1;
-}
+    .Preview_base__hovered_ee {
+        opacity: 1;
+    }
 .Preview_icon_f3 {
     display: flex;
     justify-content: center;
     align-items: center;
     background: url('R.images.gui.maps.icons.library.previewVehicle') no-repeat center / contain;
-    transition: opacity 0.25s ease-out;
+    transition: opacity .25s ease-out;
     pointer-events: none;
 }
 .Preview_icon__small_a1 {
-    width: 70rem;
-    height: 70rem;
-}
+        width: 70rem;
+        height: 70rem;
+    }
 .Preview_icon__normal_5c {
-    width: 100rem;
-    height: 100rem;
-}
+        width: 100rem;
+        height: 100rem;
+    }
 .Preview_base__mouseDown_d0 .Preview_icon_f3 {
-    opacity: 0.7;
-}
+        opacity: .7;
+    }
 .Preview_label_2e {
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 14rem;
     line-height: 1.25;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
+    text-shadow: 0 0 4rem rgba(255,127,0, .25),
         0 0 8rem #ff2a00,
         0 0 12rem #e52;
     opacity: 0;
     position: absolute;
     bottom: -8rem;
     transform: translateY(-5rem);
-    transition:
-        transform 0.25s ease-out,
-        opacity 0.25s ease-out;
+    transition: transform .25s ease-out,
+        opacity .25s ease-out;
 }
 .Preview_base__visibleLabel_92 .Preview_label_2e,
-.Preview_base__hovered_ee .Preview_label_2e {
-    opacity: 1;
-    transform: translateY(0rem);
-}
+    .Preview_base__hovered_ee .Preview_label_2e {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
 
 .VehicleInfo_base_28 {
     display: flex;
     align-items: center;
 }
 
-.VehicleInfo_base__intro_e5 {
-    color: #ffdd99;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
+    .VehicleInfo_base__intro_e5 {
+        color: #FFDD99;
+        font-size: 18rem;
+        font-weight: 700;
+        line-height: 1.1;
+    }
+
+    .mediaMedium .VehicleInfo_base__intro_e5 {
+            color: #FFDD99;
+            font-size: 24rem;
+            font-weight: 700;
+            line-height: 1.2;
 }
 
-.mediaMedium .VehicleInfo_base__intro_e5 {
-    color: #ffdd99;
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
+    .mediaLarge .VehicleInfo_base__intro_e5 {
+            color: #FFDD99;
+            font-size: 28rem;
+            font-weight: 700;
+            line-height: 1.1;
 }
 
-.mediaLarge .VehicleInfo_base__intro_e5 {
-    color: #ffdd99;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
+    .mediaExtraLarge .VehicleInfo_base__intro_e5 {
+            color: #FFDD99;
+            font-size: 36rem;
+            font-weight: 700;
+            line-height: 1.1;
 }
 
-.mediaExtraLarge .VehicleInfo_base__intro_e5 {
-    color: #ffdd99;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
+    .VehicleInfo_base__progression_85 {
+        color: #CED9D9;
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 1.1;
+    }
 
-.VehicleInfo_base__progression_85 {
-    color: #ced9d9;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.mediaLarge .VehicleInfo_base__progression_85 {
-    font-size: 36rem;
+    .mediaLarge .VehicleInfo_base__progression_85 {
+            font-size: 36rem;
 }
 
 .VehicleInfo_type_e7 {
     position: relative;
 }
 
-.VehicleInfo_type_e7[lang='ko'] {
-    transform: translateY(-2rem);
-}
+.VehicleInfo_type_e7[lang=ko] {
+        transform: translateY(-2rem);
+    }
 
 .VehicleInfo_base__intro_e5 .VehicleInfo_type_e7 {
-    width: 36rem;
-    transform: translateY(2rem);
-}
+        width: 36rem;
+        transform: translateY(2rem);
+    }
 
-.VehicleInfo_base__intro_e5 .VehicleInfo_type_e7[lang='ko'] {
-    transform: translateY(-2rem);
-}
+.VehicleInfo_base__intro_e5 .VehicleInfo_type_e7[lang=ko] {
+            transform: translateY(-2rem);
+        }
 
 .mediaMedium .VehicleInfo_base__intro_e5 .VehicleInfo_type_e7 {
-    width: 50rem;
-    transform: translateY(4rem);
+            width: 50rem;
+            transform: translateY(4rem);
 }
 
-.mediaMedium .VehicleInfo_base__intro_e5 .VehicleInfo_type_e7[lang='ko'] {
-    transform: translateY(-2rem);
-}
+.mediaMedium .VehicleInfo_base__intro_e5 .VehicleInfo_type_e7[lang=ko] {
+                transform: translateY(-2rem);
+            }
 
 .mediaExtraLarge .VehicleInfo_base__intro_e5 .VehicleInfo_type_e7 {
-    width: 55rem;
+            width: 55rem;
 }
 
 .VehicleInfo_base__award_e7 .VehicleInfo_type_e7 {
-    width: 50rem;
-    transform: translateY(3rem);
-}
+        width: 50rem;
+        transform: translateY(3rem);
+    }
 
-.VehicleInfo_base__award_e7 .VehicleInfo_type_e7[lang='ko'] {
-    transform: translateY(-2rem);
-}
+.VehicleInfo_base__award_e7 .VehicleInfo_type_e7[lang=ko] {
+            transform: translateY(-2rem);
+        }
 
 .mediaLarge .VehicleInfo_base__award_e7 .VehicleInfo_type_e7 {
-    width: 60rem;
-    transform: translateY(4rem);
+            width: 60rem;
+            transform: translateY(4rem);
 }
 
-.mediaLarge .VehicleInfo_base__award_e7 .VehicleInfo_type_e7[lang='ko'] {
-    transform: translateY(-2rem);
-}
+.mediaLarge .VehicleInfo_base__award_e7 .VehicleInfo_type_e7[lang=ko] {
+                transform: translateY(-2rem);
+            }
 
 .VehicleInfo_base__progression_85 .VehicleInfo_type_e7 {
-    width: 50rem;
-    transform: translateY(2rem);
-}
+        width: 50rem;
+        transform: translateY(2rem);
+    }
 
-.VehicleInfo_base__progression_85 .VehicleInfo_type_e7[lang='ko'] {
-    transform: translateY(-2rem);
-}
+.VehicleInfo_base__progression_85 .VehicleInfo_type_e7[lang=ko] {
+            transform: translateY(-2rem);
+        }
 
-.mediaLarge .VehicleInfo_base__progression_85 .VehicleInfo_type_e7[lang='ko'] {
-    transform: translateY(-4rem);
-}
+.mediaLarge .VehicleInfo_base__progression_85 .VehicleInfo_type_e7[lang=ko] {
+                transform: translateY(-4rem);
+            }
 
 .VehicleInfo_ico_c9 {
     background: no-repeat center / contain;
@@ -1319,29 +1300,29 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .VehicleInfo_base__intro_e5 .VehicleInfo_ico_c9 {
-    width: 56rem;
-    height: 56rem;
-}
+        width: 56rem;
+        height: 56rem;
+    }
 
 .mediaMedium .VehicleInfo_base__intro_e5 .VehicleInfo_ico_c9 {
-    width: 83rem;
-    height: 74rem;
+            width: 83rem;
+            height: 74rem;
 }
 
 .VehicleInfo_base__award_e7 .VehicleInfo_ico_c9 {
-    width: 74rem;
-    height: 74rem;
-}
+        width: 74rem;
+        height: 74rem;
+    }
 
 .mediaLarge .VehicleInfo_base__award_e7 .VehicleInfo_ico_c9 {
-    width: 84rem;
-    height: 84rem;
+            width: 84rem;
+            height: 84rem;
 }
 
 .VehicleInfo_base__progression_85 .VehicleInfo_ico_c9 {
-    width: 70rem;
-    height: 70rem;
-}
+        width: 70rem;
+        height: 70rem;
+    }
 
 .Counter_base_8c {
     display: flex;
@@ -1350,11 +1331,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     margin-top: -70rem;
 }
-.mediaMedium .Counter_base_8c {
-    margin-top: -80rem;
+    .mediaMedium .Counter_base_8c {
+        margin-top: -80rem;
 }
-.mediaLarge .Counter_base_8c {
-    margin-top: -59rem;
+    .mediaLarge .Counter_base_8c {
+        margin-top: -59rem;
 }
 
 .Counter_base_8c.Counter_base__entryPointTooltip_2f {
@@ -1368,107 +1349,104 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Counter_base__mainScreen_aa .Counter_counterGlow_ae {
-    width: 488rem;
-    height: 108rem;
-    top: -65rem;
-}
+        width: 488rem;
+        height: 108rem;
+        top: -65rem;
+    }
 
 .mediaMedium .Counter_base__mainScreen_aa .Counter_counterGlow_ae {
-    top: -75rem;
+            top: -75rem;
 }
 
 .mediaLarge .Counter_base__mainScreen_aa .Counter_counterGlow_ae {
-    top: -63rem;
+            top: -63rem;
 }
 
 .Counter_base__entryPointTooltip_2f .Counter_counterGlow_ae {
-    width: 300rem;
-    height: 168rem;
-    top: -10rem;
-}
+        width: 300rem;
+        height: 168rem;
+        top: -10rem;
+    }
 
 .Counter_counterBg_d9 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('R.images.gui.maps.icons.resourceWell.counter_bg') no-repeat center / contain;
+    background: url('R.images.gui.maps.icons.resourceWell.counter_bg')  no-repeat center / contain;
     position: relative;
     pointer-events: none;
 }
 
 .Counter_base__mainScreen_aa .Counter_counterBg_d9 {
-    width: 310rem;
-    height: 200rem;
-    top: -40rem;
-}
+        width: 310rem;
+        height: 200rem;
+        top: -40rem;
+    }
 
 .mediaLarge .Counter_base__mainScreen_aa .Counter_counterBg_d9 {
-    top: -50rem;
+            top: -50rem;
 }
 
 .Counter_base__entryPointTooltip_2f .Counter_counterBg_d9 {
-    width: 100%;
-    height: 124rem;
-    padding-bottom: 5rem;
-    text-align: center;
-}
+        width: 100%;
+        height: 124rem;
+        padding-bottom: 5rem;
+        text-align: center;
+    }
 
 .Counter_counterNumber_8b {
     pointer-events: auto;
 }
 
 .Counter_counterNumber__less_8b {
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
-}
+        text-shadow: 0 0 4rem rgba(255, 127, 0, .25), 0 0 8rem #ff2a00, 0 0 15rem #e52;
+    }
 
 .Counter_base__mainScreen_aa .Counter_counterNumber_8b {
-    color: #ffdd99;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-top: -10rem;
-}
+        color: #FFDD99;
+        font-size: 36rem;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-top: -10rem;
+    }
 
 .mediaLarge .Counter_base__mainScreen_aa .Counter_counterNumber_8b {
-    font-size: 56rem;
+            font-size: 56rem;
 }
 
 .Counter_base__entryPointTooltip_2f .Counter_counterNumber_8b {
-    color: #ffdd99;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
+        color: #FFDD99;
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 1.1;
+    }
 
 .Counter_tanksOverText_72 {
-    opacity: 0.5;
+    opacity: .5;
 }
 
 .Counter_base__mainScreen_aa .Counter_tanksOverText_72 {
-    color: #e9e2bf;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-top: -10rem;
-}
+        color: #E9E2BF;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-top: -10rem;
+    }
 
 .mediaMedium .Counter_base__mainScreen_aa .Counter_tanksOverText_72 {
-    color: #e9e2bf;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
+            color: #E9E2BF;
+            font-size: 28rem;
+            font-weight: 700;
+            line-height: 1.1;
 }
 
 .Counter_base__entryPointTooltip_2f .Counter_tanksOverText_72 {
-    color: #e9e2bf;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0;
-}
+        color: #E9E2BF;
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 1.1;
+        margin: 0;
+    }
 
 .Counter_errorWrapper_a2 {
     display: flex;
@@ -1485,7 +1463,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Counter_errorLines_6e {
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.1;
@@ -1516,46 +1494,46 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaSmall .Tank_tankWrapper_15 {
-    width: 1766rem;
-    height: 922rem;
+        width: 1766rem;
+        height: 922rem;
 }
 
 .mediaMedium .Tank_tankWrapper_15 {
-    /* width: 2290rem;*/
-    /* height: 1194rem;*/
-    width: 1766rem;
-    height: 922rem;
+        /* width: 2290rem;*/
+        /* height: 1194rem;*/
+        width: 1766rem;
+        height: 922rem;
 }
 
 .mediaLarge .Tank_tankWrapper_15 {
-    /* width: 2700rem;*/
-    /* height: 1408rem;*/
-    width: 2290rem;
-    height: 1194rem;
+        /* width: 2700rem;*/
+        /* height: 1408rem;*/
+        width: 2290rem;
+        height: 1194rem;
 }
 
 .mediaExtraLarge .Tank_tankWrapper_15 {
-    /* width: 3640rem;*/
-    /* height: 1900rem;*/
-    width: 2700rem;
-    height: 1408rem;
+        /* width: 3640rem;*/
+        /* height: 1900rem;*/
+        width: 2700rem;
+        height: 1408rem;
 }
 
 .Tank_tankWrapper__withStyle_e9 {
-    background-image: url('R.images.gui.maps.icons.resourceWell.tanksBg.style__noactive');
-}
+        background-image: url('R.images.gui.maps.icons.resourceWell.tanksBg.style__noactive');
+    }
 
 .Tank_base__active_3b .Tank_tankWrapper__withStyle_e9 {
-    background-image: url('R.images.gui.maps.icons.resourceWell.tanksBg.style__active');
-}
+            background-image: url('R.images.gui.maps.icons.resourceWell.tanksBg.style__active');
+        }
 
 .Tank_tankWrapper__withoutStyle_cf {
-    background-image: url('R.images.gui.maps.icons.resourceWell.tanksBg.withoutStyle__noactive');
-}
+        background-image: url('R.images.gui.maps.icons.resourceWell.tanksBg.withoutStyle__noactive');
+    }
 
 .Tank_base__active_3b .Tank_tankWrapper__withoutStyle_cf {
-    background-image: url('R.images.gui.maps.icons.resourceWell.tanksBg.withoutStyle__active');
-}
+            background-image: url('R.images.gui.maps.icons.resourceWell.tanksBg.withoutStyle__active');
+        }
 
 .Tank_label_de {
     width: 200rem;
@@ -1573,12 +1551,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Tank_tankLight__withStyle_1b {
-    background-image: url('R.images.gui.maps.icons.resourceWell.tanksBg.leftShine');
-}
+        background-image: url('R.images.gui.maps.icons.resourceWell.tanksBg.leftShine');
+    }
 
 .Tank_tankLight__withoutStyle_f5 {
-    background-image: url('R.images.gui.maps.icons.resourceWell.tanksBg.rightShine');
-}
+        background-image: url('R.images.gui.maps.icons.resourceWell.tanksBg.rightShine');
+    }
 
 .Tank_tankInfoWrapper_60 {
     display: flex;
@@ -1590,22 +1568,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaSmall .Tank_tankInfoWrapper_60 {
-    max-width: 1366rem;
+        max-width: 1366rem;
 }
 
 .mediaMedium .Tank_tankInfoWrapper_60 {
-    /* max-width: 1600rem;*/
-    max-width: 1366rem;
+        /* max-width: 1600rem;*/
+        max-width: 1366rem;
 }
 
 .mediaLarge .Tank_tankInfoWrapper_60 {
-    /* max-width: 1920rem;*/
-    max-width: 1600rem;
+        /* max-width: 1920rem;*/
+        max-width: 1600rem;
 }
 
 .mediaExtraLarge .Tank_tankInfoWrapper_60 {
-    /* max-width: 2560rem;*/
-    max-width: 1920rem;
+        /* max-width: 2560rem;*/
+        max-width: 1920rem;
 }
 
 .Tank_dustAnimation_89 {
@@ -1616,59 +1594,59 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaSmall .Tank_dustAnimation_89 {
-    top: -70rem;
+        top: -70rem;
 }
 
 .mediaMedium .Tank_dustAnimation_89 {
-    top: 103rem;
+        top: 103rem;
 }
 
 .mediaLarge .Tank_dustAnimation_89 {
-    top: 240rem;
+        top: 240rem;
 }
 
 .mediaExtraLarge .Tank_dustAnimation_89 {
-    top: 556rem;
+        top: 556rem;
 }
 
 .Tank_dustAnimation__withStyle_47 {
-    left: 14rem;
-}
+        left: 14rem;
+    }
 
 .mediaSmall .Tank_dustAnimation__withStyle_47 {
-    left: 128rem;
+            left: 128rem;
 }
 
 .mediaMedium .Tank_dustAnimation__withStyle_47 {
-    left: 280rem;
+            left: 280rem;
 }
 
 .mediaLarge .Tank_dustAnimation__withStyle_47 {
-    left: 445rem;
+            left: 445rem;
 }
 
 .mediaExtraLarge .Tank_dustAnimation__withStyle_47 {
-    left: 760rem;
+            left: 760rem;
 }
 
 .Tank_dustAnimation__withoutStyle_83 {
-    right: 42rem;
-}
+        right: 42rem;
+    }
 
 .mediaSmall .Tank_dustAnimation__withoutStyle_83 {
-    right: 200rem;
+            right: 200rem;
 }
 
 .mediaMedium .Tank_dustAnimation__withoutStyle_83 {
-    right: 412rem;
+            right: 412rem;
 }
 
 .mediaLarge .Tank_dustAnimation__withoutStyle_83 {
-    right: 608rem;
+            right: 608rem;
 }
 
 .mediaExtraLarge .Tank_dustAnimation__withoutStyle_83 {
-    right: 915rem;
+            right: 915rem;
 }
 
 .Tank_particles_48 {
@@ -1680,12 +1658,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Tank_particles__parts_ee {
-    z-index: -2;
-}
+        z-index: -2;
+    }
 
 .Tank_particles__dust_38 {
-    z-index: -1;
-}
+        z-index: -1;
+    }
 
 .Tank_tankInfo_7a {
     display: flex;
@@ -1699,20 +1677,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaExtraLarge .Tank_tankInfo_7a {
-    top: 5%;
+        top: 5%;
 }
 
 .Tank_base__active_3b .Tank_tankInfo_7a {
-    left: 23%;
-}
+        left: 23%;
+    }
 
 .Tank_base__top_e1 .Tank_tankInfo_7a {
-    left: -17%;
-}
+        left: -17%;
+    }
 
 .Tank_base__top_e1.Tank_base__active_3b .Tank_tankInfo_7a {
-    left: -23%;
-}
+        left: -23%;
+    }
 
 .Tank_tankInfoShadow_84 {
     width: 600rem;
@@ -1735,11 +1713,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaLarge .Tank_info_17 {
-    transform: translateX(30rem);
+        transform: translateX(30rem);
 }
 
 .mediaLarge .Tank_base__top_e1 .Tank_info_17 {
-    transform: translateX(-25rem);
+            transform: translateX(-25rem);
 }
 
 .Tank_preview_7a {
@@ -1751,8 +1729,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Tank_vehicleInfo__disabled_8b {
-    opacity: 0.7;
-}
+        opacity: .7;
+    }
 
 .Tank_styleInfo_42 {
     display: flex;
@@ -1766,7 +1744,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Tank_infoText_5e {
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
@@ -1774,10 +1752,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaLarge .Tank_infoText_5e {
-    color: #ffdd99;
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
+        color: #FFDD99;
+        font-size: 20rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 
 .Tank_infoIcon_a3 {
@@ -1789,7 +1767,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaLarge .Tank_infoIcon_a3 {
-    margin-top: 2rem;
+        margin-top: 2rem;
 }
 
 .Tank_tanksLeft_e2 {
@@ -1802,19 +1780,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .Tank_tanksLeft_e2 {
-    margin-top: 70rem;
+        margin-top: 70rem;
 }
 
 .Tank_base__active_3b .Tank_tanksLeft_e2 {
-    margin-top: 57rem;
-}
+        margin-top: 57rem;
+    }
 
 .mediaMedium .Tank_base__active_3b .Tank_tanksLeft_e2 {
-    margin-top: 65rem;
+            margin-top: 65rem;
 }
 
 .mediaLarge .Tank_base__active_3b .Tank_tanksLeft_e2 {
-    margin-top: 79rem;
+            margin-top: 79rem;
 }
 
 .Tank_lockIcon_a0 {
@@ -1827,14 +1805,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .Tank_lockIcon_a0 {
-    bottom: 25rem;
+        bottom: 25rem;
 }
 
 .mediaLarge .Tank_lockIcon_a0 {
-    width: 136rem;
-    height: 136rem;
-    background-image: url('R.images.gui.maps.icons.resourceWell.lock');
-    bottom: 5rem;
+        width: 136rem;
+        height: 136rem;
+        background-image: url('R.images.gui.maps.icons.resourceWell.lock');
+        bottom: 5rem;
 }
 
 .Tank_textInfoWrapper_b1 {
@@ -1844,18 +1822,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     width: 440rem;
     height: 50rem;
-    background: url('R.images.gui.maps.icons.resourceWell.backgrounds.disable_without_style_small') no-repeat center /
-        contain;
+    background: url('R.images.gui.maps.icons.resourceWell.backgrounds.disable_without_style_small') no-repeat center / contain;
 }
 
 .mediaMedium .Tank_textInfoWrapper_b1 {
-    width: 520rem;
-    height: 63rem;
-    background-image: url('R.images.gui.maps.icons.resourceWell.backgrounds.disable_without_style');
+        width: 520rem;
+        height: 63rem;
+        background-image: url('R.images.gui.maps.icons.resourceWell.backgrounds.disable_without_style');
 }
 
 .Tank_tanksLeftBlockedText_d4 {
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -1863,14 +1840,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .Tank_tanksLeftBlockedText_d4 {
-    color: #ffdd99;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
+        color: #FFDD99;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 
 .Tank_tanksLeftText_d8 {
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
@@ -1881,11 +1858,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .Tank_tanksLeftText_d8 {
-    top: -110rem;
+        top: -110rem;
 }
 
 .mediaLarge .Tank_tanksLeftText_d8 {
-    top: -120rem;
+        top: -120rem;
 }
 
 .Tanks_base_82 {
@@ -1894,14 +1871,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
 }
 
-@media (min-width: 2561px) {
-    .Tanks_base_82 {
-        width: 2560rem;
-    }
+    @media (min-width: 2561px) {.Tanks_base_82 {
+        width: 2560rem
 }
+    }
 
 .Tanks_countdown_d2 {
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 80rem;
     font-weight: 700;
     position: absolute;
@@ -1911,18 +1887,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .Tanks_countdown_d2 {
-    font-size: 100rem;
-    top: 190rem;
+        font-size: 100rem;
+        top: 190rem;
 }
 
 .mediaLarge .Tanks_countdown_d2 {
-    font-size: 120rem;
-    top: 200rem;
+        font-size: 120rem;
+        top: 200rem;
 }
 
 .mediaExtraLarge .Tanks_countdown_d2 {
-    font-size: 140rem;
-    top: 240rem;
+        font-size: 140rem;
+        top: 240rem;
 }
 
 .Tanks_glow_f0 {
@@ -1959,7 +1935,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .TimerEntryPointTooltip_text_17 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -1967,21 +1943,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .TimerEntryPointTooltip_lastUntil_25 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 14rem;
     font-weight: 700;
     line-height: 1.15;
 }
 
 .TimerEntryPointTooltip_leftTime_d7 {
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 14rem;
     font-weight: 700;
     line-height: 1.15;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
+    text-shadow: 0 0 4rem rgba(255, 127, 0, .25), 0 0 8rem #ff2a00, 0 0 15rem #e52;
 }
 
 .TimerMainScreen_shineWrapper_3c {
@@ -2005,10 +1978,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .TimerMainScreen_shineBg_77 {
-    width: 700rem;
-    height: 394rem;
-    background-image: url('R.images.gui.maps.icons.resourceWell.timer.shine_timer');
-    top: -182rem;
+        width: 700rem;
+        height: 394rem;
+        background-image: url('R.images.gui.maps.icons.resourceWell.timer.shine_timer');
+        top: -182rem;
 }
 
 .TimerMainScreen_content_24 {
@@ -2019,32 +1992,26 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .TimerMainScreen_text_9c,
 .TimerMainScreen_time_98 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
     margin-right: 5rem;
 }
 
-.mediaMedium .TimerMainScreen_text_9c,
-.mediaMedium .TimerMainScreen_time_98 {
-    font-size: 18rem;
+.mediaMedium .TimerMainScreen_text_9c, .mediaMedium .TimerMainScreen_time_98 {
+        font-size: 18rem;
 }
 
-.TimerMainScreen_content__daysLeft_35 .TimerMainScreen_text_9c,
-.TimerMainScreen_content__daysLeft_35 .TimerMainScreen_time_98 {
-    color: #f2f2f7;
-    opacity: 0.5;
-}
+.TimerMainScreen_content__daysLeft_35 .TimerMainScreen_text_9c, .TimerMainScreen_content__daysLeft_35 .TimerMainScreen_time_98 {
+        color: #F2F2F7;
+        opacity: .5;
+    }
 
-.TimerMainScreen_content__endingSoon_f0 .TimerMainScreen_text_9c,
-.TimerMainScreen_content__endingSoon_f0 .TimerMainScreen_time_98 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
-}
+.TimerMainScreen_content__endingSoon_f0 .TimerMainScreen_text_9c, .TimerMainScreen_content__endingSoon_f0 .TimerMainScreen_time_98 {
+        color: #FFDD99;
+        text-shadow: 0 0 4rem rgba(255, 127, 0, .25), 0 0 8rem #ff2a00, 0 0 15rem #e52;
+    }
 
 .TimerMainScreen_time_98 {
     margin: 0;
@@ -2055,6 +2022,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.Timer_base__entryPointTooltip_1d {
-    margin-top: 5rem;
-}
+    .Timer_base__entryPointTooltip_1d {
+        margin-top: 5rem;
+    }
+

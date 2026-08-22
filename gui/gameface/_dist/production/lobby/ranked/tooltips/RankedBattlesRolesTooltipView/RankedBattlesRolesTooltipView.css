@@ -31,7 +31,7 @@
 }
 
 .Content_titleRoleName_4d {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 18rem;
     font-weight: 700;
     width: 100%;
@@ -56,7 +56,7 @@
 }
 
 .Content_roleActionsTitle_b6 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 15rem;
     font-weight: 700;
     width: 100%;
@@ -78,7 +78,7 @@
 .Content_roleActionsDisabled_14 {
     width: 100%;
     padding: 16rem 20rem 22rem;
-    color: #feab34;
+    color: #FEAB34;
     font-size: 14rem;
 }
 
@@ -88,7 +88,7 @@
 }
 
 .Content_roleDescriptionTitle_47 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 15rem;
     font-weight: 700;
     width: 100%;
@@ -96,7 +96,7 @@
 }
 
 .Content_roleDescriptionText_ef {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     line-height: 18rem;
 }
@@ -119,7 +119,7 @@
 }
 
 .Content_footerText_d2 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     line-height: 18rem;
     flex: 1;
@@ -141,7 +141,7 @@
 }
 
 .RoleAction_description_53 {
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -156,9 +156,10 @@
 }
 
 .TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
+
