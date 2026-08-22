@@ -1,6 +1,6 @@
 # wot.assets
 
-**World of Tanks client GUI assets** — icons, atlases, flash, videos — one
+**World of Tanks client GUI assets** (icons, atlases, flash, videos), one
 branch per client build. Extracted straight from the update CDN by
 [`unicum-gg/wot.build`](https://github.com/unicum-gg/wot.build), with no game
 client installed. Used by [unicum.gg](https://unicum.gg) to picture anything
@@ -19,7 +19,7 @@ Wargaming's public CDN will not serve.
 
 Wargaming's public CDN serves **released vehicles only**. A vehicle in Common
 Test 404s there, so a site that wants to show it before release has nowhere else
-to look. The client itself has the art all along — that is what this mirror
+to look. The client itself has the art all along, and that is what this mirror
 publishes.
 
 ## It accumulates, on purpose
