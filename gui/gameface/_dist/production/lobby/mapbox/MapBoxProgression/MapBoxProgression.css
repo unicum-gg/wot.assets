@@ -579,15 +579,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Item_base_91 {
     width: 232rem;
     height: 100%;
-    border: 1rem solid rgba(215, 215, 215, .3);
+    border: 1rem solid rgba(215, 215, 215, 0.3);
     border-radius: 2rem;
     background: no-repeat center / cover;
     position: relative;
 }
 
     .Item_base__done_c9 {
-        border-color: rgba(128, 212, 58, .5);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, .4), 0 0 5px rgba(128, 212, 58, .5);
+        border-color: rgba(128, 212, 58, 0.5);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 0 5px rgba(128, 212, 58, 0.5);
     }
 
     .Item_base__medium_4d {
@@ -605,13 +605,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: 0;
     bottom: 0;
     left: 0;
-    box-shadow: 0 4rem 10rem rgba(0, 0, 0, .5);
-    background-color: rgba(0, 0, 0, .2);
-    background-image: radial-gradient(50% 50% at 50% 50%, transparent, rgba(0, 0, 0, .3));
+    box-shadow: 0 4rem 10rem rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
+    background-image: radial-gradient(50% 50% at 50% 50%, transparent, rgba(0, 0, 0, 0.3));
 }
 
 .Item_base__done_c9 .Item_shadow_1d {
-        background-color: rgba(128, 212, 58, .1);
+        background-color: rgba(128, 212, 58, 0.1);
     }
 
 .Item_blinkWrapper_fc {
@@ -628,14 +628,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: -100%;
     animation: Item_blinkAnim_a0 7s 5s infinite;
-    animation-timing-function: cubic-bezier(.5, 1, .89, 1);
+    animation-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
 }
 
 .Item_bubble_ba {
     width: 8rem;
     height: 8rem;
     border-radius: 4rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, .6), 0 0 10rem rgba(254, 103, 0, .5), 0 0 12rem rgba(249, 0, 0, .8);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6), 0 0 10rem rgba(254, 103, 0, 0.5), 0 0 12rem rgba(249, 0, 0, 0.8);
     background-color: #dd3b03;
     position: absolute;
     top: -4rem;
@@ -649,7 +649,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     width: 100%;
     height: 50%;
-    background-image: linear-gradient(rgba(0, 0, 0, .4), transparent);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), transparent);
     position: absolute;
     top: 0;
     left: 0;
@@ -722,11 +722,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .Item_base__ready_3f .Item_highlight_90 {
         color: #80d43a;
+        text-shadow: 0 0 3rem #000;
     }
 
 .Item_name_b6 {
 
-    color: rgba(255, 255, 255, .5);
+    color: rgba(255, 255, 255, 0.5);
 
     font-size: 24rem;
 
@@ -744,7 +745,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Item_base__medium_4d .Item_name_b6 {
-        color: rgba(255, 255, 255, .5);
+        color: rgba(255, 255, 255, 0.5);
         font-size: 28rem;
         font-weight: 700;
         line-height: 1.1;
@@ -752,7 +753,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .Item_base__large_f8 .Item_name_b6,
     .Item_base__extraLarge_8f .Item_name_b6 {
-        color: rgba(255, 255, 255, .5);
+        color: rgba(255, 255, 255, 0.5);
         font-size: 36rem;
         font-weight: 700;
         line-height: 1.1;
@@ -1514,12 +1515,23 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.Progression_bgSection_5e {
+.Progression_topSectionLine_ac {
     width: 1rem;
-    height: 24rem;
-    background-image: linear-gradient(transparent, rgb(146, 146, 146) 50%, transparent);
+    height: 42rem;
+    background-image: linear-gradient(0deg, #f4e1b3 28.77%, rgba(244, 225, 179, 0) 102.05%);
+    opacity: 0.5;
     position: absolute;
-    top: -5rem;
+    bottom: 2rem;
+    left: 100%;
+}
+
+.Progression_bottomSectionLine_fc {
+    width: 1rem;
+    height: 5rem;
+    background: #f4e1b3;
+    opacity: 0.5;
+    position: absolute;
+    top: 14rem;
     left: 100%;
 }
 
@@ -1531,7 +1543,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: -33rem;
     left: 100%;
     transform: translateX(-50%);
-    transition: color .3s;
+    transition: color 0.3s;
 }
 
 .Progression_bgSectionNumber__passed_d4 {
@@ -1544,7 +1556,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 
 .Progression_base__reset_4f .Progression_bgSectionNumber_8f {
-        animation: Progression_color_9d .5s ease-in-out .3s backwards;
+        animation: Progression_color_9d 0.5s ease-in-out 0.3s backwards;
     }
 
 .Progression_base__medium_08 .Progression_bgSectionNumber_8f,
@@ -1563,7 +1575,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Progression_rewardsGroup_50 {
     position: absolute;
     top: 35rem;
-    left: 0;
     transform: translateX(-50%);
 }
 
@@ -1610,11 +1621,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Progression_base__finally_ed .Progression_highlight_6c {
-        animation: Progression_color_9d .5s ease-in-out .3s forwards;
+        animation: Progression_color_9d 0.5s ease-in-out 0.3s forwards;
     }
 
 .Progression_base__reset_4f .Progression_highlight_6c {
-        animation: Progression_color_9d .5s ease-in-out .3s backwards;
+        animation: Progression_color_9d 0.5s ease-in-out 0.3s backwards;
     }
 
 .Progression_description_cd {
@@ -1639,9 +1650,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    text-shadow: 0 0 15rem rgba(238,85,34, 1),
-        0 0 8rem rgba(255,42,0, 1),
-        0 0 4rem rgba(255,42,0, .25);
+    text-shadow: 0 0 15rem rgba(238,85,34, 1), 0 0 8rem rgba(255,42,0, 1), 0 0 4rem rgba(255,42,0, 0.25);
 }
 
 .Progression_base__medium_08 .Progression_restart_fd,
