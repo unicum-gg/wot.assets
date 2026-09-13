@@ -1,12 +1,1 @@
-import './vendor.js';
-import { b as e, B as s } from './lib.js';
-const i = (i) =>
-        i.weight >= e.extraLarge.weight
-            ? s.sizes.large
-            : i.weight >= e.large.weight
-              ? s.sizes.medium
-              : i.weight >= e.medium.weight
-                ? s.sizes.small
-                : s.sizes.extraSmall,
-    t = ['ja', 'ko', 'zh_tw', 'zh_sg', 'zh_cn', 'vi', 'th'].includes(R.strings.settings.LANGUAGE_CODE().toLowerCase());
-export { i as g, t as i };
+const s=4,t=(s,{poFileName:t,assetsPointer:e,isSubMode:o}={})=>{const r=t?R.strings.$dyn(t):R.strings.white_tiger_lobby;if(!r||"string"==typeof r)throw Error("Incorrect 'poFileName' argument");const n=o?"sub_modes":"modes",i=(e?r.$dyn(n)[e]:r)||r.$dyn(n)[void 0];return{staticTexts:r,dynamicTexts:i}};export{s as M,t as g};

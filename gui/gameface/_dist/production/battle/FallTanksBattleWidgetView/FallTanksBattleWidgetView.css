@@ -1,4 +1,4 @@
-.App_base_21 {
+.App_base_edd71 {
     position: absolute;
     top: 0;
     right: 0;
@@ -10,17 +10,17 @@
     align-items: center;
 }
 
-.App_widget_0b {
+.App_widget_a58b5 {
     width: 100%;
     margin-top: 26rem;
     position: relative;
 }
 
-.mediaExtraLargeHeight .App_widget_0b {
-    margin-top: 100rem;
+.mediaExtraLargeHeight .App_widget_a58b5 {
+        margin-top: 100rem;
 }
 
-.App_bgGradient_b7 {
+.App_bgGradient_b10ed {
     width: 1024rem;
     height: 349rem;
     background: url('R.images.fall_tanks.gui.maps.icons.feature.battle_widget.finishBg') no-repeat center / cover;
@@ -30,17 +30,17 @@
     transform: translateX(-50%);
 }
 
-.App_bgGradient__top_4b {
-    background: url('R.images.fall_tanks.gui.maps.icons.feature.battle_widget.topBg') no-repeat center / cover;
-    mix-blend-mode: screen;
+.App_bgGradient__top_b6819 {
+        background: url('R.images.fall_tanks.gui.maps.icons.feature.battle_widget.topBg') no-repeat center / cover;
+        mix-blend-mode: screen;
+    }
+
+.mediaLarge .App_bgGradient_b10ed {
+        width: 1926rem;
+        height: 656rem;
 }
 
-.mediaLarge .App_bgGradient_b7 {
-    width: 1926rem;
-    height: 656rem;
-}
-
-@keyframes Position_slideDown_88 {
+@keyframes Position_slideDown_ed5b5 {
     0% {
         opacity: 0;
         transform: translateY(-30rem);
@@ -51,7 +51,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Position_showCheckpoint_db {
+@keyframes Position_showCheckpoint_c390b {
     0% {
         opacity: 0;
         transform: scale(0.2);
@@ -67,7 +67,7 @@
         transform: scale(1);
     }
 }
-@keyframes Position_hideCheckpoint_40 {
+@keyframes Position_hideCheckpoint_a2073 {
     0% {
         opacity: 1;
         transform: scale(1);
@@ -78,14 +78,14 @@
         transform: scale(0.2);
     }
 }
-.Position_base_e9 {
+.Position_base_ec1e8 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
-.Position_label_7d {
-    color: #f2f2f7;
+.Position_label_a3d05 {
+    color: #F2F2F7;
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
@@ -93,15 +93,15 @@
     text-align: center;
     z-index: 1;
 }
-.Position_positionWrapper_31 {
+.Position_positionWrapper_a511d {
     width: 100%;
     height: 104rem;
     position: absolute;
     top: 30rem;
     mask-image: linear-gradient(transparent 0%, #000 22%, #000 22%, #000 80%, #000 80%, transparent 100%);
 }
-.Position_position_1c {
-    color: #f2f2f7;
+.Position_position_fd5ee {
+    color: #F2F2F7;
     font-size: 73rem;
     font-weight: 700;
     line-height: 1.1;
@@ -109,33 +109,32 @@
     text-align: center;
     position: absolute;
 }
-.Position_checkpoint_0d {
+.Position_checkpoint_e5479 {
     min-width: 1020rem;
     height: 66rem;
     margin-top: 100rem;
-    background: url('R.images.fall_tanks.gui.maps.icons.feature.battle_widget.checkpointRibbon') no-repeat center /
-        cover;
+    background: url('R.images.fall_tanks.gui.maps.icons.feature.battle_widget.checkpointRibbon') no-repeat center / cover;
     opacity: 0;
 }
-.Position_checkpoint__show_00 {
-    animation-name: Position_showCheckpoint_db;
+.Position_checkpoint__show_baf4c {
+    animation-name: Position_showCheckpoint_c390b;
     animation-duration: 5.3s;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
+    animation-timing-function: cubic-bezier(.07, .82, .16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
-}
-.Position_checkpoint__hide_7c {
-    animation-name: Position_hideCheckpoint_40;
-    animation-duration: 0.25s;
+    }
+.Position_checkpoint__hide_f2c99 {
+    animation-name: Position_hideCheckpoint_a2073;
+    animation-duration: .25s;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
-    animation-delay: 0.05s;
+    animation-timing-function: cubic-bezier(.6, .04, .98, .34);
+    animation-delay: .05s;
     animation-iteration-count: 1;
-    opacity: 1;
-}
-.Position_checkpointText_36 {
-    color: #f2f2f7;
+        opacity: 1;
+    }
+.Position_checkpointText_a1ad7 {
+    color: #F2F2F7;
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.1;
@@ -143,25 +142,25 @@
     text-align: center;
     opacity: 0;
 }
-.Position_checkpointText__show_68 {
-    animation-name: Position_showCheckpoint_db;
+.Position_checkpointText__show_cc06b {
+    animation-name: Position_showCheckpoint_c390b;
     animation-duration: 5.2s;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
-    animation-delay: 0.1s;
+    animation-timing-function: cubic-bezier(.07, .82, .16, 1);
+    animation-delay: .1s;
     animation-iteration-count: 1;
-}
-.Position_checkpointText__hide_3e {
-    animation-name: Position_hideCheckpoint_40;
-    animation-duration: 0.25s;
+    }
+.Position_checkpointText__hide_c623c {
+    animation-name: Position_hideCheckpoint_a2073;
+    animation-duration: .25s;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+    animation-timing-function: cubic-bezier(.6, .04, .98, .34);
     animation-delay: 0s;
     animation-iteration-count: 1;
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
-@keyframes Finish_slideDown_9f {
+@keyframes Finish_slideDown_dc0be {
     0% {
         opacity: 0;
         transform: translateY(-30rem);
@@ -172,7 +171,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Finish_showCheckpoint_2c {
+@keyframes Finish_showCheckpoint_cafea {
     0% {
         opacity: 0;
         transform: scale(0.2);
@@ -188,7 +187,7 @@
         transform: scale(1);
     }
 }
-@keyframes Finish_hideCheckpoint_d4 {
+@keyframes Finish_hideCheckpoint_cf322 {
     0% {
         opacity: 1;
         transform: scale(1);
@@ -199,12 +198,12 @@
         transform: scale(0.2);
     }
 }
-.Finish_base_44 {
+.Finish_base_da2e3 {
     opacity: 0;
-    animation-name: Finish_slideDown_9f;
-    animation-duration: 0.1s;
+    animation-name: Finish_slideDown_dc0be;
+    animation-duration: .1s;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
+    animation-timing-function: cubic-bezier(.07, .82, .16, 1);
     animation-delay: 0;
     animation-iteration-count: 1;
     display: flex;
@@ -213,7 +212,7 @@
     align-items: center;
     position: relative;
 }
-.Finish_top_ec {
+.Finish_top_abdf4 {
     width: 237rem;
     height: 200rem;
     background: url('R.images.fall_tanks.gui.maps.icons.feature.battle_widget.union') no-repeat center / cover;
@@ -223,49 +222,49 @@
     left: 50%;
     transform: translateX(-50%);
 }
-.mediaLarge .Finish_top_ec {
-    width: 380rem;
-    height: 320rem;
+.mediaLarge .Finish_top_abdf4 {
+        width: 380rem;
+        height: 320rem;
 }
-.Finish_placeText_94 {
-    color: #f2f2f7;
+.Finish_placeText_f2c12 {
+    color: #F2F2F7;
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.1;
     margin-top: -29rem;
     text-align: center;
 }
-.mediaLarge .Finish_placeText_94 {
-    margin-top: -60rem;
-    font-size: 73rem;
+.mediaLarge .Finish_placeText_f2c12 {
+        margin-top: -60rem;
+        font-size: 73rem;
 }
-.Finish_position_6e {
-    color: #f2f2f7;
+.Finish_position_d165e {
+    color: #F2F2F7;
     font-size: 73rem;
     font-weight: 700;
     line-height: 1.1;
     width: 100%;
     margin-top: 10rem;
     font-size: 100rem;
-    mask-image: linear-gradient(180deg, #fff 50%, rgba(255, 255, 255, 0) 90%);
+    mask-image: linear-gradient(180deg, #fff 50%, rgba(255,255,255, 0) 90%);
     text-align: center;
 }
-.mediaLarge .Finish_position_6e {
-    margin-top: 0;
-    font-size: 210rem;
+.mediaLarge .Finish_position_d165e {
+        margin-top: 0;
+        font-size: 210rem;
 }
-.Finish_spentTime_b4 {
-    color: #f2f2f7;
+.Finish_spentTime_d6c95 {
+    color: #F2F2F7;
     font-size: 24rem;
     font-weight: 400;
     line-height: 32rem;
 }
-.mediaLarge .Finish_spentTime_b4 {
-    margin-top: 6rem;
-    font-size: 36rem;
+.mediaLarge .Finish_spentTime_d6c95 {
+        margin-top: 6rem;
+        font-size: 36rem;
 }
 
-.NotFinish_base_ad {
+.NotFinish_base_f9621 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -273,23 +272,24 @@
     margin-top: 29rem;
 }
 
-.mediaLarge .NotFinish_base_ad {
-    margin-top: 91rem;
+    .mediaLarge .NotFinish_base_f9621 {
+        margin-top: 91rem;
 }
 
-.NotFinish_label_d6 {
-    color: #f2f2f7;
+.NotFinish_label_b6524 {
+    color: #F2F2F7;
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.1;
     text-align: center;
 }
 
-.mediaLarge .NotFinish_label_d6 {
-    font-size: 73rem;
+.mediaLarge .NotFinish_label_b6524 {
+        font-size: 73rem;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
+

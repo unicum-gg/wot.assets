@@ -3,15 +3,15 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressBar_base_45 {
+.ProgressBar_base_c37bf {
     width: 100%;
     height: var(--progress-bg-height);
     position: relative;
 }
-.ProgressBar_base__small_df {
-    height: var(--progress-bg-height-small);
-}
-.ProgressBar_background_51 {
+.ProgressBar_base__small_af6d6 {
+        height: var(--progress-bg-height-small);
+    }
+.ProgressBar_background_a4e18 {
     width: 100%;
     max-width: 8001px;
     height: 100%;
@@ -23,15 +23,16 @@
     top: 0;
     left: 0;
 }
-.ProgressBar_background__small_46 {
-    height: var(--progress-bg-height-small);
-}
-.ProgressBar_lineWrapper_6a {
+.ProgressBar_background__small_e2b95 {
+        height: var(--progress-bg-height-small);
+    }
+.ProgressBar_lineWrapper_e670c {
     display: flex;
     flex: 1;
 }
 
-.ProgressBarBlink_base_24 {
+
+.ProgressBarBlink_base_d7125 {
     width: var(--progress-glow-width);
     height: var(--progress-glow-height);
     background-image: var(--progress-glow);
@@ -44,36 +45,36 @@
     pointer-events: none;
 }
 
-.ProgressBarBlink_base__small_0f {
-    width: var(--progress-glow-small-width);
-    height: var(--progress-glow-small-height);
-    background-image: var(--progress-glow-small);
-}
+    .ProgressBarBlink_base__small_b92f8 {
+        width: var(--progress-glow-small-width);
+        height: var(--progress-glow-small-height);
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressLineImpose_base_80 {
+.ProgressLineImpose_base_a3558 {
     max-width: 8001px;
     height: 100%;
     background-color: var(--progress-line-base);
     filter: var(--progress-line-filter);
     position: relative;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
-.ProgressLineImpose_base__disabled_cc {
-    background-color: var(--progress-line-disabled);
-}
-.ProgressLineImpose_base__finished_d4 {
-    background-color: var(--progress-line-finished);
-}
-.ProgressLineImpose_base__withoutBounce_56 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-.ProgressLineImpose_pattern_1c {
+.ProgressLineImpose_base__disabled_a9e8e {
+        background-color: var(--progress-line-disabled);
+    }
+.ProgressLineImpose_base__finished_f889e {
+        background-color: var(--progress-line-finished);
+    }
+.ProgressLineImpose_base__withoutBounce_c0ff9 {
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
+.ProgressLineImpose_pattern_a4023 {
     max-width: 8001px;
     background-image: var(--progress-pattern-base);
     background-repeat: repeat;
@@ -85,18 +86,18 @@
     bottom: var(--progress-pattern-border-size);
     left: var(--progress-pattern-border-size);
 }
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
-    top: 0;
-    bottom: 0;
-}
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-disabled);
-    left: 0;
-}
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-finished);
-}
-.ProgressLineImpose_gradient_35 {
+.ProgressLineImpose_base__small_da260 .ProgressLineImpose_pattern_a4023 {
+        top: 0;
+        bottom: 0;
+    }
+.ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_pattern_a4023 {
+        background-image: var(--progress-pattern-disabled);
+        left: 0;
+    }
+.ProgressLineImpose_base__finished_f889e .ProgressLineImpose_pattern_a4023 {
+        background-image: var(--progress-pattern-finished);
+    }
+.ProgressLineImpose_gradient_f73c0 {
     max-width: 8001px;
     background-image: var(--progress-pattern-gradient);
     mix-blend-mode: var(--progress-pattern-gradient-mixBlendMode);
@@ -106,17 +107,17 @@
     bottom: var(--progress-pattern-border-size);
     left: 0;
 }
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
-    top: 0;
-    bottom: 0;
-}
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
-    display: none;
-}
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
-    background-image: var(--progress-pattern-gradient-finished);
-}
-.ProgressLineImpose_glow_a5 {
+.ProgressLineImpose_base__small_da260 .ProgressLineImpose_gradient_f73c0 {
+        top: 0;
+        bottom: 0;
+    }
+.ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_gradient_f73c0 {
+        display: none;
+    }
+.ProgressLineImpose_base__finished_f889e .ProgressLineImpose_gradient_f73c0 {
+        background-image: var(--progress-pattern-gradient-finished);
+    }
+.ProgressLineImpose_glow_f237a {
     width: var(--progress-glow-width);
     max-width: 8001px;
     height: var(--progress-glow-height);
@@ -129,36 +130,36 @@
     transform: translate(-50%, -50%);
     pointer-events: none;
 }
-.ProgressLineImpose_glow__left_d8 {
-    left: var(--progress-pattern-border-size);
-}
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
-    display: none;
-}
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
-    width: var(--progress-glow-small-width);
-    height: var(--progress-glow-small-height);
-    background-image: var(--progress-glow-small);
-}
+.ProgressLineImpose_glow__left_b7ffa {
+        left: var(--progress-pattern-border-size);
+    }
+.ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_glow_f237a,
+    .ProgressLineImpose_base__finished_f889e .ProgressLineImpose_glow_f237a {
+        display: none;
+    }
+.ProgressLineImpose_base__small_da260 .ProgressLineImpose_glow_f237a {
+        width: var(--progress-glow-small-width);
+        height: var(--progress-glow-small-height);
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressBarDeltaGrow_base_7e {
+.ProgressBarDeltaGrow_base_f4d46 {
     width: 0;
     height: 100%;
     position: absolute;
     top: 0;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
-.ProgressBarDeltaGrow_base__withoutBounce_b5 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-.ProgressBarDeltaGrow_glow_68 {
+.ProgressBarDeltaGrow_base__withoutBounce_b1398 {
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
+.ProgressBarDeltaGrow_glow_c912d {
     width: 0;
     max-width: 8001px;
     height: 100%;
@@ -167,25 +168,25 @@
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
-.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+.ProgressBarDeltaGrow_base__withoutBounce_b1398 .ProgressBarDeltaGrow_glow_c912d {
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
+.ProgressBarDeltaSimple_base_cfcd3 {
     width: 0;
     height: 100%;
     position: absolute;
     top: 0;
 }
-.ProgressBarDeltaSimple_delta_99 {
+.ProgressBarDeltaSimple_delta_dc2b6 {
     width: 0;
     max-width: 8001px;
     height: 100%;
@@ -194,12 +195,12 @@
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1), cubic-bezier(.21, .61, .35, 1);
     transition-property: width, transform;
 }
 
-.Button_bg_26,
-.Button_hover_6d {
+.Button_bg_c0535,
+.Button_hover_db4cf {
     width: 60rem;
     height: 118rem;
     background: no-repeat center / contain;
@@ -208,78 +209,77 @@
     left: 0;
 }
 
-.mediaMedium .Button_bg_26,
-.mediaMedium .Button_hover_6d {
-    width: 73rem;
-    height: 145rem;
+    .mediaMedium .Button_bg_c0535, .mediaMedium .Button_hover_db4cf {
+        width: 73rem;
+        height: 145rem;
 }
 
-.Button_base_aa {
+.Button_base_f2efb {
     width: 60rem;
     height: 118rem;
     position: relative;
     cursor: pointer;
 }
 
-.mediaMedium .Button_base_aa {
-    width: 73rem;
-    height: 145rem;
+.mediaMedium .Button_base_f2efb {
+        width: 73rem;
+        height: 145rem;
 }
 
-.Button_bg_26 {
+.Button_bg_c0535 {
     background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.btnArrowSmall');
     z-index: 0;
 }
 
-.mediaMedium .Button_bg_26 {
-    background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.btnArrow');
+.mediaMedium .Button_bg_c0535 {
+        background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.btnArrow');
 }
 
-.Button_base__left_2c .Button_bg_26 {
-    transform: rotateY(180deg);
-}
+.Button_base__left_ed855 .Button_bg_c0535 {
+        transform: rotateY(180deg);
+    }
 
-.Button_hover_6d {
+.Button_hover_db4cf {
     background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.btnArrowHoverSmall');
     opacity: 0;
     z-index: 1;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity .3s ease-in-out;
     pointer-events: none;
 }
 
-.mediaMedium .Button_hover_6d {
-    background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.btnArrowHover');
+.mediaMedium .Button_hover_db4cf {
+        background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.btnArrowHover');
 }
 
-.Button_base_aa:hover .Button_hover_6d {
-    opacity: 1;
-}
+.Button_base_f2efb:hover .Button_hover_db4cf {
+        opacity: 1;
+    }
 
-.Button_base__left_2c .Button_hover_6d {
-    transform: rotateY(180deg);
-}
+.Button_base__left_ed855 .Button_hover_db4cf {
+        transform: rotateY(180deg);
+    }
 
-.NavButton_base_bb {
+.NavButton_base_dd368 {
     position: relative;
 }
 
-.NavButton_navImg_61 {
+.NavButton_navImg_d389b {
     width: 69rem;
     height: 19rem;
     background: url('R.images.white_tiger.gui.maps.icons.battleLoading.paginatorNormal') no-repeat center / contain;
 }
 
-.NavButton_navImg__active_37 {
-    background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.paginatorActive');
-    pointer-events: none;
-}
+.NavButton_navImg__active_f6513 {
+        background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.paginatorActive');
+        pointer-events: none;
+    }
 
-.NavButton_navImg_61:hover {
-    background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.paginatorHover');
-    cursor: pointer;
-}
+.NavButton_navImg_d389b:hover {
+        background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.paginatorHover');
+        cursor: pointer;
+    }
 
-.WhiteTigerBattleLoadingApp_base_97 {
+.WhiteTigerBattleLoadingApp_base_bfa74 {
     width: 100%;
     height: 100%;
     background-color: #000000;
@@ -287,7 +287,7 @@
     position: relative;
 }
 
-.WhiteTigerBattleLoadingApp_vignette_b5 {
+.WhiteTigerBattleLoadingApp_vignette_e8035 {
     position: absolute;
     top: 0;
     right: 0;
@@ -296,7 +296,7 @@
     background: url('R.images.white_tiger.gui.maps.icons.battleLoading.loadingPicVignette') no-repeat center / cover;
 }
 
-.WhiteTigerBattleLoadingApp_shadow_5e {
+.WhiteTigerBattleLoadingApp_shadow_db9dd {
     width: 1000rem;
     height: 600rem;
     background: url('R.images.white_tiger.gui.maps.icons.battleLoading.txtShadow') no-repeat center / cover;
@@ -306,7 +306,7 @@
     pointer-events: none;
 }
 
-.WhiteTigerBattleLoadingApp_bgImage_03 {
+.WhiteTigerBattleLoadingApp_bgImage_bd7ab {
     position: absolute;
     top: 0;
     right: 0;
@@ -315,7 +315,7 @@
     background: no-repeat center / cover;
 }
 
-.WhiteTigerBattleLoadingApp_block_2c {
+.WhiteTigerBattleLoadingApp_block_a9179 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -327,56 +327,60 @@
     pointer-events: none;
 }
 
-.mediaMedium .WhiteTigerBattleLoadingApp_block_2c {
-    padding: 0 150rem;
-    bottom: 100rem;
+.mediaMedium .WhiteTigerBattleLoadingApp_block_a9179 {
+        padding: 0 150rem;
+        bottom: 100rem;
 }
 
-.mediaLarge .WhiteTigerBattleLoadingApp_block_2c {
-    padding: 0 170rem;
-    bottom: 160rem;
+.mediaLarge .WhiteTigerBattleLoadingApp_block_a9179 {
+        padding: 0 170rem;
+        bottom: 160rem;
 }
 
-.WhiteTigerBattleLoadingApp_hintContainer_31 {
+.WhiteTigerBattleLoadingApp_row_b521c {
+    margin-bottom: 10rem;
+}
+
+.WhiteTigerBattleLoadingApp_hintContainer_a8d56 {
     width: 100%;
     margin: 13rem 0 6rem;
     position: relative;
 }
 
-.mediaMedium .WhiteTigerBattleLoadingApp_hintContainer_31 {
-    margin: 12rem 0 14rem;
+.mediaMedium .WhiteTigerBattleLoadingApp_hintContainer_a8d56 {
+        margin: 12rem 0 14rem;
 }
 
-.WhiteTigerBattleLoadingApp_hintText_a6 {
-    color: rgba(242, 242, 247, 0.6);
+.WhiteTigerBattleLoadingApp_hintText_e35dd {
+    color: rgba(242,242,247, 0.6);
     font-size: 18rem;
     font-weight: 400;
     line-height: 1.25;
 }
 
-.mediaMedium .WhiteTigerBattleLoadingApp_hintText_a6 {
-    color: rgba(242, 242, 247, 0.6);
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
-    font-size: 28rem;
+.mediaMedium .WhiteTigerBattleLoadingApp_hintText_e35dd {
+        color: rgba(242,242,247, 0.6);
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 32rem;
+        font-size: 28rem;
 }
 
-.WhiteTigerBattleLoadingApp_row__active_f9 .WhiteTigerBattleLoadingApp_hintText_a6 {
-    color: rgba(233, 226, 191, 1);
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
+.WhiteTigerBattleLoadingApp_row__active_f459d .WhiteTigerBattleLoadingApp_hintText_e35dd {
+        color: rgba(233,226,191, 1);
+        font-size: 18rem;
+        font-weight: 700;
+        line-height: 1.1;
+    }
+
+.mediaMedium .WhiteTigerBattleLoadingApp_row__active_f459d .WhiteTigerBattleLoadingApp_hintText_e35dd {
+            color: rgba(233,226,191, 1);
+            font-size: 28rem;
+            font-weight: 700;
+            line-height: 1.1;
 }
 
-.mediaMedium .WhiteTigerBattleLoadingApp_row__active_f9 .WhiteTigerBattleLoadingApp_hintText_a6 {
-    color: rgba(233, 226, 191, 1);
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.WhiteTigerBattleLoadingApp_progressBar_e9 {
+.WhiteTigerBattleLoadingApp_progressBar_d0a51 {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
@@ -385,12 +389,12 @@
     bottom: 42rem;
 }
 
-.mediaMedium .WhiteTigerBattleLoadingApp_progressBar_e9 {
-    width: 690rem;
-    bottom: 52rem;
+.mediaMedium .WhiteTigerBattleLoadingApp_progressBar_d0a51 {
+        width: 690rem;
+        bottom: 52rem;
 }
 
-.WhiteTigerBattleLoadingApp_progressBorder_b8 {
+.WhiteTigerBattleLoadingApp_progressBorder_c1924 {
     position: absolute;
     top: -2rem;
     right: -2rem;
@@ -400,7 +404,7 @@
     border-radius: 3rem;
 }
 
-.WhiteTigerBattleLoadingApp_container_5a {
+.WhiteTigerBattleLoadingApp_container_bd521 {
     position: absolute;
     top: 0;
     right: 0;
@@ -409,49 +413,49 @@
     transform: translateY(-14rem);
 }
 
-.mediaMedium .WhiteTigerBattleLoadingApp_container_5a {
-    transform: translateY(0);
+.mediaMedium .WhiteTigerBattleLoadingApp_container_bd521 {
+        transform: translateY(0);
 }
 
-.WhiteTigerBattleLoadingApp_button_04 {
+.WhiteTigerBattleLoadingApp_button_b3450 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }
 
-.WhiteTigerBattleLoadingApp_button__left_ee {
-    left: 32rem;
+.WhiteTigerBattleLoadingApp_button__left_ab9bb {
+        left: 32rem;
+    }
+
+.mediaSmall .WhiteTigerBattleLoadingApp_button__left_ab9bb {
+            left: 42rem;
 }
 
-.mediaSmall .WhiteTigerBattleLoadingApp_button__left_ee {
-    left: 42rem;
+.mediaMedium .WhiteTigerBattleLoadingApp_button__left_ab9bb {
+            left: 50rem;
 }
 
-.mediaMedium .WhiteTigerBattleLoadingApp_button__left_ee {
-    left: 50rem;
+.mediaLarge .WhiteTigerBattleLoadingApp_button__left_ab9bb {
+            left: 60rem;
 }
 
-.mediaLarge .WhiteTigerBattleLoadingApp_button__left_ee {
-    left: 60rem;
+.WhiteTigerBattleLoadingApp_button__right_b243a {
+        right: 32rem;
+    }
+
+.mediaSmall .WhiteTigerBattleLoadingApp_button__right_b243a {
+            right: 42rem;
 }
 
-.WhiteTigerBattleLoadingApp_button__right_32 {
-    right: 32rem;
+.mediaMedium .WhiteTigerBattleLoadingApp_button__right_b243a {
+            right: 50rem;
 }
 
-.mediaSmall .WhiteTigerBattleLoadingApp_button__right_32 {
-    right: 42rem;
+.mediaLarge .WhiteTigerBattleLoadingApp_button__right_b243a {
+            right: 60rem;
 }
 
-.mediaMedium .WhiteTigerBattleLoadingApp_button__right_32 {
-    right: 50rem;
-}
-
-.mediaLarge .WhiteTigerBattleLoadingApp_button__right_32 {
-    right: 60rem;
-}
-
-.WhiteTigerBattleLoadingApp_navigation_5b {
+.WhiteTigerBattleLoadingApp_navigation_f81a0 {
     display: flex;
     position: absolute;
     left: 50%;
@@ -459,10 +463,11 @@
     margin-top: 45rem;
 }
 
-.mediaSmall .WhiteTigerBattleLoadingApp_navigation_5b {
-    margin-top: 65rem;
+.mediaSmall .WhiteTigerBattleLoadingApp_navigation_f81a0 {
+        margin-top: 65rem;
 }
 
-.mediaMedium .WhiteTigerBattleLoadingApp_navigation_5b {
-    margin-top: 85rem;
+.mediaMedium .WhiteTigerBattleLoadingApp_navigation_f81a0 {
+        margin-top: 85rem;
 }
+
