@@ -7,9 +7,9 @@
     cursor: pointer;
 }
 
-.TextButton_base__right_39 {
-    flex-direction: row-reverse;
-}
+    .TextButton_base__right_39 {
+        flex-direction: row-reverse;
+    }
 .TextButton_icon_17 {
     width: 32rem;
     height: 32rem;
@@ -17,22 +17,22 @@
     position: relative;
 }
 .TextButton_icon__back_43,
+    .TextButton_icon__forward_59 {
+        margin: -1rem -5rem;
+        background-image: url('R.images.gui.maps.icons.components.text_button.back');
+        transform: translateY(1rem);
+    }
 .TextButton_icon__forward_59 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.back');
-    transform: translateY(1rem);
-}
-.TextButton_icon__forward_59 {
-    transform: rotate(180deg) translateY(1rem);
-}
+        transform: rotate(180deg) translateY(1rem);
+    }
 .TextButton_icon__close_53 {
-    margin: -1rem 0;
-    background-image: url('R.images.gui.maps.icons.components.text_button.close');
-}
+        margin: -1rem 0;
+        background-image: url('R.images.gui.maps.icons.components.text_button.close');
+    }
 .TextButton_icon__info_33 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.info');
-}
+        margin: -1rem -5rem;
+        background-image: url('R.images.gui.maps.icons.components.text_button.info');
+    }
 .TextButton_glow_a4 {
     width: 100%;
     height: 100%;
@@ -40,82 +40,72 @@
     opacity: 0;
     position: absolute;
     top: 0;
-    transition: opacity 0.16s;
+    transition: opacity .16s;
 }
 .TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-}
+    .TextButton_icon__forward_59 .TextButton_glow_a4 {
+        background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+    }
 .TextButton_icon__close_53 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-}
+        background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+    }
 .TextButton_icon__info_33 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-}
+        background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+    }
 .TextButton_base_b6:hover .TextButton_glow_a4 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .TextButton_base_b6:active .TextButton_glow_a4 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .TextButton_caption_82 {
     position: relative;
-    transition:
-        color 0.16s,
-        text-shadow 0.16s;
+    transition: color .16s, text-shadow .16s;
 }
 .TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
-}
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
-    color: #fffa9f;
-}
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
-    color: #ffdd99;
-}
+    .TextButton_caption__forward_4e,
+    .TextButton_caption__close_36 {
+        color: #FFDD99;
+        text-shadow: 0 0 10rem rgba(255,42,0, 1),
+            0 0 10rem rgba(255,42,0, .4),
+            0 0 10rem rgba(255,42,0, .4),
+            0 0 2rem rgba(255,42,0, .4),
+            0 0 1rem rgba(255,42,0, .4),
+            0 0 2rem rgba(255,42,0, .4),
+            0 0 1rem rgba(255,42,0, .4);
+    }
+.TextButton_base_b6:hover .TextButton_caption__back_b9, .TextButton_base_b6:hover .TextButton_caption__forward_4e, .TextButton_base_b6:hover .TextButton_caption__close_36 {
+            color: #fffa9f;
+        }
+.TextButton_base_b6:active .TextButton_caption__back_b9, .TextButton_base_b6:active .TextButton_caption__forward_4e, .TextButton_base_b6:active .TextButton_caption__close_36 {
+            color: #FFDD99;
+        }
 .TextButton_caption__info_23 {
-    padding: 0 5rem;
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 8rem #00eaff;
-}
+        padding: 0 5rem;
+        color: #CCFFFF;
+        text-shadow: 0 0 12rem rgba(31,68,255, .8),
+            0 0 8rem #00eaff;
+    }
 .TextButton_base_b6:hover .TextButton_caption__info_23 {
-    color: #e3ffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 12rem rgba(0, 234, 255, 1),
-        0 0 8rem #00eaff;
-}
+            color: #e3ffff;
+            text-shadow: 0 0 12rem rgba(31,68,255, .8),
+                0 0 12rem rgba(0,234,255, 1),
+                0 0 8rem #00eaff;
+        }
 .TextButton_base_b6:active .TextButton_caption__info_23 {
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.6),
-        0 0 8rem #00eaff;
-}
+            color: #CCFFFF;
+            text-shadow: 0 0 12rem rgba(31,68,255, .6),
+                0 0 8rem #00eaff;
+        }
 .TextButton_goto_e7 {
     color: #7c7c6c;
 }
 .TextButton_base__left_ff .TextButton_goto_e7 {
-    margin-left: 8rem;
-}
+        margin-left: 8rem;
+    }
 .TextButton_base__right_39 .TextButton_goto_e7 {
-    margin-right: 8rem;
-}
+        margin-right: 8rem;
+    }
 .TextButton_shine_e2 {
     width: 90rem;
     height: 40rem;
@@ -123,22 +113,22 @@
     opacity: 0;
     position: absolute;
     top: -4rem;
-    transition: opacity 0.16s;
+    transition: opacity .16s;
     pointer-events: none;
 }
 .TextButton_base__left_ff .TextButton_shine_e2 {
-    left: -4rem;
-}
+        left: -4rem;
+    }
 .TextButton_base__right_39 .TextButton_shine_e2 {
-    right: -4rem;
-    transform: rotate(180deg);
-}
+        right: -4rem;
+        transform: rotate(180deg);
+    }
 .TextButton_base_b6:hover .TextButton_shine_e2 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .TextButton_base_b6:active .TextButton_shine_e2 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 @keyframes Content_fadeOut_6c {
     from {
@@ -198,7 +188,7 @@
     }
 
     100% {
-        opacity: 0.5;
+        opacity: .5;
         transform: translateY(0);
     }
 }
@@ -220,17 +210,17 @@
     position: relative;
 }
 .mediaMedium .Content_base_e1 {
-    height: 745rem;
+        height: 745rem;
 }
 .mediaLarge .Content_base_e1 {
-    height: 865rem;
+        height: 865rem;
 }
 .mediaExtraLarge .Content_base_e1 {
-    height: 1210rem;
+        height: 1210rem;
 }
 .Content_ribbon_f1 {
     opacity: 0;
-    animation: Content_slideUp_db 0.4s cubic-bezier(0.07, 0.82, 0.17, 1) 0.7s forwards;
+    animation: Content_slideUp_db 0.4s cubic-bezier(.07, .82, .17, 1) 0.7s forwards;
     width: 1366rem;
     height: 356rem;
     margin-top: -90rem;
@@ -240,38 +230,38 @@
     left: auto;
 }
 .mediaMedium .Content_ribbon_f1 {
-    width: 1600rem;
-    height: 417rem;
-    margin-top: -170rem;
+        width: 1600rem;
+        height: 417rem;
+        margin-top: -170rem;
 }
 .mediaLarge .Content_ribbon_f1 {
-    width: 1920rem;
-    height: 500rem;
-    margin-top: -163rem;
+        width: 1920rem;
+        height: 500rem;
+        margin-top: -163rem;
 }
 .mediaExtraLarge .Content_ribbon_f1 {
-    width: 1920rem;
-    height: 500rem;
-    margin-top: -163rem;
+        width: 1920rem;
+        height: 500rem;
+        margin-top: -163rem;
 }
 .Content_ribbon__withToken_7d {
-    margin-top: -160rem;
-}
+        margin-top: -160rem;
+    }
 .mediaMedium .Content_ribbon__withToken_7d {
-    margin-top: -270rem;
+            margin-top: -270rem;
 }
 .mediaLarge .Content_ribbon__withToken_7d {
-    margin-top: -250rem;
+            margin-top: -250rem;
 }
 .mediaExtraLarge .Content_ribbon__withToken_7d {
-    margin-top: -270rem;
+            margin-top: -270rem;
 }
 .Content_ribbon__gold_75 {
-    background-image: url('R.images.tank_academy.gui.maps.icons.rewardsView.ribbon_gold');
-}
+        background-image: url('R.images.tank_academy.gui.maps.icons.rewardsView.ribbon_gold');
+    }
 .Content_light_68 {
     opacity: 0;
-    animation: Content_slideUp_db 0.4s cubic-bezier(0.07, 0.82, 0.17, 1) 0.9s forwards;
+    animation: Content_slideUp_db 0.4s cubic-bezier(.07, .82, .17, 1) 0.9s forwards;
     width: 755rem;
     height: 559rem;
     margin-top: 40rem;
@@ -282,29 +272,29 @@
     z-index: -1;
 }
 .mediaMedium .Content_light_68 {
-    margin-top: 20rem;
+        margin-top: 20rem;
 }
 .mediaLarge .Content_light_68 {
-    margin-top: 90rem;
+        margin-top: 90rem;
 }
 .mediaExtraLarge .Content_light_68 {
-    margin-top: 260rem;
+        margin-top: 260rem;
 }
 .Content_light__withToken_95 {
-    margin-top: -50rem;
-}
+        margin-top: -50rem;
+    }
 .mediaMedium .Content_light__withToken_95 {
-    margin-top: -100rem;
+            margin-top: -100rem;
 }
 .mediaLarge .Content_light__withToken_95 {
-    margin-top: 90rem;
+            margin-top: 90rem;
 }
 .mediaExtraLarge .Content_light__withToken_95 {
-    margin-top: 260rem;
+            margin-top: 260rem;
 }
 .Content_sunShine_4f {
     opacity: 0;
-    animation: Content_fadeIn_cb 0.4s cubic-bezier(0.07, 0.82, 0.17, 1) 0.9s forwards;
+    animation: Content_fadeIn_cb 0.4s cubic-bezier(.07, .82, .17, 1) 0.9s forwards;
     width: 818rem;
     height: 818rem;
     margin-top: -30rem;
@@ -314,12 +304,12 @@
     transform: translateY(-50%);
 }
 .mediaMedium .Content_sunShine_4f {
-    margin-top: -90rem;
+        margin-top: -90rem;
 }
 .mediaLarge .Content_sunShine_4f {
-    width: 974rem;
-    height: 974rem;
-    margin-top: -50rem;
+        width: 974rem;
+        height: 974rem;
+        margin-top: -50rem;
 }
 .Content_sunShineCanvas_4f {
     width: 100%;
@@ -336,25 +326,25 @@
     transform: translateY(-50%);
 }
 .mediaMedium .Content_mainRewards_23 {
-    margin-top: -88rem;
+        margin-top: -88rem;
 }
 .mediaLarge .Content_mainRewards_23 {
-    margin-top: -95rem;
+        margin-top: -95rem;
 }
 .mediaExtraLarge .Content_mainRewards_23 {
-    margin-top: -50rem;
+        margin-top: -50rem;
 }
 .Content_mainRewards__withToken_d2 {
-    margin-top: -50rem;
-}
+        margin-top: -50rem;
+    }
 .mediaMedium .Content_mainRewards__withToken_d2 {
-    margin-top: -150rem;
+            margin-top: -150rem;
 }
 .mediaLarge .Content_mainRewards__withToken_d2 {
-    margin-top: -120rem;
+            margin-top: -120rem;
 }
 .mediaExtraLarge .Content_mainRewards__withToken_d2 {
-    margin-top: -130rem;
+            margin-top: -130rem;
 }
 .Content_selectVehicleWidget_c0 {
     display: flex;
@@ -367,21 +357,21 @@
     transform: translateY(-50%);
 }
 .mediaMedium .Content_selectVehicleWidget_c0 {
-    margin-top: 90rem;
+        margin-top: 90rem;
 }
 .mediaLarge .Content_selectVehicleWidget_c0 {
-    margin-top: 150rem;
+        margin-top: 150rem;
 }
 .mediaExtraLarge .Content_selectVehicleWidget_c0 {
-    margin-top: 170rem;
+        margin-top: 170rem;
 }
 .Content_radianLines_4f {
     opacity: 0;
     animation-name: Content_raysAppearance_72, Content_rotate_78;
-    animation-duration: 0.4s, 120s;
+    animation-duration: .4s, 120s;
     animation-fill-mode: forwards, forwards;
-    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1), linear;
-    animation-delay: 0.9s, 1.1s;
+    animation-timing-function: cubic-bezier(.07, .82, .17, 1), linear;
+    animation-delay: .9s, 1.1s;
     animation-iteration-count: 1, infinite;
     width: 1300rem;
     height: 1300rem;
@@ -392,13 +382,13 @@
     left: auto;
 }
 .mediaSmall .Content_radianLines_4f {
-    margin-top: -290rem;
+        margin-top: -290rem;
 }
 .mediaMedium .Content_radianLines_4f {
-    margin-top: -235rem;
+        margin-top: -235rem;
 }
 .mediaLarge .Content_radianLines_4f {
-    margin-top: -152rem;
+        margin-top: -152rem;
 }
 .Content_regularRewards_19 {
     display: flex;
@@ -409,25 +399,25 @@
     z-index: 2;
 }
 .mediaMedium .Content_regularRewards_19 {
-    margin-top: 200rem;
+        margin-top: 200rem;
 }
 .mediaLarge .Content_regularRewards_19 {
-    margin-top: 250rem;
+        margin-top: 250rem;
 }
 .mediaExtraLarge .Content_regularRewards_19 {
-    margin-top: 365rem;
+        margin-top: 365rem;
 }
 .Content_regularRewards__withToken_c6 {
-    margin-top: 200rem;
-}
+        margin-top: 200rem;
+    }
 .mediaMedium .Content_regularRewards__withToken_c6 {
-    margin-top: 200rem;
+            margin-top: 200rem;
 }
 .mediaLarge .Content_regularRewards__withToken_c6 {
-    margin-top: 250rem;
+            margin-top: 250rem;
 }
 .mediaExtraLarge .Content_regularRewards__withToken_c6 {
-    margin-top: 280rem;
+            margin-top: 280rem;
 }
 
 .Reward_base_ea {
@@ -436,47 +426,47 @@
     position: relative;
 }
 
-.Reward_base__s48x48_46,
-.Reward_base__small_c0 {
-    width: 48rem;
-    height: 48rem;
-}
+    .Reward_base__s48x48_46,
+    .Reward_base__small_c0 {
+        width: 48rem;
+        height: 48rem;
+    }
 
-.Reward_base__s80x80_ce,
-.Reward_base__big_e5 {
-    width: 80rem;
-    height: 80rem;
-}
+    .Reward_base__s80x80_ce,
+    .Reward_base__big_e5 {
+        width: 80rem;
+        height: 80rem;
+    }
 
-.Reward_base__s128x100_c3 {
-    width: 128rem;
-    height: 100rem;
-}
+    .Reward_base__s128x100_c3 {
+        width: 128rem;
+        height: 100rem;
+    }
 
-.Reward_base__s180x135_7c {
-    width: 180rem;
-    height: 135rem;
-}
+    .Reward_base__s180x135_7c {
+        width: 180rem;
+        height: 135rem;
+    }
 
-.Reward_base__s232x174_67 {
-    width: 232rem;
-    height: 174rem;
-}
+    .Reward_base__s232x174_67 {
+        width: 232rem;
+        height: 174rem;
+    }
 
-.Reward_base__s296x222_78 {
-    width: 296rem;
-    height: 222rem;
-}
+    .Reward_base__s296x222_78 {
+        width: 296rem;
+        height: 222rem;
+    }
 
-.Reward_base__s400x300_07 {
-    width: 400rem;
-    height: 300rem;
-}
+    .Reward_base__s400x300_07 {
+        width: 400rem;
+        height: 300rem;
+    }
 
-.Reward_base__s600x450_f8 {
-    width: 600rem;
-    height: 450rem;
-}
+    .Reward_base__s600x450_f8 {
+        width: 600rem;
+        height: 450rem;
+    }
 
 .Reward_tooltipWrapper_b5 {
     height: 100%;
@@ -503,43 +493,43 @@
 }
 
 .Reward_base__s48x48_46 .Reward_overlay_68,
-.Reward_base__small_c0 .Reward_overlay_68 {
-    width: 96rem;
-    height: 96rem;
-    background-size: 100%;
-    overflow: visible;
-}
+    .Reward_base__small_c0 .Reward_overlay_68 {
+        width: 96rem;
+        height: 96rem;
+        background-size: 100%;
+        overflow: visible;
+    }
 
 .Reward_base__s80x80_ce .Reward_overlay_68,
-.Reward_base__big_e5 .Reward_overlay_68 {
-    width: 128rem;
-    height: 128rem;
-}
+    .Reward_base__big_e5 .Reward_overlay_68 {
+        width: 128rem;
+        height: 128rem;
+    }
 
 .Reward_base__s180x135_7c .Reward_overlay_68 {
-    width: 266rem;
-    height: 241rem;
-}
+        width: 266rem;
+        height: 241rem;
+    }
 
 .Reward_base__s232x174_67 .Reward_overlay_68 {
-    width: 344rem;
-    height: 312rem;
-}
+        width: 344rem;
+        height: 312rem;
+    }
 
 .Reward_base__s296x222_78 .Reward_overlay_68 {
-    width: 450rem;
-    height: 408rem;
-}
+        width: 450rem;
+        height: 408rem;
+    }
 
 .Reward_base__s400x300_07 .Reward_overlay_68 {
-    width: 618rem;
-    height: 590rem;
-}
+        width: 618rem;
+        height: 590rem;
+    }
 
 .Reward_base__s600x450_f8 .Reward_overlay_68 {
-    width: 670rem;
-    height: 575rem;
-}
+        width: 670rem;
+        height: 575rem;
+    }
 
 .Reward_highlight_36 {
     width: 100%;
@@ -563,35 +553,35 @@
 }
 
 .Reward_base__s48x48_46 .Reward_info_72,
-.Reward_base__small_c0 .Reward_info_72 {
-    margin: -10rem -10rem 0;
-}
+    .Reward_base__small_c0 .Reward_info_72 {
+        margin: -10rem -10rem 0;
+    }
 
 .Reward_info__multi_63 {
-    margin-right: 2rem;
-    text-align: right;
-}
+        margin-right: 2rem;
+        text-align: right;
+    }
 
 .Reward_base__s48x48_46 .Reward_info__multi_63,
-.Reward_base__small_c0 .Reward_info__multi_63 {
-    margin-right: 0;
-}
+        .Reward_base__small_c0 .Reward_info__multi_63 {
+            margin-right: 0;
+        }
 
 .Reward_info__credits_ef {
-    color: #e9e2bf;
-}
+        color: #E9E2BF;
+    }
 
 .Reward_info__gold_36 {
-    color: #ffc363;
-}
+        color: #FFC363;
+    }
 
 .Reward_info__crystal_36 {
-    color: #c9c9b6;
-}
+        color: #C9C9B6;
+    }
 
 .Reward_info__premiumTank_d3 {
-    color: #ffdd99;
-}
+        color: #FFDD99;
+    }
 
 .Reward_timer_d3 {
     background: no-repeat center / contain;
@@ -600,128 +590,128 @@
 }
 
 .Reward_base__s48x48_46 .Reward_timer_d3,
-.Reward_base__small_c0 .Reward_timer_d3 {
-    width: 23rem;
-    height: 23rem;
-    background-image: url('R.images.gui.maps.icons.quests.bonuses.small.timer');
-    top: -6rem;
-    right: -6rem;
-}
+    .Reward_base__small_c0 .Reward_timer_d3 {
+        width: 23rem;
+        height: 23rem;
+        background-image: url('R.images.gui.maps.icons.quests.bonuses.small.timer');
+        top: -6rem;
+        right: -6rem;
+    }
 
 .Reward_base__s80x80_ce .Reward_timer_d3,
-.Reward_base__big_e5 .Reward_timer_d3 {
-    width: 48rem;
-    height: 48rem;
-    background-image: url('R.images.gui.maps.icons.quests.bonuses.big.timer');
-    top: -14rem;
-    right: -14rem;
-}
+    .Reward_base__big_e5 .Reward_timer_d3 {
+        width: 48rem;
+        height: 48rem;
+        background-image: url('R.images.gui.maps.icons.quests.bonuses.big.timer');
+        top: -14rem;
+        right: -14rem;
+    }
 
 .Box_mt__XS_0c {
-    margin-top: 4rem;
-}
-.Box_mt__SM_eb {
-    margin-top: 8rem;
-}
-.Box_mt__SMp_cf {
-    margin-top: 10rem;
-}
-.Box_mt__MD_25 {
-    margin-top: 16rem;
-}
-.Box_mt__MDp_49 {
-    margin-top: 20rem;
-}
-.Box_mt__LG_e8 {
-    margin-top: 32rem;
-}
-.Box_mt__XL_83 {
-    margin-top: 64rem;
-}
+            margin-top: 4rem;
+        }
+        .Box_mt__SM_eb {
+            margin-top: 8rem;
+        }
+        .Box_mt__SMp_cf {
+            margin-top: 10rem;
+        }
+        .Box_mt__MD_25 {
+            margin-top: 16rem;
+        }
+        .Box_mt__MDp_49 {
+            margin-top: 20rem;
+        }
+        .Box_mt__LG_e8 {
+            margin-top: 32rem;
+        }
+        .Box_mt__XL_83 {
+            margin-top: 64rem;
+        }
 
 .Box_mr__XS_7c {
-    margin-right: 4rem;
-}
+            margin-right: 4rem;
+        }
 
 .Box_mr__SM_08 {
-    margin-right: 8rem;
-}
+            margin-right: 8rem;
+        }
 
 .Box_mr__SMp_06 {
-    margin-right: 10rem;
-}
+            margin-right: 10rem;
+        }
 
 .Box_mr__MD_4a {
-    margin-right: 16rem;
-}
+            margin-right: 16rem;
+        }
 
 .Box_mr__MDp_b6 {
-    margin-right: 20rem;
-}
+            margin-right: 20rem;
+        }
 
 .Box_mr__LG_d0 {
-    margin-right: 32rem;
-}
+            margin-right: 32rem;
+        }
 
 .Box_mr__XL_db {
-    margin-right: 64rem;
-}
+            margin-right: 64rem;
+        }
 
 .Box_mb__XS_bb {
-    margin-bottom: 4rem;
-}
+            margin-bottom: 4rem;
+        }
 
 .Box_mb__SM_83 {
-    margin-bottom: 8rem;
-}
+            margin-bottom: 8rem;
+        }
 
 .Box_mb__SMp_04 {
-    margin-bottom: 10rem;
-}
+            margin-bottom: 10rem;
+        }
 
 .Box_mb__MD_ed {
-    margin-bottom: 16rem;
-}
+            margin-bottom: 16rem;
+        }
 
 .Box_mb__MDp_65 {
-    margin-bottom: 20rem;
-}
+            margin-bottom: 20rem;
+        }
 
 .Box_mb__LG_c8 {
-    margin-bottom: 32rem;
-}
+            margin-bottom: 32rem;
+        }
 
 .Box_mb__XL_f8 {
-    margin-bottom: 64rem;
-}
+            margin-bottom: 64rem;
+        }
 
 .Box_ml__XS_8a {
-    margin-left: 4rem;
-}
+            margin-left: 4rem;
+        }
 
 .Box_ml__SM_e6 {
-    margin-left: 8rem;
-}
+            margin-left: 8rem;
+        }
 
 .Box_ml__SMp_fb {
-    margin-left: 10rem;
-}
+            margin-left: 10rem;
+        }
 
 .Box_ml__MD_2b {
-    margin-left: 16rem;
-}
+            margin-left: 16rem;
+        }
 
 .Box_ml__MDp_c7 {
-    margin-left: 20rem;
-}
+            margin-left: 20rem;
+        }
 
 .Box_ml__LG_39 {
-    margin-left: 32rem;
-}
+            margin-left: 32rem;
+        }
 
 .Box_ml__XL_4a {
-    margin-left: 64rem;
-}
+            margin-left: 64rem;
+        }
 
 .FormatText_base_d0 {
     display: flex;
@@ -730,167 +720,167 @@
 
 /* eslint-disable-next-line expectedscss*/
 .Text_paragraph-P10_2c {
-    font-size: 10rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 10rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_paragraph-P12_22 {
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 12rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P14_a7 {
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P16_90 {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P18_50 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 18rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P24_33 {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 32rem;
 }
 .Text_heading-H14_8b {
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 14rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H15_9e {
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 15rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H18_b7 {
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 18rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H20R_f6 {
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 20rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_heading-H22_27 {
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .Text_heading-H24R_be {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_heading-H24_0c {
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
+        font-size: 24rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .Text_heading-H28_78 {
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H36_32 {
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 36rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H56_c3 {
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 56rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H73_8f {
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 73rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H144_a9 {
-    font-size: 144rem;
-    font-weight: 700;
-    line-height: 1;
+        font-size: 144rem;
+        font-weight: 700;
+        line-height: 1;
 }
 .Text_BLACK_REAL_30 {
-    color: #000000;
-}
+        color: #000000;
+    }
 .Text_WHITE_REAL_bc {
-    color: #ffffff;
-}
+        color: #FFFFFF;
+    }
 .Text_WHITE_62 {
-    color: #f2f2f7;
-}
+        color: #F2F2F7;
+    }
 .Text_WHITE_ORANGE_54 {
-    color: #fefeec;
-}
+        color: #FEFEEC;
+    }
 .Text_WHITE_SPANISH_df {
-    color: #e9e2bf;
-}
+        color: #E9E2BF;
+    }
 .Text_PAR_15 {
-    color: #8c8c7e;
-}
+        color: #8C8C7E;
+    }
 .Text_PAR_SECONDARY_5d {
-    color: #595950;
-}
+        color: #595950;
+    }
 .Text_PAR_TERTIARY_c9 {
-    color: #37362e;
-}
+        color: #37362E;
+    }
 .Text_INFO_RED_30 {
-    color: #ff0000;
-}
+        color: #FF0000;
+    }
 .Text_RED_66 {
-    color: #ff2717;
-}
+        color: #FF2717;
+    }
 .Text_RED_DARK_d8 {
-    color: #b70000;
-}
+        color: #B70000;
+    }
 .Text_YELLOW_ed {
-    color: #feab34;
-}
+        color: #FEAB34;
+    }
 .Text_ORANGE_be {
-    color: #ee7000;
-}
+        color: #EE7000;
+    }
 .Text_CREAM_57 {
-    color: #ffdd99;
-}
+        color: #FFDD99;
+    }
 .Text_BROWN_18 {
-    color: #cbac77;
-}
+        color: #CBAC77;
+    }
 .Text_GREEN_BRIGHT_3f {
-    color: #80d43a;
-}
+        color: #80D43A;
+    }
 .Text_GREEN_e3 {
-    color: #7ab300;
-}
+        color: #7AB300;
+    }
 .Text_GREEN_DARK_f1 {
-    color: #497212;
-}
+        color: #497212;
+    }
 .Text_BLUE_BOOSTER_21 {
-    color: #ccffff;
-}
+        color: #CCFFFF;
+    }
 .Text_BLUE_TEAMKILLER_ab {
-    color: #09e2ff;
-}
+        color: #09E2FF;
+    }
 .Text_CRED_f7 {
-    color: #ced9d9;
-}
+        color: #CED9D9;
+    }
 .Text_GOLD_28 {
-    color: #ffc363;
-}
+        color: #FFC363;
+    }
 .Text_BOND_be {
-    color: #c9c9b6;
-}
+        color: #C9C9B6;
+    }
 .Text_PROM_65 {
-    color: #a29b70;
-}
+        color: #A29B70;
+    }
 
 .VehicleName_base_58 {
     display: flex;
@@ -899,13 +889,13 @@
     align-items: center;
 }
 
-.VehicleName_base__white_d2 {
-    color: #f2f2f7;
-}
+    .VehicleName_base__white_d2 {
+        color: #F2F2F7;
+    }
 
-.VehicleName_base__whiteOrange_f2 {
-    color: #fefeec;
-}
+    .VehicleName_base__whiteOrange_f2 {
+        color: #FEFEEC;
+    }
 
 .VehicleName_nation_45 {
     width: 25rem;
@@ -916,60 +906,60 @@
 }
 
 .VehicleName_nation__china_28 {
-    background-image: url('R.images.gui.maps.icons.flags.c_25x17.china');
-}
+            background-image: url('R.images.gui.maps.icons.flags.c_25x17.china');
+        }
 
 .VehicleName_nation__czech_59 {
-    background-image: url('R.images.gui.maps.icons.flags.c_25x17.czech');
-}
+            background-image: url('R.images.gui.maps.icons.flags.c_25x17.czech');
+        }
 
 .VehicleName_nation__france_65 {
-    background-image: url('R.images.gui.maps.icons.flags.c_25x17.france');
-}
+            background-image: url('R.images.gui.maps.icons.flags.c_25x17.france');
+        }
 
 .VehicleName_nation__germany_3d {
-    background-image: url('R.images.gui.maps.icons.flags.c_25x17.germany');
-}
+            background-image: url('R.images.gui.maps.icons.flags.c_25x17.germany');
+        }
 
 .VehicleName_nation__italy_f0 {
-    background-image: url('R.images.gui.maps.icons.flags.c_25x17.italy');
-}
+            background-image: url('R.images.gui.maps.icons.flags.c_25x17.italy');
+        }
 
 .VehicleName_nation__japan_b6 {
-    background-image: url('R.images.gui.maps.icons.flags.c_25x17.japan');
-}
+            background-image: url('R.images.gui.maps.icons.flags.c_25x17.japan');
+        }
 
 .VehicleName_nation__poland_0d {
-    background-image: url('R.images.gui.maps.icons.flags.c_25x17.poland');
-}
+            background-image: url('R.images.gui.maps.icons.flags.c_25x17.poland');
+        }
 
 .VehicleName_nation__sweden_ab {
-    background-image: url('R.images.gui.maps.icons.flags.c_25x17.sweden');
-}
+            background-image: url('R.images.gui.maps.icons.flags.c_25x17.sweden');
+        }
 
 .VehicleName_nation__uk_18 {
-    background-image: url('R.images.gui.maps.icons.flags.c_25x17.uk');
-}
+            background-image: url('R.images.gui.maps.icons.flags.c_25x17.uk');
+        }
 
 .VehicleName_nation__usa_7d {
-    background-image: url('R.images.gui.maps.icons.flags.c_25x17.usa');
-}
+            background-image: url('R.images.gui.maps.icons.flags.c_25x17.usa');
+        }
 
 .VehicleName_nation__ussr_76 {
-    background-image: url('R.images.gui.maps.icons.flags.c_25x17.ussr');
-}
+            background-image: url('R.images.gui.maps.icons.flags.c_25x17.ussr');
+        }
 
 .VehicleName_nation__intunion_cb {
-    background-image: url('R.images.gui.maps.icons.flags.c_25x17.intunion');
-}
+            background-image: url('R.images.gui.maps.icons.flags.c_25x17.intunion');
+        }
 
 .VehicleName_level_33 {
-    color: #ffdd99;
+    color: #FFDD99;
 }
 
 .VehicleName_base__colored_00 .VehicleName_level_33 {
-    color: #fefeec;
-}
+        color: #FEFEEC;
+    }
 
 .VehicleName_type_60 {
     width: 60rem;
@@ -980,85 +970,85 @@
 }
 
 .VehicleName_type__AT_SPG_43 {
-    background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.AT_SPG');
-}
+            background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.AT_SPG');
+        }
 
 .VehicleName_type__AT_SPG_43.VehicleName_type__elite_ab {
-    background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.AT_SPG_elite');
-}
+            background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.AT_SPG_elite');
+        }
 
 .VehicleName_type__heavyTank_11 {
-    background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.heavyTank');
-}
+            background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.heavyTank');
+        }
 
 .VehicleName_type__heavyTank_11.VehicleName_type__elite_ab {
-    background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.heavyTank_elite');
-}
+            background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.heavyTank_elite');
+        }
 
 .VehicleName_type__lightTank_87 {
-    background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.lightTank');
-}
+            background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.lightTank');
+        }
 
 .VehicleName_type__lightTank_87.VehicleName_type__elite_ab {
-    background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.lightTank_elite');
-}
+            background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.lightTank_elite');
+        }
 
 .VehicleName_type__mediumTank_d2 {
-    background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.mediumTank');
-}
+            background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.mediumTank');
+        }
 
 .VehicleName_type__mediumTank_d2.VehicleName_type__elite_ab {
-    background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.mediumTank_elite');
-}
+            background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.mediumTank_elite');
+        }
 
 .VehicleName_type__SPG_fd {
-    background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.SPG');
-}
+            background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.SPG');
+        }
 
 .VehicleName_type__SPG_fd.VehicleName_type__elite_ab {
-    background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.SPG_elite');
-}
+            background-image: url('R.images.gui.maps.icons.vehicleTypes.c_60x54.SPG_elite');
+        }
 
 .VehicleName_type__elite_ab {
-    margin: 4rem -8rem 0;
-}
+        margin: 4rem -8rem 0;
+    }
 
 .VehicleName_base__medium_a4 .VehicleName_type_60 {
-    width: 83rem;
-    height: 73rem;
-    margin: 0 -23rem;
-    background: no-repeat center / contain;
-    position: relative;
-    top: -18rem;
-}
+        width: 83rem;
+        height: 73rem;
+        margin: 0 -23rem;
+        background: no-repeat center / contain;
+        position: relative;
+        top: -18rem;
+    }
 
 .VehicleName_base__medium_a4 .VehicleName_type__elite_ab {
-    margin: 0 -16rem;
-}
+            margin: 0 -16rem;
+        }
 
 .VehicleName_name_09 {
-    color: #fefeec;
+    color: #FEFEEC;
 }
 
 .VehicleName_base__colored_00 .VehicleName_name_09 {
-    color: #8c8c7e;
-}
+        color: #8C8C7E;
+    }
 
 .MainReward_base_2e {
     margin: 0 12rem;
     position: relative;
 }
 
-.MainReward_base__disabled_07 {
-    pointer-events: none;
-}
+    .MainReward_base__disabled_07 {
+        pointer-events: none;
+    }
 
-.mediaLarge .MainReward_base_2e {
-    margin: 0 14rem;
+    .mediaLarge .MainReward_base_2e {
+        margin: 0 14rem;
 }
 
 .MainReward_info_19 {
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 24rem;
     font-weight: 700;
     line-height: 1.2;
@@ -1066,8 +1056,8 @@
 }
 
 .mediaMedium .MainReward_info_19 {
-    margin: -46rem 0 0;
-    font-size: 36rem;
+        margin: -46rem 0 0;
+        font-size: 36rem;
 }
 
 .MainReward_labelCont_18 {
@@ -1081,7 +1071,7 @@
 }
 
 .MainReward_label_8c {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 24rem;
     font-weight: 700;
     line-height: 1.2;
@@ -1110,11 +1100,11 @@
 }
 
 .mediaMedium .RewardList_reward_4a {
-    margin: 0 12rem;
+        margin: 0 12rem;
 }
 
 .mediaExtraLarge .RewardList_reward_4a {
-    margin: 0 18rem;
+        margin: 0 18rem;
 }
 
 .RewardList_rewardInfo_f4 {
@@ -1126,68 +1116,67 @@
     justify-content: center;
     align-items: center;
     border-radius: 2rem;
-    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 0 1rem rgba(0,0,0, .6);
     position: relative;
     cursor: pointer;
 }
 
-.CButton_base__main_42,
-.CButton_base__primary_7f,
-.CButton_base__primaryGreen_6f,
-.CButton_base__primaryRed_ec,
-.CButton_base__secondary_50 {
-    background-size: 100% 100%;
-}
+    .CButton_base__main_42,
+    .CButton_base__primary_7f,
+    .CButton_base__primaryGreen_6f,
+    .CButton_base__primaryRed_ec,
+    .CButton_base__secondary_50 {
+        background-size: 100% 100%;
+    }
 
-.CButton_base__main_42 {
-    background-image: url('R.images.gui.maps.icons.components.button.back_main');
-}
+    .CButton_base__main_42 {
+        background-image: url('R.images.gui.maps.icons.components.button.back_main');
+    }
 
-.CButton_base__primary_7f {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
-}
+    .CButton_base__primary_7f {
+        background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+    }
 
-.CButton_base__primaryGreen_6f {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
-}
+    .CButton_base__primaryGreen_6f {
+        background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+    }
 
-.CButton_base__primaryRed_ec {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
-}
+    .CButton_base__primaryRed_ec {
+        background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+    }
 
-.CButton_base__secondary_50 {
-    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
-}
+    .CButton_base__secondary_50 {
+        background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+    }
 
-.CButton_base__ghost_ed {
-    border-radius: 3rem;
-    box-shadow:
-        0 0 0 1rem rgba(0, 0, 0, 0.3),
-        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
-    background-color: rgba(0, 0, 0, 0.15);
-}
+    .CButton_base__ghost_ed {
+        border-radius: 3rem;
+        box-shadow: 0 0 0 1rem rgba(0,0,0, .3),
+            0 0 0 1rem rgba(255,255,255, .15) inset;
+        background-color: rgba(0,0,0, .15);
+    }
 
-.CButton_base__extraSmall_27 {
-    min-height: 17rem;
-    padding: 0 16rem;
-}
+    .CButton_base__extraSmall_27 {
+        min-height: 17rem;
+        padding: 0 16rem;
+    }
 
-.CButton_base__small_df,
-.CButton_base__medium_74 {
-    padding: 0 20rem;
-}
+    .CButton_base__small_df,
+    .CButton_base__medium_74 {
+        padding: 0 20rem;
+    }
 
-.CButton_base__small_df {
-    min-height: 18rem;
-}
+    .CButton_base__small_df {
+        min-height: 18rem;
+    }
 
-.CButton_base__medium_74 {
-    min-height: 32rem;
-}
+    .CButton_base__medium_74 {
+        min-height: 32rem;
+    }
 
-.CButton_base__disabled_d9 {
-    cursor: default;
-}
+    .CButton_base__disabled_d9 {
+        cursor: default;
+    }
 /* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
@@ -1203,20 +1192,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
 }
 .CButton_base__main_42 .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+    }
 .CButton_base__primary_7f .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+    }
 .CButton_base__primaryGreen_6f .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+    }
 .CButton_base__primaryRed_ec .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+    }
 .CButton_base__secondary_50 .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
-}
+        border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+    }
 .CButton_texture_fe {
     background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
     background-size: 155rem 31rem;
@@ -1233,12 +1222,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: 0;
     bottom: 0;
     left: 0;
-    transition: box-shadow 0.16s ease-in-out;
+    transition: box-shadow .16s ease-in-out;
 }
 .CButton_base__focus_83 .CButton_state_11 {
-    border-radius: 2rem;
-    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
-}
+        border-radius: 2rem;
+        box-shadow: inset 0 0 2rem 1rem rgba(255,85,0, .2);
+    }
 .CButton_stateHighlightHover_ff,
 .CButton_stateHighlightActive_35,
 .CButton_stateDisabled_54 {
@@ -1249,47 +1238,40 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-.CButton_base__firstHover_d5 .CButton_stateHighlightHover_ff,
-.CButton_base__firstHover_d5 .CButton_stateHighlightActive_35,
-.CButton_base__firstHover_d5 .CButton_stateDisabled_54 {
-    transition: opacity 0.16s ease-in-out;
-}
+.CButton_base__firstHover_d5 .CButton_stateHighlightHover_ff, .CButton_base__firstHover_d5 .CButton_stateHighlightActive_35, .CButton_base__firstHover_d5 .CButton_stateDisabled_54 {
+        transition: opacity .16s ease-in-out;
+    }
 .CButton_stateHighlightHover_ff {
-    background-image: linear-gradient(
-        180deg,
-        rgba(252, 248, 235, 0.25) 0%,
-        rgba(252, 248, 235, 0.1) 50%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background-image: linear-gradient(180deg, rgba(252,248,235, .25) 0%, rgba(252,248,235, .1) 50%, rgba(255,255,255, 0) 100%);
 }
 .CButton_base_40:hover .CButton_stateHighlightHover_ff {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .CButton_base_40:active .CButton_stateHighlightHover_ff {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
-    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
-    background-color: rgba(8, 6, 0, 0.18);
-    background-image: none;
-}
+        box-shadow: 0 15rem 12rem 0 rgba(242,242,230, .11) inset;
+        background-color: rgba(8,6,0, .18);
+        background-image: none;
+    }
 .CButton_stateHighlightActive_35 {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+    background-image: linear-gradient(180deg, rgba(0,0,0, .3) 0%, rgba(0,0,0, .15) 100%);
 }
 .CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .CButton_stateDisabled_54 {
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0,0,0, .25);
     background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
     background-size: 15rem;
 }
 .CButton_base__disabled_d9 .CButton_stateDisabled_54 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .CButton_content_cc {
     display: flex;
     align-items: center;
@@ -1297,39 +1279,39 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-weight: 700;
     line-height: 1.2;
     text-shadow: 0 -1rem 1rem #000;
-    letter-spacing: 0.03em;
+    letter-spacing: .03em;
     transform: translateY(-1rem);
 }
-.CButton_content_cc[lang='ja'],
-.CButton_content_cc[lang='ko'],
-.CButton_content_cc[lang='zh_tw'],
-.CButton_content_cc[lang='zh_sg'],
-.CButton_content_cc[lang='zh_cn'],
-.CButton_content_cc[lang='th'] {
-    font-weight: 400;
-}
+.CButton_content_cc[lang=ja],
+    .CButton_content_cc[lang=ko],
+    .CButton_content_cc[lang=zh_tw],
+    .CButton_content_cc[lang=zh_sg],
+    .CButton_content_cc[lang=zh_cn],
+    .CButton_content_cc[lang=th] {
+        font-weight: 400;
+    }
 .CButton_base__main_42 .CButton_content_cc,
-.CButton_base__primaryRed_ec .CButton_content_cc {
-    text-shadow: 0 -1rem 1rem #600;
-}
+    .CButton_base__primaryRed_ec .CButton_content_cc {
+        text-shadow: 0 -1rem 1rem #600;
+    }
 .CButton_base__secondary_50 .CButton_content_cc {
-    color: rgba(254, 254, 236, 0.75);
-}
+        color: rgba(254,254,236, .75);
+    }
 .CButton_base__primaryGreen_6f .CButton_content_cc {
-    text-shadow: 0 -1rem 1rem #1c2502;
-}
+        text-shadow: 0 -1rem 1rem #1c2502;
+    }
 .CButton_base__extraSmall_27 .CButton_content_cc {
-    font-size: 12rem;
-}
+        font-size: 12rem;
+    }
 .CButton_base__small_df .CButton_content_cc {
-    font-size: 14rem;
-}
+        font-size: 14rem;
+    }
 .CButton_base__medium_74 .CButton_content_cc {
-    font-size: 15rem;
-}
+        font-size: 15rem;
+    }
 .CButton_base__disabled_d9 .CButton_content_cc {
-    opacity: 0.6;
-}
+        opacity: .6;
+    }
 
 .SelectVehicleWidget_base_02 {
     display: flex;
@@ -1338,21 +1320,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .SelectVehicleWidget_title_40 {
-    color: #fefeec;
+    color: #FEFEEC;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
 }
 
 .mediaMedium .SelectVehicleWidget_title_40 {
-    color: #fefeec;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
+        color: #FEFEEC;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 
 .SelectVehicleWidget_subTitle_d3 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -1360,14 +1342,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .SelectVehicleWidget_subTitle_d3 {
-    color: #e9e2bf;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
+        color: #E9E2BF;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 
 .mediaExtraLarge .SelectVehicleWidget_subTitle_d3 {
-    margin-top: 8rem;
+        margin-top: 8rem;
 }
 
 .SelectVehicleWidget_button_2e {
@@ -1391,16 +1373,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background: no-repeat center / contain;
 }
 
-.mediaMedium .TokenReward_image_4f,
-.mediaMedium .TokenReward_level_d5 {
-    width: 400rem;
-    height: 300rem;
+.mediaMedium .TokenReward_image_4f, .mediaMedium .TokenReward_level_d5 {
+        width: 400rem;
+        height: 300rem;
 }
 
-.mediaLarge .TokenReward_image_4f,
-.mediaLarge .TokenReward_level_d5 {
-    width: 600rem;
-    height: 450rem;
+.mediaLarge .TokenReward_image_4f, .mediaLarge .TokenReward_level_d5 {
+        width: 600rem;
+        height: 450rem;
 }
 
 .TokenReward_level_d5 {
@@ -1426,8 +1406,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Footer_button__secondary_1a {
-    margin-left: 12rem;
-}
+        margin-left: 12rem;
+    }
 
 @keyframes Header_fadeOut_99 {
     from {
@@ -1487,7 +1467,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 
     100% {
-        opacity: 0.5;
+        opacity: .5;
         transform: translateY(0);
     }
 }
@@ -1508,36 +1488,36 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 100%;
 }
 .Header_title_db {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
     opacity: 0;
-    animation: Header_slideUp_6e 0.4s cubic-bezier(0.07, 0.82, 0.17, 1) 0.4s forwards;
+    animation: Header_slideUp_6e 0.4s cubic-bezier(.07, .82, .17, 1) 0.4s forwards;
 }
 .mediaLarge .Header_title_db {
-    color: #e9e2bf;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
+        color: #E9E2BF;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .Header_subTitle_15 {
-    color: #ffffff;
+    color: #FFFFFF;
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
     opacity: 0;
-    animation: Header_slideUp_6e 0.4s cubic-bezier(0.07, 0.82, 0.17, 1) 0.5s forwards;
+    animation: Header_slideUp_6e 0.4s cubic-bezier(.07, .82, .17, 1) 0.5s forwards;
 }
 .mediaLarge .Header_subTitle_15 {
-    color: #ffffff;
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
+        color: #FFFFFF;
+        font-size: 56rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Header_doneBlock_29 {
     opacity: 0;
-    animation: Header_slideUp_6e 0.4s cubic-bezier(0.07, 0.82, 0.17, 1) 0.6s forwards;
+    animation: Header_slideUp_6e 0.4s cubic-bezier(.07, .82, .17, 1) 0.6s forwards;
     display: flex;
     flex-direction: row;
 }
@@ -1548,7 +1528,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background: url('R.images.tank_academy.gui.maps.icons.rewardsView.done') no-repeat center / cover;
 }
 .Header_chainText_d1 {
-    color: #7ab300;
+    color: #7AB300;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
@@ -1578,15 +1558,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaSmall .App_header_67 {
-    padding-top: 39rem;
+        padding-top: 39rem;
 }
 
 .mediaLarge .App_header_67 {
-    padding-top: 60rem;
+        padding-top: 60rem;
 }
 
 .mediaExtraLarge .App_header_67 {
-    padding-top: 104rem;
+        padding-top: 104rem;
 }
 
 .App_content_27 {
@@ -1598,7 +1578,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .App_content_27 {
-    margin-top: 0;
+        margin-top: 0;
 }
 
 .App_close_9e {
@@ -1614,13 +1594,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaSmall .App_footer_43 {
-    bottom: 40rem;
+        bottom: 40rem;
 }
 
 .mediaLarge .App_footer_43 {
-    bottom: 56rem;
+        bottom: 56rem;
 }
 
 .mediaExtraLarge .App_footer_43 {
-    bottom: 100rem;
+        bottom: 100rem;
 }
+

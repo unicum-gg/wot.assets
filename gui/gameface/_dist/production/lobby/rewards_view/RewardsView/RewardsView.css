@@ -1,108 +1,108 @@
 .Box_mt__XS_0c {
-    margin-top: 4rem;
-}
-.Box_mt__SM_eb {
-    margin-top: 8rem;
-}
-.Box_mt__SMp_cf {
-    margin-top: 10rem;
-}
-.Box_mt__MD_25 {
-    margin-top: 16rem;
-}
-.Box_mt__MDp_49 {
-    margin-top: 20rem;
-}
-.Box_mt__LG_e8 {
-    margin-top: 32rem;
-}
-.Box_mt__XL_83 {
-    margin-top: 64rem;
-}
+            margin-top: 4rem;
+        }
+        .Box_mt__SM_eb {
+            margin-top: 8rem;
+        }
+        .Box_mt__SMp_cf {
+            margin-top: 10rem;
+        }
+        .Box_mt__MD_25 {
+            margin-top: 16rem;
+        }
+        .Box_mt__MDp_49 {
+            margin-top: 20rem;
+        }
+        .Box_mt__LG_e8 {
+            margin-top: 32rem;
+        }
+        .Box_mt__XL_83 {
+            margin-top: 64rem;
+        }
 
 .Box_mr__XS_7c {
-    margin-right: 4rem;
-}
+            margin-right: 4rem;
+        }
 
 .Box_mr__SM_08 {
-    margin-right: 8rem;
-}
+            margin-right: 8rem;
+        }
 
 .Box_mr__SMp_06 {
-    margin-right: 10rem;
-}
+            margin-right: 10rem;
+        }
 
 .Box_mr__MD_4a {
-    margin-right: 16rem;
-}
+            margin-right: 16rem;
+        }
 
 .Box_mr__MDp_b6 {
-    margin-right: 20rem;
-}
+            margin-right: 20rem;
+        }
 
 .Box_mr__LG_d0 {
-    margin-right: 32rem;
-}
+            margin-right: 32rem;
+        }
 
 .Box_mr__XL_db {
-    margin-right: 64rem;
-}
+            margin-right: 64rem;
+        }
 
 .Box_mb__XS_bb {
-    margin-bottom: 4rem;
-}
+            margin-bottom: 4rem;
+        }
 
 .Box_mb__SM_83 {
-    margin-bottom: 8rem;
-}
+            margin-bottom: 8rem;
+        }
 
 .Box_mb__SMp_04 {
-    margin-bottom: 10rem;
-}
+            margin-bottom: 10rem;
+        }
 
 .Box_mb__MD_ed {
-    margin-bottom: 16rem;
-}
+            margin-bottom: 16rem;
+        }
 
 .Box_mb__MDp_65 {
-    margin-bottom: 20rem;
-}
+            margin-bottom: 20rem;
+        }
 
 .Box_mb__LG_c8 {
-    margin-bottom: 32rem;
-}
+            margin-bottom: 32rem;
+        }
 
 .Box_mb__XL_f8 {
-    margin-bottom: 64rem;
-}
+            margin-bottom: 64rem;
+        }
 
 .Box_ml__XS_8a {
-    margin-left: 4rem;
-}
+            margin-left: 4rem;
+        }
 
 .Box_ml__SM_e6 {
-    margin-left: 8rem;
-}
+            margin-left: 8rem;
+        }
 
 .Box_ml__SMp_fb {
-    margin-left: 10rem;
-}
+            margin-left: 10rem;
+        }
 
 .Box_ml__MD_2b {
-    margin-left: 16rem;
-}
+            margin-left: 16rem;
+        }
 
 .Box_ml__MDp_c7 {
-    margin-left: 20rem;
-}
+            margin-left: 20rem;
+        }
 
 .Box_ml__LG_39 {
-    margin-left: 32rem;
-}
+            margin-left: 32rem;
+        }
 
 .Box_ml__XL_4a {
-    margin-left: 64rem;
-}
+            margin-left: 64rem;
+        }
 
 .FormatText_base_d0 {
     display: flex;
@@ -111,167 +111,167 @@
 
 /* eslint-disable-next-line expectedscss*/
 .Text_paragraph-P10_2c {
-    font-size: 10rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 10rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_paragraph-P12_22 {
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 12rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P14_a7 {
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P16_90 {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P18_50 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 18rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P24_33 {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 32rem;
 }
 .Text_heading-H14_8b {
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 14rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H15_9e {
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 15rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H18_b7 {
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 18rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H20R_f6 {
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 20rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_heading-H22_27 {
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .Text_heading-H24R_be {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_heading-H24_0c {
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
+        font-size: 24rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .Text_heading-H28_78 {
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H36_32 {
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 36rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H56_c3 {
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 56rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H73_8f {
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 73rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H144_a9 {
-    font-size: 144rem;
-    font-weight: 700;
-    line-height: 1;
+        font-size: 144rem;
+        font-weight: 700;
+        line-height: 1;
 }
 .Text_BLACK_REAL_30 {
-    color: #000000;
-}
+        color: #000000;
+    }
 .Text_WHITE_REAL_bc {
-    color: #ffffff;
-}
+        color: #FFFFFF;
+    }
 .Text_WHITE_62 {
-    color: #f2f2f7;
-}
+        color: #F2F2F7;
+    }
 .Text_WHITE_ORANGE_54 {
-    color: #fefeec;
-}
+        color: #FEFEEC;
+    }
 .Text_WHITE_SPANISH_df {
-    color: #e9e2bf;
-}
+        color: #E9E2BF;
+    }
 .Text_PAR_15 {
-    color: #8c8c7e;
-}
+        color: #8C8C7E;
+    }
 .Text_PAR_SECONDARY_5d {
-    color: #595950;
-}
+        color: #595950;
+    }
 .Text_PAR_TERTIARY_c9 {
-    color: #37362e;
-}
+        color: #37362E;
+    }
 .Text_INFO_RED_30 {
-    color: #ff0000;
-}
+        color: #FF0000;
+    }
 .Text_RED_66 {
-    color: #ff2717;
-}
+        color: #FF2717;
+    }
 .Text_RED_DARK_d8 {
-    color: #b70000;
-}
+        color: #B70000;
+    }
 .Text_YELLOW_ed {
-    color: #feab34;
-}
+        color: #FEAB34;
+    }
 .Text_ORANGE_be {
-    color: #ee7000;
-}
+        color: #EE7000;
+    }
 .Text_CREAM_57 {
-    color: #ffdd99;
-}
+        color: #FFDD99;
+    }
 .Text_BROWN_18 {
-    color: #cbac77;
-}
+        color: #CBAC77;
+    }
 .Text_GREEN_BRIGHT_3f {
-    color: #80d43a;
-}
+        color: #80D43A;
+    }
 .Text_GREEN_e3 {
-    color: #7ab300;
-}
+        color: #7AB300;
+    }
 .Text_GREEN_DARK_f1 {
-    color: #497212;
-}
+        color: #497212;
+    }
 .Text_BLUE_BOOSTER_21 {
-    color: #ccffff;
-}
+        color: #CCFFFF;
+    }
 .Text_BLUE_TEAMKILLER_ab {
-    color: #09e2ff;
-}
+        color: #09E2FF;
+    }
 .Text_CRED_f7 {
-    color: #ced9d9;
-}
+        color: #CED9D9;
+    }
 .Text_GOLD_28 {
-    color: #ffc363;
-}
+        color: #FFC363;
+    }
 .Text_BOND_be {
-    color: #c9c9b6;
-}
+        color: #C9C9B6;
+    }
 .Text_PROM_65 {
-    color: #a29b70;
-}
+        color: #A29B70;
+    }
 
 .Reward_base_ea {
     display: flex;
@@ -279,47 +279,47 @@
     position: relative;
 }
 
-.Reward_base__s48x48_46,
-.Reward_base__small_c0 {
-    width: 48rem;
-    height: 48rem;
-}
+    .Reward_base__s48x48_46,
+    .Reward_base__small_c0 {
+        width: 48rem;
+        height: 48rem;
+    }
 
-.Reward_base__s80x80_ce,
-.Reward_base__big_e5 {
-    width: 80rem;
-    height: 80rem;
-}
+    .Reward_base__s80x80_ce,
+    .Reward_base__big_e5 {
+        width: 80rem;
+        height: 80rem;
+    }
 
-.Reward_base__s128x100_c3 {
-    width: 128rem;
-    height: 100rem;
-}
+    .Reward_base__s128x100_c3 {
+        width: 128rem;
+        height: 100rem;
+    }
 
-.Reward_base__s180x135_7c {
-    width: 180rem;
-    height: 135rem;
-}
+    .Reward_base__s180x135_7c {
+        width: 180rem;
+        height: 135rem;
+    }
 
-.Reward_base__s232x174_67 {
-    width: 232rem;
-    height: 174rem;
-}
+    .Reward_base__s232x174_67 {
+        width: 232rem;
+        height: 174rem;
+    }
 
-.Reward_base__s296x222_78 {
-    width: 296rem;
-    height: 222rem;
-}
+    .Reward_base__s296x222_78 {
+        width: 296rem;
+        height: 222rem;
+    }
 
-.Reward_base__s400x300_07 {
-    width: 400rem;
-    height: 300rem;
-}
+    .Reward_base__s400x300_07 {
+        width: 400rem;
+        height: 300rem;
+    }
 
-.Reward_base__s600x450_f8 {
-    width: 600rem;
-    height: 450rem;
-}
+    .Reward_base__s600x450_f8 {
+        width: 600rem;
+        height: 450rem;
+    }
 
 .Reward_tooltipWrapper_b5 {
     height: 100%;
@@ -346,43 +346,43 @@
 }
 
 .Reward_base__s48x48_46 .Reward_overlay_68,
-.Reward_base__small_c0 .Reward_overlay_68 {
-    width: 96rem;
-    height: 96rem;
-    background-size: 100%;
-    overflow: visible;
-}
+    .Reward_base__small_c0 .Reward_overlay_68 {
+        width: 96rem;
+        height: 96rem;
+        background-size: 100%;
+        overflow: visible;
+    }
 
 .Reward_base__s80x80_ce .Reward_overlay_68,
-.Reward_base__big_e5 .Reward_overlay_68 {
-    width: 128rem;
-    height: 128rem;
-}
+    .Reward_base__big_e5 .Reward_overlay_68 {
+        width: 128rem;
+        height: 128rem;
+    }
 
 .Reward_base__s180x135_7c .Reward_overlay_68 {
-    width: 266rem;
-    height: 241rem;
-}
+        width: 266rem;
+        height: 241rem;
+    }
 
 .Reward_base__s232x174_67 .Reward_overlay_68 {
-    width: 344rem;
-    height: 312rem;
-}
+        width: 344rem;
+        height: 312rem;
+    }
 
 .Reward_base__s296x222_78 .Reward_overlay_68 {
-    width: 450rem;
-    height: 408rem;
-}
+        width: 450rem;
+        height: 408rem;
+    }
 
 .Reward_base__s400x300_07 .Reward_overlay_68 {
-    width: 618rem;
-    height: 590rem;
-}
+        width: 618rem;
+        height: 590rem;
+    }
 
 .Reward_base__s600x450_f8 .Reward_overlay_68 {
-    width: 670rem;
-    height: 575rem;
-}
+        width: 670rem;
+        height: 575rem;
+    }
 
 .Reward_highlight_36 {
     width: 100%;
@@ -406,35 +406,35 @@
 }
 
 .Reward_base__s48x48_46 .Reward_info_72,
-.Reward_base__small_c0 .Reward_info_72 {
-    margin: -10rem -10rem 0;
-}
+    .Reward_base__small_c0 .Reward_info_72 {
+        margin: -10rem -10rem 0;
+    }
 
 .Reward_info__multi_63 {
-    margin-right: 2rem;
-    text-align: right;
-}
+        margin-right: 2rem;
+        text-align: right;
+    }
 
 .Reward_base__s48x48_46 .Reward_info__multi_63,
-.Reward_base__small_c0 .Reward_info__multi_63 {
-    margin-right: 0;
-}
+        .Reward_base__small_c0 .Reward_info__multi_63 {
+            margin-right: 0;
+        }
 
 .Reward_info__credits_ef {
-    color: #e9e2bf;
-}
+        color: #E9E2BF;
+    }
 
 .Reward_info__gold_36 {
-    color: #ffc363;
-}
+        color: #FFC363;
+    }
 
 .Reward_info__crystal_36 {
-    color: #c9c9b6;
-}
+        color: #C9C9B6;
+    }
 
 .Reward_info__premiumTank_d3 {
-    color: #ffdd99;
-}
+        color: #FFDD99;
+    }
 
 .Reward_timer_d3 {
     background: no-repeat center / contain;
@@ -443,22 +443,22 @@
 }
 
 .Reward_base__s48x48_46 .Reward_timer_d3,
-.Reward_base__small_c0 .Reward_timer_d3 {
-    width: 23rem;
-    height: 23rem;
-    background-image: url('R.images.gui.maps.icons.quests.bonuses.small.timer');
-    top: -6rem;
-    right: -6rem;
-}
+    .Reward_base__small_c0 .Reward_timer_d3 {
+        width: 23rem;
+        height: 23rem;
+        background-image: url('R.images.gui.maps.icons.quests.bonuses.small.timer');
+        top: -6rem;
+        right: -6rem;
+    }
 
 .Reward_base__s80x80_ce .Reward_timer_d3,
-.Reward_base__big_e5 .Reward_timer_d3 {
-    width: 48rem;
-    height: 48rem;
-    background-image: url('R.images.gui.maps.icons.quests.bonuses.big.timer');
-    top: -14rem;
-    right: -14rem;
-}
+    .Reward_base__big_e5 .Reward_timer_d3 {
+        width: 48rem;
+        height: 48rem;
+        background-image: url('R.images.gui.maps.icons.quests.bonuses.big.timer');
+        top: -14rem;
+        right: -14rem;
+    }
 
 .TextButton_base_b6 {
     display: flex;
@@ -469,9 +469,9 @@
     cursor: pointer;
 }
 
-.TextButton_base__right_39 {
-    flex-direction: row-reverse;
-}
+    .TextButton_base__right_39 {
+        flex-direction: row-reverse;
+    }
 .TextButton_icon_17 {
     width: 32rem;
     height: 32rem;
@@ -479,22 +479,22 @@
     position: relative;
 }
 .TextButton_icon__back_43,
+    .TextButton_icon__forward_59 {
+        margin: -1rem -5rem;
+        background-image: url('R.images.gui.maps.icons.components.text_button.back');
+        transform: translateY(1rem);
+    }
 .TextButton_icon__forward_59 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.back');
-    transform: translateY(1rem);
-}
-.TextButton_icon__forward_59 {
-    transform: rotate(180deg) translateY(1rem);
-}
+        transform: rotate(180deg) translateY(1rem);
+    }
 .TextButton_icon__close_53 {
-    margin: -1rem 0;
-    background-image: url('R.images.gui.maps.icons.components.text_button.close');
-}
+        margin: -1rem 0;
+        background-image: url('R.images.gui.maps.icons.components.text_button.close');
+    }
 .TextButton_icon__info_33 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.info');
-}
+        margin: -1rem -5rem;
+        background-image: url('R.images.gui.maps.icons.components.text_button.info');
+    }
 .TextButton_glow_a4 {
     width: 100%;
     height: 100%;
@@ -502,82 +502,72 @@
     opacity: 0;
     position: absolute;
     top: 0;
-    transition: opacity 0.16s;
+    transition: opacity .16s;
 }
 .TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-}
+    .TextButton_icon__forward_59 .TextButton_glow_a4 {
+        background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+    }
 .TextButton_icon__close_53 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-}
+        background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+    }
 .TextButton_icon__info_33 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-}
+        background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+    }
 .TextButton_base_b6:hover .TextButton_glow_a4 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .TextButton_base_b6:active .TextButton_glow_a4 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .TextButton_caption_82 {
     position: relative;
-    transition:
-        color 0.16s,
-        text-shadow 0.16s;
+    transition: color .16s, text-shadow .16s;
 }
 .TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
-}
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
-    color: #fffa9f;
-}
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
-    color: #ffdd99;
-}
+    .TextButton_caption__forward_4e,
+    .TextButton_caption__close_36 {
+        color: #FFDD99;
+        text-shadow: 0 0 10rem rgba(255,42,0, 1),
+            0 0 10rem rgba(255,42,0, .4),
+            0 0 10rem rgba(255,42,0, .4),
+            0 0 2rem rgba(255,42,0, .4),
+            0 0 1rem rgba(255,42,0, .4),
+            0 0 2rem rgba(255,42,0, .4),
+            0 0 1rem rgba(255,42,0, .4);
+    }
+.TextButton_base_b6:hover .TextButton_caption__back_b9, .TextButton_base_b6:hover .TextButton_caption__forward_4e, .TextButton_base_b6:hover .TextButton_caption__close_36 {
+            color: #fffa9f;
+        }
+.TextButton_base_b6:active .TextButton_caption__back_b9, .TextButton_base_b6:active .TextButton_caption__forward_4e, .TextButton_base_b6:active .TextButton_caption__close_36 {
+            color: #FFDD99;
+        }
 .TextButton_caption__info_23 {
-    padding: 0 5rem;
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 8rem #00eaff;
-}
+        padding: 0 5rem;
+        color: #CCFFFF;
+        text-shadow: 0 0 12rem rgba(31,68,255, .8),
+            0 0 8rem #00eaff;
+    }
 .TextButton_base_b6:hover .TextButton_caption__info_23 {
-    color: #e3ffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 12rem rgba(0, 234, 255, 1),
-        0 0 8rem #00eaff;
-}
+            color: #e3ffff;
+            text-shadow: 0 0 12rem rgba(31,68,255, .8),
+                0 0 12rem rgba(0,234,255, 1),
+                0 0 8rem #00eaff;
+        }
 .TextButton_base_b6:active .TextButton_caption__info_23 {
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.6),
-        0 0 8rem #00eaff;
-}
+            color: #CCFFFF;
+            text-shadow: 0 0 12rem rgba(31,68,255, .6),
+                0 0 8rem #00eaff;
+        }
 .TextButton_goto_e7 {
     color: #7c7c6c;
 }
 .TextButton_base__left_ff .TextButton_goto_e7 {
-    margin-left: 8rem;
-}
+        margin-left: 8rem;
+    }
 .TextButton_base__right_39 .TextButton_goto_e7 {
-    margin-right: 8rem;
-}
+        margin-right: 8rem;
+    }
 .TextButton_shine_e2 {
     width: 90rem;
     height: 40rem;
@@ -585,22 +575,22 @@
     opacity: 0;
     position: absolute;
     top: -4rem;
-    transition: opacity 0.16s;
+    transition: opacity .16s;
     pointer-events: none;
 }
 .TextButton_base__left_ff .TextButton_shine_e2 {
-    left: -4rem;
-}
+        left: -4rem;
+    }
 .TextButton_base__right_39 .TextButton_shine_e2 {
-    right: -4rem;
-    transform: rotate(180deg);
-}
+        right: -4rem;
+        transform: rotate(180deg);
+    }
 .TextButton_base_b6:hover .TextButton_shine_e2 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .TextButton_base_b6:active .TextButton_shine_e2 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 :root {
     width: 101vw;
@@ -618,19 +608,19 @@
     background: url('R.images.cosmic_event.gui.maps.icons.rewardsView.bg_small') center center / cover no-repeat;
     overflow: hidden;
     position: relative;
-    left: -0.5vw;
+    left: -.5vw;
 }
 .mediaMedium .RewardsViewApp_base_ca {
-    padding-top: 48rem;
-    padding-bottom: 80rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rewardsView.bg_medium');
+        padding-top: 48rem;
+        padding-bottom: 80rem;
+        background-image: url('R.images.cosmic_event.gui.maps.icons.rewardsView.bg_medium');
 }
 .mediaLarge .RewardsViewApp_base_ca {
-    padding-top: 60rem;
+        padding-top: 60rem;
 }
 .mediaExtraLarge .RewardsViewApp_base_ca {
-    padding-bottom: 140rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rewardsView.bg_large');
+        padding-bottom: 140rem;
+        background-image: url('R.images.cosmic_event.gui.maps.icons.rewardsView.bg_large');
 }
 .RewardsViewApp_close_55 {
     position: absolute;
@@ -638,14 +628,14 @@
     right: 20rem;
 }
 .mediaMedium .RewardsViewApp_close_55 {
-    top: 48rem;
-    right: 40rem;
+        top: 48rem;
+        right: 40rem;
 }
 .mediaLarge .RewardsViewApp_close_55 {
-    top: 52rem;
+        top: 52rem;
 }
 .mediaExtraLarge .RewardsViewApp_close_55 {
-    top: 80rem;
+        top: 80rem;
 }
 .RewardsViewApp_ribbon_1c {
     width: 1366rem;
@@ -657,22 +647,22 @@
     transform: translateY(-50rem);
 }
 .mediaMedium .RewardsViewApp_ribbon_1c {
-    width: 1600rem;
-    height: 417rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rewardsView.ribbon_medium');
-    transform: translateY(-40rem);
+        width: 1600rem;
+        height: 417rem;
+        background-image: url('R.images.cosmic_event.gui.maps.icons.rewardsView.ribbon_medium');
+        transform: translateY(-40rem);
 }
 .mediaLarge .RewardsViewApp_ribbon_1c {
-    width: 1920rem;
-    height: 500rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rewardsView.ribbon_large');
-    transform: translateY(-70rem);
+        width: 1920rem;
+        height: 500rem;
+        background-image: url('R.images.cosmic_event.gui.maps.icons.rewardsView.ribbon_large');
+        transform: translateY(-70rem);
 }
 .mediaExtraLarge .RewardsViewApp_ribbon_1c {
-    width: 2560rem;
-    height: 1000rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rewardsView.ribbon_extraLarge');
-    transform: translateY(-350rem);
+        width: 2560rem;
+        height: 1000rem;
+        background-image: url('R.images.cosmic_event.gui.maps.icons.rewardsView.ribbon_extraLarge');
+        transform: translateY(-350rem);
 }
 .RewardsViewApp_headerBlock_4b {
     display: flex;
@@ -683,13 +673,13 @@
     text-align: center;
 }
 .mediaSmall .RewardsViewApp_headerBlock_4b {
-    margin-bottom: 24rem;
+        margin-bottom: 24rem;
 }
 .mediaMedium .RewardsViewApp_headerBlock_4b {
-    margin-bottom: 70rem;
+        margin-bottom: 70rem;
 }
 .mediaLarge .RewardsViewApp_headerBlock_4b {
-    margin-bottom: 125rem;
+        margin-bottom: 125rem;
 }
 .RewardsViewApp_viewTitle_22 {
     color: #f4e1b3;
@@ -697,36 +687,36 @@
     font-weight: 700;
     line-height: 21rem;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
 }
 .mediaMedium .RewardsViewApp_viewTitle_22 {
     color: #f4e1b3;
     font-size: 22rem;
     font-weight: 700;
     line-height: 19rem;
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
 }
 .mediaLarge .RewardsViewApp_viewTitle_22 {
-    font-size: 24rem;
+        font-size: 24rem;
 }
 .mediaExtraLarge .RewardsViewApp_viewTitle_22 {
-    font-size: 32rem;
+        font-size: 32rem;
 }
 .RewardsViewApp_title_1b {
-    color: #fefeec;
+    color: #FEFEEC;
     font-size: 36rem;
     font-weight: 700;
     line-height: 110%;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
     margin-top: 4rem;
 }
 .mediaMedium .RewardsViewApp_title_1b {
-    font-size: 56rem;
+        font-size: 56rem;
 }
 .mediaExtraLarge .RewardsViewApp_title_1b {
-    margin-top: 12rem;
-    font-size: 73rem;
+        margin-top: 12rem;
+        font-size: 73rem;
 }
 .RewardsViewApp_mainRewards_60 {
     display: flex;
@@ -736,16 +726,16 @@
     position: relative;
 }
 .mediaSmall .RewardsViewApp_mainRewards_60 {
-    margin-top: -68rem;
+        margin-top: -68rem;
 }
 .mediaMedium .RewardsViewApp_mainRewards_60 {
-    margin-top: -100rem;
+        margin-top: -100rem;
 }
 .mediaLarge .RewardsViewApp_mainRewards_60 {
-    margin-top: -180rem;
+        margin-top: -180rem;
 }
 .mediaExtraLarge .RewardsViewApp_mainRewards_60 {
-    margin-top: -200rem;
+        margin-top: -200rem;
 }
 .RewardsViewApp_heroImageBlock_70 {
     display: flex;
@@ -754,26 +744,16 @@
     position: relative;
 }
 .mediaMedium .RewardsViewApp_heroImageBlock_70 + .RewardsViewApp_heroImageBlock_70 {
-    margin-left: 20rem;
+        margin-left: 20rem;
 }
 .mediaExtraLarge .RewardsViewApp_heroImageBlock_70 + .RewardsViewApp_heroImageBlock_70 {
-    margin-left: 80rem;
+        margin-left: 80rem;
 }
-.mediaMedium
-    .RewardsViewApp_heroImageBlock_70
-    + .RewardsViewApp_heroImageBlock_70.RewardsViewApp_heroImageBlock__lootbox_3d,
-.mediaMedium
-    .RewardsViewApp_heroImageBlock_70.RewardsViewApp_heroImageBlock__lootbox_3d
-    + .RewardsViewApp_heroImageBlock_70 {
-    margin-left: 40rem;
+.mediaMedium .RewardsViewApp_heroImageBlock_70 + .RewardsViewApp_heroImageBlock_70.RewardsViewApp_heroImageBlock__lootbox_3d, .mediaMedium .RewardsViewApp_heroImageBlock_70.RewardsViewApp_heroImageBlock__lootbox_3d + .RewardsViewApp_heroImageBlock_70 {
+        margin-left: 40rem;
 }
-.mediaExtraLarge
-    .RewardsViewApp_heroImageBlock_70
-    + .RewardsViewApp_heroImageBlock_70.RewardsViewApp_heroImageBlock__lootbox_3d,
-.mediaExtraLarge
-    .RewardsViewApp_heroImageBlock_70.RewardsViewApp_heroImageBlock__lootbox_3d
-    + .RewardsViewApp_heroImageBlock_70 {
-    margin-left: 60rem;
+.mediaExtraLarge .RewardsViewApp_heroImageBlock_70 + .RewardsViewApp_heroImageBlock_70.RewardsViewApp_heroImageBlock__lootbox_3d, .mediaExtraLarge .RewardsViewApp_heroImageBlock_70.RewardsViewApp_heroImageBlock__lootbox_3d + .RewardsViewApp_heroImageBlock_70 {
+        margin-left: 60rem;
 }
 .RewardsViewApp_heroImage_5d {
     width: 232rem;
@@ -781,12 +761,12 @@
     background: none center bottom / contain no-repeat;
 }
 .mediaSmall .RewardsViewApp_heroImage_5d {
-    width: 296rem;
-    height: 222rem;
+        width: 296rem;
+        height: 222rem;
 }
 .mediaLarge .RewardsViewApp_heroImage_5d {
-    width: 400rem;
-    height: 300rem;
+        width: 400rem;
+        height: 300rem;
 }
 .RewardsViewApp_heroImageSubtitle_62 {
     display: flex;
@@ -795,44 +775,44 @@
     bottom: -50rem;
 }
 .RewardsViewApp_heroImageSubtitle_label_59 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 18rem;
     font-weight: 700;
     line-height: 21rem;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 220rem;
-    line-height: 120%;
-    text-align: center;
-}
+    letter-spacing: .04em;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 220rem;
+        line-height: 120%;
+        text-align: center;
+    }
 .mediaMedium .RewardsViewApp_heroImageSubtitle_label_59 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 22rem;
     font-weight: 700;
     line-height: 19rem;
-    letter-spacing: 0.04em;
-    max-width: 260rem;
-    line-height: 120%;
+    letter-spacing: .04em;
+            max-width: 260rem;
+            line-height: 120%;
 }
 .mediaLarge .RewardsViewApp_heroImageSubtitle_label_59 {
-    max-width: 310rem;
-    font-size: 24rem;
+            max-width: 310rem;
+            font-size: 24rem;
 }
 .RewardsViewApp_heroImageBlock__main_d4 .RewardsViewApp_heroImageSubtitle_label_59 {
-    font-size: 24rem;
-}
+            font-size: 24rem;
+        }
 .RewardsViewApp_footer_d3 .RewardsViewApp_infoText_40 {
     color: #f4e1b3;
     font-size: 18rem;
     font-weight: 500;
     line-height: 21rem;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-    margin-bottom: 64rem;
-    opacity: 0.7;
-}
+    letter-spacing: .04em;
+        margin-bottom: 64rem;
+        opacity: .7;
+    }
 .RewardsViewApp_footer_d3 {
     display: flex;
     flex-direction: column;
@@ -842,7 +822,7 @@
 .RewardsViewApp_multiplyer_78 {
     display: flex;
     flex-direction: row;
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 24rem;
     font-weight: 700;
     position: absolute;
@@ -851,25 +831,25 @@
     z-index: 3;
 }
 .mediaMedium .RewardsViewApp_multiplyer_78 {
-    font-size: 36rem;
+        font-size: 36rem;
 }
 .mediaLarge .RewardsViewApp_multiplyer_78 {
-    right: 20rem;
-    bottom: 16rem;
+        right: 20rem;
+        bottom: 16rem;
 }
 .RewardsViewApp_heroImageBlock__main_d4 .RewardsViewApp_multiplyer_78 {
-    font-size: 36rem;
-}
+        font-size: 36rem;
+    }
 .mediaLarge .RewardsViewApp_heroImageBlock__main_d4 .RewardsViewApp_multiplyer_78 {
-    font-size: 56rem;
+            font-size: 56rem;
 }
 .RewardsViewApp_info_e6 {
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 24rem;
     font-weight: 700;
 }
 .mediaSmall .RewardsViewApp_info_e6 {
-    font-size: 36rem;
+        font-size: 36rem;
 }
 .RewardsViewApp_primaryButton_bd {
     width: 156rem;
@@ -883,23 +863,23 @@
     line-height: 1.15;
 }
 .RewardsViewApp_primaryButton_wrapper_77 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 160rem;
-    height: 34rem;
-    border: 1rem solid #f4e1b3;
-    background-color: rgba(1, 3, 38, 0.22);
-    z-index: 2;
-}
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 160rem;
+        height: 34rem;
+        border: 1rem solid #f4e1b3;
+        background-color: rgba(1, 3, 38, .22);
+        z-index: 2;
+    }
 .RewardsViewApp_rays_9a {
     opacity: 0;
     animation-name: RewardsViewApp_raysAppearance_56, RewardsViewApp_rotate_53;
     animation-duration: 1.5s, 120s;
     animation-fill-mode: forwards, forwards;
-    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1), linear;
-    animation-delay: 0.8s, 1.2s;
+    animation-timing-function: cubic-bezier(.07, .82, .17, 1), linear;
+    animation-delay: .8s, 1.2s;
     animation-iteration-count: 1, infinite;
     width: 55.7%;
     padding-bottom: 99.84%;
@@ -922,14 +902,14 @@
     transform: translate(-50%, -50%);
 }
 .mediaMedium .RewardsViewApp_glow_b9 {
-    width: 712rem;
-    top: -60%;
-    left: -38%;
+        width: 712rem;
+        top: -60%;
+        left: -38%;
 }
 .mediaLarge .RewardsViewApp_glow_b9 {
-    width: 840rem;
-    top: -40%;
-    left: -20%;
+        width: 840rem;
+        top: -40%;
+        left: -20%;
 }
 @keyframes RewardsViewApp_raysAppearance_56 {
     0% {
@@ -938,7 +918,7 @@
     }
 
     100% {
-        opacity: 0.5;
+        opacity: .5;
         transform: translateY(0);
     }
 }
@@ -962,3 +942,4 @@
         transform: translateY(0);
     }
 }
+

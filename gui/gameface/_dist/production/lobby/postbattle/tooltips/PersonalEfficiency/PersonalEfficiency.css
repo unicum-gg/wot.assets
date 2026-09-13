@@ -4,19 +4,19 @@
 }
 
 .TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
 
 .Separator_base_53 {
     width: 100%;
     height: 1rem;
-    background-image: linear-gradient(90deg, rgba(255, 255, 229, 0.2), transparent);
+    background-image: linear-gradient(90deg, rgba(255,255,229, .2), transparent);
     background-size: 3rem;
-    mask: linear-gradient(90deg, rgba(0, 0, 0, 0.4), #000 40%, #000 60%, rgba(0, 0, 0, 0.4));
+    mask: linear-gradient(90deg, rgba(0,0,0, .4), #000 40%, #000 60%, rgba(0,0,0, .4));
 }
 
 .TooltipContentHolder_base_af {
@@ -25,25 +25,13 @@
     width: 100%;
 }
 
-.TooltipContentHolder_base__primary_b3 {
-    background-image: linear-gradient(
-        90deg,
-        rgba(255, 255, 204, 0.04),
-        rgba(255, 255, 204, 0.1) 40%,
-        rgba(255, 255, 204, 0.1) 60%,
-        rgba(255, 255, 204, 0.04)
-    );
-}
+    .TooltipContentHolder_base__primary_b3 {
+    background-image: linear-gradient(90deg, rgba(255,255,204, .04), rgba(255,255,204, .1) 40%, rgba(255,255,204, .1) 60%, rgba(255,255,204, .04));
+    }
 
-.TooltipContentHolder_base__accent_3d {
-    background-image: linear-gradient(
-        90deg,
-        rgba(102, 179, 252, 0.04),
-        rgba(102, 179, 252, 0.1) 40%,
-        rgba(102, 179, 252, 0.1) 60%,
-        rgba(102, 179, 252, 0.04)
-    );
-}
+    .TooltipContentHolder_base__accent_3d {
+    background-image: linear-gradient(90deg, rgba(102,179,252, .04), rgba(102,179,252, .1) 40%, rgba(102,179,252, .1) 60%, rgba(102,179,252, .04));
+    }
 
 .TooltipContentHolder_content_aa {
     flex: 1;
@@ -73,15 +61,15 @@
     background: no-repeat center / contain;
 }
 
-.Badge_base__default_c9 {
-    width: 24rem;
-    height: 24rem;
-}
+    .Badge_base__default_c9 {
+        width: 24rem;
+        height: 24rem;
+    }
 
-.Badge_base__x48_e4 {
-    width: 48rem;
-    height: 48rem;
-}
+    .Badge_base__x48_e4 {
+        width: 48rem;
+        height: 48rem;
+    }
 
 .PlayerNickname_base_32 {
     display: flex;
@@ -99,14 +87,14 @@
 }
 
 .PlayerNickname_base__default_8d .PlayerNickname_igrIcon_34 {
-    width: 32rem;
-    height: 14rem;
-}
+        width: 32rem;
+        height: 14rem;
+    }
 
 .PlayerNickname_base__x48_84 .PlayerNickname_igrIcon_34 {
-    width: 64rem;
-    height: 28rem;
-}
+        width: 64rem;
+        height: 28rem;
+    }
 
 .PlayerNickname_suffixBadgeWrapper_cc {
     display: flex;
@@ -121,58 +109,58 @@
 }
 
 .PlayerNickname_base__default_8d .PlayerNickname_suffixBadgeStripe_8a {
-    width: 64rem;
-    height: 24rem;
-    right: 12rem;
-}
+        width: 64rem;
+        height: 24rem;
+        right: 12rem;
+    }
 
 .PlayerNickname_base__default_8d.PlayerNickname_base__inverted_34 .PlayerNickname_suffixBadgeStripe_8a {
-    right: auto;
-    left: 12rem;
-    transform: rotateY(180deg);
-}
+        right: auto;
+        left: 12rem;
+        transform: rotateY(180deg);
+    }
 
 .PlayerNickname_base__x48_84 .PlayerNickname_suffixBadgeStripe_8a {
-    width: 68rem;
-    height: 28rem;
-    right: 16rem;
-}
+        width: 68rem;
+        height: 28rem;
+        right: 16rem;
+    }
 
 .PlayerNickname_base__x48_84.PlayerNickname_base__inverted_34 .PlayerNickname_suffixBadgeStripe_8a {
-    right: auto;
-    left: 16rem;
-    transform: rotateY(180deg);
-}
+        right: auto;
+        left: 16rem;
+        transform: rotateY(180deg);
+    }
 
 .PlayerNickname_suffixBadge_bd {
     background: no-repeat center / contain;
 }
 
 .PlayerNickname_base__default_8d .PlayerNickname_suffixBadge_bd {
-    width: 24rem;
-    height: 24rem;
-}
+        width: 24rem;
+        height: 24rem;
+    }
 
 .PlayerNickname_base__x48_84 .PlayerNickname_suffixBadge_bd {
-    width: 32rem;
-    height: 32rem;
-}
+        width: 32rem;
+        height: 32rem;
+    }
 
 .PlayerNickname_anonymizedIcon_80 {
     background: no-repeat center / contain;
 }
 
 .PlayerNickname_base__default_8d .PlayerNickname_anonymizedIcon_80 {
-    width: 24rem;
-    height: 24rem;
-    background-image: url('R.images.gui.maps.icons.library.eye.png');
-}
+        width: 24rem;
+        height: 24rem;
+        background-image: url('R.images.gui.maps.icons.library.eye.png');
+    }
 
 .PlayerNickname_base__x48_84 .PlayerNickname_anonymizedIcon_80 {
-    width: 48rem;
-    height: 48rem;
-    background-image: url('R.images.gui.maps.icons.library.eye_48x48.png');
-}
+        width: 48rem;
+        height: 48rem;
+        background-image: url('R.images.gui.maps.icons.library.eye_48x48.png');
+    }
 
 .PlayerVehicleInfo_base_20 {
     display: flex;
@@ -180,9 +168,9 @@
     position: relative;
 }
 .PlayerVehicleInfo_level__rightAlign_16 {
-    width: 20rem;
-    text-align: right;
-}
+        width: 20rem;
+        text-align: right;
+    }
 .PlayerVehicleInfo_type_aa {
     width: 24rem;
     height: 24rem;
@@ -211,8 +199,8 @@
     width: 40rem;
 }
 .EnemiesTableIconParam_value__hidden_dd {
-    display: none;
-}
+        display: none;
+    }
 
 .EnemiesTable_base_f2 {
     padding-bottom: 20rem;
@@ -230,27 +218,21 @@
     padding: 0 20rem;
 }
 .EnemiesTable_row__isKilled_49 {
-    background-image: linear-gradient(
-        90deg,
-        transparent,
-        rgba(102, 0, 0, 0.2) 30%,
-        rgba(102, 0, 0, 0.2) 70%,
-        transparent
-    );
-}
+        background-image: linear-gradient(90deg, transparent, rgba(102,0,0, .2) 30%, rgba(102,0,0, .2) 70%, transparent);
+    }
 .EnemiesTable_cell_d2 {
     display: flex;
     align-items: center;
 }
 .EnemiesTable_cell__userName_1e {
-    flex: 1 1 100%;
-}
+        flex: 1 1 100%;
+    }
 .EnemiesTable_cell__vehicleIcon_ff {
-    width: 70rem;
-}
+        width: 70rem;
+    }
 .EnemiesTable_row__isKilled_49 .EnemiesTable_cell__vehicleIcon_ff {
-    opacity: 0.5;
-}
+            opacity: .5;
+        }
 .EnemiesTable_vehicleImage_4f {
     width: 124rem;
     height: 31rem;
@@ -279,31 +261,31 @@
     background: no-repeat center / contain;
 }
 .Header_wreath__gold_b4 {
-    background-image: url('R.images.gui.maps.icons.postbattle.postbattle_screen.stats_efficiency.wreath_gold');
-}
+            background-image: url('R.images.white_tiger.gui.maps.icons.postbattle.postbattle_screen.stats_efficiency.wreath_gold');
+        }
 .Header_wreath__silver_63 {
-    background-image: url('R.images.gui.maps.icons.postbattle.postbattle_screen.stats_efficiency.wreath_silver');
-}
+            background-image: url('R.images.white_tiger.gui.maps.icons.postbattle.postbattle_screen.stats_efficiency.wreath_silver');
+        }
 .Header_wreath__bronze_6e {
-    background-image: url('R.images.gui.maps.icons.postbattle.postbattle_screen.stats_efficiency.wreath_bronze');
-}
+            background-image: url('R.images.white_tiger.gui.maps.icons.postbattle.postbattle_screen.stats_efficiency.wreath_bronze');
+        }
 .Header_icon_10 {
     width: 88rem;
     height: 88rem;
     background: no-repeat center / contain;
 }
 .Header_icon__damageAssisted_88 {
-    background-image: url('R.images.gui.maps.icons.quests.battleCondition.c_128_decor.icon_battle_condition_assist_128x128');
-}
+        background-image: url('R.images.gui.maps.icons.quests.battleCondition.c_128_decor.icon_battle_condition_assist_128x128');
+    }
 .Header_icon__damageDealt_29 {
-    background-image: url('R.images.gui.maps.icons.quests.battleCondition.c_128_decor.icon_battle_condition_damage_128x128');
-}
+        background-image: url('R.images.gui.maps.icons.quests.battleCondition.c_128_decor.icon_battle_condition_damage_128x128');
+    }
 .Header_icon__damageBlockedByArmor_91 {
-    background-image: url('R.images.gui.maps.icons.quests.battleCondition.c_128_decor.icon_battle_condition_damage_block_128x128');
-}
+        background-image: url('R.images.gui.maps.icons.quests.battleCondition.c_128_decor.icon_battle_condition_damage_block_128x128');
+    }
 .Header_icon__kills_a9 {
-    background-image: url('R.images.gui.maps.icons.quests.battleCondition.c_128_decor.icon_battle_condition_kill_vehicles_128x128');
-}
+        background-image: url('R.images.gui.maps.icons.quests.battleCondition.c_128_decor.icon_battle_condition_kill_vehicles_128x128');
+    }
 .Header_content_50 {
     display: flex;
     flex-direction: column;
@@ -319,12 +301,12 @@
     display: flex;
     flex-direction: row;
     margin-top: 5rem;
-    color: rgba(140, 140, 126, 0.6);
+    color: rgba(140,140,126, .6);
     font-size: 16rem;
 }
 .Header_rank_4f {
     margin-right: 5rem;
-    color: rgba(140, 140, 126, 1);
+    color: rgba(140,140,126, 1);
 }
 
 .TooltipContent_base_d1 {
@@ -337,3 +319,4 @@ body {
     font-size: 14rem;
     line-height: 18rem;
 }
+

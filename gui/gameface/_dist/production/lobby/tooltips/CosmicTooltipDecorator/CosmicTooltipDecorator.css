@@ -1,10 +1,7 @@
 .CosmicTooltipDecorator_base_7d {
     display: flex;
-    border: 1rem solid rgba(30, 65, 92, 0.7);
-    box-shadow:
-        0 2rem 6rem 2rem rgba(0, 0, 0, 0.48),
-        0 0 60rem 0 #000,
-        0 0 10rem 0 rgba(75, 163, 230, 0.5) inset;
+    border: 1rem solid rgba(30, 65, 92, .7);
+    box-shadow: 0 2rem 6rem 2rem rgba(0, 0, 0, .48), 0 0 60rem 0 #000, 0 0 10rem 0 rgba(75, 163, 230, .5) inset;
     background: #0b1823;
     position: absolute;
 }
@@ -32,5 +29,6 @@
 }
 
 .CosmicTooltipDecorator_simple_e8 .CosmicTooltipDecorator_bg_glow_9a {
-    display: none;
-}
+        display: none;
+    }
+
