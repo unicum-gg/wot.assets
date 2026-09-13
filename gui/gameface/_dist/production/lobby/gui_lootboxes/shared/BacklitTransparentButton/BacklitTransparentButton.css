@@ -1,108 +1,108 @@
 .Box_mt__XS_0c {
-    margin-top: 4rem;
-}
-.Box_mt__SM_eb {
-    margin-top: 8rem;
-}
-.Box_mt__SMp_cf {
-    margin-top: 10rem;
-}
-.Box_mt__MD_25 {
-    margin-top: 16rem;
-}
-.Box_mt__MDp_49 {
-    margin-top: 20rem;
-}
-.Box_mt__LG_e8 {
-    margin-top: 32rem;
-}
-.Box_mt__XL_83 {
-    margin-top: 64rem;
-}
+            margin-top: 4rem;
+        }
+        .Box_mt__SM_eb {
+            margin-top: 8rem;
+        }
+        .Box_mt__SMp_cf {
+            margin-top: 10rem;
+        }
+        .Box_mt__MD_25 {
+            margin-top: 16rem;
+        }
+        .Box_mt__MDp_49 {
+            margin-top: 20rem;
+        }
+        .Box_mt__LG_e8 {
+            margin-top: 32rem;
+        }
+        .Box_mt__XL_83 {
+            margin-top: 64rem;
+        }
 
 .Box_mr__XS_7c {
-    margin-right: 4rem;
-}
+            margin-right: 4rem;
+        }
 
 .Box_mr__SM_08 {
-    margin-right: 8rem;
-}
+            margin-right: 8rem;
+        }
 
 .Box_mr__SMp_06 {
-    margin-right: 10rem;
-}
+            margin-right: 10rem;
+        }
 
 .Box_mr__MD_4a {
-    margin-right: 16rem;
-}
+            margin-right: 16rem;
+        }
 
 .Box_mr__MDp_b6 {
-    margin-right: 20rem;
-}
+            margin-right: 20rem;
+        }
 
 .Box_mr__LG_d0 {
-    margin-right: 32rem;
-}
+            margin-right: 32rem;
+        }
 
 .Box_mr__XL_db {
-    margin-right: 64rem;
-}
+            margin-right: 64rem;
+        }
 
 .Box_mb__XS_bb {
-    margin-bottom: 4rem;
-}
+            margin-bottom: 4rem;
+        }
 
 .Box_mb__SM_83 {
-    margin-bottom: 8rem;
-}
+            margin-bottom: 8rem;
+        }
 
 .Box_mb__SMp_04 {
-    margin-bottom: 10rem;
-}
+            margin-bottom: 10rem;
+        }
 
 .Box_mb__MD_ed {
-    margin-bottom: 16rem;
-}
+            margin-bottom: 16rem;
+        }
 
 .Box_mb__MDp_65 {
-    margin-bottom: 20rem;
-}
+            margin-bottom: 20rem;
+        }
 
 .Box_mb__LG_c8 {
-    margin-bottom: 32rem;
-}
+            margin-bottom: 32rem;
+        }
 
 .Box_mb__XL_f8 {
-    margin-bottom: 64rem;
-}
+            margin-bottom: 64rem;
+        }
 
 .Box_ml__XS_8a {
-    margin-left: 4rem;
-}
+            margin-left: 4rem;
+        }
 
 .Box_ml__SM_e6 {
-    margin-left: 8rem;
-}
+            margin-left: 8rem;
+        }
 
 .Box_ml__SMp_fb {
-    margin-left: 10rem;
-}
+            margin-left: 10rem;
+        }
 
 .Box_ml__MD_2b {
-    margin-left: 16rem;
-}
+            margin-left: 16rem;
+        }
 
 .Box_ml__MDp_c7 {
-    margin-left: 20rem;
-}
+            margin-left: 20rem;
+        }
 
 .Box_ml__LG_39 {
-    margin-left: 32rem;
-}
+            margin-left: 32rem;
+        }
 
 .Box_ml__XL_4a {
-    margin-left: 64rem;
-}
+            margin-left: 64rem;
+        }
 
 .FormatText_base_d0 {
     display: flex;
@@ -111,167 +111,167 @@
 
 /* eslint-disable-next-line expectedscss*/
 .Text_paragraph-P10_2c {
-    font-size: 10rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 10rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_paragraph-P12_22 {
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 12rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P14_a7 {
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P16_90 {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P18_50 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 18rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P24_33 {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 32rem;
 }
 .Text_heading-H14_8b {
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 14rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H15_9e {
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 15rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H18_b7 {
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 18rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H20R_f6 {
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 20rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_heading-H22_27 {
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .Text_heading-H24R_be {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_heading-H24_0c {
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
+        font-size: 24rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .Text_heading-H28_78 {
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H36_32 {
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 36rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H56_c3 {
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 56rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H73_8f {
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 73rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H144_a9 {
-    font-size: 144rem;
-    font-weight: 700;
-    line-height: 1;
+        font-size: 144rem;
+        font-weight: 700;
+        line-height: 1;
 }
 .Text_BLACK_REAL_30 {
-    color: #000000;
-}
+        color: #000000;
+    }
 .Text_WHITE_REAL_bc {
-    color: #ffffff;
-}
+        color: #FFFFFF;
+    }
 .Text_WHITE_62 {
-    color: #f2f2f7;
-}
+        color: #F2F2F7;
+    }
 .Text_WHITE_ORANGE_54 {
-    color: #fefeec;
-}
+        color: #FEFEEC;
+    }
 .Text_WHITE_SPANISH_df {
-    color: #e9e2bf;
-}
+        color: #E9E2BF;
+    }
 .Text_PAR_15 {
-    color: #8c8c7e;
-}
+        color: #8C8C7E;
+    }
 .Text_PAR_SECONDARY_5d {
-    color: #595950;
-}
+        color: #595950;
+    }
 .Text_PAR_TERTIARY_c9 {
-    color: #37362e;
-}
+        color: #37362E;
+    }
 .Text_INFO_RED_30 {
-    color: #ff0000;
-}
+        color: #FF0000;
+    }
 .Text_RED_66 {
-    color: #ff2717;
-}
+        color: #FF2717;
+    }
 .Text_RED_DARK_d8 {
-    color: #b70000;
-}
+        color: #B70000;
+    }
 .Text_YELLOW_ed {
-    color: #feab34;
-}
+        color: #FEAB34;
+    }
 .Text_ORANGE_be {
-    color: #ee7000;
-}
+        color: #EE7000;
+    }
 .Text_CREAM_57 {
-    color: #ffdd99;
-}
+        color: #FFDD99;
+    }
 .Text_BROWN_18 {
-    color: #cbac77;
-}
+        color: #CBAC77;
+    }
 .Text_GREEN_BRIGHT_3f {
-    color: #80d43a;
-}
+        color: #80D43A;
+    }
 .Text_GREEN_e3 {
-    color: #7ab300;
-}
+        color: #7AB300;
+    }
 .Text_GREEN_DARK_f1 {
-    color: #497212;
-}
+        color: #497212;
+    }
 .Text_BLUE_BOOSTER_21 {
-    color: #ccffff;
-}
+        color: #CCFFFF;
+    }
 .Text_BLUE_TEAMKILLER_ab {
-    color: #09e2ff;
-}
+        color: #09E2FF;
+    }
 .Text_CRED_f7 {
-    color: #ced9d9;
-}
+        color: #CED9D9;
+    }
 .Text_GOLD_28 {
-    color: #ffc363;
-}
+        color: #FFC363;
+    }
 .Text_BOND_be {
-    color: #c9c9b6;
-}
+        color: #C9C9B6;
+    }
 .Text_PROM_65 {
-    color: #a29b70;
-}
+        color: #A29B70;
+    }
 
 .BacklitTransparentButton_base_ec {
     display: flex;
@@ -280,72 +280,62 @@
     border-radius: 2rem;
     overflow: hidden;
     position: relative;
-    transition: box-shadow 0.15s;
+    transition: box-shadow .15s;
     cursor: pointer;
 }
 
-.mediaMedium .BacklitTransparentButton_base_ec {
-    width: 130rem;
-    height: 36rem;
+    .mediaMedium .BacklitTransparentButton_base_ec {
+        width: 130rem;
+        height: 36rem;
 }
 
-.mediaLarge .BacklitTransparentButton_base_ec {
-    width: 160rem;
-    height: 42rem;
+    .mediaLarge .BacklitTransparentButton_base_ec {
+        width: 160rem;
+        height: 42rem;
 }
 
-.BacklitTransparentButton_base_ec::after,
-.BacklitTransparentButton_base_ec::before {
-    width: 100%;
-    height: 1rem;
-    background: linear-gradient(
-        90deg,
-        rgba(172, 128, 44, 0) 0%,
-        #eece63 48.95%,
-        #efd065 48.96%,
-        rgba(174, 132, 46, 0) 100%
-    );
-    opacity: 0;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: opacity 0.16s;
-}
+    .BacklitTransparentButton_base_ec::after,
+    .BacklitTransparentButton_base_ec::before {
+        width: 100%;
+        height: 1rem;
+        background: linear-gradient(90deg, rgba(172, 128, 44, 0) 0%, #eece63 48.95%, #efd065 48.96%, rgba(174, 132, 46, 0) 100%);
+        opacity: 0;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity .16s;
+    }
 
-.BacklitTransparentButton_base_ec::before {
-    top: auto;
-    bottom: 0;
-}
+    .BacklitTransparentButton_base_ec::before {
+        top: auto;
+        bottom: 0;
+    }
 
-.BacklitTransparentButton_base_ec:hover {
-    box-shadow:
-        0 0 12rem 4rem rgba(255, 42, 0, 0.15),
-        0 0 12rem 4rem rgba(255, 42, 0, 0.15) inset;
-}
+    .BacklitTransparentButton_base_ec:hover {
+        box-shadow: 0 0 12rem 4rem rgba(255, 42, 0, .15), 0 0 12rem 4rem rgba(255, 42, 0, .15) inset;
+    }
 
-.BacklitTransparentButton_base_ec:hover::after,
-.BacklitTransparentButton_base_ec:hover::before {
-    opacity: 1;
-}
+    .BacklitTransparentButton_base_ec:hover::after,
+        .BacklitTransparentButton_base_ec:hover::before {
+            opacity: 1;
+        }
 
-.BacklitTransparentButton_base_ec:hover .BacklitTransparentButton_title_29 {
-    color: #e9e2bf;
-}
+    .BacklitTransparentButton_base_ec:hover .BacklitTransparentButton_title_29 {
+            color: #E9E2BF;
+        }
 
-.BacklitTransparentButton_base_ec:active,
-.BacklitTransparentButton_base_ec:focus {
-    box-shadow:
-        0 0 12rem 4rem rgba(255, 42, 0, 0.07),
-        0 0 12rem 4rem rgba(255, 42, 0, 0.07) inset;
-}
+    .BacklitTransparentButton_base_ec:active,
+    .BacklitTransparentButton_base_ec:focus {
+        box-shadow: 0 0 12rem 4rem rgba(255, 42, 0, .07), 0 0 12rem 4rem rgba(255, 42, 0, .07) inset;
+    }
 
-.BacklitTransparentButton_base_ec:active::after,
-.BacklitTransparentButton_base_ec:active::before,
-.BacklitTransparentButton_base_ec:focus::after,
-.BacklitTransparentButton_base_ec:focus::before {
-    opacity: 0.5;
-}
+    .BacklitTransparentButton_base_ec:active::after,
+        .BacklitTransparentButton_base_ec:active::before,
+        .BacklitTransparentButton_base_ec:focus::after,
+        .BacklitTransparentButton_base_ec:focus::before {
+            opacity: .5;
+        }
 
 .BacklitTransparentButton_content_f5 {
     display: flex;
@@ -353,17 +343,17 @@
     align-items: center;
     width: 100%;
     padding: 6rem 10rem;
-    border: 1rem rgba(255, 255, 255, 0.15) solid;
+    border: 1rem rgba(255, 255, 255, .15) solid;
     border-radius: 2rem;
     position: relative;
 }
 
 .mediaMedium .BacklitTransparentButton_content_f5 {
-    padding: 10rem 17rem;
+        padding: 10rem 17rem;
 }
 
 .mediaLarge .BacklitTransparentButton_content_f5 {
-    padding: 10rem 26rem;
+        padding: 10rem 26rem;
 }
 
 .BacklitTransparentButton_cornersHolder_67 {
@@ -383,25 +373,25 @@
 }
 
 .BacklitTransparentButton_corners__right_96 {
-    transform: scaleX(-1);
-}
+        transform: scaleX(-1);
+    }
 
 .BacklitTransparentButton_corners__top_99,
-.BacklitTransparentButton_corners__bottom_2c {
-    width: 5rem;
-    height: 5rem;
-    background: url('R.images.gui_lootboxes.gui.maps.shared.corner') no-repeat center / cover;
-    position: absolute;
-    left: 0;
-}
+    .BacklitTransparentButton_corners__bottom_2c {
+        width: 5rem;
+        height: 5rem;
+        background: url('R.images.gui_lootboxes.gui.maps.shared.corner') no-repeat center / cover;
+        position: absolute;
+        left: 0;
+    }
 
 .BacklitTransparentButton_corners__bottom_2c {
-    bottom: 0;
-    transform: scaleY(-1);
-}
+        bottom: 0;
+        transform: scaleY(-1);
+    }
 
 .BacklitTransparentButton_title_29 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 12rem;
     font-weight: 400;
     line-height: 1.3;
@@ -410,35 +400,35 @@
 }
 
 .mediaLarge .BacklitTransparentButton_title_29 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
+        color: #8C8C7E;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 
 .BacklitTransparentButton_icon_e6 {
     width: 16rem;
     height: 16rem;
     margin-right: 6rem;
-    background: url('R.images.gui_lootboxes.gui.maps.bonusProbabilities.probabilities_cream_16') no-repeat center /
-        contain;
+    background: url('R.images.gui_lootboxes.gui.maps.bonusProbabilities.probabilities_cream_16') no-repeat center / contain;
 }
 
 .BacklitTransparentButton_background_13 {
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.02);
-    opacity: 0.8;
+    opacity: .8;
     position: absolute;
     top: 0;
     left: 0;
 }
 
 .BacklitTransparentButton_base_ec:active .BacklitTransparentButton_background_13,
-.BacklitTransparentButton_base_ec:focus .BacklitTransparentButton_background_13 {
-    opacity: 0.5;
-}
+    .BacklitTransparentButton_base_ec:focus .BacklitTransparentButton_background_13 {
+        opacity: .5;
+    }
 
 .BacklitTransparentButton_background__pressed_f4 {
-    background: url('R.images.gui_lootboxes.gui.maps.shared.glow_orange') no-repeat center / cover;
-}
+        background: url('R.images.gui_lootboxes.gui.maps.shared.glow_orange') no-repeat center / cover;
+    }
+

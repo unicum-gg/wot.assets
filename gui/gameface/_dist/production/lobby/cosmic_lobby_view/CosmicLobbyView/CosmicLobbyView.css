@@ -7,9 +7,9 @@
     cursor: pointer;
 }
 
-.TextButton_base__right_39 {
-    flex-direction: row-reverse;
-}
+    .TextButton_base__right_39 {
+        flex-direction: row-reverse;
+    }
 .TextButton_icon_17 {
     width: 32rem;
     height: 32rem;
@@ -17,22 +17,22 @@
     position: relative;
 }
 .TextButton_icon__back_43,
+    .TextButton_icon__forward_59 {
+        margin: -1rem -5rem;
+        background-image: url('R.images.gui.maps.icons.components.text_button.back');
+        transform: translateY(1rem);
+    }
 .TextButton_icon__forward_59 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.back');
-    transform: translateY(1rem);
-}
-.TextButton_icon__forward_59 {
-    transform: rotate(180deg) translateY(1rem);
-}
+        transform: rotate(180deg) translateY(1rem);
+    }
 .TextButton_icon__close_53 {
-    margin: -1rem 0;
-    background-image: url('R.images.gui.maps.icons.components.text_button.close');
-}
+        margin: -1rem 0;
+        background-image: url('R.images.gui.maps.icons.components.text_button.close');
+    }
 .TextButton_icon__info_33 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.info');
-}
+        margin: -1rem -5rem;
+        background-image: url('R.images.gui.maps.icons.components.text_button.info');
+    }
 .TextButton_glow_a4 {
     width: 100%;
     height: 100%;
@@ -40,82 +40,72 @@
     opacity: 0;
     position: absolute;
     top: 0;
-    transition: opacity 0.16s;
+    transition: opacity .16s;
 }
 .TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-}
+    .TextButton_icon__forward_59 .TextButton_glow_a4 {
+        background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+    }
 .TextButton_icon__close_53 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-}
+        background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+    }
 .TextButton_icon__info_33 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-}
+        background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+    }
 .TextButton_base_b6:hover .TextButton_glow_a4 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .TextButton_base_b6:active .TextButton_glow_a4 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .TextButton_caption_82 {
     position: relative;
-    transition:
-        color 0.16s,
-        text-shadow 0.16s;
+    transition: color .16s, text-shadow .16s;
 }
 .TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
-}
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
-    color: #fffa9f;
-}
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
-    color: #ffdd99;
-}
+    .TextButton_caption__forward_4e,
+    .TextButton_caption__close_36 {
+        color: #FFDD99;
+        text-shadow: 0 0 10rem rgba(255,42,0, 1),
+            0 0 10rem rgba(255,42,0, .4),
+            0 0 10rem rgba(255,42,0, .4),
+            0 0 2rem rgba(255,42,0, .4),
+            0 0 1rem rgba(255,42,0, .4),
+            0 0 2rem rgba(255,42,0, .4),
+            0 0 1rem rgba(255,42,0, .4);
+    }
+.TextButton_base_b6:hover .TextButton_caption__back_b9, .TextButton_base_b6:hover .TextButton_caption__forward_4e, .TextButton_base_b6:hover .TextButton_caption__close_36 {
+            color: #fffa9f;
+        }
+.TextButton_base_b6:active .TextButton_caption__back_b9, .TextButton_base_b6:active .TextButton_caption__forward_4e, .TextButton_base_b6:active .TextButton_caption__close_36 {
+            color: #FFDD99;
+        }
 .TextButton_caption__info_23 {
-    padding: 0 5rem;
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 8rem #00eaff;
-}
+        padding: 0 5rem;
+        color: #CCFFFF;
+        text-shadow: 0 0 12rem rgba(31,68,255, .8),
+            0 0 8rem #00eaff;
+    }
 .TextButton_base_b6:hover .TextButton_caption__info_23 {
-    color: #e3ffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 12rem rgba(0, 234, 255, 1),
-        0 0 8rem #00eaff;
-}
+            color: #e3ffff;
+            text-shadow: 0 0 12rem rgba(31,68,255, .8),
+                0 0 12rem rgba(0,234,255, 1),
+                0 0 8rem #00eaff;
+        }
 .TextButton_base_b6:active .TextButton_caption__info_23 {
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.6),
-        0 0 8rem #00eaff;
-}
+            color: #CCFFFF;
+            text-shadow: 0 0 12rem rgba(31,68,255, .6),
+                0 0 8rem #00eaff;
+        }
 .TextButton_goto_e7 {
     color: #7c7c6c;
 }
 .TextButton_base__left_ff .TextButton_goto_e7 {
-    margin-left: 8rem;
-}
+        margin-left: 8rem;
+    }
 .TextButton_base__right_39 .TextButton_goto_e7 {
-    margin-right: 8rem;
-}
+        margin-right: 8rem;
+    }
 .TextButton_shine_e2 {
     width: 90rem;
     height: 40rem;
@@ -123,22 +113,22 @@
     opacity: 0;
     position: absolute;
     top: -4rem;
-    transition: opacity 0.16s;
+    transition: opacity .16s;
     pointer-events: none;
 }
 .TextButton_base__left_ff .TextButton_shine_e2 {
-    left: -4rem;
-}
+        left: -4rem;
+    }
 .TextButton_base__right_39 .TextButton_shine_e2 {
-    right: -4rem;
-    transform: rotate(180deg);
-}
+        right: -4rem;
+        transform: rotate(180deg);
+    }
 .TextButton_base_b6:hover .TextButton_shine_e2 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .TextButton_base_b6:active .TextButton_shine_e2 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .ExitMode_base_e4 {
     display: flex;
@@ -148,130 +138,127 @@
     cursor: pointer;
 }
 
-.ExitMode_base_e4 .ExitMode_title_6f {
-    /* font size and colors aren't in constants on figma*/
-    color: #ffdd99;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-right: 7rem;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
-}
+    .ExitMode_base_e4 .ExitMode_title_6f {
+        /* font size and colors aren't in constants on figma*/
+        color: #ffdd99;
+        font-size: 12rem;
+        font-weight: 400;
+        line-height: 1.3;
+        margin-right: 7rem;
+        text-shadow: 0 0 4rem rgba(255, 127, 0, .25), 0 0 8rem #ff2a00, 0 0 15rem #e52;
+    }
 
-.ExitMode_base_e4 .ExitMode_icon_da {
-    width: 40rem;
-    height: 40rem;
-    margin: -14rem;
-}
+    .ExitMode_base_e4 .ExitMode_icon_da {
+        width: 40rem;
+        height: 40rem;
+        margin: -14rem;
+    }
 
 .Box_mt__XS_0c {
-    margin-top: 4rem;
-}
-.Box_mt__SM_eb {
-    margin-top: 8rem;
-}
-.Box_mt__SMp_cf {
-    margin-top: 10rem;
-}
-.Box_mt__MD_25 {
-    margin-top: 16rem;
-}
-.Box_mt__MDp_49 {
-    margin-top: 20rem;
-}
-.Box_mt__LG_e8 {
-    margin-top: 32rem;
-}
-.Box_mt__XL_83 {
-    margin-top: 64rem;
-}
+            margin-top: 4rem;
+        }
+        .Box_mt__SM_eb {
+            margin-top: 8rem;
+        }
+        .Box_mt__SMp_cf {
+            margin-top: 10rem;
+        }
+        .Box_mt__MD_25 {
+            margin-top: 16rem;
+        }
+        .Box_mt__MDp_49 {
+            margin-top: 20rem;
+        }
+        .Box_mt__LG_e8 {
+            margin-top: 32rem;
+        }
+        .Box_mt__XL_83 {
+            margin-top: 64rem;
+        }
 
 .Box_mr__XS_7c {
-    margin-right: 4rem;
-}
+            margin-right: 4rem;
+        }
 
 .Box_mr__SM_08 {
-    margin-right: 8rem;
-}
+            margin-right: 8rem;
+        }
 
 .Box_mr__SMp_06 {
-    margin-right: 10rem;
-}
+            margin-right: 10rem;
+        }
 
 .Box_mr__MD_4a {
-    margin-right: 16rem;
-}
+            margin-right: 16rem;
+        }
 
 .Box_mr__MDp_b6 {
-    margin-right: 20rem;
-}
+            margin-right: 20rem;
+        }
 
 .Box_mr__LG_d0 {
-    margin-right: 32rem;
-}
+            margin-right: 32rem;
+        }
 
 .Box_mr__XL_db {
-    margin-right: 64rem;
-}
+            margin-right: 64rem;
+        }
 
 .Box_mb__XS_bb {
-    margin-bottom: 4rem;
-}
+            margin-bottom: 4rem;
+        }
 
 .Box_mb__SM_83 {
-    margin-bottom: 8rem;
-}
+            margin-bottom: 8rem;
+        }
 
 .Box_mb__SMp_04 {
-    margin-bottom: 10rem;
-}
+            margin-bottom: 10rem;
+        }
 
 .Box_mb__MD_ed {
-    margin-bottom: 16rem;
-}
+            margin-bottom: 16rem;
+        }
 
 .Box_mb__MDp_65 {
-    margin-bottom: 20rem;
-}
+            margin-bottom: 20rem;
+        }
 
 .Box_mb__LG_c8 {
-    margin-bottom: 32rem;
-}
+            margin-bottom: 32rem;
+        }
 
 .Box_mb__XL_f8 {
-    margin-bottom: 64rem;
-}
+            margin-bottom: 64rem;
+        }
 
 .Box_ml__XS_8a {
-    margin-left: 4rem;
-}
+            margin-left: 4rem;
+        }
 
 .Box_ml__SM_e6 {
-    margin-left: 8rem;
-}
+            margin-left: 8rem;
+        }
 
 .Box_ml__SMp_fb {
-    margin-left: 10rem;
-}
+            margin-left: 10rem;
+        }
 
 .Box_ml__MD_2b {
-    margin-left: 16rem;
-}
+            margin-left: 16rem;
+        }
 
 .Box_ml__MDp_c7 {
-    margin-left: 20rem;
-}
+            margin-left: 20rem;
+        }
 
 .Box_ml__LG_39 {
-    margin-left: 32rem;
-}
+            margin-left: 32rem;
+        }
 
 .Box_ml__XL_4a {
-    margin-left: 64rem;
-}
+            margin-left: 64rem;
+        }
 
 .FormatText_base_d0 {
     display: flex;
@@ -280,167 +267,167 @@
 
 /* eslint-disable-next-line expectedscss*/
 .Text_paragraph-P10_2c {
-    font-size: 10rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 10rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_paragraph-P12_22 {
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 12rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P14_a7 {
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P16_90 {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P18_50 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 18rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P24_33 {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 32rem;
 }
 .Text_heading-H14_8b {
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 14rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H15_9e {
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 15rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H18_b7 {
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 18rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H20R_f6 {
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 20rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_heading-H22_27 {
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .Text_heading-H24R_be {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_heading-H24_0c {
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
+        font-size: 24rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .Text_heading-H28_78 {
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H36_32 {
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 36rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H56_c3 {
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 56rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H73_8f {
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 73rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H144_a9 {
-    font-size: 144rem;
-    font-weight: 700;
-    line-height: 1;
+        font-size: 144rem;
+        font-weight: 700;
+        line-height: 1;
 }
 .Text_BLACK_REAL_30 {
-    color: #000000;
-}
+        color: #000000;
+    }
 .Text_WHITE_REAL_bc {
-    color: #ffffff;
-}
+        color: #FFFFFF;
+    }
 .Text_WHITE_62 {
-    color: #f2f2f7;
-}
+        color: #F2F2F7;
+    }
 .Text_WHITE_ORANGE_54 {
-    color: #fefeec;
-}
+        color: #FEFEEC;
+    }
 .Text_WHITE_SPANISH_df {
-    color: #e9e2bf;
-}
+        color: #E9E2BF;
+    }
 .Text_PAR_15 {
-    color: #8c8c7e;
-}
+        color: #8C8C7E;
+    }
 .Text_PAR_SECONDARY_5d {
-    color: #595950;
-}
+        color: #595950;
+    }
 .Text_PAR_TERTIARY_c9 {
-    color: #37362e;
-}
+        color: #37362E;
+    }
 .Text_INFO_RED_30 {
-    color: #ff0000;
-}
+        color: #FF0000;
+    }
 .Text_RED_66 {
-    color: #ff2717;
-}
+        color: #FF2717;
+    }
 .Text_RED_DARK_d8 {
-    color: #b70000;
-}
+        color: #B70000;
+    }
 .Text_YELLOW_ed {
-    color: #feab34;
-}
+        color: #FEAB34;
+    }
 .Text_ORANGE_be {
-    color: #ee7000;
-}
+        color: #EE7000;
+    }
 .Text_CREAM_57 {
-    color: #ffdd99;
-}
+        color: #FFDD99;
+    }
 .Text_BROWN_18 {
-    color: #cbac77;
-}
+        color: #CBAC77;
+    }
 .Text_GREEN_BRIGHT_3f {
-    color: #80d43a;
-}
+        color: #80D43A;
+    }
 .Text_GREEN_e3 {
-    color: #7ab300;
-}
+        color: #7AB300;
+    }
 .Text_GREEN_DARK_f1 {
-    color: #497212;
-}
+        color: #497212;
+    }
 .Text_BLUE_BOOSTER_21 {
-    color: #ccffff;
-}
+        color: #CCFFFF;
+    }
 .Text_BLUE_TEAMKILLER_ab {
-    color: #09e2ff;
-}
+        color: #09E2FF;
+    }
 .Text_CRED_f7 {
-    color: #ced9d9;
-}
+        color: #CED9D9;
+    }
 .Text_GOLD_28 {
-    color: #ffc363;
-}
+        color: #FFC363;
+    }
 .Text_BOND_be {
-    color: #c9c9b6;
-}
+        color: #C9C9B6;
+    }
 .Text_PROM_65 {
-    color: #a29b70;
-}
+        color: #A29B70;
+    }
 
 .ActionItem_base_86 {
     display: flex;
@@ -451,17 +438,17 @@
     background: linear-gradient(90deg, #6c27004c 0%, #6f37184c 33.8%, #71412000 100%);
 }
 
-.mediaMedium .ActionItem_base_86 {
-    min-height: 30rem;
+    .mediaMedium .ActionItem_base_86 {
+        min-height: 30rem;
 }
 
-.mediaExtraLarge .ActionItem_base_86 {
-    min-height: 42rem;
+    .mediaExtraLarge .ActionItem_base_86 {
+        min-height: 42rem;
 }
 
-.ActionItem_base__highlighted_84 {
-    background: linear-gradient(90deg, #704a9450 0%, #704a9450 33.8%, rgba(115, 39, 170, 0) 100%);
-}
+    .ActionItem_base__highlighted_84 {
+        background: linear-gradient(90deg, #704a9450 0%, #704a9450 33.8%, rgba(115, 39, 170, 0) 100%);
+    }
 .ActionItem_infoBlock_23 {
     display: flex;
     flex: 1 0 auto;
@@ -472,39 +459,42 @@
     margin: -3rem;
 }
 .mediaMedium .ActionItem_icon_e8 {
-    width: 30rem;
-    height: 30rem;
+        width: 30rem;
+        height: 30rem;
 }
 .mediaExtraLarge .ActionItem_icon_e8 {
-    width: 42rem;
-    height: 42rem;
+        width: 42rem;
+        height: 42rem;
 }
 .ActionItem_icon_bg_90 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 26rem;
-    height: 26rem;
-    margin-right: 10rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.scoring.action_icon_bg') center center / 26rem 26rem no-repeat;
-}
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 26rem;
+        height: 26rem;
+        margin-right: 10rem;
+        background: url('R.images.cosmic_event.gui.maps.icons.scoring.action_icon_bg') center center / 26rem 26rem
+            no-repeat;
+    }
 .mediaMedium .ActionItem_icon_bg_90 {
-    width: 30rem;
-    height: 30rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.scoring.action_icon_bg') center center / 30rem 30rem no-repeat;
+            width: 30rem;
+            height: 30rem;
+            background: url('R.images.cosmic_event.gui.maps.icons.scoring.action_icon_bg') center center / 30rem 30rem
+            no-repeat;
 }
 .mediaExtraLarge .ActionItem_icon_bg_90 {
-    width: 42rem;
-    height: 42rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.scoring.action_icon_bg') center center / 42rem 42rem no-repeat;
+            width: 42rem;
+            height: 42rem;
+            background: url('R.images.cosmic_event.gui.maps.icons.scoring.action_icon_bg') center center / 42rem 42rem
+            no-repeat;
 }
 .ActionItem_title_8b {
     color: #f4e1b3;
     font-size: 16rem;
     font-weight: 400;
     line-height: 19rem;
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
     padding-top: 3rem;
 }
 .mediaMedium .ActionItem_title_8b {
@@ -513,23 +503,23 @@
     font-weight: 400;
     line-height: 21rem;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
 }
 .mediaExtraLarge .ActionItem_title_8b {
-    min-width: 280rem;
-    padding-top: 8rem;
-    font-size: 22rem;
+        min-width: 280rem;
+        padding-top: 8rem;
+        font-size: 22rem;
 }
 .ActionItem_base__highlighted_84 .ActionItem_title_8b {
-    color: #e9dcf6;
-}
+        color: #e9dcf6;
+    }
 .ActionItem_points_b7 {
     color: #f4e1b3;
     font-size: 18rem;
     font-weight: 700;
     line-height: 21rem;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -544,30 +534,30 @@
     z-index: 1;
 }
 .mediaExtraLarge .ActionItem_points_b7 {
-    padding-right: 23rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.event_icon.c_18x18') right center / 18rem 18rem no-repeat;
-    font-size: 22rem;
+        padding-right: 23rem;
+        background: url('R.images.cosmic_event.gui.maps.icons.event_icon.c_18x18') right center / 18rem 18rem no-repeat;
+        font-size: 22rem;
 }
 .ActionItem_base__highlighted_84 .ActionItem_points_b7 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.event_icon.higlighted_14x14');
-    color: #e9dcf6;
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.event_icon.higlighted_14x14');
+        color: #e9dcf6;
+    }
 .mediaExtraLarge .ActionItem_base__highlighted_84 .ActionItem_points_b7 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.event_icon.higlighted_18x18');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.event_icon.higlighted_18x18');
 }
 .ActionItem_points_bg_61 {
-    width: 90rem;
-    height: 30rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.scoring.action_points_bg') 0 0 / contain no-repeat;
-    position: absolute;
-    top: -3rem;
-    right: -20rem;
-    z-index: -1;
-}
+        width: 90rem;
+        height: 30rem;
+        background: url('R.images.cosmic_event.gui.maps.icons.scoring.action_points_bg') 0 0 / contain no-repeat;
+        position: absolute;
+        top: -3rem;
+        right: -20rem;
+        z-index: -1;
+    }
 .mediaExtraLarge .ActionItem_points_bg_61 {
-    width: 110rem;
-    height: 42rem;
-    top: -5rem;
+            width: 110rem;
+            height: 42rem;
+            top: -5rem;
 }
 
 /*
@@ -581,11 +571,11 @@
     position: relative;
 }
 .ProgressBar_base__medium_62 {
-    height: 6rem;
-}
+        height: 6rem;
+    }
 .ProgressBar_base__small_df {
-    height: 2rem;
-}
+        height: 2rem;
+    }
 .ProgressBar_background_51 {
     width: 100%;
     max-width: 8001px;
@@ -599,15 +589,16 @@
     left: 0;
 }
 .ProgressBar_background__medium_6e {
-    height: 6rem;
-}
+        height: 6rem;
+    }
 .ProgressBar_background__small_46 {
-    height: 2rem;
-}
+        height: 2rem;
+    }
 .ProgressBar_lineWrapper_6a {
     display: flex;
     flex: 1;
 }
+
 
 .ProgressBarBlink_base_24 {
     width: 60rem;
@@ -622,16 +613,16 @@
     pointer-events: none;
 }
 
-.ProgressBarBlink_base__medium_ec {
-    width: 42rem;
-    height: 70rem;
-}
+    .ProgressBarBlink_base__medium_ec {
+        width: 42rem;
+        height: 70rem;
+    }
 
-.ProgressBarBlink_base__small_0f {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
+    .ProgressBarBlink_base__small_0f {
+        width: 44rem;
+        height: 43rem;
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -643,18 +634,18 @@
     height: 100%;
     background-color: var(--progress-line-base);
     position: relative;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressLineImpose_base__disabled_cc {
-    background-color: var(--progress-line-disabled);
-}
+        background-color: var(--progress-line-disabled);
+    }
 .ProgressLineImpose_base__finished_d4 {
-    background-color: var(--progress-line-finished);
-}
+        background-color: var(--progress-line-finished);
+    }
 .ProgressLineImpose_base__withoutBounce_56 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 .ProgressLineImpose_pattern_1c {
     max-width: 8001px;
     background-image: var(--progress-pattern-base);
@@ -668,19 +659,19 @@
     left: 1rem;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-disabled);
-    left: 0;
-}
+        background-image: var(--progress-pattern-disabled);
+        left: 0;
+    }
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-finished);
-}
+        background-image: var(--progress-pattern-finished);
+    }
 .ProgressLineImpose_gradient_35 {
     max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    background-image: linear-gradient(90deg, rgba(0,0,0, .5), rgba(255,255,255, .75));
     mix-blend-mode: overlay;
     position: absolute;
     top: 1rem;
@@ -689,15 +680,15 @@
     left: 0;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
-    display: none;
-}
+        display: none;
+    }
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
-}
+        background-image: linear-gradient(90deg, rgba(0,0,0, .5), rgba(255,255,255, .75), rgba(0,0,0, .5));
+    }
 .ProgressLineImpose_glow_a5 {
     width: 60rem;
     max-width: 8001px;
@@ -712,17 +703,17 @@
     pointer-events: none;
 }
 .ProgressLineImpose_glow__left_d8 {
-    left: 1rem;
-}
+        left: 1rem;
+    }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
-    display: none;
-}
+    .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+        display: none;
+    }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
+        width: 44rem;
+        height: 43rem;
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -744,7 +735,7 @@
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1), cubic-bezier(.21, .61, .35, 1);
     transition-property: width, transform;
 }
 
@@ -758,12 +749,12 @@
     height: 100%;
     position: absolute;
     top: 0;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 .ProgressBarDeltaGrow_glow_68 {
     width: 0;
     max-width: 8001px;
@@ -773,12 +764,12 @@
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 
 .Reward_base_ea {
     display: flex;
@@ -786,47 +777,47 @@
     position: relative;
 }
 
-.Reward_base__s48x48_46,
-.Reward_base__small_c0 {
-    width: 48rem;
-    height: 48rem;
-}
+    .Reward_base__s48x48_46,
+    .Reward_base__small_c0 {
+        width: 48rem;
+        height: 48rem;
+    }
 
-.Reward_base__s80x80_ce,
-.Reward_base__big_e5 {
-    width: 80rem;
-    height: 80rem;
-}
+    .Reward_base__s80x80_ce,
+    .Reward_base__big_e5 {
+        width: 80rem;
+        height: 80rem;
+    }
 
-.Reward_base__s128x100_c3 {
-    width: 128rem;
-    height: 100rem;
-}
+    .Reward_base__s128x100_c3 {
+        width: 128rem;
+        height: 100rem;
+    }
 
-.Reward_base__s180x135_7c {
-    width: 180rem;
-    height: 135rem;
-}
+    .Reward_base__s180x135_7c {
+        width: 180rem;
+        height: 135rem;
+    }
 
-.Reward_base__s232x174_67 {
-    width: 232rem;
-    height: 174rem;
-}
+    .Reward_base__s232x174_67 {
+        width: 232rem;
+        height: 174rem;
+    }
 
-.Reward_base__s296x222_78 {
-    width: 296rem;
-    height: 222rem;
-}
+    .Reward_base__s296x222_78 {
+        width: 296rem;
+        height: 222rem;
+    }
 
-.Reward_base__s400x300_07 {
-    width: 400rem;
-    height: 300rem;
-}
+    .Reward_base__s400x300_07 {
+        width: 400rem;
+        height: 300rem;
+    }
 
-.Reward_base__s600x450_f8 {
-    width: 600rem;
-    height: 450rem;
-}
+    .Reward_base__s600x450_f8 {
+        width: 600rem;
+        height: 450rem;
+    }
 
 .Reward_tooltipWrapper_b5 {
     height: 100%;
@@ -853,43 +844,43 @@
 }
 
 .Reward_base__s48x48_46 .Reward_overlay_68,
-.Reward_base__small_c0 .Reward_overlay_68 {
-    width: 96rem;
-    height: 96rem;
-    background-size: 100%;
-    overflow: visible;
-}
+    .Reward_base__small_c0 .Reward_overlay_68 {
+        width: 96rem;
+        height: 96rem;
+        background-size: 100%;
+        overflow: visible;
+    }
 
 .Reward_base__s80x80_ce .Reward_overlay_68,
-.Reward_base__big_e5 .Reward_overlay_68 {
-    width: 128rem;
-    height: 128rem;
-}
+    .Reward_base__big_e5 .Reward_overlay_68 {
+        width: 128rem;
+        height: 128rem;
+    }
 
 .Reward_base__s180x135_7c .Reward_overlay_68 {
-    width: 266rem;
-    height: 241rem;
-}
+        width: 266rem;
+        height: 241rem;
+    }
 
 .Reward_base__s232x174_67 .Reward_overlay_68 {
-    width: 344rem;
-    height: 312rem;
-}
+        width: 344rem;
+        height: 312rem;
+    }
 
 .Reward_base__s296x222_78 .Reward_overlay_68 {
-    width: 450rem;
-    height: 408rem;
-}
+        width: 450rem;
+        height: 408rem;
+    }
 
 .Reward_base__s400x300_07 .Reward_overlay_68 {
-    width: 618rem;
-    height: 590rem;
-}
+        width: 618rem;
+        height: 590rem;
+    }
 
 .Reward_base__s600x450_f8 .Reward_overlay_68 {
-    width: 670rem;
-    height: 575rem;
-}
+        width: 670rem;
+        height: 575rem;
+    }
 
 .Reward_highlight_36 {
     width: 100%;
@@ -913,35 +904,35 @@
 }
 
 .Reward_base__s48x48_46 .Reward_info_72,
-.Reward_base__small_c0 .Reward_info_72 {
-    margin: -10rem -10rem 0;
-}
+    .Reward_base__small_c0 .Reward_info_72 {
+        margin: -10rem -10rem 0;
+    }
 
 .Reward_info__multi_63 {
-    margin-right: 2rem;
-    text-align: right;
-}
+        margin-right: 2rem;
+        text-align: right;
+    }
 
 .Reward_base__s48x48_46 .Reward_info__multi_63,
-.Reward_base__small_c0 .Reward_info__multi_63 {
-    margin-right: 0;
-}
+        .Reward_base__small_c0 .Reward_info__multi_63 {
+            margin-right: 0;
+        }
 
 .Reward_info__credits_ef {
-    color: #e9e2bf;
-}
+        color: #E9E2BF;
+    }
 
 .Reward_info__gold_36 {
-    color: #ffc363;
-}
+        color: #FFC363;
+    }
 
 .Reward_info__crystal_36 {
-    color: #c9c9b6;
-}
+        color: #C9C9B6;
+    }
 
 .Reward_info__premiumTank_d3 {
-    color: #ffdd99;
-}
+        color: #FFDD99;
+    }
 
 .Reward_timer_d3 {
     background: no-repeat center / contain;
@@ -950,22 +941,22 @@
 }
 
 .Reward_base__s48x48_46 .Reward_timer_d3,
-.Reward_base__small_c0 .Reward_timer_d3 {
-    width: 23rem;
-    height: 23rem;
-    background-image: url('R.images.gui.maps.icons.quests.bonuses.small.timer');
-    top: -6rem;
-    right: -6rem;
-}
+    .Reward_base__small_c0 .Reward_timer_d3 {
+        width: 23rem;
+        height: 23rem;
+        background-image: url('R.images.gui.maps.icons.quests.bonuses.small.timer');
+        top: -6rem;
+        right: -6rem;
+    }
 
 .Reward_base__s80x80_ce .Reward_timer_d3,
-.Reward_base__big_e5 .Reward_timer_d3 {
-    width: 48rem;
-    height: 48rem;
-    background-image: url('R.images.gui.maps.icons.quests.bonuses.big.timer');
-    top: -14rem;
-    right: -14rem;
-}
+    .Reward_base__big_e5 .Reward_timer_d3 {
+        width: 48rem;
+        height: 48rem;
+        background-image: url('R.images.gui.maps.icons.quests.bonuses.big.timer');
+        top: -14rem;
+        right: -14rem;
+    }
 
 .HorizontalBar_base_49 {
     display: flex;
@@ -974,34 +965,33 @@
     position: relative;
 }
 
-.HorizontalBar_base__nonActive_82 {
-    visibility: hidden;
-}
+    .HorizontalBar_base__nonActive_82 {
+        visibility: hidden;
+    }
 
-.HorizontalBar_base_49 .disable,
-.HorizontalBar_base_49 .disable:hover {
-    opacity: 0.3;
-    cursor: default;
-}
+    .HorizontalBar_base_49 .disable,
+    .HorizontalBar_base_49 .disable:hover {
+        opacity: .3;
+        cursor: default;
+    }
 
 .HorizontalBar_leftButton_5f,
 .HorizontalBar_rightButton_03 {
     width: 13rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
-    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    box-shadow: inset 0 0 1rem rgba(255,255,190, .3);
     background: no-repeat center / 7rem 5rem;
-    opacity: 0.5;
+    opacity: .5;
     z-index: 1;
     transform: rotate(-90deg);
     transition: opacity 130ms linear;
     cursor: pointer;
 }
 
-.HorizontalBar_leftButton_5f:hover,
-.HorizontalBar_rightButton_03:hover {
-    opacity: 1;
-}
+.HorizontalBar_leftButton_5f:hover, .HorizontalBar_rightButton_03:hover {
+        opacity: 1;
+    }
 
 .HorizontalBar_leftButton_5f {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
@@ -1025,10 +1015,9 @@
     min-width: 20rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
-    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
-    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb_horizontal') no-repeat center / 8rem
-        7rem;
-    opacity: 0.5;
+    box-shadow: inset 0 0 1rem rgba(255,255,190, .3);
+    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb_horizontal') no-repeat center / 8rem 7rem;
+    opacity: .5;
     position: absolute;
     z-index: 1;
     transition: opacity 130ms linear;
@@ -1036,8 +1025,8 @@
 }
 
 .HorizontalBar_thumb_fd:hover {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .HorizontalBar_rail_32 {
     height: 0;
@@ -1049,8 +1038,9 @@
 }
 
 .HorizontalBar_rail_32:hover {
-    opacity: 0.7;
-}
+        opacity: .7;
+    }
+
 
 .HorizontalScroll_base_29 {
     width: 100%;
@@ -1075,33 +1065,32 @@
     position: relative;
 }
 
-.VerticalBar_base__nonActive_42 {
-    visibility: hidden;
-}
+    .VerticalBar_base__nonActive_42 {
+        visibility: hidden;
+    }
 
-.VerticalBar_base_f3 .disable,
-.VerticalBar_base_f3 .disable:hover {
-    opacity: 0.3;
-    cursor: default;
-}
+    .VerticalBar_base_f3 .disable,
+    .VerticalBar_base_f3 .disable:hover {
+        opacity: .3;
+        cursor: default;
+    }
 
 .VerticalBar_topButton_d7,
 .VerticalBar_bottomButton_06 {
     width: 13rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
-    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    box-shadow: inset 0 0 1rem rgba(255,255,190, .3);
     background: no-repeat center / 7rem 5rem;
-    opacity: 0.5;
+    opacity: .5;
     z-index: 1;
     transition: opacity 130ms linear;
     cursor: pointer;
 }
 
-.VerticalBar_topButton_d7:hover,
-.VerticalBar_bottomButton_06:hover {
-    opacity: 1;
-}
+.VerticalBar_topButton_d7:hover, .VerticalBar_bottomButton_06:hover {
+        opacity: 1;
+    }
 
 .VerticalBar_topButton_d7 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
@@ -1125,9 +1114,9 @@
     height: 100%;
     min-height: 20rem;
     border: 1rem solid #7e7b68;
-    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    box-shadow: inset 0 0 1rem rgba(255,255,190, .3);
     background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb') no-repeat center / 7rem 8rem;
-    opacity: 0.5;
+    opacity: .5;
     position: absolute;
     z-index: 1;
     transition: opacity 130ms linear;
@@ -1135,8 +1124,8 @@
 }
 
 .VerticalBar_thumb_32:hover {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .VerticalBar_rail_43 {
     width: 0;
@@ -1151,8 +1140,9 @@
 }
 
 .VerticalBar_rail_43:hover {
-    opacity: 0.7;
-}
+        opacity: .7;
+    }
+
 
 .VerticalScroll_content_cb {
     height: 100%;
@@ -1186,25 +1176,21 @@
     --wrapper-margin-right: 27rem;
 }
 
-.mediaMedium .ArtefactProgress_base_3f {
-    --wrapper-margin-left: 40rem;
-    --wrapper-margin-right: 40rem;
+    .mediaMedium .ArtefactProgress_base_3f {
+        --wrapper-margin-left: 40rem;
+        --wrapper-margin-right: 40rem;
 }
 
-.mediaExtraLarge .ArtefactProgress_base_3f {
-    --wrapper-margin-left: 87rem;
-    --wrapper-margin-right: 87rem;
+    .mediaExtraLarge .ArtefactProgress_base_3f {
+        --wrapper-margin-left: 87rem;
+        --wrapper-margin-right: 87rem;
 }
 .ArtefactProgress_faded_8e {
-    opacity: 0.5;
+    opacity: .5;
 }
 .ArtefactProgress_scrollWrap_77 {
     width: 100%;
-    max-width: calc(
-        var(--rewards-wrap-width) * var(--sections-amount) + var(--rewards-wrap-margin) * 2 * var(--sections-amount) +
-            var(--divider-width) * (var(--sections-amount) + 1) + var(--wrapper-margin-left) +
-            var(--wrapper-margin-right)
-    );
+    max-width: calc(var(--rewards-wrap-width)*var(--sections-amount) + var(--rewards-wrap-margin)*2*var(--sections-amount) + var(--divider-width)*(var(--sections-amount) + 1) + var(--wrapper-margin-left) + var(--wrapper-margin-right));
 }
 .ArtefactProgress_overflow_2c {
     overflow: visible;
@@ -1226,7 +1212,7 @@
     font-weight: 700;
     line-height: 21rem;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1237,17 +1223,17 @@
     background-size: cover;
 }
 .ArtefactProgress_doneProgression_text_35 {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: -3rem 20rem 0;
-}
+        display: flex;
+        flex-wrap: nowrap;
+        margin: -3rem 20rem 0;
+    }
 .ArtefactProgress_currentPoints_8a {
     color: #f4e1b3;
     font-size: 26rem;
     font-weight: 700;
     line-height: 30rem;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1260,11 +1246,11 @@
     transform: translateX(-50%);
 }
 .ArtefactProgress_currentPoints_icon_1f {
-    width: 18rem;
-    height: 18rem;
-    margin-left: 4rem;
-    margin-top: 2rem;
-}
+        width: 18rem;
+        height: 18rem;
+        margin-left: 4rem;
+        margin-top: 2rem;
+    }
 .ArtefactProgress_level_e1 {
     color: rgba(244, 225, 179, 0.7);
     font-size: 24rem;
@@ -1275,15 +1261,15 @@
     margin-bottom: 4rem;
 }
 .ArtefactProgress_level__current_f2 {
-    margin-bottom: -8rem;
-    color: #f2c572;
-    position: relative;
-}
+        margin-bottom: -8rem;
+        color: #f2c572;
+        position: relative;
+    }
 .ArtefactProgress_level__completed_73 {
-    margin-bottom: -8rem;
-    color: #7ab300;
-    font-size: 18rem;
-}
+        margin-bottom: -8rem;
+        color: #7AB300;
+        font-size: 18rem;
+    }
 .ArtefactProgress_checkmark_d5 {
     width: 16rem;
     height: 16rem;
@@ -1300,79 +1286,79 @@
     position: relative;
 }
 .ArtefactProgress_rewards_top_fa {
-    display: flex;
-    align-items: flex-end;
-    height: 64rem;
-    margin-bottom: 1rem;
-}
+        display: flex;
+        align-items: flex-end;
+        height: 64rem;
+        margin-bottom: 1rem;
+    }
 .ArtefactProgress_rewards_top__current_d4 {
-    height: 48rem;
-    margin-bottom: 1rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.progress.selected_bg_up');
-    background-repeat: repeat-x;
-    background-position: bottom;
-}
+            height: 48rem;
+            margin-bottom: 1rem;
+            background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.progress.selected_bg_up');
+            background-repeat: repeat-x;
+            background-position: bottom;
+        }
 .ArtefactProgress_rewards_top__completed_89 {
-    height: 48rem;
-    background: radial-gradient(60.62% 100% at 50% 100%, rgba(38, 188, 71, 0.2) 0%, rgba(0, 88, 19, 0) 100%);
-}
+            height: 48rem;
+            background: radial-gradient(60.62% 100% at 50% 100%, rgba(38, 188, 71, 0.2) 0%, rgba(0, 88, 19, 0) 100%);
+        }
 .ArtefactProgress_rewards_bottom_57 {
-    height: 54rem;
-    margin-top: 1rem;
-    margin-bottom: 14rem;
-}
+        height: 54rem;
+        margin-top: 1rem;
+        margin-bottom: 14rem;
+    }
 .ArtefactProgress_rewards_bottom_57 .ArtefactProgress_bottom_gradient_9f {
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(60.62% 100% at 50% 100%, rgba(38, 188, 71, 0.2) 0%, rgba(0, 88, 19, 0) 100%);
-    position: absolute;
-    transform: rotate(180deg);
-}
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(60.62% 100% at 50% 100%, rgba(38, 188, 71, 0.2) 0%, rgba(0, 88, 19, 0) 100%);
+            position: absolute;
+            transform: rotate(180deg);
+        }
 .ArtefactProgress_rewards_bottom__current_a2 {
-    margin-bottom: 1rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.progress.selected_bg_down');
-    background-repeat: repeat-x;
-    background-position: top;
-}
+            margin-bottom: 1rem;
+            background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.progress.selected_bg_down');
+            background-repeat: repeat-x;
+            background-position: top;
+        }
 .ArtefactProgress_rewards_wrap_e7 {
-    display: flex;
-}
+        display: flex;
+    }
 .ArtefactProgress_rewards_group_46 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 .ArtefactProgress_reward_e2 {
     width: 48rem;
     height: 48rem;
     margin: 0 3rem 7rem;
 }
 .mediaExtraLarge .ArtefactProgress_reward_e2 {
-    width: 62rem;
-    height: 62rem;
-    margin: 10rem 3rem 7rem;
+        width: 62rem;
+        height: 62rem;
+        margin: 10rem 3rem 7rem;
 }
 .ArtefactProgress_divider_45 {
     width: var(--divider-width);
     height: 5rem;
     margin-top: -6rem;
     background-color: #f4e1b3;
-    opacity: 0.5;
+    opacity: .5;
     position: relative;
 }
 .ArtefactProgress_divider_end_77 {
-    width: var(--divider-width);
-    height: 45rem;
-    margin-top: 1rem;
-    background: linear-gradient(180deg, #f4e1b3 30%, rgba(244, 225, 179, 0) 100%) left;
-    opacity: 0.5;
-}
+        width: var(--divider-width);
+        height: 45rem;
+        margin-top: 1rem;
+        background: linear-gradient(180deg, #f4e1b3 30%, rgba(244, 225, 179, 0) 100%) left;
+        opacity: .5;
+    }
 .ArtefactProgress_pointsMark_b0 {
     color: #f4e1b3;
     font-size: 14rem;
     font-weight: 400;
     line-height: 18rem;
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1385,8 +1371,8 @@
     transform: translateX(50%);
 }
 .ArtefactProgress_pointsMark_group_99 {
-    position: relative;
-}
+        position: relative;
+    }
 
 body {
     background-color: #000000;
@@ -1416,16 +1402,17 @@ body {
 /* Wider aspect ratio than 1920/1080 means height is limiting factor for scale */
 
 @media (min-aspect-ratio: 1920/1080) {
-    .CosmicLobbyViewApp_base_1b {
-        --scale: 0.09vh /* 1/1080 * 100 vh */;
-    }
+
+.CosmicLobbyViewApp_base_1b {
+        --scale: 0.09vh /* 1/1080 * 100 vh */
 }
+    }
 
 .CosmicLobbyViewApp_base__fadeOut_49 {
-    animation-name: CosmicLobbyViewApp_fadeOut_ab;
-    animation-duration: 600ms;
-    animation-timing-function: ease-in;
-}
+        animation-name: CosmicLobbyViewApp_fadeOut_ab;
+        animation-duration: 600ms;
+        animation-timing-function: ease-in;
+    }
 
 .CosmicLobbyViewApp_header_3b {
     display: flex;
@@ -1443,14 +1430,14 @@ body {
 }
 
 .mediaMedium .CosmicLobbyViewApp_header_3b {
-    top: 25rem;
-    left: 30rem;
+        top: 25rem;
+        left: 30rem;
 }
 
 .mediaExtraLarge .CosmicLobbyViewApp_header_3b {
-    top: 30rem;
-    right: 40rem;
-    left: 54rem;
+        top: 30rem;
+        right: 40rem;
+        left: 54rem;
 }
 
 .CosmicLobbyViewApp_fallback_ed {
@@ -1498,8 +1485,8 @@ body {
 }
 
 .CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_routeWrapper_8a {
-    z-index: 10;
-}
+        z-index: 10;
+    }
 
 .CosmicLobbyViewApp_route_7e {
     z-index: 1;
@@ -1517,43 +1504,43 @@ body {
 }
 
 .mediaSmall .CosmicLobbyViewApp_background_00 {
-    background-size: cover;
+        background-size: cover;
 }
 
 .CosmicLobbyViewApp_background__main_80 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.main_bg_small');
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.main_bg_small');
+    }
 
 .mediaLarge .CosmicLobbyViewApp_background__main_80 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.main_bg_large');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.main_bg_large');
 }
 
 .mediaExtraLarge .CosmicLobbyViewApp_background__main_80 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.main_bg_extraLarge');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.main_bg_extraLarge');
 }
 
 .CosmicLobbyViewApp_background__artefact_36 {
-    background-image: none;
-}
+        background-image: none;
+    }
 
 .CosmicLobbyViewApp_background__pickups_00 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.background.base');
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.background.base');
+    }
 
 .mediaSmall .CosmicLobbyViewApp_background__pickups_00 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.background.small');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.background.small');
 }
 
 .mediaMedium .CosmicLobbyViewApp_background__pickups_00 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.background.medium');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.background.medium');
 }
 
 .mediaLarge .CosmicLobbyViewApp_background__pickups_00 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.background.large');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.background.large');
 }
 
 .mediaExtraLarge .CosmicLobbyViewApp_background__pickups_00 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.background.extraLarge');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.background.extraLarge');
 }
 
 .CosmicLobbyViewApp_stage_90 {
@@ -1561,29 +1548,29 @@ body {
 }
 
 .CosmicLobbyViewApp_route__enter_0c .CosmicLobbyViewApp_stage_90 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_stage_90 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .CosmicLobbyViewApp_route__enterDone_69 .CosmicLobbyViewApp_stage_90 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .CosmicLobbyViewApp_route__exit_e2 .CosmicLobbyViewApp_stage_90 {
-    opacity: 1;
-    transition: opacity 1600ms ease-in-out;
-}
+        opacity: 1;
+        transition: opacity 1600ms ease-in-out;
+    }
 
 .CosmicLobbyViewApp_route__exitActive_7a .CosmicLobbyViewApp_stage_90 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .CosmicLobbyViewApp_route__exitDone_20 .CosmicLobbyViewApp_stage_90 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .CosmicLobbyViewApp_routeBackground_b9 {
     width: 100%;
@@ -1595,28 +1582,28 @@ body {
 }
 
 .CosmicLobbyViewApp_route__enter_0c .CosmicLobbyViewApp_routeBackground_b9 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_routeBackground_b9 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .CosmicLobbyViewApp_route__enterDone_69 .CosmicLobbyViewApp_routeBackground_b9 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .CosmicLobbyViewApp_route__exit_e2 .CosmicLobbyViewApp_routeBackground_b9 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .CosmicLobbyViewApp_route__exitActive_7a .CosmicLobbyViewApp_routeBackground_b9 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .CosmicLobbyViewApp_route__exitDone_20 .CosmicLobbyViewApp_routeBackground_b9 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .CosmicLobbyViewApp_fromLeft_c6,
 .CosmicLobbyViewApp_fromLeft_2_da,
@@ -1628,59 +1615,35 @@ body {
     transition-property: transform, opacity;
 }
 
-.CosmicLobbyViewApp_route__enter_0c .CosmicLobbyViewApp_fromLeft_c6,
-.CosmicLobbyViewApp_route__enter_0c .CosmicLobbyViewApp_fromLeft_2_da,
-.CosmicLobbyViewApp_route__enter_0c .CosmicLobbyViewApp_fromLeft_3_98,
-.CosmicLobbyViewApp_route__enter_0c .CosmicLobbyViewApp_fromLeft_4_58,
-.CosmicLobbyViewApp_route__enter_0c .CosmicLobbyViewApp_fromLeft_5_91 {
-    opacity: 0;
-    transform: translateX(-100%);
-}
+.CosmicLobbyViewApp_route__enter_0c .CosmicLobbyViewApp_fromLeft_c6, .CosmicLobbyViewApp_route__enter_0c .CosmicLobbyViewApp_fromLeft_2_da, .CosmicLobbyViewApp_route__enter_0c .CosmicLobbyViewApp_fromLeft_3_98, .CosmicLobbyViewApp_route__enter_0c .CosmicLobbyViewApp_fromLeft_4_58, .CosmicLobbyViewApp_route__enter_0c .CosmicLobbyViewApp_fromLeft_5_91 {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
 
-.CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_fromLeft_c6,
-.CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_fromLeft_2_da,
-.CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_fromLeft_3_98,
-.CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_fromLeft_4_58,
-.CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_fromLeft_5_91 {
-    opacity: 0;
-    transform: translateX(-100%);
-}
+.CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_fromLeft_c6, .CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_fromLeft_2_da, .CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_fromLeft_3_98, .CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_fromLeft_4_58, .CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_fromLeft_5_91 {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
 
-.CosmicLobbyViewApp_route__enterDone_69 .CosmicLobbyViewApp_fromLeft_c6,
-.CosmicLobbyViewApp_route__enterDone_69 .CosmicLobbyViewApp_fromLeft_2_da,
-.CosmicLobbyViewApp_route__enterDone_69 .CosmicLobbyViewApp_fromLeft_3_98,
-.CosmicLobbyViewApp_route__enterDone_69 .CosmicLobbyViewApp_fromLeft_4_58,
-.CosmicLobbyViewApp_route__enterDone_69 .CosmicLobbyViewApp_fromLeft_5_91 {
-    opacity: 1;
-    transform: translateX(0%);
-}
+.CosmicLobbyViewApp_route__enterDone_69 .CosmicLobbyViewApp_fromLeft_c6, .CosmicLobbyViewApp_route__enterDone_69 .CosmicLobbyViewApp_fromLeft_2_da, .CosmicLobbyViewApp_route__enterDone_69 .CosmicLobbyViewApp_fromLeft_3_98, .CosmicLobbyViewApp_route__enterDone_69 .CosmicLobbyViewApp_fromLeft_4_58, .CosmicLobbyViewApp_route__enterDone_69 .CosmicLobbyViewApp_fromLeft_5_91 {
+        opacity: 1;
+        transform: translateX(0%);
+    }
 
-.CosmicLobbyViewApp_route__exit_e2 .CosmicLobbyViewApp_fromLeft_c6,
-.CosmicLobbyViewApp_route__exit_e2 .CosmicLobbyViewApp_fromLeft_2_da,
-.CosmicLobbyViewApp_route__exit_e2 .CosmicLobbyViewApp_fromLeft_3_98,
-.CosmicLobbyViewApp_route__exit_e2 .CosmicLobbyViewApp_fromLeft_4_58,
-.CosmicLobbyViewApp_route__exit_e2 .CosmicLobbyViewApp_fromLeft_5_91 {
-    opacity: 1;
-    transform: translateX(0%);
-}
+.CosmicLobbyViewApp_route__exit_e2 .CosmicLobbyViewApp_fromLeft_c6, .CosmicLobbyViewApp_route__exit_e2 .CosmicLobbyViewApp_fromLeft_2_da, .CosmicLobbyViewApp_route__exit_e2 .CosmicLobbyViewApp_fromLeft_3_98, .CosmicLobbyViewApp_route__exit_e2 .CosmicLobbyViewApp_fromLeft_4_58, .CosmicLobbyViewApp_route__exit_e2 .CosmicLobbyViewApp_fromLeft_5_91 {
+        opacity: 1;
+        transform: translateX(0%);
+    }
 
-.CosmicLobbyViewApp_route__exitActive_7a .CosmicLobbyViewApp_fromLeft_c6,
-.CosmicLobbyViewApp_route__exitActive_7a .CosmicLobbyViewApp_fromLeft_2_da,
-.CosmicLobbyViewApp_route__exitActive_7a .CosmicLobbyViewApp_fromLeft_3_98,
-.CosmicLobbyViewApp_route__exitActive_7a .CosmicLobbyViewApp_fromLeft_4_58,
-.CosmicLobbyViewApp_route__exitActive_7a .CosmicLobbyViewApp_fromLeft_5_91 {
-    opacity: 1;
-    transform: translateX(-100%);
-}
+.CosmicLobbyViewApp_route__exitActive_7a .CosmicLobbyViewApp_fromLeft_c6, .CosmicLobbyViewApp_route__exitActive_7a .CosmicLobbyViewApp_fromLeft_2_da, .CosmicLobbyViewApp_route__exitActive_7a .CosmicLobbyViewApp_fromLeft_3_98, .CosmicLobbyViewApp_route__exitActive_7a .CosmicLobbyViewApp_fromLeft_4_58, .CosmicLobbyViewApp_route__exitActive_7a .CosmicLobbyViewApp_fromLeft_5_91 {
+        opacity: 1;
+        transform: translateX(-100%);
+    }
 
-.CosmicLobbyViewApp_route__exitDone_20 .CosmicLobbyViewApp_fromLeft_c6,
-.CosmicLobbyViewApp_route__exitDone_20 .CosmicLobbyViewApp_fromLeft_2_da,
-.CosmicLobbyViewApp_route__exitDone_20 .CosmicLobbyViewApp_fromLeft_3_98,
-.CosmicLobbyViewApp_route__exitDone_20 .CosmicLobbyViewApp_fromLeft_4_58,
-.CosmicLobbyViewApp_route__exitDone_20 .CosmicLobbyViewApp_fromLeft_5_91 {
-    opacity: 0;
-    transform: translateX(-100%);
-}
+.CosmicLobbyViewApp_route__exitDone_20 .CosmicLobbyViewApp_fromLeft_c6, .CosmicLobbyViewApp_route__exitDone_20 .CosmicLobbyViewApp_fromLeft_2_da, .CosmicLobbyViewApp_route__exitDone_20 .CosmicLobbyViewApp_fromLeft_3_98, .CosmicLobbyViewApp_route__exitDone_20 .CosmicLobbyViewApp_fromLeft_4_58, .CosmicLobbyViewApp_route__exitDone_20 .CosmicLobbyViewApp_fromLeft_5_91 {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
 
 .CosmicLobbyViewApp_fromLeft_2_da {
     transition-delay: 50ms, 50ms;
@@ -1705,34 +1668,34 @@ body {
 }
 
 .CosmicLobbyViewApp_route__enter_0c .CosmicLobbyViewApp_fromBelow_4f {
-    opacity: 0;
-    transform: translateY(100%);
-}
+        opacity: 0;
+        transform: translateY(100%);
+    }
 
 .CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_fromBelow_4f {
-    opacity: 0;
-    transform: translateY(100%);
-}
+        opacity: 0;
+        transform: translateY(100%);
+    }
 
 .CosmicLobbyViewApp_route__enterDone_69 .CosmicLobbyViewApp_fromBelow_4f {
-    opacity: 1;
-    transform: translateY(0%);
-}
+        opacity: 1;
+        transform: translateY(0%);
+    }
 
 .CosmicLobbyViewApp_route__exit_e2 .CosmicLobbyViewApp_fromBelow_4f {
-    opacity: 1;
-    transform: translateY(0%);
-}
+        opacity: 1;
+        transform: translateY(0%);
+    }
 
 .CosmicLobbyViewApp_route__exitActive_7a .CosmicLobbyViewApp_fromBelow_4f {
-    opacity: 1;
-    transform: translateY(100%);
-}
+        opacity: 1;
+        transform: translateY(100%);
+    }
 
 .CosmicLobbyViewApp_route__exitDone_20 .CosmicLobbyViewApp_fromBelow_4f {
-    opacity: 0;
-    transform: translateY(100%);
-}
+        opacity: 0;
+        transform: translateY(100%);
+    }
 
 .CosmicLobbyViewApp_fromBelow_2_c1 {
     transition-timing-function: ease-in-out, ease-in-out;
@@ -1741,62 +1704,62 @@ body {
 }
 
 .CosmicLobbyViewApp_route__enter_0c .CosmicLobbyViewApp_fromBelow_2_c1 {
-    opacity: 0;
-    transform: translate(-50%, 100%);
-}
+        opacity: 0;
+        transform: translate(-50%, 100%);
+    }
 
 .CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_fromBelow_2_c1 {
-    opacity: 0;
-    transform: translate(-50%, 100%);
-}
+        opacity: 0;
+        transform: translate(-50%, 100%);
+    }
 
 .CosmicLobbyViewApp_route__enterDone_69 .CosmicLobbyViewApp_fromBelow_2_c1 {
-    opacity: 1;
-    transform: translate(-50%, 0%);
-}
+        opacity: 1;
+        transform: translate(-50%, 0%);
+    }
 
 .CosmicLobbyViewApp_route__exit_e2 .CosmicLobbyViewApp_fromBelow_2_c1 {
-    opacity: 1;
-    transform: translate(-50%, 0%);
-}
+        opacity: 1;
+        transform: translate(-50%, 0%);
+    }
 
 .CosmicLobbyViewApp_route__exitActive_7a .CosmicLobbyViewApp_fromBelow_2_c1 {
-    opacity: 1;
-    transform: translate(-50%, 100%);
-}
+        opacity: 1;
+        transform: translate(-50%, 100%);
+    }
 
 .CosmicLobbyViewApp_route__exitDone_20 .CosmicLobbyViewApp_fromBelow_2_c1 {
-    opacity: 0;
-    transform: translate(-50%, 100%);
-}
+        opacity: 0;
+        transform: translate(-50%, 100%);
+    }
 
 .CosmicLobbyViewApp_fadeAfterTransition_ac {
     transition: opacity 300ms ease-in-out 300ms;
 }
 
 .CosmicLobbyViewApp_route__enter_0c .CosmicLobbyViewApp_fadeAfterTransition_ac {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .CosmicLobbyViewApp_route__enterActive_72 .CosmicLobbyViewApp_fadeAfterTransition_ac {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .CosmicLobbyViewApp_route__enterDone_69 .CosmicLobbyViewApp_fadeAfterTransition_ac {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .CosmicLobbyViewApp_route__exit_e2 .CosmicLobbyViewApp_fadeAfterTransition_ac {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .CosmicLobbyViewApp_route__exitActive_7a .CosmicLobbyViewApp_fadeAfterTransition_ac {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .CosmicLobbyViewApp_route__exitDone_20 .CosmicLobbyViewApp_fadeAfterTransition_ac {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 @keyframes CosmicLobbyViewApp_fadeIn_c8 {
     from {
@@ -1824,14 +1787,14 @@ body {
     position: relative;
 }
 
-.mediaMedium .Medal_base_71 {
-    width: 100rem;
-    height: 100rem;
+    .mediaMedium .Medal_base_71 {
+        width: 100rem;
+        height: 100rem;
 }
 
-.mediaExtraLarge .Medal_base_71 {
-    width: 140rem;
-    height: 140rem;
+    .mediaExtraLarge .Medal_base_71 {
+        width: 140rem;
+        height: 140rem;
 }
 .Medal_img_52 {
     width: 100%;
@@ -1846,37 +1809,37 @@ body {
     z-index: 1;
 }
 .Medal_base__main_e2 .Medal_tooltipArea_2f {
-    right: 0;
-    left: auto;
-}
+        right: 0;
+        left: auto;
+    }
 .mediaMedium .Medal_tooltipArea_2f {
-    width: 82rem;
-    height: 100rem;
+        width: 82rem;
+        height: 100rem;
 }
 .mediaExtraLarge .Medal_tooltipArea_2f {
-    width: 120rem;
-    height: 140rem;
+        width: 120rem;
+        height: 140rem;
 }
 .Medal_raysBg_35 {
     width: 152rem;
     height: 152rem;
     background: url('R.images.cosmic_event.gui.maps.icons.artefact.rewards.highlight_small') center / contain no-repeat;
-    opacity: 0.8;
+    opacity: .8;
     position: absolute;
     top: -42rem;
     right: -35rem;
 }
 .mediaMedium .Medal_raysBg_35 {
-    width: 184rem;
-    height: 184rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.rewards.highlight_big');
-    right: -45rem;
+        width: 184rem;
+        height: 184rem;
+        background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.rewards.highlight_big');
+        right: -45rem;
 }
 .mediaExtraLarge .Medal_raysBg_35 {
-    width: 258rem;
-    height: 258rem;
-    top: -60rem;
-    right: -60rem;
+        width: 258rem;
+        height: 258rem;
+        top: -60rem;
+        right: -60rem;
 }
 
 .ArtefactRoute_base_32 {
@@ -1889,8 +1852,8 @@ body {
     overflow: hidden;
     position: relative;
 }
-.mediaLarge .ArtefactRoute_base_32 {
-    padding: 100rem 25rem;
+    .mediaLarge .ArtefactRoute_base_32 {
+        padding: 100rem 25rem;
 }
 .ArtefactRoute_videoProgression_15 {
     width: 100%;
@@ -1921,10 +1884,10 @@ body {
     transform: translateX(-50%);
 }
 .mediaMedium .ArtefactRoute_titleWrapper_54 {
-    top: 18rem;
+        top: 18rem;
 }
 .mediaExtraLarge .ArtefactRoute_titleWrapper_54 {
-    top: 32rem;
+        top: 32rem;
 }
 .ArtefactRoute_titleDecoration_2e {
     width: 58rem;
@@ -1932,11 +1895,11 @@ body {
     background: url('R.images.cosmic_event.gui.maps.icons.artefact.decoration_small') center / contain no-repeat;
 }
 .ArtefactRoute_titleDecoration__rotate_d6 {
-    transform: rotate(180deg);
-}
+        transform: rotate(180deg);
+    }
 .mediaMedium .ArtefactRoute_titleDecoration_2e {
-    height: 62rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.artefact.decoration_big') center / contain no-repeat;
+        height: 62rem;
+        background: url('R.images.cosmic_event.gui.maps.icons.artefact.decoration_big') center / contain no-repeat;
 }
 .ArtefactRoute_title_de {
     color: #f4e1b3;
@@ -1944,20 +1907,20 @@ body {
     font-weight: 700;
     line-height: 110%;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
     margin: -6rem 10rem 0;
     position: relative;
 }
 .mediaMedium .ArtefactRoute_title_de {
-    margin: -10rem 16rem 0;
-    font-size: 54rem;
+        margin: -10rem 16rem 0;
+        font-size: 54rem;
 }
 .mediaLarge .ArtefactRoute_title_de {
-    margin: -8rem 16rem 0;
+        margin: -8rem 16rem 0;
 }
 .mediaExtraLarge .ArtefactRoute_title_de {
-    margin: -10rem 16rem 0;
-    font-size: 73rem;
+        margin: -10rem 16rem 0;
+        font-size: 73rem;
 }
 .ArtefactRoute_middleBlock_1f {
     display: flex;
@@ -1970,26 +1933,26 @@ body {
     left: 20rem;
 }
 .mediaSmall .ArtefactRoute_middleBlock_1f {
-    top: 87rem;
+        top: 87rem;
 }
 .mediaMedium .ArtefactRoute_middleBlock_1f {
-    top: 107rem;
+        top: 107rem;
 }
 .mediaLarge .ArtefactRoute_middleBlock_1f {
-    top: 127rem;
+        top: 127rem;
 }
 .mediaExtraLarge .ArtefactRoute_middleBlock_1f {
-    margin-top: 73rem;
+        margin-top: 73rem;
 }
 .ArtefactRoute_actionsList_39 {
     display: flex;
     flex-direction: column;
 }
 .mediaLarge .ArtefactRoute_actionsList_39 {
-    margin-left: 10rem;
+        margin-left: 10rem;
 }
 .mediaExtraLarge .ArtefactRoute_actionsList_39 {
-    margin-left: 28rem;
+        margin-left: 28rem;
 }
 .ArtefactRoute_actionsTitle_6b,
 .ArtefactRoute_medalsTitle_8d {
@@ -1998,21 +1961,19 @@ body {
     font-weight: 500;
     line-height: 21rem;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
 }
-.mediaMedium .ArtefactRoute_actionsTitle_6b,
-.mediaMedium .ArtefactRoute_medalsTitle_8d {
-    font-size: 20rem;
+.mediaMedium .ArtefactRoute_actionsTitle_6b, .mediaMedium .ArtefactRoute_medalsTitle_8d {
+        font-size: 20rem;
 }
-.mediaExtraLarge .ArtefactRoute_actionsTitle_6b,
-.mediaExtraLarge .ArtefactRoute_medalsTitle_8d {
-    font-size: 28rem;
+.mediaExtraLarge .ArtefactRoute_actionsTitle_6b, .mediaExtraLarge .ArtefactRoute_medalsTitle_8d {
+        font-size: 28rem;
 }
 .ArtefactRoute_medalsTitle_8d {
     margin-right: 20rem;
 }
 .mediaMedium .ArtefactRoute_medalsTitle_8d {
-    margin-right: 30rem;
+        margin-right: 30rem;
 }
 .ArtefactRoute_medalsWrapper_89 {
     display: flex;
@@ -2022,7 +1983,7 @@ body {
     position: relative;
 }
 .mediaExtraLarge .ArtefactRoute_medalsWrapper_89 {
-    margin-right: -25rem;
+        margin-right: -25rem;
 }
 .ArtefactRoute_medalsList_f6 {
     width: 236rem;
@@ -2032,43 +1993,42 @@ body {
     position: relative;
 }
 .mediaMedium .ArtefactRoute_medalsList_f6 {
-    width: 328rem;
-    height: 106rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.rewards.research_big');
+        width: 328rem;
+        height: 106rem;
+        background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.rewards.research_big');
 }
 .mediaExtraLarge .ArtefactRoute_medalsList_f6 {
-    width: 459rem;
-    height: 120rem;
-    margin-top: 28rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.rewards.research_large');
+        width: 459rem;
+        height: 120rem;
+        margin-top: 28rem;
+        background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.rewards.research_large');
 }
 .ArtefactRoute_firstMedal_16,
 .ArtefactRoute_secondMedal_7c {
     margin-top: 6rem;
 }
-.mediaExtraLarge .ArtefactRoute_firstMedal_16,
-.mediaExtraLarge .ArtefactRoute_secondMedal_7c {
-    margin-top: 11rem;
+.mediaExtraLarge .ArtefactRoute_firstMedal_16, .mediaExtraLarge .ArtefactRoute_secondMedal_7c {
+        margin-top: 11rem;
 }
 .ArtefactRoute_firstMedal_16 {
     position: absolute;
     right: 57rem;
 }
 .mediaMedium .ArtefactRoute_firstMedal_16 {
-    right: 74rem;
+        right: 74rem;
 }
 .mediaExtraLarge .ArtefactRoute_firstMedal_16 {
-    right: 113rem;
+        right: 113rem;
 }
 .ArtefactRoute_secondMedal_7c {
     position: absolute;
     right: 3rem;
 }
 .mediaMedium .ArtefactRoute_secondMedal_7c {
-    right: 10rem;
+        right: 10rem;
 }
 .mediaExtraLarge .ArtefactRoute_secondMedal_7c {
-    right: 15rem;
+        right: 15rem;
 }
 .ArtefactRoute_actions_heading_d4 {
     color: #f4e1b3;
@@ -2076,13 +2036,13 @@ body {
     font-weight: 500;
     line-height: 21rem;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
     display: none;
     margin-top: 10rem;
-    text-shadow: 0 0 2rem rgba(1, 3, 38, 0.5);
+    text-shadow: 0 0 2rem rgba(1, 3, 38, .5);
 }
 .mediaMedium .ArtefactRoute_actions_heading_d4 {
-    display: flex;
+        display: flex;
 }
 .ArtefactRoute_actions_be {
     display: flex;
@@ -2094,7 +2054,7 @@ body {
     margin-top: 12rem;
 }
 .mediaExtraLarge .ArtefactRoute_actions_be {
-    margin-top: 20rem;
+        margin-top: 20rem;
 }
 .ArtefactRoute_actionItem_ae {
     margin-bottom: 2rem;
@@ -2106,7 +2066,7 @@ body {
     left: 0;
 }
 .mediaExtraLarge .ArtefactRoute_progress_84 {
-    bottom: 40rem;
+        bottom: 40rem;
 }
 
 .CustomSubtitles_base_45 {
@@ -2116,16 +2076,14 @@ body {
     left: 50%;
     z-index: 10;
     transform: translateX(-50%) translateY(10rem);
-    transition:
-        opacity 0.3s ease-in-out,
-        transform 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     pointer-events: none;
 }
 
-.CustomSubtitles_base_45.CustomSubtitles_visible_fb {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
+    .CustomSubtitles_base_45.CustomSubtitles_visible_fb {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
 
 .CustomSubtitles_text_40 {
     max-width: 80vw;
@@ -2134,7 +2092,7 @@ body {
     border-radius: 4rem;
     box-shadow: 0 2rem 8rem rgba(0, 0, 0, 0.3);
     background: #000000;
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 36rem;
     line-height: 1.4;
     text-align: center;
@@ -2156,7 +2114,7 @@ body {
     width: 48rem;
     height: 48rem;
     border: none;
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 20rem;
     font-weight: 600;
     line-height: 40rem;
@@ -2310,7 +2268,7 @@ body {
 .Video_volumeSliderFill_82 {
     height: 100%;
     border-radius: 2rem;
-    background: #ffffff;
+    background: #FFFFFF;
     position: absolute;
     top: 0;
     left: 0;
@@ -2324,7 +2282,7 @@ body {
     margin-top: -6rem;
     border-radius: 50%;
     box-shadow: 0 0 4rem rgba(0, 0, 0, 0.3);
-    background: #ffffff;
+    background: #FFFFFF;
     position: absolute;
     top: 50%;
     left: 0;
@@ -2334,8 +2292,8 @@ body {
 }
 
 .Video_volumeSlider_ec:hover .Video_volumeSliderThumb_30 {
-    box-shadow: 0 0 8rem rgba(255, 255, 255, 0.5);
-}
+        box-shadow: 0 0 8rem rgba(255, 255, 255, 0.5);
+    }
 
 .Artefact_base_56 {
     display: flex;
@@ -2348,16 +2306,14 @@ body {
     height: 132rem;
 }
 
-.mediaMedium .Artefact_image_be,
-.mediaMedium .Artefact_hover_63 {
-    width: 200rem;
-    height: 160rem;
+.mediaMedium .Artefact_image_be, .mediaMedium .Artefact_hover_63 {
+        width: 200rem;
+        height: 160rem;
 }
 
-.mediaExtraLarge .Artefact_image_be,
-.mediaExtraLarge .Artefact_hover_63 {
-    width: 240rem;
-    height: 192rem;
+.mediaExtraLarge .Artefact_image_be, .mediaExtraLarge .Artefact_hover_63 {
+        width: 240rem;
+        height: 192rem;
 }
 
 .Artefact_image_be {
@@ -2366,23 +2322,23 @@ body {
 }
 
 .mediaMedium .Artefact_image_be {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.medium.base');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.medium.base');
 }
 
 .mediaExtraLarge .Artefact_image_be {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.large.base');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.large.base');
 }
 
 .Artefact_base__completed_13 .Artefact_image_be {
-    background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.small.finished') no-repeat center / cover;
-}
+        background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.small.finished') no-repeat center / cover;
+    }
 
 .mediaMedium .Artefact_base__completed_13 .Artefact_image_be {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.medium.finished');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.medium.finished');
 }
 
 .mediaExtraLarge .Artefact_base__completed_13 .Artefact_image_be {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.large.finished');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.large.finished');
 }
 
 .Artefact_hover_63 {
@@ -2393,29 +2349,28 @@ body {
 }
 
 .mediaMedium .Artefact_hover_63 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.medium.base_hover');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.medium.base_hover');
 }
 
 .mediaExtraLarge .Artefact_hover_63 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.large.base_hover');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.large.base_hover');
 }
 
 .Artefact_base__completed_13 .Artefact_hover_63 {
-    background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.small.finished_hover') no-repeat center /
-        cover;
-}
+        background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.small.finished_hover') no-repeat center / cover;
+    }
 
 .mediaMedium .Artefact_base__completed_13 .Artefact_hover_63 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.medium.finished_hover');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.medium.finished_hover');
 }
 
 .mediaExtraLarge .Artefact_base__completed_13 .Artefact_hover_63 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.large.finished_hover');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.large.finished_hover');
 }
 
 .Artefact_base__hovered_a6 .Artefact_hover_63 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .ShopEntryPoint_base_88 {
     width: 214rem;
@@ -2425,14 +2380,14 @@ body {
     cursor: pointer;
 }
 
-.mediaMedium .ShopEntryPoint_base_88 {
-    width: 290rem;
-    height: 234rem;
+    .mediaMedium .ShopEntryPoint_base_88 {
+        width: 290rem;
+        height: 234rem;
 }
 
-.mediaExtraLarge .ShopEntryPoint_base_88 {
-    width: 348rem;
-    height: 280rem;
+    .mediaExtraLarge .ShopEntryPoint_base_88 {
+        width: 348rem;
+        height: 280rem;
 }
 .ShopEntryPoint_hover_f3 {
     width: 100%;
@@ -2446,14 +2401,14 @@ body {
     transition: opacity 0.2s ease;
 }
 .mediaMedium .ShopEntryPoint_hover_f3 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.shop_entry_point.shop_hover');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.shop_entry_point.shop_hover');
 }
 .mediaExtraLarge .ShopEntryPoint_hover_f3 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.shop_entry_point.shop_large_hover');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.shop_entry_point.shop_large_hover');
 }
 .ShopEntryPoint_base_88:hover .ShopEntryPoint_hover_f3 {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .ShopEntryPoint_particles_f6 {
     width: 100%;
     height: 100%;
@@ -2468,14 +2423,14 @@ body {
     position: relative;
 }
 
-.mediaMedium .RulesEntryPoint_base_3b {
-    width: 245rem;
-    height: 351rem;
+    .mediaMedium .RulesEntryPoint_base_3b {
+        width: 245rem;
+        height: 351rem;
 }
 
-.mediaExtraLarge .RulesEntryPoint_base_3b {
-    width: 342rem;
-    height: 580rem;
+    .mediaExtraLarge .RulesEntryPoint_base_3b {
+        width: 342rem;
+        height: 580rem;
 }
 
 .RulesEntryPoint_background_52 {
@@ -2488,11 +2443,11 @@ body {
 }
 
 .mediaMedium .RulesEntryPoint_background_52 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.entry_point.medium');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.entry_point.medium');
 }
 
 .mediaExtraLarge .RulesEntryPoint_background_52 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.entry_point.large');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.entry_point.large');
 }
 
 .RulesEntryPoint_hover_fd {
@@ -2507,16 +2462,16 @@ body {
 }
 
 .mediaMedium .RulesEntryPoint_hover_fd {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.entry_point.medium_hover');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.entry_point.medium_hover');
 }
 
 .mediaExtraLarge .RulesEntryPoint_hover_fd {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.entry_point.large_hover');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.entry_point.large_hover');
 }
 
 .RulesEntryPoint_base_3b:hover .RulesEntryPoint_hover_fd {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 .Mission_base_3a {
     display: flex;
@@ -2529,17 +2484,17 @@ body {
     position: relative;
 }
 
-.mediaMedium .Mission_base_3a {
-    flex-direction: row;
-    align-items: stretch;
-    margin-bottom: 1rem;
-    padding-left: 55rem;
+    .mediaMedium .Mission_base_3a {
+        flex-direction: row;
+        align-items: stretch;
+        margin-bottom: 1rem;
+        padding-left: 55rem;
 }
 
-.mediaExtraLarge .Mission_base_3a {
-    width: 100%;
-    height: 78rem;
-    padding-left: 95rem;
+    .mediaExtraLarge .Mission_base_3a {
+        width: 100%;
+        height: 78rem;
+        padding-left: 95rem;
 }
 .Mission_doneBg_f0 {
     display: flex;
@@ -2560,18 +2515,18 @@ body {
     position: relative;
 }
 .mediaMedium .Mission_header_c5 {
-    width: 100rem;
-    height: 100rem;
-    position: absolute;
-    top: -20rem;
-    left: -18rem;
+        width: 100rem;
+        height: 100rem;
+        position: absolute;
+        top: -20rem;
+        left: -18rem;
 }
 .mediaExtraLarge .Mission_header_c5 {
-    width: 130rem;
-    height: 130rem;
-    position: absolute;
-    top: -26rem;
-    left: -18rem;
+        width: 130rem;
+        height: 130rem;
+        position: absolute;
+        top: -26rem;
+        left: -18rem;
 }
 .Mission_points_92 {
     color: #f4e1b3;
@@ -2579,7 +2534,7 @@ body {
     font-weight: 500;
     line-height: 21rem;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -2597,23 +2552,23 @@ body {
     font-size: 16rem;
     font-weight: 400;
     line-height: 19rem;
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
     display: none;
     padding: 0 12rem 0 18rem;
 }
 .mediaMedium .Mission_body_c9 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        flex: 1 1 auto;
 }
 .mediaLarge .Mission_body_c9 {
-    padding: 0 12rem 0 22rem;
+        padding: 0 12rem 0 22rem;
 }
 .mediaExtraLarge .Mission_body_c9 {
-    width: 392rem;
-    padding: 0 12rem 0 18rem;
+        width: 392rem;
+        padding: 0 12rem 0 18rem;
 }
 .Mission_title_d6 {
     color: #93c8f1;
@@ -2626,10 +2581,10 @@ body {
     position: relative;
 }
 .mediaMedium .Mission_title_d6 {
-    width: 302rem;
+        width: 302rem;
 }
 .mediaLarge .Mission_title_d6 {
-    margin-bottom: 2rem;
+        margin-bottom: 2rem;
 }
 .mediaExtraLarge .Mission_title_d6 {
     color: #93c8f1;
@@ -2637,15 +2592,15 @@ body {
     font-weight: 400;
     line-height: 21rem;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-    width: 392rem;
-    margin-bottom: 0;
-    letter-spacing: 0.72rem;
+    letter-spacing: .04em;
+        width: 392rem;
+        margin-bottom: 0;
+        letter-spacing: 0.72rem;
 }
 .Mission_base__done_69 .Mission_title_d6 {
-    max-width: 260rem;
-    white-space: pre-wrap;
-}
+        max-width: 260rem;
+        white-space: pre-wrap;
+    }
 .Mission_progression_1c {
     display: flex;
     flex-direction: row;
@@ -2658,20 +2613,20 @@ body {
     letter-spacing: 0.56rem;
 }
 .mediaLarge .Mission_progression_1c {
-    line-height: 18rem;
+        line-height: 18rem;
 }
 .mediaExtraLarge .Mission_progression_1c {
-    margin: 0 0 11rem;
+        margin: 0 0 11rem;
 }
 .Mission_progression_current_c3 {
-    color: #6fb5ec;
-}
+        color: #6fb5ec;
+    }
 .Mission_progressBar_71 {
     width: 233rem;
     margin-left: 2rem;
 }
 .mediaExtraLarge .Mission_progressBar_71 {
-    width: 302rem;
+        width: 302rem;
 }
 .Mission_base__done_69 .Mission_progression_1c,
 .Mission_base__done_69 .Mission_progressBar_71 {
@@ -2689,31 +2644,19 @@ body {
     position: relative;
 }
 
-.mediaMedium .VehicleSelect_rover_6d,
-.mediaMedium .VehicleSelect_roverBg_35,
-.mediaMedium .VehicleSelect_roverHover_80,
-.mediaMedium .VehicleSelect_roverBattle_4c,
-.mediaMedium .VehicleSelect_roverActiveBg_2a {
-    width: 480rem;
-    height: 360rem;
+    .mediaMedium .VehicleSelect_rover_6d, .mediaMedium .VehicleSelect_roverBg_35, .mediaMedium .VehicleSelect_roverHover_80, .mediaMedium .VehicleSelect_roverBattle_4c, .mediaMedium .VehicleSelect_roverActiveBg_2a {
+        width: 480rem;
+        height: 360rem;
 }
 
-.mediaLarge .VehicleSelect_rover_6d,
-.mediaLarge .VehicleSelect_roverBg_35,
-.mediaLarge .VehicleSelect_roverHover_80,
-.mediaLarge .VehicleSelect_roverBattle_4c,
-.mediaLarge .VehicleSelect_roverActiveBg_2a {
-    width: 560rem;
-    height: 420rem;
+    .mediaLarge .VehicleSelect_rover_6d, .mediaLarge .VehicleSelect_roverBg_35, .mediaLarge .VehicleSelect_roverHover_80, .mediaLarge .VehicleSelect_roverBattle_4c, .mediaLarge .VehicleSelect_roverActiveBg_2a {
+        width: 560rem;
+        height: 420rem;
 }
 
-.mediaExtraLarge .VehicleSelect_rover_6d,
-.mediaExtraLarge .VehicleSelect_roverBg_35,
-.mediaExtraLarge .VehicleSelect_roverHover_80,
-.mediaExtraLarge .VehicleSelect_roverBattle_4c,
-.mediaExtraLarge .VehicleSelect_roverActiveBg_2a {
-    width: 720rem;
-    height: 540rem;
+    .mediaExtraLarge .VehicleSelect_rover_6d, .mediaExtraLarge .VehicleSelect_roverBg_35, .mediaExtraLarge .VehicleSelect_roverHover_80, .mediaExtraLarge .VehicleSelect_roverBattle_4c, .mediaExtraLarge .VehicleSelect_roverActiveBg_2a {
+        width: 720rem;
+        height: 540rem;
 }
 .VehicleSelect_roverBg_35 {
     opacity: 1;
@@ -2721,126 +2664,122 @@ body {
     z-index: 3;
 }
 .VehicleSelect_rover__old_66 .VehicleSelect_roverBg_35 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.small');
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.small');
+    }
 .mediaMedium .VehicleSelect_rover__old_66 .VehicleSelect_roverBg_35 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.medium');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.medium');
 }
 .mediaLarge .VehicleSelect_rover__old_66 .VehicleSelect_roverBg_35 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.large');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.large');
 }
 .VehicleSelect_rover__new_1d .VehicleSelect_roverBg_35 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.small');
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.small');
+    }
 .mediaMedium .VehicleSelect_rover__new_1d .VehicleSelect_roverBg_35 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.medium');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.medium');
 }
 .mediaLarge .VehicleSelect_rover__new_1d .VehicleSelect_roverBg_35 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.large');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.large');
 }
 .VehicleSelect_roverHover_80 {
     opacity: 0;
     position: absolute;
     z-index: 4;
-    transition: opacity ease-in-out 0.16s;
+    transition: opacity ease-in-out .16s;
 }
 .VehicleSelect_rover__new_1d .VehicleSelect_roverHover_80 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_small');
-    opacity: 0;
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_small');
+        opacity: 0;
+    }
 .mediaMedium .VehicleSelect_rover__new_1d .VehicleSelect_roverHover_80 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_medium');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_medium');
 }
 .mediaLarge .VehicleSelect_rover__new_1d .VehicleSelect_roverHover_80 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_large');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_large');
 }
 .VehicleSelect_rover__old_66 .VehicleSelect_roverHover_80 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_small');
-    opacity: 0;
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_small');
+        opacity: 0;
+    }
 .mediaMedium .VehicleSelect_rover__old_66 .VehicleSelect_roverHover_80 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_medium');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_medium');
 }
 .mediaLarge .VehicleSelect_rover__old_66 .VehicleSelect_roverHover_80 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_large');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_large');
 }
 .VehicleSelect_roverActiveBg_2a {
     opacity: 0;
     position: absolute;
     z-index: 3;
-    transition: opacity ease-in-out 0.16s;
+    transition: opacity ease-in-out .16s;
 }
 .VehicleSelect_rover__old_66.VehicleSelect_rover__selected_21 .VehicleSelect_roverActiveBg_2a {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_small');
-    opacity: 1;
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_small');
+        opacity: 1;
+    }
 .mediaMedium .VehicleSelect_rover__old_66.VehicleSelect_rover__selected_21 .VehicleSelect_roverActiveBg_2a {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_medium');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_medium');
 }
 .mediaLarge .VehicleSelect_rover__old_66.VehicleSelect_rover__selected_21 .VehicleSelect_roverActiveBg_2a {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_large');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_large');
 }
 .VehicleSelect_rover__new_1d.VehicleSelect_rover__selected_21 .VehicleSelect_roverActiveBg_2a {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_small');
-    opacity: 1;
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_small');
+        opacity: 1;
+    }
 .mediaMedium .VehicleSelect_rover__new_1d.VehicleSelect_rover__selected_21 .VehicleSelect_roverActiveBg_2a {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_medium');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_medium');
 }
 .mediaLarge .VehicleSelect_rover__new_1d.VehicleSelect_rover__selected_21 .VehicleSelect_roverActiveBg_2a {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_large');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_large');
 }
 .VehicleSelect_roverBattle_4c {
-    opacity: 0.5;
+    opacity: .5;
     position: absolute;
     z-index: 5;
 }
 .VehicleSelect_rover__old_66 .VehicleSelect_roverBattle_4c {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.battle_small');
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.battle_small');
+    }
 .mediaMedium .VehicleSelect_rover__old_66 .VehicleSelect_roverBattle_4c {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.battle_medium');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.battle_medium');
 }
 .mediaLarge .VehicleSelect_rover__old_66 .VehicleSelect_roverBattle_4c {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.battle_large');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.battle_large');
 }
 .VehicleSelect_rover__new_1d .VehicleSelect_roverBattle_4c {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.battle_small');
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.battle_small');
+    }
 .mediaMedium .VehicleSelect_rover__new_1d .VehicleSelect_roverBattle_4c {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.battle_medium');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.battle_medium');
 }
 .mediaLarge .VehicleSelect_rover__new_1d .VehicleSelect_roverBattle_4c {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.battle_large');
+            background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.battle_large');
 }
 .mediaLarge .VehicleSelect_roverBattle_4c {
-    width: 560rem;
-    height: 420rem;
+        width: 560rem;
+        height: 420rem;
 }
 .mediaExtraLarge .VehicleSelect_roverBattle_4c {
-    width: 720rem;
-    height: 540rem;
+        width: 720rem;
+        height: 540rem;
 }
-.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__old_66 .VehicleSelect_roverBg_35,
-.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__new_1d .VehicleSelect_roverBg_35 {
-    opacity: 0.7;
-}
-.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__old_66 .VehicleSelect_roverActiveBg_2a,
-.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__new_1d .VehicleSelect_roverActiveBg_2a {
-    opacity: 0;
-}
-.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__old_66 .VehicleSelect_roverBattle_4c,
-.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__new_1d .VehicleSelect_roverBattle_4c {
-    opacity: 0.5;
-}
+.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__old_66 .VehicleSelect_roverBg_35, .VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__new_1d .VehicleSelect_roverBg_35 {
+        opacity: .7;
+    }
+.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__old_66 .VehicleSelect_roverActiveBg_2a, .VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__new_1d .VehicleSelect_roverActiveBg_2a {
+        opacity: 0;
+    }
+.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__old_66 .VehicleSelect_roverBattle_4c, .VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__new_1d .VehicleSelect_roverBattle_4c {
+        opacity: .5;
+    }
 .VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__selected_21 .VehicleSelect_roverBattle_4c {
-    opacity: 1;
-}
+            opacity: 1;
+        }
 .VehicleSelect_glow_f9 {
     width: 185rem;
     height: 200rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.glow.small') no-repeat
-        center/cover;
+    background: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.glow.small') no-repeat center/cover;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -2848,18 +2787,15 @@ body {
     transform: translateX(-50%) translateY(-50%);
 }
 .mediaExtraLarge .VehicleSelect_glow_f9 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.glow.large');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.glow.large');
 }
 .VehicleSelect_battleLabel_4d {
-    color: #fdd1d4;
+    color: #FDD1D4;
     font-size: 22rem;
     font-weight: 700;
     line-height: 19rem;
-    letter-spacing: 0.04em;
-    text-shadow:
-        0 0 4rem rgba(255, 112, 112, 0.5),
-        0 0 12rem #d03e45,
-        0 0 20rem #d03e45;
+    letter-spacing: .04em;
+    text-shadow: 0 0 4rem rgba(255, 112, 112, 0.5), 0 0 12rem #d03e45, 0 0 20rem #d03e45;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -2867,19 +2803,19 @@ body {
     transform: translate(-50%, -50%);
 }
 .mediaMedium .VehicleSelect_battleLabel_4d {
-    color: #fdd1d4;
+    color: #FDD1D4;
     font-size: 28rem;
     font-weight: 700;
     line-height: 30rem;
     letter-spacing: 1.12rem;
 }
 .mediaExtraLarge .VehicleSelect_battleLabel_4d {
-    color: #fdd1d4;
+    color: #FDD1D4;
     font-size: 36rem;
     font-weight: 700;
     line-height: 110%;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
 }
 .VehicleSelect_actionBlock_e1 {
     width: 75%;
@@ -2897,13 +2833,13 @@ body {
     height: 48rem;
     position: relative;
 }
-.mediaLarge .AbilityBlock_base_51 {
-    width: 64rem;
-    height: 64rem;
+    .mediaLarge .AbilityBlock_base_51 {
+        width: 64rem;
+        height: 64rem;
 }
-.mediaExtraLarge .AbilityBlock_base_51 {
-    width: 80rem;
-    height: 80rem;
+    .mediaExtraLarge .AbilityBlock_base_51 {
+        width: 80rem;
+        height: 80rem;
 }
 .AbilityBlock_imageContainer_ad {
     display: flex;
@@ -2920,12 +2856,12 @@ body {
     height: 36rem;
 }
 .mediaLarge .AbilityBlock_img_c5 {
-    width: 48rem;
-    height: 48rem;
+        width: 48rem;
+        height: 48rem;
 }
 .mediaExtraLarge .AbilityBlock_img_c5 {
-    width: 62rem;
-    height: 62rem;
+        width: 62rem;
+        height: 62rem;
 }
 .AbilityBlock_textContainer_bb {
     display: flex;
@@ -2933,17 +2869,17 @@ body {
     width: 140rem;
 }
 .mediaMedium .AbilityBlock_textContainer_bb {
-    width: 154rem;
+        width: 154rem;
 }
 .mediaExtraLarge .AbilityBlock_textContainer_bb {
-    width: 200rem;
+        width: 200rem;
 }
 .AbilityBlock_title_60 {
     color: #93c8f1;
     font-size: 14rem;
     font-weight: 400;
     line-height: 18rem;
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
     margin-left: 10rem;
     text-shadow: 0 0 8rem #2d85c8;
     text-transform: uppercase;
@@ -2954,12 +2890,12 @@ body {
     font-size: 16rem;
     font-weight: 400;
     line-height: 19rem;
-    letter-spacing: 0.04em;
-    margin-left: 12rem;
+    letter-spacing: .04em;
+        margin-left: 12rem;
 }
 .mediaExtraLarge .AbilityBlock_title_60 {
-    margin-left: 16rem;
-    font-size: 21rem;
+        margin-left: 16rem;
+        font-size: 21rem;
 }
 
 .MainRoute_base_bb {
@@ -3003,40 +2939,40 @@ body {
     cursor: pointer;
 }
 .mediaMedium .MainRoute_artefact_88 {
-    width: 200rem;
-    height: 160rem;
+        width: 200rem;
+        height: 160rem;
 }
 .mediaExtraLarge .MainRoute_artefact_88 {
-    width: 240rem;
-    height: 192rem;
+        width: 240rem;
+        height: 192rem;
 }
 .MainRoute_artefact_info_7b {
-    position: absolute;
-    top: 24rem;
-    left: 50%;
-    z-index: 10;
-    transform: translateX(-50%);
-}
+        position: absolute;
+        top: 24rem;
+        left: 50%;
+        z-index: 10;
+        transform: translateX(-50%);
+    }
 .mediaMedium .MainRoute_artefact_info_7b {
-    top: 31rem;
+            top: 31rem;
 }
 .MainRoute_artefact_infoNumber_a4 {
-    width: 48rem;
-    height: 48rem;
-    background-image: var(--glitch-bg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    position: relative;
-    animation: MainRoute_signal-loss-opacity_e7 6s infinite linear;
-}
+        width: 48rem;
+        height: 48rem;
+        background-image: var(--glitch-bg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        position: relative;
+        animation: MainRoute_signal-loss-opacity_e7 6s infinite linear;
+    }
 .mediaMedium .MainRoute_artefact_infoNumber_a4 {
-    width: 56rem;
-    height: 56rem;
+            width: 56rem;
+            height: 56rem;
 }
 .mediaExtraLarge .MainRoute_artefact_infoNumber_a4 {
-    width: 80rem;
-    height: 80rem;
+            width: 80rem;
+            height: 80rem;
 }
 .MainRoute_glitchLayer1_86,
 .MainRoute_glitchLayer2_bb {
@@ -3087,17 +3023,17 @@ body {
     margin-top: 16rem;
 }
 .mediaLarge .MainRoute_vehicleAbilitiesHeader_06 {
-    margin-top: 25rem;
+        margin-top: 25rem;
 }
 .mediaExtraLarge .MainRoute_vehicleAbilitiesHeader_06 {
-    margin-top: 33rem;
+        margin-top: 33rem;
 }
 .MainRoute_abilitiesTitle_47 {
     color: #b7daf5;
     font-size: 16rem;
     font-weight: 400;
     line-height: 19rem;
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3111,8 +3047,8 @@ body {
     font-weight: 400;
     line-height: 24rem;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.08em;
-    margin-bottom: 3rem;
+    letter-spacing: .08em;
+        margin-bottom: 3rem;
 }
 .mediaExtraLarge .MainRoute_abilitiesTitle_47 {
     color: #b7daf5;
@@ -3120,8 +3056,8 @@ body {
     font-weight: 400;
     line-height: 30rem;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-    margin-bottom: 6rem;
+    letter-spacing: .04em;
+        margin-bottom: 6rem;
 }
 .MainRoute_roverIcon_53 {
     width: 32rem;
@@ -3131,33 +3067,33 @@ body {
     position: relative;
 }
 .mediaLarge .MainRoute_roverIcon_53 {
-    width: 36rem;
-    height: 36rem;
-    margin-right: 3rem;
+        width: 36rem;
+        height: 36rem;
+        margin-right: 3rem;
 }
 .mediaExtraLarge .MainRoute_roverIcon_53 {
-    width: 44rem;
-    height: 44rem;
-    margin-left: -12rem;
-    margin-right: 6rem;
+        width: 44rem;
+        height: 44rem;
+        margin-left: -12rem;
+        margin-right: 6rem;
 }
 .MainRoute_roverSputnik_12 {
     background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.meteor.small');
 }
 .mediaLarge .MainRoute_roverSputnik_12 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.meteor.medium');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.meteor.medium');
 }
 .mediaExtraLarge .MainRoute_roverSputnik_12 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.meteor.large');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.meteor.large');
 }
 .MainRoute_roverMeteor_22 {
     background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.sputnik.small');
 }
 .mediaLarge .MainRoute_roverMeteor_22 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.sputnik.medium');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.sputnik.medium');
 }
 .mediaExtraLarge .MainRoute_roverMeteor_22 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.sputnik.large');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.sputnik.large');
 }
 .MainRoute_vehicleAbilitiesWrapper_54 {
     display: flex;
@@ -3174,16 +3110,16 @@ body {
     transform: translateX(-50%);
 }
 .mediaLarge .MainRoute_vehicleAbilitiesWrapper_54 {
-    width: 354rem;
-    height: 160rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.abilitiesBg.medium');
-    bottom: 63rem;
+        width: 354rem;
+        height: 160rem;
+        background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.abilitiesBg.medium');
+        bottom: 63rem;
 }
 .mediaExtraLarge .MainRoute_vehicleAbilitiesWrapper_54 {
-    width: 456rem;
-    height: 208rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.abilitiesBg.large');
-    bottom: 103rem;
+        width: 456rem;
+        height: 208rem;
+        background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.abilitiesBg.large');
+        bottom: 103rem;
 }
 .MainRoute_abilitiesContent_b3 {
     display: flex;
@@ -3191,28 +3127,28 @@ body {
     bottom: 24rem;
 }
 .mediaLarge .MainRoute_abilitiesContent_b3 {
-    bottom: 36rem;
+        bottom: 36rem;
 }
 .mediaExtraLarge .MainRoute_abilitiesContent_b3 {
-    bottom: 48rem;
+        bottom: 48rem;
 }
 .MainRoute_commonAbility_aa {
     margin-right: 4rem;
 }
 .mediaLarge .MainRoute_commonAbility_aa {
-    margin-right: 6rem;
+        margin-right: 6rem;
 }
 .mediaExtraLarge .MainRoute_commonAbility_aa {
-    margin-right: 8rem;
+        margin-right: 8rem;
 }
 .MainRoute_abilityBlock_69 + .MainRoute_abilityBlock_69 {
     margin-left: 4rem;
 }
 .mediaMedium .MainRoute_abilityBlock_69 + .MainRoute_abilityBlock_69 {
-    margin-left: 6rem;
+        margin-left: 6rem;
 }
 .mediaExtraLarge .MainRoute_abilityBlock_69 + .MainRoute_abilityBlock_69 {
-    margin-left: 8rem;
+        margin-left: 8rem;
 }
 .MainRoute_vehicleSelectWrapper_30 {
     display: flex;
@@ -3225,23 +3161,23 @@ body {
     transform: translateX(-50%);
 }
 .mediaSmall .MainRoute_vehicleSelectWrapper_30 {
-    width: 800rem;
-    height: 300rem;
-    bottom: 143rem;
+        width: 800rem;
+        height: 300rem;
+        bottom: 143rem;
 }
 .mediaMedium .MainRoute_vehicleSelectWrapper_30 {
-    width: 960rem;
-    height: 360rem;
+        width: 960rem;
+        height: 360rem;
 }
 .mediaLarge .MainRoute_vehicleSelectWrapper_30 {
-    width: 1120rem;
-    height: 420rem;
-    bottom: 203rem;
+        width: 1120rem;
+        height: 420rem;
+        bottom: 203rem;
 }
 .mediaExtraLarge .MainRoute_vehicleSelectWrapper_30 {
-    width: 1440rem;
-    height: 540rem;
-    bottom: 323rem;
+        width: 1440rem;
+        height: 540rem;
+        bottom: 323rem;
 }
 .MainRoute_missions_e4 {
     display: flex;
@@ -3255,20 +3191,20 @@ body {
     left: 15rem;
 }
 .mediaMedium .MainRoute_missions_e4 {
-    width: 462rem;
-    height: 269rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.missions.backgroundLarge') no-repeat center / cover;
-    top: 110rem;
-    left: -7rem;
+        width: 462rem;
+        height: 269rem;
+        background: url('R.images.cosmic_event.gui.maps.icons.missions.backgroundLarge') no-repeat center / cover;
+        top: 110rem;
+        left: -7rem;
 }
 .mediaLarge .MainRoute_missions_e4 {
-    top: 130rem;
+        top: 130rem;
 }
 .mediaExtraLarge .MainRoute_missions_e4 {
-    width: 601rem;
-    height: 350rem;
-    top: 185rem;
-    left: 19rem;
+        width: 601rem;
+        height: 350rem;
+        top: 185rem;
+        left: 19rem;
 }
 .MainRoute_missionsContent_1e {
     display: flex;
@@ -3283,20 +3219,20 @@ body {
     z-index: 2;
 }
 .mediaMedium .MainRoute_missionsContent_1e {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-left: 44rem;
-    padding-top: 37rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-left: 44rem;
+        padding-top: 37rem;
 }
 .mediaExtraLarge .MainRoute_missionsContent_1e {
-    padding-top: 47rem;
+        padding-top: 47rem;
 }
 .MainRoute_mission_54 {
     margin-right: 4rem;
 }
 .mediaMedium .MainRoute_mission_54 {
-    margin-right: 0;
+        margin-right: 0;
 }
 .MainRoute_missionWrapper_17 {
     position: relative;
@@ -3310,19 +3246,19 @@ body {
     top: 3rem;
 }
 .mediaMedium .MainRoute_missionSeparator_dd {
-    display: flex;
-    margin-left: 65rem;
-    top: 6rem;
+        display: flex;
+        margin-left: 65rem;
+        top: 6rem;
 }
 .mediaExtraLarge .MainRoute_missionSeparator_dd {
-    display: flex;
-    height: 68rem;
-    margin-left: 95rem;
-    top: 5rem;
+        display: flex;
+        height: 68rem;
+        margin-left: 95rem;
+        top: 5rem;
 }
 .MainRoute_missionWrapper_17 + .MainRoute_missionWrapper_17 .MainRoute_missionSeparator_dd {
-    display: flex;
-}
+        display: flex;
+    }
 .MainRoute_timerWrap_17 {
     display: flex;
     justify-content: center;
@@ -3336,14 +3272,14 @@ body {
     transform: translateX(-50%);
 }
 .mediaExtraLarge .MainRoute_timerWrap_17 {
-    bottom: 14rem;
+        bottom: 14rem;
 }
 .MainRoute_timerText_b1 {
     color: #b7daf5;
     font-size: 14rem;
     font-weight: 400;
     line-height: 18rem;
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
     margin: 0 6rem 0 0;
     text-shadow: 0 0 8rem #2d85c8;
     letter-spacing: 0;
@@ -3354,9 +3290,9 @@ body {
     font-weight: 400;
     line-height: 21rem;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-    height: 24rem;
-    margin-right: 10rem;
+    letter-spacing: .04em;
+        height: 24rem;
+        margin-right: 10rem;
 }
 .MainRoute_mark_e6 {
     width: 4rem;
@@ -3370,9 +3306,9 @@ body {
     background: url('R.images.cosmic_event.gui.maps.icons.missions.icons.clock') no-repeat bottom / contain;
 }
 .mediaExtraLarge .MainRoute_clockIcon_75 {
-    width: 27rem;
-    height: 27rem;
-    margin: 0 6rem 2rem 10rem;
+        width: 27rem;
+        height: 27rem;
+        margin: 0 6rem 2rem 10rem;
 }
 @keyframes MainRoute_scanline_62 {
     0% {
@@ -3613,55 +3549,55 @@ body {
     height: 88rem;
     border: 1rem solid transparent;
     position: relative;
-    transition: 0.3s opacity ease-in-out;
+    transition: .3s opacity ease-in-out;
 }
 
-.mediaMedium .PickupBlock_base_62 {
-    width: 388rem;
-    height: 124rem;
+    .mediaMedium .PickupBlock_base_62 {
+        width: 388rem;
+        height: 124rem;
 }
 
-.mediaExtraLarge .PickupBlock_base_62 {
-    width: 485rem;
-    height: 155rem;
+    .mediaExtraLarge .PickupBlock_base_62 {
+        width: 485rem;
+        height: 155rem;
 }
 
-.PickupBlock_base__unFocused_ac {
-    opacity: 0.7;
-}
+    .PickupBlock_base__unFocused_ac {
+        opacity: 0.7;
+    }
 
-.PickupBlock_base__active_9e {
-    opacity: 1;
-}
+    .PickupBlock_base__active_9e {
+        opacity: 1;
+    }
 
-.PickupBlock_base__hovered_bf {
-    opacity: 1;
-    cursor: pointer;
-}
+    .PickupBlock_base__hovered_bf {
+        opacity: 1;
+        cursor: pointer;
+    }
 
-.PickupBlock_base__hovered_bf.PickupBlock_base__locked_2a {
-    cursor: default;
-}
+    .PickupBlock_base__hovered_bf.PickupBlock_base__locked_2a {
+        cursor: default;
+    }
 
-.PickupBlock_base__active_9e.PickupBlock_overcharge_67 {
-    border: 1rem solid #ff7070;
-    background: rgba(255, 112, 112, 0.1);
-}
+    .PickupBlock_base__active_9e.PickupBlock_overcharge_67 {
+        border: 1rem solid #ff7070;
+        background: rgba(255,112,112, 0.1);
+    }
 
-.PickupBlock_base__active_9e.PickupBlock_teleport_67 {
-    border: 1rem solid #38b0ca;
-    background: rgba(56, 176, 202, 0.1);
-}
+    .PickupBlock_base__active_9e.PickupBlock_teleport_67 {
+        border: 1rem solid #38b0ca;
+        background: rgba(56,176,202, 0.1);
+    }
 
-.PickupBlock_base__active_9e.PickupBlock_powershot_e4 {
-    border: 1rem solid #b3a5ff;
-    background: rgba(179, 165, 255, 0.1);
-}
+    .PickupBlock_base__active_9e.PickupBlock_powershot_e4 {
+        border: 1rem solid #b3a5ff;
+        background: rgba(179,165,255, 0.1);
+    }
 
-.PickupBlock_base__active_9e.PickupBlock_blackhole_88 {
-    border: 1rem solid #ffd770;
-    background: rgba(255, 215, 112, 0.1);
-}
+    .PickupBlock_base__active_9e.PickupBlock_blackhole_88 {
+        border: 1rem solid #ffd770;
+        background: rgba(255,215,112, 0.1);
+    }
 .PickupBlock_gradient_d4 {
     width: 100%;
     height: 100%;
@@ -3671,20 +3607,20 @@ body {
     position: absolute;
 }
 .PickupBlock_overcharge_67 .PickupBlock_gradient_d4 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.overcharge_gradient');
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.overcharge_gradient');
+    }
 .PickupBlock_teleport_67 .PickupBlock_gradient_d4 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.teleport_gradient');
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.teleport_gradient');
+    }
 .PickupBlock_powershot_e4 .PickupBlock_gradient_d4 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.power_shot_gradient');
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.power_shot_gradient');
+    }
 .PickupBlock_blackhole_88 .PickupBlock_gradient_d4 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.black_hole_gradient');
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.black_hole_gradient');
+    }
 .PickupBlock_base__locked_2a .PickupBlock_gradient_d4 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.lock_gradient');
-}
+        background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.lock_gradient');
+    }
 .PickupBlock_content_5d {
     display: flex;
     justify-content: flex-start;
@@ -3693,55 +3629,54 @@ body {
     transition: all 0.15s ease-in-out;
 }
 .PickupBlock_base__hovered_bf .PickupBlock_content_5d,
-.PickupBlock_base__active_9e .PickupBlock_content_5d {
-    transform: translateX(2rem);
-}
-.mediaMedium .PickupBlock_base__hovered_bf .PickupBlock_content_5d,
-.mediaMedium .PickupBlock_base__active_9e .PickupBlock_content_5d {
-    transform: translateX(4rem);
+    .PickupBlock_base__active_9e .PickupBlock_content_5d {
+        transform: translateX(2rem);
+    }
+.mediaMedium .PickupBlock_base__hovered_bf .PickupBlock_content_5d, .mediaMedium .PickupBlock_base__active_9e .PickupBlock_content_5d {
+            transform: translateX(4rem);
 }
 .PickupBlock_base__locked_2a .PickupBlock_content_5d {
-    opacity: 0.3;
-}
+        opacity: 0.3;
+    }
 .mediaMedium .PickupBlock_content_5d {
-    margin-left: 24rem;
+        margin-left: 24rem;
 }
 .PickupBlock_pickupIcon_96 {
     width: 68rem;
     height: 68rem;
 }
 .mediaMedium .PickupBlock_pickupIcon_96 {
-    width: 100rem;
-    height: 100rem;
+        width: 100rem;
+        height: 100rem;
 }
 .mediaExtraLarge .PickupBlock_pickupIcon_96 {
-    width: 125rem;
-    height: 125rem;
+        width: 125rem;
+        height: 125rem;
 }
 .PickupBlock_title_5e {
     margin-left: 16rem;
     font-size: 18rem;
 }
 .mediaMedium .PickupBlock_title_5e {
-    margin-left: 20rem;
-    font-size: 24rem;
+        margin-left: 20rem;
+        font-size: 24rem;
 }
 .mediaExtraLarge .PickupBlock_title_5e {
-    margin-left: 25rem;
-    font-size: 30rem;
+        margin-left: 25rem;
+        font-size: 30rem;
 }
 .PickupBlock_overcharge_67 .PickupBlock_title_5e {
-    color: #ff7070;
-}
+        color: #ff7070;
+    }
 .PickupBlock_teleport_67 .PickupBlock_title_5e {
-    color: #38b0ca;
-}
+        color: #38b0ca;
+    }
 .PickupBlock_blackhole_88 .PickupBlock_title_5e {
-    color: #ffd770;
-}
+        color: #ffd770;
+    }
 .PickupBlock_powershot_e4 .PickupBlock_title_5e {
-    color: #b3a5ff;
-}
+        color: #b3a5ff;
+    }
 
 .PickupsRoute_base_27 {
     display: flex;
@@ -3753,8 +3688,8 @@ body {
     padding: 50rem 25rem;
 }
 
-.mediaLarge .PickupsRoute_base_27 {
-    padding: 100rem 25rem;
+    .mediaLarge .PickupsRoute_base_27 {
+        padding: 100rem 25rem;
 }
 .PickupsRoute_title_54 {
     display: flex;
@@ -3768,7 +3703,7 @@ body {
     font-weight: 700;
     line-height: 110%;
     /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
 }
 .mediaMedium .PickupsRoute_title_54 {
     color: #f4e1b3;
@@ -3781,7 +3716,7 @@ body {
     font-size: 73rem;
     font-weight: 700;
     line-height: 80rem;
-    margin-top: 26rem;
+        margin-top: 26rem;
 }
 .PickupsRoute_content_7f {
     display: flex;
@@ -3791,13 +3726,13 @@ body {
     position: relative;
 }
 .mediaSmall .PickupsRoute_content_7f {
-    margin-left: -48rem;
+        margin-left: -48rem;
 }
 .mediaMedium .PickupsRoute_content_7f {
-    margin-left: -30rem;
+        margin-left: -30rem;
 }
 .mediaLarge .PickupsRoute_content_7f {
-    margin-top: -17rem;
+        margin-top: -17rem;
 }
 .PickupsRoute_sideBarWrapper_34 {
     display: flex;
@@ -3807,26 +3742,26 @@ body {
     position: relative;
 }
 .mediaSmall .PickupsRoute_sideBarWrapper_34 {
-    margin-left: 65rem;
-    margin-top: -18rem;
+        margin-left: 65rem;
+        margin-top: -18rem;
 }
 .mediaMedium .PickupsRoute_sideBarWrapper_34 {
-    margin-top: -3rem;
+        margin-top: -3rem;
 }
 .mediaLarge .PickupsRoute_sideBarWrapper_34 {
-    margin-left: 75rem;
+        margin-left: 75rem;
 }
 .mediaExtraLarge .PickupsRoute_sideBarWrapper_34 {
-    margin-left: 117rem;
+        margin-left: 117rem;
 }
 .PickupsRoute_tab_51 + .PickupsRoute_tab_51 {
     margin-top: 4rem;
 }
 .mediaSmall .PickupsRoute_tab_51 + .PickupsRoute_tab_51 {
-    margin-top: 16rem;
+        margin-top: 16rem;
 }
 .mediaLarge .PickupsRoute_tab_51 + .PickupsRoute_tab_51 {
-    margin-top: 20rem;
+        margin-top: 20rem;
 }
 .PickupsRoute_videoWrapper_44 {
     display: flex;
@@ -3838,24 +3773,24 @@ body {
     position: relative;
 }
 .mediaSmall .PickupsRoute_videoWrapper_44 {
-    width: 864rem;
-    height: 498rem;
-    margin-left: 66rem;
+        width: 864rem;
+        height: 498rem;
+        margin-left: 66rem;
 }
 .mediaMedium .PickupsRoute_videoWrapper_44 {
-    width: 1014rem;
-    height: 584rem;
-    margin-left: 50rem;
+        width: 1014rem;
+        height: 584rem;
+        margin-left: 50rem;
 }
 .mediaLarge .PickupsRoute_videoWrapper_44 {
-    width: 1244rem;
-    height: 720rem;
-    margin-left: 108rem;
+        width: 1244rem;
+        height: 720rem;
+        margin-left: 108rem;
 }
 .mediaExtraLarge .PickupsRoute_videoWrapper_44 {
-    width: 1656rem;
-    height: 960rem;
-    margin-left: 127rem;
+        width: 1656rem;
+        height: 960rem;
+        margin-left: 127rem;
 }
 .PickupsRoute_videoLayer_4e {
     position: absolute;
@@ -3873,8 +3808,8 @@ body {
     pointer-events: none;
 }
 .PickupsRoute_videoLayer__active_9c {
-    opacity: 1;
-}
+        opacity: 1;
+    }
 .PickupsRoute_videoBorder_a3 {
     width: 100%;
     height: 100%;
@@ -3882,16 +3817,16 @@ body {
     position: absolute;
 }
 .mediaSmall .PickupsRoute_videoBorder_a3 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.screen.small');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.screen.small');
 }
 .mediaMedium .PickupsRoute_videoBorder_a3 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.screen.medium');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.screen.medium');
 }
 .mediaLarge .PickupsRoute_videoBorder_a3 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.screen.large');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.screen.large');
 }
 .mediaExtraLarge .PickupsRoute_videoBorder_a3 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.screen.extraLarge');
+        background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.screen.extraLarge');
 }
 .PickupsRoute_video_ae {
     max-width: 660rem;
@@ -3901,27 +3836,27 @@ body {
     animation-timing-function: ease-in;
 }
 .mediaSmall .PickupsRoute_video_ae {
-    max-width: 840rem;
-    max-height: 474rem;
+        max-width: 840rem;
+        max-height: 474rem;
 }
 .mediaMedium .PickupsRoute_video_ae {
-    max-width: 990rem;
-    max-height: 560rem;
+        max-width: 990rem;
+        max-height: 560rem;
 }
 .mediaLarge .PickupsRoute_video_ae {
-    max-width: 1204rem;
-    max-height: 680rem;
+        max-width: 1204rem;
+        max-height: 680rem;
 }
 .mediaExtraLarge .PickupsRoute_video_ae {
-    max-width: 1600rem;
-    max-height: 900rem;
+        max-width: 1600rem;
+        max-height: 900rem;
 }
 .PickupsRoute_description_2e {
     color: #f4e1b3;
     font-size: 16rem;
     font-weight: 400;
     line-height: 19rem;
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
     display: flex;
     width: 600rem;
     height: 100rem;
@@ -3931,20 +3866,20 @@ body {
     bottom: -114rem;
 }
 .mediaSmall .PickupsRoute_description_2e {
-    bottom: -112rem;
+        bottom: -112rem;
 }
 .mediaMedium .PickupsRoute_description_2e {
-    width: 800rem;
-    font-size: 20rem;
-    bottom: -116rem;
+        width: 800rem;
+        font-size: 20rem;
+        bottom: -116rem;
 }
 .mediaLarge .PickupsRoute_description_2e {
-    bottom: -120rem;
+        bottom: -120rem;
 }
 .mediaExtraLarge .PickupsRoute_description_2e {
-    font-size: 26rem;
-    line-height: 120%;
-    bottom: -124rem;
+        font-size: 26rem;
+        line-height: 120%;
+        bottom: -124rem;
 }
 @keyframes PickupsRoute_fadeIn_bd {
     from {
@@ -3955,3 +3890,4 @@ body {
         opacity: 1;
     }
 }
+

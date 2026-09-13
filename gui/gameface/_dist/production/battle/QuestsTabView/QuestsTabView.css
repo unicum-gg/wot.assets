@@ -1,108 +1,108 @@
 .Box_mt__XS_0c {
-    margin-top: 4rem;
-}
-.Box_mt__SM_eb {
-    margin-top: 8rem;
-}
-.Box_mt__SMp_cf {
-    margin-top: 10rem;
-}
-.Box_mt__MD_25 {
-    margin-top: 16rem;
-}
-.Box_mt__MDp_49 {
-    margin-top: 20rem;
-}
-.Box_mt__LG_e8 {
-    margin-top: 32rem;
-}
-.Box_mt__XL_83 {
-    margin-top: 64rem;
-}
+            margin-top: 4rem;
+        }
+        .Box_mt__SM_eb {
+            margin-top: 8rem;
+        }
+        .Box_mt__SMp_cf {
+            margin-top: 10rem;
+        }
+        .Box_mt__MD_25 {
+            margin-top: 16rem;
+        }
+        .Box_mt__MDp_49 {
+            margin-top: 20rem;
+        }
+        .Box_mt__LG_e8 {
+            margin-top: 32rem;
+        }
+        .Box_mt__XL_83 {
+            margin-top: 64rem;
+        }
 
 .Box_mr__XS_7c {
-    margin-right: 4rem;
-}
+            margin-right: 4rem;
+        }
 
 .Box_mr__SM_08 {
-    margin-right: 8rem;
-}
+            margin-right: 8rem;
+        }
 
 .Box_mr__SMp_06 {
-    margin-right: 10rem;
-}
+            margin-right: 10rem;
+        }
 
 .Box_mr__MD_4a {
-    margin-right: 16rem;
-}
+            margin-right: 16rem;
+        }
 
 .Box_mr__MDp_b6 {
-    margin-right: 20rem;
-}
+            margin-right: 20rem;
+        }
 
 .Box_mr__LG_d0 {
-    margin-right: 32rem;
-}
+            margin-right: 32rem;
+        }
 
 .Box_mr__XL_db {
-    margin-right: 64rem;
-}
+            margin-right: 64rem;
+        }
 
 .Box_mb__XS_bb {
-    margin-bottom: 4rem;
-}
+            margin-bottom: 4rem;
+        }
 
 .Box_mb__SM_83 {
-    margin-bottom: 8rem;
-}
+            margin-bottom: 8rem;
+        }
 
 .Box_mb__SMp_04 {
-    margin-bottom: 10rem;
-}
+            margin-bottom: 10rem;
+        }
 
 .Box_mb__MD_ed {
-    margin-bottom: 16rem;
-}
+            margin-bottom: 16rem;
+        }
 
 .Box_mb__MDp_65 {
-    margin-bottom: 20rem;
-}
+            margin-bottom: 20rem;
+        }
 
 .Box_mb__LG_c8 {
-    margin-bottom: 32rem;
-}
+            margin-bottom: 32rem;
+        }
 
 .Box_mb__XL_f8 {
-    margin-bottom: 64rem;
-}
+            margin-bottom: 64rem;
+        }
 
 .Box_ml__XS_8a {
-    margin-left: 4rem;
-}
+            margin-left: 4rem;
+        }
 
 .Box_ml__SM_e6 {
-    margin-left: 8rem;
-}
+            margin-left: 8rem;
+        }
 
 .Box_ml__SMp_fb {
-    margin-left: 10rem;
-}
+            margin-left: 10rem;
+        }
 
 .Box_ml__MD_2b {
-    margin-left: 16rem;
-}
+            margin-left: 16rem;
+        }
 
 .Box_ml__MDp_c7 {
-    margin-left: 20rem;
-}
+            margin-left: 20rem;
+        }
 
 .Box_ml__LG_39 {
-    margin-left: 32rem;
-}
+            margin-left: 32rem;
+        }
 
 .Box_ml__XL_4a {
-    margin-left: 64rem;
-}
+            margin-left: 64rem;
+        }
 
 .FormatText_base_d0 {
     display: flex;
@@ -111,167 +111,167 @@
 
 /* eslint-disable-next-line expectedscss*/
 .Text_paragraph-P10_2c {
-    font-size: 10rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 10rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_paragraph-P12_22 {
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 12rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P14_a7 {
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P16_90 {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P18_50 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 18rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P24_33 {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 32rem;
 }
 .Text_heading-H14_8b {
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 14rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H15_9e {
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 15rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H18_b7 {
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 18rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H20R_f6 {
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 20rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_heading-H22_27 {
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .Text_heading-H24R_be {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_heading-H24_0c {
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
+        font-size: 24rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .Text_heading-H28_78 {
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H36_32 {
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 36rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H56_c3 {
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 56rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H73_8f {
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 73rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H144_a9 {
-    font-size: 144rem;
-    font-weight: 700;
-    line-height: 1;
+        font-size: 144rem;
+        font-weight: 700;
+        line-height: 1;
 }
 .Text_BLACK_REAL_30 {
-    color: #000000;
-}
+        color: #000000;
+    }
 .Text_WHITE_REAL_bc {
-    color: #ffffff;
-}
+        color: #FFFFFF;
+    }
 .Text_WHITE_62 {
-    color: #f2f2f7;
-}
+        color: #F2F2F7;
+    }
 .Text_WHITE_ORANGE_54 {
-    color: #fefeec;
-}
+        color: #FEFEEC;
+    }
 .Text_WHITE_SPANISH_df {
-    color: #e9e2bf;
-}
+        color: #E9E2BF;
+    }
 .Text_PAR_15 {
-    color: #8c8c7e;
-}
+        color: #8C8C7E;
+    }
 .Text_PAR_SECONDARY_5d {
-    color: #595950;
-}
+        color: #595950;
+    }
 .Text_PAR_TERTIARY_c9 {
-    color: #37362e;
-}
+        color: #37362E;
+    }
 .Text_INFO_RED_30 {
-    color: #ff0000;
-}
+        color: #FF0000;
+    }
 .Text_RED_66 {
-    color: #ff2717;
-}
+        color: #FF2717;
+    }
 .Text_RED_DARK_d8 {
-    color: #b70000;
-}
+        color: #B70000;
+    }
 .Text_YELLOW_ed {
-    color: #feab34;
-}
+        color: #FEAB34;
+    }
 .Text_ORANGE_be {
-    color: #ee7000;
-}
+        color: #EE7000;
+    }
 .Text_CREAM_57 {
-    color: #ffdd99;
-}
+        color: #FFDD99;
+    }
 .Text_BROWN_18 {
-    color: #cbac77;
-}
+        color: #CBAC77;
+    }
 .Text_GREEN_BRIGHT_3f {
-    color: #80d43a;
-}
+        color: #80D43A;
+    }
 .Text_GREEN_e3 {
-    color: #7ab300;
-}
+        color: #7AB300;
+    }
 .Text_GREEN_DARK_f1 {
-    color: #497212;
-}
+        color: #497212;
+    }
 .Text_BLUE_BOOSTER_21 {
-    color: #ccffff;
-}
+        color: #CCFFFF;
+    }
 .Text_BLUE_TEAMKILLER_ab {
-    color: #09e2ff;
-}
+        color: #09E2FF;
+    }
 .Text_CRED_f7 {
-    color: #ced9d9;
-}
+        color: #CED9D9;
+    }
 .Text_GOLD_28 {
-    color: #ffc363;
-}
+        color: #FFC363;
+    }
 .Text_BOND_be {
-    color: #c9c9b6;
-}
+        color: #C9C9B6;
+    }
 .Text_PROM_65 {
-    color: #a29b70;
-}
+        color: #A29B70;
+    }
 
 .App_base_52 {
     width: 100%;
@@ -298,13 +298,13 @@
     z-index: 1;
 }
 .App_base__ready_5e .App_content_1a {
-    padding-top: 90rem;
-}
+        padding-top: 90rem;
+    }
 .mediaLarge .App_base__ready_5e .App_content_1a {
-    padding-top: 100rem;
+            padding-top: 100rem;
 }
 .App_hiddenCaption_dc {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
@@ -322,21 +322,18 @@
     position: relative;
 }
 .App_base__blocked_0e .App_header_af {
-    transform: translateY(4rem);
-}
+        transform: translateY(4rem);
+    }
 .mediaLarge .App_base__blocked_0e .App_header_af {
-    transform: translateY(10rem);
+            transform: translateY(10rem);
 }
 .App_blockedDescr_c1 {
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
     margin: 0 4rem;
-    text-shadow:
-        0rem 0rem 4rem rgba(255, 127, 0, 0.25),
-        0rem 0rem 8rem #ff2a00,
-        0rem 0rem 15rem #e52;
+    text-shadow: 0rem 0rem 4rem rgba(255, 127, 0, 0.25), 0rem 0rem 8rem #ff2a00, 0rem 0rem 15rem #e52;
     z-index: 1;
 }
 .App_headerBg_77 {
@@ -350,16 +347,16 @@
     transform: translate(-50%, -50%);
 }
 .mediaLarge .App_headerBg_77 {
-    width: 1280rem;
-    height: 512rem;
+        width: 1280rem;
+        height: 512rem;
 }
 .App_base__blocked_0e .App_headerBg_77 {
-    width: 1920rem;
-    height: 93rem;
-    background-image: url('R.images.frontline.gui.maps.battle.questTab.headerOutZone');
-}
+        width: 1920rem;
+        height: 93rem;
+        background-image: url('R.images.frontline.gui.maps.battle.questTab.headerOutZone');
+    }
 .App_headerTitle_94 {
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
@@ -367,24 +364,24 @@
     z-index: 1;
 }
 .mediaLarge .App_headerTitle_94 {
-    color: #f2f2f7;
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
+        color: #F2F2F7;
+        font-size: 56rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .App_base__blocked_0e .App_headerTitle_94 {
-    color: #ffdd99;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-    font-size: 36rem;
-    text-shadow: 0rem 0rem 15rem rgba(255, 80, 22, 0.7);
-}
+        color: #FFDD99;
+        font-size: 36rem;
+        font-weight: 700;
+        line-height: 1.1;
+        font-size: 36rem;
+        text-shadow: 0rem 0rem 15rem rgba(255, 80, 22, 0.7);
+    }
 .mediaLarge .App_base__blocked_0e .App_headerTitle_94 {
-    color: #ffdd99;
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
+            color: #FFDD99;
+            font-size: 56rem;
+            font-weight: 700;
+            line-height: 1.1;
 }
 .App_headerLine_32 {
     width: 425rem;
@@ -394,11 +391,11 @@
     transform: translateY(4rem);
 }
 .mediaLarge .App_headerLine_32 {
-    visibility: visible;
+        visibility: visible;
 }
 .App_headerLine__right_a7 {
-    transform: scaleX(-1) translateY(4rem);
-}
+        transform: scaleX(-1) translateY(4rem);
+    }
 .App_questWrapper_0b {
     display: flex;
     justify-content: center;
@@ -406,9 +403,9 @@
     width: 100%;
 }
 .App_base__blocked_0e .App_questWrapper_0b {
-    filter: grayscale(1);
-    opacity: 0.8;
-}
+        filter: grayscale(1);
+        opacity: 0.8;
+    }
 .App_progressionWrapper_c9 {
     display: flex;
     justify-content: center;
@@ -416,9 +413,9 @@
     width: 100%;
 }
 .App_base__blocked_0e .App_progressionWrapper_c9 {
-    filter: grayscale(1);
-    opacity: 0.8;
-}
+        filter: grayscale(1);
+        opacity: 0.8;
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -431,11 +428,11 @@
     position: relative;
 }
 .ProgressBar_base__medium_62 {
-    height: 6rem;
-}
+        height: 6rem;
+    }
 .ProgressBar_base__small_df {
-    height: 2rem;
-}
+        height: 2rem;
+    }
 .ProgressBar_background_51 {
     width: 100%;
     max-width: 8001px;
@@ -449,15 +446,16 @@
     left: 0;
 }
 .ProgressBar_background__medium_6e {
-    height: 6rem;
-}
+        height: 6rem;
+    }
 .ProgressBar_background__small_46 {
-    height: 2rem;
-}
+        height: 2rem;
+    }
 .ProgressBar_lineWrapper_6a {
     display: flex;
     flex: 1;
 }
+
 
 .ProgressBarBlink_base_24 {
     width: 60rem;
@@ -472,16 +470,16 @@
     pointer-events: none;
 }
 
-.ProgressBarBlink_base__medium_ec {
-    width: 42rem;
-    height: 70rem;
-}
+    .ProgressBarBlink_base__medium_ec {
+        width: 42rem;
+        height: 70rem;
+    }
 
-.ProgressBarBlink_base__small_0f {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
+    .ProgressBarBlink_base__small_0f {
+        width: 44rem;
+        height: 43rem;
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -493,18 +491,18 @@
     height: 100%;
     background-color: var(--progress-line-base);
     position: relative;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressLineImpose_base__disabled_cc {
-    background-color: var(--progress-line-disabled);
-}
+        background-color: var(--progress-line-disabled);
+    }
 .ProgressLineImpose_base__finished_d4 {
-    background-color: var(--progress-line-finished);
-}
+        background-color: var(--progress-line-finished);
+    }
 .ProgressLineImpose_base__withoutBounce_56 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 .ProgressLineImpose_pattern_1c {
     max-width: 8001px;
     background-image: var(--progress-pattern-base);
@@ -518,19 +516,19 @@
     left: 1rem;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-disabled);
-    left: 0;
-}
+        background-image: var(--progress-pattern-disabled);
+        left: 0;
+    }
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-finished);
-}
+        background-image: var(--progress-pattern-finished);
+    }
 .ProgressLineImpose_gradient_35 {
     max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    background-image: linear-gradient(90deg, rgba(0,0,0, .5), rgba(255,255,255, .75));
     mix-blend-mode: overlay;
     position: absolute;
     top: 1rem;
@@ -539,15 +537,15 @@
     left: 0;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
-    display: none;
-}
+        display: none;
+    }
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
-}
+        background-image: linear-gradient(90deg, rgba(0,0,0, .5), rgba(255,255,255, .75), rgba(0,0,0, .5));
+    }
 .ProgressLineImpose_glow_a5 {
     width: 60rem;
     max-width: 8001px;
@@ -562,17 +560,17 @@
     pointer-events: none;
 }
 .ProgressLineImpose_glow__left_d8 {
-    left: 1rem;
-}
+        left: 1rem;
+    }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
-    display: none;
-}
+    .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+        display: none;
+    }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
+        width: 44rem;
+        height: 43rem;
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -594,7 +592,7 @@
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1), cubic-bezier(.21, .61, .35, 1);
     transition-property: width, transform;
 }
 
@@ -608,12 +606,12 @@
     height: 100%;
     position: absolute;
     top: 0;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 .ProgressBarDeltaGrow_glow_68 {
     width: 0;
     max-width: 8001px;
@@ -623,12 +621,12 @@
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 
 .Supply_base_ea {
     display: flex;
@@ -641,9 +639,9 @@
     position: relative;
 }
 
-.mediaLarge .Supply_base_ea {
-    width: 316rem;
-    height: 196rem;
+    .mediaLarge .Supply_base_ea {
+        width: 316rem;
+        height: 196rem;
 }
 .Supply_supplyIcon_a2 {
     width: 150rem;
@@ -657,32 +655,32 @@
     transform: translate(-50%, -50%);
 }
 .Supply_supplyIcon__airShip_39 {
-    width: 200rem;
-    height: 113rem;
-    left: 20rem;
-    transform: translateY(-50%);
-}
+        width: 200rem;
+        height: 113rem;
+        left: 20rem;
+        transform: translateY(-50%);
+    }
 .Supply_supplyIcon__flamer_fd {
-    left: 38rem;
-    transform: translateY(-50%);
-}
+        left: 38rem;
+        transform: translateY(-50%);
+    }
 .Supply_supplyIcon__completed_0a {
-    filter: grayscale(0);
-}
+        filter: grayscale(0);
+    }
 .mediaLarge .Supply_supplyIcon_a2 {
-    width: 200rem;
-    height: 200rem;
+        width: 200rem;
+        height: 200rem;
 }
 .mediaLarge .Supply_supplyIcon__airShip_39 {
-    width: 266rem;
-    height: 150rem;
-    left: 40rem;
-    transform: translateY(-50%);
-}
+            width: 266rem;
+            height: 150rem;
+            left: 40rem;
+            transform: translateY(-50%);
+        }
 .mediaLarge .Supply_supplyIcon__flamer_fd {
-    left: 60rem;
-    transform: translateY(-50%);
-}
+            left: 60rem;
+            transform: translateY(-50%);
+        }
 .Supply_supplyShadow_16 {
     width: 250rem;
     height: 206rem;
@@ -691,65 +689,59 @@
     z-index: 0;
 }
 .Supply_supplyName_1f {
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    text-shadow:
-        0rem 0rem 4rem rgba(255, 127, 0, 0.25),
-        0rem 0rem 8rem #ff2a00,
-        0rem 0rem 15rem #e52;
+    text-shadow: 0rem 0rem 4rem rgba(255, 127, 0, 0.25), 0rem 0rem 8rem #ff2a00, 0rem 0rem 15rem #e52;
     z-index: 2;
 }
 .Supply_supplyName__disabled_e6 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    text-shadow: none;
-}
+        color: #8C8C7E;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
+        text-shadow: none;
+    }
 .Supply_supplyName__completed_e9 {
-    color: #7ab300;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    text-shadow: none;
-}
+        color: #7AB300;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
+        text-shadow: none;
+    }
 .mediaLarge .Supply_supplyName_1f {
-    color: #ffdd99;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
+        color: #FFDD99;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .mediaLarge .Supply_supplyName__disabled_e6 {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
+            color: #8C8C7E;
+            font-size: 16rem;
+            font-weight: 400;
+            line-height: 1.25;
+        }
 .mediaLarge .Supply_supplyName__completed_e9 {
-    color: #7ab300;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
+            color: #7AB300;
+            font-size: 16rem;
+            font-weight: 400;
+            line-height: 1.25;
+        }
 .Supply_supplyProgress_2c {
-    color: #ffdd99;
+    color: #FFDD99;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
-    text-shadow:
-        0rem 0rem 4rem rgba(255, 127, 0, 0.25),
-        0rem 0rem 8rem #ff2a00,
-        0rem 0rem 15rem #e52;
+    text-shadow: 0rem 0rem 4rem rgba(255, 127, 0, 0.25), 0rem 0rem 8rem #ff2a00, 0rem 0rem 15rem #e52;
     z-index: 2;
     transform: translateY(-2rem);
 }
 .mediaLarge .Supply_supplyProgress_2c {
-    color: #ffdd99;
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
+        color: #FFDD99;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 32rem;
 }
 .Supply_supplyType_23 {
     display: flex;
@@ -762,8 +754,8 @@
     z-index: 2;
 }
 .Supply_supplyType__flamer_09 {
-    left: 20rem;
-}
+        left: 20rem;
+    }
 .Supply_supplyTypeIcon_b7 {
     width: 40rem;
     height: 40rem;
@@ -771,7 +763,7 @@
     z-index: 2;
 }
 .Supply_supplyIndex_e6 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 12rem;
     font-weight: 400;
     line-height: 1.3;
@@ -779,13 +771,13 @@
     transform: translateX(5rem);
 }
 .Supply_supplyIndex__airShip_4b {
-    transform: translateX(-3rem);
-}
+        transform: translateX(-3rem);
+    }
 .mediaLarge .Supply_supplyIndex_e6 {
-    color: #e9e2bf;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
+        color: #E9E2BF;
+        font-size: 18rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Supply_supplyStatusIcon_38 {
     width: 44rem;
@@ -795,21 +787,21 @@
     transform: translateY(6rem);
 }
 .mediaLarge .Supply_supplyStatusIcon_38 {
-    transform: translateY(4rem);
+        transform: translateY(4rem);
 }
 .Supply_supplyStatusIcon__locked_f0 {
-    background-image: url('R.images.frontline.gui.maps.battle.questTab.lock');
-}
+        background-image: url('R.images.frontline.gui.maps.battle.questTab.lock');
+    }
 .Supply_supplyStatusIcon__completed_66 {
-    width: 40rem;
-    height: 40rem;
-    background-image: url('R.images.frontline.gui.maps.battle.questTab.check');
-    transform: translateY(9rem);
-}
+        width: 40rem;
+        height: 40rem;
+        background-image: url('R.images.frontline.gui.maps.battle.questTab.check');
+        transform: translateY(9rem);
+    }
 .mediaLarge .Supply_supplyStatusIcon__completed_66 {
-    width: 48rem;
-    height: 48rem;
-    transform: translateY(8rem);
+            width: 48rem;
+            height: 48rem;
+            transform: translateY(8rem);
 }
 .Supply_progressBar_c3 {
     width: 100%;
@@ -817,11 +809,11 @@
     transform: translateY(10rem);
 }
 .Supply_progressBar__hidden_83 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
 .Progression_base_d9 {
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 28rem;
     font-weight: 700;
     line-height: 1.1;
@@ -833,12 +825,12 @@
     height: 240rem;
 }
 
-.mediaLarge .Progression_base_d9 {
-    height: 300rem;
+    .mediaLarge .Progression_base_d9 {
+        height: 300rem;
 }
 
 .Progression_caption_fc {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -846,15 +838,15 @@
 }
 
 .mediaLarge .Progression_caption_fc {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    transform: translateY(140rem);
+        color: #8C8C7E;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
+        transform: translateY(140rem);
 }
 
 .Progression_title_a4 {
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 22rem;
     font-weight: 700;
     line-height: 1.2;
@@ -866,28 +858,28 @@
 }
 
 .mediaLarge .Progression_title_a4 {
-    color: #f2f2f7;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
+        color: #F2F2F7;
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 
 .Progression_titleLine_52 {
     width: 200rem;
     height: 1rem;
     margin: 0 16rem;
-    background: #e9e2bf;
+    background: #E9E2BF;
     opacity: 0.1;
     transform: translateY(4rem);
 }
 
 .Progression_titleLine__targetZone_8c {
-    width: 500rem;
-    transform: translateY(0rem);
-}
+        width: 500rem;
+        transform: translateY(0rem);
+    }
 
 .Progression_description_d8 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -914,24 +906,24 @@
 }
 
 .mediaLarge .Progression_background_79 {
-    width: 784rem;
-    height: 83rem;
+        width: 784rem;
+        height: 83rem;
 }
 
 .Progression_background__blocked_16 {
-    width: 54rem;
-    height: 76rem;
-    background-image: url('R.images.frontline.gui.maps.battle.questTab.progression_bg_blocked');
-}
+        width: 54rem;
+        height: 76rem;
+        background-image: url('R.images.frontline.gui.maps.battle.questTab.progression_bg_blocked');
+    }
 
 .mediaLarge .Progression_background__blocked_16 {
-    width: 54rem;
-    height: 76rem;
+            width: 54rem;
+            height: 76rem;
 }
 
 .Progression_background__blockedCompleted_34 {
-    background-image: none;
-}
+        background-image: none;
+    }
 
 .Progression_supplyWrapper_eb {
     margin: 0 10rem;
@@ -977,12 +969,12 @@
     height: 180rem;
 }
 
-.mediaLarge .Quest_base_76 {
-    height: 220rem;
+    .mediaLarge .Quest_base_76 {
+        height: 220rem;
 }
 
 .Quest_caption_50 {
-    color: #8c8c7e;
+    color: #8C8C7E;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -990,14 +982,14 @@
 }
 
 .mediaLarge .Quest_caption_50 {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
+        color: #8C8C7E;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 
 .Quest_title_50 {
-    color: #f2f2f7;
+    color: #F2F2F7;
     font-size: 22rem;
     font-weight: 700;
     line-height: 1.2;
@@ -1005,10 +997,10 @@
 }
 
 .mediaLarge .Quest_title_50 {
-    color: #f2f2f7;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
+        color: #F2F2F7;
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 
 .Quest_statusWrapper_09 {
@@ -1021,7 +1013,7 @@
 .Quest_statusLine_ff {
     width: 280rem;
     height: 1rem;
-    background: #e9e2bf;
+    background: #E9E2BF;
     opacity: 0.1;
 }
 
@@ -1033,25 +1025,25 @@
 }
 
 .Quest_statusLabel_0d {
-    color: #cbac77;
+    color: #CBAC77;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
 .Quest_base__blocked_a7 .Quest_statusLabel_0d {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
+        color: #8C8C7E;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
+    }
 
 .Quest_base__completed_3d .Quest_statusLabel_0d {
-    color: #80d43a;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
+        color: #80D43A;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
+    }
 
 .Quest_statusIcon_6a {
     width: 24rem;
@@ -1060,8 +1052,8 @@
 }
 
 .Quest_base__blocked_a7 .Quest_statusIcon_6a {
-    background-image: url('R.images.frontline.gui.maps.battle.questTab.status_paused');
-}
+        background-image: url('R.images.frontline.gui.maps.battle.questTab.status_paused');
+    }
 
 .Quest_quest_5f {
     display: flex;
@@ -1072,7 +1064,7 @@
 }
 
 .mediaLarge .Quest_quest_5f {
-    transform: translateY(18rem);
+        transform: translateY(18rem);
 }
 
 .Quest_progress_73 {
@@ -1089,20 +1081,18 @@
     font-weight: 400;
     line-height: 1.3;
     margin-top: -8rem;
-    text-shadow:
-        0rem 0rem 8rem rgba(0, 0, 0, 0.6),
-        0rem 0rem 20rem rgba(0, 0, 0, 1);
+    text-shadow: 0rem 0rem 8rem rgba(0, 0, 0, 0.6), 0rem 0rem 20rem rgba(0, 0, 0, 1);
 }
 
 .Quest_base__completed_3d .Quest_progressNumbers_34 {
-    color: #80d43a;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
+        color: #80D43A;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
+    }
 
 .Quest_progressValue_03 {
-    color: #e9e2bf;
+    color: #E9E2BF;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -1110,18 +1100,18 @@
 }
 
 .Quest_progressValue__colored_0d {
-    color: #f2f2f7;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
+        color: #F2F2F7;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
+    }
 
 .Quest_base__completed_3d .Quest_progressValue_03 {
-    color: #80d43a;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
+        color: #80D43A;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
+    }
 
 .Quest_progressGoal_99 {
     margin-left: 1rem;
@@ -1140,15 +1130,14 @@
 }
 
 .Quest_description__newQuest_a6 {
-    color: #ffdd99;
-    text-shadow:
-        0rem 0rem 5rem rgba(255, 127, 0, 0.55),
-        0rem 0rem 3rem rgba(255, 127, 0, 0.2);
-}
+        color: #FFDD99;
+        text-shadow: 0rem 0rem 5rem rgba(255, 127, 0, 0.55), 0rem 0rem 3rem rgba(255, 127, 0, 0.2);
+    }
 
 .Quest_base__completed_3d .Quest_description_90 {
-    color: #80d43a;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
+        color: #80D43A;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
+    }
+

@@ -4,19 +4,19 @@
 }
 
 .TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
 
 .Separator_base_53 {
     width: 100%;
     height: 1rem;
-    background-image: linear-gradient(90deg, rgba(255, 255, 229, 0.2), transparent);
+    background-image: linear-gradient(90deg, rgba(255,255,229, .2), transparent);
     background-size: 3rem;
-    mask: linear-gradient(90deg, rgba(0, 0, 0, 0.4), #000 40%, #000 60%, rgba(0, 0, 0, 0.4));
+    mask: linear-gradient(90deg, rgba(0,0,0, .4), #000 40%, #000 60%, rgba(0,0,0, .4));
 }
 
 .TooltipContentHolder_base_af {
@@ -25,25 +25,13 @@
     width: 100%;
 }
 
-.TooltipContentHolder_base__primary_b3 {
-    background-image: linear-gradient(
-        90deg,
-        rgba(255, 255, 204, 0.04),
-        rgba(255, 255, 204, 0.1) 40%,
-        rgba(255, 255, 204, 0.1) 60%,
-        rgba(255, 255, 204, 0.04)
-    );
-}
+    .TooltipContentHolder_base__primary_b3 {
+    background-image: linear-gradient(90deg, rgba(255,255,204, .04), rgba(255,255,204, .1) 40%, rgba(255,255,204, .1) 60%, rgba(255,255,204, .04));
+    }
 
-.TooltipContentHolder_base__accent_3d {
-    background-image: linear-gradient(
-        90deg,
-        rgba(102, 179, 252, 0.04),
-        rgba(102, 179, 252, 0.1) 40%,
-        rgba(102, 179, 252, 0.1) 60%,
-        rgba(102, 179, 252, 0.04)
-    );
-}
+    .TooltipContentHolder_base__accent_3d {
+    background-image: linear-gradient(90deg, rgba(102,179,252, .04), rgba(102,179,252, .1) 40%, rgba(102,179,252, .1) 60%, rgba(102,179,252, .04));
+    }
 
 .TooltipContentHolder_content_aa {
     flex: 1;
@@ -95,3 +83,4 @@ body {
     font-size: 14rem;
     line-height: 18rem;
 }
+

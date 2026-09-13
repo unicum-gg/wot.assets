@@ -1,3 +1,278 @@
+.Box_mt__XS_0c {
+            margin-top: 4rem;
+        }
+        .Box_mt__SM_eb {
+            margin-top: 8rem;
+        }
+        .Box_mt__SMp_cf {
+            margin-top: 10rem;
+        }
+        .Box_mt__MD_25 {
+            margin-top: 16rem;
+        }
+        .Box_mt__MDp_49 {
+            margin-top: 20rem;
+        }
+        .Box_mt__LG_e8 {
+            margin-top: 32rem;
+        }
+        .Box_mt__XL_83 {
+            margin-top: 64rem;
+        }
+
+.Box_mr__XS_7c {
+            margin-right: 4rem;
+        }
+
+.Box_mr__SM_08 {
+            margin-right: 8rem;
+        }
+
+.Box_mr__SMp_06 {
+            margin-right: 10rem;
+        }
+
+.Box_mr__MD_4a {
+            margin-right: 16rem;
+        }
+
+.Box_mr__MDp_b6 {
+            margin-right: 20rem;
+        }
+
+.Box_mr__LG_d0 {
+            margin-right: 32rem;
+        }
+
+.Box_mr__XL_db {
+            margin-right: 64rem;
+        }
+
+.Box_mb__XS_bb {
+            margin-bottom: 4rem;
+        }
+
+.Box_mb__SM_83 {
+            margin-bottom: 8rem;
+        }
+
+.Box_mb__SMp_04 {
+            margin-bottom: 10rem;
+        }
+
+.Box_mb__MD_ed {
+            margin-bottom: 16rem;
+        }
+
+.Box_mb__MDp_65 {
+            margin-bottom: 20rem;
+        }
+
+.Box_mb__LG_c8 {
+            margin-bottom: 32rem;
+        }
+
+.Box_mb__XL_f8 {
+            margin-bottom: 64rem;
+        }
+
+.Box_ml__XS_8a {
+            margin-left: 4rem;
+        }
+
+.Box_ml__SM_e6 {
+            margin-left: 8rem;
+        }
+
+.Box_ml__SMp_fb {
+            margin-left: 10rem;
+        }
+
+.Box_ml__MD_2b {
+            margin-left: 16rem;
+        }
+
+.Box_ml__MDp_c7 {
+            margin-left: 20rem;
+        }
+
+.Box_ml__LG_39 {
+            margin-left: 32rem;
+        }
+
+.Box_ml__XL_4a {
+            margin-left: 64rem;
+        }
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+        font-size: 10rem;
+        font-weight: 400;
+        line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+        font-size: 12rem;
+        font-weight: 400;
+        line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+        font-size: 18rem;
+        font-weight: 400;
+        line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 32rem;
+}
+.Text_heading-H14_8b {
+        font-size: 14rem;
+        font-weight: 700;
+        line-height: 1.15;
+}
+.Text_heading-H15_9e {
+        font-size: 15rem;
+        font-weight: 700;
+        line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+        font-size: 18rem;
+        font-weight: 700;
+        line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+        font-size: 20rem;
+        font-weight: 400;
+        line-height: 1.2;
+}
+.Text_heading-H22_27 {
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
+}
+.Text_heading-H24R_be {
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 1.2;
+}
+.Text_heading-H24_0c {
+        font-size: 24rem;
+        font-weight: 700;
+        line-height: 1.2;
+}
+.Text_heading-H28_78 {
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 1.1;
+}
+.Text_heading-H36_32 {
+        font-size: 36rem;
+        font-weight: 700;
+        line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+        font-size: 56rem;
+        font-weight: 700;
+        line-height: 1.1;
+}
+.Text_heading-H73_8f {
+        font-size: 73rem;
+        font-weight: 700;
+        line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+        font-size: 144rem;
+        font-weight: 700;
+        line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+        color: #000000;
+    }
+.Text_WHITE_REAL_bc {
+        color: #FFFFFF;
+    }
+.Text_WHITE_62 {
+        color: #F2F2F7;
+    }
+.Text_WHITE_ORANGE_54 {
+        color: #FEFEEC;
+    }
+.Text_WHITE_SPANISH_df {
+        color: #E9E2BF;
+    }
+.Text_PAR_15 {
+        color: #8C8C7E;
+    }
+.Text_PAR_SECONDARY_5d {
+        color: #595950;
+    }
+.Text_PAR_TERTIARY_c9 {
+        color: #37362E;
+    }
+.Text_INFO_RED_30 {
+        color: #FF0000;
+    }
+.Text_RED_66 {
+        color: #FF2717;
+    }
+.Text_RED_DARK_d8 {
+        color: #B70000;
+    }
+.Text_YELLOW_ed {
+        color: #FEAB34;
+    }
+.Text_ORANGE_be {
+        color: #EE7000;
+    }
+.Text_CREAM_57 {
+        color: #FFDD99;
+    }
+.Text_BROWN_18 {
+        color: #CBAC77;
+    }
+.Text_GREEN_BRIGHT_3f {
+        color: #80D43A;
+    }
+.Text_GREEN_e3 {
+        color: #7AB300;
+    }
+.Text_GREEN_DARK_f1 {
+        color: #497212;
+    }
+.Text_BLUE_BOOSTER_21 {
+        color: #CCFFFF;
+    }
+.Text_BLUE_TEAMKILLER_ab {
+        color: #09E2FF;
+    }
+.Text_CRED_f7 {
+        color: #CED9D9;
+    }
+.Text_GOLD_28 {
+        color: #FFC363;
+    }
+.Text_BOND_be {
+        color: #C9C9B6;
+    }
+.Text_PROM_65 {
+        color: #A29B70;
+    }
+
 /*
     Gameface can't calculate gradient biggest than 8128px
     in JS 8000 reserved like anchor for start optimization
@@ -9,11 +284,11 @@
     position: relative;
 }
 .ProgressBar_base__medium_62 {
-    height: 6rem;
-}
+        height: 6rem;
+    }
 .ProgressBar_base__small_df {
-    height: 2rem;
-}
+        height: 2rem;
+    }
 .ProgressBar_background_51 {
     width: 100%;
     max-width: 8001px;
@@ -27,15 +302,16 @@
     left: 0;
 }
 .ProgressBar_background__medium_6e {
-    height: 6rem;
-}
+        height: 6rem;
+    }
 .ProgressBar_background__small_46 {
-    height: 2rem;
-}
+        height: 2rem;
+    }
 .ProgressBar_lineWrapper_6a {
     display: flex;
     flex: 1;
 }
+
 
 .ProgressBarBlink_base_24 {
     width: 60rem;
@@ -50,16 +326,16 @@
     pointer-events: none;
 }
 
-.ProgressBarBlink_base__medium_ec {
-    width: 42rem;
-    height: 70rem;
-}
+    .ProgressBarBlink_base__medium_ec {
+        width: 42rem;
+        height: 70rem;
+    }
 
-.ProgressBarBlink_base__small_0f {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
+    .ProgressBarBlink_base__small_0f {
+        width: 44rem;
+        height: 43rem;
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -71,18 +347,18 @@
     height: 100%;
     background-color: var(--progress-line-base);
     position: relative;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressLineImpose_base__disabled_cc {
-    background-color: var(--progress-line-disabled);
-}
+        background-color: var(--progress-line-disabled);
+    }
 .ProgressLineImpose_base__finished_d4 {
-    background-color: var(--progress-line-finished);
-}
+        background-color: var(--progress-line-finished);
+    }
 .ProgressLineImpose_base__withoutBounce_56 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 .ProgressLineImpose_pattern_1c {
     max-width: 8001px;
     background-image: var(--progress-pattern-base);
@@ -96,19 +372,19 @@
     left: 1rem;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-disabled);
-    left: 0;
-}
+        background-image: var(--progress-pattern-disabled);
+        left: 0;
+    }
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-finished);
-}
+        background-image: var(--progress-pattern-finished);
+    }
 .ProgressLineImpose_gradient_35 {
     max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    background-image: linear-gradient(90deg, rgba(0,0,0, .5), rgba(255,255,255, .75));
     mix-blend-mode: overlay;
     position: absolute;
     top: 1rem;
@@ -117,15 +393,15 @@
     left: 0;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
-    top: 0;
-    bottom: 0;
-}
+        top: 0;
+        bottom: 0;
+    }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
-    display: none;
-}
+        display: none;
+    }
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
-}
+        background-image: linear-gradient(90deg, rgba(0,0,0, .5), rgba(255,255,255, .75), rgba(0,0,0, .5));
+    }
 .ProgressLineImpose_glow_a5 {
     width: 60rem;
     max-width: 8001px;
@@ -140,17 +416,17 @@
     pointer-events: none;
 }
 .ProgressLineImpose_glow__left_d8 {
-    left: 1rem;
-}
+        left: 1rem;
+    }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
-    display: none;
-}
+    .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+        display: none;
+    }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
+        width: 44rem;
+        height: 43rem;
+        background-image: var(--progress-glow-small);
+    }
 
 /*
     Gameface can't calculate gradient biggest than 8128px
@@ -172,7 +448,7 @@
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1), cubic-bezier(.21, .61, .35, 1);
     transition-property: width, transform;
 }
 
@@ -186,12 +462,12 @@
     height: 100%;
     position: absolute;
     top: 0;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 .ProgressBarDeltaGrow_glow_68 {
     width: 0;
     max-width: 8001px;
@@ -201,12 +477,12 @@
     position: absolute;
     bottom: 0;
     transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-timing-function: cubic-bezier(1, 0, .92, 1);
     transition-property: width;
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
+        transition-timing-function: cubic-bezier(1, 0, .75, .75);
+    }
 
 @keyframes App_slideUp_ec {
     0% {
@@ -249,7 +525,7 @@
     }
 
     100% {
-        opacity: 0.8;
+        opacity: .8;
         transform: translate(-50%, -50%) scale(1);
     }
 }
@@ -280,7 +556,7 @@
     }
 
     100% {
-        opacity: 0.2;
+        opacity: .2;
         transform: translateY(0);
     }
 }
@@ -318,155 +594,99 @@
 .App_base_17 {
     display: flex;
     flex-direction: column;
-    width: 180rem;
-    height: 225rem;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     position: relative;
-}
-.App_base__small_62 {
-    width: 120rem;
-    height: 150rem;
-}
-.App_wrapper_27 {
-    animation-name: App_slideUp_ec;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.44, 0.05, 0.55, 0.95);
-    animation-delay: 0.2s;
-    animation-iteration-count: 1;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    position: relative;
-    pointer-events: none;
-}
-.App_image_a7 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: url('R.images.white_tiger.gui.maps.icons.logo.main_wt') no-repeat center top / contain;
-}
-.App_base__small_62 .App_image_a7 {
-    background-image: url('R.images.white_tiger.gui.maps.icons.logo.main_wt_small');
-}
-.App_image__allCollected_d1 {
-    background-image: url('R.images.white_tiger.gui.maps.icons.logo.full_main_wt');
-}
-.App_base__small_62 .App_image__allCollected_d1 {
-    background-image: url('R.images.white_tiger.gui.maps.icons.logo.full_main_wt_small');
-}
-.App_checkmarkWrapper_68 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
-    width: 100%;
-    height: 75%;
-    position: absolute;
-}
-.App_checkmark_a9 {
-    width: 64rem;
-    height: 64rem;
-    background: url('R.images.white_tiger.gui.maps.icons.logo.check_green') center / contain no-repeat;
-}
-.App_base__small_62 .App_checkmark_a9 {
-    width: 48rem;
-    height: 48rem;
-}
-.App_imageHover_c1 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: url('R.images.white_tiger.gui.maps.icons.logo.main_wt_hover') no-repeat center top / contain;
-    opacity: 0;
-    transition: opacity 1s cubic-bezier(0.07, 0.82, 0.17, 1);
-}
-.App_base__small_62 .App_imageHover_c1 {
-    background-image: url('R.images.white_tiger.gui.maps.icons.logo.main_wt_small_hover');
-}
-.App_imageHover__isVisible_18 {
-    opacity: 1;
-}
-.App_imageHover__allCollected_52 {
-    background-image: url('R.images.white_tiger.gui.maps.icons.logo.full_main_wt_hover');
-}
-.App_base__small_62 .App_imageHover__allCollected_52 {
-    background-image: url('R.images.white_tiger.gui.maps.icons.logo.full_main_wt_small_hover');
-}
-.App_newItemAnimation_13 {
-    width: 200rem;
-    height: 200rem;
-    opacity: 0;
-    position: absolute;
-    top: -54rem;
-    left: -11.5rem;
-    z-index: 2;
-    transform-origin: center;
-    transition: opacity 0.3s ease;
-}
-.App_base__small_62 .App_newItemAnimation_13 {
-    width: 100rem;
-    height: 100rem;
-    top: -20rem;
-    left: 10rem;
-}
-.App_newItemAnimation__isVisible_bd {
-    opacity: 1;
-}
-.App_hoverArea_86 {
-    width: 100%;
-    height: 100%;
-}
-.App_hoverAreaWrapper_f5 {
-    display: flex;
-    flex-direction: column;
-    width: 180rem;
-    height: 140rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     cursor: pointer;
 }
-.App_base__small_62 .App_hoverAreaWrapper_f5 {
-    width: 125rem;
-    height: 90rem;
-}
-.App_progressionValue_e8 {
-    color: #ffffff;
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
+.App_bgWrapper_df {
+    animation-name: App_slideUp_ec;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.44, .05, .55, .95);
+    animation-delay: .2s;
+    animation-iteration-count: 1;
     width: 100%;
-    height: 80%;
-    position: absolute;
+    height: 100%;
+    opacity: 0;
 }
-.App_base__small_62 .App_progressionValue_e8 {
-    color: #ffffff;
+.App_bg_d6 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('R.images.white_tiger.gui.maps.icons.logo.bg') no-repeat center / contain;
+    transition: opacity .45s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.App_base_17:hover .App_bg_d6 {
+        opacity: 0;
+    }
+.App_base__allCollected_e0 .App_bg_d6 {
+        background-image: url('R.images.white_tiger.gui.maps.icons.logo.final_bg');
+    }
+.App_bgHover_bf {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('R.images.white_tiger.gui.maps.icons.logo.bg_hover') no-repeat center / contain;
+    opacity: 0;
+    transition: opacity .45s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.App_base_17:hover .App_bgHover_bf {
+        opacity: 1;
+    }
+.App_base__allCollected_e0 .App_bgHover_bf {
+        background-image: url('R.images.white_tiger.gui.maps.icons.logo.final_bg_hover');
+    }
+.App_progressWrapper_29 {
+    animation-name: App_fadeIn_2b;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.07, .82, .17, 1);
+    animation-delay: .5s;
+    animation-iteration-count: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    bottom: 25rem;
+    left: 0;
+}
+.mediaMedium .App_progressWrapper_29 {
+        bottom: 30rem;
+}
+.mediaExtraLarge .App_progressWrapper_29 {
+        bottom: 40rem;
+}
+.App_progressValue_f3 {
+    color: #FFFFFF;
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
+    margin-bottom: 2rem;
+    font-size: 30rem;
+    text-shadow: 0 0 2rem #1f283b, 0 0 4rem #1f283b, 0 0 6rem #598ed5, 0 0 6rem #223145;
 }
-.App_progressionCountWrapper_34 {
-    display: flex;
-    justify-content: center;
-    cursor: default;
+.mediaMedium .App_progressValue_f3 {
+        margin-bottom: 4rem;
+        font-size: 36rem;
 }
-.App_progressionCountWrapper_34 .App_progressbarWrapper_4c {
-    width: 45%;
+.mediaExtraLarge .App_progressValue_f3 {
+        margin-bottom: 6rem;
+        font-size: 46rem;
+}
+.App_progressBarWrapper_7a {
+    width: 54%;
 }
 
 body {
-    display: flex;
-    justify-content: center;
+    margin: 1rem;
+    overflow: hidden;
 }
+
