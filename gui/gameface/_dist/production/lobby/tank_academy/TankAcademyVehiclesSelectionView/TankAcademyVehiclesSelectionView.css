@@ -774,11 +774,15 @@
 }
 .Tabs_tabs_39 {
     display: flex;
+    --new-glow-opacity: 0;
     flex-direction: row;
     flex-wrap: nowrap;
     flex-shrink: 0;
     width: max-content;
 }
+.Tabs_tabs__newGlowVisible_fa {
+        --new-glow-opacity: 1;
+    }
 .Tabs_tabs__dragging_68,
     .Tabs_tabs__dragging_68 * {
         cursor: all-scroll;
@@ -1089,7 +1093,6 @@
 .TabItem_isNew_4a {
     width: 72rem;
     height: 72rem;
-    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.glow_new') no-repeat center / cover;
     opacity: 0;
     position: absolute;
     top: 50%;
@@ -1097,7 +1100,6 @@
     z-index: -1;
     transform: translateY(-50%);
     transform-origin: center center;
-    transition: none;
     animation: TabItem_is-new-glow-rotate_24 20s linear infinite;
     pointer-events: none;
 }
@@ -1108,12 +1110,20 @@
 }
 .TabItem_isNew__big_d5 {
         opacity: 1;
-        transition: opacity 0.2s cubic-bezier(0.97, 0.95, 0.05, 0.98);
-        transition-delay: 0.3s;
     }
-.TabItem_isNew__big__selected_f7 {
-            background: none;
+.TabItem_base__selected_25 .TabItem_isNew__big_d5 {
+            opacity: 0;
         }
+.TabItem_isNewGlow_da {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.glow_new') no-repeat center / cover;
+    opacity: var(--new-glow-opacity);
+    transition: opacity 0.2s ease-in;
+}
+.TabItem_base__selected_25 .TabItem_isNewGlow_da {
+        opacity: 0;
+    }
 .TabItem_isNewCounter_37 {
     width: 24rem;
     height: 24rem;

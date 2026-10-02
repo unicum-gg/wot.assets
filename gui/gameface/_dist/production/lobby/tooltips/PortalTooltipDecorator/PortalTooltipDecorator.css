@@ -1,0 +1,25 @@
+.PortalTooltipDecorator_base_24 {
+    display: flex;
+    border-radius: 3rem;
+    background: #131313;
+    overflow: hidden;
+    position: absolute;
+}
+
+.PortalTooltipDecorator_bg_74 {
+    width: 100%;
+    height: 192rem;
+    background: url('R.images.portal.gui.maps.icons.tooltips.headerBg') no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.PortalTooltipDecorator_decorator_e4 {
+    padding: 1rem;
+    border: 1rem solid #464646;
+    border-radius: 2rem;
+    box-shadow: 0 0 10rem 0 rgba(196, 196, 196, 0.2) inset;
+    position: relative;
+}
+
