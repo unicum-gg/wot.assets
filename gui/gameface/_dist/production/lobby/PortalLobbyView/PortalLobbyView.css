@@ -1471,23 +1471,100 @@
         height: 244rem;
 }
 
+@keyframes QuestsWidget_slideLeftIn_ba {
+    from {
+        opacity: 0;
+        transform: translateX(40rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes QuestsWidget_slideRightIn_b4 {
+    from {
+        opacity: 0;
+        transform: translateX(-40rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes QuestsWidget_slideUp_ca {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes QuestsWidget_slideDown_d8 {
+    0% {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes QuestsWidget_fadeIn_76 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes QuestsWidget_fadeOut_a9 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+@keyframes QuestsWidget_rotating_ef {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
 .QuestsWidget_base_58 {
     width: 240rem;
     height: 377rem;
     position: relative;
 }
-
-    .mediaMedium .QuestsWidget_base_58 {
+.mediaMedium .QuestsWidget_base_58 {
         width: 340rem;
         height: 529rem;
 }
-
-    .mediaExtraLarge .QuestsWidget_base_58 {
+.mediaExtraLarge .QuestsWidget_base_58 {
         width: 485rem;
         height: 773rem;
 }
-
-    .QuestsWidget_base_58:hover {
+.QuestsWidget_base_58 {
+    opacity: 0;
+    animation-name: QuestsWidget_fadeIn_76;
+    animation-duration: .8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.07, .82, .17, 1);
+    animation-delay: 0.8s;
+    animation-iteration-count: 1;
+}
+.QuestsWidget_base_58:hover {
         cursor: pointer;
     }
 .QuestsWidget_texts_c6 {
@@ -1624,23 +1701,100 @@
         line-height: 1.2;
 }
 
+@keyframes ShopWidget_slideLeftIn_37 {
+    from {
+        opacity: 0;
+        transform: translateX(40rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes ShopWidget_slideRightIn_26 {
+    from {
+        opacity: 0;
+        transform: translateX(-40rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes ShopWidget_slideUp_42 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes ShopWidget_slideDown_ff {
+    0% {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes ShopWidget_fadeIn_6e {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes ShopWidget_fadeOut_a7 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+@keyframes ShopWidget_rotating_32 {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
 .ShopWidget_base_d1 {
     width: 240rem;
     height: 377rem;
     position: relative;
 }
-
-    .mediaMedium .ShopWidget_base_d1 {
+.mediaMedium .ShopWidget_base_d1 {
         width: 340rem;
         height: 529rem;
 }
-
-    .mediaExtraLarge .ShopWidget_base_d1 {
+.mediaExtraLarge .ShopWidget_base_d1 {
         width: 485rem;
         height: 773rem;
 }
-
-    .ShopWidget_base_d1:hover {
+.ShopWidget_base_d1 {
+    opacity: 0;
+    animation-name: ShopWidget_fadeIn_6e;
+    animation-duration: .8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.07, .82, .17, 1);
+    animation-delay: 0.8s;
+    animation-iteration-count: 1;
+}
+.ShopWidget_base_d1:hover {
         cursor: pointer;
     }
 .ShopWidget_sequence_df,
