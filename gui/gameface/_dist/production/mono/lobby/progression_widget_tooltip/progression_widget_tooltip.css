@@ -326,16 +326,16 @@ html[lang=th] input {
   position: relative;
 }
 
-.ProgressionWidgetTooltipApp_heading_710814d3 {
+.ProgressionWidgetTooltipApp_heading_1b75575c {
   color: #fcf7e5;
   font-size: 22rem;
   font-weight: 700;
   line-height: 1.2;
   width: 100%;
-  text-align: left;
   margin-top: 2rem;
+  text-align: left;
 }
-.ProgressionWidgetTooltipApp_base__completed_edd64607 .ProgressionWidgetTooltipApp_heading_710814d3 {
+.ProgressionWidgetTooltipApp_base__completed_edd64607 .ProgressionWidgetTooltipApp_heading_1b75575c {
   text-align: center;
 }
 
@@ -356,14 +356,14 @@ html[lang=th] input {
   width: 100%;
 }
 
-.ProgressionWidgetTooltipApp_currentStage_4a416f88 {
+.ProgressionWidgetTooltipApp_currentStage_2fe2a24 {
   color: #f2f2f7;
   font-size: 73rem;
   font-weight: 700;
   line-height: 1.1;
+  margin-top: -27rem;
   text-align: center;
   text-shadow: 0 0 14rem #00a2ff;
-  margin-top: -27rem;
 }
 .ProgressionWidgetTooltipApp_currentStage_description_27b6c9f3 {
   color: #e9e2bf;
