@@ -1,1 +1,1 @@
-import{Si as a,uo as s}from"./lib.js";var r="HeadDecorator_dc81f299",e=a(),c=({className:a,children:c})=>(0,e.jsx)("div",{className:s(r,a),children:c});export{c as t};
+import{lo as a,xi as s}from"./lib.js";var r="HeadDecorator_dc81f299",e=s(),c=({className:s,children:c})=>(0,e.jsx)("div",{className:a(r,s),children:c});export{c as t};

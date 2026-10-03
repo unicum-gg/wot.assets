@@ -129,11 +129,12 @@
   left: 0;
 }
 
-.App_eda219f2 {
+.App_df467a8e {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   width: 288rem;
+  height: 390rem;
   padding: 8rem 24rem 28rem;
   background: #141414;
   position: relative;
@@ -141,6 +142,15 @@
 .App_base__popup_58df188b {
   border: 1rem solid #4b4b4b;
   border-radius: 2rem;
+}
+.App_base__noAdditionalRewards_8fcbc1bc {
+  height: 290rem;
+}
+.App_base__noPreview_54b26398 {
+  height: 340rem;
+}
+.App_base__noAdditionalRewards_8fcbc1bc.App_base__noPreview_54b26398 {
+  height: 240rem;
 }
 
 .App_close_17e179e2 {

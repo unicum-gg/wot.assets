@@ -1,1 +1,1 @@
-import{ba as a}from"./lib.js";var o=(o,r)=>o.map(o=>a(o.value)).join(r);export{o as t};
+import{ya as a}from"./lib.js";var o=(o,r)=>o.map(o=>a(o.value)).join(r);export{o as t};
