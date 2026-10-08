@@ -1975,12 +1975,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
 }
 .Footer_finalPrice__tokens_c9 {
-        color: #E9E2BF;
+        color: #FFC363;
         font-size: 24rem;
         font-weight: 700;
         line-height: 1.2;
-        margin-top: -1rem;
-        margin-right: 6rem;
+        margin: -1rem 4rem 0 0;
     }
 .Footer_finalPrice__tokens__disabled_09 {
             color: #FF2717;
@@ -1989,8 +1988,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
             line-height: 1.2;
         }
 .Footer_tokenIcon_fa {
-    width: 24rem;
-    height: 24rem;
+    width: 16rem;
+    height: 16rem;
     margin-top: 2rem;
     background: url('R.images.armory_yard.gui.maps.icons.shop.token.s24') no-repeat center / cover;
 }
@@ -2087,7 +2086,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         width: 1124rem;
 }
 .Footer_productCounter_dd {
-    margin-left: 6rem;
+    margin-left: 8rem;
     position: relative;
 }
 .Footer_calculator_a1 {

@@ -520,6 +520,7 @@ body {
     flex-direction: column;
     width: 100%;
     height: 100%;
+    background-color: #000000;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -529,12 +530,18 @@ body {
 
 .App_leaderBoardVignette_97 {
     background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    transition: opacity 0.2s ease-in-out;
 }
+
+.App_leaderBoardVignette__active_1b {
+        opacity: 1;
+    }
 
 .App_leaderBoardBg_60 {
     background-repeat: no-repeat;
@@ -546,7 +553,7 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .App_leaderBoardBg__active_bb {
@@ -555,12 +562,18 @@ body {
 
 .App_vignnet_33 {
     background: url('R.images.portal.gui.maps.icons.battle_result.mainBg.vignett') no-repeat center / cover;
+    opacity: 1;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    transition: opacity 0.2s ease-in-out;
 }
+
+.App_vignnet__hidden_9e {
+        opacity: 0;
+    }
 
 .App_glowRed_26,
 .App_glowBlue_a4 {
@@ -2810,10 +2823,21 @@ body {
     display: flex;
     width: 100%;
     height: 100%;
+    opacity: 0;
+    visibility: hidden;
     position: absolute;
     top: 0;
     left: 0;
+    transition: opacity 0.2s ease-in-out, visibility 0s linear 0.2s;
+    pointer-events: none;
 }
+
+    .TabContent_base__active_20 {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s;
+        pointer-events: auto;
+    }
 
     .TabContent_base__leaderboard_77 {
         padding-top: 20rem;
