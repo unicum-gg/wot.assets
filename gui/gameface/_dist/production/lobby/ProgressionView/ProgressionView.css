@@ -1,158 +1,3 @@
-.Countdown_base_fe {
-    display: flex;
-    align-items: center;
-}
-
-.Countdown_icon_8b {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / contain;
-}
-
-.Countdown_description_8d {
-    color: #FFDD99;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.FormatText_base_d0 {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.TextButton_base_b6 {
-    display: flex;
-    align-items: center;
-    padding: 0 3rem;
-    font-size: 12rem;
-    position: relative;
-    cursor: pointer;
-}
-
-    .TextButton_base__right_39 {
-        flex-direction: row-reverse;
-    }
-.TextButton_icon_17 {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / contain;
-    position: relative;
-}
-.TextButton_icon__back_43,
-    .TextButton_icon__forward_59 {
-        margin: -1rem -5rem;
-        background-image: url('R.images.gui.maps.icons.components.text_button.back');
-        transform: translateY(1rem);
-    }
-.TextButton_icon__forward_59 {
-        transform: rotate(180deg) translateY(1rem);
-    }
-.TextButton_icon__close_53 {
-        margin: -1rem 0;
-        background-image: url('R.images.gui.maps.icons.components.text_button.close');
-    }
-.TextButton_icon__info_33 {
-        margin: -1rem -5rem;
-        background-image: url('R.images.gui.maps.icons.components.text_button.info');
-    }
-.TextButton_glow_a4 {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    transition: opacity .16s;
-}
-.TextButton_icon__back_43 .TextButton_glow_a4,
-    .TextButton_icon__forward_59 .TextButton_glow_a4 {
-        background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-    }
-.TextButton_icon__close_53 .TextButton_glow_a4 {
-        background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-    }
-.TextButton_icon__info_33 .TextButton_glow_a4 {
-        background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-    }
-.TextButton_base_b6:hover .TextButton_glow_a4 {
-        opacity: 1;
-    }
-.TextButton_base_b6:active .TextButton_glow_a4 {
-        opacity: 0;
-    }
-.TextButton_caption_82 {
-    position: relative;
-    transition: color .16s, text-shadow .16s;
-}
-.TextButton_caption__back_b9,
-    .TextButton_caption__forward_4e,
-    .TextButton_caption__close_36 {
-        color: #FFDD99;
-        text-shadow: 0 0 10rem rgba(255,42,0, 1),
-            0 0 10rem rgba(255,42,0, .4),
-            0 0 10rem rgba(255,42,0, .4),
-            0 0 2rem rgba(255,42,0, .4),
-            0 0 1rem rgba(255,42,0, .4),
-            0 0 2rem rgba(255,42,0, .4),
-            0 0 1rem rgba(255,42,0, .4);
-    }
-.TextButton_base_b6:hover .TextButton_caption__back_b9, .TextButton_base_b6:hover .TextButton_caption__forward_4e, .TextButton_base_b6:hover .TextButton_caption__close_36 {
-            color: #fffa9f;
-        }
-.TextButton_base_b6:active .TextButton_caption__back_b9, .TextButton_base_b6:active .TextButton_caption__forward_4e, .TextButton_base_b6:active .TextButton_caption__close_36 {
-            color: #FFDD99;
-        }
-.TextButton_caption__info_23 {
-        padding: 0 5rem;
-        color: #CCFFFF;
-        text-shadow: 0 0 12rem rgba(31,68,255, .8),
-            0 0 8rem #00eaff;
-    }
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
-            color: #e3ffff;
-            text-shadow: 0 0 12rem rgba(31,68,255, .8),
-                0 0 12rem rgba(0,234,255, 1),
-                0 0 8rem #00eaff;
-        }
-.TextButton_base_b6:active .TextButton_caption__info_23 {
-            color: #CCFFFF;
-            text-shadow: 0 0 12rem rgba(31,68,255, .6),
-                0 0 8rem #00eaff;
-        }
-.TextButton_goto_e7 {
-    color: #7c7c6c;
-}
-.TextButton_base__left_ff .TextButton_goto_e7 {
-        margin-left: 8rem;
-    }
-.TextButton_base__right_39 .TextButton_goto_e7 {
-        margin-right: 8rem;
-    }
-.TextButton_shine_e2 {
-    width: 90rem;
-    height: 40rem;
-    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: -4rem;
-    transition: opacity .16s;
-    pointer-events: none;
-}
-.TextButton_base__left_ff .TextButton_shine_e2 {
-        left: -4rem;
-    }
-.TextButton_base__right_39 .TextButton_shine_e2 {
-        right: -4rem;
-        transform: rotate(180deg);
-    }
-.TextButton_base_b6:hover .TextButton_shine_e2 {
-        opacity: 1;
-    }
-.TextButton_base_b6:active .TextButton_shine_e2 {
-        opacity: 0;
-    }
-
 .Box_mt__XS_0c {
             margin-top: 4rem;
         }
@@ -258,6 +103,11 @@
 .Box_ml__XL_4a {
             margin-left: 64rem;
         }
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 /* eslint-disable-next-line expectedscss*/
 .Text_paragraph-P10_2c {
@@ -423,216 +273,143 @@
         color: #A29B70;
     }
 
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBar_base_45 {
-    width: 100%;
-    height: 12rem;
-    position: relative;
-}
-.ProgressBar_base__medium_62 {
-        height: 6rem;
-    }
-.ProgressBar_base__small_df {
-        height: 2rem;
-    }
-.ProgressBar_background_51 {
-    width: 100%;
-    max-width: 8001px;
-    height: 100%;
-    background-image: var(--progress-base);
-    background-repeat: repeat;
-    background-position: 0 50%;
-    background-size: 3rem 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.ProgressBar_background__medium_6e {
-        height: 6rem;
-    }
-.ProgressBar_background__small_46 {
-        height: 2rem;
-    }
-.ProgressBar_lineWrapper_6a {
+.ScrambleText_base_cd {
     display: flex;
-    flex: 1;
+    flex-direction: row;
 }
 
-
-.ProgressBarBlink_base_24 {
-    width: 60rem;
-    height: 100rem;
-    background-image: var(--progress-glow);
-    background-size: contain;
-    mix-blend-mode: lighten;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(50%, -50%);
-    pointer-events: none;
+.ScrambleText_text_63 {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 12rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: color .8s ease;
 }
 
-    .ProgressBarBlink_base__medium_ec {
-        width: 42rem;
-        height: 70rem;
+.ScrambleText_text__hover_d1 {
+        color: #f54343;
+        text-shadow: 0 0 5rem rgba(255, 127, 0, 0.25), 0 0 11rem #ff2a00, 0 0 20rem #e52;
+        cursor: pointer;
     }
 
-    .ProgressBarBlink_base__small_0f {
-        width: 44rem;
-        height: 43rem;
-        background-image: var(--progress-glow-small);
-    }
+.mediaExtraLarge .ScrambleText_text_63 {
+        font-size: 16rem;
+}
 
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressLineImpose_base_80 {
-    max-width: 8001px;
-    height: 100%;
-    background-color: var(--progress-line-base);
+.ScrambleText_randomChar_d4 {
+    color: #fafafa;
+    opacity: .4;
+}
+
+.CloseButton_base_fb {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 124rem;
     position: relative;
-    transition-timing-function: cubic-bezier(1, 0, .92, 1);
-    transition-property: width;
 }
-.ProgressLineImpose_base__disabled_cc {
-        background-color: var(--progress-line-disabled);
-    }
-.ProgressLineImpose_base__finished_d4 {
-        background-color: var(--progress-line-finished);
-    }
-.ProgressLineImpose_base__withoutBounce_56 {
-        transition-timing-function: cubic-bezier(1, 0, .75, .75);
-    }
-.ProgressLineImpose_pattern_1c {
-    max-width: 8001px;
-    background-image: var(--progress-pattern-base);
-    background-repeat: repeat;
-    background-position: 0 50%;
-    background-size: 3rem 10rem;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
+
+    .mediaExtraLarge .CloseButton_base_fb {
+        min-width: 158rem;
 }
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
-        top: 0;
-        bottom: 0;
-    }
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
-        background-image: var(--progress-pattern-disabled);
-        left: 0;
-    }
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
-        background-image: var(--progress-pattern-finished);
-    }
-.ProgressLineImpose_gradient_35 {
-    max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0,0,0, .5), rgba(255,255,255, .75));
-    mix-blend-mode: overlay;
-    position: absolute;
-    top: 1rem;
-    right: 0;
-    bottom: 1rem;
-    left: 0;
+
+.CloseButton_text_7b {
+    color: #fd9;
+    text-shadow: 0 0 5rem rgba(255, 127, 0, 0.25), 0 0 11rem #ff2a00, 0 0 20rem #e52;
 }
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
-        top: 0;
-        bottom: 0;
+
+.CloseButton_icon_9a {
+    width: 40rem;
+    height: 40rem;
+    background: no-repeat center / cover;
+    cursor: pointer;
+}
+
+.mediaExtraLarge .CloseButton_icon_9a {
+        width: 46rem;
+        height: 46rem;
+}
+
+.CloseButton_icon__default_bc {
+        background-image: url('R.images.portal.gui.maps.icons.hangar.closeButton.icon_default');
     }
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
-        display: none;
+
+.CloseButton_icon__hover_79 {
+        background-image: url('R.images.portal.gui.maps.icons.hangar.closeButton.icon_hover');
     }
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
-        background-image: linear-gradient(90deg, rgba(0,0,0, .5), rgba(255,255,255, .75), rgba(0,0,0, .5));
-    }
-.ProgressLineImpose_glow_a5 {
-    width: 60rem;
-    max-width: 8001px;
-    height: 100rem;
-    background-image: var(--progress-glow);
-    background-size: contain;
-    mix-blend-mode: lighten;
+
+.PortalSimpleTooltip_base_2c {
     position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translate(-50%, -50%);
+    z-index: 1000;
+    animation: PortalSimpleTooltip_fadeIn_a2 0.12s ease-in-out;
     pointer-events: none;
 }
-.ProgressLineImpose_glow__left_d8 {
-        left: 1rem;
+.PortalSimpleTooltip_content_d9 {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 200rem;
+    max-width: 368rem;
+    padding: 16rem 20rem;
+    border: 1rem solid #464646;
+    border-radius: 2rem;
+    box-shadow: 0 0 20rem 0 rgba(196, 196, 196, 0.2) inset, 0 0 60rem 0 rgba(0, 0, 0, 0.5), 0 2rem 10rem 2rem rgba(0, 0, 0, 0.5);
+    background: #131313;
+}
+.PortalSimpleTooltip_content__hidden_4e {
+        visibility: hidden;
     }
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
-    .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
-        display: none;
+.PortalSimpleTooltip_header_34,
+.PortalSimpleTooltip_body_9f {
+    width: 100%;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+.PortalSimpleTooltip_header_34 {
+    color: #e2e2e2;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.PortalSimpleTooltip_header__withBody_2f {
+        margin-bottom: 8rem;
     }
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
-        width: 44rem;
-        height: 43rem;
-        background-image: var(--progress-glow-small);
+.PortalSimpleTooltip_body_9f {
+    color: #909090;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+@keyframes PortalSimpleTooltip_fadeIn_a2 {
+    0% {
+        opacity: 0;
     }
 
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, .92, 1), cubic-bezier(.21, .61, .35, 1);
-    transition-property: width, transform;
+    100% {
+        opacity: 1;
+    }
 }
 
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaGrow_base_7e {
-    width: 0;
+.Parallax_base_66 {
+    width: 100%;
     height: 100%;
+    background: no-repeat center / cover;
+    overflow: hidden;
     position: absolute;
-    top: 0;
-    transition-timing-function: cubic-bezier(1, 0, .92, 1);
-    transition-property: width;
+    pointer-events: none;
 }
-.ProgressBarDeltaGrow_base__withoutBounce_b5 {
-        transition-timing-function: cubic-bezier(1, 0, .75, .75);
-    }
-.ProgressBarDeltaGrow_glow_68 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
+
+.Parallax_layer_c8 {
+    background: no-repeat center / cover;
     position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, .92, 1);
-    transition-property: width;
+    top: -3%;
+    right: -6%;
+    bottom: -3%;
+    left: -6%;
 }
-.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
-        transition-timing-function: cubic-bezier(1, 0, .75, .75);
-    }
 
 .Reward_base_ea {
     display: flex;
@@ -821,1137 +598,812 @@
         right: -14rem;
     }
 
-.DailyQuestCard_rewardImage_a3 {
-    width: 100%;
-}
-.DailyQuestCard_dailyQuests_61 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30rem;
-    margin-bottom: 20rem;
-}
-.DailyQuestCard_dailyQuest_47 {
+.Stage_base_2b {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 272rem;
-    min-height: 200rem;
-    margin: 0 10rem;
-    border-left: 1rem solid rgba(255, 255, 255, 0.1);
-    border-radius: 6rem;
-    border-right: 1rem solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
-    text-align: center;
+    flex: 1;
+    width: 0;
+    height: 232rem;
     position: relative;
 }
-.DailyQuestCard_dailyQuest__incomplete_02 {
-        background: linear-gradient(180deg, rgba(26, 26, 26, 0.3) 92.64%, rgba(26, 26, 26, 0) 100%);
+
+    .Stage_base__active_e7 {
+        background: url('R.images.portal.gui.maps.icons.progression.active.small') no-repeat center / cover;
     }
-.DailyQuestCard_dailyQuest__completed_7b {
-        border-color: rgba(135, 218, 83, 0.7);
-        background: linear-gradient(180deg, rgba(137, 167, 1, 0) 0%, rgba(137, 167, 1, 0.1) 10%);
+
+    .mediaSmall .Stage_base__active_e7 {
+            background-image: url('R.images.portal.gui.maps.icons.progression.active.medium_small');
+}
+
+    .mediaMedium .Stage_base__active_e7 {
+            background-image: url('R.images.portal.gui.maps.icons.progression.active.medium');
+}
+
+    .mediaLarge .Stage_base__active_e7 {
+            background-image: url('R.images.portal.gui.maps.icons.progression.active.large');
+}
+
+    .mediaExtraLarge .Stage_base__active_e7 {
+            background-image: url('R.images.portal.gui.maps.icons.progression.active.extra_large');
+}
+
+    .mediaSmall .Stage_base_2b {
+        height: 252rem;
+}
+
+    .mediaMedium .Stage_base_2b {
+        height: 351rem;
+}
+
+    .mediaLarge .Stage_base_2b {
+        height: 371rem;
+}
+
+    .mediaExtraLarge .Stage_base_2b {
+        height: 554rem;
+}
+
+.Stage_border_97 {
+    width: 2rem;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.progression.border') no-repeat center / contain;
+    position: absolute;
+    left: -1rem;
+}
+
+.Stage_border__right_3a {
+        right: -1rem;
+        left: auto;
     }
-.DailyQuestCard_dailyQuest__completed_7b .DailyQuestCard_dailyQuest_description_41 {
-            color: #7AB300;
-        }
-.DailyQuestCard_dailyQuest__completed_7b .DailyQuestCard_dailyQuest_top_left_20,
-        .DailyQuestCard_dailyQuest__completed_7b .DailyQuestCard_dailyQuest_top_right_47 {
-            border-color: rgba(135, 218, 83, 0.7);
-            background: none;
-        }
-.DailyQuestCard_dailyQuest_top_13 {
-        display: flex;
-        width: 100%;
+
+.Stage_base__active_e7 .Stage_border_97 {
+        display: none;
     }
-.DailyQuestCard_dailyQuest_top_left_20 {
-            display: flex;
-            flex: 1;
-            height: 10rem;
-            border-radius: 6rem 0 0 0;
-            border-top: 1rem solid rgba(255, 255, 255, 0.2);
-            background: url('R.images.white_tiger.gui.maps.icons.progression.dailyMissions.edge_light') no-repeat 105% -4rem / contain;
-        }
-.DailyQuestCard_dailyQuest_top_right_47 {
-            display: flex;
-            flex: 1;
-            height: 10rem;
-            border-radius: 0 6rem 0 0;
-            border-top: 1rem solid rgba(255, 255, 255, 0.2);
-            background: url('R.images.white_tiger.gui.maps.icons.progression.dailyMissions.edge_light_right') no-repeat -5% -4rem / contain;
-        }
-.DailyQuestCard_dailyQuest_top_content_22 {
-            width: 32rem;
-            height: 32rem;
-            margin: 0 12rem;
-            text-align: center;
-            position: relative;
-            transform: translateY(-50%);
-        }
-.DailyQuestCard_dailyQuest_icon_bc {
+
+.Stage_stageNumber_79 {
+    color: #e2e2e2;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8rem;
+}
+
+.mediaMedium .Stage_stageNumber_79 {
+        font-size: 32rem;
+}
+
+.mediaExtraLarge .Stage_stageNumber_79 {
+        font-size: 48rem;
+}
+
+.Stage_base__active_e7 .Stage_stageNumber_79 {
+        color: #cf3633;
+    }
+
+.Stage_base__completed_50 .Stage_stageNumber_79 {
+        color: #b8b8b8;
+        opacity: .6;
+    }
+
+.Stage_check_ad {
+    width: 16rem;
+    height: 16rem;
+    background: url('R.images.portal.gui.maps.icons.progression.check') no-repeat center / cover;
+}
+
+.mediaMedium .Stage_check_ad {
+        width: 24rem;
+        height: 24rem;
+}
+
+.mediaExtraLarge .Stage_check_ad {
         width: 32rem;
         height: 32rem;
-    }
-.DailyQuestCard_dailyQuest_centerBlock_af {
-        flex: 1 0 auto;
-    }
-.DailyQuestCard_dailyQuest_description_41 {
-        color: #F2F2F7;
-        font-size: 14rem;
-        font-weight: 400;
-        line-height: 1.3;
-        max-width: 224rem;
-        min-height: 58rem;
-        margin-top: 10rem;
-    }
-.DailyQuestCard_dailyQuest_points_07 {
-        color: #8C8C7E;
-        font-size: 18rem;
-        font-weight: 700;
-        line-height: 1.1;
-        margin-top: 12rem;
-        margin-bottom: 10rem;
-        text-align: center;
-    }
-.DailyQuestCard_dailyQuest_accent_45 {
-        color: #F2F2F7;
-        font-size: 18rem;
-        font-weight: 700;
-        line-height: 1.1;
-    }
-.DailyQuestCard_dailyQuest_progress_0b {
-        display: flex;
-        width: 120rem;
-        text-align: left;
-    }
-.DailyQuestCard_dailyQuest_rewards_d9 {
-        display: flex;
-        margin: 24rem 0;
-    }
-.DailyQuestCard_dailyQuest_reward_d6 {
-        width: 48rem;
-        height: 48rem;
-        text-align: initial;
-    }
-.DailyQuestCard_timer_f2 {
+}
+
+.Stage_currentPoints_7b {
+    color: #cf3633;
+    font-size: 14rem;
+    font-weight: 500;
+}
+
+.mediaMedium .Stage_currentPoints_7b {
+        font-size: 20rem;
+}
+
+.mediaExtraLarge .Stage_currentPoints_7b {
+        font-size: 28rem;
+}
+
+.Stage_pointsIcon_db {
+    width: 16rem;
+    height: 16rem;
+    margin-left: 4rem;
+    margin-top: 4rem;
+    background: url('R.images.portal.gui.maps.icons.progression.token') no-repeat center / cover;
+    position: relative;
+}
+
+.mediaMedium .Stage_pointsIcon_db {
+        width: 24rem;
+        height: 24rem;
+        margin-top: 2rem;
+}
+
+.mediaExtraLarge .Stage_pointsIcon_db {
+        width: 32rem;
+        height: 32rem;
+        margin-top: 4rem;
+}
+
+.Stage_counter_28 {
+    color: #b8b8b8;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
     display: flex;
     align-items: center;
-    transform: translateY(50%);
+    color: #b8b8b8;
 }
-.DailyQuestCard_timer_content_4c {
-        color: #F2F2F7;
-        font-size: 14rem;
-        font-weight: 400;
-        line-height: 1.3;
-        display: flex;
-        align-items: center;
-        margin-left: 5rem;
-        margin-right: 10rem;
-    }
-.DailyQuestCard_timer_highlight_db {
-        width: 142rem;
-        height: 6rem;
-    }
-.DailyQuestCard_timer_highlight__rotated_78 {
-            transform: rotate(180deg);
-        }
 
-.HorizontalBar_base_49 {
+.mediaMedium .Stage_counter_28 {
+        font-size: 20rem;
+}
+
+.mediaExtraLarge .Stage_counter_28 {
+        font-size: 28rem;
+}
+
+.Stage_activeCounter_c4 {
+    color: #b8b8b8;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
     display: flex;
-    width: 100%;
-    height: 13rem;
-    position: relative;
+    align-items: center;
 }
 
-    .HorizontalBar_base__nonActive_82 {
-        visibility: hidden;
-    }
-
-    .HorizontalBar_base_49 .disable,
-    .HorizontalBar_base_49 .disable:hover {
-        opacity: .3;
-        cursor: default;
-    }
-
-.HorizontalBar_leftButton_5f,
-.HorizontalBar_rightButton_03 {
-    width: 13rem;
-    height: 13rem;
-    border: 1rem solid #7e7b68;
-    box-shadow: inset 0 0 1rem rgba(255,255,190, .3);
-    background: no-repeat center / 7rem 5rem;
-    opacity: .5;
-    z-index: 1;
-    transform: rotate(-90deg);
-    transition: opacity 130ms linear;
-    cursor: pointer;
+.mediaMedium .Stage_activeCounter_c4 {
+        font-size: 20rem;
 }
 
-.HorizontalBar_leftButton_5f:hover, .HorizontalBar_rightButton_03:hover {
-        opacity: 1;
-    }
-
-.HorizontalBar_leftButton_5f {
-    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
+.mediaExtraLarge .Stage_activeCounter_c4 {
+        font-size: 28rem;
 }
 
-.HorizontalBar_rightButton_03 {
-    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
-}
-
-.HorizontalBar_track_0d {
-    flex: 1;
-    margin: 0 1rem;
-    position: relative;
-    cursor: pointer;
-}
-
-.HorizontalBar_thumb_fd {
-    display: none;
-    flex: 0 0 100%;
-    width: 100%;
-    min-width: 20rem;
-    height: 13rem;
-    border: 1rem solid #7e7b68;
-    box-shadow: inset 0 0 1rem rgba(255,255,190, .3);
-    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb_horizontal') no-repeat center / 8rem 7rem;
-    opacity: .5;
-    position: absolute;
-    z-index: 1;
-    transition: opacity 130ms linear;
-    cursor: pointer;
-}
-
-.HorizontalBar_thumb_fd:hover {
-        opacity: 1;
-    }
-
-.HorizontalBar_rail_32 {
-    height: 0;
-    border-top: 1rem solid #2f2e24;
-    position: absolute;
-    top: 6rem;
-    right: 5rem;
-    left: 5rem;
-}
-
-.HorizontalBar_rail_32:hover {
-        opacity: .7;
-    }
-
-
-.HorizontalScroll_base_29 {
-    width: 100%;
-}
-
-.HorizontalScroll_wrapper_1e {
-    display: flex;
-    width: 100%;
-    overflow-x: hidden;
-}
-
-.HorizontalScroll_defaultScrollArea_8d {
-    width: 100%;
-    margin-bottom: 7rem;
-}
-
-.VerticalBar_base_f3 {
+.Stage_rewards_group_d5 {
     display: flex;
     flex-direction: column;
-    width: 13rem;
-    height: 100%;
-    position: relative;
-}
-
-    .VerticalBar_base__nonActive_42 {
-        visibility: hidden;
-    }
-
-    .VerticalBar_base_f3 .disable,
-    .VerticalBar_base_f3 .disable:hover {
-        opacity: .3;
-        cursor: default;
-    }
-
-.VerticalBar_topButton_d7,
-.VerticalBar_bottomButton_06 {
-    width: 13rem;
-    height: 13rem;
-    border: 1rem solid #7e7b68;
-    box-shadow: inset 0 0 1rem rgba(255,255,190, .3);
-    background: no-repeat center / 7rem 5rem;
-    opacity: .5;
-    z-index: 1;
-    transition: opacity 130ms linear;
-    cursor: pointer;
-}
-
-.VerticalBar_topButton_d7:hover, .VerticalBar_bottomButton_06:hover {
-        opacity: 1;
-    }
-
-.VerticalBar_topButton_d7 {
-    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
-}
-
-.VerticalBar_bottomButton_06 {
-    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
-}
-
-.VerticalBar_track_df {
-    flex: 1;
-    margin: 1rem 0;
-    position: relative;
-    cursor: pointer;
-}
-
-.VerticalBar_thumb_32 {
-    display: flex;
-    flex: 0 0 13rem;
-    width: 13rem;
-    height: 100%;
-    min-height: 20rem;
-    border: 1rem solid #7e7b68;
-    box-shadow: inset 0 0 1rem rgba(255,255,190, .3);
-    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb') no-repeat center / 7rem 8rem;
-    opacity: .5;
-    position: absolute;
-    z-index: 1;
-    transition: opacity 130ms linear;
-    cursor: pointer;
-}
-
-.VerticalBar_thumb_32:hover {
-        opacity: 1;
-    }
-
-.VerticalBar_rail_43 {
-    width: 0;
-    height: 100%;
-    border-left: 1rem solid #2f2e24;
-    border-top: 5rem solid transparent;
-    border-bottom: 5rem solid transparent;
-    position: absolute;
-    top: 0;
-    left: 6rem;
-    z-index: 0;
-}
-
-.VerticalBar_rail_43:hover {
-        opacity: .7;
-    }
-
-
-.VerticalScroll_content_cb {
-    height: 100%;
-    overflow-y: hidden;
-}
-
-.VerticalScroll_defaultScroll_f8 {
-    display: flex;
-}
-
-.VerticalScroll_bar_1e {
-    flex: 1;
-    margin-left: 7rem;
-}
-
-.VerticalScroll_area_af {
-    flex: 1;
-}
-
-.Progress_base_61 {
-    display: flex;
-    padding: 5rem;
-    position: relative;
-    --divider-width: 1rem;
-    --rewards-wrap-margin: 3rem;
-    --wrapper-margin-left: 25rem;
-    --wrapper-margin-right: 40rem;
-}
-
-.Progress_scrollWrap_05 {
-    width: 100%;
-}
-
-.Progress_overflow_fc {
-    overflow-x: visible;
-}
-
-.Progress_bar_5b {
-    padding: 0 58rem;
-}
-
-.Progress_wrapper_3c {
-    margin-left: var(--wrapper-margin-left);
-    margin-right: var(--wrapper-margin-right);
-    padding-top: 22rem;
-    position: relative;
-}
-
-.Progress_bottom_9c {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.Progress_top_b8 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-}
-
-.Progress_stage_1c {
-    color: #F2F2F7;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 8rem;
-    position: relative;
-}
-
-.Progress_stage_img_00 {
-        display: none;
-    }
-
-.Progress_stage_glow_5f {
-        display: none;
-    }
-
-.Progress_stage__current_02 {
-        color: #F2F2F7;
-        font-size: 56rem;
-        font-weight: 700;
-        line-height: 1.1;
-        text-shadow: 0 0 14rem #00a2ff;
-        transform: translateX(50%);
-    }
-
-.Progress_stage__current_02 .Progress_stage_glow_5f {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 200rem;
-            height: 242rem;
-            background: url('R.images.white_tiger.gui.maps.icons.progression.progress.lvl') top right / contain no-repeat;
-            opacity: 0.7;
-            mix-blend-mode: screen;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform: translateX(-50%);
-        }
-
-.Progress_stage__current_02 .Progress_stage_text_79 {
-            transform: translateX(-50%);
-        }
-
-.Progress_stage__done_4e {
-        color: #7AB300;
-        font-size: 18rem;
-        font-weight: 700;
-        line-height: 1.1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-.Progress_stage__done_4e .Progress_stage_img_00 {
-            display: flex;
-            width: 20rem;
-            height: 20rem;
-            margin-top: 2rem;
-            margin-right: 3rem;
-        }
-
-.Progress_progress_content_55 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    width: var(--rewards-wrap-width);
-    margin-left: var(--rewards-wrap-margin);
-    margin-right: var(--rewards-wrap-margin);
-    padding-top: 5rem;
-    position: relative;
-}
-
-.Progress_progress_content__done_a2 {
-        background: radial-gradient(60% 40% at 50% 100%, rgba(240, 218, 191, 0.1) 0%, rgba(90, 90, 90, 0) 100%);
-        background-position: bottom;
-        background-size: cover;
-    }
-
-.Progress_progress_content__done_a2 .Progress_reward_ed {
-            opacity: 0.5;
-        }
-
-.Progress_progress_bottom_22 .Progress_progress_content__done_a2 {
-            background: radial-gradient(60% 80% at 50% 0%, rgba(240, 218, 191, 0.05) 0%, rgba(90, 90, 90, 0) 100%);
-            background-position: bottom;
-            background-size: cover;
-        }
-
-.Progress_progress_bottom_22 {
-    display: flex;
-    flex-direction: row;
-    min-height: 100rem;
-    margin-bottom: 1rem;
-}
-
-.Progress_progress_bottom_22 .Progress_progress_content_55 {
-        flex-direction: column;
-        align-items: center;
-    }
-
-.Progress_progress_top_a1 {
-    display: flex;
-    align-items: flex-end;
-    margin-top: 2rem;
-}
-
-.Progress_rewards_group_9d {
-    display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin-top: -1rem;
+    margin-top: 12rem;
 }
 
-.mediaLarge .Progress_rewards_group_9d {
-        flex-direction: column;
+.mediaLarge .Stage_rewards_group_d5 {
+        margin-top: 20rem;
+}
+
+.mediaExtraLarge .Stage_rewards_group_d5 {
         margin-top: 24rem;
-        margin-bottom: 6rem;
 }
 
-.mediaExtraLarge .Progress_rewards_group_9d {
-        margin-bottom: 16rem;
-}
+.Stage_base__completed_50 .Stage_rewards_group_d5 {
+        opacity: .6;
+    }
 
-.Progress_reward_ed {
+.Stage_reward_45 {
     width: 48rem;
     height: 48rem;
-    margin: 4rem;
 }
 
-.mediaMedium .Progress_reward_ed {
-        margin-left: 6rem;
-        margin-right: 6rem;
-}
-
-.mediaLarge .Progress_reward_ed {
-        width: 64rem;
-        height: 64rem;
-        margin-left: 10rem;
-        margin-right: 10rem;
-}
-
-.mediaExtraLarge .Progress_reward_ed {
-        width: 64rem;
-        height: 64rem;
-        margin-top: 5rem;
-        margin-bottom: 5rem;
-}
-
-/* Hack to increase specificity */
-
-.Progress_reward__compressed_a1.Progress_reward_ed {
-        margin-left: 0;
-        margin-right: 0;
+.Stage_reward_45 + .Stage_reward_45 {
+        margin-top: 12rem;
     }
 
-.Progress_divider_4d {
-    width: var(--divider-width);
-    height: 15rem;
-    margin-bottom: 25rem;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(244, 225, 179, 0) 100%);
-    position: relative;
+.mediaSmall .Stage_reward_45 + .Stage_reward_45 {
+            margin-top: 20rem;
 }
 
-.Progress_divider_end_49 {
-        width: var(--divider-width);
-        height: 42rem;
-        margin-bottom: 2rem;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(244, 225, 179, 0) 100%);
-    }
-
-.Progress_pointsMark_59 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    min-width: 60rem;
-    margin-bottom: 40rem;
-    text-align: center;
-    white-space: nowrap;
-    position: absolute;
-    top: 20rem;
-    right: 50%;
-    transform: translateX(50%);
-
-    color: #E9E2BF;
-
-    font-size: 12rem;
-
-    font-weight: 400;
-
-    line-height: 1.3;
+.mediaMedium .Stage_reward_45 + .Stage_reward_45 {
+            margin-top: 16rem;
 }
 
-.Progress_pointsMark__faded_10 {
-        opacity: 0.4;
-    }
-
-.Progress_pointsMark_group_a3 {
-        position: relative;
-    }
-
-.Progress_glow_5a {
-    background: no-repeat center / contain;
-    mix-blend-mode: additive;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
+.mediaLarge .Stage_reward_45 + .Stage_reward_45 {
+            margin-top: 20rem;
 }
 
-.Progress_glow__inProgress_da {
-        width: 224rem;
-        height: 224rem;
-        background-image: url('R.images.white_tiger.gui.maps.icons.progression.bg_rare_light_blue_current');
-    }
-
-.mediaSmall .Progress_glow__inProgress_da {
-            width: 302rem;
-            height: 302rem;
-            margin-top: 4rem;
-            transform: translate(-50%, -50%) scale(0.75);
+.mediaMedium .Stage_reward_45 {
+        width: 80rem;
+        height: 80rem;
 }
 
-.mediaMedium .Progress_glow__inProgress_da {
-            margin-top: 5rem;
+.mediaExtraLarge .Stage_reward_45 {
+        width: 180rem;
+        height: 135rem;
 }
 
-.mediaLarge .Progress_glow__inProgress_da {
-            margin-top: 14rem;
-}
-
-.Progress_numberInProgress_04 {
-    margin-bottom: 3rem;
-    color: #f2f2f7;
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1;
-    z-index: 1;
-}
-
-.Progress_numberAnimated_c3 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.Progress_numberAnimated__enter_3d {
-        opacity: 1;
-    }
-
-.Progress_numberAnimated__enterActive_35 {
-        animation-name: Progress_highlightScale_54;
-        animation-duration: 1s;
-        animation-fill-mode: forwards;
-        animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
-        animation-delay: 0.25s;
-        animation-iteration-count: 1;
-    }
-
-.Progress_numberAnimated__enterDone_aa {
-        opacity: 0;
-    }
-
-.Progress_stamps_0e {
-    display: flex;
-    padding-right: 18rem;
-    background: url('R.images.white_tiger.gui.maps.icons.stamps.stamp_16') no-repeat right center / 16rem 16rem;
-    position: absolute;
-    top: 4rem;
-    left: 50%;
-    transform: translateX(-50%);
-
-    color: #F2F2F7;
-
+.Stage_rewardValue_3e {
+    color: #CED9D9;
     font-size: 14rem;
-
-    font-weight: 700;
-
-    line-height: 1.15;
 }
 
-.Progress_stamps_max_e4 {
-        color: #8C8C7E;
+.mediaExtraLarge .Stage_rewardValue_3e {
+        margin-top: -20rem;
+        font-size: 18rem;
+}
+
+.Progression_base_87 {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    padding: 0 12rem;
+}
+
+    .mediaSmall .Progression_base_87 {
+        padding: 0 20rem;
+}
+
+    .mediaExtraLarge .Progression_base_87 {
+        padding: 0 40rem;
+}
+
+@keyframes TopReward_slideLeftIn_4c {
+    from {
+        opacity: 0;
+        transform: translateX(40rem);
     }
 
-.mediaSmall .Progress_stamps_0e {
-        padding-right: 22rem;
-        background-image: url('R.images.white_tiger.gui.maps.icons.stamps.stamp_20');
-        background-size: 20rem 20rem;
-        font-size: 15rem;
-        top: 2rem;
-}
-
-.mediaLarge .Progress_stamps_0e {
-        top: 4rem;
-}
-
-@keyframes Progress_highlightScale_54 {
-    0% {
+    to {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
+        transform: translateX(0);
+    }
+}
+@keyframes TopReward_slideRightIn_dc {
+    from {
+        opacity: 0;
+        transform: translateX(-40rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes TopReward_slideUp_24 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
     }
 
     100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes TopReward_slideDown_ba {
+    0% {
         opacity: 0;
-        transform: translate(-50%, -50%) scale(2.5);
-    }
-}
-
-.CinematicBtn_base_30 {
-    opacity: 0.8;
-    position: relative;
-    transition: opacity 150ms linear;
-    cursor: pointer;
-}
-
-    .CinematicBtn_base__locked_6b {
-        cursor: default;
+        transform: translateY(-30%);
     }
 
-    .CinematicBtn_base_30:hover {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes TopReward_fadeIn_61 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes TopReward_fadeOut_c5 {
+    from {
         opacity: 1;
     }
 
-.CinematicBtn_icon_74,
-.CinematicBtn_icon_hover_ab,
-.CinematicBtn_icon_locked_03 {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / cover;
+    to {
+        opacity: 0;
+    }
+}
+@keyframes TopReward_rotating_7e {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+.TopReward_base_67 {
+    width: 110rem;
+    height: 110rem;
+    position: relative;
+}
+.mediaMedium .TopReward_base_67 {
+        width: 180rem;
+        height: 135rem;
+}
+.mediaExtraLarge .TopReward_base_67 {
+        width: 232rem;
+        height: 174rem;
+}
+.TopReward_img_aa {
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top: 0;
+}
+.TopReward_tooltipArea_7b {
+    width: 110rem;
+    height: 110rem;
+    position: absolute;
     left: 0;
+    z-index: 1;
+}
+.TopReward_base__main_f2 .TopReward_tooltipArea_7b {
+        right: 0;
+        left: auto;
+    }
+.mediaMedium .TopReward_tooltipArea_7b {
+        width: 160rem;
+        height: 135rem;
+}
+.mediaExtraLarge .TopReward_tooltipArea_7b {
+        width: 212rem;
+        height: 174rem;
 }
 
-.mediaExtraLarge .CinematicBtn_icon_74, .mediaExtraLarge .CinematicBtn_icon_hover_ab, .mediaExtraLarge .CinematicBtn_icon_locked_03 {
+.VideoButton_base_cd {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+    .VideoButton_base__locked_f6 {
+        cursor: default;
+    }
+
+.VideoButton_iconGroup_68 {
+    width: 32rem;
+    height: 32rem;
+    position: relative;
+}
+
+.mediaExtraLarge .VideoButton_iconGroup_68 {
         width: 40rem;
         height: 40rem;
 }
 
-.CinematicBtn_icon_74 {
-    background-image: url('R.images.white_tiger.gui.maps.icons.progression.cinematicBtn.enabled');
-    opacity: 1;
-    transition: opacity 150ms cubic-bezier(0.85, 0, 0.15, 1);
+.VideoButton_base__locked_f6.VideoButton_base_cd:hover .VideoButton_iconGroup_68 {
+        animation: VideoButton_lockedIconShift_a7 3s cubic-bezier(0.22, 1.2, 0.36, 1) infinite;
+    }
+
+.VideoButton_icon_e5,
+.VideoButton_hoverIcon_1a {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    transition: opacity .15s ease;
 }
 
-.CinematicBtn_base_30:hover .CinematicBtn_icon_74 {
+.VideoButton_icon_e5 {
+    background-image: url('R.images.portal.gui.maps.icons.progression.videoBtn.default');
+    opacity: 1;
+}
+
+.VideoButton_base__locked_f6 .VideoButton_icon_e5 {
+        background-image: url('R.images.portal.gui.maps.icons.progression.videoBtn.locked');
+        opacity: 0.8;
+    }
+
+.VideoButton_base_cd:hover .VideoButton_icon_e5 {
         opacity: 0;
     }
 
-.CinematicBtn_icon_hover_ab {
-    background-image: url('R.images.white_tiger.gui.maps.icons.progression.cinematicBtn.enabled_hover');
-    opacity: 0;
-    transition: opacity 150ms cubic-bezier(0.85, 0, 0.15, 1);
-}
-
-.CinematicBtn_base_30:hover .CinematicBtn_icon_hover_ab {
+.VideoButton_base__locked_f6.VideoButton_base_cd:hover .VideoButton_icon_e5 {
         opacity: 1;
     }
 
-.CinematicBtn_icon_locked_03 {
-    background-image: url('R.images.white_tiger.gui.maps.icons.progression.cinematicBtn.disabled');
+.VideoButton_hoverIcon_1a {
+    background-image: url('R.images.portal.gui.maps.icons.progression.videoBtn.hover');
+    opacity: 0;
 }
 
-.CinematicBtn_base_30:hover .CinematicBtn_icon_locked_03 {
-        animation: CinematicBtn_tremble_50 .3s linear .4s forwards;
+.VideoButton_base__locked_f6 .VideoButton_hoverIcon_1a {
+        display: none;
     }
 
-.CinematicBtn_base_30:hover .CinematicBtn_locked_anim_df {
-        animation: CinematicBtn_tremble_50 .3s linear 3s forwards;
+.VideoButton_base_cd:hover .VideoButton_hoverIcon_1a {
+        opacity: 1;
     }
 
-.CinematicBtn_label_b8 {
-    color: #CCFFFF;
+.VideoButton_text_e9 {
+    color: #cff;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    margin: 6rem 0 0 37rem;
+    margin-left: 4rem;
     text-shadow: 0 0 10rem #00eaff, 0 0 24rem rgba(31, 68, 255, 0.8);
+    transition: all .15s ease;
 }
 
-.CinematicBtn_base_30:hover .CinematicBtn_label_b8 {
-        text-shadow: 0 0 6rem #00eaff, 0 0 12rem rgba(31, 68, 255, 0.8);
+.mediaExtraLarge .VideoButton_text_e9 {
+        color: #cff;
+        font-size: 18rem;
+        font-weight: 400;
+        line-height: 1.25;
+        margin-left: 6rem;
+}
+
+.VideoButton_base_cd:hover .VideoButton_text_e9 {
+        color: #cf3633;
+        text-shadow: 0 0 4rem #be1f00, 0 0 8rem #8b1700, 0 0 15rem #580e00;
     }
 
-.CinematicBtn_base__locked_6b .CinematicBtn_label_b8 {
+.VideoButton_base__locked_f6 .VideoButton_text_e9,
+    .VideoButton_base__locked_f6.VideoButton_base_cd:hover .VideoButton_text_e9 {
         color: #7e7e7e;
         text-shadow: none;
+        opacity: 0.8;
+        transition: opacity .15s ease;
     }
 
-.CinematicBtn_base__locked_6b:hover .CinematicBtn_label_b8 {
-        text-shadow: none;
+.VideoButton_base__locked_f6.VideoButton_base_cd:hover .VideoButton_text_e9 {
+        opacity: 1;
     }
 
-.mediaExtraLarge .CinematicBtn_label_b8 {
-        margin-left: 47rem;
-        font-size: 18rem;
-}
-
-@keyframes CinematicBtn_tremble_50 {
+@keyframes VideoButton_lockedIconShift_a7 {
     0% {
+        transform: translateX(0);
+    }
+
+    1.66% {
+        transform: translateX(-3rem);
+    }
+
+    3.33% {
         transform: translateX(2rem);
     }
 
-    25% {
+    5.27% {
         transform: translateX(-2rem);
     }
 
-    50% {
-        transform: translateX(2rem);
+    7.22% {
+        transform: translateX(1rem);
     }
 
-    75% {
-        transform: translateX(-2rem);
+    9.44% {
+        transform: translateX(-1rem);
+    }
+
+    11.66% {
+        transform: translateX(0.5rem);
+    }
+
+    16.66% {
+        transform: translateX(0);
     }
 
     100% {
-        transform: none;
+        transform: translateX(0);
     }
 }
 
-.WTProgressionsViewApp_base_c7 {
+@keyframes App_slideLeftIn_8c {
+    from {
+        opacity: 0;
+        transform: translateX(40rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes App_slideRightIn_fa {
+    from {
+        opacity: 0;
+        transform: translateX(-40rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes App_slideUp_f5 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes App_slideDown_e0 {
+    0% {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes App_fadeIn_be {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes App_fadeOut_01 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+@keyframes App_rotating_fd {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+.App_base_8d {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     height: 100%;
-    background: url('R.images.white_tiger.gui.maps.icons.backgrounds.progression.s1366x768') center / cover no-repeat;
     overflow: hidden;
     position: relative;
 }
-
-    .mediaMedium .WTProgressionsViewApp_base_c7 {
-        background-image: url('R.images.white_tiger.gui.maps.icons.backgrounds.progression.s1920x1080');
-}
-
-    .mediaExtraLarge .WTProgressionsViewApp_base_c7 {
-        background-image: url('R.images.white_tiger.gui.maps.icons.backgrounds.progression.s2560x1440');
-}
-.WTProgressionsViewApp_cloud_1e {
+.App_staticBg_6f {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.progression.bg_small') no-repeat center / cover;
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: url('R.images.white_tiger.gui.maps.icons.progression.background.cloud') center / cover no-repeat;
-    animation: WTProgressionsViewApp_cloudAnimate_79 1500ms forwards;
+    pointer-events: none;
 }
-.WTProgressionsViewApp_closeButton_ac {
-    position: absolute;
-    top: 15rem;
-    right: 30rem;
+.mediaLarge .App_staticBg_6f {
+        background-image: url('R.images.portal.gui.maps.icons.progression.bg_large');
 }
-.mediaMedium .WTProgressionsViewApp_closeButton_ac {
-        top: 30rem;
+.mediaExtraLarge .App_staticBg_6f {
+        background-image: url('R.images.portal.gui.maps.icons.progression.bg_extraLarge');
 }
-.WTProgressionsViewApp_cinematic_70 {
+.App_close_10 {
     display: flex;
     position: absolute;
-    top: 15rem;
-    left: 40rem;
+    top: 25rem;
+    right: 47rem;
 }
-.mediaMedium .WTProgressionsViewApp_cinematic_70 {
-        top: 27rem;
+.App_close_10:hover {
+        cursor: pointer;
+    }
+.mediaSmall .App_close_10 {
+        right: 36rem;
 }
-.mediaLarge .WTProgressionsViewApp_cinematic_70 {
-        left: 48rem;
+.App_videoBtnContainer_e8 {
+    display: flex;
+    height: 32rem;
+    position: absolute;
+    top: 30rem;
+    left: 36rem;
 }
-.mediaExtraLarge .WTProgressionsViewApp_cinematic_70 {
-        top: 48rem;
-        left: 62rem;
+.mediaExtraLarge .App_videoBtnContainer_e8 {
+        height: 40rem;
 }
-.WTProgressionsViewApp_cinematicIntro_ff {
-    margin-right: 19rem;
+.App_introBtn_ed {
+    min-width: 126rem;
 }
-.mediaLarge .WTProgressionsViewApp_cinematicIntro_ff {
-        margin-right: 6rem;
+.mediaExtraLarge .App_introBtn_ed {
+        min-width: 168rem;
 }
-.WTProgressionsViewApp_heading_d8 {
-    color: #F2F2F7;
+.App_topBlock_c9 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30rem;
+}
+.mediaMedium .App_topBlock_c9 {
+        margin-top: 36rem;
+}
+.mediaLarge .App_topBlock_c9 {
+        margin-top: 46rem;
+}
+.mediaExtraLarge .App_topBlock_c9 {
+        margin-top: 56rem;
+}
+.App_infoContainer_28 {
+    opacity: 0;
+    animation-name: App_fadeIn_be;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.07, .82, .17, 1);
+    animation-delay: 0.2s;
+    animation-iteration-count: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+.App_title_38 {
+    color: #e2e2e2;
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-top: 23rem;
-    margin-bottom: 5rem;
-    text-align: center;
-    position: relative;
 }
-.mediaMedium .WTProgressionsViewApp_heading_d8 {
-        color: #F2F2F7;
+.mediaMedium .App_title_38 {
+        color: #e2e2e2;
         font-size: 56rem;
         font-weight: 700;
         line-height: 1.1;
-        margin-top: 30rem;
 }
-.mediaExtraLarge .WTProgressionsViewApp_heading_d8 {
-        color: #F2F2F7;
+.mediaExtraLarge .App_title_38 {
+        color: #e2e2e2;
         font-size: 73rem;
         font-weight: 700;
         line-height: 1.1;
-        margin-top: 60rem;
 }
-.WTProgressionsViewApp_subheading_a3 {
-    color: #E9E2BF;
+.App_ribbonShadow_d9 {
+    opacity: 0;
+    animation-name: App_fadeIn_be;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.07, .82, .17, 1);
+    animation-delay: .3s;
+    animation-iteration-count: 1;
+    width: 100%;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.progression.ribbon_shadow') no-repeat center / contain;
+    position: absolute;
+    top: 20rem;
+    transform: translateY(-50%);
+}
+.mediaMedium .App_ribbonShadow_d9 {
+        color: #e2e2e2;
+        font-size: 73rem;
+        font-weight: 700;
+        line-height: 1.1;
+        top: 5rem;
+}
+.App_desc_50 {
+    color: #b8b8b8;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
-    margin-bottom: 10rem;
+    max-width: 430rem;
     text-align: center;
 }
-.WTProgressionsViewApp_centerBlock_04 {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    flex: 1;
-    margin-top: 40rem;
+.mediaMedium .App_desc_50 {
+        max-width: 100%;
+        margin-top: 4rem;
 }
-.mediaMedium .WTProgressionsViewApp_centerBlock_04 {
-        justify-content: center;
-        margin-top: 20rem;
+.mediaExtraLarge .App_desc_50 {
+        font-size: 20rem;
 }
-.WTProgressionsViewApp_container_88 {
+.App_rewardsContainer_d8 {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 904rem;
-    margin-bottom: 30rem;
-    border: 1rem solid rgba(255, 255, 255, 0.1);
-    border-image: linear-gradient(0deg, transparent 0%, rgba(255, 255, 255, 0.12) 60%, rgba(255, 255, 255, 0.12) 97%, transparent 100%) 1;
-    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.25) 10%, rgba(0, 0, 0, 0.25) 55%, transparent 100%);
+    width: 448rem;
+    height: 135rem;
+    margin-top: 2rem;
     position: relative;
 }
-.mediaExtraLarge .WTProgressionsViewApp_container_88 {
-        margin-bottom: 128rem;
-        transform: scale(1.35);
+.mediaMedium .App_rewardsContainer_d8 {
+        width: 560rem;
+        margin-top: 38rem;
 }
-.WTProgressionsViewApp_container_top_68 {
-        display: flex;
-        width: 100%;
-        margin-bottom: -30rem;
-    }
-.WTProgressionsViewApp_container_top_left_e8 {
-            display: flex;
-            flex: 1;
-            height: 10rem;
-            border-radius: 6rem 0 0 0;
-            border-top: 1rem solid rgba(255, 255, 255, 0.1);
-            background: url('R.images.white_tiger.gui.maps.icons.progression.dailyMissions.edge_light') no-repeat 102% -4rem / contain;
-        }
-.WTProgressionsViewApp_container_top_right_8a {
-            display: flex;
-            flex: 1;
-            height: 10rem;
-            border-radius: 0 6rem 0 0;
-            border-top: 1rem solid rgba(255, 255, 255, 0.1);
-            background: url('R.images.white_tiger.gui.maps.icons.progression.dailyMissions.edge_light_right') no-repeat -2% -4rem / contain;
-        }
-.WTProgressionsViewApp_tabs_eb {
-    display: flex;
-    margin: 0 5rem 20rem;
+.mediaLarge .App_rewardsContainer_d8 {
+        margin-top: 42rem;
+}
+.mediaExtraLarge .App_rewardsContainer_d8 {
+        width: 700rem;
+        margin-top: 50rem;
+}
+.App_ribbon_5c {
+    opacity: 0;
+    animation-name: App_fadeIn_be;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.07, .82, .17, 1);
+    animation-delay: .3s;
+    animation-iteration-count: 1;
+    width: 100%;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.progression.ribbon_small') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
     transform: translateY(-50%);
 }
-.WTProgressionsViewApp_tab_37 {
-    width: 243rem;
-    padding: 7rem 0;
-    border: 1rem solid rgba(0, 179, 255, 0.3);
-    background: #1b242791;
-    text-align: center;
-    opacity: 1;
-    position: relative;
+.mediaMedium .App_ribbon_5c {
+        background-image: url('R.images.portal.gui.maps.icons.progression.ribbon_large');
 }
-.WTProgressionsViewApp_tab__active_6c {
-        border-image: linear-gradient(0deg, rgba(0, 179, 255, 0.1) 0%, rgba(68, 164, 193, 0.8) 50%, rgba(0, 179, 255, 0.1) 100%) 1;
-    }
-.WTProgressionsViewApp_tab__active_6c .WTProgressionsViewApp_tab_shadow_b6 {
-            width: 339rem;
-            height: 168rem;
-            background: url('R.images.white_tiger.gui.maps.icons.progression.navigation.active_shadow') top right / contain no-repeat;
-        }
-.WTProgressionsViewApp_tab__active_6c .WTProgressionsViewApp_tab_light_ea {
-            width: 230rem;
-            height: 84rem;
-            background: url('R.images.white_tiger.gui.maps.icons.progression.navigation.active_light') top right / contain no-repeat;
-        }
-.WTProgressionsViewApp_tab__inactive_ea {
-        border-image: linear-gradient(0deg, rgba(117, 122, 125, 0.2) 0%, rgba(165, 192, 200, 0.2) 50%, rgba(117, 122, 125, 0.2) 100%) 1;
-    }
-.WTProgressionsViewApp_tab__inactive_ea:hover {
-            background-color: rgba(9, 226, 255, 0.1);
-            cursor: pointer;
-        }
-.WTProgressionsViewApp_tab__inactive_ea:hover .WTProgressionsViewApp_tab_title_8e {
-                color: #fff;
-            }
-.WTProgressionsViewApp_tab__inactive_ea .WTProgressionsViewApp_tab_shadow_b6 {
-            width: 192rem;
-            height: 51rem;
-            background: url('R.images.white_tiger.gui.maps.icons.progression.navigation.inactive_shadow') top right / contain no-repeat;
-        }
-.WTProgressionsViewApp_tab__inactive_ea .WTProgressionsViewApp_tab_texture_6e {
-            display: none;
-        }
-.WTProgressionsViewApp_tab__inactive_ea .WTProgressionsViewApp_tab_title_8e {
-            color: #8C8C7E;
-            font-size: 15rem;
-            font-weight: 700;
-            line-height: 1.15;
-        }
-.WTProgressionsViewApp_tab__inactive_ea .WTProgressionsViewApp_tab_light_ea {
-            width: 30rem;
-            height: 30rem;
-            background: url('R.images.white_tiger.gui.maps.icons.progression.navigation.inactive_light') top right / contain no-repeat;
-        }
-.WTProgressionsViewApp_tab_shadow_b6 {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%, 100%);
-        pointer-events: none;
-    }
-.WTProgressionsViewApp_tab_title_8e {
-        color: #F2F2F7;
-        font-size: 15rem;
-        font-weight: 700;
-        line-height: 1.15;
-        position: relative;
-    }
-.WTProgressionsViewApp_tab_texture_6e {
-        width: 339rem;
-        height: 168rem;
-        background: url('R.images.white_tiger.gui.maps.icons.progression.navigation.top_highlight') top right / contain no-repeat;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%, 40%);
-        pointer-events: none;
-    }
-.WTProgressionsViewApp_tab_light_ea {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%, 50%);
-        pointer-events: none;
-    }
-.WTProgressionsViewApp_tab_counter_06 {
-        color: #80D43A;
-        font-size: 14rem;
-        font-weight: 700;
-        line-height: 1.15;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 38rem;
-        left: 50%;
-        transform: translateX(-50%);
-        pointer-events: none;
-    }
-.WTProgressionsViewApp_tab_counter_total_cb {
-            color: #F2F2F7;
-        }
-.WTProgressionsViewApp_dailyQuests_b6 {
+.mediaExtraLarge .App_ribbon_5c {
+        background-image: url('R.images.portal.gui.maps.icons.progression.ribbon_extraLarge');
+}
+.App_rewardList_10 {
     display: flex;
-    justify-content: center;
-    align-items: stretch;
-    margin-top: 30rem;
-    margin-bottom: 30rem;
+    z-index: 2;
 }
-.WTProgressionsViewApp_introBtn_4d {
-    background: url('R.images.white_tiger.gui.maps.icons.progression.cutscene_button') bottom / cover no-repeat;
+.App_reward_d7 {
+    width: 110rem;
+    height: 110rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
-.WTProgressionsViewApp_outroBtn_ce {
-    background: url('R.images.white_tiger.gui.maps.icons.progression.cutscene_button_right') bottom / cover no-repeat;
-}
-.WTProgressionsViewApp_outroBtn__locked_12 {
-        background-image: url('R.images.white_tiger.gui.maps.icons.progression.cutscene_button_locked');
+.App_reward_d7 +.App_reward_d7 {
+        margin-left: 12rem;
     }
-.WTProgressionsViewApp_timer_b0 {
+.mediaMedium .App_reward_d7 +.App_reward_d7 {
+            margin-left: 0;
+}
+.mediaMedium .App_reward_d7 {
+        width: 180rem;
+        height: 135rem;
+}
+.mediaExtraLarge .App_reward_d7 {
+        width: 232rem;
+        height: 174rem;
+}
+.App_topRewardDelay__0_89 {
+    opacity: 0;
+    animation-name: App_slideDown_e0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.07, .82, .17, 1);
+    animation-delay: 0.2s;
+    animation-iteration-count: 1;
+}
+.App_topRewardDelay__1_c4 {
+    opacity: 0;
+    animation-name: App_slideDown_e0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.07, .82, .17, 1);
+    animation-delay: 0.3s;
+    animation-iteration-count: 1;
+}
+.App_topRewardDelay__2_1b {
+    opacity: 0;
+    animation-name: App_slideDown_e0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.07, .82, .17, 1);
+    animation-delay: 0.4s;
+    animation-iteration-count: 1;
+}
+.App_progression_83 {
     display: flex;
-    align-items: center;
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 50%);
+    bottom: 25rem;
 }
-.WTProgressionsViewApp_timer_content_aa {
-        color: #F2F2F7;
-        font-size: 14rem;
-        font-weight: 400;
-        line-height: 1.3;
-        margin-left: 6rem;
-        margin-right: 10rem;
-    }
-.WTProgressionsViewApp_timer_countdown_b1 {
-        margin-top: -7rem;
-    }
-.WTProgressionsViewApp_timer_highlight_08 {
-        width: 142rem;
-        height: 6rem;
-        margin-top: -4rem;
-    }
-.WTProgressionsViewApp_timer_highlight__rotated_0c {
-            transform: rotate(180deg);
-        }
-.WTProgressionsViewApp_progress_da {
-    width: 100%;
-    margin-top: -80rem;
-    margin-bottom: 30rem;
-    mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 50%, #000 95%, transparent 100%);
+.mediaMedium .App_progression_83 {
+        bottom: 40rem;
 }
-.mediaExtraLarge .WTProgressionsViewApp_progress_da {
-        width: 74%;
-        margin-bottom: 110rem;
-        transform: scale(1.35);
-}
-@keyframes WTProgressionsViewApp_cloudAnimate_79 {
-    0% {
-        opacity: 0;
-    }
-
-    9.52% {
-        opacity: 1;
-    }
-
-    16.67% {
-        opacity: 0;
-    }
-
-    23.81% {
-        opacity: 0.7;
-    }
-
-    30.95% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-body {
-    margin: 0;
-    overflow: hidden;
+.mediaExtraLarge .App_progression_83 {
+        bottom: 80rem;
 }
 
