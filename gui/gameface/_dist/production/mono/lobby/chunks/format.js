@@ -1,7 +1,1 @@
-import { v as a, D as t } from './lib.js';
-import './vendor.js';
-const o = a,
-    s = (a) => o(a, t.ShortTime, !0),
-    l = (a) => o(a, t.DayMonthFull, !0),
-    r = (a, s) => ({ startDate: o(a, t.DayMonthFull, !0), endDate: o(s, t.DayMonthFull, !0) });
-export { l as a, s as b, r as f };
+import{vt as t,wt as a}from"./lib.js";var l=t,o=t=>l(t,a.ShortTime,!0),r=t=>l(t,a.DayMonthFull,!0),s=(t,o)=>({startDate:l(t,a.DayMonthFull,!0),endDate:l(o,a.DayMonthFull,!0)});export{s as n,o as r,r as t};

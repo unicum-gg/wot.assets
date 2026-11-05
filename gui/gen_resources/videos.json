@@ -143,6 +143,8 @@
     {"type": "Video", "id": "R.videos.lootbox.customizable.default.hasBoxesView.layers.hover.default", "path": "video://gui/videos/lootbox/customizable/default/hasBoxesView/layers/hover/default.webm"},
     {"type": "Video", "id": "R.videos.lootbox.customizable.default.hasBoxesView.layers.idle.default", "path": "video://gui/videos/lootbox/customizable/default/hasBoxesView/layers/idle/default.webm"},
     {"type": "Video", "id": "R.videos.lootbox.customizable.default.noBoxesView.background", "path": "video://gui/videos/lootbox/customizable/default/noBoxesView/background.webm"},
+    {"type": "Video", "id": "R.videos.lootbox.customizable.newYear_premium.common.shield.glowM", "path": "video://gui/videos/lootbox/customizable/newYear_premium/common/shield/glowM.webm"},
+    {"type": "Video", "id": "R.videos.lootbox.customizable.newYear_premium.common.shield.glowS", "path": "video://gui/videos/lootbox/customizable/newYear_premium/common/shield/glowS.webm"},
     {"type": "Video", "id": "R.videos.lootbox.events.anniversaryCN.rarityOverlay.lootBox_24040101", "path": "video://gui/videos/lootbox/events/anniversaryCN/rarityOverlay/lootBox_24040101.webm"},
     {"type": "Video", "id": "R.videos.lootbox.events.anniversaryCN.rarityOverlay.vehicles_29969", "path": "video://gui/videos/lootbox/events/anniversaryCN/rarityOverlay/vehicles_29969.webm"},
     {"type": "Video", "id": "R.videos.lootbox.events.battlePass.rarityOverlay.lootBox_24040101", "path": "video://gui/videos/lootbox/events/battlePass/rarityOverlay/lootBox_24040101.webm"},
