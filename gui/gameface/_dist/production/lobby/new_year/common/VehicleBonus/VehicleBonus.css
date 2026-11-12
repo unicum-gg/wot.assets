@@ -15,29 +15,29 @@
 }
 
 .VehicleBonus_icon__xpFactor_9f {
-    width: 62rem;
-    margin: 0 -4rem;
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.vehicles.bonuses.xp');
-}
+        width: 62rem;
+        margin: 0 -4rem;
+        background-image: url('R.images.new_year.gui.maps.icons.newYear.vehicles.bonuses.xp');
+    }
 
 .VehicleBonus_icon__tankmenXPFactor_44 {
-    width: 43rem;
-    margin: 0 -3rem;
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.vehicles.bonuses.tankmenXP');
-}
+        width: 43rem;
+        margin: 0 -3rem;
+        background-image: url('R.images.new_year.gui.maps.icons.newYear.vehicles.bonuses.tankmenXP');
+    }
 
 .VehicleBonus_icon__freeXPFactor_31 {
-    width: 45rem;
-    margin: 0 -7rem;
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.vehicles.bonuses.freeXP');
-}
+        width: 45rem;
+        margin: 0 -7rem;
+        background-image: url('R.images.new_year.gui.maps.icons.newYear.vehicles.bonuses.freeXP');
+    }
 
 .VehicleBonus_icon__creditsFactor_31 {
-    width: 34rem;
-    height: 29rem;
-    margin: 0 -2rem;
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.vehicles.bonuses.credits');
-}
+        width: 34rem;
+        height: 29rem;
+        margin: 0 -2rem;
+        background-image: url('R.images.new_year.gui.maps.icons.newYear.vehicles.bonuses.credits');
+    }
 
 .VehicleBonus_plus_a6 {
     margin: -1rem -3rem 0 0;
@@ -63,6 +63,7 @@
     line-height: 1.2;
     position: absolute;
     z-index: 1;
-    transform: scale(0.98); /* overlay gradient border fix*/
-    mask-image: linear-gradient(to bottom, #ffffff, transparent);
+    transform: scale(.98); /* overlay gradient border fix*/
+    mask-image: linear-gradient(to bottom, #FFFFFF, transparent);
 }
+

@@ -19,32 +19,30 @@
     mix-blend-mode: additive;
     position: absolute;
     z-index: 1;
-    transform: rotate(-90deg);
     pointer-events: none;
 }
 .LootBox_base__large_ed .LootBox_shine_73 {
-    width: 275rem;
-    height: 275rem;
-}
+        width: 250rem;
+        height: 250rem;
+    }
 .LootBox_shine__big_b8 {
-    background-image: url('swf://gui/flash/animations/newYear/blue_shine.swf');
-}
+        background-image: url('swf://gui/flash/animations/newYear/blue_shine.swf');
+    }
 .LootBox_wrapper_0c {
     width: 114rem;
     height: 114rem;
     position: relative;
     z-index: 2;
     cursor: pointer;
-    pointer-events: auto;
 }
 .LootBox_base__large_ed .LootBox_wrapper_0c {
-    width: 222rem;
-    height: 214rem;
-}
+        width: 222rem;
+        height: 214rem;
+    }
 .LootBox_wrapper_0c .LootBox_base__disabled_1a {
-    opacity: 0.4;
-    cursor: default;
-}
+        opacity: 0.4;
+        cursor: default;
+    }
 .LootBox_icon_08 {
     width: 80rem;
     height: 80rem;
@@ -55,19 +53,19 @@
     transform: translate(-50%, -50%);
 }
 .LootBox_base__large_ed .LootBox_icon_08 {
-    width: 160rem;
-    height: 160rem;
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.entryPoint.entryMedium');
-}
+        width: 160rem;
+        height: 160rem;
+        background-image: url('R.images.new_year.gui.maps.icons.newYear.entryPoint.entryMedium');
+    }
 .LootBox_base__disabled_1a .LootBox_icon_08 {
-    opacity: 0.4;
-}
+        opacity: 0.4;
+    }
 .LootBox_icon__hovered_21 {
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.entryPoint.entry_hover');
-}
+        background-image: url('R.images.new_year.gui.maps.icons.newYear.entryPoint.entry_hover');
+    }
 .LootBox_base__large_ed .LootBox_icon__hovered_21 {
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.entryPoint.entryMedium_hover');
-}
+            background-image: url('R.images.new_year.gui.maps.icons.newYear.entryPoint.entryMedium_hover');
+        }
 .LootBox_count_c4 {
     display: flex;
     color: #edf0ff;
@@ -78,13 +76,13 @@
     bottom: 24rem;
 }
 .LootBox_base__large_ed .LootBox_count_c4 {
-    font-size: 24rem;
-    right: 16rem;
-    bottom: 54rem;
-}
+        font-size: 24rem;
+        right: 16rem;
+        bottom: 54rem;
+    }
 .LootBox_base__disabled_1a .LootBox_count_c4 {
-    color: #595950;
-}
+        color: #595950;
+    }
 .LootBox_disabledAlert_35 {
     width: 100rem;
     height: 30rem;
@@ -96,8 +94,8 @@
     transform: translateX(-50%);
 }
 .LootBox_base__large_ed .LootBox_disabledAlert_35 {
-    bottom: 50rem;
-}
+        bottom: 50rem;
+    }
 
 .App_base_7a {
     display: flex;
@@ -119,3 +117,4 @@ body {
     margin: 1rem;
     overflow: hidden;
 }
+

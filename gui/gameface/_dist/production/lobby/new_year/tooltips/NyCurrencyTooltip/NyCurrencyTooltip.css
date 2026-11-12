@@ -1,108 +1,108 @@
 .Box_mt__XS_0c {
-    margin-top: 4rem;
-}
-.Box_mt__SM_eb {
-    margin-top: 8rem;
-}
-.Box_mt__SMp_cf {
-    margin-top: 10rem;
-}
-.Box_mt__MD_25 {
-    margin-top: 16rem;
-}
-.Box_mt__MDp_49 {
-    margin-top: 20rem;
-}
-.Box_mt__LG_e8 {
-    margin-top: 32rem;
-}
-.Box_mt__XL_83 {
-    margin-top: 64rem;
-}
+            margin-top: 4rem;
+        }
+        .Box_mt__SM_eb {
+            margin-top: 8rem;
+        }
+        .Box_mt__SMp_cf {
+            margin-top: 10rem;
+        }
+        .Box_mt__MD_25 {
+            margin-top: 16rem;
+        }
+        .Box_mt__MDp_49 {
+            margin-top: 20rem;
+        }
+        .Box_mt__LG_e8 {
+            margin-top: 32rem;
+        }
+        .Box_mt__XL_83 {
+            margin-top: 64rem;
+        }
 
 .Box_mr__XS_7c {
-    margin-right: 4rem;
-}
+            margin-right: 4rem;
+        }
 
 .Box_mr__SM_08 {
-    margin-right: 8rem;
-}
+            margin-right: 8rem;
+        }
 
 .Box_mr__SMp_06 {
-    margin-right: 10rem;
-}
+            margin-right: 10rem;
+        }
 
 .Box_mr__MD_4a {
-    margin-right: 16rem;
-}
+            margin-right: 16rem;
+        }
 
 .Box_mr__MDp_b6 {
-    margin-right: 20rem;
-}
+            margin-right: 20rem;
+        }
 
 .Box_mr__LG_d0 {
-    margin-right: 32rem;
-}
+            margin-right: 32rem;
+        }
 
 .Box_mr__XL_db {
-    margin-right: 64rem;
-}
+            margin-right: 64rem;
+        }
 
 .Box_mb__XS_bb {
-    margin-bottom: 4rem;
-}
+            margin-bottom: 4rem;
+        }
 
 .Box_mb__SM_83 {
-    margin-bottom: 8rem;
-}
+            margin-bottom: 8rem;
+        }
 
 .Box_mb__SMp_04 {
-    margin-bottom: 10rem;
-}
+            margin-bottom: 10rem;
+        }
 
 .Box_mb__MD_ed {
-    margin-bottom: 16rem;
-}
+            margin-bottom: 16rem;
+        }
 
 .Box_mb__MDp_65 {
-    margin-bottom: 20rem;
-}
+            margin-bottom: 20rem;
+        }
 
 .Box_mb__LG_c8 {
-    margin-bottom: 32rem;
-}
+            margin-bottom: 32rem;
+        }
 
 .Box_mb__XL_f8 {
-    margin-bottom: 64rem;
-}
+            margin-bottom: 64rem;
+        }
 
 .Box_ml__XS_8a {
-    margin-left: 4rem;
-}
+            margin-left: 4rem;
+        }
 
 .Box_ml__SM_e6 {
-    margin-left: 8rem;
-}
+            margin-left: 8rem;
+        }
 
 .Box_ml__SMp_fb {
-    margin-left: 10rem;
-}
+            margin-left: 10rem;
+        }
 
 .Box_ml__MD_2b {
-    margin-left: 16rem;
-}
+            margin-left: 16rem;
+        }
 
 .Box_ml__MDp_c7 {
-    margin-left: 20rem;
-}
+            margin-left: 20rem;
+        }
 
 .Box_ml__LG_39 {
-    margin-left: 32rem;
-}
+            margin-left: 32rem;
+        }
 
 .Box_ml__XL_4a {
-    margin-left: 64rem;
-}
+            margin-left: 64rem;
+        }
 
 .FormatText_base_d0 {
     display: flex;
@@ -111,167 +111,167 @@
 
 /* eslint-disable-next-line expectedscss*/
 .Text_paragraph-P10_2c {
-    font-size: 10rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 10rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_paragraph-P12_22 {
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 12rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P14_a7 {
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P16_90 {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P18_50 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 18rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P24_33 {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 32rem;
 }
 .Text_heading-H14_8b {
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 14rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H15_9e {
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 15rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H18_b7 {
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 18rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H20R_f6 {
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 20rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_heading-H22_27 {
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .Text_heading-H24R_be {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_heading-H24_0c {
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
+        font-size: 24rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .Text_heading-H28_78 {
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H36_32 {
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 36rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H56_c3 {
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 56rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H73_8f {
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
+        font-size: 73rem;
+        font-weight: 700;
+        line-height: 1.1;
 }
 .Text_heading-H144_a9 {
-    font-size: 144rem;
-    font-weight: 700;
-    line-height: 1;
+        font-size: 144rem;
+        font-weight: 700;
+        line-height: 1;
 }
 .Text_BLACK_REAL_30 {
-    color: #000000;
-}
+        color: #000000;
+    }
 .Text_WHITE_REAL_bc {
-    color: #ffffff;
-}
+        color: #FFFFFF;
+    }
 .Text_WHITE_62 {
-    color: #f2f2f7;
-}
+        color: #F2F2F7;
+    }
 .Text_WHITE_ORANGE_54 {
-    color: #fefeec;
-}
+        color: #FEFEEC;
+    }
 .Text_WHITE_SPANISH_df {
-    color: #e9e2bf;
-}
+        color: #E9E2BF;
+    }
 .Text_PAR_15 {
-    color: #8c8c7e;
-}
+        color: #8C8C7E;
+    }
 .Text_PAR_SECONDARY_5d {
-    color: #595950;
-}
+        color: #595950;
+    }
 .Text_PAR_TERTIARY_c9 {
-    color: #37362e;
-}
+        color: #37362E;
+    }
 .Text_INFO_RED_30 {
-    color: #ff0000;
-}
+        color: #FF0000;
+    }
 .Text_RED_66 {
-    color: #ff2717;
-}
+        color: #FF2717;
+    }
 .Text_RED_DARK_d8 {
-    color: #b70000;
-}
+        color: #B70000;
+    }
 .Text_YELLOW_ed {
-    color: #feab34;
-}
+        color: #FEAB34;
+    }
 .Text_ORANGE_be {
-    color: #ee7000;
-}
+        color: #EE7000;
+    }
 .Text_CREAM_57 {
-    color: #ffdd99;
-}
+        color: #FFDD99;
+    }
 .Text_BROWN_18 {
-    color: #cbac77;
-}
+        color: #CBAC77;
+    }
 .Text_GREEN_BRIGHT_3f {
-    color: #80d43a;
-}
+        color: #80D43A;
+    }
 .Text_GREEN_e3 {
-    color: #7ab300;
-}
+        color: #7AB300;
+    }
 .Text_GREEN_DARK_f1 {
-    color: #497212;
-}
+        color: #497212;
+    }
 .Text_BLUE_BOOSTER_21 {
-    color: #ccffff;
-}
+        color: #CCFFFF;
+    }
 .Text_BLUE_TEAMKILLER_ab {
-    color: #09e2ff;
-}
+        color: #09E2FF;
+    }
 .Text_CRED_f7 {
-    color: #ced9d9;
-}
+        color: #CED9D9;
+    }
 .Text_GOLD_28 {
-    color: #ffc363;
-}
+        color: #FFC363;
+    }
 .Text_BOND_be {
-    color: #c9c9b6;
-}
+        color: #C9C9B6;
+    }
 .Text_PROM_65 {
-    color: #a29b70;
-}
+        color: #A29B70;
+    }
 
 .NyCurrency_base_30,
 .NyCurrency_container_b9 {
@@ -291,90 +291,52 @@
 }
 
 .NyCurrency_icon__left_79 {
-    margin-right: 10rem;
-}
+        margin-right: 6rem;
+    }
 
 .NyCurrency_icon__right_6f {
-    margin-left: 10rem;
-}
+        margin-left: 6rem;
+    }
 
 .NyCurrency_icon__medium_63 {
-    width: 24rem;
-    height: 24rem;
-}
-
-.NyCurrency_icon__c_48x48_74 {
-    width: 48rem;
-    height: 48rem;
-}
-
-.NyCurrency_icon__c_64x64_60 {
-    width: 64rem;
-    height: 64rem;
-}
+        width: 24rem;
+        height: 24rem;
+    }
 
 .NyCurrency_value_e4 {
-    color: #8c8c7e;
-    font-size: 12rem;
+    color: #8C8C7E;
+    font-size: 16rem;
     font-weight: 400;
-    line-height: 1.3;
-    font-weight: 700;
-    line-height: 14rem;
-}
-
-.NyCurrency_value__medium_61 {
-    color: #8c8c7e;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-}
-
-.NyCurrency_value__c_48x48_5c {
-    color: #8c8c7e;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.NyCurrency_value__c_64x64_71 {
-    color: #8c8c7e;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.25;
 }
 
 .NyCurrency_value__ny25_mandarin_81,
-.NyCurrency_value__ny25Token_94,
-.NyCurrency_value__freeXP_43 {
-    color: #f2f2f7;
-}
+    .NyCurrency_value__ny25Token_94,
+    .NyCurrency_value__freeXP_43 {
+        color: #F2F2F7;
+    }
 
 .NyCurrency_value__credits_d7 {
-    color: #ced9d9;
-}
+        color: #CED9D9;
+    }
 
 .NyCurrency_value__gold_07 {
-    color: #ffc363;
-}
+        color: #FFC363;
+    }
 
 .NyCurrency_value__xp_d0,
-.NyCurrency_value__crystal_ba,
-.NyCurrency_value__equipCoin_f1 {
-    color: #c9c9b6;
-}
+    .NyCurrency_value__crystal_ba,
+    .NyCurrency_value__equipCoin_f1 {
+        color: #C9C9B6;
+    }
 
 .NyCurrency_value__notAvailable__small_51 {
-    transform: translateY(-2rem);
-}
+        transform: translateY(-2rem);
+    }
 
 .NyCurrency_value__notAvailable__medium_9d {
-    transform: translateY(-3rem);
-}
-
-.NyCurrency_value__notAvailable__c_48x48_3c,
-.NyCurrency_value__notAvailable__c_64x64_b3 {
-    transform: translateY(-5rem);
-}
+        transform: translateY(-3rem);
+    }
 
 .TooltipDecorator_base_c9 {
     display: flex;
@@ -382,49 +344,103 @@
 }
 
 .TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
+
+.TooltipAndPopoverStyleWrapper_base_f8 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-bottom: 10rem;
+    border: 1rem solid #95694e;
+    border-radius: 4rem;
+    box-shadow: 4rem 4rem 6rem rgba(255, 255, 255, 0.06) inset, -4rem -4rem 6rem rgba(255, 255, 255, 0.06) inset;
+    background: linear-gradient(180deg, rgba(60, 84, 124, 0.85) 0%, rgba(23, 28, 35, 0.85) 100%);
+    filter: drop-shadow(-1rem 1rem 2rem rgba(0, 0, 0, 0.3)) drop-shadow(-2rem 3rem 4rem rgba(0, 0, 0, 0.5));
     position: relative;
 }
-
-.NyTooltipDecorator_base_b4 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10rem;
+.TooltipAndPopoverStyleWrapper_base_f8::before {
+    border: 1rem solid rgba(39, 30, 24, 0.6);
+    border-radius: 3rem;
+    content: '';
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    left: 0rem;
+    z-index: 1;
 }
-
-.NyTooltipDecorator_content_39 {
+.TooltipAndPopoverStyleWrapper_base_f8::after {
+    border: 1rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    content: '';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 1;
+}
+.TooltipAndPopoverStyleWrapper_pattern_f6 {
+    width: 100%;
+    height: 100%;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.tooltips.pattern');
+    position: absolute;
+}
+.TooltipAndPopoverStyleWrapper_snowIconContainer_33 {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.TooltipAndPopoverStyleWrapper_snowIcon_d7 {
+    width: 236rem;
+    height: 60rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.tooltips.snow') no-repeat center / cover;
+}
+.TooltipAndPopoverStyleWrapper_content_8a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border: 1rem solid #154061;
-    border-radius: 2rem;
-    box-shadow:
-        0 0 20rem 0 rgba(0, 0, 0, 0.5),
-        0 2rem 6rem 2rem #0000007a;
-    background: linear-gradient(153.54deg, #002c64 0%, #000 100%);
+    z-index: 2;
 }
 
 .App_base_5e {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 295rem;
-    padding: 20rem 24rem;
+    width: 338rem;
+    padding: 21rem 23rem;
 }
 
 .App_title_c0 {
-    color: #f2f2f7;
-    font-size: 15rem;
+    color: #FFDD99;
+    font-size: 18rem;
     font-weight: 700;
-    line-height: 1.15;
+    line-height: 1.1;
+    margin-bottom: 18rem;
 }
 
 .App_description_d6 {
-    color: #8c8c7e;
+    color: #C9C9B6;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 100%;
+    margin-top: 11rem;
+}
+
+.App_summary_ef {
+    color: #C9C9B6;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -440,30 +456,29 @@
 
 .App_count_3d {
     width: 100%;
-    height: 60rem;
-    background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(201, 201, 182, 0.08) 38.22%,
-        rgba(201, 201, 182, 0.08) 64.56%,
-        transparent 100%
-    );
+    height: 58rem;
+    background: linear-gradient(90deg, transparent 0%, rgba(201,201,182, 0.08) 38.22%, rgba(201,201,182, 0.08) 64.56%, transparent 100%);
 }
 
 .App_countText_37 {
-    color: #8c8c7e;
+    color: #C9C9B6;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
     display: flex;
+    margin-top: -1rem;
+}
+
+.App_currencyValue_0d {
+    color: #FEFEEC;
 }
 
 .App_currencyBase_dc {
-    margin: -3rem 12rem 0 0;
+    margin: -2rem 6rem 0 0;
 }
 
 .App_currecyIcon_ca {
-    margin-left: 6rem;
+    margin: 4rem 0 0 6rem;
 }
 
 .App_divider_9f {
@@ -472,13 +487,28 @@
     background: url('R.images.new_year.gui.maps.icons.newYear.tooltips.navigation.divider') no-repeat center / cover;
 }
 
+.App_divider__top_60 {
+        margin-top: 8rem;
+    }
+
+.App_divider__allowClick_77 {
+        margin-top: 11rem;
+    }
+
+.App_dividerSummary_72 {
+    width: 100%;
+    height: 1rem;
+    background: rgba(255,255,255, .1);
+}
+
 .App_clickHint_46 {
-    color: #8c8c7e;
+    color: #C9C9B6;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
     width: 100%;
-    height: 55rem;
+    margin-top: 15rem;
     text-align: center;
     opacity: 0.7;
 }
+

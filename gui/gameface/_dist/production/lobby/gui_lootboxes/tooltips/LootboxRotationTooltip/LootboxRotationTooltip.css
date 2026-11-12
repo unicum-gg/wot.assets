@@ -323,6 +323,92 @@
     position: relative;
 }
 
+.RotationStage_base_69 {
+    background: no-repeat center / cover;
+}
+
+    .RotationStage_base__small_cc {
+        color: #E0DACB;
+        font-size: 18rem;
+        font-weight: 700;
+        line-height: 1.1;
+    width: 36rem;
+    height: 36rem;
+    background-image: url('R.images.gui_lootboxes.gui.maps.storage.progression.stageIcon.default');
+    }
+
+    .RotationStage_base__medium_15 {
+        color: #E0DACB;
+        font-size: 20rem;
+        font-weight: 400;
+        line-height: 1.2;
+        font-weight: 700;
+    width: 44rem;
+    height: 44rem;
+    background-image: url('R.images.gui_lootboxes.gui.maps.storage.progression.stageIcon.medium');
+    }
+
+    .RotationStage_base__large_47 {
+        color: #E0DACB;
+        font-size: 24rem;
+        font-weight: 700;
+        line-height: 1.2;
+    width: 60rem;
+    height: 60rem;
+    background-image: url('R.images.gui_lootboxes.gui.maps.storage.progression.stageIcon.large');
+    }
+
+    .RotationStage_base__notFixedSize_d4 {
+        color: #E0DACB;
+        font-size: 18rem;
+        font-weight: 700;
+        line-height: 1.1;
+    width: 36rem;
+    height: 36rem;
+    background-image: url('R.images.gui_lootboxes.gui.maps.storage.progression.stageIcon.default');
+    }
+
+    .mediaSmall .RotationStage_base__notFixedSize_d4 {
+            color: #E0DACB;
+            font-size: 20rem;
+            font-weight: 400;
+            line-height: 1.2;
+            font-weight: 700;
+    width: 44rem;
+    height: 44rem;
+    background-image: url('R.images.gui_lootboxes.gui.maps.storage.progression.stageIcon.medium');
+}
+
+    .mediaLarge .RotationStage_base__notFixedSize_d4 {
+            color: #E0DACB;
+            font-size: 24rem;
+            font-weight: 700;
+            line-height: 1.2;
+    width: 60rem;
+    height: 60rem;
+    background-image: url('R.images.gui_lootboxes.gui.maps.storage.progression.stageIcon.large');
+}
+
+.RotationStage_stageContainer_a6 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: -1rem;
+}
+
+.RotationStage_stageRotation_2d {
+    text-shadow: 0 0 6rem #211f1b, 0 0 4rem #211f1b, 1rem 1rem 0 #3b3632, -1rem -1rem 0 #3b3632, -1rem 1rem 0 #3b3632, -1rem 1rem 0 #3b3632, 1rem -1rem 0 #3b3632;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.RotationStage_stageRotation__gradient_84 {
+        color: #a29b8a;
+        mask-image: linear-gradient(transparent 15.38%, #fff 82.69%);
+    }
+
 .Header_base_5f {
     display: flex;
     align-items: center;
@@ -331,19 +417,16 @@
     margin-top: -18rem;
 }
 
-.Header_headerImage_e0 {
-    width: 64rem;
-    height: 64rem;
-    margin: -12rem 6rem -12rem -12rem;
-    background: url('R.images.gui_lootboxes.gui.maps.storage.rewards.vehProgression') no-repeat center / cover;
-}
-
 .Header_headerDescriptionWrapper_a7 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+}
+
+.Header_stage_19 {
+    margin-right: 18rem;
 }
 
 .Header_headerTitle_e9 {
@@ -798,44 +881,25 @@
 }
 
 .RotationVehicleList_stage_7b {
+    color: #8C8C7E;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 80rem;
     height: 80rem;
     padding-top: 28rem;
+    text-align: right;
     position: relative;
 }
 
-.RotationVehicleList_stageLabel_5d {
-    color: #8C8C7E;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    width: 44rem;
-    text-align: right;
-}
-
-.RotationVehicleList_stageIcon_4a {
-    width: 90rem;
-    height: 61rem;
-    background: no-repeat center / cover;
-    position: absolute;
-    top: 24rem;
-    left: -18rem;
-    z-index: -1;
-}
-
-.RotationVehicleList_stageIcon__1_c0 {
-        background-image: url('R.images.gui_lootboxes.gui.maps.storage.progression.tooltip.stage1');
-    }
-
-.RotationVehicleList_stageIcon__2_de {
-        background-image: url('R.images.gui_lootboxes.gui.maps.storage.progression.tooltip.stage2');
-    }
-
-.RotationVehicleList_stageIcon__3_60 {
-        background-image: url('R.images.gui_lootboxes.gui.maps.storage.progression.tooltip.stage3');
+.RotationVehicleList_stage__current_03 {
+        color: #E9E2BF;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
     }
 
 .App_base_70 {

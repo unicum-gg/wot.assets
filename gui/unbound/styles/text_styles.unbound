@@ -339,6 +339,11 @@
     (textColor = 0xE9E2BF)
 )
 
+(def css StatsTextStyleResetFilter()  #13 with resetting filter
+    (extends StatsTextStyle)
+    (filters)
+)
+
 # 14 There is no name for this style in the doc. There is no underline in a style
 
 (def css PlayerOnlineTextStyle()  #15

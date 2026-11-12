@@ -650,9 +650,8 @@
     flex-direction: column;
     align-items: center;
     width: 378rem;
-    height: 111rem;
-    padding: 12rem 20rem;
-    background: url('R.images.armory_yard.gui.maps.icons.tooltips.ribbon_large') no-repeat left / contain;
+    padding: 20rem;
+    background: url('R.images.armory_yard.gui.maps.icons.tooltips.ribbon_large') no-repeat left / cover;
     position: relative;
 }
 
@@ -661,19 +660,6 @@
     font-size: 14rem;
     font-weight: 700;
     line-height: 1.15;
-    align-self: flex-start;
-    margin-bottom: 13rem;
-}
-
-.Tokens_icon_78 {
-    width: 32rem;
-    height: 32rem;
-    background: url('R.images.armory_yard.gui.maps.icons.tooltips.chapters.token') no-repeat left / contain;
-}
-
-.Tokens_value_1d {
-    margin-top: 4rem;
-    font-weight: 700;
 }
 
 .Tokens_receivedTokens_d2 {

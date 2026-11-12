@@ -11,34 +11,32 @@
     align-items: center;
 }
 .IncreaseAnimation_base__slideUpEnabled_f2 .IncreaseAnimation_container__play_75 {
-    animation:
-        IncreaseAnimation_slideUp1_33 0.4s linear forwards,
-        IncreaseAnimation_slideUp2_82 1s linear 0.4s forwards,
-        IncreaseAnimation_slideUp3_e7 1s cubic-bezier(0.08, 0.12, 1, 0.33) 1.4s forwards;
-}
+            animation: IncreaseAnimation_slideUp1_33 .4s linear forwards,
+                       IncreaseAnimation_slideUp2_82 1s linear .4s forwards,
+                       IncreaseAnimation_slideUp3_e7 1s cubic-bezier(.08, .12, 1, .33) 1.4s forwards;
+        }
 .IncreaseAnimation_title_d6 {
-    color: #ffffff;
+    color: #FFFFFF;
     font-size: 22rem;
     font-weight: 700;
     line-height: 1.2;
-    text-shadow: 0 0 12rem rgba(0, 16, 63, 0.4);
+    text-shadow: 0 0 12rem rgba(0,16,63, .4);
     white-space: nowrap;
     opacity: 0;
     z-index: 1;
 }
 .mediaMedium .IncreaseAnimation_title_d6 {
-    color: #ffffff;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
+        color: #FFFFFF;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
 }
 .IncreaseAnimation_container__play_75 .IncreaseAnimation_title_d6 {
-    animation:
-        IncreaseAnimation_opacityAppearance1_4f 0.4s cubic-bezier(0.15, 0.62, 0.62, 0.91) forwards,
-        IncreaseAnimation_opacityAppearance2_6c 0.5s cubic-bezier(0.15, 0.62, 0.62, 0.91) 1.9s forwards;
-}
+        animation: IncreaseAnimation_opacityAppearance1_4f .4s cubic-bezier(.15, .62, .62, .91) forwards,
+                   IncreaseAnimation_opacityAppearance2_6c .5s cubic-bezier(.15, .62, .62, .91) 1.9s forwards;
+    }
 .IncreaseAnimation_circleWrapper_82 {
-    color: #ffffff;
+    color: #FFFFFF;
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
@@ -50,12 +48,12 @@
     z-index: 2;
 }
 .mediaMedium .IncreaseAnimation_circleWrapper_82 {
-    margin-bottom: -6rem;
+        margin-bottom: -6rem;
 }
 .IncreaseAnimation_highlight_34 {
     width: 390rem;
     height: 132rem;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 24, 95, 0.5), transparent);
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0,24,95, .5), transparent);
     position: absolute;
     top: -15rem;
     left: 50%;
@@ -73,22 +71,21 @@
     z-index: 3;
 }
 .mediaMedium .IncreaseAnimation_counter_41 {
-    width: 60rem;
-    height: 60rem;
-    padding-top: 5rem;
+        width: 60rem;
+        height: 60rem;
+        padding-top: 5rem;
 }
 .IncreaseAnimation_container__play_75 .IncreaseAnimation_counter_41 {
-    animation:
-        IncreaseAnimation_opacityAppearance1_4f 0.4s cubic-bezier(0.15, 0.62, 0.62, 0.91) forwards,
-        IncreaseAnimation_opacityAppearance2_6c 0.5s cubic-bezier(0.15, 0.62, 0.62, 0.91) 1.9s forwards;
-}
+        animation: IncreaseAnimation_opacityAppearance1_4f .4s cubic-bezier(.15, .62, .62, .91) forwards,
+                   IncreaseAnimation_opacityAppearance2_6c .5s cubic-bezier(.15, .62, .62, .91) 1.9s forwards;
+    }
 .IncreaseAnimation_counterPlus_7e {
     margin-top: -3rem;
     position: absolute;
     left: -9rem;
 }
 .mediaMedium .IncreaseAnimation_counterPlus_7e {
-    margin-top: 2rem;
+        margin-top: 2rem;
 }
 .IncreaseAnimation_glow_11 {
     position: absolute;
@@ -100,11 +97,11 @@
     background: url('R.images.new_year.gui.maps.icons.newYear.slots.glow') no-repeat center / contain;
 }
 .IncreaseAnimation_glow__animated_19 {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 .IncreaseAnimation_container__play_75 .IncreaseAnimation_glow__animated_19 {
-    animation: IncreaseAnimation_glowAppearance_d2 2.4s linear forwards;
-}
+            animation: IncreaseAnimation_glowAppearance_d2 2.4s linear forwards;
+        }
 .IncreaseAnimation_snowflake_62 {
     width: 48rem;
     height: 48rem;
@@ -112,22 +109,21 @@
     position: absolute;
 }
 .mediaMedium .IncreaseAnimation_snowflake_62 {
-    width: 64rem;
-    height: 64rem;
-    top: -2rem;
+        width: 64rem;
+        height: 64rem;
+        top: -2rem;
 }
 .IncreaseAnimation_container__play_75 .IncreaseAnimation_snowflake_62 {
-    animation:
-        IncreaseAnimation_snowflakeFlight1_c2 1s linear 0.5s,
-        IncreaseAnimation_snowflakeFlight2_4b 1.9s ease-in forwards 1.5s;
-}
+        animation: IncreaseAnimation_snowflakeFlight1_c2 1s linear .5s,
+                   IncreaseAnimation_snowflakeFlight2_4b 1.9s ease-in forwards 1.5s;
+    }
 .IncreaseAnimation_snowflakeIconWrapper_67 {
     transform: translateX(0rem);
     transition: transform 1.9s ease-in 1.5s;
 }
 .IncreaseAnimation_container__play_75 .IncreaseAnimation_snowflakeIconWrapper_67 {
-    transform: translateX(var(--x-offset));
-}
+        transform: translateX(var(--x-offset));
+    }
 .IncreaseAnimation_snowflakeIcon_b8 {
     width: 100%;
     height: 100%;
@@ -136,8 +132,8 @@
     transform-origin: center;
 }
 .IncreaseAnimation_container__play_75 .IncreaseAnimation_snowflakeIcon_b8 {
-    animation: IncreaseAnimation_snowflakeRotate_6f 2.9s linear forwards 0.5s;
-}
+        animation: IncreaseAnimation_snowflakeRotate_6f 2.9s linear forwards .5s;
+    }
 @keyframes IncreaseAnimation_snowflakeFlight1_c2 {
     0% {
         opacity: 0;
@@ -231,14 +227,15 @@
     }
 
     20% {
-        opacity: 0.35;
+        opacity: .35;
     }
 
     50% {
-        opacity: 0.35;
+        opacity: .35;
     }
 
     100% {
         opacity: 0;
     }
 }
+

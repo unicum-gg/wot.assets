@@ -1,0 +1,114 @@
+.TokensStepper_base_05 {
+    display: flex;
+    align-items: center;
+    width: 140rem;
+    border: 1rem solid #454437;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem #000000;
+    background-color: rgba(13, 13, 12, 0.55);
+    overflow: hidden;
+    position: relative;
+    transition: border 150ms ease-in-out;
+}
+
+.TokensStepper_currency_ac {
+    display: flex;
+    align-items: center;
+    flex: 0;
+}
+
+.TokensStepper_inputWrapper_b0 {
+    display: flex;
+    flex: 0;
+    padding: 0 9rem 0 6rem;
+}
+
+.TokensStepper_input_72 {
+    display: flex;
+    height: 24rem;
+    border: none;
+    outline: 0;
+    background-color: transparent;
+    color: #C9C9B6;
+    font-size: 20rem;
+    font-weight: 700;
+    line-height: 22rem;
+}
+
+.TokensStepper_input_72::selection {
+        background-color: #8C8C7E;
+        color: #412b21;
+    }
+
+.TokensStepper_input__disabled_31 {
+        width: 100%;
+    }
+
+.TokensStepper_currencyIcon_59 {
+    width: 30rem;
+    height: 30rem;
+    background: no-repeat center / contain;
+}
+
+.TokensStepper_controls_82 {
+    display: flex;
+    flex-direction: column;
+}
+
+.TokensStepper_btn_2b {
+    width: 27rem;
+    height: 15rem;
+    background: url('R.images.gui.maps.icons.components.numerical_stepper.stepper_medium_buttons') no-repeat;
+    cursor: pointer;
+}
+
+.mediaLargeWidth .TokensStepper_btn_2b {
+        background-size: 200% 400%;
+}
+
+.TokensStepper_btn__scaled_2f {
+        background-size: 200% 400%;
+    }
+
+.TokensStepper_btnIncrement_ad {
+    background-position-x: 0;
+    background-position-y: 0;
+}
+
+.TokensStepper_btnIncrement_ad:hover {
+        background-position-y: -15rem;
+    }
+
+.TokensStepper_btnIncrement_ad:active {
+        background-position-y: -30rem;
+    }
+
+.TokensStepper_btnIncrement__disabled_a0,
+    .TokensStepper_btnIncrement__disabled_a0:hover {
+        background-position-y: -45rem;
+        cursor: default;
+    }
+
+.TokensStepper_btnDecrement_e8 {
+    background-position-x: 100%;
+    background-position-y: 0;
+}
+
+.TokensStepper_btnDecrement_e8:hover {
+        background-position-y: -15rem;
+    }
+
+.TokensStepper_btnDecrement_e8:active {
+        background-position-y: -30rem;
+    }
+
+.TokensStepper_btnDecrement__disabled_d2,
+    .TokensStepper_btnDecrement__disabled_d2:hover {
+        background-position-y: -45rem;
+        cursor: default;
+    }
+
+.TokensStepper_btnDecrement__scaled_88 {
+        transform: translateX(0.5rem);
+    }
+

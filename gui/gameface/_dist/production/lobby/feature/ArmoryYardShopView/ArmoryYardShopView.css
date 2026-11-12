@@ -1204,7 +1204,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: -50rem;
     left: 0;
     z-index: 1;
-    transition: visibility 0s linear 1s, opacity .2s linear;
+    transition: visibility 0s linear 1s, opacity 0.2s linear;
     pointer-events: none;
 }
 
@@ -2244,6 +2244,63 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         top: 25rem;
 }
 
+.SpecialOffersWidget_base_79 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1054rem;
+    height: 106rem;
+    background: url('R.images.armory_yard.gui.maps.icons.shop.infoWidget_bg') no-repeat top / contain;
+    position: relative;
+}
+
+    .SpecialOffersWidget_base_79::before {
+        width: 100%;
+        height: 1rem;
+        background: linear-gradient(270deg, rgba(142, 77, 0, 0) 1.43%, #fbc879 50%, rgba(142, 77, 0, 0) 98.98%);
+        content: '';
+        position: absolute;
+        top: 0;
+    }
+
+.SpecialOffersWidget_icon_2b {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 82rem;
+    height: 82rem;
+    background: url('R.images.armory_yard.gui.maps.icons.shop.infoWidget_iconGlow') no-repeat center / contain;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+}
+
+.SpecialOffersWidget_icon_2b::after {
+        width: 32rem;
+        height: 32rem;
+        background: url('R.images.armory_yard.gui.maps.icons.shop.infoWidget_infoIcon') no-repeat center;
+        content: '';
+        position: absolute;
+    }
+
+.SpecialOffersWidget_title_a4 {
+    color: #E9E2BF;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 8rem;
+}
+
+.SpecialOffersWidget_description_05 {
+    color: #8C8C7E;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+}
+
 .Section_base_b0 {
     display: flex;
     flex-direction: column;
@@ -2257,6 +2314,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .mediaSmall .Section_title_38 {
         margin-top: 20rem;
+}
+.Section_widget_0a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12rem 0 17rem;
 }
 .Section_cards_b4 {
     display: flex;
@@ -2275,6 +2338,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaSmall .Section_card__marginLeft_49 {
             margin-left: 20rem;
         }
+.Section_sectionWithWidget_ac {
+    padding-top: 30rem;
+}
 
 .Header_base_f7 {
     display: flex;

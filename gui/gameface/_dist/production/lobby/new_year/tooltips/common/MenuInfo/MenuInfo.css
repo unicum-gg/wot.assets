@@ -5,13 +5,7 @@
 .MenuInfo_background_1c {
     display: flex;
     height: 60rem;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(201, 201, 182, 0.07) 37%,
-        rgba(201, 201, 182, 0.07) 63%,
-        transparent
-    );
+    background: linear-gradient(90deg, transparent, rgba(201,201,182, .07) 37%, rgba(201,201,182, .07) 63%, transparent);
 }
 
 .MenuInfo_separator_eb {
@@ -21,3 +15,4 @@
     height: 1rem;
     background: url('R.images.gui.maps.icons.tooltip.tool_tip_separator') no-repeat center / contain;
 }
+

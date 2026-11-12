@@ -1123,6 +1123,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 100%;
     background: #000 url('R.images.armory_yard.gui.maps.icons.bg') no-repeat center / cover;
     position: relative;
+} .App_vignette_62 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.armory_yard.gui.maps.icons.progress.vignette.iced_without_header') center / 100% no-repeat;
+    opacity: 0.2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 } .App_back_9e {
     padding: 7rem 8rem;
     position: absolute;
@@ -1130,33 +1138,36 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 30rem;
     z-index: 1;
 } .App_content_d3 {
-    margin-bottom: 160rem;
-    position: relative;
+    position: absolute;
+    transform: translateY(-76rem);
 } .mediaMedium .App_content_d3 {
-        margin-bottom: 160rem;
+        transform: translateY(-98rem);
 } .mediaLarge .App_content_d3 {
-        margin-bottom: 180rem;
+        transform: translateY(-124rem);
+} .mediaExtraLarge .App_content_d3 {
+        transform: translateY(-196rem);
 } .App_glow_39 {
     width: 300rem;
     height: 300rem;
-    background: url('swf://gui/flash/animations/battlePass/rays.swf') no-repeat center / cover;
+    background: url('swf://gui/flash/animations/glows/rays.swf') no-repeat center / cover;
     opacity: 1;
-    mix-blend-mode: lighten; /* additive;*/
+    mix-blend-mode: additive;
     position: absolute;
-    top: -35rem;
+    top: -65rem;
     pointer-events: none;
 } .mediaMedium .App_glow_39 {
         width: 400rem;
         height: 400rem;
         mix-blend-mode: lighten;
-        top: -55rem;
+        top: -95rem;
 } .mediaLarge .App_glow_39 {
         width: 570rem;
         height: 570rem;
+        top: -135rem;
 } .mediaExtraLarge .App_glow_39 {
         width: 810rem;
         height: 810rem;
-        top: -70rem;
+        top: -175rem;
 } .App_icon_02 {
     width: 260rem;
     height: 260rem;
@@ -1179,30 +1190,28 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
+    margin-bottom: 3rem;
+    font-size: 16rem;
     opacity: 0.8;
 } .mediaMedium .App_subtitle_63 {
         margin-bottom: 5rem;
 } .mediaLarge .App_subtitle_63 {
-        color: #FEFEEC;
         font-size: 18rem;
-        font-weight: 700;
-        line-height: 1.1;
 } .mediaExtraLarge .App_subtitle_63 {
-        color: #FEFEEC;
-        font-size: 22rem;
-        font-weight: 700;
-        line-height: 1.2;
+        font-size: 20rem;
 } .App_title_7a {
     color: #FEFEEC;
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
+    font-size: 34rem;
+} .mediaMedium .App_title_7a {
+        font-size: 38rem;
 } .mediaLarge .App_title_7a {
-        color: #FEFEEC;
-        font-size: 56rem;
-        font-weight: 700;
-        line-height: 1.1;
         margin-bottom: 10rem;
+        font-size: 48rem;
+} .mediaExtraLarge .App_title_7a {
+        font-size: 58rem;
 } .App_description_54 {
     margin: 15rem 0;
 } .App_rewards_7b {
@@ -1232,15 +1241,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 } .App_footer_ba {
     width: 100%;
     position: absolute;
-    bottom: 110rem;
+    bottom: 100rem;
     left: 0;
     z-index: 1;
 } .mediaMedium .App_footer_ba {
-        bottom: 120rem;
-} .mediaLarge .App_footer_ba {
-        bottom: 130rem;
-} .mediaExtraLarge .App_footer_ba {
-        bottom: 180rem;
+        bottom: 110rem;
 } .App_price_9b {
     margin: 20rem;
 } .App_priceLabel_fe {

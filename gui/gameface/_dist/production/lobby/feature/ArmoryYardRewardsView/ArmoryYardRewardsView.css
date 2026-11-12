@@ -137,10 +137,20 @@
     position: relative;
 }
 
-.Vignette_layer1_3c {
+.Vignette_default_f0 {
     width: 100%;
     height: 100%;
-    background: url('R.images.armory_yard.gui.maps.icons.progress.vignette.vignette1') center / 100% no-repeat;
+    background: url('R.images.armory_yard.gui.maps.icons.progress.vignette.default') center / 100% no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.Vignette_iced_86 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.armory_yard.gui.maps.icons.progress.vignette.iced') center / 100% no-repeat;
+    opacity: 0.2;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -246,7 +256,7 @@
     align-self: center;
     width: 620rem;
     padding-bottom: 100%;
-    background: url('swf://gui/flash/animations/winback/rays.swf') no-repeat center / contain;
+    background: url('swf://gui/flash/animations/glows/rays.swf') no-repeat center / contain;
     mix-blend-mode: additive;
     position: absolute;
     top: 170rem;
@@ -1193,7 +1203,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 388rem;
     background: url('R.images.armory_yard.gui.maps.icons.rewards.blink') no-repeat center / cover;
     opacity: 0;
-    mix-blend-mode: screen;
     transform: scale(0);
     animation: Header_scaleYFirstStep_60 0.68s cubic-bezier(0.62, 0, 0.7, 1) 0.5s forwards,
         Header_fadeIn_64 0.28s cubic-bezier(0.33, 1, 0.68, 1) 0.5s forwards,
@@ -1278,7 +1287,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 55rem;
     background: url('R.images.armory_yard.gui.maps.icons.rewards.glow_yellow') no-repeat center / cover;
     opacity: 0;
-    mix-blend-mode: hard-light;
     transform: rotate(0);
     animation: Header_glowRotate_91 0.88s linear 0.9s forwards,
         Header_fadeIn_64 0.22s cubic-bezier(0.6, 0, 0.8, 1) 0.5s forwards,
@@ -1452,11 +1460,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 388rem;
     background: url('R.images.armory_yard.gui.maps.icons.rewards.blink') no-repeat center / cover;
     opacity: 0;
-    mix-blend-mode: screen;
     transform: scale(0);
     animation: VehicleHeader_scaleYFirstStep_4e 0.68s cubic-bezier(0.62, 0, 0.7, 1) 0.5s forwards,
         VehicleHeader_fadeIn_d8 0.28s cubic-bezier(0.33, 1, 0.68, 1) 0.5s forwards,
- VehicleHeader_scaleYSecondStep_c6 0.36s ease-in-out 1.3s forwards,
+        VehicleHeader_scaleYSecondStep_c6 0.36s ease-in-out 1.3s forwards,
         VehicleHeader_fadeOut_0b 0.36s cubic-bezier(0.6, 0, 0.8, 1) 1.3s forwards;
 }
 .mediaMedium .VehicleHeader_blinkAnimate2_e3 {
@@ -1537,10 +1544,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 55rem;
     background: url('R.images.armory_yard.gui.maps.icons.rewards.glow_yellow') no-repeat center / cover;
     opacity: 0;
-    mix-blend-mode: hard-light;
     transform: rotate(0);
     animation: VehicleHeader_glowRotate_7b 0.88s linear 0.9s forwards,
- VehicleHeader_fadeIn_d8 0.22s cubic-bezier(0.6, 0, 0.8, 1) 0.5s forwards,
+        VehicleHeader_fadeIn_d8 0.22s cubic-bezier(0.6, 0, 0.8, 1) 0.5s forwards,
         VehicleHeader_fadeOut_0b 0.28s cubic-bezier(1, 0, 0.8, 0.6) 1.5s forwards;
 }
 .mediaMedium .VehicleHeader_glowYellowAnimate2_7b {

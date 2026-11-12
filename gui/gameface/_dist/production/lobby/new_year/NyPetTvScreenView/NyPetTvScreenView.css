@@ -1,0 +1,119 @@
+.VideoWithFsm_base_9c {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.VideoWithFsm_hidden_f9 {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.App_base_1f {
+    width: 512rem;
+    height: 400rem;
+    position: relative;
+}
+
+.App_inactive_48 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.pet_tv.tv_texture') no-repeat center / cover;
+    position: absolute;
+}
+
+.App_closeAnimation_cb {
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    position: absolute;
+}
+
+.App_blackBlock_cb {
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    position: absolute;
+}
+
+.App_blackBlock__top_82 {
+        top: 0;
+        left: 0;
+        transform: translateY(-400rem);
+        animation: App_moveTop_0f 100ms forwards;
+    }
+
+.App_blackBlock__bottom_e6 {
+        top: 0;
+        left: 0;
+        transform: translateY(400rem);
+        animation: App_moveBottom_14 100ms forwards;
+    }
+
+.App_blackBlock__left_c6 {
+        top: 0;
+        left: 0;
+        transform: translateX(-512rem);
+        animation: App_moveLeft_67 150ms 200ms ease-out forwards;
+    }
+
+.App_blackBlock__right_d8 {
+        top: 0;
+        left: 0;
+        transform: translateX(512rem);
+        animation: App_moveRight_cd 150ms 200ms ease-out forwards;
+    }
+
+.App_overlay_0d {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.pet_tv.overlay') no-repeat center/ contain;
+    opacity: 1;
+    position: absolute;
+    transition: opacity 300ms;
+}
+
+.App_overlay__withOpacity_2c {
+        opacity: 0.5;
+    }
+
+@keyframes App_moveTop_0f {
+    0% {
+        transform: translateY(-400rem);
+    }
+
+    100% {
+        transform: translateY(-202rem);
+    }
+}
+
+@keyframes App_moveBottom_14 {
+    0% {
+        transform: translateY(400rem);
+    }
+
+    100% {
+        transform: translateY(202rem);
+    }
+}
+
+@keyframes App_moveLeft_67 {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes App_moveRight_cd {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(50%);
+    }
+}
+

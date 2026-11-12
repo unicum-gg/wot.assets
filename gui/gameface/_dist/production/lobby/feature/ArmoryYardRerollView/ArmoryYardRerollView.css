@@ -732,11 +732,12 @@
 .MainReward_icon_14 {
     width: 200rem;
     height: 118rem;
-    background: url('R.images.armory_yard.gui.maps.icons.common.final_reward.main_reward_1') center / contain no-repeat;
+    background: url('R.images.armory_yard.gui.maps.icons.common.final_reward.main_reward_1_200x118') center / contain
+        no-repeat;
 }
 
 .MainReward_icon__main_af {
-        background-image: url('R.images.armory_yard.gui.maps.icons.common.final_reward.main_reward_2');
+        background-image: url('R.images.armory_yard.gui.maps.icons.common.final_reward.main_reward_2_200x118');
     }
 
 .MainReward_preview_af {
@@ -778,7 +779,9 @@
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
-    text-shadow: 0 0 4rem rgba(255, 127, 0, 0.25), 0 0 8rem #ff2a00, 0 0 15rem #e52;
+    text-shadow: 0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -792,7 +795,7 @@
     }
 
 .MainReward_stepIcon_fa {
-    color: #FFFFFF80;
+    color: #ffffff80;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
@@ -929,7 +932,6 @@
     height: 116rem;
     position: relative;
 }
-
 .Step_progress_c9 {
     width: 96rem;
     height: 4rem;
@@ -937,17 +939,19 @@
     top: 24rem;
     left: 21rem;
 }
-
-.Step_progress__first_82,
-    .Step_progress__right_57 {
+.Step_progress__first_82 {
         width: 117rem;
         left: 0;
     }
-
+.Step_progress__right_57 {
+        width: 117rem;
+        left: 0;
+        mask-image: linear-gradient(to right, transparent 0%, #fff 80%);
+    }
 .Step_progress__left_30 {
         width: 117rem;
+        mask-image: linear-gradient(to right, #fff 20%, transparent 100%);
     }
-
 .Step_icon_b0 {
     width: 46rem;
     height: 52rem;
@@ -957,7 +961,6 @@
     z-index: 99;
     cursor: pointer;
 }
-
 .Step_reward_df {
     width: 138rem;
     height: 82rem;
@@ -965,7 +968,6 @@
     top: 30rem;
     left: 0;
 }
-
 .Step_line_c5 {
     width: 3rem;
     height: 64rem;
@@ -973,11 +975,10 @@
     top: 52rem;
     right: 22rem;
 }
-
 .Step_mainReward_b6 {
     position: absolute;
     bottom: 33rem;
-    left: 96rem;
+    left: 86rem;
     z-index: 1;
 }
 
@@ -1588,6 +1589,32 @@
         opacity: 0;
     }
 
+.Vignette_base_22 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.Vignette_default_f0 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.armory_yard.gui.maps.icons.progress.vignette.default') center / 100% no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.Vignette_iced_86 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.armory_yard.gui.maps.icons.progress.vignette.iced') center / 100% no-repeat;
+    opacity: 0.2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 .Header_base_2a {
     display: flex;
     flex-direction: column;
@@ -2057,15 +2084,6 @@
         right: 9rem;
 }
 
-.App_vignette_a0 {
-    width: 100%;
-    height: 100%;
-    background: url('R.images.armory_yard.gui.maps.icons.progress.vignette.vignette1') center / 100% no-repeat;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
 .App_header_d1 {
     position: absolute;
     top: 40rem;
@@ -2091,6 +2109,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    position: absolute;
     transform: translateY(13rem);
     transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
@@ -2526,35 +2545,6 @@
         font-size: 16rem;
         font-weight: 400;
         line-height: 1.25;
-}
-
-.QuestToken_tokensCount_c1 {
-    color: #E9E2BF;
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
-    margin: 0 4rem 0 2rem;
-    text-shadow: 0 0 2rem rgba(255, 127, 0, 0.25), 0 0 4rem #ff2a00, 0 0 7rem #e52;
-}
-
-.mediaMedium .QuestToken_tokensCount_c1 {
-        color: #E9E2BF;
-        font-size: 16rem;
-        font-weight: 400;
-        line-height: 1.25;
-        text-shadow: 0 0 4rem rgba(255, 127, 0, 0.25), 0 0 8rem #ff2a00, 0 0 15rem #e52;
-}
-
-.QuestToken_icon_c7 {
-    width: 14rem;
-    height: 14rem;
-    background: url('R.images.armory_yard.gui.maps.icons.token.s14') no-repeat center / contain;
-}
-
-.mediaMedium .QuestToken_icon_c7 {
-        width: 20rem;
-        height: 20rem;
-        background-image: url('R.images.armory_yard.gui.maps.icons.token.s20');
 }
 
 .RewardsList_base_87 {
@@ -4531,22 +4521,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     to {
         opacity: 0;
     }
-}
-
-.Vignette_base_22 {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.Vignette_layer1_3c {
-    width: 100%;
-    height: 100%;
-    background: url('R.images.armory_yard.gui.maps.icons.progress.vignette.vignette1') center / 100% no-repeat;
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
 
 .RerollIntroScreen_base_e6 {

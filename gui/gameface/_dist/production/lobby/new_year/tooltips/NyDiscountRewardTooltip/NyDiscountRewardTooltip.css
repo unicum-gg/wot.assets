@@ -4,21 +4,20 @@
 }
 
 .TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
 
 .App_base_f6 {
     display: flex;
     align-items: center;
     padding: 24rem 24rem 26rem;
-    border: 1rem solid rgba(242, 242, 230, 0.1);
+    border: 1rem solid rgba(242,242,230, .1);
     border-radius: 2rem;
-    background: url('R.images.new_year.gui.maps.icons.newYear.tooltips.discount_reward_tooltip.bg') no-repeat left
-        center / contain;
+    background: url('R.images.new_year.gui.maps.icons.newYear.tooltips.discount_reward_tooltip.bg') no-repeat left center / contain;
     color: #f2f2f7;
 }
 
@@ -35,3 +34,4 @@
     font-size: 15rem;
     line-height: 17rem;
 }
+

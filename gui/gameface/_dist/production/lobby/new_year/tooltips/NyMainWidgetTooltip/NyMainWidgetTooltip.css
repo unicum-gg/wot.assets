@@ -4,137 +4,181 @@
 }
 
 .TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
+        padding: 4rem 6rem 8rem;
+        border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+        border-image-slice: 24 fill;
+        border-image-width: 24rem;
+        position: relative;
+    }
+
+.TooltipAndPopoverStyleWrapper_base_f8 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-bottom: 10rem;
+    border: 1rem solid #95694e;
+    border-radius: 4rem;
+    box-shadow: 4rem 4rem 6rem rgba(255, 255, 255, 0.06) inset, -4rem -4rem 6rem rgba(255, 255, 255, 0.06) inset;
+    background: linear-gradient(180deg, rgba(60, 84, 124, 0.85) 0%, rgba(23, 28, 35, 0.85) 100%);
+    filter: drop-shadow(-1rem 1rem 2rem rgba(0, 0, 0, 0.3)) drop-shadow(-2rem 3rem 4rem rgba(0, 0, 0, 0.5));
     position: relative;
 }
-
-.NyTooltipDecorator_base_b4 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10rem;
+.TooltipAndPopoverStyleWrapper_base_f8::before {
+    border: 1rem solid rgba(39, 30, 24, 0.6);
+    border-radius: 3rem;
+    content: '';
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    left: 0rem;
+    z-index: 1;
 }
-
-.NyTooltipDecorator_content_39 {
+.TooltipAndPopoverStyleWrapper_base_f8::after {
+    border: 1rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    content: '';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 1;
+}
+.TooltipAndPopoverStyleWrapper_pattern_f6 {
+    width: 100%;
+    height: 100%;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.tooltips.pattern');
+    position: absolute;
+}
+.TooltipAndPopoverStyleWrapper_snowIconContainer_33 {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.TooltipAndPopoverStyleWrapper_snowIcon_d7 {
+    width: 236rem;
+    height: 60rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.tooltips.snow') no-repeat center / cover;
+}
+.TooltipAndPopoverStyleWrapper_content_8a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border: 1rem solid #154061;
-    border-radius: 2rem;
-    box-shadow:
-        0 0 20rem 0 rgba(0, 0, 0, 0.5),
-        0 2rem 6rem 2rem #0000007a;
-    background: linear-gradient(153.54deg, #002c64 0%, #000 100%);
+    z-index: 2;
 }
 
 .Box_mt__XS_0c {
-    margin-top: 4rem;
-}
-.Box_mt__SM_eb {
-    margin-top: 8rem;
-}
-.Box_mt__SMp_cf {
-    margin-top: 10rem;
-}
-.Box_mt__MD_25 {
-    margin-top: 16rem;
-}
-.Box_mt__MDp_49 {
-    margin-top: 20rem;
-}
-.Box_mt__LG_e8 {
-    margin-top: 32rem;
-}
-.Box_mt__XL_83 {
-    margin-top: 64rem;
-}
+            margin-top: 4rem;
+        }
+        .Box_mt__SM_eb {
+            margin-top: 8rem;
+        }
+        .Box_mt__SMp_cf {
+            margin-top: 10rem;
+        }
+        .Box_mt__MD_25 {
+            margin-top: 16rem;
+        }
+        .Box_mt__MDp_49 {
+            margin-top: 20rem;
+        }
+        .Box_mt__LG_e8 {
+            margin-top: 32rem;
+        }
+        .Box_mt__XL_83 {
+            margin-top: 64rem;
+        }
 
 .Box_mr__XS_7c {
-    margin-right: 4rem;
-}
+            margin-right: 4rem;
+        }
 
 .Box_mr__SM_08 {
-    margin-right: 8rem;
-}
+            margin-right: 8rem;
+        }
 
 .Box_mr__SMp_06 {
-    margin-right: 10rem;
-}
+            margin-right: 10rem;
+        }
 
 .Box_mr__MD_4a {
-    margin-right: 16rem;
-}
+            margin-right: 16rem;
+        }
 
 .Box_mr__MDp_b6 {
-    margin-right: 20rem;
-}
+            margin-right: 20rem;
+        }
 
 .Box_mr__LG_d0 {
-    margin-right: 32rem;
-}
+            margin-right: 32rem;
+        }
 
 .Box_mr__XL_db {
-    margin-right: 64rem;
-}
+            margin-right: 64rem;
+        }
 
 .Box_mb__XS_bb {
-    margin-bottom: 4rem;
-}
+            margin-bottom: 4rem;
+        }
 
 .Box_mb__SM_83 {
-    margin-bottom: 8rem;
-}
+            margin-bottom: 8rem;
+        }
 
 .Box_mb__SMp_04 {
-    margin-bottom: 10rem;
-}
+            margin-bottom: 10rem;
+        }
 
 .Box_mb__MD_ed {
-    margin-bottom: 16rem;
-}
+            margin-bottom: 16rem;
+        }
 
 .Box_mb__MDp_65 {
-    margin-bottom: 20rem;
-}
+            margin-bottom: 20rem;
+        }
 
 .Box_mb__LG_c8 {
-    margin-bottom: 32rem;
-}
+            margin-bottom: 32rem;
+        }
 
 .Box_mb__XL_f8 {
-    margin-bottom: 64rem;
-}
+            margin-bottom: 64rem;
+        }
 
 .Box_ml__XS_8a {
-    margin-left: 4rem;
-}
+            margin-left: 4rem;
+        }
 
 .Box_ml__SM_e6 {
-    margin-left: 8rem;
-}
+            margin-left: 8rem;
+        }
 
 .Box_ml__SMp_fb {
-    margin-left: 10rem;
-}
+            margin-left: 10rem;
+        }
 
 .Box_ml__MD_2b {
-    margin-left: 16rem;
-}
+            margin-left: 16rem;
+        }
 
 .Box_ml__MDp_c7 {
-    margin-left: 20rem;
-}
+            margin-left: 20rem;
+        }
 
 .Box_ml__LG_39 {
-    margin-left: 32rem;
-}
+            margin-left: 32rem;
+        }
 
 .Box_ml__XL_4a {
-    margin-left: 64rem;
-}
+            margin-left: 64rem;
+        }
 
 .FormatText_base_d0 {
     display: flex;
@@ -143,476 +187,373 @@
 
 /* eslint-disable-next-line expectedscss*/
 .Text_paragraph-P10_2c {
-    font-size: 10rem;
-    font-weight: 400;
-    line-height: 1.2;
+        font-size: 10rem;
+        font-weight: 400;
+        line-height: 1.2;
 }
 .Text_paragraph-P12_22 {
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 12rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P14_a7 {
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
+        font-size: 14rem;
+        font-weight: 400;
+        line-height: 1.3;
 }
 .Text_paragraph-P16_90 {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P18_50 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
+        font-size: 18rem;
+        font-weight: 400;
+        line-height: 1.25;
 }
 .Text_paragraph-P24_33 {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 32rem;
 }
 .Text_heading-H14_8b {
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 14rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H15_9e {
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
+        font-size: 15rem;
+        font-weight: 700;
+        line-height: 1.15;
 }
 .Text_heading-H18_b7 {
+        font-size: 18rem;
+        font-weight: 700;
+        line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+        font-size: 20rem;
+        font-weight: 400;
+        line-height: 1.2;
+}
+.Text_heading-H22_27 {
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 1.2;
+}
+.Text_heading-H24R_be {
+        font-size: 24rem;
+        font-weight: 400;
+        line-height: 1.2;
+}
+.Text_heading-H24_0c {
+        font-size: 24rem;
+        font-weight: 700;
+        line-height: 1.2;
+}
+.Text_heading-H28_78 {
+        font-size: 28rem;
+        font-weight: 700;
+        line-height: 1.1;
+}
+.Text_heading-H36_32 {
+        font-size: 36rem;
+        font-weight: 700;
+        line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+        font-size: 56rem;
+        font-weight: 700;
+        line-height: 1.1;
+}
+.Text_heading-H73_8f {
+        font-size: 73rem;
+        font-weight: 700;
+        line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+        font-size: 144rem;
+        font-weight: 700;
+        line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+        color: #000000;
+    }
+.Text_WHITE_REAL_bc {
+        color: #FFFFFF;
+    }
+.Text_WHITE_62 {
+        color: #F2F2F7;
+    }
+.Text_WHITE_ORANGE_54 {
+        color: #FEFEEC;
+    }
+.Text_WHITE_SPANISH_df {
+        color: #E9E2BF;
+    }
+.Text_PAR_15 {
+        color: #8C8C7E;
+    }
+.Text_PAR_SECONDARY_5d {
+        color: #595950;
+    }
+.Text_PAR_TERTIARY_c9 {
+        color: #37362E;
+    }
+.Text_INFO_RED_30 {
+        color: #FF0000;
+    }
+.Text_RED_66 {
+        color: #FF2717;
+    }
+.Text_RED_DARK_d8 {
+        color: #B70000;
+    }
+.Text_YELLOW_ed {
+        color: #FEAB34;
+    }
+.Text_ORANGE_be {
+        color: #EE7000;
+    }
+.Text_CREAM_57 {
+        color: #FFDD99;
+    }
+.Text_BROWN_18 {
+        color: #CBAC77;
+    }
+.Text_GREEN_BRIGHT_3f {
+        color: #80D43A;
+    }
+.Text_GREEN_e3 {
+        color: #7AB300;
+    }
+.Text_GREEN_DARK_f1 {
+        color: #497212;
+    }
+.Text_BLUE_BOOSTER_21 {
+        color: #CCFFFF;
+    }
+.Text_BLUE_TEAMKILLER_ab {
+        color: #09E2FF;
+    }
+.Text_CRED_f7 {
+        color: #CED9D9;
+    }
+.Text_GOLD_28 {
+        color: #FFC363;
+    }
+.Text_BOND_be {
+        color: #C9C9B6;
+    }
+.Text_PROM_65 {
+        color: #A29B70;
+    }
+
+.BonusTooltip_base_0e {
+    width: 400rem;
+    padding: 24rem;
+}
+
+.BonusTooltip_title_35 {
+    color: #FFDD99;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
+    margin-bottom: 8rem;
 }
-.Text_heading-H20R_f6 {
+
+.BonusTooltip_text_6f {
+    color: #C9C9B6;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.BonusTooltip_separator_88 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 10rem 0rem;
+}
+
+.BonusTooltip_separatorLine_44 {
+    width: 352rem;
+    height: 1rem;
+}
+
+.BonusTooltip_separatorLine__white_8f {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+.BonusTooltip_separatorLine__black_07 {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+.Description_base_b1 {
+    display: flex;
+    flex-direction: column;
+    border-top: 1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.Description_title_21 {
+    color: #CBAC77;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 2rem;
+    padding-top: 14rem;
+}
+
+.Description_title__complete_5a {
+        padding-bottom: 14rem;
+        border-bottom: 1rem solid rgba(242,242,247, 0.1);
+    }
+
+.Description_subTitle_d5 {
+    color: #C9C9B6;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Description_divider_72 {
+    width: 100%;
+    height: 2rem;
+    margin-top: 11rem;
+    border-bottom: 1rem solid #000;
+    background-color: #fff;
+    opacity: 0.1;
+}
+
+.LevelProgress_base_63 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: radial-gradient(114.29% 114.29% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+    position: relative;
+}
+
+.LevelProgress_levelWrapper_9c {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 6rem;
+}
+
+.LevelProgress_level_a1 {
+    color: #F2F2F7;
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 9rem;
+}
+
+.LevelProgress_level__gold_7d {
+        color: #fff;
+    }
+
+.LevelProgress_level__copied_a9 {
+        color: #ffc693;
+        position: absolute;
+        mask-image: linear-gradient(transparent 60%, #fff);
+    }
+
+.LevelProgress_progressionWrapper_b9 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LevelProgress_progression_54 {
+    width: 230rem;
+    height: 7rem;
+    margin: 0 12rem;
+    border-radius: 20rem;
+    box-shadow: -2rem 4rem 6rem 0rem #00000026 inset, 0rem 0rem 4rem 1rem #ffffff14;
+}
+
+.LevelProgress_progressionLine_74 {
+    width: 100%;
+    height: 3rem;
+    margin: 2rem;
+    border-radius: 3rem;
+    box-shadow: 0rem 0rem 2rem 0rem #fe9d5833,
+ 0rem 0rem 5rem 0rem #fe9d58fa,
+ 0rem 0rem 10rem 0rem #fe9d58d9,
+        0rem 0rem 2rem 0rem #ffffff80;
+    background: #ffc693;
+    overflow: hidden;
+    position: relative;
+}
+
+.LevelProgress_progressionArrow_1b {
+    width: 28rem;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    position: absolute;
+    right: 0rem;
+}
+
+.LevelProgress_currentLevel_2d {
+    margin-right: -2rem;
+    color: #FEFEEC;
     font-size: 20rem;
     font-weight: 400;
     line-height: 1.2;
 }
-.Text_heading-H22_27 {
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-.Text_heading-H24R_be {
-    font-size: 24rem;
+
+.LevelProgress_currentLevel__complete_74 {
+        color: #8C8C7E;
+        font-size: 20rem;
+        font-weight: 400;
+        line-height: 1.2;
+    }
+
+.LevelProgress_nextLevel_3c {
+    color: #E9E2BF;
+    font-size: 20rem;
     font-weight: 400;
     line-height: 1.2;
 }
-.Text_heading-H24_0c {
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-.Text_heading-H28_78 {
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H36_32 {
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H56_c3 {
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H73_8f {
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H144_a9 {
-    font-size: 144rem;
-    font-weight: 700;
-    line-height: 1;
-}
-.Text_BLACK_REAL_30 {
-    color: #000000;
-}
-.Text_WHITE_REAL_bc {
-    color: #ffffff;
-}
-.Text_WHITE_62 {
-    color: #f2f2f7;
-}
-.Text_WHITE_ORANGE_54 {
-    color: #fefeec;
-}
-.Text_WHITE_SPANISH_df {
-    color: #e9e2bf;
-}
-.Text_PAR_15 {
-    color: #8c8c7e;
-}
-.Text_PAR_SECONDARY_5d {
-    color: #595950;
-}
-.Text_PAR_TERTIARY_c9 {
-    color: #37362e;
-}
-.Text_INFO_RED_30 {
-    color: #ff0000;
-}
-.Text_RED_66 {
-    color: #ff2717;
-}
-.Text_RED_DARK_d8 {
-    color: #b70000;
-}
-.Text_YELLOW_ed {
-    color: #feab34;
-}
-.Text_ORANGE_be {
-    color: #ee7000;
-}
-.Text_CREAM_57 {
-    color: #ffdd99;
-}
-.Text_BROWN_18 {
-    color: #cbac77;
-}
-.Text_GREEN_BRIGHT_3f {
-    color: #80d43a;
-}
-.Text_GREEN_e3 {
-    color: #7ab300;
-}
-.Text_GREEN_DARK_f1 {
-    color: #497212;
-}
-.Text_BLUE_BOOSTER_21 {
-    color: #ccffff;
-}
-.Text_BLUE_TEAMKILLER_ab {
-    color: #09e2ff;
-}
-.Text_CRED_f7 {
-    color: #ced9d9;
-}
-.Text_GOLD_28 {
-    color: #ffc363;
-}
-.Text_BOND_be {
-    color: #c9c9b6;
-}
-.Text_PROM_65 {
-    color: #a29b70;
-}
 
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBar_base_45 {
-    width: 100%;
-    height: 12rem;
-    position: relative;
-}
-.ProgressBar_base__medium_62 {
-    height: 6rem;
-}
-.ProgressBar_base__small_df {
-    height: 2rem;
-}
-.ProgressBar_background_51 {
-    width: 100%;
-    max-width: 8001px;
-    height: 100%;
-    background-image: var(--progress-base);
-    background-repeat: repeat;
-    background-position: 0 50%;
-    background-size: 3rem 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.ProgressBar_background__medium_6e {
-    height: 6rem;
-}
-.ProgressBar_background__small_46 {
-    height: 2rem;
-}
-.ProgressBar_lineWrapper_6a {
-    display: flex;
-    flex: 1;
-}
+.LevelProgress_nextLevel__complete_e1 {
+        color: #FFDD99;
+        font-size: 20rem;
+        font-weight: 400;
+        line-height: 1.2;
+    }
 
-.ProgressBarBlink_base_24 {
-    width: 60rem;
-    height: 100rem;
-    background-image: var(--progress-glow);
-    background-size: contain;
-    mix-blend-mode: lighten;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(50%, -50%);
-    pointer-events: none;
-}
-
-.ProgressBarBlink_base__medium_ec {
-    width: 42rem;
-    height: 70rem;
-}
-
-.ProgressBarBlink_base__small_0f {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressLineImpose_base_80 {
-    max-width: 8001px;
-    height: 100%;
-    background-color: var(--progress-line-base);
-    position: relative;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
-    transition-property: width;
-}
-.ProgressLineImpose_base__disabled_cc {
-    background-color: var(--progress-line-disabled);
-}
-.ProgressLineImpose_base__finished_d4 {
-    background-color: var(--progress-line-finished);
-}
-.ProgressLineImpose_base__withoutBounce_56 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-.ProgressLineImpose_pattern_1c {
-    max-width: 8001px;
-    background-image: var(--progress-pattern-base);
-    background-repeat: repeat;
-    background-position: 0 50%;
-    background-size: 3rem 10rem;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
-}
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
-    top: 0;
-    bottom: 0;
-}
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-disabled);
-    left: 0;
-}
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-finished);
-}
-.ProgressLineImpose_gradient_35 {
-    max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
-    mix-blend-mode: overlay;
-    position: absolute;
-    top: 1rem;
-    right: 0;
-    bottom: 1rem;
-    left: 0;
-}
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
-    top: 0;
-    bottom: 0;
-}
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
-    display: none;
-}
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
-}
-.ProgressLineImpose_glow_a5 {
-    width: 60rem;
-    max-width: 8001px;
-    height: 100rem;
-    background-image: var(--progress-glow);
-    background-size: contain;
-    mix-blend-mode: lighten;
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-}
-.ProgressLineImpose_glow__left_d8 {
-    left: 1rem;
-}
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
-    display: none;
-}
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaGrow_base_7e {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
-    transition-property: width;
-}
-.ProgressBarDeltaGrow_base__withoutBounce_b5 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-.ProgressBarDeltaGrow_glow_68 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
-    transition-property: width;
-}
-.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
-}
-
-.ProgressValues_base_74 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.ProgressValues_level_60 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 16rem;
-}
-
-.ProgressValues_levelNumber_0d {
-    color: #b7eeff;
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.ProgressValues_levelText_1a {
-    color: #f2f2f7;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.ProgressValues_text_5a {
-    color: #8c8c7e;
+.LevelProgress_points_3e {
+    color: #C9C9B6;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+    display: flex;
+    justify-content: center;
+    padding: 8rem 0 16rem;
 }
 
-.ProgressValues_maxLevelText_c7 {
-    color: #f2f2f7;
+.LevelProgress_currentPoints_73 {
+    color: #FEFEEC;
     font-size: 14rem;
     font-weight: 700;
     line-height: 1.15;
+    margin-top: 1rem;
 }
 
-.ProgressValues_countCurrent_46 {
-    color: #afe3f9;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.ProgressValues_progress_df {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15rem;
-}
-
-.ProgressValues_progressCurrent_3f,
-.ProgressValues_progressNext_30 {
-    margin-top: -2rem;
-}
-
-.ProgressValues_progressCurrent_3f {
-    color: #f2f2f7;
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
-    text-shadow: 0 0 20rem #ffffff80;
-}
-
-.ProgressValues_progressNext_30 {
-    color: #8c8c7e;
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
-    text-shadow: 0 0 20rem #bffffb40;
-}
-
-.ProgressValues_progressBar_e0 {
-    width: 240rem;
-    margin: 0 15rem;
-    position: relative;
-}
-
-.Countdown_base_fe {
+.Countdown_base_2a {
     display: flex;
     align-items: center;
 }
 
-.Countdown_icon_8b {
+.Countdown_icon_ff {
     width: 32rem;
     height: 32rem;
     background: no-repeat center / contain;
 }
 
-.Countdown_description_8d {
-    color: #ffdd99;
+.Countdown_description_32 {
+    color: #FFDD99;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -626,12 +567,11 @@
 }
 
 .TimeLeft_background_e6 {
-    width: 296rem;
-    height: 162rem;
-    background: url('R.images.new_year.gui.maps.icons.newYear.tooltips.decorations.sparks_blue') no-repeat center /
-        cover;
+    width: 394rem;
+    height: 98rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.mainWidgetView.tooltips.shine') no-repeat center / cover;
     position: absolute;
-    top: 20rem;
+    top: 43rem;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -642,32 +582,38 @@
     z-index: 1;
 }
 
-.TimeLeft_countdown__timer_74 {
-    width: 37rem;
-    height: 37rem;
-    background: url('R.images.gui.maps.icons.mapbox.entryPoint.time_icon') no-repeat center / contain;
+.TimeLeft_countdownIcon_8f {
+    height: 32rem;
+    margin-left: -13rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.mainWidgetView.tooltips.time') no-repeat center / contain;
 }
 
-.TimeLeft_countdown__text_38 {
-    color: #afe3f9;
+.TimeLeft_countdownIcon__visible_d4 {
+        width: 32rem;
+        height: 32rem;
+    }
+
+.TimeLeft_countdownText_d4 {
+    color: #E9E2BF;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    text-shadow:
-        0 0 15rem #22e2ee,
-        0 0 8rem #06f,
-        0 0 4rem #00e0ff40;
 }
 
+.TimeLeft_countdownText__light_ed {
+        color: #FFDD99;
+        text-shadow: 0 0 4rem rgba(255, 127, 0, 0.25), 0 0 8rem #ff2a00, 0 0 15rem #e52;
+    }
+
 .TimeLeft_timerValue_b5 {
-    color: #afe3f9;
+    color: #FFDD99;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
 .TimeLeft_description_f0 {
-    color: #cbac77;
+    color: #C9C9B6;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -675,93 +621,133 @@
     z-index: 1;
 }
 
-.CommonTooltip_listBlockMargin_34 {
-    margin-top: 0;
+.Bubble_base_f0 {
+    width: 10rem;
+    height: 10rem;
+    border: 1rem solid #bbe9ff4d;
+    border-radius: 50%;
+    box-shadow: 0 0 10rem 4rem #006fff40, 0 2rem 7rem 1rem #00000080, 0 4rem 4rem 0 #ffffff4d inset;
+    background: #0a8cd7;
 }
 
-.CommonTooltip_base_84 {
+    .Bubble_base__withValue_be {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: auto;
+        padding: 0 7rem;
+        border-radius: 20rem;
+        overflow: hidden;
+    }
+
+.Bubble_text_59 {
+    color: #FFFFFF;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 1rem;
+}
+
+.LevelTooltip_base_59 {
+    display: flex;
+    flex-direction: column;
     width: 400rem;
-    padding: 24rem;
-    background: linear-gradient(153.54deg, #002c64 0%, #000 100%);
-    position: relative;
 }
 
-.CommonTooltip_title_ff {
-    color: #f2f2f7;
+.LevelTooltip_header_8b {
+    display: flex;
+    border-bottom: 1rem solid rgba(242,242,247, 0.1);
+}
+
+.LevelTooltip_headerBg_e6 {
+    width: 100%;
+    height: 66rem;
+    background: #F2F2F7;
+    opacity: 0.05;
+    position: absolute;
+}
+
+.LevelTooltip_headerTitle_93 {
+    color: #FFDD99;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 24rem;
+    padding: 22rem;
 }
 
-.CommonTooltip_subtitle_53 {
-    color: #f2f2f7;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-    margin-top: 16rem;
+.LevelTooltip_level_df {
+    border-top: 1rem solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
 }
 
-.CommonTooltip_list_a4 {
-    position: relative;
-    z-index: 1;
+.LevelTooltip_rewardsWrapper_f5 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48rem;
+    padding: 0rem 21rem;
+    border-top: 1rem solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
+    background: url('R.images.new_year.gui.maps.icons.newYear.mainWidgetView.tooltips.rewardsCountBg') no-repeat center /
+        cover;
 }
 
-.CommonTooltip_item_e2 {
-    color: #8c8c7e;
+.LevelTooltip_rewardsText_4e {
+    color: #E9E2BF;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    margin-bottom: 9rem;
-    padding-left: 20rem;
-    position: relative;
-    margin-top: 8rem;
-    margin-bottom: 0;
-    padding-left: 15rem;
+    margin-top: -4rem;
 }
 
-.CommonTooltip_point_92 {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    background: #8c8c7e;
-    position: absolute;
-    top: 9rem;
-    left: 0;
+.LevelTooltip_description_0e {
+    padding: 0 24rem 15rem;
 }
 
-.CommonTooltip_progress_16 {
-    margin-bottom: 8rem;
+.LevelTooltip_title_4d {
+    color: #FFDD99;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    padding-top: 17rem;
+}
+
+.LevelTooltip_subTitle_33 {
+    color: #CBAC77;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    padding-top: 4rem;
+}
+
+.LevelTooltip_subTitle__withBorder_64 {
+        padding-bottom: 14rem;
+        border-bottom: 1rem solid rgba(242,242,247, 0.1);
+    }
+
+.LevelTooltip_timeLeft_86 {
+    padding: 6rem 24rem 15rem;
+    border-top: 1rem solid rgba(242,242,247, 0.1);
 }
 
 .SmallTooltip_base_f6 {
-    width: 320rem;
-    padding: 17rem;
-    position: relative;
-}
-
-.SmallTooltip_base__active_5f {
-    background: linear-gradient(153.54deg, #002c64 0%, #000 100%);
+    width: 400rem;
+    padding: 24rem;
 }
 
 .SmallTooltip_title_3c {
-    color: #f2f2f7;
-    font-size: 15rem;
+    color: #FFDD99;
+    font-size: 18rem;
     font-weight: 700;
-    line-height: 1.15;
+    line-height: 1.1;
     margin-bottom: 8rem;
 }
 
-.SmallTooltip_title__paused_08 {
-    color: #e9e2bf;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-}
-
 .SmallTooltip_subTitle_08 {
-    color: #8c8c7e;
+    color: #C9C9B6;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
+
