@@ -7463,33 +7463,60 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.PositionRewards_rewards__one_12 {
+.PositionRewards_rewards__1_7f {
         left: 0;
     }
 
-.PositionRewards_rewards__lootbox_01 {
-        transform: translateX(-5rem);
+.PositionRewards_rewards__2_4a {
+        transform: translate(-10rem, 0);
     }
+
+.PositionRewards_rewards__3_e1 {
+        transform: translate(-10rem, 0);
+    }
+
+.mediaMedium .PositionRewards_rewards_66 {
+        height: 215rem;
+}
+
+.mediaMedium .PositionRewards_rewards__1_7f {
+            top: -40rem;
+        }
+
+.mediaMedium .PositionRewards_rewards__2_4a {
+            transform: translate(0rem, -40rem);
+        }
+
+.mediaMedium .PositionRewards_rewards__3_e1 {
+            transform: translate(0, -40rem);
+        }
 
 .mediaLarge .PositionRewards_rewards_66 {
         height: 215rem;
-        left: 30rem;
 }
 
-.mediaLarge .PositionRewards_rewards__one_12 {
-            left: 20rem;
+.mediaLarge .PositionRewards_rewards__1_7f {
+            top: 0;
         }
 
-.mediaLarge .PositionRewards_rewards__lootbox_01 {
-            transform: translateX(-20rem);
+.mediaLarge .PositionRewards_rewards__2_4a {
+            transform: translate(0, 0);
+        }
+
+.mediaLarge .PositionRewards_rewards__3_e1 {
+            transform: translate(0, 0);
         }
 
 .PositionRewards_reward_22 {
     transform: scale(0.8);
 }
 
+.PositionRewards_reward__singleVehicle_71 {
+        transform: scale(0.6) translate(-10rem, 20rem);
+    }
+
 .PositionRewards_reward__vehicles_a3 {
-        transform: scale(0.6) translateY(-30rem);
+        transform: scale(0.6) translate(24rem, 10rem);
     }
 
 .PositionRewards_reward__several_16 {
@@ -7499,7 +7526,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .PositionRewards_reward__badge_78 {
         position: absolute;
         top: -10rem;
-        right: 25rem;
+        right: 10rem;
         z-index: 1;
         transform: scale(1);
     }
@@ -7512,29 +7539,45 @@ This bug is reproduced in Google Chrome 81.0.4044.113
             width: 50%;
 }
 
-.PositionRewards_rewards__fragment_32 .PositionRewards_reward_22 {
-        width: 110rem;
-    }
+.mediaMedium .PositionRewards_reward__singleVehicle_71 {
+            transform: scale(0.6) translate(-10rem, 30rem);
+        }
 
-.mediaLarge .PositionRewards_rewards__fragment_32 .PositionRewards_reward_22 {
-            width: 140rem;
-}
+.mediaMedium .PositionRewards_reward__vehicles_a3 {
+            transform: scale(0.6) translate(14rem, 30rem);
+        }
+
+.mediaMedium .PositionRewards_reward__several_16 {
+            transform: scale(0.6);
+        }
+
+.mediaMedium .PositionRewards_reward__badge_78 {
+            position: absolute;
+            top: 20rem;
+            right: 10rem;
+            z-index: 1;
+            transform: scale(1);
+        }
 
 .mediaLarge .PositionRewards_reward_22 {
-        transform: scale(1);
+        transform: scale(0.8);
 }
 
+.mediaLarge .PositionRewards_reward__singleVehicle_71 {
+            transform: scale(0.8) translate(-10rem, 10rem);
+        }
+
 .mediaLarge .PositionRewards_reward__vehicles_a3 {
-            transform: scale(0.8) translate(-50rem, -20rem);
+            transform: scale(0.8) translate(10rem, 10rem);
         }
 
 .mediaLarge .PositionRewards_reward__several_16 {
-            transform: scale(0.8);
+            transform: scale(0.7);
         }
 
 .mediaLarge .PositionRewards_reward__badge_78 {
             top: -18rem;
-            right: 20rem;
+            right: -10rem;
             transform: scale(0.7);
         }
 
@@ -7547,7 +7590,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         font-size: 15rem;
         font-weight: 700;
         line-height: 1.15;
-        transform: scale(1);
+        transform: scale(0.7);
 }
 
 .PositionRewards_reward__several_16 .PositionRewards_rewardInfo_19 {
